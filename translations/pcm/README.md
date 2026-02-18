@@ -12,7 +12,7 @@
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-Follow dis steps to start use these resources:
+Follow these steps to get started using these resources:
 1. **Fork the Repository**: Click [![GitHub forks](https://img.shields.io/github/forks/microsoft/mcp-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/mcp-for-beginners/fork)
 2. **Clone the Repository**:   `git clone https://github.com/microsoft/mcp-for-beginners.git`
 3. **Join The** [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
@@ -27,7 +27,7 @@ Follow dis steps to start use these resources:
 
 > **Prefer to Clone Locally?**
 >
-> Dis repository get 50+ language translations wey go increase di download size well-well. To clone without translations, use sparse checkout:
+> This repository includes 50+ language translations which significantly increases the download size. To clone without translations, use sparse checkout:
 >
 > **Bash / macOS / Linux:**
 > ```bash
@@ -43,7 +43,7 @@ Follow dis steps to start use these resources:
 > git sparse-checkout set --no-cone "/*" "!translations" "!translated_images"
 > ```
 >
-> Dis one go give you everything wey you need to finish di course faster.
+> This gives you everything you need to complete the course with a much faster download.
 <!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
 # 🚀 Model Context Protocol (MCP) Curriculum for Beginners
@@ -51,164 +51,166 @@ Follow dis steps to start use these resources:
 ## **Learn MCP with Hands-on Code Examples in C#, Java, JavaScript, Rust, Python, and TypeScript**
 
 ## 🧠 Overview of the Model Context Protocol Curriculum
-Welcome to your journey into the Model Context Protocol! If you don ever wonder how AI applications dey communicate with different tools and services, you dey about to discover the fine solution wey dey change how developers de build intelligent systems.
+Welcome to your journey into the Model Context Protocol! If you've ever wondered how AI applications communicate with different tools and services, you're about to discover the elegant solution that's transforming how developers build intelligent systems.
 
-Think of MCP as a universal translator for AI applications - just like how USB ports dey allow you connect any device to your computer, MCP dey allow AI models connect to any tool or service in one correct standard way. Whether na your first time to build chatbot or you dey work on complex AI workflows, to sabi MCP go give you power to create beta and flexible applications.
+Think of MCP as a universal translator for AI applications - just like how USB ports let you connect any device to your computer, MCP lets AI models connect to any tool or service in a standardized way. Whether you're building your first chatbot or working on complex AI workflows, understanding MCP will give you the power to create more capable and flexible applications.
 
-Dis curriculum get plenty patience and care for your learning journey. We go start with simple simple concepts wey you don sabi before and slowly build your level through hands-on practice for your favorite programming language. Every step get clear explanations, practical examples, and plenty encouragement along di way.
+This curriculum is designed with patience and care for your learning journey. We'll start with simple concepts you already understand and gradually build your expertise through hands-on practice in your favorite programming language. Every step includes clear explanations, practical examples, and plenty of encouragement along the way.
 
-By the time you finish dis journey, you go don get confidence to build your own MCP servers, join dem with popular AI platforms, and understand how dis technology dey reshape future of AI development. Make we start this better adventure together!
+By the time you complete this journey, you'll have the confidence to build your own MCP servers, integrate them with popular AI platforms, and understand how this technology is reshaping the future of AI development. Let's begin this exciting adventure together!
 
 ### Official Documentation and Specifications
 
-Dis curriculum align with **MCP Specification 2025-11-25** (di latest stable version). Di MCP specification dey use date-based versioning (YYYY-MM-DD format) so you fit track di protocol version well.
+This curriculum is aligned with **MCP Specification 2025-11-25** (the latest stable release). The MCP specification uses date-based versioning (YYYY-MM-DD format) to ensure clear protocol version tracking.
 
-Dem resources dey more valuable as you sabi pass, but no pressure yourself to read everything quick-quick. Start with the areas wey interest you most!
-- 📘 [MCP Documentation](https://modelcontextprotocol.io/) – Na dis one be your go-to resource for step-by-step tutorials and user guides. Documentation write am well for beginners, get clear examples wey you fit follow at your own pace.
-- 📜 [MCP Specification](https://modelcontextprotocol.io/specification/2025-11-25) – Think am like comprehensive reference manual. As you dey do the curriculum, you go dey come back here to check specific details and learn advanced features.
-- 📜 [MCP Specification Versioning](https://modelcontextprotocol.io/specification/versioning) – Dis one get info about protocol version history and how MCP dey use date-based versioning (YYYY-MM-DD format).
-- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Here you fit find SDKs, tools, and code samples for many programming languages. E be like treasure house of practical examples and ready-to-use components.
-- 🌐 [MCP Community](https://github.com/orgs/modelcontextprotocol/discussions) – Join fellow learners and experienced developers for discussions about MCP. Na supportive community wey questions dey welcome and knowledge dey share freely.
+These resources become more valuable as your understanding grows, but don't feel pressured to read everything immediately. Start with the areas that interest you most!
+- 📘 [MCP Documentation](https://modelcontextprotocol.io/) – This na your go-to resource for step-by-step tutorials and user guides. The documentation dey written with beginners for mind, dem provide clear examples wey you fit follow along at your own pace.
+- 📜 [MCP Specification](https://modelcontextprotocol.io/specification/2025-11-25) – Think am as your complete reference manual. As you dey waka through the curriculum, you go dey come back here to find specific details and check advanced features.
+- 📜 [MCP Specification Versioning](https://modelcontextprotocol.io/specification/versioning) – This one get information about protocol version history plus how MCP dey use date-based versioning (YYYY-MM-DD format).
+- 🧑‍💻 [MCP GitHub Repository](https://github.com/modelcontextprotocol) – Here you go find SDKs, tools, and code samples for different programming languages. E be like treasure full of practical examples and ready-to-use components.
+- 🌐 [MCP Community](https://github.com/orgs/modelcontextprotocol/discussions) – Join other learners and experienced developers for discussions about MCP. E be supportive community where questions dey welcome and knowledge dey shared freely.
   
 ## Learning Objectives
 
-By the end of dis curriculum, you go feel confident and excited about your new skills. Dis na wetin you go achieve:
+By the time you finish this curriculum, you go dey confident and excited about your new skills. Na wetin you go achieve be this:
 
-• **Understand MCP fundamentals**: You go understand wetin Model Context Protocol be and why e dey change how AI applications dey work together, using analogies and examples wey make sense.
+• **Understand MCP fundamentals**: You go sabi wetin the Model Context Protocol be and why e dey change how AI applications dey work together, using analogies and examples wey go make sense.
 
-• **Build your first MCP server**: You go fit create MCP server wey dey work for your programming language, starting with simple examples and improve your skills step by step.
+• **Build your first MCP server**: You go build one working MCP server for your chosen programming language, start with simple examples and waka step by step.
 
-• **Connect AI models to real tools**: You go learn how to join AI models with real services, make your applications get strong beta capabilities.
+• **Connect AI models to real tools**: You go learn how to join AI models and actual services together, give your applications strong new abilities.
 
-• **Implement security best practices**: You go understand how to secure your MCP implementations well, protect your applications and users.
+• **Implement security best practices**: You go understand how to keep your MCP implementations safe, protect both your applications and your users.
 
-• **Deploy with confidence**: You go sabi how to take your MCP projects from development to production, with practical ways wey dey work for real world.
+• **Deploy with confidence**: You go sabi how to carry your MCP projects from development go production, with practical deployment plans wey dey work for real world.
 
-• **Join the MCP community**: You go become part of growing community wey dey shape future of AI application development. 
+• **Join the MCP community**: You go become part of one big community of developers wey dey shape the future of AI application development. 
 
 ## Essential Background
 
-Before we enter MCP details, make sure you dey comfortable with some basic concepts. No worry if you no be expert for these areas - we go explain everything wey you need to know as we go!
+Before we start to tok about MCP specifics, make sure say you dey comfortable with some basic concepts. No wahala if you no be expert for these areas - we go explain everything you need as we dey go!
 
 ### Understanding Protocols (The Foundation)
 
-Think protocol like rules for conversation. When you call your friend, una go know say if person talk "hello" when una answer, una go take turns to talk, and say "goodbye" when una finish. Computer programs need similar rules to talk well.
+Think protocol like the rules for conversation. When you call your padi, both of una know say how you go greet "hello" once you pick phone, you go take turn to talk, and how you go talk "goodbye" when you don finish. Computer programs need similar rules to talk well.
 
-MCP na protocol - set of agreed rules wey help AI models and applications to get correct "conversation" with tools and services. Just like how rules for conversation make human communication smooth, MCP rules dey make AI app communication plenty reliable and powerful.
+MCP na protocol - set of agreed rules wey help AI models and applications get correct "conversations" with tools and services. Same way rules for human talk dey make communication smooth, MCP dey make AI apps communication strong, correct, and powerful.
 
 ### Client-Server Relationships (How Programs Work Together)
 
-You dey use client-server relationships every day! When you use browser (client) to visit website, you dey join web server wey go send you page content. Browser sabi how to ask information, server sabi how to respond.
+You dey use client-server relationship every day! When you dey use web browser (client) go check website, you dey connect to web server wey go give you page content. Browser sabi how to ask for info, server sabi how to answer.
 
-For MCP, e dey similar: AI models act as clients wey dey ask for info or actions, MCP servers dey provide those things. E be like helpful assistant (server) wey AI fit ask to do specific work.
+For MCP, e get similar relationship: AI models dey act as clients wey dey request information or action, MCP servers dey give that ability. E be like say AI get helper (server) wey AI fit ask make e do something.
 
 ### Why Standardization Matters (Making Things Work Together)
 
-Imagine if every car maker use different shape gas pump - you go need different adapter for every car! Standardization mean say everybody agree on common way so things go fit work together smooth.
+Imagine if every car company get different shape for their gas tank – you go need different adapter for every car! Standardization mean say everybody agree on one common way so everything fit work together well.
 
-MCP na di standardization wey AI applications need. No need say every AI model go need custom code to work with every tool, MCP create universal way to talk. Nke mean say developers fit build tools one time and e go work with many AI systems.
+MCP dey provide that kind standardization for AI applications. No be every AI model go need custom code for every tool; MCP na universal way dem fit talk. This one mean say developers fit build tools once and e go work for many AI systems.
 
 ## 🧭 Your Learning Path Overview
 
-Your MCP journey dey well structured to build your confidence and skills step by step. Every phase go introduce new concepts while e still reinforce wetin you don sabi.
+Your MCP journey dey well organized to grow your confidence and skills gradually. Each phase dey introduce new ideas and also remind you wetin you don learn before.
 
 ### 🌱 Foundation Phase: Understanding the Basics (Modules 0-2)
 
-Na here your adventure begin! We go show you MCP concepts using analogies wey you sabi and simple examples. You go understand wetin MCP be, why e dey exist, and how e take fit inside large world of AI development.
+Na here your adventure dey start! We go introduce you to MCP concepts using things wey you dey familiar with and simple examples. You go understand wetin MCP be, why e dey, and how e fit into the bigger world of AI development.
 
-• **Module 0 - Introduction to MCP**: We go start by exploring wetin MCP be and why e important for modern AI applications. You go see real-world examples of MCP work and understand how e solve common problems wey developers dey face.
+• **Module 0 - Introduction to MCP**: We go start by checking wetin MCP be and why e important for modern AI apps. You go see real examples of MCP for work and understand how e dey solve common developer wahala.
 
-• **Module 1 - Core Concepts Explained**: Here you go learn important building blocks of MCP. We go use plenty analogies and clear examples to make sure say concepts straight and easy to understand.
+• **Module 1 - Core Concepts Explained**: Here you go learn the important building blocks of MCP. We go use plenty analogies plus visual examples to make these concepts easy to understand and natural.
 
-• **Module 2 - Security in MCP**: Security fit sound fear, but we go show you how MCP get built-in safety features and teach you best practices to protect your applications from start.
+• **Module 2 - Security in MCP**: Security fit sound hard, but we go show you how MCP get safety features inside and teach you best ways to protect your apps from beginning.
 
 ### 🔨 Building Phase: Creating Your First Implementations (Module 3)
 
-Now fun don start! You go get hands-on experience to build actual MCP servers and clients. No worry - we go start simple and guide you through every step.
-Dis module get plenty hands-on guides wey go make you practice for di programming language wey you like. You go create your first server, build client wey go connect to am, and even join popular development tools like VS Code.
+Now the real fun don start! You go get hands-on practice to build actual MCP servers and clients. No worry – we go start simple and guide you step by step.
+Dis module get plenty hands-on guides wey go make you fit practice for di programming language wey you like. You go create your first server, build client wey go connect to am, and even join am with popular development tools like VS Code.
 
-Every guide get beta code examples, troubleshooting tips, and explanation why we dey make certain design choices. By di time you finish dis phase, you go get working MCP implementations wey you fit proud for!
+Every guide get complete code examples, trouble-shooting tips, and explanations why we dey make certain design choices. By di time you finish dis phase, you go get working MCP implementations wey you fit proud of!
 
 ### 🚀 Growing Phase: Advanced Concepts and Real-World Application (Modules 4-5)
 
-With di basics done, you ready to explore more advanced MCP features. We go cover practical implementation ways, debugging methods, and advanced topics like multi-modal AI integration.
+After you don master di basics, you ready to explore more sabi MCP features. We go cover practical implementation strategies, debugging techniques, and advanced topics like multi-modal AI integration.
 
-You go also learn how to scale your MCP implementations for production use and join cloud platforms like Azure. These modules dey prepare you to build MCP solutions wey fit handle real-world wahala.
+You go also learn how to scale your MCP implementations for production use and join with cloud platforms like Azure. These modules go prepare you to build MCP solutions wey fit handle real-world demands.
 
 ### 🌟 Mastery Phase: Community and Specialization (Modules 6-11)
 
-Di final phase focus on how to join di MCP community and specialize for areas wey you like pass. You go learn how to contribute to open-source MCP projects, implement advanced authentication styles, and build serious database-integrated solutions.
+Di last phase focus on how to join di MCP community and how to specialize for di areas wey you like pass. You go learn how to contribute to open-source MCP projects, do advanced authentication patterns, and build better database-integrated solutions.
 
-Module 11 deserve special mention - na complete 13-lab hands-on learning path wey teach you how to build production-ready MCP servers with PostgreSQL integration. E be like capstone project wey bring all wetin you don learn together!
+Module 11 deserve special talk - na complete 13-lab hands-on learning path wey teach you how to build production-ready MCP servers with PostgreSQL integration. Na like final project wey join all di tins wey you don learn!
 
 ### 📚 Complete Curriculum Structure
 
 | Module | Topic | Description | Link |
 |--------|-------|-------------|------|
 | **Module 0-3: Fundamentals** | | | |
-| 00 | Introduction to MCP | Overview of the Model Context Protocol and its significance in AI pipelines | [Read more](./00-Introduction/README.md) |
-| 01 | Core Concepts Explained | Inside look of main MCP concepts | [Read more](./01-CoreConcepts/README.md) |
-| 02 | Security in MCP | Security threats and best ways to handle am | [Read more](./02-Security/README.md) |
-| 03 | Getting Started with MCP | How to set environment, basic servers/clients, integration | [Read more](./03-GettingStarted/README.md) |
+| 00 | Introduction to MCP | Overview of di Model Context Protocol and wetin e mean for AI pipelines | [Read more](./00-Introduction/README.md) |
+| 01 | Core Concepts Explained | Deep talk about core MCP concepts | [Read more](./01-CoreConcepts/README.md) |
+| 02 | Security in MCP | Security wahala and beta practices | [Read more](./02-Security/README.md) |
+| 03 | Getting Started with MCP | How to set up environment, basic servers/clients, and integration | [Read more](./03-GettingStarted/README.md) |
 | **Module 3: Building Your First Server & Client** | | | |
-| 3.1 | First Server | Make your first MCP server | [Guide](./03-GettingStarted/01-first-server/README.md) |
+| 3.1 | First Server | Create your first MCP server | [Guide](./03-GettingStarted/01-first-server/README.md) |
 | 3.2 | First Client | Build simple MCP client | [Guide](./03-GettingStarted/02-client/README.md) |
-| 3.3 | Client with LLM | Join large language models | [Guide](./03-GettingStarted/03-llm-client/README.md) |
+| 3.3 | Client with LLM | Join big language models | [Guide](./03-GettingStarted/03-llm-client/README.md) |
 | 3.4 | VS Code Integration | Use MCP servers inside VS Code | [Guide](./03-GettingStarted/04-vscode/README.md) |
-| 3.5 | stdio Server | Build servers wey use stdio transport | [Guide](./03-GettingStarted/05-stdio-server/README.md) |
+| 3.5 | stdio Server | Create servers wey use stdio transport | [Guide](./03-GettingStarted/05-stdio-server/README.md) |
 | 3.6 | HTTP Streaming | Do HTTP streaming for MCP | [Guide](./03-GettingStarted/06-http-streaming/README.md) |
 | 3.7 | AI Toolkit | Use AI Toolkit with MCP | [Guide](./03-GettingStarted/07-aitk/README.md) |
-| 3.8 | Testing | Test how your MCP server dey work | [Guide](./03-GettingStarted/08-testing/README.md) |
-| 3.9 | Deployment | Deploy MCP servers to production | [Guide](./03-GettingStarted/09-deployment/README.md) |
-| 3.10 | Advanced server usage | Use advanced servers for advanced features and better design | [Guide](./03-GettingStarted/10-advanced/README.md) |
-| 3.11 | Simple auth | Chapter wey show you auth from ground and RBAC | [Guide](./03-GettingStarted/11-simple-auth/README.md) |
-| 3.12 | MCP Hosts | Configure Claude Desktop, Cursor, Cline, and other MCP hosts | [Guide](./03-GettingStarted/12-mcp-hosts/README.md) |
-| 3.13 | MCP Inspector | Debug and test MCP servers with Inspector tool | [Guide](./03-GettingStarted/13-mcp-inspector/README.md) |
+| 3.8 | Testing | Test your MCP server implementation | [Guide](./03-GettingStarted/08-testing/README.md) |
+| 3.9 | Deployment | Deploy MCP servers go production | [Guide](./03-GettingStarted/09-deployment/README.md) |
+| 3.10 | Advanced server usage | Use advanced servers for advanced features and beta architecture | [Guide](./03-GettingStarted/10-advanced/README.md) |
+| 3.11 | Simple auth | Chapter wey show you auth from beginning and RBAC | [Guide](./03-GettingStarted/11-simple-auth/README.md) |
+| 3.12 | MCP Hosts | Set up Claude Desktop, Cursor, Cline, and other MCP hosts | [Guide](./03-GettingStarted/12-mcp-hosts/README.md) |
+| 3.13 | MCP Inspector | Use Inspector tool to debug and test MCP servers | [Guide](./03-GettingStarted/13-mcp-inspector/README.md) |
+| 3.14 | Sampling | Use sampling to work together with client | [Guide](./03-GettingStarted/14-sampling/README.md) |
+
 | **Module 4-5: Practical & Advanced** | | | |
 | 04 | Practical Implementation | SDKs, debugging, testing, reusable prompt templates | [Read more](./04-PracticalImplementation/README.md) |
-| 4.1 | Pagination | Handle big results with cursor-based pagination | [Guide](./04-PracticalImplementation/pagination/README.md) |
+| 4.1 | Pagination | Handle big result sets with cursor-based pagination | [Guide](./04-PracticalImplementation/pagination/README.md) |
 | 05 | Advanced Topics in MCP | Multi-modal AI, scaling, enterprise use | [Read more](./05-AdvancedTopics/README.md) |
 | 5.1 | Azure Integration | MCP join Azure | [Guide](./05-AdvancedTopics/mcp-integration/README.md) |
-| 5.2 | Multi-modality | Work with multiple modalities | [Guide](./05-AdvancedTopics/mcp-multi-modality/README.md) |
-| 5.3 | OAuth2 Demo | Implement OAuth2 authentication | [Guide](./05-AdvancedTopics/mcp-oauth2-demo/README.md) |
-| 5.4 | Root Contexts | Understand and implement root contexts | [Guide](./05-AdvancedTopics/mcp-root-contexts/README.md) |
-| 5.5 | Routing | MCP routing ways | [Guide](./05-AdvancedTopics/mcp-routing/README.md) |
-| 5.6 | Sampling | Sampling methods for MCP | [Guide](./05-AdvancedTopics/mcp-sampling/README.md) |
+| 5.2 | Multi-modality | Work with plenty modalities | [Guide](./05-AdvancedTopics/mcp-multi-modality/README.md) |
+| 5.3 | OAuth2 Demo | Do OAuth2 authentication | [Guide](./05-AdvancedTopics/mcp-oauth2-demo/README.md) |
+| 5.4 | Root Contexts | Understand and do root contexts | [Guide](./05-AdvancedTopics/mcp-root-contexts/README.md) |
+| 5.5 | Routing | MCP routing strategies | [Guide](./05-AdvancedTopics/mcp-routing/README.md) |
+| 5.6 | Sampling | Sampling techniques for MCP | [Guide](./05-AdvancedTopics/mcp-sampling/README.md) |
 | 5.7 | Scaling | Scale MCP implementations | [Guide](./05-AdvancedTopics/mcp-scaling/README.md) |
-| 5.8 | Security | Advanced security matters | [Guide](./05-AdvancedTopics/mcp-security/README.md) |
-| 5.9 | Web Search | Implement web search ability | [Guide](./05-AdvancedTopics/web-search-mcp/README.md) |
+| 5.8 | Security | Advanced security tins to consider | [Guide](./05-AdvancedTopics/mcp-security/README.md) |
+| 5.9 | Web Search | Do web search functionality | [Guide](./05-AdvancedTopics/web-search-mcp/README.md) |
 | 5.10 | Realtime Streaming | Build realtime streaming function | [Guide](./05-AdvancedTopics/mcp-realtimestreaming/README.md) |
-| 5.11 | Realtime Search | Implement realtime search | [Guide](./05-AdvancedTopics/mcp-realtimesearch/README.md) |
-| 5.12 | Entra ID Auth | Authentication with Microsoft Entra ID | [Guide](./05-AdvancedTopics/mcp-security-entra/README.md) |
-| 5.13 | Foundry Integration | Join Azure AI Foundry | [Guide](./05-AdvancedTopics/mcp-foundry-agent-integration/README.md) |
-| 5.14 | Context Engineering | Ways for effective context engineering | [Guide](./05-AdvancedTopics/mcp-contextengineering/README.md) |
+| 5.11 | Realtime Search | Do realtime search | [Guide](./05-AdvancedTopics/mcp-realtimesearch/README.md) |
+| 5.12 | Entra ID Auth | Authenticate with Microsoft Entra ID | [Guide](./05-AdvancedTopics/mcp-security-entra/README.md) |
+| 5.13 | Foundry Integration | Join with Azure AI Foundry | [Guide](./05-AdvancedTopics/mcp-foundry-agent-integration/README.md) |
+| 5.14 | Context Engineering | Techniques for better context engineering | [Guide](./05-AdvancedTopics/mcp-contextengineering/README.md) |
 | 5.15 | MCP Custom Transport | Custom Transport implementations | [Guide](./05-AdvancedTopics/mcp-transport/README.md) |
-| 5.16 | Protocol Features | Progress notices, cancellation, resource templates | [Guide](./05-AdvancedTopics/mcp-protocol-features/README.md) |
+| 5.16 | Protocol Features | Progress notifications, cancellation, resource templates | [Guide](./05-AdvancedTopics/mcp-protocol-features/README.md) |
 | **Module 6-10: Community & Best Practices** | | | |
-| 06 | Community Contributions | How to contribute to MCP ecosystem | [Guide](./06-CommunityContributions/README.md) |
+| 06 | Community Contributions | How to contribute to MCP system | [Guide](./06-CommunityContributions/README.md) |
 | 07 | Insights from Early Adoption | Real-world implementation stories | [Guide](./07-LessonsfromEarlyAdoption/README.md) |
 | 08 | Best Practices for MCP | Performance, fault-tolerance, resilience | [Guide](./08-BestPractices/README.md) |
 | 09 | MCP Case Studies | Practical implementation examples | [Guide](./09-CaseStudy/README.md) |
-| 10 | Hands-on Workshop | Building MCP Server with AI Toolkit | [Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) |
+| 10 | Hands-on Workshop | Build MCP Server with AI Toolkit | [Lab](./10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) |
 | **Module 11: MCP Server Hands On Lab** | | | |
-| 11 | MCP Server Database Integration | Full 13-lab hands-on learning path for PostgreSQL join | [Labs](./11-MCPServerHandsOnLabs/README.md) |
-| 11.1 | Introduction | Overview of MCP with database join and retail analytics case | [Lab 00](./11-MCPServerHandsOnLabs/00-Introduction/README.md) |
-| 11.2 | Core Architecture | Understand MCP server setup, database layers, and security patterns | [Lab 01](./11-MCPServerHandsOnLabs/01-Architecture/README.md) |
+| 11 | MCP Server Database Integration | Complete 13-lab hands-on path for PostgreSQL integration | [Labs](./11-MCPServerHandsOnLabs/README.md) |
+| 11.1 | Introduction | Overview of MCP with database integration and retail analytics case | [Lab 00](./11-MCPServerHandsOnLabs/00-Introduction/README.md) |
+| 11.2 | Core Architecture | Understand MCP server architecture, database layers, and security patterns | [Lab 01](./11-MCPServerHandsOnLabs/01-Architecture/README.md) |
 | 11.3 | Security & Multi-Tenancy | Row Level Security, authentication, and multi-tenant data access | [Lab 02](./11-MCPServerHandsOnLabs/02-Security/README.md) |
-| 11.4 | Environment Setup | Setup development environment, Docker, Azure resources | [Lab 03](./11-MCPServerHandsOnLabs/03-Setup/README.md) |
+| 11.4 | Environment Setup | Set up development environment, Docker, Azure resources | [Lab 03](./11-MCPServerHandsOnLabs/03-Setup/README.md) |
 | 11.5 | Database Design | PostgreSQL setup, retail schema design, and sample data | [Lab 04](./11-MCPServerHandsOnLabs/04-Database/README.md) |
-| 11.6 | MCP Server Implementation | Build FastMCP server with database join | [Lab 05](./11-MCPServerHandsOnLabs/05-MCP-Server/README.md) |
-| 11.7 | Tool Development | Create database query tools and schema introspection | [Lab 06](./11-MCPServerHandsOnLabs/06-Tools/README.md) |
-| 11.8 | Semantic Search | Implement vector embeddings with Azure OpenAI and pgvector | [Lab 07](./11-MCPServerHandsOnLabs/07-Semantic-Search/README.md) |
-| 11.9 | Testing & Debugging | Testing ways, debugging tools, and validation approaches | [Lab 08](./11-MCPServerHandsOnLabs/08-Testing/README.md) |
-| 11.10 | VS Code Integration | Configure VS Code MCP join and AI Chat usage | [Lab 09](./11-MCPServerHandsOnLabs/09-VS-Code/README.md) |
-| 11.11 | Deployment Strategies | Docker deployment, Azure Container Apps, and scaling matters | [Lab 10](./11-MCPServerHandsOnLabs/10-Deployment/README.md) |
+| 11.6 | MCP Server Implementation | Build FastMCP server with database integration | [Lab 05](./11-MCPServerHandsOnLabs/05-MCP-Server/README.md) |
+| 11.7 | Tool Development | Make database query tools and schema introspection | [Lab 06](./11-MCPServerHandsOnLabs/06-Tools/README.md) |
+| 11.8 | Semantic Search | Do vector embeddings with Azure OpenAI and pgvector | [Lab 07](./11-MCPServerHandsOnLabs/07-Semantic-Search/README.md) |
+| 11.9 | Testing & Debugging | Testing strategies, debugging tools, and validation approaches | [Lab 08](./11-MCPServerHandsOnLabs/08-Testing/README.md) |
+| 11.10 | VS Code Integration | Configure VS Code MCP integration and AI Chat usage | [Lab 09](./11-MCPServerHandsOnLabs/09-VS-Code/README.md) |
+| 11.11 | Deployment Strategies | Docker deployment, Azure Container Apps, and scaling considerations | [Lab 10](./11-MCPServerHandsOnLabs/10-Deployment/README.md) |
 | 11.12 | Monitoring | Application Insights, logging, performance monitoring | [Lab 11](./11-MCPServerHandsOnLabs/11-Monitoring/README.md) |
-| 11.13 | Best Practices | Performance optimization, security strengthening, and production tips | [Lab 12](./11-MCPServerHandsOnLabs/12-Best-Practices/README.md) |
+| 11.13 | Best Practices | Performance optimization, security hardening, and production tips | [Lab 12](./11-MCPServerHandsOnLabs/12-BestPractices/README.md) |
 
 ### 💻 Sample Code Projects
 
-One of di most exciting parts of learning MCP na to see how your code skills dey grow steadily. We don design our code examples to start small and get more advanced as you sabi beta. Na so we dey introduce concepts - with code wey easy to understand but still show real MCP principles, you go fit understand not just wetin di code dey do, but why e structured dat way and how e dey fit di bigger MCP apps.
+One of di most exciting parts of learning MCP na to see your code skills dey grow step by step. We don design our code examples to start simple and grow more complex as your sabi deepen. Na so we dey introduce concepts - with code wey easy to understand but e show real MCP principles, you go understand not just wetin di code dey do, but why im be im and how e fit inside bigger MCP applications.
 
 #### Basic MCP Calculator Samples
 
@@ -234,48 +236,48 @@ One of di most exciting parts of learning MCP na to see how your code skills dey
 
 ## 🎯 Prerequisites for Learning MCP
 
-To get di best from dis curriculum, you suppose get:
-
-- Basic knowledge of programming for at least one of these languages: C#, Java, JavaScript, Python, or TypeScript
-- Understanding of client-server model and APIs
-- Familiar with REST and HTTP concepts
+To fit get beta from dis curriculum, you suppose get:
+- Basic sabi for programming for at least one of these languages: C#, Java, JavaScript, Python, or TypeScript
+- Understand how client-server model and APIs dey work
+- Know REST and HTTP concepts well
 - (Optional) Background for AI/ML concepts
 
-- Join our community discussions for support
+- Join our community talks for support
 
 ## 📚 Study Guide & Resources
 
-Dis repository get some resources wey go help you learn and navigate well:
+This repository get plenty resources to help you waka and learn well:
 
 ### Study Guide
-Comprehensive [Study Guide](./study_guide.md) dey wey fit help you waka this repository well well. Dis kain visual curriculum map dey show how all di topics connect and e dey guide you how to use di sample projects well well. E good especially if na visual learner you be wey like see di whole picture.
+
+We get better [Study Guide](./study_guide.md) wey go help you waka well for this repository. Dis visual curriculum map show how all the topics connect plus how to use di sample projects well. E good wella if you be person wey like to see di whole picture.
 
 Di guide get:
-- Visual curriculum map wey dey show all di topics wey dem cover
-- Detailed breakdown of every section for di repository
-- Guidance how to take use sample projects
-- Recommended learning paths for different skill levels
-- Additional resources wey go support your learning journey
+- Visual curriculum map wey show all topics dem cover
+- Breakdown of each repository part
+- How to use sample projects
+- Recommended learning path for different skill levels
+- Extra resources to make your learning better
 
 ### Changelog
 
-We dey keep detailed [Changelog](./changelog.md) wey dey track all important updates to di curriculum materials, so you fit dey up-to-date with di latest improvements and new things dem add.
-- New content wey dem add
+We dey maintain detailed [Changelog](./changelog.md) wey dey track all important updates wey happen for the curriculum materials, so you fit keep up with all new changes and additions.
+- New content wey we add
 - Structural changes
 - Feature improvements
 - Documentation updates
 
-## 🛠️ How to Use This Curriculum Well Well
+## 🛠️ How to Use This Curriculum Well
 
-Every lesson for dis guide get:
+Each lesson for this guide get:
 
-1. Clear explanation of MCP concepts  
-2. Live code examples for plenty languages  
-3. Exercises wey fit build real MCP applications  
+1. Clear talk about MCP concepts  
+2. Live code examples for many languages  
+3. Exercises wey go help you build real MCP applications  
 4. Extra resources for advanced learners
 
 ### Make We Learn MCP with C# - Tutorial Series
-Make we learn about di Model Context Protocol (MCP), one new framework wey dem design to standardize how AI models and client applications dey interact. For dis beginner-friendly session, we go introduce you to MCP and guide you how to create your first MCP server.
+Make we learn about Model Context Protocol (MCP), na cutting-edge framework wey dem design to standardize how AI models and client applications dey interact. For this beginner-friendly session, we go show you MCP and guide you to create your first MCP server.
 #### C#: [https://aka.ms/letslearnmcp-csharp](https://aka.ms/letslearnmcp-csharp)
 #### Java: [https://aka.ms/letslearnmcp-java](https://aka.ms/letslearnmcp-java)
 #### JavaScript: [https://aka.ms/letslearnmcp-javascript](https://aka.ms/letslearnmcp-javascript)
@@ -283,62 +285,67 @@ Make we learn about di Model Context Protocol (MCP), one new framework wey dem d
 
 ## 🎓 Your MCP Journey Don Start
 
-Congrats! You don take di first step for one exciting journey wey go expand your programming skills and connect you to di cutting edge of AI development.
+Congrats! You don just take di first step for exciting journey wey go expand your programming skills and connect you to di cutting edge of AI development.
 
-### Wetin You Don Achieve So Far
+### Wetin You Don Already Do
 
-By reading dis introduction, you don start to build your MCP knowledge base. You sabi wetin MCP mean, why e important, and how dis curriculum go help your learning journey. Dis na big achievement and na di start of your expertise for dis important technology.
+By reading this introduction, you don begin to build your MCP knowledge foundation. You sabi wetin MCP be, why e important, and how dis curriculum go support your learning journey. Na big achievement dis and na di start of your expertise for dis important technology.
 
-### Di Journey Wey Dey Front
+### Di Adventure Weh Dey Ahead
 
-As you dey move through di modules, remember say every expert start from scratch. Di concepts wey fit look hard now go turn normal as you practice and apply dem. Every small step dey build strong skills wey go help you for your development career.
+As you dey go through modules, remember say every expert na once beginner. Di concepts wey fit look hard now go become easy as you dey practice and apply dem. Each small step go build strong skills wey go help you for your development career.
 
 ### Your Support Network
 
-You dey join community of learners and experts wey dey passionate about MCP and ready to help others succeed. Whether you jam coding wahala or you get breakthrough wey you wan share, di community dey here to support you.
+You dey join community of learners plus experts wey get passion for MCP and wey dey ready to help others succeed. Whether you stuck for coding challenge or you get excitement to share breakthrough, di community dey here to support you.
 
-If you jam any problem or get question about building AI apps, join other learners and experienced developers to talk about MCP. E good community wey questions dey welcome and knowledge dey share freely.
+If you stuck or get any questions about building AI apps, join fellow learners and experienced developers for discussions about MCP. E be supportive community where questions dey welcome and knowledge dey shared free.
 
 [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://discord.gg/nTYy5BXMWG)
 
-If you get product feedback or find errors while you dey build, visit:
+If you get product feedback or errors while you dey build, visit:
 
 [![Microsoft Foundry Developer Forum](https://img.shields.io/badge/GitHub-Microsoft_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
-### You Ready to Start?
+### Ready to Start?
 
-Your MCP journey don start! Begin with Module 0 to dive into your first hands-on MCP experiences, or check di sample projects make you see wetin you go build. Remember - every expert start for the same place wey you dey now, and with patience plus practice, you go surprised for how far you fit go.
+Your MCP journey don start now! Begin with Module 0 to dive into your first hands-on MCP experiences, or check di sample projects to see wetin you go dey build. Remember - every expert start exactly like you dey now, and with patience plus practice, you go surprise yourself with wetin you fit do.
 
-Welcome to di world of Model Context Protocol development. Make we build something beta together!
+Welcome to di world of Model Context Protocol development. Make we build better things together!
 
-## 🤝 How to Contribute to di Learning Community
+## 🤝 Contributing to di Learning Community
 
-Dis curriculum dey grow stronger with contributions from learners like you! Whether you fix typo, suggest better explanation, or add new example, your contributions go help other beginners succeed.
+Dis curriculum dey strong because contributors like you dey! Whether you dey fix typo, suggest clearer talk, or add new example, your contributions go help other beginners succeed.
 
 Thanks to Microsoft Valued Professional [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) for contributing code samples.
 
-Di contribution process dey designed to dey welcoming and supportive. Most contributions go need Contributor License Agreement (CLA), but di automated tools go guide you make di process smooth.
+The contribution process dey welcoming and supportive. Most contributions need Contributor License Agreement (CLA), but the automated tools go guide you well well.
 
 ## 📜 Open Source Learning
 
-All dis curriculum dey available under MIT [LICENSE](../../LICENSE), so you fit use, modify, and share am freely. This one dey support our mission to make MCP knowledge accessible to developers everywhere.
+This whole curriculum dey available under MIT [LICENSE](../../LICENSE), meaning say you fit use, modify, and share am freely. This one dey support our mission to make MCP knowledge open to developers everywhere.
 ## 🤝 Contribution Guidelines
 
-Dis project dey welcome contributions and suggestions. Most contributions go need you agree to Contributor License Agreement (CLA) wey go declare say you get right and you really dey authorize us to use your contribution. For details, visit <https://cla.opensource.microsoft.com>.
+This project dey welcome contributions and suggestions. Most contributions require you to agree to
+Contributor License Agreement (CLA) wey talk say you get right and you really grant us
+di rights to use your contribution. For details, visit <https://cla.opensource.microsoft.com>.
 
-When you submit pull request, CLA bot go automatically check if you need to provide CLA and e go decorate di PR well well (like status check, comment). Just follow instructions wey di bot go give you. You go only need do am once for all repos wey dey use our CLA.
+When you submit pull request, CLA bot go automatically check if you need to provide
+CLA and decorate the PR (e.g., status check, comment). Just follow the instructions
+wey the bot give you. You go only need do am once for all our repos wey dey use CLA.
 
-Dis project don adopt [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more info, see [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) if you get any questions or comments.
+This project dey use [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
+For more info see [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
+contact [opencode@microsoft.com](mailto:opencode@microsoft.com) if you get any extra questions or comment.
 
 ---
 
-*Ready to start your MCP journey? Begin with [Module 00 - Introduction to MCP](./00-Introduction/README.md) and take your first steps into di world of Model Context Protocol development!*
+*Ready to start your MCP journey? Begin with [Module 00 - Introduction to MCP](./00-Introduction/README.md) and take your first steps into the world of Model Context Protocol development!*
 
 
 
 ## 🎒 Other Courses
-Our team dey produce other courses! Check am out:
+Our team dey produce other courses! Check am:
 
 <!-- CO-OP TRANSLATOR OTHER COURSES START -->
 ### LangChain
@@ -384,5 +391,5 @@ Our team dey produce other courses! Check am out:
 
 <!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Disclaimer**:
-Dis document na im wey AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator) take translate am. Even though we try make am correct, make you sabi say automated translation fit get some mistakes or no correct well well. Di original document wey e dey for im own language na di correct one. If na serious mata, e good make human person wey sabi translate am translate am. We no responsible if pesin no understand or mistake am because of dis translation.
+Dis dokument don translate wit AI translation service dem dey call [Co-op Translator](https://github.com/Azure/co-op-translator). Even though we try make e correct, abeg make you sabi say machine translation fit get some mistakes or no too correct well. Di original dokument wey dem write for di correct language na di right source. If na important info, better make human professional translate am. We no go responsible if person no understand well or misinterpret because of dis translation.
 <!-- CO-OP TRANSLATOR DISCLAIMER END -->
