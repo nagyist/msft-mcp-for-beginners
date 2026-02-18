@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d26f746e21775c30b4d7ed97962b24df",
-  "translation_date": "2025-08-19T15:41:44+00:00",
-  "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
-  "language_code": "cs"
-}
--->
 # Spuštění tohoto příkladu
 
 Doporučuje se nainstalovat `uv`, ale není to nutné, viz [instrukce](https://docs.astral.sh/uv/#highlights)
@@ -49,13 +40,13 @@ Jakmile je server připojen:
 
 - zkuste vypsat nástroje a spustit `add` s argumenty 2 a 4, měli byste vidět výsledek 6.
 
-- přejděte na resources a resource template a zavolejte get_greeting, zadejte jméno a měli byste vidět pozdrav s uvedeným jménem.
+- přejděte na zdroje a šablonu zdrojů a zavolejte funkci get_greeting, zadejte jméno a měli byste vidět pozdrav s uvedeným jménem.
 
 ### Testování v režimu CLI
 
 Inspektor, který jste spustili, je ve skutečnosti aplikace Node.js a `mcp dev` je obal kolem ní.
 
-Můžete jej spustit přímo v režimu CLI pomocí následujícího příkazu:
+Můžete ji spustit přímo v režimu CLI pomocí následujícího příkazu:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
@@ -112,9 +103,11 @@ Měli byste vidět následující výstup:
 }
 ```
 
-> [!TIP]  
-> Obvykle je mnohem rychlejší spustit inspektor v režimu CLI než v prohlížeči.  
-> Více o inspektoru si můžete přečíst [zde](https://github.com/modelcontextprotocol/inspector).
+> [!TIP]
+> Obvykle je mnohem rychlejší spustit inspektor v režimu CLI než v prohlížeči.
+> Přečtěte si více o inspektoru [zde](https://github.com/modelcontextprotocol/inspector).
+
+---
 
 **Prohlášení**:  
-Tento dokument byl přeložen pomocí služby pro automatický překlad [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za závazný zdroj. Pro důležité informace doporučujeme profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí služby pro automatický překlad [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace doporučujeme profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.

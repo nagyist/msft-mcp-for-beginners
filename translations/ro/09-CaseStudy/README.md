@@ -1,125 +1,173 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "61a160248efabe92b09d7b08293d17db",
-  "translation_date": "2025-08-19T16:18:41+00:00",
-  "source_file": "09-CaseStudy/README.md",
-  "language_code": "ro"
-}
--->
 # MCP în Acțiune: Studii de Caz din Lumea Reală
 
-[![MCP în Acțiune: Studii de Caz din Lumea Reală](../../../translated_images/10.3262cc80b4de5071fde8ba74c5c5d6738a0a9f398dcc0423f0210f632e2238b8.ro.png)](https://youtu.be/IxshWb2Az5w)
+[![MCP în Acțiune: Studii de Caz din Lumea Reală](../../../translated_images/ro/10.3262cc80b4de5071.webp)](https://youtu.be/IxshWb2Az5w)
 
-_(Click pe imaginea de mai sus pentru a viziona videoclipul lecției)_
+_(Faceți clic pe imaginea de mai sus pentru a viziona videoclipul acestei lecții)_
 
-Protocolul Model Context (MCP) transformă modul în care aplicațiile AI interacționează cu datele, instrumentele și serviciile. Această secțiune prezintă studii de caz din lumea reală care demonstrează aplicații practice ale MCP în diverse scenarii de afaceri.
+Model Context Protocol (MCP) transformă modul în care aplicațiile AI interacționează cu datele, uneltele și serviciile. Această secțiune prezintă studii de caz din lumea reală care demonstrează aplicații practice ale MCP în diverse scenarii enterprise.
 
-## Prezentare Generală
+## Prezentare generală
 
-Această secțiune oferă exemple concrete de implementări MCP, evidențiind modul în care organizațiile utilizează acest protocol pentru a rezolva provocări complexe de afaceri. Prin examinarea acestor studii de caz, veți obține perspective asupra versatilității, scalabilității și beneficiilor practice ale MCP în scenarii reale.
+Această secțiune prezintă exemple concrete de implementări MCP, evidențiind modul în care organizațiile folosesc acest protocol pentru a rezolva provocări complexe de afaceri. Prin examinarea acestor studii de caz, vei obține perspective asupra versatilității, scalabilității și beneficiilor practice ale MCP în scenarii reale.
 
-## Obiective Cheie de Învățare
+## Obiective cheie de învățare
 
-Explorând aceste studii de caz, veți:
+Explorând aceste studii de caz, vei:
 
-- Înțelege cum MCP poate fi aplicat pentru a rezolva probleme specifice de afaceri
-- Afla despre diferite modele de integrare și abordări arhitecturale
-- Recunoaște cele mai bune practici pentru implementarea MCP în medii de afaceri
-- Obține perspective asupra provocărilor și soluțiilor întâlnite în implementările reale
-- Identifica oportunități de aplicare a unor modele similare în propriile proiecte
+- Înțelege cum MCP poate fi aplicat pentru a rezolva probleme de afaceri specifice
+- Învăța despre diferite modele de integrare și abordări arhitecturale
+- Recunoaște cele mai bune practici pentru implementarea MCP în medii enterprise
+- Obține perspective asupra provocărilor și soluțiilor întâlnite în implementările din lumea reală
+- Identifica oportunități pentru a aplica modele similare în propriile proiecte
 
-## Studii de Caz Prezentate
+## Studii de caz prezentate
 
-### 1. [Azure AI Travel Agents – Implementare de Referință](./travelagentsample.md)
+### 1. [Agenți de Călătorie Azure AI – Implementare de Referință](./travelagentsample.md)
 
-Acest studiu de caz analizează soluția de referință cuprinzătoare a Microsoft, care demonstrează cum să construiți o aplicație de planificare a călătoriilor, bazată pe AI și multi-agent, utilizând MCP, Azure OpenAI și Azure AI Search. Proiectul evidențiază:
+Acest studiu de caz analizează soluția de referință completă a Microsoft care demonstrează cum să construiești o aplicație de planificare a călătoriilor cu mai mulți agenți, alimentată de AI, folosind MCP, Azure OpenAI și Azure AI Search. Proiectul etalează:
 
-- Orchestrarea multi-agent prin MCP
-- Integrarea datelor de afaceri cu Azure AI Search
-- Arhitectură sigură și scalabilă utilizând serviciile Azure
-- Instrumente extensibile cu componente MCP reutilizabile
-- Experiență conversațională pentru utilizatori, alimentată de Azure OpenAI
+- Orchestrare multi-agent prin MCP
+- Integrarea datelor enterprise cu Azure AI Search
+- Arhitectură sigură și scalabilă folosind servicii Azure
+- Unelte extensibile cu componente MCP reutilizabile
+- Experiență conversațională pentru utilizator alimentată de Azure OpenAI
 
-Detaliile arhitecturale și de implementare oferă perspective valoroase asupra construirii sistemelor complexe multi-agent cu MCP ca strat de coordonare.
+Detaliile arhitecturii și implementării oferă informații valoroase pentru construirea sistemelor complexe multi-agente cu MCP ca strat de coordonare.
 
-### 2. [Actualizarea Elementelor Azure DevOps din Date YouTube](./UpdateADOItemsFromYT.md)
+### 2. [Actualizarea articolelor Azure DevOps din datele YouTube](./UpdateADOItemsFromYT.md)
 
-Acest studiu de caz demonstrează o aplicație practică a MCP pentru automatizarea proceselor de lucru. Arată cum pot fi utilizate instrumentele MCP pentru:
+Acest studiu de caz demonstrează o aplicație practică a MCP pentru automatizarea proceselor de workflow. Arată cum uneltele MCP pot fi folosite pentru a:
 
-- Extracția datelor de pe platforme online (YouTube)
-- Actualizarea elementelor de lucru în sistemele Azure DevOps
-- Crearea fluxurilor de lucru automatizate și repetabile
-- Integrarea datelor între sisteme disparate
+- Extrage date din platforme online (YouTube)
+- Actualiza articole de lucru în sistemele Azure DevOps
+- Crea workflow-uri automate repetabile
+- Integra date între sisteme disparate
 
-Acest exemplu ilustrează cum chiar și implementările MCP relativ simple pot aduce câștiguri semnificative de eficiență prin automatizarea sarcinilor de rutină și îmbunătățirea consistenței datelor între sisteme.
+Exemplul ilustrează cum chiar și implementările MCP relativ simple pot aduce câștiguri semnificative de eficiență prin automatizarea sarcinilor rutină și îmbunătățirea consistenței datelor între sisteme.
 
-### 3. [Recuperarea Documentației în Timp Real cu MCP](./docs-mcp/README.md)
+### 3. [Recuperare documentație în timp real cu MCP](./docs-mcp/README.md)
 
-Acest studiu de caz vă ghidează prin conectarea unui client Python de consolă la un server Model Context Protocol (MCP) pentru a recupera și înregistra documentația Microsoft, context-aware, în timp real. Veți învăța cum să:
+Acest studiu de caz te ghidează prin conectarea unui client consolă Python la un server Model Context Protocol (MCP) pentru a recupera și înregistra documentația Microsoft contextuală și în timp real. Vei învăța cum să:
 
-- Conectați un client Python la un server MCP utilizând SDK-ul oficial MCP
-- Utilizați clienți HTTP de streaming pentru recuperarea eficientă a datelor în timp real
-- Apelați instrumente de documentație pe server și înregistrați răspunsurile direct în consolă
-- Integrați documentația Microsoft actualizată în fluxul de lucru fără a părăsi terminalul
+- Te conectezi la un server MCP folosind un client Python și SDK-ul oficial MCP
+- Folosești clienți HTTP pentru streaming eficient, recuperare de date în timp real
+- Apelezi uneltele de documentație pe server și înregistrezi răspunsurile direct în consolă
+- Integrezi documentația actualizată Microsoft în fluxul tău de lucru fără a părăsi terminalul
 
-Capitolul include o sarcină practică, un exemplu minim de cod funcțional și linkuri către resurse suplimentare pentru învățare aprofundată. Consultați ghidul complet și codul din capitolul legat pentru a înțelege cum MCP poate transforma accesul la documentație și productivitatea dezvoltatorilor în medii bazate pe consolă.
+Capitolul include o temă practică, un exemplu de cod minimal funcțional și linkuri către resurse suplimentare pentru învățare aprofundată. Consultă parcurgerea completă și codul în capitolul legat pentru a înțelege cum MCP poate transforma accesul la documentație și productivitatea dezvoltatorilor în medii bazate pe consolă.
 
-### 4. [Aplicație Web Interactivă pentru Generarea Planurilor de Studiu cu MCP](./docs-mcp/README.md)
+### 4. [Generatorul Interactiv de Planuri de Studiu Web cu MCP](./docs-mcp/README.md)
 
-Acest studiu de caz demonstrează cum să construiți o aplicație web interactivă utilizând Chainlit și Model Context Protocol (MCP) pentru a genera planuri de studiu personalizate pentru orice subiect. Utilizatorii pot specifica un subiect (cum ar fi "certificarea AI-900") și o durată de studiu (de exemplu, 8 săptămâni), iar aplicația va oferi o defalcare săptămână cu săptămână a conținutului recomandat. Chainlit permite o interfață de chat conversațională, făcând experiența captivantă și adaptivă.
+Acest studiu de caz demonstrează cum să construiești o aplicație web interactivă folosind Chainlit și Model Context Protocol (MCP) pentru a genera planuri de studiu personalizate pentru orice subiect. Utilizatorii pot specifica un subiect (de exemplu, „certificare AI-900”) și o durată de studiu (de ex., 8 săptămâni), iar aplicația va oferi un plan săptămânal cu conținut recomandat. Chainlit permite o interfață conversațională, făcând experiența captivantă și adaptivă.
 
 - Aplicație web conversațională alimentată de Chainlit
-- Solicitări personalizate de la utilizatori pentru subiect și durată
-- Recomandări de conținut săptămână cu săptămână utilizând MCP
-- Răspunsuri adaptive în timp real într-o interfață de chat
+- Prompturi definite de utilizator pentru subiect și durată
+- Recomandări de conținut săptămânal folosind MCP
+- Răspunsuri în timp real, adaptive, în interfața de chat
 
-Proiectul ilustrează cum AI conversațional și MCP pot fi combinate pentru a crea instrumente educaționale dinamice, orientate către utilizator, într-un mediu web modern.
+Proiectul ilustrează cum AI conversațional și MCP pot fi combinate pentru a crea unelte educaționale dinamice, conduse de utilizator, într-un mediu web modern.
 
-### 5. [Documentație în Editor cu Server MCP în VS Code](./docs-mcp/README.md)
+### 5. [Documentație în editor cu server MCP în VS Code](./docs-mcp/README.md)
 
-Acest studiu de caz demonstrează cum puteți aduce documentația Microsoft Learn direct în mediul VS Code utilizând serverul MCP—fără a mai schimba taburile browserului! Veți vedea cum să:
+Acest studiu de caz demonstrează cum poți aduce documentația Microsoft Learn direct în mediul tău VS Code folosind serverul MCP — fără a mai comuta tab-uri în browser! Vei vedea cum să:
 
-- Căutați și citiți instant documentația în VS Code utilizând panoul MCP sau paleta de comenzi
-- Referiți documentația și inserați linkuri direct în fișierele README sau markdown ale cursului
-- Utilizați GitHub Copilot și MCP împreună pentru fluxuri de lucru de documentație și cod alimentate de AI
-- Validați și îmbunătățiți documentația cu feedback în timp real și acuratețe oferită de Microsoft
-- Integrați MCP cu fluxurile de lucru GitHub pentru validarea continuă a documentației
+- Cauți și să citești instant documentație în VS Code folosind panoul MCP sau paleta de comenzi
+- Referențiezi documentația și inserezi linkuri direct în fișiere README sau markdown de curs
+- Folosești GitHub Copilot și MCP împreună pentru fluxuri de lucru fără întreruperi, asistate de AI
+- Validezi și îmbunătățești documentația cu feedback în timp real și acuratețe din surse Microsoft
+- Integrezi MCP cu workflow-urile GitHub pentru validare continuă a documentației
 
 Implementarea include:
 
 - Exemplu de configurație `.vscode/mcp.json` pentru configurare ușoară
-- Ghiduri bazate pe capturi de ecran ale experienței în editor
+- Parcurgeri ilustrate cu capturi de ecran pentru experiența în editor
 - Sfaturi pentru combinarea Copilot și MCP pentru productivitate maximă
 
-Acest scenariu este ideal pentru autorii de cursuri, scriitorii de documentație și dezvoltatorii care doresc să rămână concentrați în editor în timp ce lucrează cu documentație, Copilot și instrumente de validare—totul alimentat de MCP.
+Acest scenariu este ideal pentru autori de cursuri, scriitori de documentație și dezvoltatori care vor să rămână concentrați în editor în timp ce lucrează cu docs, Copilot și unelte de validare — toate alimentate de MCP.
 
-### 6. [Crearea Serverului MCP APIM](./apimsample.md)
+### 6. [Crearea serverului APIM MCP](./apimsample.md)
 
-Acest studiu de caz oferă un ghid pas cu pas despre cum să creați un server MCP utilizând Azure API Management (APIM). Acoperă:
+Acest studiu de caz oferă un ghid pas cu pas despre cum să creezi un server MCP folosind Azure API Management (APIM). Acoperă:
 
 - Configurarea unui server MCP în Azure API Management
-- Expunerea operațiunilor API ca instrumente MCP
+- Expunerea operațiunilor API ca unelte MCP
 - Configurarea politicilor pentru limitarea ratei și securitate
-- Testarea serverului MCP utilizând Visual Studio Code și GitHub Copilot
+- Testarea serverului MCP folosind Visual Studio Code și GitHub Copilot
 
-Acest exemplu ilustrează cum să valorificați capacitățile Azure pentru a crea un server MCP robust care poate fi utilizat în diverse aplicații, îmbunătățind integrarea sistemelor AI cu API-urile de afaceri.
+Acest exemplu ilustrează cum să valorifici capacitățile Azure pentru a crea un server MCP robust, utilizabil în diverse aplicații, care să îmbunătățească integrarea sistemelor AI cu API-urile enterprise.
+
+### 7. [Registrul MCP GitHub — Accelerarea Integrării Agentice](https://github.com/mcp)
+
+Acest studiu de caz analizează modul în care Registrul MCP GitHub, lansat în septembrie 2025, abordează o provocare critică în ecosistemul AI: descoperirea fragmentată și implementarea serverelor Model Context Protocol (MCP).
+
+#### Prezentare generală
+**Registrul MCP** rezolvă dificultatea tot mai mare a răspândirii serverelor MCP în multiple depozite și registre, ceea ce făcea integrarea lentă și predispusă la erori. Aceste servere permit agenților AI să interacționeze cu sisteme externe precum API-uri, baze de date și surse de documentație.
+
+#### Declarația problemei
+Dezvoltatorii care construiau fluxuri agentice se confruntau cu mai multe provocări:
+- **Descoperire slabă** a serverelor MCP pe diferite platforme
+- **Întrebări redundante** dispersate în forumuri și documentație
+- **Riscuri de securitate** provenite de la surse neverificate și neîncredere
+- **Lipsă de standardizare** în calitatea și compatibilitatea serverelor
+
+#### Arhitectura soluției
+Registrul MCP GitHub centralizează servere MCP de încredere cu caracteristici cheie:
+- **Instalare cu un singur clic** prin integrare VS Code pentru configurare rapidă
+- **Sortare semnal-peste-zgomot** după stele, activitate și validare comunitară
+- **Integrare directă** cu GitHub Copilot și alte unelte compatibile MCP
+- **Model deschis de contribuție** care permite contribuții din partea comunității și partenerilor enterprise
+
+#### Impactul de business
+Registrul a generat îmbunătățiri măsurabile:
+- **Onboarding mai rapid** pentru dezvoltatori folosind unelte precum Microsoft Learn MCP Server, care transmite documentație oficială direct agenților
+- **Productivitate îmbunătățită** prin servere specializate, cum ar fi `github-mcp-server`, care facilitează automatizarea GitHub în limbaj natural (crearea PR, reluarea CI, scanarea codului)
+- **Încredere crescută în ecosistem** prin liste curate și standarde transparente de configurare
+
+#### Valoare strategică
+Pentru practicienii specializați în managementul ciclului de viață al agenților și fluxuri reproducibile, Registrul MCP oferă:
+- **Capabilități modulare de implementare a agenților** cu componente standardizate
+- **Pipeline-uri de evaluare susținute de registru** pentru testare și validare consecventă
+- **Interoperabilitate cross-tool** pentru integrare fluentă între platforme AI diferite
+
+Acest studiu de caz demonstrează că Registrul MCP este mai mult decât un director — este o platformă fundamentală pentru integrare scalabilă în lumea reală și implementare a sistemelor agentice.
 
 ## Concluzie
 
-Aceste studii de caz evidențiază versatilitatea și aplicațiile practice ale Protocolului Model Context în scenarii reale. De la sisteme complexe multi-agent la fluxuri de lucru automatizate, MCP oferă o modalitate standardizată de a conecta sistemele AI cu instrumentele și datele necesare pentru a oferi valoare.
+Aceste șapte studii de caz cuprinzătoare demonstrează versatilitatea remarcabilă și aplicațiile practice ale Model Context Protocol în diverse scenarii din lumea reală. De la sisteme complexe multi-agent pentru planificarea călătoriilor și managementul API enterprise, la fluxuri de lucru simplificate pentru documentație și revoluționarul Registru MCP GitHub, exemplele arată cum MCP oferă o metodă standardizată și scalabilă de a conecta sistemele AI cu uneltele, datele și serviciile necesare pentru a livra valoare excepțională.
 
-Studiind aceste implementări, puteți obține perspective asupra modelelor arhitecturale, strategiilor de implementare și celor mai bune practici care pot fi aplicate propriilor proiecte MCP. Exemplele demonstrează că MCP nu este doar un cadru teoretic, ci o soluție practică pentru provocările reale de afaceri.
+Studii de caz acoperă multiple dimensiuni ale implementării MCP:
+- **Integrarea Enterprise**: Azure API Management și automatizarea Azure DevOps
+- **Orchestrare Multi-Agent**: planificarea călătoriilor cu agenți AI coordonați
+- **Productivitatea Dezvoltatorilor**: integrarea în VS Code și accesul în timp real la documentație
+- **Dezvoltarea Ecosistemului**: Registrul MCP GitHub ca platformă fundamentală
+- **Aplicații Educaționale**: generatoare interactive de planuri de studiu și interfețe conversaționale
 
-## Resurse Suplimentare
+Studiind aceste implementări, obții perspective critice asupra:
+- **Modelelor arhitecturale** pentru diferite dimensiuni și cazuri de utilizare
+- **Strategiilor de implementare** care echilibrează funcționalitatea cu întreținerea
+- **Considerațiilor privind securitatea și scalabilitatea** pentru implementări în producție
+- **Cele mai bune practici** pentru dezvoltarea serverelor MCP și integrarea clienților
+- **Gândirii ecosistemice** pentru construirea de soluții interconectate alimentate de AI
 
-- [Azure AI Travel Agents GitHub Repository](https://github.com/Azure-Samples/azure-ai-travel-agents)
-- [Azure DevOps MCP Tool](https://github.com/microsoft/azure-devops-mcp)
-- [Playwright MCP Tool](https://github.com/microsoft/playwright-mcp)
-- [Microsoft Docs MCP Server](https://github.com/MicrosoftDocs/mcp)
-- [MCP Community Examples](https://github.com/microsoft/mcp)
+Aceste exemple demonstrează colectiv că MCP nu este doar un cadru teoretic, ci un protocol matur, gata de producție, ce permite soluții practice pentru provocări complexe de afaceri. Indiferent dacă dezvolți unelte automate simple sau sisteme multi-agent sofisticate, modelele și abordările prezentate aici oferă o bază solidă pentru propriile tale proiecte MCP.
 
-Next: Hands on Lab [Streamlining AI Workflows: Building an MCP Server with AI Toolkit](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
+## Resurse suplimentare
 
-**Declinarea responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+- [Depozitul GitHub Azure AI Travel Agents](https://github.com/Azure-Samples/azure-ai-travel-agents)
+- [Unealta MCP Azure DevOps](https://github.com/microsoft/azure-devops-mcp)
+- [Unealta MCP Playwright](https://github.com/microsoft/playwright-mcp)
+- [Serverul MCP Microsoft Docs](https://github.com/MicrosoftDocs/mcp)
+- [Registrul MCP GitHub — Accelerarea Integrării Agentice](https://github.com/mcp)
+- [Exemple Comunitare MCP](https://github.com/microsoft/mcp)
+
+## Ce urmează
+
+- Anterior: [Modulul 8: Cele mai bune practici](../08-BestPractices/README.md)
+- Următor: [Modulul 10: Simplificarea fluxurilor AI: Construirea unui server MCP cu AI Toolkit](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un traducător uman. Nu ne asumăm nicio responsabilitate pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,34 +1,49 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0a7083e660ca0d85fd6a947514c61993",
-  "translation_date": "2025-07-14T00:42:56+00:00",
-  "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
-  "language_code": "id"
-}
--->
-# MCP OAuth2 Demo
+# Demo OAuth2 MCP
 
-Proyek ini adalah **aplikasi Spring Boot minimal** yang berfungsi sebagai:
+## Pendahuluan
 
-* **Spring Authorization Server** (mengeluarkan token akses JWT melalui flow `client_credentials`), dan  
-* **Resource Server** (melindungi endpoint `/hello` miliknya sendiri).
+OAuth2 adalah protokol standar industri untuk otorisasi, memungkinkan akses aman ke sumber daya tanpa berbagi kredensial. Dalam implementasi MCP (Model Context Protocol), OAuth2 menyediakan cara yang kuat untuk mengotentikasi dan mengotorisasi klien (seperti agen AI) untuk mengakses server MCP dan alatnya.
 
-Ini mencerminkan pengaturan yang ditunjukkan dalam [posting blog Spring (2 Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Pelajaran ini menunjukkan cara mengimplementasikan otentikasi OAuth2 untuk server MCP menggunakan Spring Boot, pola umum untuk penyebaran perusahaan dan produksi.
+
+## Tujuan Pembelajaran
+
+Di akhir pelajaran ini, Anda akan:
+- Memahami bagaimana OAuth2 terintegrasi dengan server MCP
+- Mengimplementasikan Spring Authorization Server untuk penerbitan token
+- Melindungi endpoint MCP dengan otentikasi berbasis JWT
+- Mengonfigurasi alur kredensial klien untuk komunikasi mesin-ke-mesin
+
+## Prasyarat
+
+- Pemahaman dasar tentang Java dan Spring Boot
+- Familiar dengan konsep MCP dari modul sebelumnya
+- Maven atau Gradle terpasang
+
+---
+
+## Gambaran Proyek
+
+Proyek ini adalah aplikasi **Spring Boot minimal** yang bertindak sebagai:
+
+* **Spring Authorization Server** (mengeluarkan token akses JWT melalui alur `client_credentials`), dan  
+* **Resource Server** (melindungi endpoint `/hello` sendiri).
+
+Ini meniru pengaturan yang ditampilkan dalam [posting blog Spring (2 Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
 ## Mulai cepat (lokal)
 
 ```bash
-# build & run
+# bangun & jalankan
 ./mvnw spring-boot:run
 
-# obtain a token
+# dapatkan token
 curl -u mcp-client:secret -d grant_type=client_credentials \
      http://localhost:8081/oauth2/token | jq -r .access_token > token.txt
 
-# call the protected endpoint
+# panggil endpoint yang dilindungi
 curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 ```
 
@@ -38,23 +53,23 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 Anda dapat menguji konfigurasi keamanan OAuth2 dengan langkah-langkah berikut:
 
-### 1. Pastikan server berjalan dan terlindungi
+### 1. Verifikasi server berjalan dan aman
 
 ```bash
-# This should return 401 Unauthorized, confirming OAuth2 security is active
+# Ini harus mengembalikan 401 Unauthorized, mengonfirmasi bahwa keamanan OAuth2 aktif
 curl -v http://localhost:8081/
 ```
 
-### 2. Dapatkan token akses menggunakan client credentials
+### 2. Dapatkan token akses menggunakan kredensial klien
 
 ```bash
-# Get and extract the full token response
+# Dapatkan dan ekstrak respons token lengkap
 curl -v -X POST http://localhost:8081/oauth2/token \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -H "Authorization: Basic bWNwLWNsaWVudDpzZWNyZXQ=" \
   -d "grant_type=client_credentials&scope=mcp.access"
 
-# Or to extract just the token (requires jq)
+# Atau untuk mengekstrak hanya token (memerlukan jq)
 curl -s -X POST http://localhost:8081/oauth2/token \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -H "Authorization: Basic bWNwLWNsaWVudDpzZWNyZXQ=" \
@@ -66,18 +81,18 @@ Catatan: Header Basic Authentication (`bWNwLWNsaWVudDpzZWNyZXQ=`) adalah encodin
 ### 3. Akses endpoint yang dilindungi menggunakan token
 
 ```bash
-# Using the saved token
+# Menggunakan token yang disimpan
 curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
-# Or directly with the token value
+# Atau langsung dengan nilai token
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Respon berhasil dengan "Hello from MCP OAuth2 Demo!" menandakan konfigurasi OAuth2 berfungsi dengan benar.
+Respons berhasil dengan "Hello from MCP OAuth2 Demo!" mengonfirmasi bahwa konfigurasi OAuth2 berfungsi dengan benar.
 
 ---
 
-## Build container
+## Membangun Container
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -95,8 +110,8 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-Ingress FQDN menjadi **issuer** Anda (`https://<fqdn>`).  
-Azure secara otomatis menyediakan sertifikat TLS terpercaya untuk `*.azurecontainerapps.io`.
+FQDN ingress menjadi **issuer** Anda (`https://<fqdn>`).  
+Azure menyediakan sertifikat TLS terpercaya secara otomatis untuk `*.azurecontainerapps.io`.
 
 ---
 
@@ -120,9 +135,13 @@ APIM akan mengambil JWKS dan memvalidasi setiap permintaan.
 
 ---
 
-## Selanjutnya
+## Apa selanjutnya
 
 - [5.4 Root contexts](../mcp-root-contexts/README.md)
 
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk memberikan terjemahan yang akurat, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau kekurangan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan jasa terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang salah yang timbul dari penggunaan terjemahan ini.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

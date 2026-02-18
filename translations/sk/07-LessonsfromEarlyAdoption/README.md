@@ -1,52 +1,43 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "41f16dac486d2086a53bc644a01cbe42",
-  "translation_date": "2025-08-19T15:56:39+00:00",
-  "source_file": "07-LessonsfromEarlyAdoption/README.md",
-  "language_code": "sk"
-}
--->
-# 🌟 Lekcie od prvých používateľov
+# 🌟 Lekcie od Skorých Používateľov
 
-[![Lekcie od prvých používateľov MCP](../../../translated_images/08.980bb2babbaadd8a97739effc9b31e5f1abd8f4c4a3fbc90fb9f931a866674d0.sk.png)](https://youtu.be/jds7dSmNptE)
+[![Lekcie od MCP Skorých Používateľov](../../../translated_images/sk/08.980bb2babbaadd8a.webp)](https://youtu.be/jds7dSmNptE)
 
 _(Kliknite na obrázok vyššie pre zobrazenie videa tejto lekcie)_
 
-## 🎯 Čo tento modul pokrýva
+## 🎯 Čo Tento Modul Pokrýva
 
-Tento modul skúma, ako reálne organizácie a vývojári využívajú Model Context Protocol (MCP) na riešenie skutočných výziev a podporu inovácií. Prostredníctvom podrobných prípadových štúdií a praktických projektov objavíte, ako MCP umožňuje bezpečnú a škálovateľnú integráciu AI, ktorá prepája jazykové modely, nástroje a podnikové dáta.
+Tento modul skúma, ako skutočné organizácie a vývojári využívajú Model Context Protocol (MCP) na riešenie reálnych výziev a podporu inovácie. Prostredníctvom detailných prípadových štúdií, praktických projektov a príkladov sa dozviete, ako MCP umožňuje bezpečnú, škálovateľnú AI integráciu, ktorá spája jazykové modely, nástroje a podnikové údaje.
 
-### 📚 MCP v praxi
+### 📚 Pozrite si MCP v akcii
 
-Chcete vidieť tieto princípy aplikované na nástroje pripravené na produkciu? Pozrite si [**10 Microsoft MCP serverov, ktoré transformujú produktivitu vývojárov**](microsoft-mcp-servers.md), kde nájdete reálne Microsoft MCP servery, ktoré môžete používať už dnes.
+Chcete vidieť tieto princípy aplikované na nástroje pripravené na produkciu? Prezrite si našich [**10 Microsoft MCP serverov, ktoré menia produktivitu vývojárov**](microsoft-mcp-servers.md), ktoré ukazujú skutočné Microsoft MCP servery, ktoré môžete používať už dnes.
 
 ## Prehľad
 
-Táto lekcia skúma, ako prví používatelia využili Model Context Protocol (MCP) na riešenie reálnych výziev a podporu inovácií v rôznych odvetviach. Prostredníctvom podrobných prípadových štúdií a praktických projektov uvidíte, ako MCP umožňuje štandardizovanú, bezpečnú a škálovateľnú AI integráciu – prepájajúcu veľké jazykové modely, nástroje a podnikové dáta v jednotnom rámci. Získate praktické skúsenosti s navrhovaním a budovaním riešení založených na MCP, naučíte sa z overených implementačných vzorov a objavíte osvedčené postupy pre nasadenie MCP v produkčných prostrediach. Lekcia tiež zdôrazňuje vznikajúce trendy, budúce smery a open-source zdroje, ktoré vám pomôžu zostať na čele technológie MCP a jej vyvíjajúceho sa ekosystému.
+Táto lekcia skúma, ako skorí používatelia využili Model Context Protocol (MCP) na riešenie reálnych problémov a podporu inovácie naprieč odvetviami. Prostredníctvom detailných prípadových štúdií a praktických projektov uvidíte, ako MCP umožňuje štandardizovanú, bezpečnú a škálovateľnú AI integráciu — spájajúc veľké jazykové modely, nástroje a podnikové údaje v jednotnom rámci. Získate praktické skúsenosti s návrhom a budovaním riešení založených na MCP, naučíte sa z overených implementačných vzorov a objavíte najlepšie postupy na nasadenie MCP v produkčnom prostredí. Lekcia taktiež zdôrazňuje nové trendy, budúce smerovanie a open-source zdroje, ktoré vám pomôžu zostať na čele technológie MCP a jej vyvíjajúceho sa ekosystému.
 
 ## Ciele učenia
 
 - Analyzovať reálne implementácie MCP v rôznych odvetviach
-- Navrhovať a budovať kompletné aplikácie založené na MCP
-- Preskúmať vznikajúce trendy a budúce smery v technológii MCP
-- Aplikovať osvedčené postupy v reálnych vývojových scenároch
+- Navrhnúť a vytvoriť kompletné aplikácie založené na MCP
+- Preskúmať nové trendy a budúce smerovanie technológie MCP
+- Použiť najlepšie praktiky v reálnych vývojových scenároch
 
 ## Reálne implementácie MCP
 
-### Prípadová štúdia 1: Automatizácia zákazníckej podpory v podniku
+### Prípadová štúdia 1: Automatizácia podpory zákazníkov v podnikoch
 
-Nadnárodná korporácia implementovala riešenie založené na MCP na štandardizáciu AI interakcií v rámci svojich systémov zákazníckej podpory. To im umožnilo:
+Multinárodná korporácia implementovala riešenie založené na MCP na štandardizáciu AI interakcií naprieč ich systémami podpory zákazníkov. Toto im umožnilo:
 
 - Vytvoriť jednotné rozhranie pre viacerých poskytovateľov LLM
-- Udržiavať konzistentné riadenie promptov naprieč oddeleniami
-- Implementovať robustné bezpečnostné a regulačné kontroly
-- Jednoducho prepínať medzi rôznymi AI modelmi podľa konkrétnych potrieb
+- Udržiavať konzistentnú správu promptov v rôznych oddeleniach
+- Zaviesť robustné bezpečnostné a súladové kontroly
+- Jednoducho prepínať medzi rôznymi AI modelmi podľa špecifických potrieb
 
 **Technická implementácia:**
 
 ```python
-# Python MCP server implementation for customer support
+# Implementácia Python MCP servera pre zákaznícku podporu
 import logging
 import asyncio
 from modelcontextprotocol import create_server, ServerConfig
@@ -56,21 +47,21 @@ from modelcontextprotocol.resources import ResourceDefinition
 from modelcontextprotocol.prompts import PromptDefinition
 from modelcontextprotocol.tool import ToolDefinition
 
-# Configure logging
+# Konfigurácia logovania
 logging.basicConfig(level=logging.INFO)
 
 async def main():
-    # Create server configuration
+    # Vytvoriť konfiguráciu servera
     config = ServerConfig(
         name="Enterprise Customer Support Server",
         version="1.0.0",
         description="MCP server for handling customer support inquiries"
     )
     
-    # Initialize MCP server
+    # Inicializovať MCP server
     server = create_server(config)
     
-    # Register knowledge base resources
+    # Registrovať zdroje znalostnej databázy
     server.resources.register(
         ResourceDefinition(
             name="customer_kb",
@@ -79,7 +70,7 @@ async def main():
         lambda params: get_customer_documentation(params)
     )
     
-    # Register prompt templates
+    # Registrovať šablóny promptov
     server.prompts.register(
         PromptDefinition(
             name="support_template",
@@ -88,7 +79,7 @@ async def main():
         lambda params: get_support_templates(params)
     )
     
-    # Register support tools
+    # Registrovať nástroje podpory
     server.tools.register(
         ToolDefinition(
             name="ticketing",
@@ -97,7 +88,7 @@ async def main():
         handle_ticketing_operations
     )
     
-    # Start server with HTTP transport
+    # Spustiť server s HTTP transportom
     transport = create_http_transport(port=8080)
     await server.run(transport)
 
@@ -105,16 +96,16 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-**Výsledky:** 30% zníženie nákladov na modely, 45% zlepšenie konzistencie odpovedí a zvýšená zhoda s predpismi v globálnych operáciách.
+**Výsledky:** 30% zníženie nákladov na modely, 45% zlepšenie konzistencie odpovedí a zvýšený súlad naprieč globálnymi operáciami.
 
 ### Prípadová štúdia 2: Diagnostický asistent v zdravotníctve
 
-Poskytovateľ zdravotnej starostlivosti vyvinul infraštruktúru MCP na integráciu viacerých špecializovaných medicínskych AI modelov pri zabezpečení ochrany citlivých údajov pacientov:
+Poskytovateľ zdravotnej starostlivosti vyvinul infraštruktúru MCP na integráciu viacerých špecializovaných lekárskych AI modelov pri zabezpečení ochrany citlivých pacientskych údajov:
 
-- Bezproblémové prepínanie medzi všeobecnými a špecializovanými medicínskymi modelmi
-- Prísne kontroly súkromia a auditné stopy
-- Integrácia s existujúcimi systémami elektronických zdravotných záznamov (EHR)
-- Konzistentné inžinierstvo promptov pre medicínsku terminológiu
+- Plynulé prepínanie medzi všeobecným a špecializovaným lekárskym modelom
+- Prísne prístupové kontroly a audítorské stopy
+- Integrácia so existujúcimi systémami Elektronických zdravotných záznamov (EHR)
+- Konzistentné inžinierstvo promptov pre lekársku terminológiu
 
 **Technická implementácia:**
 
@@ -182,27 +173,27 @@ public class DiagnosticAssistant
 }
 ```
 
-**Výsledky:** Zlepšené diagnostické návrhy pre lekárov pri zachovaní plnej zhody s HIPAA a výrazné zníženie prepínania medzi systémami.
+**Výsledky:** Zlepšené diagnostické odporúčania pre lekárov pri zachovaní plného súladu s HIPAA a výrazné zníženie potreby prepínania kontextu medzi systémami.
 
 ### Prípadová štúdia 3: Analýza rizík vo finančných službách
 
-Finančná inštitúcia implementovala MCP na štandardizáciu procesov analýzy rizík naprieč rôznymi oddeleniami:
+Finančná inštitúcia implementovala MCP na štandardizáciu procesov analýzy rizík v rôznych oddeleniach:
 
-- Vytvorila jednotné rozhranie pre modely kreditného rizika, detekcie podvodov a investičného rizika
-- Implementovala prísne kontroly prístupu a verzovanie modelov
+- Vytvorila jednotné rozhranie pre modely hodnotenia úverového rizika, detekcie podvodov a investičného rizika
+- Zaviedla prísne prístupové kontroly a verzovanie modelov
 - Zabezpečila auditovateľnosť všetkých AI odporúčaní
-- Udržiavala konzistentné formátovanie dát naprieč rôznymi systémami
+- Udržiavala konzistentné formátovanie údajov naprieč rozmanitými systémami
 
 **Technická implementácia:**
 
 ```java
-// Java MCP server for financial risk assessment
+// Java MCP server pre finančné hodnotenie rizík
 import org.mcp.server.*;
 import org.mcp.security.*;
 
 public class FinancialRiskMCPServer {
     public static void main(String[] args) {
-        // Create MCP server with financial compliance features
+        // Vytvorte MCP server s funkciami finančnej súladu
         MCPServer server = new MCPServerBuilder()
             .withModelProviders(
                 new ModelProvider("risk-assessment-primary", new AzureOpenAIProvider()),
@@ -225,27 +216,27 @@ public class FinancialRiskMCPServer {
 }
 ```
 
-**Výsledky:** Zvýšená zhoda s predpismi, o 40% rýchlejšie cykly nasadenia modelov a zlepšená konzistencia hodnotenia rizík naprieč oddeleniami.
+**Výsledky:** Zvýšený súlad s reguláciami, 40% rýchlejšie cykly nasadzovania modelov a zlepšená konzistencia hodnotenia rizík v oddeleniach.
 
 ### Prípadová štúdia 4: Microsoft Playwright MCP Server pre automatizáciu prehliadača
 
-Microsoft vyvinul [Playwright MCP server](https://github.com/microsoft/playwright-mcp), ktorý umožňuje bezpečnú a štandardizovanú automatizáciu prehliadača prostredníctvom Model Context Protocol. Tento server pripravený na produkciu umožňuje AI agentom a LLM interagovať s webovými prehliadačmi kontrolovaným, auditovateľným a rozšíriteľným spôsobom – umožňujúc prípady použitia ako automatizované testovanie webu, extrakcia dát a end-to-end pracovné postupy.
+Microsoft vyvinul [Playwright MCP server](https://github.com/microsoft/playwright-mcp), ktorý umožňuje bezpečnú, štandardizovanú automatizáciu prehliadača pomocou Model Context Protocol. Tento produkčne pripravený server umožňuje AI agentom a LLM komunikovať s webovými prehliadačmi v kontrolovanom, auditovateľnom a rozšíriteľnom režime — umožňujúc použitie prípadov ako automatizované testovanie webu, extrakcia dát a kompletné workflow.
 
 > **🎯 Nástroj pripravený na produkciu**
 > 
-> Táto prípadová štúdia predstavuje reálny MCP server, ktorý môžete používať už dnes! Viac informácií o Playwright MCP Serveri a ďalších 9 produkčne pripravených Microsoft MCP serveroch nájdete v našom [**Sprievodcovi Microsoft MCP servermi**](microsoft-mcp-servers.md#8--playwright-mcp-server).
+> Táto prípadová štúdia ukazuje skutočný MCP server, ktorý môžete použiť už dnes! Viac informácií o Playwright MCP Serveri a ďalších 9 výrobných Microsoft MCP serveroch nájdete v našom [**Microsoft MCP Servers Guide**](microsoft-mcp-servers.md#8--playwright-mcp-server).
 
-**Kľúčové vlastnosti:**
-- Poskytuje možnosti automatizácie prehliadača (navigácia, vyplňovanie formulárov, snímanie obrazovky atď.) ako MCP nástroje
-- Implementuje prísne kontroly prístupu a sandboxing na zabránenie neoprávneným akciám
-- Poskytuje podrobné auditné záznamy všetkých interakcií s prehliadačom
-- Podporuje integráciu s Azure OpenAI a ďalšími poskytovateľmi LLM pre automatizáciu riadenú agentmi
-- Poháňa schopnosti prehliadania GitHub Copilota
+**Kľúčové funkcie:**
+- Umožňuje automatizáciu prehliadača (navigácia, vyplňovanie formulárov, snímanie obrazovky atď.) ako MCP nástroje
+- Zavádza prísne prístupové kontroly a sandboxing, aby zabránil neoprávneným akciám
+- Poskytuje podrobné auditné denníky všetkých interakcií s prehliadačom
+- Podporuje integráciu s Azure OpenAI a ďalšími poskytovateľmi LLM pre agentom riadenú automatizáciu
+- Poháňa GitHub Copilot Coding Agenta s funkciami prehliadania webu
 
 **Technická implementácia:**
 
 ```typescript
-// TypeScript: Registering Playwright browser automation tools in an MCP server
+// TypeScript: Registrácia nástrojov na automatizáciu prehliadača Playwright v MCP serveri
 import { createServer, ToolDefinition } from 'modelcontextprotocol';
 import { launch } from 'playwright';
 
@@ -255,7 +246,7 @@ const server = createServer({
   description: 'MCP server for browser automation using Playwright'
 });
 
-// Register a tool for navigating to a URL and capturing a screenshot
+// Registrácia nástroja na navigáciu na URL a zachytenie snímky obrazovky
 server.tools.register(
   new ToolDefinition({
     name: 'navigate_and_screenshot',
@@ -274,33 +265,33 @@ server.tools.register(
   }
 );
 
-// Start the MCP server
+// Spustiť MCP server
 server.listen(8080);
 ```
 
 **Výsledky:**
 
-- Umožnil bezpečnú, programovateľnú automatizáciu prehliadača pre AI agentov a LLM
-- Znížil manuálne testovacie úsilie a zlepšil pokrytie testovania webových aplikácií
-- Poskytol opakovane použiteľný, rozšíriteľný rámec pre integráciu nástrojov založených na prehliadači v podnikových prostrediach
-- Poháňa schopnosti prehliadania GitHub Copilota
+- Umožnil bezpečnú, programatickú automatizáciu prehliadača pre AI agentov a LLM
+- Znížil manuálnu prácu pri testovaní a zlepšil pokrytie testami webových aplikácií
+- Poskytol opakovateľný, rozšíriteľný rámec pre integráciu nástrojov založených na prehliadači v podnikových prostrediach
+- Poháňa funkcie prehliadania webu GitHub Copilota
 
 **Referencie:**
 
 - [Playwright MCP Server GitHub Repository](https://github.com/microsoft/playwright-mcp)
-- [Microsoft AI a automatizačné riešenia](https://azure.microsoft.com/en-us/products/ai-services/)
+- [Microsoft AI and Automation Solutions](https://azure.microsoft.com/en-us/products/ai-services/)
 
-### Prípadová štúdia 5: Azure MCP – Podniková implementácia Model Context Protocol ako služby
+### Prípadová štúdia 5: Azure MCP – podnikový Model Context Protocol ako služba
 
-Azure MCP Server ([https://aka.ms/azmcp](https://aka.ms/azmcp)) je spravovaná, podniková implementácia Model Context Protocol od Microsoftu, navrhnutá na poskytovanie škálovateľných, bezpečných a súladných MCP serverových schopností ako cloudovej služby. Azure MCP umožňuje organizáciám rýchlo nasadzovať, spravovať a integrovať MCP servery s Azure AI, dátami a bezpečnostnými službami, čím znižuje prevádzkové náklady a urýchľuje prijatie AI.
+Azure MCP Server ([https://aka.ms/azmcp](https://aka.ms/azmcp)) je spravovaná, podniková implementácia Model Context Protocol od Microsoftu, navrhnutá tak, aby poskytovala škálovateľné, bezpečné a súladové schopnosti MCP servera ako cloudovú službu. Azure MCP umožňuje organizáciám rýchlo nasadiť, spravovať a integrovať MCP servery s Azure AI, dátami a bezpečnostnými službami, znižujúc prevádzkové náklady a zrýchľujúc prijatie AI.
 
 > **🎯 Nástroj pripravený na produkciu**
 > 
-> Toto je reálny MCP server, ktorý môžete používať už dnes! Viac informácií o Azure AI Foundry MCP Serveri nájdete v našom [**Sprievodcovi Microsoft MCP servermi**](microsoft-mcp-servers.md).
+> Toto je skutočný MCP server, ktorý môžete používať už dnes! Viac informácií o Azure AI Foundry MCP Server nájdete v našom [**Microsoft MCP Servers Guide**](microsoft-mcp-servers.md).
 
-- Plne spravovaný hosting MCP servera s integrovaným škálovaním, monitorovaním a bezpečnosťou
-- Natívna integrácia s Azure OpenAI, Azure AI Search a ďalšími Azure službami
-- Podniková autentifikácia a autorizácia prostredníctvom Microsoft Entra ID
+- Plne spravovaný hosting MCP servera s zabudovaným škálovaním, monitorovaním a bezpečnosťou
+- Nativna integrácia s Azure OpenAI, Azure AI Search a ďalšími službami Azure
+- Podniková autentifikácia a autorizácia cez Microsoft Entra ID
 - Podpora vlastných nástrojov, šablón promptov a konektorov zdrojov
 - Súlad s bezpečnostnými a regulačnými požiadavkami podnikov
 
@@ -332,221 +323,283 @@ spec:
 ```
 
 **Výsledky:**  
-- Skrátenie času na hodnotu pre podnikové AI projekty vďaka pripravenému, súladnému MCP serverovému riešeniu
-- Zjednodušená integrácia LLM, nástrojov a podnikových dátových zdrojov
-- Zvýšená bezpečnosť, pozorovateľnosť a prevádzková efektivita pre MCP pracovné zaťaženia
-- Zlepšená kvalita kódu s osvedčenými postupmi Azure SDK a aktuálnymi autentifikačnými vzormi
+- Skrátenie času na dosiahnutie hodnoty pre podnikové AI projekty poskytovaním platformy MCP servera pripraveného na použitie a súladového so štandardmi  
+- Zjednodušená integrácia LLM, nástrojov a podnikových dátových zdrojov  
+- Zvýšená bezpečnosť, pozorovateľnosť a prevádzková efektivita pre pracovné záťaže MCP  
+- Zlepšená kvalita kódu s najlepšími praktikami Azure SDK a aktuálnymi autentifikačnými vzormi  
 
 **Referencie:**  
-- [Azure MCP Dokumentácia](https://aka.ms/azmcp)
-- [Azure MCP Server GitHub Repository](https://github.com/Azure/azure-mcp)
-- [Azure AI Služby](https://azure.microsoft.com/en-us/products/ai-services/)
-- [Microsoft MCP Center](https://mcp.azure.com)
+- [Azure MCP Dokumentácia](https://aka.ms/azmcp)  
+- [Azure MCP Server GitHub Repository](https://github.com/Azure/azure-mcp)  
+- [Azure AI Služby](https://azure.microsoft.com/en-us/products/ai-services/)  
+- [Microsoft MCP centrum](https://mcp.azure.com)
+
+## Prípadová štúdia 6: NLWeb  
+MCP (Model Context Protocol) je vznikajúci protokol pre chatbota a AI asistentov na interakciu s nástrojmi. Každá inštancia NLWeb je zároveň MCP server, ktorý podporuje jednu jadrovú metódu ask, používanú na kladenie otázok webovým stránkam v prirodzenom jazyku. Vracia odpoveď využívajúcu schema.org, široko používanú slovnú zásobu na popis webových dát. Vo všeobecnosti platí, že MCP je pre NLWeb to, čo je Http pre HTML. NLWeb kombinuje protokoly, formáty schema.org a ukážkový kód, aby pomohol stránkam rýchlo vytvoriť takéto koncové body, čo prospieva ľuďom prostredníctvom konverzačných rozhraní a strojom prostredníctvom prirodzenej agent-agent interakcie.
+
+NLWeb pozostáva z dvoch odlišných komponentov.  
+- Protokol, veľmi jednoduchý na začiatok, na rozhranie so stránkou v prirodzenom jazyku a formát, využívajúci json a schema.org pre odpoveď. Viac informácií nájdete v dokumentácii REST API.  
+- Priama implementácia (1), ktorá využíva existujúcu značkovaciu štruktúru pre stránky, ktoré môžu byť abstrahované ako zoznam položiek (produkty, recepty, atrakcie, recenzie atď.). Spolu so sadou používateľských widgetov môžu stránky jednoducho poskytovať konverzačné rozhrania k ich obsahu. Viac podrobností nájdete v dokumentácii Life of a chat query.  
+
+**Referencie:**  
+- [Azure MCP Dokumentácia](https://aka.ms/azmcp)  
+- [NLWeb](https://github.com/microsoft/NlWeb)
+
+### Prípadová štúdia 7: Azure AI Foundry MCP Server – integrácia podnikových AI agentov
+
+Azure AI Foundry MCP servery demonštrujú, ako MCP môže byť použitý na orchestráciu a správu AI agentov a workflowov v podnikových prostrediach. Integráciou MCP s Azure AI Foundry môžu organizácie štandardizovať interakcie agentov, využiť správu workflowov Foundry a zabezpečiť bezpečné, škálovateľné nasadenia.
+
 > **🎯 Nástroj pripravený na produkciu**
 > 
-> Toto je skutočný MCP server, ktorý môžete používať už dnes! Viac informácií o MCP serveri Microsoft Learn Docs nájdete v našom [**Sprievodcovi MCP servermi Microsoft**](microsoft-mcp-servers.md#1--microsoft-learn-docs-mcp-server).
-**Kľúčové vlastnosti:**
-- Prístup v reálnom čase k oficiálnej dokumentácii Microsoftu, dokumentácii Azure a Microsoft 365
-- Pokročilé schopnosti sémantického vyhľadávania, ktoré rozumejú kontextu a zámeru
-- Vždy aktuálne informácie, keď je obsah Microsoft Learn publikovaný
-- Komplexné pokrytie naprieč Microsoft Learn, dokumentáciou Azure a zdrojmi Microsoft 365
-- Poskytuje až 10 kvalitných obsahových blokov s názvami článkov a URL adresami
+> Toto je skutočný MCP server, ktorý môžete používať už dnes! Viac informácií o Azure AI Foundry MCP Server nájdete v našom [**Microsoft MCP Servers Guide**](microsoft-mcp-servers.md#9--azure-ai-foundry-mcp-server).
 
-**Prečo je to dôležité:**
-- Rieši problém „zastaraných znalostí AI“ pre technológie Microsoftu
-- Zabezpečuje, že AI asistenti majú prístup k najnovším funkciám .NET, C#, Azure a Microsoft 365
-- Poskytuje autoritatívne, prvotriedne informácie pre presnú generáciu kódu
-- Nevyhnutné pre vývojárov pracujúcich s rýchlo sa vyvíjajúcimi technológiami Microsoftu
+**Kľúčové funkcie:**
+- Kompletný prístup do AI ekosystému Azure vrátane katalógov modelov a správy nasadenia
+- Indexovanie znalostí s Azure AI Search pre RAG aplikácie
+- Nástroje na vyhodnocovanie výkonnosti modelov a zaručenie kvality
+- Integrácia s Azure AI Foundry Catalog a Labs pre špičkové výskumné modely
+- Správa agentov a hodnotiace schopnosti pre produkčné scenáre
 
 **Výsledky:**
-- Výrazne zlepšená presnosť AI-generovaného kódu pre technológie Microsoftu
-- Znížený čas strávený hľadaním aktuálnej dokumentácie a najlepších postupov
-- Zvýšená produktivita vývojárov vďaka vyhľadávaniu dokumentácie s ohľadom na kontext
-- Bezproblémová integrácia do vývojových pracovných postupov bez opustenia IDE
+- Rýchle prototypovanie a robustné monitorovanie workflowov AI agentov
+- Plynulá integrácia so službami Azure AI pre pokročilé scenáre
+- Jednotné rozhranie na budovanie, nasadenie a monitorovanie pipeline agentov
+- Zlepšená bezpečnosť, súlad a prevádzková efektivita pre podniky
+- Zrýchlené zavádzanie AI pri zachovaní kontroly nad zložitými procesmi riadenými agentmi
+
+**Referencie:**
+- [Azure AI Foundry MCP Server GitHub Repository](https://github.com/azure-ai-foundry/mcp-foundry)
+- [Integrácia Azure AI Agentov s MCP (Microsoft Foundry Blog)](https://devblogs.microsoft.com/foundry/integrating-azure-ai-agents-mcp/)
+
+### Prípadová štúdia 8: Foundry MCP Playground – experimentovanie a prototypovanie
+
+Foundry MCP Playground ponúka pripravené prostredie na experimentovanie s MCP servermi a integráciami Azure AI Foundry. Vývojári môžu rýchlo prototypovať, testovať a vyhodnocovať AI modely a workflowy agentov pomocou zdrojov z Azure AI Foundry Catalog a Labs. Playground zjednodušuje nastavenie, poskytuje ukážkové projekty a podporuje spoluprácu pri vývoji, čím uľahčuje preskúmavanie najlepších postupov a nových scenárov s minimálnou záťažou. Je obzvlášť užitočný pre tímy, ktoré chcú overiť nápady, zdieľať experimenty a zrýchliť učenie bez potreby komplikovanej infraštruktúry. Znížením vstupnej bariéry playground podporuje inovácie a komunitné príspevky v ekosystéme MCP a Azure AI Foundry.
+
+**Referencie:**
+
+- [Foundry MCP Playground GitHub Repository](https://github.com/azure-ai-foundry/foundry-mcp-playground)
+
+### Prípadová štúdia 9: Microsoft Learn Docs MCP Server – prístup k dokumentácii s podporou AI
+
+Microsoft Learn Docs MCP Server je cloudová služba, ktorá poskytuje AI asistentom prístup v reálnom čase k oficiálnej dokumentácii Microsoftu prostredníctvom Model Context Protocol. Tento produkčne pripravený server sa pripája k rozsiahlemu ekosystému Microsoft Learn a umožňuje sémantické vyhľadávanie naprieč všetkými oficiálnymi zdrojmi Microsoftu.
+
+> **🎯 Nástroj pripravený na produkciu**
+> 
+> Toto je skutočný MCP server, ktorý môžete používať už dnes! Viac informácií o Microsoft Learn Docs MCP Server nájdete v našom [**Microsoft MCP Servers Guide**](microsoft-mcp-servers.md#1--microsoft-learn-docs-mcp-server).
+
+**Kľúčové funkcie:**
+- Prístup v reálnom čase k oficiálnej Microsoft dokumentácii, Azure docs a Microsoft 365 dokumentácii
+- Pokročilé sémantické vyhľadávanie rozumejúce kontextu a zámere
+- Vždy aktuálne informácie, ako je obsah Microsoft Learn publikovaný
+- Komplexné pokrytie Microsoft Learn, Azure dokumentácie a zdrojov Microsoft 365
+- Vracia až 10 kvalitných obsahových blokov s nadpismi článkov a URL
+
+**Prečo je to kľúčové:**
+- Rieši problém „zastaralých AI znalostí“ pre Microsoft technológie
+- Zabezpečuje, že AI asistenti majú prístup k najnovším funkciám .NET, C#, Azure a Microsoft 365
+- Poskytuje autoritatívne, originálne informácie pre presnú generáciu kódu
+- Nevyhnutné pre vývojárov pracujúcich s rýchlo sa vyvíjajúcimi Microsoft technológiami
+
+**Výsledky:**
+- Dramaticky zlepšená presnosť AI-generovaného kódu pre Microsoft technológie
+- Skrátený čas hľadania aktuálnej dokumentácie a najlepších praktík
+- Zvýšená produktivita vývojárov s dokumentáciou v kontexte
+- Plynulá integrácia do vývojových pracovných tokov bez opustenia IDE
 
 **Referencie:**
 - [Microsoft Learn Docs MCP Server GitHub Repository](https://github.com/MicrosoftDocs/mcp)
-- [Microsoft Learn Documentation](https://learn.microsoft.com/)
+- [Microsoft Learn Dokumentácia](https://learn.microsoft.com/)
 
-## Praktické projekty
+## Praktické Projekty
 
-### Projekt 1: Vytvorenie MCP servera s viacerými poskytovateľmi
+### Projekt 1: Vytvorte MCP server s viacerými poskytovateľmi
 
-**Cieľ:** Vytvoriť MCP server, ktorý dokáže smerovať požiadavky na viacerých poskytovateľov AI modelov na základe konkrétnych kritérií.
+**Cieľ:** Vytvoriť MCP server, ktorý dokáže smerovať požiadavky k viacerým poskytovateľom AI modelov na základe špecifických kritérií.
 
 **Požiadavky:**
 
-- Podpora minimálne troch rôznych poskytovateľov modelov (napr. OpenAI, Anthropic, lokálne modely)
-- Implementácia mechanizmu smerovania na základe metadát požiadaviek
-- Vytvorenie konfiguračného systému na správu poverení poskytovateľov
+- Podpora aspoň troch rôznych poskytovateľov modelov (napr. OpenAI, Anthropic, lokálne modely)
+- Implementácia mechanizmu smerovania založeného na metadátach požiadavky
+- Vytvorenie konfiguračného systému na správu prihlasovacích údajov poskytovateľov
 - Pridanie cache na optimalizáciu výkonu a nákladov
-- Vytvorenie jednoduchého dashboardu na monitorovanie používania
+- Vytvorenie jednoduchého dashboardu na sledovanie používania
 
 **Kroky implementácie:**
 
-1. Nastavenie základnej infraštruktúry MCP servera
-2. Implementácia adaptérov poskytovateľov pre každú AI modelovú službu
-3. Vytvorenie logiky smerovania na základe atribútov požiadaviek
-4. Pridanie mechanizmov cache pre časté požiadavky
-5. Vývoj monitorovacieho dashboardu
-6. Testovanie s rôznymi vzormi požiadaviek
+1. Nastaviť základnú infraštruktúru MCP servera  
+2. Implementovať adaptéry poskytovateľov pre každý AI modelový servis  
+3. Vytvoriť logiku smerovania podľa atribútov požiadavky  
+4. Pridať mechanizmy cache pre časté požiadavky  
+5. Vyvinúť monitorovací dashboard  
+6. Testovať s rôznymi vzormi požiadaviek  
 
-**Technológie:** Vyberte si z Pythonu (.NET/Java/Python podľa preferencie), Redis na cache a jednoduchý webový framework na dashboard.
+**Technológie:** Vyberte si z Pythonu (.NET/Java/Python podľa preferencie), Redis pre cache a jednoduchý webový framework pre dashboard.
 
-### Projekt 2: Systém správy podnikových promptov
-
-**Cieľ:** Vyvinúť systém založený na MCP na správu, verzovanie a nasadzovanie šablón promptov v rámci organizácie.
+### Projekt 2: Podnikový systém správy promptov
+**Cieľ:** Vyvinúť systém založený na MCP na správu, verziovanie a nasadzovanie šablón promptov v celej organizácii.
 
 **Požiadavky:**
 
-- Vytvorenie centralizovaného úložiska pre šablóny promptov
-- Implementácia verzovania a schvaľovacích pracovných postupov
-- Vývoj schopností testovania šablón s ukážkovými vstupmi
-- Zavedenie prístupových kontrol na základe rolí
-- Vytvorenie API na načítanie a nasadenie šablón
+- Vytvoriť centralizované úložisko pre šablóny promptov
+- Implementovať verziovanie a schvaľovacie workflowy
+- Vybudovať schopnosti testovania šablón s ukážkovými vstupmi
+- Rozvinúť riadenie prístupu na základe rolí
+- Vytvoriť API na získavanie a nasadzovanie šablón
 
 **Kroky implementácie:**
 
-1. Navrhnutie databázovej schémy na ukladanie šablón
-2. Vytvorenie základného API na CRUD operácie šablón
-3. Implementácia systému verzovania
-4. Vývoj schvaľovacieho pracovného postupu
-5. Vytvorenie testovacieho rámca
-6. Vytvorenie jednoduchého webového rozhrania na správu
-7. Integrácia s MCP serverom
+1. Navrhnúť databázovú schému pre ukladanie šablón  
+2. Vytvoriť jadrové API pre CRUD operácie so šablónami  
+3. Implementovať systém verziovania  
+4. Vybudovať schvaľovací workflow  
+5. Vyvinúť testovací rámec  
+6. Vytvoriť jednoduché webové rozhranie na správu  
+7. Integrovať s MCP serverom  
 
-**Technológie:** Váš výber backendového frameworku, SQL alebo NoSQL databázy a frontendového frameworku na rozhranie správy.
+**Technológie:** Výber backend frameworku, SQL alebo NoSQL databáza a frontend framework pre správcovské rozhranie.
 
-### Projekt 3: Platforma na generovanie obsahu založená na MCP
+### Projekt 3: Platforma generovania obsahu založená na MCP
 
-**Cieľ:** Vytvoriť platformu na generovanie obsahu, ktorá využíva MCP na poskytovanie konzistentných výsledkov naprieč rôznymi typmi obsahu.
+**Cieľ:** Vybudovať platformu pre generovanie obsahu využívajúcu MCP na poskytovanie konzistentných výsledkov naprieč rôznymi typmi obsahu.
 
 **Požiadavky:**
 
-- Podpora viacerých formátov obsahu (blogové príspevky, sociálne médiá, marketingové texty)
-- Implementácia generovania na základe šablón s možnosťami prispôsobenia
-- Vytvorenie systému na kontrolu a spätnú väzbu obsahu
-- Sledovanie metrík výkonnosti obsahu
-- Podpora verzovania a iterácie obsahu
+- Podpora viacerých formátov obsahu (blogové príspevky, sociálne siete, marketingové texty)  
+- Implementovať generovanie na základe šablón s možnosťou prispôsobenia  
+- Vytvoriť systém recenzií a spätnej väzby na obsah  
+- Sledovať výkonnostné metriky obsahu  
+- Podpora verziovania a iterácie obsahu  
 
 **Kroky implementácie:**
 
-1. Nastavenie infraštruktúry MCP klienta
-2. Vytvorenie šablón pre rôzne typy obsahu
-3. Vývoj pipeline na generovanie obsahu
-4. Implementácia systému kontroly
-5. Vývoj systému sledovania metrík
-6. Vytvorenie používateľského rozhrania na správu šablón a generovanie obsahu
+1. Nastaviť infraštruktúru MCP klienta  
+2. Vytvoriť šablóny pre rôzne typy obsahu  
+3. Vybudovať pipeline generovania obsahu  
+4. Implementovať systém recenzií  
+5. Vyvinúť systém sledovania metrík  
+6. Vytvoriť používateľské rozhranie pre správu šablón a generovanie obsahu  
 
-**Technológie:** Vami preferovaný programovací jazyk, webový framework a databázový systém.
+**Technológie:** Preferovaný programovací jazyk, webový framework a databázový systém.
 
-## Budúce smerovanie technológie MCP
+## Budúce smery pre technológiu MCP
 
-### Nové trendy
+### Vznikajúce trendy
 
-1. **Multi-modálny MCP**
-   - Rozšírenie MCP na štandardizáciu interakcií s modelmi pre obrázky, zvuk a video
-   - Vývoj schopností krížového uvažovania medzi modalitami
-   - Štandardizované formáty promptov pre rôzne modality
+1. **Multi-modálna MCP**  
+   - Rozšírenie MCP pre štandardizáciu interakcií s modelmi pre obraz, zvuk a video  
+   - Vývoj schopností cezmodálneho uvažovania  
+   - Štandardizované formáty promptov pre rôzne modality  
 
-2. **Federovaná infraštruktúra MCP**
-   - Distribuované MCP siete, ktoré môžu zdieľať zdroje medzi organizáciami
-   - Štandardizované protokoly na bezpečné zdieľanie modelov
-   - Techniky na zachovanie súkromia pri výpočtoch
+2. **Federovaná MCP infraštruktúra**  
+   - Distribuované MCP siete umožňujúce zdieľanie zdrojov medzi organizáciami  
+   - Štandardizované protokoly pre bezpečné zdieľanie modelov  
+   - Techniky výpočtu šetriace súkromie  
 
-3. **Trhoviská MCP**
-   - Ekosystémy na zdieľanie a monetizáciu šablón a pluginov MCP
-   - Procesy na zabezpečenie kvality a certifikáciu
-   - Integrácia s trhoviskami modelov
+3. **MCP trhy**  
+   - Ekosystémy na zdieľanie a zpeněžovanie MCP šablón a pluginov  
+   - Procesy overovania kvality a certifikácie  
+   - Integrácia s trhmi modelov  
 
-4. **MCP pre Edge Computing**
-   - Adaptácia štandardov MCP pre zariadenia s obmedzenými zdrojmi
-   - Optimalizované protokoly pre prostredia s nízkou šírkou pásma
-   - Špecializované implementácie MCP pre ekosystémy IoT
+4. **MCP pre edge computing**  
+   - Adaptácia štandardov MCP pre zariadenia s obmedzenými zdrojmi na okraji siete  
+   - Optimalizované protokoly pre prostredia s nízkou šírkou pásma  
+   - Špecializované implementácie MCP pre IoT ekosystémy  
 
-5. **Regulačné rámce**
-   - Vývoj rozšírení MCP na dodržiavanie regulácií
-   - Štandardizované auditné stopy a rozhrania na vysvetlenie
-   - Integrácia s novými rámcami správy AI
+5. **Regulačné rámce**  
+   - Vývoj rozšírení MCP pre splnenie regulačných požiadaviek  
+   - Štandardizované auditné záznamy a rozhrania na vysvetľovanie  
+   - Integrácia s vznikajúcimi rámcami správy AI  
 
-### MCP riešenia od Microsoftu
+### Riešenia MCP od Microsoftu
 
 Microsoft a Azure vyvinuli niekoľko open-source repozitárov, ktoré pomáhajú vývojárom implementovať MCP v rôznych scenároch:
 
-#### Microsoft organizácia
+#### Organizácia Microsoft
 
-1. [playwright-mcp](https://github.com/microsoft/playwright-mcp) - Playwright MCP server na automatizáciu prehliadača a testovanie
-2. [files-mcp-server](https://github.com/microsoft/files-mcp-server) - Implementácia OneDrive MCP servera na lokálne testovanie a príspevky komunity
-3. [NLWeb](https://github.com/microsoft/NlWeb) - NLWeb je kolekcia otvorených protokolov a nástrojov zameraná na vytvorenie základnej vrstvy pre AI Web
+1. [playwright-mcp](https://github.com/microsoft/playwright-mcp) – Playwright MCP server pre automatizáciu a testovanie prehliadača  
+2. [files-mcp-server](https://github.com/microsoft/files-mcp-server) – Implementácia OneDrive MCP servera na lokálne testovanie a príspevky komunity  
+3. [NLWeb](https://github.com/microsoft/NlWeb) – Kolekcia otvorených protokolov a súvisiacich open source nástrojov zameraných na vytvorenie základnej vrstvy pre AI Web  
 
-#### Azure-Samples organizácia
+#### Organizácia Azure-Samples
 
-1. [mcp](https://github.com/Azure-Samples/mcp) - Odkazy na vzorky, nástroje a zdroje na budovanie a integráciu MCP serverov na Azure pomocou rôznych jazykov
-2. [mcp-auth-servers](https://github.com/Azure-Samples/mcp-auth-servers) - Referenčné MCP servery demonštrujúce autentifikáciu s aktuálnou špecifikáciou Model Context Protocol
-3. [remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions) - Stránka pre implementácie Remote MCP Serverov v Azure Functions s odkazmi na jazykovo špecifické repozitáre
-4. [remote-mcp-functions-python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Šablóna na rýchly štart pre budovanie a nasadenie vlastných Remote MCP serverov pomocou Azure Functions s Pythonom
-5. [remote-mcp-functions-dotnet](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - Šablóna na rýchly štart pre budovanie a nasadenie vlastných Remote MCP serverov pomocou Azure Functions s .NET/C#
-6. [remote-mcp-functions-typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Šablóna na rýchly štart pre budovanie a nasadenie vlastných Remote MCP serverov pomocou Azure Functions s TypeScriptom
-7. [remote-mcp-apim-functions-python](https://github.com/Azure-Samples/remote-mcp-apim-functions-python) - Azure API Management ako AI Gateway pre Remote MCP servery pomocou Pythonu
-8. [AI-Gateway](https://github.com/Azure-Samples/AI-Gateway) - Experimenty APIM ❤️ AI vrátane schopností MCP, integrácia s Azure OpenAI a AI Foundry
+1. [mcp](https://github.com/Azure-Samples/mcp) – Odkazy na ukážky, nástroje a zdroje pre tvorbu a integráciu MCP serverov na Azure v rôznych jazykoch  
+2. [mcp-auth-servers](https://github.com/Azure-Samples/mcp-auth-servers) – Referenčné MCP servery demonštrujúce autentifikáciu podľa aktuálnej špecifikácie Model Context Protocol  
+3. [remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions) – Landing page pre implementácie Remote MCP Serverov v Azure Functions s odkazmi na repozitáre podľa jazyka  
+4. [remote-mcp-functions-python](https://github.com/Azure-Samples/remote-mcp-functions-python) – Rýchly štart šablóny pre tvorbu a nasadenie vlastných vzdialených MCP serverov pomocou Azure Functions a Pythonu  
+5. [remote-mcp-functions-dotnet](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) – Rýchly štart šablóny pre tvorbu a nasadenie vlastných vzdialených MCP serverov pomocou Azure Functions a .NET/C#  
+6. [remote-mcp-functions-typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) – Rýchly štart šablóny pre tvorbu a nasadenie vlastných vzdialených MCP serverov pomocou Azure Functions a TypeScriptu  
+7. [remote-mcp-apim-functions-python](https://github.com/Azure-Samples/remote-mcp-apim-functions-python) – Azure API Management ako AI gateway ku vzdialeným MCP serverom s využitím Pythonu  
+8. [AI-Gateway](https://github.com/Azure-Samples/AI-Gateway) – APIM ❤️ AI experimenty vrátane MCP schopností, integrácia s Azure OpenAI a AI Foundry  
 
-Tieto repozitáre poskytujú rôzne implementácie, šablóny a zdroje na prácu s Model Context Protocol naprieč rôznymi programovacími jazykmi a službami Azure. Pokrývajú širokú škálu prípadov použitia od základných implementácií serverov po autentifikáciu, cloudové nasadenie a podnikové integračné scenáre.
+Tieto repozitáre poskytujú rôzne implementácie, šablóny a zdroje na prácu s Model Context Protocol naprieč rôznymi programovacími jazykmi a Azure službami. Pokrývajú širokú škálu prípadov použitia od základných serverových implementácií cez autentifikáciu, cloudové nasadenie až po podnikové integrácie.
 
-#### MCP Resources Directory
+#### Adresár MCP zdrojov
 
-[MCP Resources directory](https://github.com/microsoft/mcp/tree/main/Resources) v oficiálnom repozitári Microsoft MCP poskytuje kurátorskú kolekciu vzorových zdrojov, šablón promptov a definícií nástrojov na použitie s Model Context Protocol servermi. Tento adresár je navrhnutý tak, aby pomohol vývojárom rýchlo začať s MCP ponúkaním opakovane použiteľných stavebných blokov a príkladov najlepších postupov pre:
+[iný text pokračuje]
 
-- **Šablóny promptov:** Pripravené šablóny promptov pre bežné AI úlohy a scenáre, ktoré je možné prispôsobiť pre vaše vlastné implementácie MCP serverov.
-- **Definície nástrojov:** Príklady schém nástrojov a metadát na štandardizáciu integrácie a vyvolania nástrojov naprieč rôznymi MCP servermi.
-- **Vzorky zdrojov:** Príklady definícií zdrojov na pripojenie k dátovým zdrojom, API a externým službám v rámci MCP rámca.
-- **Referenčné implementácie:** Praktické vzorky, ktoré demonštrujú, ako štruktúrovať a organizovať zdroje, prompty a nástroje v reálnych MCP projektoch.
+Adresár [MCP Resources](https://github.com/microsoft/mcp/tree/main/Resources) v oficiálnom repozitári Microsoft MCP poskytuje kurátorovanú kolekciu ukážkových zdrojov, šablón promptov a definícií nástrojov určených na použitie s Model Context Protocol servermi. Tento adresár má pomôcť vývojárom rýchlo začať s MCP poskytovaním opakovane použiteľných stavebných blokov a príkladov najlepších praktík pre:
 
-Tieto zdroje urýchľujú vývoj, podporujú štandardizáciu a pomáhajú zabezpečiť najlepšie postupy pri budovaní a nasadzovaní riešení založených na MCP.
+- **Šablóny promptov:** Pripravené na použitie šablóny promptov pre bežné AI úlohy a scenáre, ktoré možno prispôsobiť pre vlastné implementácie MCP serverov.  
+- **Definície nástrojov:** Príkladové schémy nástrojov a metaúdaje na štandardizáciu integrácie a volania nástrojov naprieč MCP servermi.  
+- **Ukážkové zdroje:** Príkladové definície zdrojov na pripojenie k dátovým zdrojom, API a externým službám v rámci MCP rámca.  
+- **Referenčné implementácie:** Praktické príklady ukazujúce, ako štruktúrovať a organizovať zdroje, prompty a nástroje v reálnych MCP projektoch.  
 
-#### MCP Resources Directory
+Tieto zdroje urýchľujú vývoj, podporujú štandardizáciu a pomáhajú zabezpečiť najlepšie praktiky pri budovaní a nasadzovaní riešení založených na MCP.
 
-- [MCP Resources (Sample Prompts, Tools, and Resource Definitions)](https://github.com/microsoft/mcp/tree/main/Resources)
+#### Adresár MCP Resources
+
+- [MCP Resources (ukážkové prompty, nástroje a definície zdrojov)](https://github.com/microsoft/mcp/tree/main/Resources)
 
 ### Výskumné príležitosti
 
-- Efektívne techniky optimalizácie promptov v rámci MCP rámcov
-- Bezpečnostné modely pre multi-tenant MCP nasadenia
-- Benchmarking výkonu naprieč rôznymi implementáciami MCP
-- Formálne verifikačné metódy pre MCP servery
+- Efektívne techniky optimalizácie promptov v rámci MCP rámcov  
+- Bezpečnostné modely pre multi-tenantné nasadenia MCP  
+- Benchmarking výkonu rôznych implementácií MCP  
+- Formálne verifikačné metódy pre MCP servery  
 
 ## Záver
 
-Model Context Protocol (MCP) rýchlo formuje budúcnosť štandardizovanej, bezpečnej a interoperabilnej AI integrácie naprieč priemyslami. Prostredníctvom prípadových štúdií a praktických projektov v tejto lekcii ste videli, ako skorí používatelia—vrátane Microsoftu a Azure—využívajú MCP na riešenie reálnych výziev, urýchlenie adopcie AI a zabezpečenie súladu, bezpečnosti a škálovateľnosti. Modulárny prístup MCP umožňuje organizáciám prepojiť veľké jazykové modely, nástroje a podnikové dáta v jednotnom, auditovateľnom rámci. Ako sa MCP naďalej vyvíja, zapojenie do komunity, skúmanie open-source zdrojov a aplikácia najlepších postupov budú kľúčové pre budovanie robustných, na budúcnosť pripravených AI riešení.
+Model Context Protocol (MCP) rýchlo formuje budúcnosť štandardizovanej, bezpečnej a interoperabilnej AI integrácie naprieč odvetviami. Prostredníctvom prípadových štúdií a praktických projektov v tejto lekcii ste videli, ako skorí prijímatelia vrátane Microsoftu a Azure využívajú MCP na riešenie reálnych výziev, zrýchlenie adopcie AI a zabezpečenie súladu, bezpečnosti a škálovateľnosti. Modulárny prístup MCP umožňuje organizáciám prepojiť veľké jazykové modely, nástroje a podnikové dáta v jednotnom, auditovateľnom rámci. Ako sa MCP ďalej vyvíja, kľúčové bude zostať aktívne zapojenie v komunite, skúmanie open source zdrojov a aplikovanie najlepších praktík na tvorbu robustných AI riešení pripravených na budúcnosť.
 
-## Dodatočné zdroje
+## Ďalšie zdroje
 
-- [MCP Foundry GitHub Repository](https://github.com/azure-ai-foundry/mcp-foundry)
-- [Foundry MCP Playground](https://github.com/azure-ai-foundry/foundry-mcp-playground)
-- [Integrating Azure AI Agents with MCP (Microsoft Foundry Blog)](https://devblogs.microsoft.com/foundry/integrating-azure-ai-agents-mcp/)
-- [MCP GitHub Repository (Microsoft)](https://github.com/microsoft/mcp)
-- [MCP Resources Directory (Sample Prompts, Tools, and Resource Definitions)](https://github.com/microsoft/mcp/tree/main/Resources)
-- [MCP Community & Documentation](https://modelcontextprotocol.io/introduction)
-- [Azure MCP Documentation](https://aka.ms/azmcp)
-- [Playwright MCP Server GitHub Repository](https://github.com/microsoft/playwright-mcp)
-- [Files MCP Server (OneDrive)](https://github.com/microsoft/files-mcp-server)
-- [Azure-Samples MCP](https://github.com/Azure-Samples/mcp)
-- [MCP Auth Servers (Azure-Samples)](https://github.com/Azure-Samples/mcp-auth-servers)
-- [Remote MCP Functions (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions)
-- [Remote MCP Functions Python (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions-python)
-- [Remote MCP Functions .NET (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions-dotnet)
-- [Remote MCP Functions TypeScript (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions-typescript)
-- [Remote MCP APIM Functions Python (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)
-- [AI-Gateway (Azure-Samples)](https://github.com/Azure-Samples/AI-Gateway)
-- [Microsoft AI and Automation Solutions](https://azure.microsoft.com/en-us/products/ai-services/)
+- [MCP Foundry GitHub repozitár](https://github.com/azure-ai-foundry/mcp-foundry)  
+- [Foundry MCP Playground](https://github.com/azure-ai-foundry/foundry-mcp-playground)  
+- [Integrácia Azure AI agentov s MCP (Microsoft Foundry Blog)](https://devblogs.microsoft.com/foundry/integrating-azure-ai-agents-mcp/)  
+- [MCP GitHub repozitár (Microsoft)](https://github.com/microsoft/mcp)  
+- [MCP Resources adresár (ukážkové prompty, nástroje a definície zdrojov)](https://github.com/microsoft/mcp/tree/main/Resources)  
+- [MCP komunita & dokumentácia](https://modelcontextprotocol.io/introduction)  
+- [Špecifikácia MCP (2025-11-25)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)  
+- [Azure MCP dokumentácia](https://aka.ms/azmcp)  
+- [OWASP MCP Top 10](https://microsoft.github.io/mcp-azure-security-guide/mcp/) – bezpečnostné osvedčené postupy  
+- [Playwright MCP Server GitHub repozitár](https://github.com/microsoft/playwright-mcp)  
+- [Files MCP Server (OneDrive)](https://github.com/microsoft/files-mcp-server)  
+- [Azure-Samples MCP](https://github.com/Azure-Samples/mcp)  
+- [MCP Auth Servers (Azure-Samples)](https://github.com/Azure-Samples/mcp-auth-servers)  
+- [Remote MCP Functions (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions)  
+- [Remote MCP Functions Python (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions-python)  
+- [Remote MCP Functions .NET (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions-dotnet)  
+- [Remote MCP Functions TypeScript (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions-typescript)  
+- [Remote MCP APIM Functions Python (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)  
+- [AI-Gateway (Azure-Samples)](https://github.com/Azure-Samples/AI-Gateway)  
+- [Microsoft AI a automatizačné riešenia](https://azure.microsoft.com/en-us/products/ai-services/)  
 
 ## Cvičenia
 
-1. Analyzujte jednu z prípadových štúdií a navrhnite alternatívny prístup k implementácii.
-2. Vyberte si jeden z projektových nápadov a vytvorte podrobnú technickú špecifikáciu.
-3. Preskúmajte priemysel, ktorý nie je pokrytý v prípadových štúdiách, a načrtnite, ako by MCP mohlo riešiť jeho špecifické výzvy.
-4. Preskúmajte jeden z budúcich smerov a vytvorte koncept nového rozšírenia MCP na jeho podporu.
+1. Analyzujte jednu z prípadových štúdií a navrhnite alternatívny prístup k implementácii.  
+2. Vyberte si jeden z projektových nápadov a vytvorte detailnú technickú špecifikáciu.  
+3. Preskúmajte odvetvie, ktoré nie je pokryté prípadovými štúdiami, a načrtnite, ako by MCP mohlo riešiť jeho špecifické výzvy.  
+4. Preskúmajte jeden z budúcich smerov a vytvorte koncept nového rozšírenia MCP na jeho podporu.  
 
-Ďalej: [Microsoft MCP Server](../07-LessonsfromEarlyAdoption/microsoft-mcp-servers.md)
+## Čo ďalej
 
-**Upozornenie**:  
-Tento dokument bol preložený pomocou služby na automatický preklad [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, upozorňujeme, že automatické preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre dôležité informácie odporúčame profesionálny ľudský preklad. Nezodpovedáme za žiadne nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+Preskúmajte viac: [Microsoft MCP servery](./microsoft-mcp-servers.md)
+
+Pokračujte na: [Modul 8: Najlepšie praktiky](../08-BestPractices/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Zrieknutie sa zodpovednosti**:
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, prosím, vezmite na vedomie, že automatické preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne výklady vyplývajúce z použitia tohto prekladu.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

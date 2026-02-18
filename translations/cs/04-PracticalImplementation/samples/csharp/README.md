@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0bc7bd48f55f1565f1d95ccb2c16f728",
-  "translation_date": "2025-07-13T23:09:21+00:00",
-  "source_file": "04-PracticalImplementation/samples/csharp/README.md",
-  "language_code": "cs"
-}
--->
 # Ukázka
 
 Předchozí příklad ukazuje, jak používat lokální .NET projekt s typem `stdio`. A jak spustit server lokálně v kontejneru. To je v mnoha situacích dobré řešení. Nicméně může být užitečné mít server běžící vzdáleně, například v cloudovém prostředí. Právě zde přichází na řadu typ `http`.
@@ -26,7 +17,7 @@ Ostatní projekty pocházejí z [.NET Aspire](https://learn.microsoft.com/dotnet
 
 1. Když se v prohlížeči otevře dashboard .NET Aspire, všimněte si URL s protokolem `http`. Mělo by to být něco jako `http://localhost:5058/`.
 
-   ![.NET Aspire Dashboard](../../../../../translated_images/dotnet-aspire-dashboard.0a7095710e9301e90df2efd867e1b675b3b9bc2ccd7feb1ebddc0751522bc37c.cs.png)
+   ![.NET Aspire Dashboard](../../../../../translated_images/cs/dotnet-aspire-dashboard.0a7095710e9301e9.webp)
 
 ## Testování Streamable HTTP pomocí MCP Inspectoru
 
@@ -38,7 +29,7 @@ Spusťte server a v terminálu spusťte následující příkaz:
 npx @modelcontextprotocol/inspector http://localhost:5058
 ```
 
-![MCP Inspector](../../../../../translated_images/mcp-inspector.c223422b9b494fb4a518a3b3911b3e708e6a5715069470f9163ee2ee8d5f1ba9.cs.png)
+![MCP Inspector](../../../../../translated_images/cs/mcp-inspector.c223422b9b494fb4.webp)
 
 - Vyberte `Streamable HTTP` jako typ transportu.
 - Do pole Url zadejte URL serveru, které jste si poznamenali, a přidejte `/mcp`. Mělo by to být `http` (nikoli `https`), například `http://localhost:5058/mcp`.
@@ -83,7 +74,7 @@ azd up
 
 Po dokončení nasazení byste měli vidět zprávu podobnou této:
 
-![Azd deployment success](../../../../../translated_images/azd-deployment-success.bd42940493f1b834a5ce6251a6f88966546009b350df59d0cc4a8caabe94a4f1.cs.png)
+![Azd deployment success](../../../../../translated_images/cs/azd-deployment-success.bd42940493f1b834.webp)
 
 Zkopírujte URL a použijte ji v MCP Inspectoru i v GitHub Copilot Chat.
 

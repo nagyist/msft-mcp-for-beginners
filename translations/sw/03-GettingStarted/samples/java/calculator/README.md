@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13231e9951b68efd9df8c56bd5cdb27e",
-  "translation_date": "2025-07-13T22:30:01+00:00",
-  "source_file": "03-GettingStarted/samples/java/calculator/README.md",
-  "language_code": "sw"
-}
--->
 # Basic Calculator MCP Service
 
 Huduma hii hutoa shughuli za msingi za kalkuleta kupitia Model Context Protocol (MCP) kwa kutumia Spring Boot na usafirishaji wa WebFlux. Imeundwa kama mfano rahisi kwa wanaoanza kujifunza kuhusu utekelezaji wa MCP.
@@ -201,7 +192,7 @@ MCP Inspector ni zana ya msaada kwa kuingiliana na huduma za MCP. Ili kuitumia n
    - Bonyeza "List Tools" kuona shughuli za kalkuleta zinazopatikana
    - Chagua zana na bonyeza "Run Tool" kutekeleza shughuli
 
-![MCP Inspector Screenshot](../../../../../../translated_images/tool.c75a0b2380efcf1a47a8478f54380a36ddcca7943b98f56dabbac8b07e15c3bb.sw.png)
+![MCP Inspector Screenshot](../../../../../../translated_images/sw/tool.c75a0b2380efcf1a.webp)
 
 ### Kutumia Docker
 

@@ -1,13 +1,4 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f83bc722dc758efffd68667d6a1db470",
-  "translation_date": "2025-07-14T08:46:21+00:00",
-  "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/README.md",
-  "language_code": "hu"
-}
--->
-# 🐙 4. modul: Gyakorlati MCP fejlesztés – Egyedi GitHub klón szerver
+# 🐙 4. modul: Gyakorlati MCP fejlesztés - Egyedi GitHub klón szerver
 
 ![Duration](https://img.shields.io/badge/Duration-30_minutes-blue?style=flat-square)
 ![Difficulty](https://img.shields.io/badge/Difficulty-Intermediate-orange?style=flat-square)
@@ -15,76 +6,76 @@ CO_OP_TRANSLATOR_METADATA:
 ![VS Code](https://img.shields.io/badge/VS%20Code-Integration-blue?style=flat-square&logo=visualstudiocode)
 ![GitHub Copilot](https://img.shields.io/badge/GitHub%20Copilot-Agent%20Mode-green?style=flat-square&logo=github)
 
-> **⚡ Gyors kezdés:** Építs egy éles környezetbe alkalmas MCP szervert, amely 30 perc alatt automatizálja a GitHub tárolók klónozását és a VS Code integrációt!
+> **⚡ Gyors indítás:** Építs egy éles használatra kész MCP szervert, amely automatizálja a GitHub tárolók klónozását és a VS Code integrációját mindössze 30 perc alatt!
 
 ## 🎯 Tanulási célok
 
 A labor végére képes leszel:
 
-- ✅ Egyedi MCP szervert létrehozni valós fejlesztési munkafolyamatokhoz
-- ✅ Megvalósítani a GitHub tárolók klónozását MCP-n keresztül
-- ✅ Integrálni az egyedi MCP szervereket a VS Code-dal és az Agent Builderrel
-- ✅ Használni a GitHub Copilot Agent Mode-ot egyedi MCP eszközökkel
-- ✅ Tesztelni és éles környezetben telepíteni az egyedi MCP szervereket
+- ✅ Egyedi MCP szerver létrehozása valós fejlesztési munkafolyamatokhoz
+- ✅ GitHub tároló klónozás funkció implementálása MCP-n keresztül
+- ✅ Egyedi MCP szerverek integrálása VS Code-dal és Agent Builder-rel
+- ✅ GitHub Copilot Agent Mode használata egyedi MCP eszközökkel
+- ✅ Egyedi MCP szerverek tesztelése és éles környezetbe telepítése
 
 ## 📋 Előfeltételek
 
 - Az 1-3. laborok elvégzése (MCP alapok és haladó fejlesztés)
 - GitHub Copilot előfizetés ([ingyenes regisztráció elérhető](https://github.com/github-copilot/signup))
-- VS Code AI Toolkit és GitHub Copilot bővítményekkel
+- VS Code AI Toolkit és GitHub Copilot kiterjesztésekkel
 - Telepített és konfigurált Git CLI
 
-## 🏗️ Projekt áttekintés
+## 🏗️ Projekt áttekintése
 
-### **Valós fejlesztési kihívás**  
-Fejlesztőként gyakran használjuk a GitHub-ot tárolók klónozására, majd megnyitjuk őket VS Code-ban vagy VS Code Insiders-ben. Ez a manuális folyamat a következő lépésekből áll:  
-1. Terminál/parancssor megnyitása  
-2. A kívánt könyvtárba navigálás  
-3. `git clone` parancs futtatása  
-4. VS Code megnyitása a klónozott könyvtárban  
+### **Valós fejlesztési kihívás**
+Fejlesztőként gyakran használjuk a GitHub-ot tárolók klónozására, majd azok VS Code vagy VS Code Insiders-ben való megnyitására. Ez a manuális folyamat a következőkből áll:
+1. Terminál/parancssor megnyitása
+2. A kívánt mappa megkeresése
+3. `git clone` parancs futtatása
+4. VS Code megnyitása a klónozott mappában
 
-**Az MCP megoldásunk ezt egyetlen intelligens parancsba sűríti!**
+**MCP megoldásunk ezt egyetlen intelligens parancsra egyszerűsíti!**
 
-### **Mit fogsz építeni**  
+### **Mit fogsz építeni**
 Egy **GitHub Clone MCP szervert** (`git_mcp_server`), amely a következőket nyújtja:
 
 | Funkció | Leírás | Előny |
 |---------|-------------|---------|
-| 🔄 **Okos tároló klónozás** | GitHub tárolók klónozása érvényesítéssel | Automatikus hibakezelés |
-| 📁 **Intelligens könyvtárkezelés** | Biztonságos könyvtár ellenőrzés és létrehozás | Felülírás megelőzése |
+| 🔄 **Intelligens tároló klónozás** | GitHub tárolók validált klónozása | Automatizált hibaellenőrzés |
+| 📁 **Intelligens könyvtárkezelés** | Biztonságos mappák ellenőrzése és létrehozása | Felülírás megelőzése |
 | 🚀 **Platformfüggetlen VS Code integráció** | Projektek megnyitása VS Code/Insiders-ben | Zökkenőmentes munkafolyamat |
-| 🛡️ **Robosztus hibakezelés** | Hálózati, jogosultsági és elérési hibák kezelése | Éles környezetbe alkalmas megbízhatóság |
+| 🛡️ **Robosztus hiba kezelés** | Hálózati, jogosultsági és útvonallal kapcsolatos hibák kezelése | Éles környezetre kész megbízhatóság |
 
 ---
 
 ## 📖 Lépésről lépésre megvalósítás
 
-### 1. lépés: GitHub Agent létrehozása az Agent Builderben
+### 1. lépés: GitHub agent létrehozása az Agent Builder-ben
 
-1. **Indítsd el az Agent Buildert** az AI Toolkit bővítményből  
-2. **Hozz létre egy új agentet** az alábbi konfigurációval:  
+1. **Indítsd el az Agent Builder-t** az AI Toolkit kiterjesztésből
+2. **Hozz létre egy új agent-et** az alábbi konfigurációval:
    ```
    Agent Name: GitHubAgent
    ```
 
-3. **Inicializáld az egyedi MCP szervert:**  
-   - Navigálj a **Tools** → **Add Tool** → **MCP Server** menüpontra  
-   - Válaszd a **"Create A new MCP Server"** opciót  
-   - Válaszd a **Python sablont** a maximális rugalmasságért  
+3. **Indítsd el az egyedi MCP szervert:**
+   - Navigálj a **Tools** → **Add Tool** → **MCP Server** menüpontra
+   - Válaszd a **"Create A new MCP Server"** opciót
+   - Válaszd a **Python sablont** a maximális rugalmasság érdekében
    - **Szerver neve:** `git_mcp_server`
 
 ### 2. lépés: GitHub Copilot Agent Mode konfigurálása
 
-1. **Nyisd meg a GitHub Copilotot** VS Code-ban (Ctrl/Cmd + Shift + P → "GitHub Copilot: Open")  
-2. **Válaszd ki az Agent Modelt** a Copilot felületén  
-3. **Válaszd a Claude 3.7 modellt** a fejlettebb érvelési képességekért  
-4. **Kapcsold be az MCP integrációt** az eszközhozzáféréshez
+1. **Nyisd meg a GitHub Copilot-ot** VS Code-ban (Ctrl/Cmd + Shift + P → "GitHub Copilot: Open")
+2. **Válaszd ki az Agent Modellt** a Copilot felületén
+3. **Válaszd a Claude 3.7 modellt** a fejlettebb érvelési képességekért
+4. **Kapcsold be az MCP integrációt** az eszközhasználathoz
 
 > **💡 Profi tipp:** A Claude 3.7 jobban érti a fejlesztési munkafolyamatokat és a hibakezelési mintákat.
 
-### 3. lépés: Az MCP szerver alapfunkcióinak megvalósítása
+### 3. lépés: Alap MCP szerver funkció implementálása
 
-**Használd a következő részletes promptot a GitHub Copilot Agent Mode-ban:**
+**Használd a következő részletes promptot GitHub Copilot Agent Mode-ban:**
 
 ```
 Create two MCP tools with the following comprehensive requirements:
@@ -119,17 +110,17 @@ Additional Requirements:
 
 ### 4. lépés: MCP szerver tesztelése
 
-#### 4a. Tesztelés az Agent Builderben
+#### 4a. Tesztelés az Agent Builder-ben
 
-1. **Indítsd el a debug konfigurációt** az Agent Builderben  
-2. **Állítsd be az agentet a következő rendszer prompttal:**  
+1. **Indítsd el az Agent Builder hibakeresési konfigurációját**
+2. **Állítsd be az agent-ed az alábbi rendszer prompttal:**
 
 ```
 SYSTEM_PROMPT:
 You are my intelligent coding repository assistant. You help developers efficiently clone GitHub repositories and set up their development environment. Always provide clear feedback about operations and handle errors gracefully.
 ```
 
-3. **Teszteld valós felhasználói forgatókönyvekkel:**  
+3. **Tesztelj életszerű felhasználói szcenáriókkal:**
 
 ```
 USER_PROMPT EXAMPLES:
@@ -139,70 +130,82 @@ Scenario : Basic Clone and Open
  } and save to {The global path you specify}, then open it with VS Code Insiders"
 ```
 
-![Agent Builder Testing](../../../../translated_images/DebugAgent.81d152370c503241b3b39a251b8966f7f739286df19dd57f9147f6402214a012.hu.png)
+![Agent Builder Testing](../../../../translated_images/hu/DebugAgent.81d152370c503241.webp)
 
-**Várt eredmények:**  
-- ✅ Sikeres klónozás és elérési út megerősítése  
-- ✅ Automatikus VS Code indítás  
-- ✅ Egyértelmű hibaüzenetek érvénytelen esetekre  
-- ✅ Szélsőséges esetek megfelelő kezelése
+**Várt eredmények:**
+- ✅ Sikeres klónozás az útvonal megerősítésével
+- ✅ Automatikus VS Code indítás
+- ✅ Egyértelmű hibajelzések érvénytelen esetekre
+- ✅ Szél- és szélsőséges esetek megfelelő kezelése
 
-#### 4b. Tesztelés az MCP Inspectorban
+#### 4b. Tesztelés MCP Inspector-ban
 
-![MCP Inspector Testing](../../../../translated_images/DebugInspector.eb5c95f94c69a8ba36944941b9a3588309a3a2fae101ace470ee09bde41d1667.hu.png)
 
----
-
-**🎉 Gratulálunk!** Sikeresen létrehoztál egy gyakorlati, éles környezetbe alkalmas MCP szervert, amely megoldja a valós fejlesztési munkafolyamatok kihívásait. Az egyedi GitHub klón szervered bizonyítja az MCP erejét a fejlesztői hatékonyság automatizálásában és növelésében.
-
-### 🏆 Elért eredmények:  
-- ✅ **MCP fejlesztő** – Egyedi MCP szerver létrehozása  
-- ✅ **Munkafolyamat automatizáló** – Fejlesztési folyamatok egyszerűsítése  
-- ✅ **Integrációs szakértő** – Több fejlesztői eszköz összekapcsolása  
-- ✅ **Éles környezetre kész** – Telepíthető megoldások építése
+![MCP Inspector Testing](../../../../translated_images/hu/DebugInspector.eb5c95f94c69a8ba.webp)
 
 ---
 
-## 🎓 Workshop befejezése: Az utad a Model Context Protocol-lal
+**🎉 Gratulálunk!** Sikeresen létrehoztál egy gyakorlati, éles környezetbe is alkalmas MCP szervert, amely megoldja a valós fejlesztési munkafolyamat kihívásait. Az egyedi GitHub klón szervered bizonyítja az MCP erejét a fejlesztői produktivitás automatizálásában és növelésében.
+
+### 🏆 Elért eredmények:
+- ✅ **MCP fejlesztő** - Egyedi MCP szerver létrehozása
+- ✅ **Folyamat automatizáló** - Fejlesztési munkafolyamatok egyszerűsítése  
+- ✅ **Integrációs szakértő** - Több fejlesztői eszköz összekapcsolása
+- ✅ **Éles környezetre kész** - Telepíthető megoldások építése
+
+---
+
+## 🎓 Workshop befejezés: Az út a Model Context Protocol-lal
 
 **Kedves Workshop résztvevő!**
 
-Gratulálunk, hogy befejezted a Model Context Protocol workshop mind a négy modulját! Hosszú utat tettél meg az AI Toolkit alapjainak megértésétől az éles környezetbe alkalmas MCP szerverek építéséig, amelyek valós fejlesztési kihívásokat oldanak meg.
+Gratulálunk a Model Context Protocol workshop négy moduljának elvégzéséhez! Hosszú utat tettél meg az AI Toolkit alapjaitól kezdve egészen az éles használatra kész MCP szerverek fejlesztéséig, amelyek valós fejlesztési kihívásokat oldanak meg.
 
-### 🚀 Tanulási út összefoglaló:
+### 🚀 Tanulási út összefoglalása:
 
-**[1. modul](../lab1/README.md):** Megismerted az AI Toolkit alapjait, modellek tesztelését és az első AI agent létrehozását.
+**[1. modul](../lab1/README.md):** Megismerted az AI Toolkit alapjait, modellek tesztelését, és elkészítetted az első AI agent-edet.
 
-**[2. modul](../lab2/README.md):** Megtanultad az MCP architektúrát, integráltad a Playwright MCP-t, és elkészítetted az első böngésző automatizáló agentet.
+**[2. modul](../lab2/README.md):** Megtanultad az MCP architektúrát, integráltad a Playwright MCP-t, és elkészítetted az első böngésző-automatizáló agent-edet.
 
-**[3. modul](../lab3/README.md):** Haladó MCP szerver fejlesztést végeztél a Weather MCP szerverrel, és elsajátítottad a hibakereső eszközök használatát.
+**[3. modul](../lab3/README.md):** Haladó egyedi MCP szerver fejlesztést tanultál meg Weather MCP szerverrel és hibakeresési eszközökkel.
 
-**[4. modul](../lab4/README.md):** Most mindezt alkalmaztad egy gyakorlati GitHub tároló munkafolyamat automatizáló eszköz létrehozására.
+**[4. modul](../lab4/README.md):** Most mindezt alkalmaztad, hogy valós GitHub tároló munkafolyamat automatizációs eszközt építs.
 
 ### 🌟 Amit elsajátítottál:
 
-- ✅ **AI Toolkit ökoszisztéma:** Modellek, agentek és integrációs minták  
-- ✅ **MCP architektúra:** Kliens-szerver felépítés, protokollok és biztonság  
-- ✅ **Fejlesztői eszközök:** Playground, Inspector és éles telepítés  
-- ✅ **Egyedi fejlesztés:** Saját MCP szerverek építése, tesztelése és telepítése  
-- ✅ **Gyakorlati alkalmazások:** Valós munkafolyamatok megoldása AI segítségével
+- ✅ **AI Toolkit ökoszisztéma:** Modellek, agentek és integrációs minták
+- ✅ **MCP architektúra:** Kliens-szerver tervezés, protokollok, biztonság
+- ✅ **Fejlesztői eszközök:** Playground, Inspector és éles telepítés
+- ✅ **Egyedi fejlesztés:** Saját MCP szerverek építése, tesztelése, telepítése
+- ✅ **Gyakorlati alkalmazások:** Valós munkafolyamat kihívások AI segítségével való megoldása
 
 ### 🔮 Következő lépések:
 
-1. **Építsd meg saját MCP szerveredet:** Használd ezeket a képességeket egyedi munkafolyamataid automatizálására  
-2. **Csatlakozz az MCP közösséghez:** Oszd meg alkotásaidat és tanulj másoktól  
-3. **Fedezd fel a haladó integrációkat:** Kapcsold össze az MCP szervereket vállalati rendszerekkel  
-4. **Járulj hozzá nyílt forráskódhoz:** Segíts az MCP eszközök és dokumentáció fejlesztésében
+1. **Építsd meg a saját MCP szerveredet:** Automatizáld a saját egyedi munkafolyamataidat
+2. **Csatlakozz az MCP közösséghez:** Oszd meg munkáidat és tanulj másoktól
+3. **Fedezd fel a haladó integrációkat:** Kösd össze az MCP szervereket vállalati rendszerekkel
+4. **Járulj hozzá a nyílt forráskódhoz:** Segítsd az MCP eszköztár és dokumentáció fejlesztését
 
-Ne feledd, ez a workshop csak a kezdet. A Model Context Protocol ökoszisztéma gyorsan fejlődik, és most már fel vagy készülve, hogy az AI-alapú fejlesztői eszközök élvonalában legyél.
+Emlékezz, ez a workshop csak a kezdete. A Model Context Protocol ökoszisztéma gyorsan fejlődik, és most már képes vagy az AI-alapú fejlesztői eszközök élvonalában lenni.
 
-**Köszönjük a részvételedet és a tanulás iránti elkötelezettségedet!**
+**Köszönjük, hogy részt vettél és kitartóan tanultál!**
 
-Reméljük, hogy ez a workshop inspirációt adott, amely megváltoztatja, hogyan építesz és használsz AI eszközöket a fejlesztői munkád során.
+Reméljük, ez a workshop ötleteket ébresztett benned, amelyek megváltoztatják, hogyan építesz és használsz AI eszközöket a fejlesztési munkád során.
 
 **Jó kódolást!**
 
 ---
 
-**Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy téves értelmezésekért.
+## Mi következik
+
+Gratulálunk a 10. modul összes laborjának befejezéséhez!
+
+- Vissza: [10. modul áttekintése](../README.md)
+- Tovább: [11. modul: MCP szerver gyakorlati laborok](../../11-MCPServerHandsOnLabs/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Nyilatkozat**:
+Jelen dokumentumot az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) használatával fordítottuk. Bár igyekszünk pontosan dolgozni, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén szakmai emberi fordítást javasolunk. Nem vállalunk felelősséget semmilyen félreértésért vagy téves értelmezésért, amely ebből a fordításból ered.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5ef8f5821c1a04f7b1fc4f15098ecab8",
-  "translation_date": "2025-07-13T19:42:45+00:00",
-  "source_file": "03-GettingStarted/04-vscode/solution/README.md",
-  "language_code": "el"
-}
--->
 Αυτό αντιστοιχεί στην εκτέλεση μιας εντολής όπως: `node build/index.js`.
 
 - Αλλάξτε αυτή την καταχώρηση server ώστε να ταιριάζει με το πού βρίσκεται το αρχείο του server σας ή με ό,τι απαιτείται για την εκκίνηση του server σας, ανάλογα με το runtime και τη θέση του server που έχετε επιλέξει.
@@ -23,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     Θα δείτε ένα εργαλείο να εμφανίζεται πάνω από το πλαίσιο κειμένου της συνομιλίας, υποδεικνύοντας ότι μπορείτε να το επιλέξετε για να το εκτελέσετε, όπως στην παρακάτω εικόνα:
 
-    ![VS Code indicating it wanting to run a tool](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.el.png)
+    ![VS Code indicating it wanting to run a tool](../../../../../translated_images/el/vscode-agent.d5a0e0b897331060.webp)
 
     Η επιλογή του εργαλείου θα πρέπει να παράγει ένα αριθμητικό αποτέλεσμα που λέει "23", αν η εντολή σας ήταν όπως αναφέραμε προηγουμένως.
 

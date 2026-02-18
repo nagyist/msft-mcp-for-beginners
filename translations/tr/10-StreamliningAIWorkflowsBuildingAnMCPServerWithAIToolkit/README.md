@@ -1,68 +1,59 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1b000fd6e1b04c047578bfc5d07d54eb",
-  "translation_date": "2025-08-18T18:05:30+00:00",
-  "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md",
-  "language_code": "tr"
-}
--->
-# AI İş Akışlarını Kolaylaştırma: AI Toolkit ile MCP Sunucusu Oluşturma
+# Yapay Zeka İş Akışlarını Kolaylaştırma: AI Toolkit ile Bir MCP Sunucusu Oluşturma
 
-[![MCP Versiyonu](https://img.shields.io/badge/MCP-1.9.3-blue.svg)](https://modelcontextprotocol.io/)
+[![MCP Spec](https://img.shields.io/badge/MCP%20Spec-2025--11--25-blue.svg)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
 [![Python](https://img.shields.io/badge/Python-3.10+-green.svg)](https://python.org)
 [![VS Code](https://img.shields.io/badge/VS%20Code-Latest-orange.svg)](https://code.visualstudio.com/)
 
-![logo](../../../translated_images/logo.ec93918ec338dadde1715c8aaf118079e0ed0502e9efdfcc84d6a0f4a9a70ae8.tr.png)
+![logo](../../../translated_images/tr/logo.ec93918ec338dadd.webp)
 
 ## 🎯 Genel Bakış
 
-[![VS Code'da AI Ajanları Oluşturma: MCP ve AI Toolkit ile 4 Uygulamalı Laboratuvar](../../../translated_images/11.0f6db6a0fb6068856d0468590a120ffe35dbccc49b93dc88b2003f306c81493a.tr.png)](https://youtu.be/r34Csn3rkeQ)
+[![Build AI Agents in VS Code: 4 Hands-On Labs with MCP and AI Toolkit](../../../translated_images/tr/11.0f6db6a0fb606885.webp)](https://youtu.be/r34Csn3rkeQ)
 
 _(Bu dersin videosunu izlemek için yukarıdaki görsele tıklayın)_
 
-**Model Context Protocol (MCP) Atölyesi**'ne hoş geldiniz! Bu kapsamlı uygulamalı atölye, AI uygulama geliştirmede devrim yaratmak için iki ileri teknolojiyi bir araya getiriyor:
+**Model Context Protocol (MCP) Atölyesi**ne hoş geldiniz! Bu kapsamlı uygulamalı atölye, yapay zeka uygulama geliştirmeyi devrim niteliğinde değiştiren iki ileri teknoloji teknolojiyi bir araya getiriyor:
 
-- **🔗 Model Context Protocol (MCP)**: AI araçlarının sorunsuz entegrasyonu için açık bir standart
-- **🛠️ Visual Studio Code için AI Toolkit (AITK)**: Microsoft'un güçlü AI geliştirme uzantısı
+- **🔗 Model Context Protocol (MCP)**: Sorunsuz Yapay Zeka araç entegrasyonu için açık standart
+- **🛠️ Visual Studio Code için AI Toolkit (AITK)**: Microsoft’un güçlü Yapay Zeka geliştirme uzantısı
 
-### 🎓 Öğrenecekleriniz
+### 🎓 Neler Öğreneceksiniz
 
-Bu atölyenin sonunda, AI modellerini gerçek dünya araçları ve hizmetleriyle birleştiren akıllı uygulamalar oluşturma sanatında ustalaşacaksınız. Otomatik testlerden özel API entegrasyonlarına kadar, karmaşık iş zorluklarını çözmek için pratik beceriler kazanacaksınız.
+Bu atölyenin sonunda, Yapay Zeka modellerini gerçek dünya araçları ve hizmetlerle birleştiren zeki uygulamalar geliştirme sanatında ustalaşacaksınız. Otomatik testlerden özel API entegrasyonlarına kadar karmaşık iş zorluklarını çözmek için pratik beceriler kazanacaksınız.
 
 ## 🏗️ Teknoloji Yığını
 
 ### 🔌 Model Context Protocol (MCP)
 
-MCP, AI için **"USB-C"** gibidir - AI modellerini harici araçlara ve veri kaynaklarına bağlayan evrensel bir standart.
+MCP, yapay zeka modellerini dış araçlara ve veri kaynaklarına bağlayan **"Yapay Zeka için USB-C"** evrensel standarttır.
 
 **✨ Temel Özellikler:**
 
-- 🔄 **Standartlaştırılmış Entegrasyon**: AI araç bağlantıları için evrensel arayüz
+- 🔄 **Standartlaştırılmış Entegrasyon**: Yapay Zeka-aracı bağlantıları için evrensel arayüz
 - 🏛️ **Esnek Mimari**: stdio/SSE taşımacılığı ile yerel ve uzak sunucular
 - 🧰 **Zengin Ekosistem**: Tek bir protokolde araçlar, istemler ve kaynaklar
-- 🔒 **Kurumsal Düzeyde Hazır**: Dahili güvenlik ve güvenilirlik
+- 🔒 **Kurumsal Hazır**: Yerleşik güvenlik ve güvenilirlik
 
-**🎯 MCP Neden Önemlidir:**
-USB-C'nin kablo karmaşasını ortadan kaldırdığı gibi, MCP de AI entegrasyonlarının karmaşıklığını ortadan kaldırır. Tek bir protokol, sonsuz olasılık.
+**🎯 MCP’nin Önemi:**
+USB-C’nin kablo karmaşasını ortadan kaldırması gibi MCP, yapay zeka entegrasyonlarının karmaşıklığını ortadan kaldırır. Tek protokol, sonsuz olasılık.
 
 ### 🤖 Visual Studio Code için AI Toolkit (AITK)
 
-Microsoft'un VS Code'u bir AI gücüne dönüştüren amiral gemisi AI geliştirme uzantısı.
+Microsoft’un öncü yapay zeka geliştirme uzantısı, VS Code’u bir yapay zeka gücüne dönüştürür.
 
 **🚀 Temel Yetkinlikler:**
 
-- 📦 **Model Kataloğu**: Azure AI, GitHub, Hugging Face, Ollama'dan modellere erişim
-- ⚡ **Yerel Çıkarım**: ONNX ile optimize edilmiş CPU/GPU/NPU çalıştırma
-- 🏗️ **Ajan Oluşturucu**: MCP entegrasyonu ile görsel AI ajan geliştirme
+- 📦 **Model Kataloğu**: Azure AI, GitHub, Hugging Face, Ollama modellerine erişim
+- ⚡ **Yerel Çıkarım**: ONNX optimize edilmiş CPU/GPU/NPU çalıştırma
+- 🏗️ **Ajan Oluşturucu**: MCP entegrasyonlu görsel Yapay Zeka ajan geliştirme
 - 🎭 **Çok Modlu**: Metin, görsel ve yapılandırılmış çıktı desteği
 
 **💡 Geliştirme Avantajları:**
 
-- Sıfır yapılandırma ile model dağıtımı
+- Sıfır konfigürasyonlu model dağıtımı
 - Görsel istem mühendisliği
-- Gerçek zamanlı test ortamı
-- MCP sunucusuyla sorunsuz entegrasyon
+- Gerçek zamanlı test alanı
+- Kesintisiz MCP sunucu entegrasyonu
 
 ## 📚 Öğrenme Yolculuğu
 
@@ -70,99 +61,99 @@ Microsoft'un VS Code'u bir AI gücüne dönüştüren amiral gemisi AI geliştir
 
 **Süre**: 15 dakika
 
-- 🛠️ AI Toolkit'i VS Code'a kurun ve yapılandırın
-- 🗂️ Model Kataloğunu keşfedin (GitHub, ONNX, OpenAI, Anthropic, Google'dan 100+ model)
-- 🎮 Gerçek zamanlı model testi için Etkileşimli Oyun Alanını öğrenin
-- 🤖 Ajan Oluşturucu ile ilk AI ajanınızı oluşturun
-- 📊 Dahili metriklerle model performansını değerlendirin (F1, alaka düzeyi, benzerlik, tutarlılık)
-- ⚡ Toplu işleme ve çok modlu destek yeteneklerini öğrenin
+- 🛠️ AI Toolkit for VS Code kurulumu ve yapılandırması
+- 🗂️ Model Kataloğunu keşfetme (GitHub, ONNX, OpenAI, Anthropic, Google’dan 100+ model)
+- 🎮 Gerçek zamanlı model testi için Etkileşimli Oyun Alanını öğrenme
+- 🤖 Agent Builder ile ilk Yapay Zeka ajanınızı oluşturma
+- 📊 Yerleşik ölçütlerle model performansını değerlendirme (F1, uygunluk, benzerlik, tutarlılık)
+- ⚡ Toplu işleme ve çok modlu destek yeteneklerini öğrenme
 
-**🎯 Öğrenme Çıktısı**: AITK yeteneklerini kapsamlı bir şekilde anlayarak işlevsel bir AI ajanı oluşturun
+**🎯 Öğrenme Çıktısı**: AITK yeteneklerini kapsayan fonksiyonel bir Yapay Zeka ajanı oluşturma
 
-### [🌐 Modül 2: AI Toolkit ile MCP Temelleri](./lab2/README.md)
-
-**Süre**: 20 dakika
-
-- 🧠 Model Context Protocol (MCP) mimarisi ve kavramlarını öğrenin
-- 🌐 Microsoft'un MCP sunucu ekosistemini keşfedin
-- 🤖 Playwright MCP sunucusunu kullanarak bir tarayıcı otomasyon ajanı oluşturun
-- 🔧 MCP sunucularını AI Toolkit Ajan Oluşturucu ile entegre edin
-- 📊 Ajanlarınızda MCP araçlarını yapılandırın ve test edin
-- 🚀 MCP destekli ajanları üretim için dışa aktarın ve dağıtın
-
-**🎯 Öğrenme Çıktısı**: Harici araçlarla güçlendirilmiş bir AI ajanı dağıtın
-
-### [🔧 Modül 3: AI Toolkit ile Gelişmiş MCP Geliştirme](./lab3/README.md)
+### [🌐 Modül 2: MCP ile AI Toolkit Temelleri](./lab2/README.md)
 
 **Süre**: 20 dakika
 
-- 💻 AI Toolkit kullanarak özel MCP sunucuları oluşturun
-- 🐍 En son MCP Python SDK'sını (v1.9.3) yapılandırın ve kullanın
-- 🔍 Hata ayıklama için MCP Inspector'ı kurun ve kullanın
-- 🛠️ Profesyonel hata ayıklama iş akışlarıyla bir Hava Durumu MCP Sunucusu oluşturun
-- 🧪 Ajan Oluşturucu ve Inspector ortamlarında MCP sunucularını hata ayıklayın
+- 🧠 Model Context Protocol (MCP) mimarisi ve kavramlarında ustalaşma
+- 🌐 Microsoft’un MCP sunucu ekosistemini keşfetme
+- 🤖 Playwright MCP sunucusunu kullanarak tarayıcı otomasyon ajanı oluşturma
+- 🔧 MCP sunucularını AI Toolkit Agent Builder ile entegre etme
+- 📊 Ajanlarınızda MCP araçlarını yapılandırma ve test etme
+- 🚀 MCP destekli ajanları üretime aktarma ve dağıtma
 
-**🎯 Öğrenme Çıktısı**: Modern araçlarla özel MCP sunucuları geliştirin ve hata ayıklayın
+**🎯 Öğrenme Çıktısı**: MCP aracılığıyla dış araçlarla güçlendirilmiş bir Yapay Zeka ajanı dağıtma
 
-### [🐙 Modül 4: Pratik MCP Geliştirme - Özel GitHub Klon Sunucusu](./lab4/README.md)
+### [🔧 Modül 3: AI Toolkit ile İleri Düzey MCP Geliştirme](./lab3/README.md)
+
+**Süre**: 20 dakika
+
+- 💻 AI Toolkit kullanarak özel MCP sunucuları oluşturma
+- 🐍 En son MCP Python SDK’sını (v1.9.3) yapılandırma ve kullanma
+- 🔍 Hata ayıklama için MCP Inspector kurma ve kullanma
+- 🛠️ Profesyonel hata ayıklama iş akışlarıyla Hava Durumu MCP Sunucusu oluşturma
+- 🧪 Agent Builder ve Inspector ortamlarında MCP sunucularını hata ayıklama
+
+**🎯 Öğrenme Çıktısı**: Modern araçlarla özel MCP sunucuları geliştirme ve hata ayıklama
+
+### [🐙 Modül 4: Pratik MCP Geliştirme - Özel GitHub Clone Sunucusu](./lab4/README.md)
 
 **Süre**: 30 dakika
 
-- 🏗️ Geliştirme iş akışları için gerçek bir GitHub Klon MCP Sunucusu oluşturun
-- 🔄 Doğrulama ve hata işleme ile akıllı depo klonlama uygulayın
-- 📁 Akıllı dizin yönetimi ve VS Code entegrasyonu oluşturun
-- 🤖 Özel MCP araçlarıyla GitHub Copilot Ajan Modunu kullanın
-- 🛡️ Üretime hazır güvenilirlik ve platformlar arası uyumluluk uygulayın
+- 🏗️ Gerçek dünya geliştirici iş akışları için GitHub Clone MCP Sunucusu oluşturma
+- 🔄 Doğrulama ve hata yönetimiyle akıllı depo klonlama uygulama
+- 📁 Akıllı dizin yönetimi ve VS Code entegrasyonu oluşturma
+- 🤖 Özel MCP araçlarıyla GitHub Copilot Agent Modunu kullanma
+- 🛡️ Üretim kalitesinde güvenilirlik ve çok platform uyumluluğu uygulama
 
-**🎯 Öğrenme Çıktısı**: Gerçek geliştirme iş akışlarını kolaylaştıran üretime hazır bir MCP sunucusu dağıtın
+**🎯 Öğrenme Çıktısı**: Gerçek geliştirme iş akışlarını kolaylaştıran üretime hazır MCP sunucusu dağıtma
 
-## 💡 Gerçek Dünya Uygulamaları ve Etkisi
+## 💡 Gerçek Dünya Uygulamaları ve Etkileri
 
-### 🏢 Kurumsal Kullanım Senaryoları
+### 🏢 Kurumsal Kullanım Alanları
 
 #### 🔄 DevOps Otomasyonu
 
 Geliştirme iş akışınızı akıllı otomasyonla dönüştürün:
 
-- **Akıllı Depo Yönetimi**: AI destekli kod inceleme ve birleştirme kararları
-- **Akıllı CI/CD**: Kod değişikliklerine dayalı otomatik boru hattı optimizasyonu
-- **Sorun Sınıflandırma**: Otomatik hata sınıflandırma ve atama
+- **Akıllı Depo Yönetimi**: Yapay zekayla kod inceleme ve birleştirme kararları
+- **Akıllı CI/CD**: Kod değişikliklerine göre otomatik boru hattı optimizasyonu
+- **Sorun Sınıflandırma**: Otomatik hata sınıflandırma ve görev ataması
 
 #### 🧪 Kalite Güvencesinde Devrim
 
-AI destekli otomasyonla testleri geliştirin:
+Testleri yapay zeka destekli otomasyonla yükseltin:
 
-- **Akıllı Test Oluşturma**: Kapsamlı test paketlerini otomatik olarak oluşturun
-- **Görsel Regresyon Testi**: AI destekli UI değişiklik tespiti
+- **Akıllı Test Oluşturma**: Kapsamlı test paketleri otomatik olarak oluşturma
+- **Görsel Regresyon Testi**: Yapay zeka destekli kullanıcı arayüzü değişikliği algılama
 - **Performans İzleme**: Proaktif sorun tespiti ve çözümü
 
-#### 📊 Veri Hattı Zekası
+#### 📊 Veri Boru Hattı Zekası
 
 Daha akıllı veri işleme iş akışları oluşturun:
 
-- **Uyarlanabilir ETL Süreçleri**: Kendini optimize eden veri dönüşümleri
+- **Uyarlanabilir ETL Süreçleri**: Kendi kendini optimize eden veri dönüşümleri
 - **Anomali Tespiti**: Gerçek zamanlı veri kalitesi izleme
 - **Akıllı Yönlendirme**: Akıllı veri akışı yönetimi
 
-#### 🎧 Müşteri Deneyimi Geliştirme
+#### 🎧 Müşteri Deneyimi İyileştirme
 
-Olağanüstü müşteri etkileşimleri oluşturun:
+Olağanüstü müşteri etkileşimleri yaratın:
 
-- **Bağlam Farkında Destek**: Müşteri geçmişine erişimi olan AI ajanları
+- **Kontekst Farkındalıklı Destek**: Müşteri geçmişine erişimi olan yapay zeka ajanları
 - **Proaktif Sorun Çözümü**: Öngörücü müşteri hizmetleri
-- **Çok Kanallı Entegrasyon**: Platformlar arası birleşik AI deneyimi
+- **Çok Kanallı Entegrasyon**: Platformlar arası birleşik yapay zeka deneyimi
 
 ## 🛠️ Ön Koşullar ve Kurulum
 
 ### 💻 Sistem Gereksinimleri
 
 | Bileşen | Gereksinim | Notlar |
-|---------|------------|-------|
-| **İşletim Sistemi** | Windows 10+, macOS 10.15+, Linux | Modern bir işletim sistemi |
-| **Visual Studio Code** | En son kararlı sürüm | AITK için gerekli |
+|---------|------------|--------|
+| **İşletim Sistemi** | Windows 10+, macOS 10.15+, Linux | Herhangi modern OS |
+| **Visual Studio Code** | En son stabil sürüm | AITK için gerekli |
 | **Node.js** | v18.0+ ve npm | MCP sunucu geliştirme için |
-| **Python** | 3.10+ | Python MCP sunucuları için isteğe bağlı |
-| **Bellek** | Minimum 8GB RAM | Yerel modeller için 16GB önerilir |
+| **Python** | 3.10+ | Python MCP sunucuları için opsiyonel |
+| **Bellek** | En az 8GB RAM | Yerel modeller için 16GB önerilir |
 
 ### 🔧 Geliştirme Ortamı
 
@@ -171,13 +162,13 @@ Olağanüstü müşteri etkileşimleri oluşturun:
 - **AI Toolkit** (ms-windows-ai-studio.windows-ai-studio)
 - **Python** (ms-python.python)
 - **Python Debugger** (ms-python.debugpy)
-- **GitHub Copilot** (GitHub.copilot) - İsteğe bağlı ancak faydalı
+- **GitHub Copilot** (GitHub.copilot) - Opsiyonel ancak faydalı
 
-#### İsteğe Bağlı Araçlar
+#### Opsiyonel Araçlar
 
 - **uv**: Modern Python paket yöneticisi
 - **MCP Inspector**: MCP sunucuları için görsel hata ayıklama aracı
-- **Playwright**: Web otomasyon örnekleri için
+- **Playwright**: Web otomasyonu örnekleri için
 
 ## 🎖️ Öğrenme Çıktıları ve Sertifikasyon Yolu
 
@@ -187,41 +178,50 @@ Bu atölyeyi tamamlayarak aşağıdaki alanlarda ustalık kazanacaksınız:
 
 #### 🎯 Temel Yetkinlikler
 
-- [ ] **MCP Protokol Ustalığı**: Mimari ve uygulama desenlerinde derin anlayış
-- [ ] **AITK Yetkinliği**: Hızlı geliştirme için AI Toolkit'in uzman düzeyinde kullanımı
-- [ ] **Özel Sunucu Geliştirme**: MCP sunucularını oluşturma, dağıtma ve bakımını yapma
-- [ ] **Araç Entegrasyonu Mükemmelliği**: AI'ı mevcut geliştirme iş akışlarına sorunsuz bir şekilde bağlama
-- [ ] **Sorun Çözme Uygulaması**: Öğrenilen becerileri gerçek iş zorluklarına uygulama
+- [ ] **MCP Protokol Ustalığı**: Mimari ve uygulama örüntülerinde derin bilgi
+- [ ] **AITK Yeterliliği**: AI Toolkit ile hızlı geliştirme yetkinliği
+- [ ] **Özel Sunucu Geliştirme**: Üretim MCP sunucuları oluşturma, dağıtma ve sürdürme
+- [ ] **Araç Entegrasyonu Mükemmelliği**: Yapay zekayı mevcut geliştirme iş akışlarına sorunsuz bağlama
+- [ ] **Problem Çözme Uygulaması**: Öğrenilen becerileri gerçek iş zorluklarına uygulama
 
 #### 🔧 Teknik Beceriler
 
-- [ ] AI Toolkit'i VS Code'da kurma ve yapılandırma
+- [ ] VS Code'da AI Toolkit kurulumu ve yapılandırması
 - [ ] Özel MCP sunucuları tasarlama ve uygulama
-- [ ] GitHub Modellerini MCP mimarisiyle entegre etme
+- [ ] GitHub Modellerini MCP mimarisi ile entegre etme
 - [ ] Playwright ile otomatik test iş akışları oluşturma
-- [ ] AI ajanlarını üretim için dağıtma
+- [ ] Üretim için yapay zeka ajanları dağıtma
 - [ ] MCP sunucu performansını hata ayıklama ve optimize etme
 
-#### 🚀 İleri Düzey Yetenekler
+#### 🚀 İleri Yetkinlikler
 
-- [ ] Kurumsal ölçekli AI entegrasyonları tasarlama
-- [ ] AI uygulamaları için güvenlik en iyi uygulamalarını uygulama
+- [ ] Kurumsal ölçekli yapay zeka entegrasyonları mimarisi geliştirme
+- [ ] Yapay zeka uygulamaları için güvenlik en iyi uygulamalarını uygulama
 - [ ] Ölçeklenebilir MCP sunucu mimarileri tasarlama
 - [ ] Belirli alanlar için özel araç zincirleri oluşturma
-- [ ] AI tabanlı geliştirme konusunda başkalarına mentorluk yapma
+- [ ] Yapay zeka yerel geliştirmede başkalarına rehberlik etme
 
 ## 📖 Ek Kaynaklar
 
-- [MCP Spesifikasyonu](https://modelcontextprotocol.io/docs)
+- [MCP Spesifikasyonu (2025-11-25)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
 - [AI Toolkit GitHub Deposu](https://github.com/microsoft/vscode-ai-toolkit)
-- [Örnek MCP Sunucuları Koleksiyonu](https://github.com/modelcontextprotocol/servers)
-- [En İyi Uygulamalar Kılavuzu](https://modelcontextprotocol.io/docs/best-practices)
+- [Örnek MCP Sunucu Koleksiyonu](https://github.com/modelcontextprotocol/servers)
+- [En İyi Uygulamalar Rehberi](https://modelcontextprotocol.io/docs/best-practices)
+- [OWASP MCP Top 10](https://microsoft.github.io/mcp-azure-security-guide/mcp/) - Güvenlik en iyi uygulamaları
 
 ---
 
-**🚀 AI geliştirme iş akışınızı devrimleştirmeye hazır mısınız?**
+**🚀 Yapay zeka geliştirme iş akışınızı devrim niteliğinde değiştirmeye hazır mısınız?**
 
-MCP ve AI Toolkit ile birlikte akıllı uygulamaların geleceğini inşa edelim!
+MCP ve AI Toolkit ile birlikte zeki uygulamaların geleceğini birlikte inşa edelim!
 
-**Feragatname**:  
-Bu belge, [Co-op Translator](https://github.com/Azure/co-op-translator) adlı bir yapay zeka çeviri hizmeti kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlıklar içerebileceğini lütfen unutmayın. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel bir insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan herhangi bir yanlış anlama veya yanlış yorumlama durumunda sorumluluk kabul edilmez.
+## Sonraki Adım
+
+Devam et: [Modül 11: MCP Sunucu Uygulamalı Laboratuvarlar](../11-MCPServerHandsOnLabs/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Feragatname**:
+Bu belge, yapay zeka çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstermekle birlikte, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi ana dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yanlış yorumlamalar için sorumluluk kabul edilmemektedir.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

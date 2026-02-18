@@ -1,115 +1,110 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a3f252a62f059360855de5331a575898",
-  "translation_date": "2025-07-14T08:57:41+00:00",
-  "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/README.md",
-  "language_code": "tr"
-}
--->
-# Weather MCP Server
+# Weather MCP Sunucusu
 
-Bu, sahte yanıtlarla hava durumu araçlarını uygulayan Python'da örnek bir MCP Server'dır. Kendi MCP Server'ınız için bir iskelet olarak kullanılabilir. Aşağıdaki özellikleri içerir:
+Bu, sahte yanıtlarla hava araçlarını uygulayan Python'da örnek bir MCP Sunucusudur. Kendi MCP Sunucunuz için bir iskelet olarak kullanılabilir. Şu özellikleri içerir:
 
-- **Weather Tool**: Verilen konuma göre sahte hava durumu bilgisi sağlayan bir araç.
-- **Git Clone Tool**: Bir git deposunu belirtilen klasöre klonlayan araç.
-- **VS Code Open Tool**: Bir klasörü VS Code veya VS Code Insiders'da açan araç.
-- **Connect to Agent Builder**: MCP sunucusunu test ve hata ayıklama için Agent Builder'a bağlamanızı sağlayan özellik.
-- **Debug in [MCP Inspector](https://github.com/modelcontextprotocol/inspector)**: MCP Server'ı MCP Inspector kullanarak hata ayıklamanızı sağlayan özellik.
+- **Hava Aracı**: Verilen konuma göre sahte hava durumu bilgisi sağlayan bir araç.
+- **Git Clone Aracı**: Bir git deposunu belirtilen klasöre klonlayan bir araç.
+- **VS Code Açma Aracı**: Bir klasörü VS Code veya VS Code Insiders uygulamasında açan bir araç.
+- **Agent Builder'a Bağlanma**: MCP sunucusunu test ve hata ayıklama için Agent Builder'a bağlamanızı sağlayan bir özellik.
+- **[MCP Inspector](https://github.com/modelcontextprotocol/inspector) ile Hata Ayıklama**: MCP Sunucusunu MCP Inspector kullanarak hata ayıklamanızı sağlayan bir özellik.
 
-## Weather MCP Server şablonuna başlama
+## Weather MCP Sunucusu şablonuna başlama
 
 > **Önkoşullar**
 >
-> MCP Server'ı yerel geliştirme makinenizde çalıştırmak için ihtiyacınız olacak:
+> MCP Sunucusunu yerel geliştirme makinenizde çalıştırmak için ihtiyacınız olacak:
 >
 > - [Python](https://www.python.org/)
 > - [Git](https://git-scm.com/) (git_clone_repo aracı için gerekli)
 > - [VS Code](https://code.visualstudio.com/) veya [VS Code Insiders](https://code.visualstudio.com/insiders/) (open_in_vscode aracı için gerekli)
-> - (*İsteğe bağlı - uv tercih ederseniz*) [uv](https://github.com/astral-sh/uv)
-> - [Python Debugger Extension](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy)
+> - (*Opsiyonel - uv tercih ederseniz*) [uv](https://github.com/astral-sh/uv)
+> - [Python Hata Ayıklayıcı Eklentisi](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy)
 
-## Ortamı hazırlama
+## Ortamı Hazırlama
 
-Bu proje için ortamı kurmanın iki yolu vardır. Tercihinize göre birini seçebilirsiniz.
+Bu proje için ortamı hazırlamanın iki yolu vardır. Tercihinize göre birini seçebilirsiniz.
 
-> Not: Sanal ortam oluşturduktan sonra VSCode veya terminali yeniden yükleyerek sanal ortam python'unun kullanıldığından emin olun.
+> Not: Sanal ortam oluşturulduktan sonra sanal ortam Python'un kullanıldığından emin olmak için VSCode veya terminali yeniden başlatın.
 
 | Yöntem | Adımlar |
 | -------- | ----- |
-| `uv` kullanarak | 1. Sanal ortam oluşturun: `uv venv` <br>2. VSCode Komutunu çalıştırın "***Python: Select Interpreter***" ve oluşturulan sanal ortamın python'unu seçin <br>3. Bağımlılıkları (geliştirme bağımlılıkları dahil) yükleyin: `uv pip install -r pyproject.toml --extra dev` |
-| `pip` kullanarak | 1. Sanal ortam oluşturun: `python -m venv .venv` <br>2. VSCode Komutunu çalıştırın "***Python: Select Interpreter***" ve oluşturulan sanal ortamın python'unu seçin<br>3. Bağımlılıkları (geliştirme bağımlılıkları dahil) yükleyin: `pip install -e .[dev]` |
+| `uv` kullanarak | 1. Sanal ortam oluşturun: `uv venv` <br>2. VSCode Komutundan "***Python: Interpreter Seç***" çalıştırın ve oluşturulan sanal ortamın Python'unu seçin<br>3. Bağımlılıkları (geliştirme bağımlılıkları dahil) yükleyin: `uv pip install -r pyproject.toml --extra dev` |
+| `pip` kullanarak | 1. Sanal ortam oluşturun: `python -m venv .venv` <br>2. VSCode Komutundan "***Python: Interpreter Seç***" çalıştırın ve oluşturulan sanal ortamın Python'unu seçin<br>3. Bağımlılıkları (geliştirme bağımlılıkları dahil) yükleyin: `pip install -e .[dev]` |
 
-Ortamı kurduktan sonra, MCP Client olarak Agent Builder üzerinden yerel geliştirme makinenizde sunucuyu çalıştırabilirsiniz:
-1. VS Code Hata Ayıklama panelini açın. `Debug in Agent Builder` seçin veya MCP sunucusunu hata ayıklamaya başlamak için `F5` tuşuna basın.
-2. AI Toolkit Agent Builder'ı kullanarak [bu prompt](../../../../../../../../../../open_prompt_builder) ile sunucuyu test edin. Sunucu otomatik olarak Agent Builder'a bağlanacaktır.
-3. Prompt ile sunucuyu test etmek için `Run` butonuna tıklayın.
+Ortam hazırlandıktan sonra, yerel geliştirme makinenizde Agent Builder üzerinden MCP Client olarak sunucuyu çalıştırabilirsiniz:
+1. VS Code Hata Ayıklama panelini açın. `Agent Builder'da Hata Ayıkla` seçeneğini seçin veya MCP sunucusunu hata ayıklamaya başlamak için `F5` tuşuna basın.
+2. AI Toolkit Agent Builder'ı kullanarak [bu istemle](../../../../../../../../../../../open_prompt_builder) sunucuyu test edin. Sunucu otomatik olarak Agent Builder'a bağlanacaktır.
+3. İstemle sunucuyu test etmek için `Çalıştır` butonuna tıklayın.
 
-**Tebrikler**! Weather MCP Server'ı yerel geliştirme makinenizde Agent Builder üzerinden MCP Client olarak başarıyla çalıştırdınız.  
+**Tebrikler**! Weather MCP Sunucusunu yerel geliştirme makinenizde Agent Builder üzerinden MCP Client olarak başarıyla çalıştırdınız.
 ![DebugMCP](https://raw.githubusercontent.com/microsoft/windows-ai-studio-templates/refs/heads/dev/mcpServers/mcp_debug.gif)
 
 ## Şablonda neler var
 
-| Klasör / Dosya | İçerik                                      |
-| -------------- | ------------------------------------------ |
-| `.vscode`      | Hata ayıklama için VSCode dosyaları       |
-| `.aitk`        | AI Toolkit yapılandırmaları                 |
-| `src`          | Weather MCP server için kaynak kod          |
+| Klasör / Dosya| İçerik                                      |
+| ------------ | -------------------------------------------- |
+| `.vscode`    | Hata ayıklama için VSCode dosyaları          |
+| `.aitk`      | AI Toolkit yapılandırmaları                   |
+| `src`        | Weather MCP sunucusunun kaynak kodu          |
 
-## Weather MCP Server nasıl hata ayıklanır
+## Weather MCP Sunucusunu nasıl hata ayıklarsınız
 
 > Notlar:
-> - [MCP Inspector](https://github.com/modelcontextprotocol/inspector), MCP sunucularını test ve hata ayıklama için görsel bir geliştirici aracıdır.
-> - Tüm hata ayıklama modları breakpoint destekler, böylece araç uygulama koduna breakpoint ekleyebilirsiniz.
+> - [MCP Inspector](https://github.com/modelcontextprotocol/inspector), MCP sunucularını test etmek ve hata ayıklamak için görsel bir geliştirici aracıdır.
+> - Tüm hata ayıklama modları kesme noktalarını destekler, böylece araç uygulama koduna kesme noktaları ekleyebilirsiniz.
 
-## Kullanılabilir Araçlar
+## Mevcut Araçlar
 
-### Weather Tool
+### Hava Aracı
 `get_weather` aracı, belirtilen konum için sahte hava durumu bilgisi sağlar.
 
 | Parametre | Tür | Açıklama |
-| --------- | --- | -------- |
-| `location` | string | Hava durumu alınacak konum (örneğin, şehir adı, eyalet veya koordinatlar) |
+| --------- | ---- | ----------- |
+| `location` | string | Hava bilgisi alınacak konum (örn. şehir adı, eyalet veya koordinatlar) |
 
-### Git Clone Tool
+### Git Clone Aracı
 `git_clone_repo` aracı, bir git deposunu belirtilen klasöre klonlar.
 
 | Parametre | Tür | Açıklama |
-| --------- | --- | -------- |
+| --------- | ---- | ----------- |
 | `repo_url` | string | Klonlanacak git deposunun URL'si |
-| `target_folder` | string | Depo klonlanacak klasörün yolu |
+| `target_folder` | string | Depo klonlanacak klasör yolu |
 
-Araç şu JSON nesnesini döner:
-- `success`: İşlemin başarılı olup olmadığını belirten boolean
+Araç şu yapıda bir JSON döner:
+- `success`: İşlemin başarılı olup olmadığını gösteren Boolean
 - `target_folder` veya `error`: Klonlanan deponun yolu veya hata mesajı
 
-### VS Code Open Tool
+### VS Code Açma Aracı
 `open_in_vscode` aracı, bir klasörü VS Code veya VS Code Insiders uygulamasında açar.
 
 | Parametre | Tür | Açıklama |
-| --------- | --- | -------- |
+| --------- | ---- | ----------- |
 | `folder_path` | string | Açılacak klasörün yolu |
-| `use_insiders` | boolean (isteğe bağlı) | Normal VS Code yerine VS Code Insiders kullanılıp kullanılmayacağı |
+| `use_insiders` | boolean (opsiyonel) | Normal VS Code yerine VS Code Insiders kullanılıp kullanılmayacağı |
 
-Araç şu JSON nesnesini döner:
-- `success`: İşlemin başarılı olup olmadığını belirten boolean
+Araç şu yapıda bir JSON döner:
+- `success`: İşlemin başarılı olup olmadığını gösteren Boolean
 - `message` veya `error`: Onay mesajı veya hata mesajı
 
-## Hata Ayıklama Modu | Açıklama | Hata Ayıklama Adımları |
-| ---------------- | -------- | --------------------- |
-| Agent Builder | MCP sunucusunu AI Toolkit üzerinden Agent Builder'da hata ayıklayın. | 1. VS Code Hata Ayıklama panelini açın. `Debug in Agent Builder` seçin ve MCP sunucusunu hata ayıklamaya başlamak için `F5` tuşuna basın.<br>2. AI Toolkit Agent Builder'ı kullanarak [bu prompt](../../../../../../../../../../open_prompt_builder) ile sunucuyu test edin. Sunucu otomatik olarak Agent Builder'a bağlanacaktır.<br>3. Prompt ile sunucuyu test etmek için `Run` butonuna tıklayın. |
-| MCP Inspector | MCP sunucusunu MCP Inspector kullanarak hata ayıklayın. | 1. [Node.js](https://nodejs.org/) yükleyin<br>2. Inspector'ı kurun: `cd inspector` && `npm install` <br>3. VS Code Hata Ayıklama panelini açın. `Debug SSE in Inspector (Edge)` veya `Debug SSE in Inspector (Chrome)` seçin. Hata ayıklamayı başlatmak için F5'e basın.<br>4. MCP Inspector tarayıcıda açıldığında, bu MCP sunucusuna bağlanmak için `Connect` butonuna tıklayın.<br>5. Ardından `List Tools` yapabilir, bir araç seçebilir, parametreleri girebilir ve `Run Tool` ile sunucu kodunuzu hata ayıklayabilirsiniz.<br> |
+| Hata Ayıklama Modu | Açıklama | Hata Ayıklama Adımları |
+| ---------- | ----------- | --------------- |
+| Agent Builder | MCP sunucusunu AI Toolkit üzerinden Agent Builder'da hata ayıklayın. | 1. VS Code Hata Ayıklama panelini açın. `Agent Builder'da Hata Ayıkla` seçeneğini seçin ve MCP sunucusunun hata ayıklamasını başlatmak için `F5`'e basın.<br>2. AI Toolkit Agent Builder ile [bu istemle](../../../../../../../../../../../open_prompt_builder) sunucuyu test edin. Sunucu otomatik olarak Agent Builder'a bağlanacaktır.<br>3. İstemle sunucuyu test etmek için `Çalıştır` butonuna tıklayın. |
+| MCP Inspector | MCP Inspector kullanarak MCP sunucusunu hata ayıklayın. | 1. [Node.js](https://nodejs.org/) kurun<br> 2. Inspector kurulumu: `cd inspector` && `npm install` <br> 3. VS Code Hata Ayıklama panelini açın. `Inspector'da SSE'yi Hata Ayıkla (Edge)` veya `Inspector'da SSE'yi Hata Ayıkla (Chrome)` seçin. Hata ayıklamayı başlatmak için F5'e basın.<br> 4. MCP Inspector tarayıcıda açıldığında, bu MCP sunucusuna bağlanmak için `Bağlan` butonuna tıklayın.<br> 5. Sonra `Araçları Listele`, bir araç seç, parametreleri gir ve `Aracı Çalıştır` ile sunucu kodunuzu hata ayıklayın.<br> |
 
 ## Varsayılan Portlar ve Özelleştirmeler
 
 | Hata Ayıklama Modu | Portlar | Tanımlar | Özelleştirmeler | Not |
-| ------------------ | ------- | -------- | --------------- | --- |
-| Agent Builder | 3001 | [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/tasks.json) | Yukarıdaki portları değiştirmek için [launch.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/launch.json), [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/tasks.json), [\_\_init\_\_.py](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/src/__init__.py), [mcp.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.aitk/mcp.json) dosyalarını düzenleyin. | Yok |
-| MCP Inspector | 3001 (Sunucu); 5173 ve 3000 (Inspector) | [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/tasks.json) | Yukarıdaki portları değiştirmek için [launch.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/launch.json), [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/tasks.json), [\_\_init\_\_.py](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/src/__init__.py), [mcp.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.aitk/mcp.json) dosyalarını düzenleyin. | Yok |
+| ---------- | ----- | ------------ | -------------- |-------------- |
+| Agent Builder | 3001 | [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/tasks.json) | Yukarıdaki portları değiştirmek için [launch.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/launch.json), [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/tasks.json), [\_\_init\_\_.py](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/src/__init__.py), [mcp.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.aitk/mcp.json) dosyalarını düzenleyin. | Uygulanamaz |
+| MCP Inspector | 3001 (Sunucu); 5173 ve 3000 (Inspector) | [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/tasks.json) | Yukarıdaki portları değiştirmek için [launch.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/launch.json), [tasks.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.vscode/tasks.json), [\_\_init\_\_.py](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/src/__init__.py), [mcp.json](../../../../../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/code/github_mcp_server/.aitk/mcp.json) dosyalarını düzenleyin.| Uygulanamaz |
 
-## Geri Bildirim
+## Geribildirim
 
-Bu şablonla ilgili herhangi bir geri bildiriminiz veya öneriniz varsa, lütfen [AI Toolkit GitHub deposunda](https://github.com/microsoft/vscode-ai-toolkit/issues) bir issue açın.
+Bu şablon hakkında herhangi bir geri bildiriminiz veya öneriniz varsa, lütfen [AI Toolkit GitHub deposunda](https://github.com/microsoft/vscode-ai-toolkit/issues) bir issue açın.
 
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu doküman, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hata veya eksiklikler içerebileceğini lütfen unutmayınız. Orijinal dokümanın kendi dilindeki versiyonu otoritatif kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı nedeniyle oluşabilecek herhangi bir yanlış anlama veya yanlış yorumdan sorumlu olmayız.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-13T22:03:33+00:00",
-  "source_file": "03-GettingStarted/08-testing/README.md",
-  "language_code": "sk"
-}
--->
 ## Testovanie a ladenie
 
 Predtým, než začnete testovať svoj MCP server, je dôležité porozumieť dostupným nástrojom a osvedčeným postupom pri ladení. Efektívne testovanie zabezpečí, že váš server bude fungovať podľa očakávaní a pomôže vám rýchlo identifikovať a vyriešiť problémy. Nasledujúca časť popisuje odporúčané prístupy na overenie implementácie MCP.
@@ -48,7 +39,7 @@ npx @modelcontextprotocol/inspector node build/index.js
 
 Vyššie uvedený príkaz spustí MCP a jeho vizuálne rozhranie a otvorí lokálne webové rozhranie vo vašom prehliadači. Môžete očakávať zobrazenie dashboardu s registrovanými MCP servermi, ich dostupnými nástrojmi, zdrojmi a výzvami. Rozhranie umožňuje interaktívne testovať spustenie nástrojov, prezerať metadata servera a sledovať odpovede v reálnom čase, čo uľahčuje overenie a ladenie implementácií MCP servera.
 
-Takto to môže vyzerať: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.sk.png)
+Takto to môže vyzerať: ![Inspector](../../../../translated_images/sk/connect.141db0b2bd05f096.webp)
 
 Tento nástroj môžete tiež spustiť v režime CLI, v tom prípade pridajte atribút `--cli`. Tu je príklad spustenia nástroja v režime "CLI", ktorý vypíše všetky nástroje na serveri:
 

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d26f746e21775c30b4d7ed97962b24df",
-  "translation_date": "2025-08-11T10:57:39+00:00",
-  "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
-  "language_code": "es"
-}
--->
 # Ejecutar este ejemplo
 
 Se recomienda instalar `uv`, pero no es obligatorio. Consulta [instrucciones](https://docs.astral.sh/uv/#highlights)
@@ -53,7 +44,7 @@ Una vez que el servidor esté conectado:
 
 ### Pruebas en modo CLI
 
-El inspector que ejecutaste es en realidad una aplicación Node.js y `mcp dev` es un contenedor alrededor de ella.
+El inspector que ejecutaste es en realidad una aplicación Node.js, y `mcp dev` es un contenedor alrededor de ella.
 
 Puedes lanzarlo directamente en modo CLI ejecutando el siguiente comando:
 
@@ -112,9 +103,11 @@ Deberías ver la siguiente salida:
 }
 ```
 
-> [!TIP]  
-> Generalmente es mucho más rápido ejecutar el inspector en modo CLI que en el navegador.  
+> [!TIP]
+> Generalmente es mucho más rápido ejecutar el inspector en modo CLI que en el navegador.
 > Lee más sobre el inspector [aquí](https://github.com/modelcontextprotocol/inspector).
 
+---
+
 **Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por garantizar la precisión, tenga en cuenta que las traducciones automatizadas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Si bien nos esforzamos por garantizar la precisión, tenga en cuenta que las traducciones automatizadas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.

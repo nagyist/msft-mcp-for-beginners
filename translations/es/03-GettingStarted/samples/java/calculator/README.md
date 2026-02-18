@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13231e9951b68efd9df8c56bd5cdb27e",
-  "translation_date": "2025-07-13T22:20:41+00:00",
-  "source_file": "03-GettingStarted/samples/java/calculator/README.md",
-  "language_code": "es"
-}
--->
 # Servicio Básico de Calculadora MCP
 
 Este servicio ofrece operaciones básicas de calculadora a través del Protocolo de Contexto de Modelo (MCP) usando Spring Boot con transporte WebFlux. Está diseñado como un ejemplo sencillo para principiantes que están aprendiendo sobre implementaciones MCP.
@@ -201,7 +192,7 @@ El MCP Inspector es una herramienta útil para interactuar con servicios MCP. Pa
    - Haz clic en "List Tools" para ver las operaciones disponibles de la calculadora
    - Selecciona una herramienta y haz clic en "Run Tool" para ejecutar una operación
 
-![Captura de pantalla de MCP Inspector](../../../../../../translated_images/tool.c75a0b2380efcf1a47a8478f54380a36ddcca7943b98f56dabbac8b07e15c3bb.es.png)
+![Captura de pantalla de MCP Inspector](../../../../../../translated_images/es/tool.c75a0b2380efcf1a.webp)
 
 ### Usando Docker
 

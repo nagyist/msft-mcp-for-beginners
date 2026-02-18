@@ -1,19 +1,10 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1d9dc83260576b76f272d330ed93c51f",
-  "translation_date": "2025-07-13T22:10:44+00:00",
-  "source_file": "03-GettingStarted/09-deployment/README.md",
-  "language_code": "hu"
-}
--->
 # MCP szerverek telepítése
 
-Az MCP szerver telepítése lehetővé teszi, hogy mások is hozzáférjenek az eszközeihez és erőforrásaihoz a helyi környezeteden kívül. Többféle telepítési stratégia létezik, amelyeket a skálázhatóság, megbízhatóság és a kezelhetőség szempontjai alapján érdemes mérlegelni. Az alábbiakban útmutatót találsz az MCP szerverek helyi, konténeres és felhő alapú telepítéséhez.
+Az MCP szerver telepítése lehetővé teszi mások számára, hogy az eszközeit és erőforrásait a helyi környezeteden túli módon is elérhessék. Több telepítési stratégia létezik, amelyeket a skálázhatóság, a megbízhatóság és a kezelés egyszerűsége szerint érdemes megfontolni. Lentebb útmutatást találsz MCP szerverek helyi, konténeres és felhőbeli telepítéséhez.
 
 ## Áttekintés
 
-Ebben a leckében azt tanulhatod meg, hogyan telepítsd az MCP Server alkalmazásodat.
+Ez a lecke azt mutatja be, hogyan lehet telepíteni az MCP Server alkalmazást.
 
 ## Tanulási célok
 
@@ -24,27 +15,27 @@ A lecke végére képes leszel:
 
 ## Helyi fejlesztés és telepítés
 
-Ha a szerveredet úgy tervezted, hogy a felhasználók gépén fusson, kövesd az alábbi lépéseket:
+Ha a szerver arra van szánva, hogy a felhasználók gépén fusson, kövesd az alábbi lépéseket:
 
 1. **Töltsd le a szervert**. Ha nem te írtad a szervert, először töltsd le a gépedre.  
 1. **Indítsd el a szerver folyamatot**: Futtasd az MCP szerver alkalmazásodat.
 
-SSE esetén (nem szükséges stdio típusú szerverhez)
+SSE esetén (nem szükséges stdio típusú szervernél)
 
-1. **Hálózat beállítása**: Győződj meg róla, hogy a szerver elérhető a várt porton.  
-1. **Csatlakoztasd az ügyfeleket**: Használj helyi kapcsolati URL-eket, például `http://localhost:3000`.
+1. **Konfiguráld a hálózatot**: Győződj meg róla, hogy a szerver az elvárt porton elérhető.  
+1. **Kapcsolódó kliensek**: Használj helyi kapcsolódási URL-eket, például `http://localhost:3000`.
 
-## Felhő alapú telepítés
+## Felhőbeli telepítés
 
 Az MCP szerverek különböző felhőplatformokra telepíthetők:
 
-- **Serverless Functions**: Könnyű MCP szerverek telepítése serverless funkcióként  
-- **Konténer szolgáltatások**: Használj olyan szolgáltatásokat, mint az Azure Container Apps, AWS ECS vagy Google Cloud Run  
-- **Kubernetes**: MCP szerverek telepítése és kezelése Kubernetes klaszterekben a magas rendelkezésre állás érdekében
+- **Serverless Functions**: Könnyű súlyú MCP szervereket telepíthetsz szerver nélküli funkcióként.  
+- **Konténer szolgáltatások**: Használj olyan szolgáltatásokat, mint az Azure Container Apps, AWS ECS vagy Google Cloud Run.  
+- **Kubernetes**: Telepítsd és kezeld az MCP szervereket Kubernetes klaszterekben a nagy rendelkezésre állás érdekében.
 
 ### Példa: Azure Container Apps
 
-Az Azure Container Apps támogatja az MCP szerverek telepítését. Ez még fejlesztés alatt áll, jelenleg SSE szervereket támogat.
+Az Azure Container Apps támogatja az MCP szerverek telepítését. Még fejlesztés alatt áll, és jelenleg SSE szervereket támogat.
 
 Így csinálhatod:
 
@@ -54,21 +45,21 @@ Az Azure Container Apps támogatja az MCP szerverek telepítését. Ez még fejl
   git clone https://github.com/anthonychu/azure-container-apps-mcp-sample.git
   ```
 
-1. Futtasd helyben a teszteléshez:
+1. Futtasd helyileg a teszteléshez:
 
   ```sh
   uv venv
   uv sync
 
-  # linux/macOS
+  # Linux/macOS
   export API_KEYS=<AN_API_KEY>
-  # windows
+  # Windows
   set API_KEYS=<AN_API_KEY>
 
   uv run fastapi dev main.py
   ```
 
-1. Helyi próbához hozz létre egy *mcp.json* fájlt a *.vscode* könyvtárban, és illeszd be a következő tartalmat:
+1. A helyi próba érdekében hozz létre egy *mcp.json* fájlt a *.vscode* könyvtárban az alábbi tartalommal:
 
   ```json
   {
@@ -92,7 +83,7 @@ Az Azure Container Apps támogatja az MCP szerverek telepítését. Ez még fejl
   }
   ```
 
-  Miután az SSE szerver elindult, kattints a JSON fájlban a lejátszás ikonra, így a GitHub Copilot már fel fogja ismerni a szerveren elérhető eszközöket, lásd az Eszköz ikont.
+  Amint az SSE szerver elindult, kattints a lejátszás ikonra a JSON fájlban, ekkor a GitHub Copilot fel fogja ismerni a szerveren található eszközöket, nézd meg az Eszköz ikont.
 
 1. A telepítéshez futtasd a következő parancsot:
 
@@ -100,7 +91,7 @@ Az Azure Container Apps támogatja az MCP szerverek telepítését. Ez még fejl
   az containerapp up -g <RESOURCE_GROUP_NAME> -n weather-mcp --environment mcp -l westus --env-vars API_KEYS=<AN_API_KEY> --source .
   ```
 
-Ennyi az egész, telepítsd helyben, vagy az Azure-ra a fenti lépésekkel.
+Így van, helyileg telepíted, vagy ezeken a lépéseken keresztül telepíted Azure-ba.
 
 ## További források
 
@@ -110,7 +101,11 @@ Ennyi az egész, telepítsd helyben, vagy az Azure-ra a fenti lépésekkel.
 
 ## Mi következik
 
-- Következő: [Gyakorlati megvalósítás](../../04-PracticalImplementation/README.md)
+- Következő: [Speciális szerver témák](../10-advanced/README.md)
 
-**Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Figyelmeztetés**:
+Ezt a dokumentumot a [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordító szolgáltatás segítségével fordítottuk. Bár az pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum anyanyelvű változatát tekintse a hiteles forrásnak. Kritikus információk esetén profi emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy félreértelmezésekért.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

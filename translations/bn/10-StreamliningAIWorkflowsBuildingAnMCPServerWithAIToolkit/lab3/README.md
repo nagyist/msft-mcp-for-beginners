@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "dd8da3f75addcef453fe11f02a270217",
-  "translation_date": "2025-07-14T08:10:50+00:00",
-  "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/README.md",
-  "language_code": "bn"
-}
--->
 # 🔧 মডিউল ৩: AI Toolkit দিয়ে উন্নত MCP ডেভেলপমেন্ট
 
 ![Duration](https://img.shields.io/badge/Duration-20_minutes-blue?style=flat-square)
@@ -64,7 +55,7 @@ Model Context Protocol Python SDK কাস্টম MCP সার্ভার �
 2. **নতুন একটি এজেন্ট তৈরি করুন** নিম্নলিখিত কনফিগারেশন দিয়ে:
    - এজেন্টের নাম: `WeatherAgent`
 
-![Agent Creation](../../../../translated_images/Agent.c9c33f6a412b4cdedfb973fe5448bdb33de3f400055603111b875610e9b917ab.bn.png)
+![Agent Creation](../../../../translated_images/bn/Agent.c9c33f6a412b4cde.webp)
 
 ### ধাপ ২: MCP সার্ভার প্রজেক্ট ইনিশিয়ালাইজ করুন
 
@@ -74,7 +65,7 @@ Model Context Protocol Python SDK কাস্টম MCP সার্ভার �
 4. `python-weather` টেমপ্লেট নির্বাচন করুন
 5. আপনার সার্ভারের নাম দিন: `weather_mcp`
 
-![Python Template Selection](../../../../translated_images/Pythontemplate.9d0a2913c6491500bd673430f024dc44676af2808a27b5da9dcc0eb7063adc28.bn.png)
+![Python Template Selection](../../../../translated_images/bn/Pythontemplate.9d0a2913c6491500.webp)
 
 ### ধাপ ৩: প্রজেক্ট খুলুন এবং পর্যালোচনা করুন
 
@@ -340,7 +331,7 @@ USER_PROMPT
 How's the weather like in Seattle
 ```
 
-![Agent Builder Debug Result](../../../../translated_images/Result.6ac570f7d2b1d5389c561ab0566970fe0f13e75bdd976b6a7f0270bc715d07f8.bn.png)
+![Agent Builder Debug Result](../../../../translated_images/bn/Result.6ac570f7d2b1d538.webp)
 
 ### ধাপ ৮: MCP Inspector দিয়ে ডিবাগ করুন
 
@@ -352,7 +343,7 @@ How's the weather like in Seattle
    - নেটওয়ার্ক রিকোয়েস্ট মনিটর করুন
    - সার্ভার রেসপন্স ডিবাগ করুন
 
-![MCP Inspector Interface](../../../../translated_images/Inspector.5672415cd02fe8731774586cc0a1083e3275d2f8491602aecc8ac4d61f2c0d57.bn.png)
+![MCP Inspector Interface](../../../../translated_images/bn/Inspector.5672415cd02fe873.webp)
 
 ---
 

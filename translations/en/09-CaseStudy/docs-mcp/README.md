@@ -1,15 +1,6 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4319d291c9d124ecafea52b3d04bfa0e",
-  "translation_date": "2025-07-14T06:16:54+00:00",
-  "source_file": "09-CaseStudy/docs-mcp/README.md",
-  "language_code": "en"
-}
--->
 # Case Study: Connecting to the Microsoft Learn Docs MCP Server from a Client
 
-Have you ever found yourself switching between documentation sites, Stack Overflow, and countless search engine tabs while trying to fix a problem in your code? Maybe you keep a second monitor just for docs, or you’re constantly alt-tabbing between your IDE and a browser. Wouldn’t it be better if you could bring the documentation directly into your workflow—integrated into your apps, your IDE, or even your own custom tools? In this case study, we’ll explore how to do exactly that by connecting directly to the Microsoft Learn Docs MCP server from your own client application.
+Have you ever found yourself juggling between documentation sites, Stack Overflow, and endless search engine tabs, all while trying to solve a problem in your code? Maybe you keep a second monitor just for docs, or you’re constantly alt-tabbing between your IDE and a browser. Wouldn’t it be better if you could bring the documentation right into your workflow—integrated into your apps, your IDE, or even your own custom tools? In this case study, we’ll explore how to do exactly that by connecting directly to the Microsoft Learn Docs MCP server from your own client application.
 
 ## Overview
 
@@ -30,7 +21,7 @@ You’ll see how these skills can help you build tools that are not just reactiv
 
 ## Scenario 1 - Real-Time Documentation Retrieval with MCP
 
-In this scenario, we’ll show you how to connect a client to the Microsoft Learn Docs MCP server, so you can access real-time, context-aware documentation without ever leaving your app.
+In this scenario, we’ll show you how to connect a client to the Microsoft Learn Docs MCP server, so you can access real-time, context-aware documentation without ever leaving your app. 
 
 Let’s put this into practice. Your task is to write an app that connects to the Microsoft Learn Docs MCP server, invokes the `microsoft_docs_search` tool, and logs the streaming response to the console.
 
@@ -80,6 +71,7 @@ if __name__ == "__main__":
 - For installation and usage instructions, see the [`README.md`](./solution/python/README.md) file in the same folder.
 </details>
 
+
 ## Scenario 2 - Interactive Study Plan Generator Web App with MCP
 
 In this scenario, you’ll learn how to integrate Docs MCP into a web development project. The goal is to enable users to search Microsoft Learn documentation directly from a web interface, making documentation instantly accessible within your app or site.
@@ -110,7 +102,7 @@ Let me know if you want module-specific recommendations or need more customized 
 
 Below is a minimal sample solution. The full code and details are available in the solution folder.
 
-![Scenario 2 Overview](../../../../translated_images/scenario2.0c92726d5cd81f68238e5ba65f839a0b300d5b74b8ca7db28bc8f900c3e7d037.en.png)
+![Scenario 2 Overview](../../../../translated_images/en/scenario2.0c92726d5cd81f68.webp)
 
 <details>
 <summary>Python (Chainlit)</summary>
@@ -138,6 +130,7 @@ def handle_message(message):
 - For setup and running instructions, see the [`README.md`](./solution/python/README.md).
 </details>
 
+
 ## Scenario 3: In-Editor Docs with MCP Server in VS Code
 
 If you want to get Microsoft Learn Docs directly inside your VS Code (instead of switching browser tabs), you can use the MCP server in your editor. This allows you to:
@@ -151,7 +144,7 @@ If you want to get Microsoft Learn Docs directly inside your VS Code (instead of
 - Reference documentation directly in your markdown files as you work.
 - Combine this workflow with GitHub Copilot for even greater productivity.
 
-Here’s an example of how to set up the MCP server in VS Code:
+Here’s a example of how to set up the MCP server in VS Code:
 
 ```json
 {
@@ -167,7 +160,7 @@ Here’s an example of how to set up the MCP server in VS Code:
 
 > For a detailed walkthrough with screenshots and step-by-step guide, see [`README.md`](./solution/scenario3/README.md).
 
-![Scenario 3 Overview](../../../../translated_images/step4-prompt-chat.12187bb001605efc5077992b621f0fcd1df12023c5dce0464f8eb8f3d595218f.en.png)
+![Scenario 3 Overview](../../../../translated_images/en/step4-prompt-chat.12187bb001605efc.webp)
 
 This approach is ideal for anyone building technical courses, writing documentation, or developing code with frequent reference needs.
 
@@ -191,5 +184,14 @@ To deepen your understanding, explore these official resources:
 - [Model Context Protocol (MCP) Introduction](https://modelcontextprotocol.io/introduction)
 - [Add plugins from a MCP Server (Python)](https://learn.microsoft.com/en-us/semantic-kernel/concepts/plugins/adding-mcp-plugins)
 
-**Disclaimer**:  
+## What's Next
+
+- Back to: [Case Studies Overview](../README.md)
+- Continue to: [Module 10: Streamlining AI Workflows with AI Toolkit](../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Disclaimer**:
 This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

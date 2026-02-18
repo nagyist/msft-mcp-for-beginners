@@ -1,53 +1,44 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ee93d6093964ea579dbdc20b4d643e9b",
-  "translation_date": "2025-08-19T15:40:38+00:00",
-  "source_file": "03-GettingStarted/01-first-server/README.md",
-  "language_code": "cs"
-}
--->
 # Začínáme s MCP
 
-Vítejte u vašich prvních kroků s Model Context Protocol (MCP)! Ať už jste v MCP nováčkem nebo chcete prohloubit své znalosti, tento průvodce vás provede základním nastavením a procesem vývoje. Objevíte, jak MCP umožňuje bezproblémovou integraci mezi AI modely a aplikacemi, a naučíte se rychle připravit své prostředí pro vytváření a testování řešení využívajících MCP.
+Vítejte u vašich prvních kroků s Model Context Protocol (MCP)! Ať už jste v MCP noví, nebo chcete prohloubit své znalosti, tento průvodce vás provede základním nastavením a vývojovým procesem. Objevíte, jak MCP umožňuje bezproblémovou integraci mezi AI modely a aplikacemi, a naučíte se, jak rychle připravit své prostředí pro vytváření a testování řešení založených na MCP.
 
-> TLDR; Pokud vytváříte AI aplikace, víte, že můžete přidat nástroje a další zdroje do svého LLM (velkého jazykového modelu), aby byl model chytřejší. Pokud však tyto nástroje a zdroje umístíte na server, aplikace i schopnosti serveru mohou být využívány jakýmkoliv klientem s/bez LLM.
+> TLDR; Pokud vytváříte AI aplikace, víte, že můžete přidat nástroje a další zdroje do svého LLM (velkého jazykového modelu), aby byl LLM znalostnější. Pokud však tyto nástroje a zdroje umístíte na server, schopnosti aplikace a serveru mohou využívat jakýkoli klient s LLM nebo bez něj.
 
 ## Přehled
 
-Tato lekce poskytuje praktické pokyny pro nastavení MCP prostředí a vytváření vašich prvních MCP aplikací. Naučíte se, jak nastavit potřebné nástroje a frameworky, vytvořit základní MCP servery, vytvořit hostitelské aplikace a otestovat vaše implementace.
+Tato lekce poskytuje praktické pokyny pro nastavení prostředí MCP a vytváření vašich prvních MCP aplikací. Naučíte se, jak nastavit potřebné nástroje a frameworky, vytvořit základní MCP servery, vytvořit hostitelské aplikace a testovat vaše implementace.
 
-Model Context Protocol (MCP) je otevřený protokol, který standardizuje způsob, jakým aplikace poskytují kontext LLM. Představte si MCP jako USB-C port pro AI aplikace – poskytuje standardizovaný způsob připojení AI modelů k různým datovým zdrojům a nástrojům.
+Model Context Protocol (MCP) je otevřený protokol, který standardizuje způsob, jakým aplikace poskytují kontext LLM. MCP si můžete představit jako USB-C port pro AI aplikace – poskytuje standardizovaný způsob připojení AI modelů k různým zdrojům dat a nástrojům.
 
-## Výukové cíle
+## Cíle učení
 
 Na konci této lekce budete schopni:
 
 - Nastavit vývojová prostředí pro MCP v C#, Java, Python, TypeScript a Rust
 - Vytvořit a nasadit základní MCP servery s vlastními funkcemi (zdroje, výzvy a nástroje)
 - Vytvořit hostitelské aplikace, které se připojují k MCP serverům
-- Testovat a ladit MCP implementace
+- Testovat a ladit implementace MCP
 
-## Nastavení MCP prostředí
+## Nastavení vašeho MCP prostředí
 
-Než začnete pracovat s MCP, je důležité připravit vaše vývojové prostředí a pochopit základní pracovní postup. Tato sekce vás provede počátečními kroky nastavení, aby byl váš start s MCP hladký.
+Než začnete pracovat s MCP, je důležité připravit si vývojové prostředí a pochopit základní pracovní postup. Tato sekce vás provede počátečními kroky nastavení, aby byl váš start s MCP plynulý.
 
-### Předpoklady
+### Požadavky
 
 Než se pustíte do vývoje MCP, ujistěte se, že máte:
 
 - **Vývojové prostředí**: Pro vámi zvolený jazyk (C#, Java, Python, TypeScript nebo Rust)
-- **IDE/Editor**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm nebo jakýkoliv moderní editor kódu
+- **IDE/Editor**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm nebo jakýkoli moderní editor kódu
 - **Správce balíčků**: NuGet, Maven/Gradle, pip, npm/yarn nebo Cargo
-- **API klíče**: Pro jakékoliv AI služby, které plánujete použít ve svých hostitelských aplikacích
+- **API klíče**: Pro jakékoli AI služby, které plánujete používat ve svých hostitelských aplikacích
 
 ## Základní struktura MCP serveru
 
-Typický MCP server zahrnuje:
+MCP server obvykle zahrnuje:
 
-- **Konfiguraci serveru**: Nastavení portu, autentizace a dalších parametrů
-- **Zdroje**: Data a kontext zpřístupněné LLM
-- **Nástroje**: Funkce, které modely mohou vyvolat
+- **Konfigurace serveru**: Nastavení portu, autentizace a dalších parametrů
+- **Zdroje**: Data a kontext dostupné pro LLM
+- **Nástroje**: Funkce, které mohou modely vyvolávat
 - **Výzvy**: Šablony pro generování nebo strukturování textu
 
 Zde je zjednodušený příklad v TypeScriptu:
@@ -57,13 +48,13 @@ import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mc
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
 
-// Create an MCP server
+// Vytvořit MCP server
 const server = new McpServer({
   name: "Demo",
   version: "1.0.0"
 });
 
-// Add an addition tool
+// Přidat nástroj pro sčítání
 server.tool("add",
   { a: z.number(), b: z.number() },
   async ({ a, b }) => ({
@@ -71,17 +62,20 @@ server.tool("add",
   })
 );
 
-// Add a dynamic greeting resource
+// Přidat dynamický zdroj pozdravu
 server.resource(
   "file",
-  // The 'list' parameter controls how the resource lists available files. Setting it to undefined disables listing for this resource.
+  // Parametr 'list' řídí, jak zdroj vypisuje dostupné soubory. Nastavení na undefined zakáže výpis pro tento zdroj.
   new ResourceTemplate("file://{path}", { list: undefined }),
   async (uri, { path }) => ({
     contents: [{
       uri: uri.href,
       text: `File, ${path}!`
     }]
-// Add a file resource that reads the file contents
+  })
+);
+
+// Přidat zdroj souboru, který čte obsah souboru
 server.resource(
   "file",
   new ResourceTemplate("file://{path}", { list: undefined }),
@@ -115,7 +109,7 @@ server.prompt(
   })
 );
 
-// Start receiving messages on stdin and sending messages on stdout
+// Začít přijímat zprávy na stdin a odesílat zprávy na stdout
 const transport = new StdioServerTransport();
 await server.connect(transport);
 ```
@@ -124,70 +118,70 @@ V předchozím kódu jsme:
 
 - Importovali potřebné třídy z MCP TypeScript SDK.
 - Vytvořili a nakonfigurovali novou instanci MCP serveru.
-- Zaregistrovali vlastní nástroj (`calculator`) s funkcí obsluhy.
+- Zaregistrovali vlastní nástroj (`calculator`) s obslužnou funkcí.
 - Spustili server, aby naslouchal příchozím MCP požadavkům.
 
 ## Testování a ladění
 
-Než začnete testovat svůj MCP server, je důležité pochopit dostupné nástroje a osvědčené postupy pro ladění. Efektivní testování zajišťuje, že se váš server chová podle očekávání, a pomáhá rychle identifikovat a řešit problémy. Následující sekce popisuje doporučené přístupy k validaci vaší MCP implementace.
+Než začnete testovat svůj MCP server, je důležité pochopit dostupné nástroje a osvědčené postupy pro ladění. Efektivní testování zajistí, že váš server bude fungovat podle očekávání, a pomůže vám rychle identifikovat a vyřešit problémy. Následující sekce popisuje doporučené přístupy k ověření vaší implementace MCP.
 
 MCP poskytuje nástroje, které vám pomohou testovat a ladit vaše servery:
 
-- **Nástroj Inspector**, grafické rozhraní, které vám umožní připojit se k serveru a testovat vaše nástroje, výzvy a zdroje.
-- **curl**, můžete se také připojit k serveru pomocí příkazového řádku, jako je curl, nebo jiných klientů, které mohou vytvářet a spouštět HTTP příkazy.
+- **Inspector tool**, toto grafické rozhraní vám umožní připojit se k serveru a testovat vaše nástroje, výzvy a zdroje.
+- **curl**, můžete se také připojit k serveru pomocí příkazového řádku, například curl, nebo jiných klientů, kteří umí vytvářet a spouštět HTTP příkazy.
 
-### Použití MCP Inspector
+### Použití MCP Inspectoru
 
-[MCP Inspector](https://github.com/modelcontextprotocol/inspector) je vizuální testovací nástroj, který vám pomůže:
+[MCP Inspector](https://github.com/modelcontextprotocol/inspector) je vizuální nástroj pro testování, který vám pomůže:
 
 1. **Objevit schopnosti serveru**: Automaticky detekovat dostupné zdroje, nástroje a výzvy
-2. **Testovat provádění nástrojů**: Vyzkoušet různé parametry a vidět odpovědi v reálném čase
-3. **Zobrazit metadata serveru**: Prozkoumat informace o serveru, schémata a konfigurace
+2. **Testovat spuštění nástrojů**: Vyzkoušet různé parametry a vidět odpovědi v reálném čase
+3. **Zobrazit metadata serveru**: Prohlédnout si informace o serveru, schémata a konfigurace
 
 ```bash
-# ex TypeScript, installing and running MCP Inspector
+# příklad TypeScript, instalace a spuštění MCP Inspector
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-Když spustíte výše uvedené příkazy, MCP Inspector spustí lokální webové rozhraní ve vašem prohlížeči. Můžete očekávat, že uvidíte dashboard zobrazující vaše registrované MCP servery, jejich dostupné nástroje, zdroje a výzvy. Rozhraní vám umožní interaktivně testovat provádění nástrojů, prozkoumávat metadata serveru a zobrazovat odpovědi v reálném čase, což usnadňuje validaci a ladění vašich MCP serverových implementací.
+Po spuštění výše uvedených příkazů se MCP Inspector spustí jako lokální webové rozhraní ve vašem prohlížeči. Můžete očekávat zobrazení dashboardu s registrovanými MCP servery, jejich dostupnými nástroji, zdroji a výzvami. Rozhraní umožňuje interaktivně testovat spuštění nástrojů, prohlížet metadata serveru a sledovat odpovědi v reálném čase, což usnadňuje ověřování a ladění implementací MCP serveru.
 
 Zde je screenshot, jak to může vypadat:
 
-![MCP Inspector server connection](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.cs.png)
+![MCP Inspector server connection](../../../../translated_images/cs/connected.73d1e042c24075d3.webp)
 
-## Běžné problémy při nastavení a jejich řešení
+## Běžné problémy s nastavením a jejich řešení
 
 | Problém | Možné řešení |
 |---------|--------------|
-| Odmítnuté připojení | Zkontrolujte, zda server běží a port je správný |
-| Chyby při provádění nástrojů | Zkontrolujte validaci parametrů a zpracování chyb |
+| Připojení odmítnuto | Zkontrolujte, zda server běží a zda je správný port |
+| Chyby při spuštění nástroje | Zkontrolujte validaci parametrů a zpracování chyb |
 | Selhání autentizace | Ověřte API klíče a oprávnění |
 | Chyby validace schématu | Ujistěte se, že parametry odpovídají definovanému schématu |
 | Server se nespouští | Zkontrolujte konflikty portů nebo chybějící závislosti |
-| CORS chyby | Nakonfigurujte správné CORS hlavičky pro požadavky mezi doménami |
-| Problémy s autentizací | Ověřte platnost tokenů a oprávnění |
+| Chyby CORS | Nakonfigurujte správné CORS hlavičky pro požadavky z jiných domén |
+| Problémy s autentizací | Ověřte platnost tokenu a oprávnění |
 
 ## Lokální vývoj
 
-Pro lokální vývoj a testování můžete spustit MCP servery přímo na svém počítači:
+Pro lokální vývoj a testování můžete spouštět MCP servery přímo na svém počítači:
 
 1. **Spusťte proces serveru**: Spusťte svou MCP serverovou aplikaci
 2. **Nakonfigurujte síť**: Ujistěte se, že server je dostupný na očekávaném portu
-3. **Připojte klienty**: Použijte lokální URL připojení, jako `http://localhost:3000`
+3. **Připojte klienty**: Použijte lokální URL jako `http://localhost:3000`
 
 ```bash
-# Example: Running a TypeScript MCP server locally
+# Příklad: Spuštění TypeScript MCP serveru lokálně
 npm run start
-# Server running at http://localhost:3000
+# Server běží na http://localhost:3000
 ```
 
 ## Vytvoření vašeho prvního MCP serveru
 
-Pokryli jsme [Základní koncepty](/01-CoreConcepts/README.md) v předchozí lekci, nyní je čas tyto znalosti využít v praxi.
+V předchozí lekci jsme pokryli [základní koncepty](/01-CoreConcepts/README.md), nyní je čas tyto znalosti využít v praxi.
 
-### Co server dokáže
+### Co server může dělat
 
-Než začneme psát kód, připomeňme si, co server dokáže:
+Než začneme psát kód, připomeňme si, co server může dělat:
 
 MCP server může například:
 
@@ -197,23 +191,23 @@ MCP server může například:
 - Integrovat se s dalšími nástroji a službami
 - Poskytovat uživatelské rozhraní pro interakci
 
-Skvělé, teď když víme, co pro něj můžeme udělat, pojďme začít kódovat.
+Skvělé, teď když víme, co všechno můžeme, pojďme začít kódovat.
 
 ## Cvičení: Vytvoření serveru
 
-Pro vytvoření serveru musíte postupovat podle těchto kroků:
+Pro vytvoření serveru je potřeba postupovat podle těchto kroků:
 
-- Nainstalujte MCP SDK.
-- Vytvořte projekt a nastavte strukturu projektu.
-- Napište kód serveru.
-- Otestujte server.
+- Nainstalovat MCP SDK.
+- Vytvořit projekt a nastavit jeho strukturu.
+- Napsat kód serveru.
+- Otestovat server.
 
 ### -1- Vytvoření projektu
 
 #### TypeScript
 
 ```sh
-# Create project directory and initialize npm project
+# Vytvořte adresář projektu a inicializujte npm projekt
 mkdir calculator-server
 cd calculator-server
 npm init -y
@@ -222,10 +216,10 @@ npm init -y
 #### Python
 
 ```sh
-# Create project dir
+# Vytvořit adresář projektu
 mkdir calculator-server
 cd calculator-server
-# Open the folder in Visual Studio Code - Skip this if you are using a different IDE
+# Otevřete složku ve Visual Studio Code - přeskočte, pokud používáte jiné IDE
 code .
 ```
 
@@ -238,7 +232,7 @@ cd McpCalculatorServer
 
 #### Java
 
-Pro Java vytvořte projekt Spring Boot:
+Pro Java vytvořte Spring Boot projekt:
 
 ```bash
 curl https://start.spring.io/starter.zip \
@@ -257,7 +251,7 @@ Rozbalte zip soubor:
 ```bash
 unzip calculator-server.zip -d calculator-server
 cd calculator-server
-# optional remove the unused test
+# volitelně odeberte nepoužitý test
 rm -rf src/test/java
 ```
 
@@ -376,10 +370,10 @@ Nyní, když máte projekt vytvořený, přidejte závislosti:
 #### TypeScript
 
 ```sh
-# If not already installed, install TypeScript globally
+# Pokud není již nainstalován, nainstalujte TypeScript globálně
 npm install typescript -g
 
-# Install the MCP SDK and Zod for schema validation
+# Nainstalujte MCP SDK a Zod pro validaci schémat
 npm install @modelcontextprotocol/sdk zod
 npm install -D @types/node typescript
 ```
@@ -387,7 +381,7 @@ npm install -D @types/node typescript
 #### Python
 
 ```sh
-# Create a virtual env and install dependencies
+# Vytvořte virtuální prostředí a nainstalujte závislosti
 python -m venv venv
 venv\Scripts\activate
 pip install "mcp[cli]"
@@ -412,7 +406,7 @@ cargo add tokio --features rt-multi-thread
 
 #### TypeScript
 
-Otevřete soubor *package.json* a nahraďte obsah následujícím, aby bylo zajištěno, že můžete server sestavit a spustit:
+Otevřete soubor *package.json* a nahraďte jeho obsah následujícím, aby bylo možné server sestavit a spustit:
 
 ```json
 {
@@ -421,8 +415,8 @@ Otevřete soubor *package.json* a nahraďte obsah následujícím, aby bylo zaji
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "tsc && node ./build/index.js",
-    "build": "tsc && node ./build/index.js"
+    "build": "tsc",
+    "start": "npm run build && node ./build/index.js",
   },
   "keywords": [],
   "author": "",
@@ -439,7 +433,7 @@ Otevřete soubor *package.json* a nahraďte obsah následujícím, aby bylo zaji
 }
 ```
 
-Vytvořte soubor *tsconfig.json* s následujícím obsahem:
+Vytvořte *tsconfig.json* se následujícím obsahem:
 
 ```json
 {
@@ -459,7 +453,7 @@ Vytvořte soubor *tsconfig.json* s následujícím obsahem:
 }
 ```
 
-Vytvořte adresář pro váš zdrojový kód:
+Vytvořte adresář pro zdrojový kód:
 
 ```sh
 mkdir src
@@ -476,7 +470,7 @@ touch server.py
 
 #### .NET
 
-Nainstalujte požadované balíčky NuGet:
+Nainstalujte požadované NuGet balíčky:
 
 ```sh
 dotnet add package ModelContextProtocol --prerelease
@@ -485,13 +479,13 @@ dotnet add package Microsoft.Extensions.Hosting
 
 #### Java
 
-Pro projekty Java Spring Boot je struktura projektu vytvořena automaticky.
+U Java Spring Boot projektů je struktura projektu vytvořena automaticky.
 
 #### Rust
 
 Pro Rust je soubor *src/main.rs* vytvořen automaticky při spuštění `cargo init`. Otevřete soubor a smažte výchozí kód.
 
-### -4- Vytvoření kódu serveru
+### -4- Napsání kódu serveru
 
 #### TypeScript
 
@@ -502,14 +496,14 @@ import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mc
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
  
-// Create an MCP server
+// Vytvořit MCP server
 const server = new McpServer({
   name: "Calculator MCP Server",
   version: "1.0.0"
 });
 ```
 
-Nyní máte server, ale zatím toho moc nedělá, pojďme to napravit.
+Nyní máte server, ale moc toho nedělá, pojďme to opravit.
 
 #### Python
 
@@ -517,7 +511,7 @@ Nyní máte server, ale zatím toho moc nedělá, pojďme to napravit.
 # server.py
 from mcp.server.fastmcp import FastMCP
 
-# Create an MCP server
+# Vytvořit MCP server
 mcp = FastMCP("Demo")
 ```
 
@@ -548,7 +542,7 @@ await builder.Build().RunAsync();
 
 #### Java
 
-Pro Java vytvořte základní komponenty serveru. Nejprve upravte hlavní třídu aplikace:
+Pro Java vytvořte základní komponenty serveru. Nejprve upravte hlavní aplikační třídu:
 
 *src/main/java/com/microsoft/mcp/sample/server/McpServerApplication.java*:
 
@@ -722,9 +716,9 @@ public class CalculatorService {
 }
 ```
 
-**Volitelné komponenty pro produkčně připravenou službu:**
+**Volitelné komponenty pro produkční službu:**
 
-Vytvořte konfiguraci spuštění *src/main/java/com/microsoft/mcp/sample/server/config/StartupConfig.java*:
+Vytvořte konfigurační třídu spuštění *src/main/java/com/microsoft/mcp/sample/server/config/StartupConfig.java*:
 
 ```java
 package com.microsoft.mcp.sample.server.config;
@@ -775,7 +769,7 @@ public class HealthController {
 }
 ```
 
-Vytvořte obslužnou třídu výjimek *src/main/java/com/microsoft/mcp/sample/server/exception/GlobalExceptionHandler.java*:
+Vytvořte obsluhu výjimek *src/main/java/com/microsoft/mcp/sample/server/exception/GlobalExceptionHandler.java*:
 
 ```java
 package com.microsoft.mcp.sample.server.exception;
@@ -805,7 +799,7 @@ public class GlobalExceptionHandler {
             this.message = message;
         }
 
-        // Getters
+        // Gettery
         public String getCode() { return code; }
         public String getMessage() { return message; }
     }
@@ -826,6 +820,8 @@ Calculator MCP Server v1.0
 Spring Boot MCP Application
 ```
 
+</details>
+
 #### Rust
 
 Přidejte následující kód na začátek souboru *src/main.rs*. Tento kód importuje potřebné knihovny a moduly pro váš MCP server.
@@ -841,7 +837,7 @@ use rmcp::{
 use std::error::Error;
 ```
 
-Server kalkulačky bude jednoduchý a bude umět sečíst dvě čísla. Vytvořme strukturu pro reprezentaci požadavku kalkulačky.
+Kalkulační server bude jednoduchý, který umí sčítat dvě čísla. Vytvořme strukturu, která bude reprezentovat požadavek kalkulačky.
 
 ```rust
 #[derive(Debug, serde::Deserialize, schemars::JsonSchema)]
@@ -851,7 +847,7 @@ pub struct CalculatorRequest {
 }
 ```
 
-Dále vytvořte strukturu pro reprezentaci serveru kalkulačky. Tato struktura bude obsahovat router nástrojů, který se používá k registraci nástrojů.
+Dále vytvořte strukturu, která bude reprezentovat kalkulační server. Tato struktura bude obsahovat router nástrojů, který slouží k registraci nástrojů.
 
 ```rust
 #[derive(Debug, Clone)]
@@ -860,7 +856,7 @@ pub struct Calculator {
 }
 ```
 
-Nyní můžeme implementovat strukturu `Calculator` pro vytvoření nové instance serveru a implementovat obsluhu serveru pro poskytování informací o serveru.
+Nyní můžeme implementovat strukturu `Calculator`, vytvořit novou instanci serveru a implementovat obsluhu serveru, která poskytne informace o serveru.
 
 ```rust
 #[tool_router]
@@ -884,7 +880,7 @@ impl ServerHandler for Calculator {
 }
 ```
 
-Nakonec musíme implementovat hlavní funkci pro spuštění serveru. Tato funkce vytvoří instanci struktury `Calculator` a bude ji poskytovat přes standardní vstup/výstup.
+Nakonec implementujeme hlavní funkci, která spustí server. Tato funkce vytvoří instanci struktury `Calculator` a bude ji obsluhovat přes standardní vstup/výstup.
 
 ```rust
 #[tokio::main]
@@ -924,7 +920,7 @@ server.resource(
 );
 ```
 
-Váš nástroj přijímá parametry `a` a `b` a spouští funkci, která produkuje odpověď ve formě:
+Váš nástroj přijímá parametry `a` a `b` a spouští funkci, která produkuje odpověď ve formátu:
 
 ```typescript
 {
@@ -934,7 +930,7 @@ Váš nástroj přijímá parametry `a` a `b` a spouští funkci, která produku
 }
 ```
 
-Váš zdroj je přístupný přes řetězec "greeting" a přijímá parametr `name`, přičemž produkuje podobnou odpověď jako nástroj:
+Váš zdroj je přístupný přes řetězec "greeting", přijímá parametr `name` a produkuje podobnou odpověď jako nástroj:
 
 ```typescript
 {
@@ -946,14 +942,14 @@ Váš zdroj je přístupný přes řetězec "greeting" a přijímá parametr `na
 #### Python
 
 ```python
-# Add an addition tool
+# Přidat nástroj pro sčítání
 @mcp.tool()
 def add(a: int, b: int) -> int:
     """Add two numbers"""
     return a + b
 
 
-# Add a dynamic greeting resource
+# Přidat dynamický zdroj pozdravu
 @mcp.resource("greeting://{name}")
 def get_greeting(name: str) -> str:
     """Get a personalized greeting"""
@@ -962,12 +958,12 @@ def get_greeting(name: str) -> str:
 
 V předchozím kódu jsme:
 
-- Definovali nástroj `add`, který přijímá parametry `a` a `p`, oba celá čísla.
-- Vytvořili zdroj nazvaný `greeting`, který přijímá parametr `name`.
+- Definovali nástroj `add`, který přijímá parametry `a` a `b`, oba celá čísla.
+- Vytvořili zdroj s názvem `greeting`, který přijímá parametr `name`.
 
 #### .NET
 
-Přidejte toto do vašeho souboru Program.cs:
+Přidejte toto do souboru Program.cs:
 
 ```csharp
 [McpServerToolType]
@@ -980,11 +976,11 @@ public static class CalculatorTool
 
 #### Java
 
-Nástroje byly již vytvořeny v předchozím kroku.
+Nástroje již byly vytvořeny v předchozím kroku.
 
 #### Rust
 
-Přidejte nový nástroj uvnitř bloku `impl Calculator`:
+Přidejte nový nástroj do bloku `impl Calculator`:
 
 ```rust
 #[tool(description = "Adds a and b")]
@@ -996,14 +992,14 @@ async fn add(
 }
 ```
 
-### -6- Finální kód
+### -6- Konečný kód
 
-Přidejme poslední kód, který potřebujeme, aby server mohl začít:
+Přidejme poslední kód, který potřebujeme, aby se server mohl spustit:
 
 #### TypeScript
 
 ```typescript
-// Start receiving messages on stdin and sending messages on stdout
+// Začněte přijímat zprávy na stdin a odesílat zprávy na stdout
 const transport = new StdioServerTransport();
 await server.connect(transport);
 ```
@@ -1016,13 +1012,13 @@ import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mc
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
 
-// Create an MCP server
+// Vytvořit MCP server
 const server = new McpServer({
   name: "Calculator MCP Server",
   version: "1.0.0"
 });
 
-// Add an addition tool
+// Přidat nástroj pro sčítání
 server.tool(
   "add",
   { a: z.number(), b: z.number() },
@@ -1031,7 +1027,7 @@ server.tool(
   })
 );
 
-// Add a dynamic greeting resource
+// Přidat dynamický zdroj pozdravu
 server.resource(
   "greeting",
   new ResourceTemplate("greeting://{name}", { list: undefined }),
@@ -1043,7 +1039,7 @@ server.resource(
   })
 );
 
-// Start receiving messages on stdin and sending messages on stdout
+// Začít přijímat zprávy na stdin a odesílat zprávy na stdout
 const transport = new StdioServerTransport();
 server.connect(transport);
 ```
@@ -1054,24 +1050,24 @@ server.connect(transport);
 # server.py
 from mcp.server.fastmcp import FastMCP
 
-# Create an MCP server
+# Vytvořit MCP server
 mcp = FastMCP("Demo")
 
 
-# Add an addition tool
+# Přidat nástroj pro sčítání
 @mcp.tool()
 def add(a: int, b: int) -> int:
     """Add two numbers"""
     return a + b
 
 
-# Add a dynamic greeting resource
+# Přidat dynamický zdroj pozdravu
 @mcp.resource("greeting://{name}")
 def get_greeting(name: str) -> str:
     """Get a personalized greeting"""
     return f"Hello, {name}!"
 
-# Main execution block - this is required to run the server
+# Hlavní blok spuštění - toto je nutné pro spuštění serveru
 if __name__ == "__main__":
     mcp.run()
 ```
@@ -1110,7 +1106,7 @@ public static class CalculatorTool
 
 #### Java
 
-Vaše kompletní hlavní třída aplikace by měla vypadat takto:
+Vaše kompletní hlavní aplikační třída by měla vypadat takto:
 
 ```java
 // McpServerApplication.java
@@ -1139,7 +1135,7 @@ public class McpServerApplication {
 
 #### Rust
 
-Finální kód pro Rust server by měl vypadat takto:
+Konečný kód pro Rust server by měl vypadat takto:
 
 ```rust
 use rmcp::{
@@ -1200,7 +1196,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
 
 ### -7- Testování serveru
 
-Spusťte server pomocí následujícího příkazu:
+Spusťte server následujícím příkazem:
 
 #### TypeScript
 
@@ -1214,11 +1210,11 @@ npm run build
 mcp run server.py
 ```
 
-> Pro použití MCP Inspector použijte `mcp dev server.py`, což automaticky spustí Inspector a poskytne požadovaný proxy session token. Pokud používáte `mcp run server.py`, budete muset ručně spustit Inspector a nakonfigurovat připojení.
+> Pro použití MCP Inspectoru použijte `mcp dev server.py`, který automaticky spustí Inspector a poskytne požadovaný proxy session token. Pokud používáte `mcp run server.py`, budete muset Inspector spustit ručně a nakonfigurovat připojení.
 
 #### .NET
 
-Ujistěte se, že jste ve svém projektovém adresáři:
+Ujistěte se, že jste ve složce projektu:
 
 ```sh
 cd McpCalculatorServer
@@ -1241,12 +1237,12 @@ cargo fmt
 cargo run
 ```
 
-### -8- Spuštění pomocí Inspectoru
+### -8- Spuštění pomocí inspectoru
 
-Inspector je skvělý nástroj, který může spustit váš server a umožní vám s ním interagovat, abyste mohli otestovat, že funguje. Pojďme ho spustit:
+Inspector je skvělý nástroj, který může spustit váš server a umožní vám s ním interagovat, abyste mohli otestovat, že funguje. Spusťme ho:
 
 > [!NOTE]
-> Může vypadat jinak v poli "command", protože obsahuje příkaz pro spuštění serveru s vaším konkrétním runtime.
+> může to vypadat jinak v poli "command", protože obsahuje příkaz pro spuštění serveru s vaším konkrétním runtime.
 
 #### TypeScript
 
@@ -1254,22 +1250,24 @@ Inspector je skvělý nástroj, který může spustit váš server a umožní v�
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-nebo jej přidejte do svého *package.json* takto: `"inspector": "npx @modelcontextprotocol/inspector node build/index.js"` a poté spusťte `npm run inspector`.
+nebo přidejte do *package.json* takto: `"inspector": "npx @modelcontextprotocol/inspector node build/index.js"` a pak spusťte `npm run inspector`
 
-Python obaluje nástroj Node.js nazvaný inspector. Je možné zavolat tento nástroj takto:
+#### Python
+
+Python obaluje Node.js nástroj zvaný inspector. Je možné tento nástroj volat takto:
 
 ```sh
 mcp dev server.py
 ```
 
-Nicméně neimplementuje všechny metody dostupné na nástroji, takže se doporučuje spustit nástroj Node.js přímo, jak je uvedeno níže:
+Nicméně neimplementuje všechny metody dostupné v nástroji, proto se doporučuje spouštět Node.js nástroj přímo takto:
 
 ```sh
 npx @modelcontextprotocol/inspector mcp run server.py
 ```
 
-Pokud používáte nástroj nebo IDE, které umožňuje konfigurovat příkazy a argumenty pro spuštění skriptů, 
-ujistěte se, že nastavíte `python` v poli `Command` a `server.py` jako `Arguments`. To zajistí, že skript bude spuštěn správně.
+Pokud používáte nástroj nebo IDE, které umožňuje konfigurovat příkazy a argumenty pro spouštění skriptů,
+ujistěte se, že v poli `Command` nastavíte `python` a jako `Arguments` `server.py`. Tím zajistíte správné spuštění skriptu.
 
 #### .NET
 
@@ -1282,38 +1280,40 @@ npx @modelcontextprotocol/inspector dotnet run
 
 #### Java
 
-Ujistěte se, že server kalkulačky běží. Poté spusťte Inspector:
+Ujistěte se, že váš kalkulační server běží
+Poté spusťte inspektor:
 
 ```cmd
 npx @modelcontextprotocol/inspector
 ```
 
-V webovém rozhraní Inspectoru:
+V inspektoru webového rozhraní:
 
-1. Vyberte "SSE" jako typ transportu
+1. Vyberte "SSE" jako typ přenosu
 2. Nastavte URL na: `http://localhost:8080/sse`
 3. Klikněte na "Connect"
-![Připojení](../../../../translated_images/tool.163d33e3ee307e209ef146d8f85060d2f7e83e9f59b3b1699a77204ae0454ad2.cs.png)
 
-**Nyní jste připojeni k serveru**  
+![Connect](../../../../translated_images/cs/tool.163d33e3ee307e20.webp)
+
+**Nyní jste připojeni k serveru**
 **Sekce testování Java serveru je nyní dokončena**
 
-Další část se zaměřuje na interakci se serverem.
+Další sekce se týká interakce se serverem.
 
 Měli byste vidět následující uživatelské rozhraní:
 
-![Připojení](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.cs.png)
+![Connect](../../../../translated_images/cs/connect.141db0b2bd05f096.webp)
 
-1. Připojte se k serveru výběrem tlačítka Připojit.  
-   Jakmile se připojíte k serveru, měli byste vidět následující:
+1. Připojte se k serveru výběrem tlačítka Connect
+  Po připojení k serveru byste nyní měli vidět následující:
 
-   ![Připojeno](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.cs.png)
+  ![Connected](../../../../translated_images/cs/connected.73d1e042c24075d3.webp)
 
-2. Vyberte "Tools" a "listTools", měli byste vidět možnost "Add". Vyberte "Add" a vyplňte hodnoty parametrů.
+1. Vyberte "Tools" a "listTools", měli byste vidět "Add", vyberte "Add" a vyplňte hodnoty parametrů.
 
-   Měli byste vidět následující odpověď, tj. výsledek z nástroje "add":
+  Měli byste vidět následující odpověď, tj. výsledek z nástroje "add":
 
-   ![Výsledek spuštění add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.cs.png)
+  ![Result of running add](../../../../translated_images/cs/ran-tool.a5a6ee878c1369ec.webp)
 
 Gratulujeme, podařilo se vám vytvořit a spustit váš první server!
 
@@ -1331,34 +1331,34 @@ MCP poskytuje oficiální SDK pro více jazyků:
 
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Udržováno ve spolupráci s Microsoftem
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Udržováno ve spolupráci se Spring AI
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Oficiální implementace TypeScriptu
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Oficiální implementace Pythonu
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Oficiální implementace Kotlinu
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Oficiální implementace v TypeScriptu
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Oficiální implementace v Pythonu
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Oficiální implementace v Kotlinu
 - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Udržováno ve spolupráci s Loopwork AI
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Oficiální implementace Rustu
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Oficiální implementace v Rustu
 
 ## Klíčové poznatky
 
-- Nastavení vývojového prostředí MCP je snadné díky SDK specifickým pro jednotlivé jazyky.
-- Vytváření MCP serverů zahrnuje tvorbu a registraci nástrojů s jasně definovanými schématy.
-- Testování a ladění jsou klíčové pro spolehlivé implementace MCP.
+- Nastavení vývojového prostředí MCP je jednoduché s jazykově specifickými SDK
+- Vytváření MCP serverů zahrnuje tvorbu a registraci nástrojů s jasnými schématy
+- Testování a ladění jsou nezbytné pro spolehlivé implementace MCP
 
 ## Ukázky
 
-- [Java Kalkulačka](../samples/java/calculator/README.md)  
-- [.Net Kalkulačka](../../../../03-GettingStarted/samples/csharp)  
-- [JavaScript Kalkulačka](../samples/javascript/README.md)  
-- [TypeScript Kalkulačka](../samples/typescript/README.md)  
-- [Python Kalkulačka](../../../../03-GettingStarted/samples/python)  
-- [Rust Kalkulačka](../../../../03-GettingStarted/samples/rust)  
+- [Java Calculator](../samples/java/calculator/README.md)
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](../samples/javascript/README.md)
+- [TypeScript Calculator](../samples/typescript/README.md)
+- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Rust Calculator](../../../../03-GettingStarted/samples/rust)
 
 ## Zadání
 
 Vytvořte jednoduchý MCP server s nástrojem dle vašeho výběru:
 
-1. Implementujte nástroj ve vámi preferovaném jazyce (.NET, Java, Python, TypeScript nebo Rust).  
-2. Definujte vstupní parametry a návratové hodnoty.  
-3. Spusťte inspektorový nástroj, abyste ověřili, že server funguje správně.  
+1. Implementujte nástroj ve vámi preferovaném jazyce (.NET, Java, Python, TypeScript nebo Rust).
+2. Definujte vstupní parametry a návratové hodnoty.
+3. Spusťte inspektor, abyste ověřili, že server funguje správně.
 4. Otestujte implementaci s různými vstupy.
 
 ## Řešení
@@ -1367,13 +1367,17 @@ Vytvořte jednoduchý MCP server s nástrojem dle vašeho výběru:
 
 ## Další zdroje
 
-- [Vytváření agentů pomocí Model Context Protocol na Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)  
-- [Vzdálený MCP s Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)  
-- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)  
+- [Vytváření agentů pomocí Model Context Protocol na Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+- [Vzdálené MCP s Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
+- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
 ## Co dál
 
 Další: [Začínáme s MCP klienty](../02-client/README.md)
 
-**Prohlášení**:  
-Tento dokument byl přeložen pomocí služby pro automatický překlad [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za závazný zdroj. Pro důležité informace doporučujeme profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Prohlášení o vyloučení odpovědnosti**:  
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

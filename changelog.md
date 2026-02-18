@@ -2,6 +2,363 @@
 
 This document serves as a record of all significant changes made to the Model Context Protocol (MCP) for Beginners curriculum. Changes are documented in reverse chronological order (newest changes first).
 
+## February 5, 2026
+
+### Repository-Wide Validation and Navigation Improvements
+
+#### New Curriculum Content Added
+
+**Module 03 - Getting Started**
+- **12-mcp-hosts/README.md**: New comprehensive guide for setting up MCP hosts
+  - Claude Desktop, VS Code, Cursor, Cline, Windsurf configuration examples
+  - JSON configuration templates for all major hosts
+  - Transport types comparison table (stdio, SSE/HTTP, WebSocket)
+  - Troubleshooting common connection issues
+  - Security best practices for host configuration
+
+- **13-mcp-inspector/README.md**: New debugging guide for MCP Inspector
+  - Installation methods (npx, npm global, from source)
+  - Connecting to servers via stdio and HTTP/SSE
+  - Testing tools, resources, and prompts workflows
+  - VS Code integration with MCP Inspector
+  - Common debugging scenarios with solutions
+
+**Module 04 - Practical Implementation**
+- **pagination/README.md**: New pagination implementation guide
+  - Cursor-based pagination patterns in Python, TypeScript, Java
+  - Client-side pagination handling
+  - Cursor design strategies (opaque vs. structured)
+  - Performance optimization recommendations
+
+**Module 05 - Advanced Topics**
+- **mcp-protocol-features/README.md**: New protocol features deep dive
+  - Progress notifications implementation
+  - Request cancellation patterns
+  - Resource templates with URI patterns
+  - Server lifecycle management
+  - Logging level control
+  - Error handling patterns with JSON-RPC codes
+
+#### Navigation Fixes (24+ files updated)
+
+**Main Module READMEs**
+ Now links to both first lesson AND next module
+
+**02-Security Sub-files**
+- All 5 supplementary security documents now have "What's Next" navigation:
+
+**09-CaseStudy Files**
+- All case study files now have sequential navigation:
+
+**10-StreamliningAI Labs**
+Added What's Next section to Module 10 overview and Module 11
+
+#### Code and Content Fixes
+
+**SDK and Dependency Updates**
+Fixed empty openai version to `^4.95.0`
+Updated SDK from `^1.8.0` to `>=1.26.0`
+Updated mcp version pins to `>=1.26.0`
+
+**Code Fixes**
+Fixed invalid model `gpt-4o-mini` to `gpt-4.1-mini`
+
+**Content Fixes**
+Fixed broken link `READMEmd` → `README.md`, fixed curriculum header `Module 1-3` → `Module 0-3`, fixed case-sensitive path
+Removed corrupted duplicate Case Study 5 content
+
+**Beginner Guidance Improvements**
+Added proper introduction, learning objectives, and prerequisites for beginners
+
+#### Curriculum Updates
+
+**Main README.md**
+- Added entries 3.12 (MCP Hosts), 3.13 (MCP Inspector), 4.1 (Pagination), 5.16 (Protocol Features) to curriculum table
+
+**Module READMEs**
+Added lessons 12 and 13 to lesson list
+Added Practical Guides section with pagination link
+Added lessons 5.15 (Custom Transport) and 5.16 (Protocol Features)
+
+**study_guide.md**
+- Updated mindmap with all new topics: MCP Hosts Setup, MCP Inspector, Pagination Strategies, Protocol Features Deep Dive
+
+## Jan 28, 2026
+
+### MCP Specification 2025-11-25 Compliance Review
+
+#### Core Concepts Enhancement (01-CoreConcepts/)
+- **New Client Primitive - Roots**: Added comprehensive documentation on the Roots client primitive, enabling servers to understand filesystem boundaries and access permissions
+- **Tool Annotations**: Added documentation on tool behavioral annotations (`readOnlyHint`, `destructiveHint`) for better tool execution decisions
+- **Tool Calling in Sampling**: Updated Sampling documentation to include `tools` and `toolChoice` parameters for model-driven tool invocation during sampling requests
+- **URL Mode Elicitation**: Added documentation on URL-based elicitation for server-initiated external web interactions
+- **Tasks (Experimental)**: Added new section documenting the experimental Tasks feature for durable execution wrappers and deferred result retrieval
+- **Icons Support**: Noted that tools, resources, resource templates, and prompts can now include icons as additional metadata
+
+#### Documentation Updates
+- **README.md**: Added MCP Specification 2025-11-25 version reference and date-based versioning explanation
+- **study_guide.md**: Updated curriculum map to include Tasks and Tool Annotations in Core Concepts section; updated document timestamp
+
+#### Specification Compliance Verification
+- **Protocol Version**: Verified all documentation references current MCP Specification 2025-11-25
+- **Architecture Alignment**: Confirmed two-layer architecture (Data Layer + Transport Layer) documentation accuracy
+- **Primitives Documentation**: Validated server primitives (Resources, Prompts, Tools) and client primitives (Sampling, Elicitation, Logging, Roots)
+- **Transport Mechanisms**: Verified STDIO and Streamable HTTP transport documentation accuracy
+- **Security Guidance**: Confirmed alignment with current MCP Security Best Practices documentation
+
+#### Key MCP 2025-11-25 Features Documented
+- **OpenID Connect Discovery**: Auth server discovery through OIDC
+- **OAuth Client ID Metadata Documents**: Recommended client registration mechanism
+- **JSON Schema 2020-12**: Default dialect for MCP schema definitions
+- **SDK Tiering System**: Formalized requirements for SDK feature support and maintenance
+- **Governance Structure**: Formalized Working Groups and Interest Groups in MCP governance
+
+### Security Documentation Major Update (02-Security/)
+
+#### MCP Security Summit Workshop (Sherpa) Integration
+- **New Hands-On Training Resource**: Added comprehensive integration with the [MCP Security Summit Workshop (Sherpa)](https://azure-samples.github.io/sherpa/) throughout all security documentation
+- **Expedition Route Coverage**: Documented the complete camp-to-camp progression from Base Camp to Summit
+- **OWASP Alignment**: All security guidance now maps to OWASP MCP Azure Security Guide risks
+
+#### OWASP MCP Top 10 Integration
+- **New Section**: Added OWASP MCP Top 10 Security Risks table with Azure mitigations to main Security README
+- **Risk-Based Documentation**: Updated mcp-security-controls-2025.md with OWASP MCP risk references for each security domain
+- **Reference Architecture**: Linked to OWASP MCP Azure Security Guide reference architecture and implementation patterns
+
+#### Updated Security Files
+- **README.md**: Added Sherpa Workshop overview, expedition route table, OWASP MCP Top 10 risks summary, and hands-on training section
+- **mcp-security-controls-2025.md**: Updated header to February 2026, added OWASP risk references (MCP01-MCP08), fixed spec version inconsistency
+- **mcp-security-best-practices-2025.md**: Added Sherpa and OWASP resources section, updated timestamp
+- **mcp-best-practices.md**: Added hands-on training section with Sherpa and OWASP links
+- **azure-content-safety-implementation.md**: Added OWASP MCP06 reference, Sherpa Camp 3 alignment, and additional resources section
+
+#### New Resource Links Added
+- [MCP Security Summit Workshop (Sherpa)](https://azure-samples.github.io/sherpa/)
+- [OWASP MCP Azure Security Guide](https://microsoft.github.io/mcp-azure-security-guide/)
+- [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/)
+- Individual OWASP MCP risk pages (MCP01-MCP10)
+
+### Curriculum-Wide MCP Specification 2025-11-25 Alignment
+
+#### Module 03 - Getting Started
+- **SDK Documentation**: Added Go SDK to official SDK list; updated all SDK references to align with MCP Specification 2025-11-25
+- **Transport Clarification**: Updated STDIO and HTTP Streaming transport descriptions with explicit spec references
+
+#### Module 04 - Practical Implementation
+- **SDK Updates**: Added Go SDK; updated SDK list with specification version reference
+- **Authorization Spec**: Updated MCP Authorization specification link to current 2025-11-25 version
+
+#### Module 05 - Advanced Topics
+- **New Features**: Added note about new MCP Specification 2025-11-25 features (Tasks, Tool Annotations, URL Mode Elicitation, Roots)
+- **Security Resources**: Added OWASP MCP Top 10 and Sherpa workshop links to additional references
+
+#### Module 06 - Community Contributions
+- **SDK List**: Added Swift and Rust SDKs; updated specification link to 2025-11-25
+- **Spec Reference**: Updated MCP Specification link to direct specification URL
+
+#### Module 07 - Lessons from Early Adoption
+- **Resource Updates**: Added MCP Specification 2025-11-25 link and OWASP MCP Top 10 to additional resources
+
+#### Module 08 - Best Practices
+- **Spec Version**: Updated MCP Specification reference to 2025-11-25
+- **Security Resources**: Added OWASP MCP Top 10 and Sherpa workshop to additional references
+
+#### Module 10 - Streamlining AI Workflows
+- **Badge Update**: Changed MCP version badge from SDK version (1.9.3) to specification version (2025-11-25)
+- **Resource Links**: Updated MCP Specification link; added OWASP MCP Top 10
+
+#### Module 11 - MCP Server Hands-On Labs
+- **Spec Reference**: Updated MCP Specification link to 2025-11-25 version
+- **Security Resources**: Added OWASP MCP Top 10 to official resources
+
+## December 18, 2025
+
+### Security Documentation Update - MCP Specification 2025-11-25
+
+#### MCP Security Best Practices (02-Security/mcp-best-practices.md) - Specification Version Update
+- **Protocol Version Update**: Updated to reference latest MCP Specification 2025-11-25 (released November 25, 2025)
+  - Updated all specification version references from 2025-06-18 to 2025-11-25
+  - Updated document date references from August 18, 2025 to December 18, 2025
+  - Verified all specification URLs point to current documentation
+- **Content Validation**: Comprehensive validation of security best practices against latest standards
+  - **Microsoft Security Solutions**: Verified current terminology and links for Prompt Shields (previously "Jailbreak risk detection"), Azure Content Safety, Microsoft Entra ID, and Azure Key Vault
+  - **OAuth 2.1 Security**: Confirmed alignment with latest OAuth security best practices
+  - **OWASP Standards**: Validated OWASP Top 10 for LLMs references remain current
+  - **Azure Services**: Verified all Microsoft Azure documentation links and best practices
+- **Standards Alignment**: All referenced security standards confirmed current
+  - NIST AI Risk Management Framework
+  - ISO 27001:2022
+  - OAuth 2.1 Security Best Practices
+  - Azure security and compliance frameworks
+- **Implementation Resources**: Validated all implementation guide links and resources
+  - Azure API Management authentication patterns
+  - Microsoft Entra ID integration guides
+  - Azure Key Vault secrets management
+  - DevSecOps pipelines and monitoring solutions
+
+### Documentation Quality Assurance
+- **Specification Compliance**: Ensured all mandatory MCP security requirements (MUST/MUST NOT) align with latest specification
+- **Resource Currency**: Verified all external links to Microsoft documentation, security standards, and implementation guides
+- **Best Practices Coverage**: Confirmed comprehensive coverage of authentication, authorization, AI-specific threats, supply chain security, and enterprise patterns
+
+## October 6, 2025
+
+### Getting Started Section Expansion – Advanced Server Usage & Simple Authentication
+
+#### Advanced Server Usage (03-GettingStarted/10-advanced)
+- **New Chapter Added**: Introduced a comprehensive guide to advanced MCP server usage, covering both regular and low-level server architectures.
+  - **Regular vs. Low-Level Server**: Detailed comparison and code examples in Python and TypeScript for both approaches.
+  - **Handler-Based Design**: Explanation of handler-based tool/resource/prompt management for scalable, flexible server implementations.
+  - **Practical Patterns**: Real-world scenarios where low-level server patterns are beneficial for advanced features and architecture.
+
+#### Simple Authentication (03-GettingStarted/11-simple-auth)
+- **New Chapter Added**: Step-by-step guide to implementing simple authentication in MCP servers.
+  - **Auth Concepts**: Clear explanation of authentication vs. authorization, and credential handling.
+  - **Basic Auth Implementation**: Middleware-based authentication patterns in Python (Starlette) and TypeScript (Express), with code samples.
+  - **Progression to Advanced Security**: Guidance on starting with simple auth and advancing to OAuth 2.1 and RBAC, with references to advanced security modules.
+
+These additions provide practical, hands-on guidance for building more robust, secure, and flexible MCP server implementations, bridging foundational concepts with advanced production patterns.
+
+## September 29, 2025
+
+### MCP Server Database Integration Labs - Comprehensive Hands-On Learning Path
+
+#### 11-MCPServerHandsOnLabs - New Complete Database Integration Curriculum
+- **Complete 13-Lab Learning Path**: Added comprehensive hands-on curriculum for building production-ready MCP servers with PostgreSQL database integration
+  - **Real-World Implementation**: Zava Retail analytics use case demonstrating enterprise-grade patterns
+  - **Structured Learning Progression**:
+    - **Labs 00-03: Foundations** - Introduction, Core Architecture, Security & Multi-Tenancy, Environment Setup
+    - **Labs 04-06: Building the MCP Server** - Database Design & Schema, MCP Server Implementation, Tool Development  
+    - **Labs 07-09: Advanced Features** - Semantic Search Integration, Testing & Debugging, VS Code Integration
+    - **Labs 10-12: Production & Best Practices** - Deployment Strategies, Monitoring & Observability, Best Practices & Optimization
+  - **Enterprise Technologies**: FastMCP framework, PostgreSQL with pgvector, Azure OpenAI embeddings, Azure Container Apps, Application Insights
+  - **Advanced Features**: Row Level Security (RLS), semantic search, multi-tenant data access, vector embeddings, real-time monitoring
+
+#### Terminology Standardization - Module to Lab Conversion
+- **Comprehensive Documentation Update**: Systematically updated all README files in 11-MCPServerHandsOnLabs to use "Lab" terminology instead of "Module"
+  - **Section Headers**: Updated "What This Module Covers" to "What This Lab Covers" across all 13 labs
+  - **Content Description**: Changed "This module provides..." to "This lab provides..." throughout documentation
+  - **Learning Objectives**: Updated "By the end of this module..." to "By the end of this lab..." 
+  - **Navigation Links**: Converted all "Module XX:" references to "Lab XX:" in cross-references and navigation
+  - **Completion Tracking**: Updated "After completing this module..." to "After completing this lab..."
+  - **Preserved Technical References**: Maintained Python module references in configuration files (e.g., `"module": "mcp_server.main"`)
+
+#### Study Guide Enhancement (study_guide.md)
+- **Visual Curriculum Map**: Added new "11. Database Integration Labs" section with comprehensive lab structure visualization
+- **Repository Structure**: Updated from ten to eleven main sections with detailed 11-MCPServerHandsOnLabs description
+- **Learning Path Guidance**: Enhanced navigation instructions to cover sections 00-11
+- **Technology Coverage**: Added FastMCP, PostgreSQL, Azure services integration details
+- **Learning Outcomes**: Emphasized production-ready server development, database integration patterns, and enterprise security
+
+#### Main README Structure Enhancement
+- **Lab-Based Terminology**: Updated main README.md in 11-MCPServerHandsOnLabs to consistently use "Lab" structure
+- **Learning Path Organization**: Clear progression from foundational concepts through advanced implementation to production deployment
+- **Real-World Focus**: Emphasis on practical, hands-on learning with enterprise-grade patterns and technologies
+
+### Documentation Quality & Consistency Improvements
+- **Hands-On Learning Emphasis**: Reinforced practical, lab-based approach throughout documentation
+- **Enterprise Patterns Focus**: Highlighted production-ready implementations and enterprise security considerations
+- **Technology Integration**: Comprehensive coverage of modern Azure services and AI integration patterns
+- **Learning Progression**: Clear, structured path from basic concepts to production deployment
+
+## September 26, 2025
+
+### Case Studies Enhancement - GitHub MCP Registry Integration
+
+#### Case Studies (09-CaseStudy/) - Ecosystem Development Focus
+- **README.md**: Major expansion with comprehensive GitHub MCP Registry case study
+  - **GitHub MCP Registry Case Study**: New comprehensive case study examining GitHub's MCP Registry launch in September 2025
+    - **Problem Analysis**: Detailed examination of fragmented MCP server discovery and deployment challenges
+    - **Solution Architecture**: GitHub's centralized registry approach with one-click VS Code installation
+    - **Business Impact**: Measurable improvements in developer onboarding and productivity
+    - **Strategic Value**: Focus on modular agent deployment and cross-tool interoperability
+    - **Ecosystem Development**: Positioning as foundational platform for agentic integration
+  - **Enhanced Case Study Structure**: Updated all seven case studies with consistent formatting and comprehensive descriptions
+    - Azure AI Travel Agents: Multi-agent orchestration emphasis
+    - Azure DevOps Integration: Workflow automation focus
+    - Real-Time Documentation Retrieval: Python console client implementation
+    - Interactive Study Plan Generator: Chainlit conversational web app
+    - In-Editor Documentation: VS Code and GitHub Copilot integration
+    - Azure API Management: Enterprise API integration patterns
+    - GitHub MCP Registry: Ecosystem development and community platform
+  - **Comprehensive Conclusion**: Rewritten conclusion section highlighting seven case studies spanning multiple MCP implementation dimensions
+    - Enterprise Integration, Multi-Agent Orchestration, Developer Productivity
+    - Ecosystem Development, Educational Applications categorization
+    - Enhanced insights into architectural patterns, implementation strategies, and best practices
+    - Emphasis on MCP as mature, production-ready protocol
+
+#### Study Guide Updates (study_guide.md)
+- **Visual Curriculum Map**: Updated mindmap to include GitHub MCP Registry in Case Studies section
+- **Case Studies Description**: Enhanced from generic descriptions to detailed breakdown of seven comprehensive case studies
+- **Repository Structure**: Updated section 10 to reflect comprehensive case study coverage with specific implementation details
+- **Changelog Integration**: Added September 26, 2025 entry documenting GitHub MCP Registry addition and case study enhancements
+- **Date Updates**: Updated footer timestamp to reflect latest revision (September 26, 2025)
+
+### Documentation Quality Improvements
+- **Consistency Enhancement**: Standardized case study formatting and structure across all seven examples
+- **Comprehensive Coverage**: Case studies now span enterprise, developer productivity, and ecosystem development scenarios
+- **Strategic Positioning**: Enhanced focus on MCP as foundational platform for agentic system deployment
+- **Resource Integration**: Updated additional resources to include GitHub MCP Registry link
+
+## September 15, 2025
+
+### Advanced Topics Expansion - Custom Transports & Context Engineering
+
+#### MCP Custom Transports (05-AdvancedTopics/mcp-transport/) - New Advanced Implementation Guide
+- **README.md**: Complete implementation guide for custom MCP transport mechanisms
+  - **Azure Event Grid Transport**: Comprehensive serverless event-driven transport implementation
+    - C#, TypeScript, and Python examples with Azure Functions integration
+    - Event-driven architecture patterns for scalable MCP solutions
+    - Webhook receivers and push-based message handling
+  - **Azure Event Hubs Transport**: High-throughput streaming transport implementation
+    - Real-time streaming capabilities for low-latency scenarios
+    - Partitioning strategies and checkpoint management
+    - Message batching and performance optimization
+  - **Enterprise Integration Patterns**: Production-ready architectural examples
+    - Distributed MCP processing across multiple Azure Functions
+    - Hybrid transport architectures combining multiple transport types
+    - Message durability, reliability, and error handling strategies
+  - **Security & Monitoring**: Azure Key Vault integration and observability patterns
+    - Managed identity authentication and least privilege access
+    - Application Insights telemetry and performance monitoring
+    - Circuit breakers and fault tolerance patterns
+  - **Testing Frameworks**: Comprehensive testing strategies for custom transports
+    - Unit testing with test doubles and mocking frameworks
+    - Integration testing with Azure Test Containers
+    - Performance and load testing considerations
+
+#### Context Engineering (05-AdvancedTopics/mcp-contextengineering/) - Emerging AI Discipline
+- **README.md**: Comprehensive exploration of context engineering as an emerging field
+  - **Core Principles**: Complete context sharing, action decision awareness, and context window management
+  - **MCP Protocol Alignment**: How MCP design addresses context engineering challenges
+    - Context window limitations and progressive loading strategies
+    - Relevance determination and dynamic context retrieval
+    - Multi-modal context handling and security considerations
+  - **Implementation Approaches**: Single-threaded vs. multi-agent architectures
+    - Context chunking and prioritization techniques
+    - Progressive context loading and compression strategies
+    - Layered context approaches and retrieval optimization
+  - **Measurement Framework**: Emerging metrics for context effectiveness evaluation
+    - Input efficiency, performance, quality, and user experience considerations
+    - Experimental approaches to context optimization
+    - Failure analysis and improvement methodologies
+
+#### Curriculum Navigation Updates (README.md)
+- **Enhanced Module Structure**: Updated curriculum table to include new advanced topics
+  - Added Context Engineering (5.14) and Custom Transport (5.15) entries
+  - Consistent formatting and navigation links across all modules
+  - Updated descriptions to reflect current content scope
+
+### Directory Structure Improvements
+- **Naming Standardization**: Renamed "mcp transport" to "mcp-transport" for consistency with other advanced topic folders
+- **Content Organization**: All 05-AdvancedTopics folders now follow consistent naming pattern (mcp-[topic])
+
+### Documentation Quality Enhancements
+- **MCP Specification Alignment**: All new content references current MCP Specification 2025-06-18
+- **Multi-Language Examples**: Comprehensive code examples in C#, TypeScript, and Python
+- **Enterprise Focus**: Production-ready patterns and Azure cloud integration throughout
+- **Visual Documentation**: Mermaid diagrams for architecture and flow visualization
+
 ## August 18, 2025
 
 ### Documentation Comprehensive Update - MCP 2025-06-18 Standards

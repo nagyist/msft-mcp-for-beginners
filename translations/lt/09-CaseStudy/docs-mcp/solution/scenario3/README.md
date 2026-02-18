@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "db532b1ec386c9ce38c791653dc3c881",
-  "translation_date": "2025-08-26T18:36:25+00:00",
-  "source_file": "09-CaseStudy/docs-mcp/solution/scenario3/README.md",
-  "language_code": "lt"
-}
--->
 # Scenarijus 3: Dokumentacija redaktoriuje su MCP serveriu VS Code
 
 ## Apžvalga
@@ -52,28 +43,28 @@ Norėdami pradėti, atlikite šiuos veiksmus. Kiekvienam žingsniui galite prid�
    ```
    Ši konfigūracija nurodo VS Code, kaip prisijungti prie [`Microsoft Learn Docs MCP serverio`](https://github.com/MicrosoftDocs/mcp).
    
-   ![1 žingsnis: Pridėkite mcp.json į .vscode aplanką](../../../../../../translated_images/step1-mcp-json.c06a007fccc3edfaf0598a31903c9ec71476d9fd3ae6c1b2b4321fd38688ca4b.lt.png)
+   ![1 žingsnis: Pridėkite mcp.json į .vscode aplanką](../../../../../../translated_images/lt/step1-mcp-json.c06a007fccc3edfa.webp)
     
 2. **Atidarykite GitHub Copilot pokalbių skydelį:**
    Jei dar neturite įdiegto GitHub Copilot plėtinio, eikite į VS Code plėtinių peržiūrą ir įdiekite jį. Galite jį atsisiųsti tiesiai iš [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-chat). Tada atidarykite Copilot pokalbių skydelį iš šoninės juostos.
 
-   ![2 žingsnis: Atidarykite Copilot pokalbių skydelį](../../../../../../translated_images/step2-copilot-panel.f1cc86e9b9b8cd1a85e4df4923de8bafee4830541ab255e3c90c09777fed97db.lt.png)
+   ![2 žingsnis: Atidarykite Copilot pokalbių skydelį](../../../../../../translated_images/lt/step2-copilot-panel.f1cc86e9b9b8cd1a.webp)
 
 3. **Įjunkite agento režimą ir patikrinkite įrankius:**
    Copilot pokalbių skydelyje įjunkite agento režimą.
 
-   ![3 žingsnis: Įjunkite agento režimą ir patikrinkite įrankius](../../../../../../translated_images/step3-agent-mode.cdc32520fd7dd1d149c3f5226763c1d85a06d3c041d4cc983447625bdbeff4d4.lt.png)
+   ![3 žingsnis: Įjunkite agento režimą ir patikrinkite įrankius](../../../../../../translated_images/lt/step3-agent-mode.cdc32520fd7dd1d1.webp)
 
    Įjungę agento režimą, patikrinkite, ar MCP serveris yra vienas iš galimų įrankių. Tai užtikrina, kad Copilot agentas gali pasiekti dokumentacijos serverį ir gauti atitinkamą informaciją.
    
-   ![3 žingsnis: Patikrinkite MCP serverio įrankį](../../../../../../translated_images/step3-verify-mcp-tool.76096a6329cbfecd42888780f322370a0d8c8fa003ed3eeb7ccd23f0fc50c1ad.lt.png)
+   ![3 žingsnis: Patikrinkite MCP serverio įrankį](../../../../../../translated_images/lt/step3-verify-mcp-tool.76096a6329cbfecd.webp)
 
 4. **Pradėkite naują pokalbį ir pateikite užklausą agentui:**
    Atidarykite naują pokalbį Copilot pokalbių skydelyje. Dabar galite pateikti agentui savo dokumentacijos užklausas. Agentas naudos MCP serverį, kad gautų ir parodytų atitinkamą Microsoft Learn dokumentaciją tiesiai jūsų redaktoriuje.
 
    - *"Bandau sudaryti mokymosi planą temai X. Planuoju mokytis 8 savaites, kiekvienai savaitei pasiūlykite turinį, kurį turėčiau peržiūrėti."*
 
-   ![4 žingsnis: Pateikite užklausą pokalbyje](../../../../../../translated_images/step4-prompt-chat.12187bb001605efc5077992b621f0fcd1df12023c5dce0464f8eb8f3d595218f.lt.png)
+   ![4 žingsnis: Pateikite užklausą pokalbyje](../../../../../../translated_images/lt/step4-prompt-chat.12187bb001605efc.webp)
 
 5. **Tiesioginė užklausa:**
 
@@ -81,7 +72,7 @@ Norėdami pradėti, atlikite šiuos veiksmus. Kiekvienam žingsniui galite prid�
    
    *"Ieškau atsakymų, kaip diegti kelių agentų sprendimą su AI agentais, sukurtais Azure AI Foundry. Nematau tiesioginio diegimo metodo, pvz., Copilot Studio kanalų. Taigi, kokie yra skirtingi būdai tai įgyvendinti, kad įmonės vartotojai galėtų sąveikauti ir atlikti darbą? Yra daugybė straipsnių/tinklaraščių, kurie teigia, kad tam galima naudoti Azure Bot paslaugą, kuri gali veikti kaip tiltas tarp MS Teams ir Azure AI Foundry agentų. Ar tai veiks, jei nustatysiu Azure botą, kuris jungiasi prie Orchestrator Agent Azure AI Foundry per Azure funkciją, kad atliktų orkestravimą, ar man reikia sukurti Azure funkciją kiekvienam AI agentui, kuris yra kelių agentų sprendimo dalis, kad atliktų orkestravimą Bot Framework? Bet kokie kiti pasiūlymai yra labai laukiami."*
 
-   ![5 žingsnis: Tiesioginės užklausos](../../../../../../translated_images/step5-live-queries.49db3e4a50bea27327e3cb18c24d263b7d134930d78e7392f9515a1c00264a7f.lt.png)
+   ![5 žingsnis: Tiesioginės užklausos](../../../../../../translated_images/lt/step5-live-queries.49db3e4a50bea273.webp)
 
    Agentas atsakys su atitinkamomis dokumentacijos nuorodomis ir santraukomis, kurias galėsite tiesiogiai įterpti į savo markdown failus arba naudoti kaip nuorodas savo kode.
    

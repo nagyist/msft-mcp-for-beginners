@@ -1,19 +1,10 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1d9dc83260576b76f272d330ed93c51f",
-  "translation_date": "2025-07-13T22:09:19+00:00",
-  "source_file": "03-GettingStarted/09-deployment/README.md",
-  "language_code": "da"
-}
--->
-# Udrulning af MCP-servere
+# Udrulning af MCP-Servere
 
-At udrulle din MCP-server gør det muligt for andre at få adgang til dens værktøjer og ressourcer ud over dit lokale miljø. Der findes flere udrulningsstrategier, afhængigt af dine krav til skalerbarhed, pålidelighed og nem administration. Nedenfor finder du vejledning til at udrulle MCP-servere lokalt, i containere og i skyen.
+At udrulle din MCP-server giver andre adgang til dens værktøjer og ressourcer ud over dit lokale miljø. Der findes flere udrulningsstrategier at overveje, afhængigt af dine krav til skalerbarhed, pålidelighed og nem administration. Nedenfor finder du vejledning til at udrulle MCP-servere lokalt, i containere og til skyen.
 
 ## Oversigt
 
-Denne lektion gennemgår, hvordan du udruller din MCP Server-app.
+Denne lektion dækker, hvordan du udruller din MCP Server-app.
 
 ## Læringsmål
 
@@ -27,20 +18,20 @@ Når du er færdig med denne lektion, vil du kunne:
 Hvis din server er beregnet til at blive brugt ved at køre på brugerens maskine, kan du følge disse trin:
 
 1. **Download serveren**. Hvis du ikke selv har skrevet serveren, skal du først downloade den til din maskine.  
-1. **Start serverprocessen**: Kør din MCP-serverapplikation.
+1. **Start serverprocessen**: Kør din MCP-serverapplikation
 
-For SSE (ikke nødvendigt for stdio-type server)
+For SSE (ikke nødvendigt for stdio type server)
 
-1. **Konfigurer netværk**: Sørg for, at serveren er tilgængelig på den forventede port.  
-1. **Forbind klienter**: Brug lokale forbindelses-URL’er som `http://localhost:3000`.
+1. **Konfigurer netværk**: Sørg for, at serveren er tilgængelig på den forventede port  
+1. **Forbind klienter**: Brug lokale tilslutnings-URL'er som `http://localhost:3000`
 
 ## Udrulning i skyen
 
-MCP-servere kan udrulles på forskellige cloud-platforme:
+MCP-servere kan udrulles til forskellige skyplatforme:
 
-- **Serverless Functions**: Udrul letvægts MCP-servere som serverless functions.  
-- **Container Services**: Brug tjenester som Azure Container Apps, AWS ECS eller Google Cloud Run.  
-- **Kubernetes**: Udrul og administrer MCP-servere i Kubernetes-klynger for høj tilgængelighed.
+- **Serverless Functions**: Udrul lette MCP-servere som serverless functions  
+- **Container Services**: Brug tjenester som Azure Container Apps, AWS ECS eller Google Cloud Run  
+- **Kubernetes**: Udrul og administrer MCP-servere i Kubernetes-klynger for høj tilgængelighed
 
 ### Eksempel: Azure Container Apps
 
@@ -54,7 +45,7 @@ Sådan kan du gøre:
   git clone https://github.com/anthonychu/azure-container-apps-mcp-sample.git
   ```
 
-1. Kør det lokalt for at teste:
+1. Kør det lokalt for at teste tingene:
 
   ```sh
   uv venv
@@ -92,7 +83,7 @@ Sådan kan du gøre:
   }
   ```
 
-  Når SSE-serveren er startet, kan du klikke på afspilningsikonet i JSON-filen. Du skulle nu kunne se, at værktøjerne på serveren bliver opfanget af GitHub Copilot, se værktøjsikonet.
+Når SSE-serveren er startet, kan du klikke på afspil-ikonet i JSON-filen, og du burde nu se, at værktøjer på serveren bliver opfanget af GitHub Copilot, se værktøjsikonet.
 
 1. For at udrulle, kør følgende kommando:
 
@@ -100,18 +91,21 @@ Sådan kan du gøre:
   az containerapp up -g <RESOURCE_GROUP_NAME> -n weather-mcp --environment mcp -l westus --env-vars API_KEYS=<AN_API_KEY> --source .
   ```
 
-Sådan! Udrul det lokalt, eller udrul det til Azure via disse trin.
+Der har du det, udrul det lokalt, udrul det til Azure gennem disse trin.
 
 ## Yderligere ressourcer
 
-- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)  
-- [Azure Container Apps artikel](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)  
-- [Azure Container Apps MCP repo](https://github.com/anthonychu/azure-container-apps-mcp-sample)  
-
+- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)
+- [Azure Container Apps-artikel](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)
+- [Azure Container Apps MCP repo](https://github.com/anthonychu/azure-container-apps-mcp-sample)
 
 ## Hvad er det næste
 
-- Næste: [Praktisk implementering](../../04-PracticalImplementation/README.md)
+- Næste: [Avancerede serveremner](../10-advanced/README.md)
 
-**Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Ansvarsfraskrivelse**:
+Dette dokument er blevet oversat ved hjælp af den AI-baserede oversættelsestjeneste [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi stræber efter nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

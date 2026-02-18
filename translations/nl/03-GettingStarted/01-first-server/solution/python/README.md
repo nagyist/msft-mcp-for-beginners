@@ -1,17 +1,8 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d26f746e21775c30b4d7ed97962b24df",
-  "translation_date": "2025-08-18T16:34:56+00:00",
-  "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
-  "language_code": "nl"
-}
--->
 # Dit voorbeeld uitvoeren
 
 Het wordt aanbevolen om `uv` te installeren, maar het is niet verplicht. Zie [instructies](https://docs.astral.sh/uv/#highlights).
 
-## -0- Maak een virtuele omgeving aan
+## -0- Maak een virtuele omgeving
 
 ```bash
 python -m venv venv
@@ -49,7 +40,7 @@ Zodra de server is verbonden:
 
 - probeer tools op te sommen en voer `add` uit, met de argumenten 2 en 4. Je zou 6 in het resultaat moeten zien.
 
-- ga naar resources en resource template en roep get_greeting aan. Typ een naam in en je zou een begroeting moeten zien met de naam die je hebt opgegeven.
+- ga naar resources en resource template en roep get_greeting aan, typ een naam in en je zou een begroeting moeten zien met de naam die je hebt opgegeven.
 
 ### Testen in CLI-modus
 
@@ -61,7 +52,7 @@ Je kunt deze direct in CLI-modus starten door het volgende commando uit te voere
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 ```
 
-Dit zal alle beschikbare tools op de server weergeven. Je zou de volgende uitvoer moeten zien:
+Dit zal alle beschikbare tools in de server weergeven. Je zou de volgende output moeten zien:
 
 ```text
 {
@@ -98,7 +89,7 @@ Om een tool aan te roepen, typ:
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-Je zou de volgende uitvoer moeten zien:
+Je zou de volgende output moeten zien:
 
 ```text
 {
@@ -112,9 +103,11 @@ Je zou de volgende uitvoer moeten zien:
 }
 ```
 
-> [!TIP]  
-> Het is meestal veel sneller om de inspector in CLI-modus uit te voeren dan in de browser.  
+> [!TIP]
+> Het is meestal veel sneller om de inspector in CLI-modus uit te voeren dan in de browser.
 > Lees meer over de inspector [hier](https://github.com/modelcontextprotocol/inspector).
 
+---
+
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

@@ -1,60 +1,51 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fcf1e12b62102bf7d16b78deb2b163b7",
-  "translation_date": "2025-08-18T17:26:36+00:00",
-  "source_file": "06-CommunityContributions/README.md",
-  "language_code": "vi"
-}
--->
 # Cộng đồng và Đóng góp
 
-[![Cách đóng góp cho MCP: Công cụ, Tài liệu, Mã nguồn và hơn thế nữa](../../../translated_images/07.1179f6de46ff196eb3cc13c3510e01c37807a13f3bb9be3c779105ce26737c67.vi.png)](https://youtu.be/v1pvCYAWpRE)
+[![Cách Đóng góp cho MCP: Công cụ, Tài liệu, Mã nguồn và Thêm nữa](../../../translated_images/vi/07.1179f6de46ff196e.webp)](https://youtu.be/v1pvCYAWpRE)
 
-_(Nhấp vào hình ảnh trên để xem video của bài học này)_
+_(Nhấp vào hình ảnh trên để xem video bài học này)_
 
 ## Tổng quan
 
-Bài học này tập trung vào cách tham gia vào cộng đồng MCP, đóng góp cho hệ sinh thái MCP, và tuân theo các thực hành tốt nhất trong phát triển hợp tác. Hiểu cách tham gia vào các dự án MCP mã nguồn mở là điều cần thiết đối với những ai muốn định hình tương lai của công nghệ này.
+Bài học này tập trung vào cách tham gia với cộng đồng MCP, đóng góp vào hệ sinh thái MCP và theo các thực hành tốt nhất cho phát triển hợp tác. Hiểu cách tham gia vào các dự án nguồn mở MCP là điều cần thiết cho những ai muốn định hình tương lai của công nghệ này.
 
 ## Mục tiêu học tập
 
-Sau khi hoàn thành bài học này, bạn sẽ có thể:
+Kết thúc bài học, bạn sẽ có thể:
 
 - Hiểu cấu trúc của cộng đồng và hệ sinh thái MCP
-- Tham gia hiệu quả vào các diễn đàn và thảo luận của cộng đồng MCP
-- Đóng góp vào các kho mã nguồn mở của MCP
+- Tham gia hiệu quả vào các diễn đàn và thảo luận cộng đồng MCP
+- Đóng góp vào các kho nguồn mở MCP
 - Tạo và chia sẻ các công cụ và máy chủ MCP tùy chỉnh
-- Tuân theo các thực hành tốt nhất trong phát triển và hợp tác MCP
-- Khám phá các tài nguyên và khung làm việc của cộng đồng dành cho phát triển MCP
+- Theo các thực hành tốt nhất cho phát triển và hợp tác MCP
+- Khám phá các tài nguyên và khung làm việc cộng đồng cho phát triển MCP
 
-## Hệ sinh thái cộng đồng MCP
+## Hệ sinh thái Cộng đồng MCP
 
-Hệ sinh thái MCP bao gồm nhiều thành phần và người tham gia cùng làm việc để phát triển giao thức.
+Hệ sinh thái MCP bao gồm nhiều thành phần và người tham gia làm việc cùng nhau để tiến bộ giao thức.
 
-### Các thành phần chính của cộng đồng
+### Các Thành phần Chính của Cộng đồng
 
-1. **Người duy trì giao thức cốt lõi**: Tổ chức [Model Context Protocol GitHub](https://github.com/modelcontextprotocol) chính thức duy trì các đặc điểm kỹ thuật MCP cốt lõi và các triển khai tham chiếu.
-2. **Nhà phát triển công cụ**: Cá nhân và nhóm tạo ra các công cụ và máy chủ MCP.
-3. **Nhà cung cấp tích hợp**: Các công ty tích hợp MCP vào sản phẩm và dịch vụ của họ.
-4. **Người dùng cuối**: Các nhà phát triển và tổ chức sử dụng MCP trong ứng dụng của họ.
-5. **Người đóng góp**: Thành viên cộng đồng đóng góp mã nguồn, tài liệu, hoặc các tài nguyên khác.
+1. **Những Người Duy trì Giao thức Cốt lõi**: Tổ chức GitHub chính thức [Model Context Protocol](https://github.com/modelcontextprotocol) duy trì các đặc tả cốt lõi MCP và các triển khai tham khảo
+2. **Những Nhà Phát triển Công cụ**: Cá nhân và nhóm tạo các công cụ và máy chủ MCP
+3. **Nhà Cung cấp Tích hợp**: Các công ty tích hợp MCP vào sản phẩm và dịch vụ của họ
+4. **Người dùng Cuối**: Các nhà phát triển và tổ chức sử dụng MCP trong ứng dụng của họ
+5. **Người đóng góp**: Thành viên cộng đồng đóng góp mã, tài liệu hoặc tài nguyên khác
 
-### Tài nguyên cộng đồng
+### Tài nguyên Cộng đồng
 
-#### Kênh chính thức
+#### Kênh Chính thức
 
-- [Tổ chức GitHub MCP](https://github.com/modelcontextprotocol)
+- [Tổ chức MCP trên GitHub](https://github.com/modelcontextprotocol)
 - [Tài liệu MCP](https://modelcontextprotocol.io/)
-- [Đặc điểm kỹ thuật MCP](https://modelcontextprotocol.io/docs/specification)
+- [Đặc tả MCP](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
 - [Thảo luận trên GitHub](https://github.com/orgs/modelcontextprotocol/discussions)
 - [Kho ví dụ & máy chủ MCP](https://github.com/modelcontextprotocol/servers)
 
-#### Tài nguyên do cộng đồng tạo ra
+#### Tài nguyên do Cộng đồng phát triển
 
 - [Khách hàng MCP](https://modelcontextprotocol.io/clients) - Danh sách các khách hàng hỗ trợ tích hợp MCP
-- [Máy chủ MCP của cộng đồng](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - Danh sách ngày càng tăng các máy chủ MCP do cộng đồng phát triển
-- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) - Danh sách máy chủ MCP được chọn lọc
+- [Máy chủ MCP do cộng đồng phát triển](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - Danh sách máy chủ MCP đang phát triển
+- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) - Danh sách tuyển chọn các máy chủ MCP
 - [PulseMCP](https://www.pulsemcp.com/) - Trung tâm cộng đồng & bản tin để khám phá tài nguyên MCP
 - [Máy chủ Discord](https://discord.gg/jHEGxQu2a5) - Kết nối với các nhà phát triển MCP
 - Các triển khai SDK theo ngôn ngữ
@@ -64,85 +55,85 @@ Hệ sinh thái MCP bao gồm nhiều thành phần và người tham gia cùng 
 
 ### Các loại đóng góp
 
-Hệ sinh thái MCP chào đón nhiều loại đóng góp:
+Hệ sinh thái MCP chào đón nhiều loại đóng góp khác nhau:
 
-1. **Đóng góp mã nguồn**:
+1. **Đóng góp Mã nguồn**:
    - Cải tiến giao thức cốt lõi
    - Sửa lỗi
    - Triển khai công cụ và máy chủ
-   - Thư viện khách hàng/máy chủ bằng các ngôn ngữ khác nhau
+   - Thư viện khách hàng/máy chủ với các ngôn ngữ khác nhau
 
 2. **Tài liệu**:
    - Cải thiện tài liệu hiện có
-   - Tạo hướng dẫn và bài viết
+   - Tạo hướng dẫn và bài học
    - Dịch tài liệu
    - Tạo ví dụ và ứng dụng mẫu
 
-3. **Hỗ trợ cộng đồng**:
+3. **Hỗ trợ Cộng đồng**:
    - Trả lời câu hỏi trên diễn đàn và thảo luận
-   - Kiểm tra và báo cáo vấn đề
+   - Kiểm thử và báo lỗi
    - Tổ chức sự kiện cộng đồng
    - Hướng dẫn người đóng góp mới
 
 ### Quy trình đóng góp: Giao thức cốt lõi
 
-Để đóng góp cho giao thức MCP cốt lõi hoặc các triển khai chính thức, hãy tuân theo các nguyên tắc từ [hướng dẫn đóng góp chính thức](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
+Để đóng góp vào giao thức MCP cốt lõi hoặc các triển khai chính thức, hãy tuân theo các nguyên tắc từ [hướng dẫn đóng góp chính thức](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
 
-1. **Đơn giản và tối giản**: Đặc điểm kỹ thuật MCP duy trì tiêu chuẩn cao khi thêm các khái niệm mới. Việc thêm vào một đặc điểm kỹ thuật dễ dàng hơn nhiều so với việc loại bỏ chúng.
+1. **Đơn giản và Tối giản**: Đặc tả MCP duy trì tiêu chuẩn cao khi thêm khái niệm mới. Dễ dàng hơn để thêm vào đặc tả so với việc gỡ bỏ.
 
-2. **Cách tiếp cận cụ thể**: Các thay đổi trong đặc điểm kỹ thuật nên dựa trên các thách thức triển khai cụ thể, không phải ý tưởng suy đoán.
+2. **Cách tiếp cận Cụ thể**: Thay đổi đặc tả dựa trên các thử thách triển khai cụ thể, không phải ý tưởng suy đoán.
 
-3. **Các giai đoạn của một đề xuất**:
-   - Định nghĩa: Khám phá không gian vấn đề, xác nhận rằng những người dùng MCP khác cũng gặp vấn đề tương tự
-   - Nguyên mẫu: Xây dựng một giải pháp ví dụ và chứng minh ứng dụng thực tế của nó
-   - Viết: Dựa trên nguyên mẫu, viết một đề xuất đặc điểm kỹ thuật
+3. **Các giai đoạn của đề xuất**:
+   - Định nghĩa: Khám phá vấn đề, xác thực rằng người dùng MCP khác cũng gặp cùng vấn đề
+   - Phát triển mẫu thử: Xây dựng giải pháp mẫu và chứng minh ứng dụng thực tế
+   - Viết: Dựa trên mẫu thử, viết đề xuất đặc tả
 
 ### Thiết lập môi trường phát triển
 
 ```bash
-# Fork the repository
+# Tạo nhánh cho kho lưu trữ
 git clone https://github.com/YOUR-USERNAME/modelcontextprotocol.git
 cd modelcontextprotocol
 
-# Install dependencies
+# Cài đặt các phụ thuộc
 npm install
 
-# For schema changes, validate and generate schema.json:
+# Đối với các thay đổi về sơ đồ, xác thực và tạo schema.json:
 npm run check:schema:ts
 npm run generate:schema
 
-# For documentation changes
+# Đối với các thay đổi về tài liệu
 npm run check:docs
 npm run format
 
-# Preview documentation locally (optional):
+# Xem trước tài liệu trên máy cục bộ (tùy chọn):
 npm run serve:docs
 ```
 
 ### Ví dụ: Đóng góp sửa lỗi
 
 ```javascript
-// Original code with bug in the typescript-sdk
+// Mã gốc có lỗi trong typescript-sdk
 export function validateResource(resource: unknown): resource is MCPResource {
   if (!resource || typeof resource !== 'object') {
     return false;
   }
   
-  // Bug: Missing property validation
-  // Current implementation:
+  // Lỗi: Thiếu xác thực thuộc tính
+  // Triển khai hiện tại:
   const hasName = 'name' in resource;
   const hasSchema = 'schema' in resource;
   
   return hasName && hasSchema;
 }
 
-// Fixed implementation in a contribution
+// Triển khai đã sửa trong một đóng góp
 export function validateResource(resource: unknown): resource is MCPResource {
   if (!resource || typeof resource !== 'object') {
     return false;
   }
   
-  // Improved validation
+  // Cải thiện xác thực
   const hasName = 'name' in resource && typeof (resource as MCPResource).name === 'string';
   const hasSchema = 'schema' in resource && typeof (resource as MCPResource).schema === 'object';
   const hasDescription = !('description' in resource) || typeof (resource as MCPResource).description === 'string';
@@ -151,10 +142,10 @@ export function validateResource(resource: unknown): resource is MCPResource {
 }
 ```
 
-### Ví dụ: Đóng góp công cụ mới vào thư viện chuẩn
+### Ví dụ: Đóng góp công cụ mới vào Thư viện Tiêu chuẩn
 
 ```python
-# Example contribution: A CSV data processing tool for the MCP standard library
+# Ví dụ đóng góp: Một công cụ xử lý dữ liệu CSV cho thư viện chuẩn MCP
 
 from mcp_tools import Tool, ToolRequest, ToolResponse, ToolExecutionException
 import pandas as pd
@@ -216,14 +207,14 @@ class CsvProcessingTool(Tool):
     
     async def execute_async(self, request: ToolRequest) -> ToolResponse:
         try:
-            # Extract parameters
+            # Trích xuất các tham số
             operation = request.parameters.get("operation")
             output_format = request.parameters.get("outputFormat", "json")
             
-            # Get CSV data from either direct data or URL
+            # Lấy dữ liệu CSV từ dữ liệu trực tiếp hoặc URL
             df = await self._get_dataframe(request)
             
-            # Process based on requested operation
+            # Xử lý dựa trên thao tác được yêu cầu
             result = {}
             
             if operation == "summary":
@@ -284,7 +275,7 @@ class CsvProcessingTool(Tool):
     
     def _transform_data(self, df: pd.DataFrame, params: Dict[str, Any]) -> Dict[str, Any]:
         """Transforms the data based on parameters"""
-        # Implementation would include various transformations
+        # Triển khai sẽ bao gồm các chuyển đổi khác nhau
         return {
             "status": "success",
             "message": "Transformation applied"
@@ -311,66 +302,68 @@ class CsvProcessingTool(Tool):
             raise ToolExecutionException(f"Unsupported output format: {format}")
 ```
 
-### Hướng dẫn đóng góp
+### Hướng dẫn Đóng góp
 
-Để thực hiện đóng góp thành công cho các dự án MCP:
+Để thực hiện một đóng góp thành công cho các dự án MCP:
 
-1. **Bắt đầu nhỏ**: Bắt đầu với tài liệu, sửa lỗi, hoặc cải tiến nhỏ
-2. **Tuân theo hướng dẫn phong cách**: Tuân thủ phong cách mã hóa và quy ước của dự án
-3. **Viết kiểm thử**: Bao gồm kiểm thử đơn vị cho các đóng góp mã nguồn của bạn
-4. **Tài liệu hóa công việc của bạn**: Thêm tài liệu rõ ràng cho các tính năng hoặc thay đổi mới
-5. **Gửi PR có mục tiêu**: Giữ pull request tập trung vào một vấn đề hoặc tính năng duy nhất
-6. **Phản hồi với nhận xét**: Phản hồi nhanh chóng với nhận xét về đóng góp của bạn
+1. **Bắt đầu nhỏ**: Bắt đầu với tài liệu, sửa lỗi hoặc cải tiến nhỏ
+2. **Tuân thủ hướng dẫn phong cách**: Theo phong cách và quy ước mã nguồn của dự án
+3. **Viết các bài kiểm thử**: Bao gồm các bài kiểm thử đơn vị cho mã của bạn
+4. **Tài liệu công việc của bạn**: Thêm tài liệu rõ ràng cho các tính năng mới hoặc thay đổi
+5. **Gửi PR tập trung**: Giữ các pull request tập trung vào một vấn đề hoặc tính năng
+6. **Phản hồi tích cực với phản hồi**: Phản hồi nhanh chóng với phản hồi về đóng góp của bạn
 
-### Quy trình đóng góp ví dụ
+### Quy trình Đóng góp Ví dụ
 
 ```bash
-# Clone the repository
+# Sao chép kho lưu trữ
 git clone https://github.com/modelcontextprotocol/typescript-sdk.git
 cd typescript-sdk
 
-# Create a new branch for your contribution
+# Tạo một nhánh mới cho đóng góp của bạn
 git checkout -b feature/my-contribution
 
-# Make your changes
+# Thực hiện các thay đổi của bạn
 # ...
 
-# Run tests to ensure your changes don't break existing functionality
+# Chạy các bài kiểm tra để đảm bảo các thay đổi của bạn không làm hỏng chức năng hiện có
 npm test
 
-# Commit your changes with a descriptive message
+# Cam kết các thay đổi của bạn với một thông điệp mô tả
 git commit -am "Fix validation in resource handler"
 
-# Push your branch to your fork
+# Đẩy nhánh của bạn lên kho lưu trữ fork của bạn
 git push origin feature/my-contribution
 
-# Create a pull request from your branch to the main repository
-# Then engage with feedback and iterate on your PR as needed
+# Tạo một yêu cầu kéo từ nhánh của bạn đến kho lưu trữ chính
+# Sau đó tương tác với phản hồi và lặp lại PR của bạn khi cần thiết
 ```
 
-## Tạo và chia sẻ máy chủ MCP
+## Tạo và Chia sẻ Máy chủ MCP
 
-Một trong những cách đóng góp giá trị nhất cho hệ sinh thái MCP là tạo và chia sẻ các máy chủ MCP tùy chỉnh. Cộng đồng đã phát triển hàng trăm máy chủ cho các dịch vụ và trường hợp sử dụng khác nhau.
+Một trong những cách đóng góp có giá trị nhất cho hệ sinh thái MCP là tạo và chia sẻ các máy chủ MCP tùy chỉnh. Cộng đồng đã phát triển hàng trăm máy chủ cho nhiều dịch vụ và trường hợp sử dụng khác nhau.
 
-### Khung phát triển máy chủ MCP
+### Khung Phát triển Máy chủ MCP
 
-Nhiều khung làm việc có sẵn để đơn giản hóa việc phát triển máy chủ MCP:
+Có nhiều khung làm việc sẵn có để đơn giản hóa phát triển máy chủ MCP:
 
-1. **SDK chính thức**:
-   - [SDK TypeScript](https://github.com/modelcontextprotocol/typescript-sdk)
-   - [SDK Python](https://github.com/modelcontextprotocol/python-sdk)
-   - [SDK C#](https://github.com/modelcontextprotocol/csharp-sdk)
-   - [SDK Go](https://github.com/modelcontextprotocol/go-sdk)
-   - [SDK Java](https://github.com/modelcontextprotocol/java-sdk)
-   - [SDK Kotlin](https://github.com/modelcontextprotocol/kotlin-sdk)
+1. **SDK Chính thức** (tuân thủ [Đặc tả MCP 2025-11-25](https://spec.modelcontextprotocol.io/specification/2025-11-25/)):
+   - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
+   - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
+   - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
+   - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
+   - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
+   - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
+   - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk)
+   - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk)
 
-2. **Khung làm việc cộng đồng**:
-   - [MCP-Framework](https://mcp-framework.com/) - Xây dựng máy chủ MCP nhanh chóng và hiệu quả bằng TypeScript
-   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - Máy chủ MCP dựa trên annotation với Java
-   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - Khung làm việc Java cho máy chủ MCP
-   - [Mẫu máy chủ MCP Next.js](https://github.com/vercel-labs/mcp-for-next.js) - Dự án khởi đầu Next.js cho máy chủ MCP
+2. **Khung Cộng đồng**:
+   - [MCP-Framework](https://mcp-framework.com/) - Xây dựng máy chủ MCP thanh lịch và nhanh chóng bằng TypeScript
+   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - Máy chủ MCP theo chú thích với Java
+   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - Khung Java cho máy chủ MCP
+   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - Dự án khởi đầu Next.js cho máy chủ MCP
 
-### Phát triển công cụ có thể chia sẻ
+### Phát triển Công cụ có thể Chia sẻ
 
 #### Ví dụ .NET: Tạo gói công cụ có thể chia sẻ
 
@@ -478,10 +471,10 @@ namespace McpFinanceTools
 // dotnet nuget push bin/Release/McpFinanceTools.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k YOUR_API_KEY
 ```
 
-#### Ví dụ Java: Tạo gói Maven cho công cụ
+#### Ví dụ Java: Tạo gói Maven cho Công cụ
 
 ```java
-// pom.xml configuration for a shareable MCP tool package
+// cấu hình pom.xml cho gói công cụ MCP có thể chia sẻ
 <!-- 
 <project>
     <groupId>com.example</groupId>
@@ -500,7 +493,7 @@ namespace McpFinanceTools
         <repository>
             <id>github</id>
             <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/username/mcp-weather-tools</url>
+            <url>https://maven.pkg.github.com/tênngườidùng/mcp-weather-tools</url>
         </repository>
     </distributionManagement>
 </project>
@@ -542,7 +535,7 @@ public class WeatherForecastTool implements Tool {
     @Override
     public Object getSchema() {
         Map<String, Object> schema = new HashMap<>();
-        // Schema definition...
+        // Định nghĩa lược đồ...
         return schema;
     }
     
@@ -553,10 +546,10 @@ public class WeatherForecastTool implements Tool {
             int days = request.getParameters().has("days") ? 
                 request.getParameters().get("days").asInt() : 3;
             
-            // Call weather API
+            // Gọi API thời tiết
             Map<String, Object> forecast = getForecast(location, days);
             
-            // Build response
+            // Xây dựng phản hồi
             return new ToolResponse.Builder()
                 .setResult(forecast)
                 .build();
@@ -566,15 +559,15 @@ public class WeatherForecastTool implements Tool {
     }
     
     private Map<String, Object> getForecast(String location, int days) {
-        // Implementation would call weather API
-        // Simplified example
+        // Triển khai sẽ gọi API thời tiết
+        // Ví dụ đơn giản
         Map<String, Object> result = new HashMap<>();
-        // Add forecast data...
+        // Thêm dữ liệu dự báo...
         return result;
     }
 }
 
-// Build and publish using Maven
+// Xây dựng và phát hành sử dụng Maven
 // mvn clean package
 // mvn deploy
 ```
@@ -582,7 +575,7 @@ public class WeatherForecastTool implements Tool {
 #### Ví dụ Python: Xuất bản gói PyPI
 
 ```python
-# Directory structure for a PyPI package:
+# Cấu trúc thư mục cho một gói PyPI:
 # mcp_nlp_tools/
 # ├── LICENSE
 # ├── README.md
@@ -592,7 +585,7 @@ public class WeatherForecastTool implements Tool {
 # │   ├── sentiment_tool.py
 # │   └── translation_tool.py
 
-# Example setup.py
+# Ví dụ setup.py
 """
 from setuptools import setup, find_packages
 
@@ -620,7 +613,7 @@ setup(
 )
 """
 
-# Example NLP tool implementation (sentiment_tool.py)
+# Ví dụ triển khai công cụ NLP (sentiment_tool.py)
 from mcp_tools import Tool, ToolRequest, ToolResponse, ToolExecutionException
 from transformers import pipeline
 import torch
@@ -629,7 +622,7 @@ class SentimentAnalysisTool(Tool):
     """MCP tool for sentiment analysis of text"""
     
     def __init__(self, model_name="distilbert-base-uncased-finetuned-sst-2-english"):
-        # Load the sentiment analysis model
+        # Tải mô hình phân tích cảm xúc
         self.sentiment_analyzer = pipeline("sentiment-analysis", model=model_name)
     
     def get_name(self):
@@ -657,14 +650,14 @@ class SentimentAnalysisTool(Tool):
     
     async def execute_async(self, request: ToolRequest) -> ToolResponse:
         try:
-            # Extract parameters
+            # Trích xuất các tham số
             text = request.parameters.get("text")
             include_score = request.parameters.get("includeScore", True)
             
-            # Analyze sentiment
+            # Phân tích cảm xúc
             sentiment_result = self.sentiment_analyzer(text)[0]
             
-            # Format result
+            # Định dạng kết quả
             result = {
                 "sentiment": sentiment_result["label"],
                 "text": text
@@ -673,82 +666,82 @@ class SentimentAnalysisTool(Tool):
             if include_score:
                 result["score"] = sentiment_result["score"]
             
-            # Return result
+            # Trả về kết quả
             return ToolResponse(result=result)
             
         except Exception as e:
             raise ToolExecutionException(f"Sentiment analysis failed: {str(e)}")
 
-# To publish:
+# Để xuất bản:
 # python setup.py sdist bdist_wheel
 # python -m twine upload dist/*
 ```
 
-### Chia sẻ các thực hành tốt nhất
+### Chia sẻ Thực hành Tốt nhất
 
 Khi chia sẻ công cụ MCP với cộng đồng:
 
 1. **Tài liệu đầy đủ**:
-   - Tài liệu hóa mục đích, cách sử dụng, và ví dụ
-   - Giải thích các tham số và giá trị trả về
-   - Tài liệu hóa bất kỳ phụ thuộc bên ngoài nào
+   - Tài liệu mục đích, cách sử dụng và ví dụ
+   - Giải thích tham số và giá trị trả về
+   - Tài liệu các phụ thuộc bên ngoài
 
 2. **Xử lý lỗi**:
-   - Triển khai xử lý lỗi mạnh mẽ
+   - Thực hiện xử lý lỗi vững chắc
    - Cung cấp thông báo lỗi hữu ích
-   - Xử lý các trường hợp ngoại lệ một cách hợp lý
+   - Xử lý các trường hợp biên một cách khéo léo
 
 3. **Cân nhắc hiệu suất**:
-   - Tối ưu hóa cả tốc độ và sử dụng tài nguyên
-   - Triển khai bộ nhớ đệm khi phù hợp
+   - Tối ưu cả tốc độ và sử dụng tài nguyên
+   - Thực hiện bộ nhớ đệm khi phù hợp
    - Cân nhắc khả năng mở rộng
 
 4. **Bảo mật**:
    - Sử dụng khóa API và xác thực an toàn
    - Xác thực và làm sạch đầu vào
-   - Triển khai giới hạn tốc độ cho các cuộc gọi API bên ngoài
+   - Thực hiện giới hạn tốc độ cho các cuộc gọi API ngoài
 
 5. **Kiểm thử**:
    - Bao gồm phạm vi kiểm thử toàn diện
-   - Kiểm thử với các loại đầu vào khác nhau và trường hợp ngoại lệ
-   - Tài liệu hóa quy trình kiểm thử
+   - Kiểm thử với nhiều loại đầu vào và trường hợp biên
+   - Tài liệu quy trình kiểm thử
 
-## Hợp tác cộng đồng và các thực hành tốt nhất
+## Hợp tác Cộng đồng và Thực hành Tốt nhất
 
 Hợp tác hiệu quả là chìa khóa cho một hệ sinh thái MCP phát triển mạnh.
 
 ### Kênh giao tiếp
 
-- Vấn đề và thảo luận trên GitHub
+- Các vấn đề và thảo luận GitHub
 - Microsoft Tech Community
-- Kênh Discord và Slack
+- Các kênh Discord và Slack
 - Stack Overflow (tag: `model-context-protocol` hoặc `mcp`)
 
 ### Đánh giá mã nguồn
 
 Khi đánh giá các đóng góp MCP:
 
-1. **Rõ ràng**: Mã có rõ ràng và được tài liệu hóa tốt không?
-2. **Chính xác**: Nó có hoạt động như mong đợi không?
-3. **Nhất quán**: Nó có tuân theo quy ước của dự án không?
+1. **Rõ ràng**: Mã có rõ ràng và được tài liệu tốt không?
+2. **Đúng đắn**: Nó có hoạt động như mong đợi không?
+3. **Nhất quán**: Nó có tuân thủ quy ước dự án không?
 4. **Hoàn chỉnh**: Có bao gồm kiểm thử và tài liệu không?
-5. **Bảo mật**: Có bất kỳ vấn đề bảo mật nào không?
+5. **Bảo mật**: Có vấn đề bảo mật nào không?
 
-### Tương thích phiên bản
+### Tương thích Phiên bản
 
 Khi phát triển cho MCP:
 
 1. **Phiên bản giao thức**: Tuân thủ phiên bản giao thức MCP mà công cụ của bạn hỗ trợ
-2. **Tương thích khách hàng**: Cân nhắc khả năng tương thích ngược
-3. **Tương thích máy chủ**: Tuân theo hướng dẫn triển khai máy chủ
-4. **Thay đổi phá vỡ**: Tài liệu hóa rõ ràng bất kỳ thay đổi phá vỡ nào
+2. **Tương thích khách hàng**: Cân nhắc tương thích ngược
+3. **Tương thích máy chủ**: Theo hướng dẫn triển khai máy chủ
+4. **Thay đổi phá vỡ**: Tài liệu rõ ràng các thay đổi phá vỡ
 
-## Dự án cộng đồng ví dụ: Registry công cụ MCP
+## Dự án Cộng đồng Ví dụ: MCP Tool Registry
 
 Một đóng góp cộng đồng quan trọng có thể là phát triển một registry công khai cho các công cụ MCP.
 
 ```python
-# Example schema for a community tool registry API
+# Ví dụ về lược đồ cho API đăng ký công cụ cộng đồng
 
 from fastapi import FastAPI, HTTPException, Depends
 from pydantic import BaseModel, Field, HttpUrl
@@ -756,7 +749,7 @@ from typing import List, Optional
 import datetime
 import uuid
 
-# Models for the tool registry
+# Mô hình cho đăng ký công cụ
 class ToolSchema(BaseModel):
     """JSON Schema for a tool"""
     type: str
@@ -785,10 +778,10 @@ class Tool(ToolRegistration):
     rating: float = Field(default=0.0)
     ratings_count: int = Field(default=0)
 
-# FastAPI application for the registry
+# Ứng dụng FastAPI cho đăng ký
 app = FastAPI(title="MCP Tool Registry")
 
-# In-memory database for this example
+# Cơ sở dữ liệu trong bộ nhớ cho ví dụ này
 tools_db = {}
 
 @app.post("/tools", response_model=Tool)
@@ -826,27 +819,33 @@ async def delete_tool(tool_name: str):
 
 ## Những điểm chính
 
-- Cộng đồng MCP đa dạng và chào đón nhiều loại đóng góp
+- Cộng đồng MCP đa dạng và hoan nghênh nhiều loại đóng góp
 - Đóng góp cho MCP có thể từ cải tiến giao thức cốt lõi đến công cụ tùy chỉnh
-- Tuân theo hướng dẫn đóng góp giúp tăng khả năng PR của bạn được chấp nhận
+- Tuân theo hướng dẫn đóng góp cải thiện khả năng PR được chấp nhận
 - Tạo và chia sẻ công cụ MCP là cách giá trị để nâng cao hệ sinh thái
-- Hợp tác cộng đồng là yếu tố thiết yếu cho sự phát triển và cải tiến MCP
+- Hợp tác cộng đồng thiết yếu cho sự phát triển và cải tiến của MCP
 
 ## Bài tập
 
 1. Xác định một lĩnh vực trong hệ sinh thái MCP mà bạn có thể đóng góp dựa trên kỹ năng và sở thích của mình
 2. Fork kho MCP và thiết lập môi trường phát triển cục bộ
-3. Tạo một cải tiến nhỏ, sửa lỗi, hoặc công cụ có lợi cho cộng đồng
-4. Tài liệu hóa đóng góp của bạn với kiểm thử và tài liệu phù hợp
+3. Tạo một cải tiến nhỏ, sửa lỗi hoặc công cụ có lợi cho cộng đồng
+4. Tài liệu đóng góp của bạn với các kiểm thử và tài liệu phù hợp
 5. Gửi pull request đến kho phù hợp
 
 ## Tài nguyên bổ sung
 
-- [Dự án cộng đồng MCP](https://github.com/topics/model-context-protocol)
+- [Dự án Cộng đồng MCP](https://github.com/topics/model-context-protocol)
 
 ---
 
-Tiếp theo: [Bài học từ việc áp dụng sớm](../07-LessonsfromEarlyAdoption/README.md)
+## Tiếp theo
 
+Tiếp theo: [Bài học từ Việc áp dụng Sớm](../07-LessonsfromEarlyAdoption/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn tham khảo chính thức. Đối với các thông tin quan trọng, chúng tôi khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp từ con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi nỗ lực đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ nguyên bản được coi là nguồn tham khảo chính thức. Đối với các thông tin quan trọng, khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

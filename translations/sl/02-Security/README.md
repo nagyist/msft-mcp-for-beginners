@@ -1,387 +1,508 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1c767a35642f753127dc08545c25a290",
-  "translation_date": "2025-08-19T18:15:31+00:00",
-  "source_file": "02-Security/README.md",
-  "language_code": "sl"
-}
--->
-# MCP Varnost: Celovita zaščita za AI sisteme
+# MCP Security: Celovita zaščita za AI sisteme
 
-[![MCP Varnostne prakse](../../../translated_images/03.175aed6dedae133f9d41e49cefd0f0a9a39c3317e1eaa7ef7182696af7534308.sl.png)](https://youtu.be/88No8pw706o)
+[![MCP Security Best Practices](../../../translated_images/sl/03.175aed6dedae133f.webp)](https://youtu.be/88No8pw706o)
 
-_(Kliknite zgornjo sliko za ogled videa te lekcije)_
+_(Kliknite na zgornjo sliko za ogled videa te lekcije)_
 
-Varnost je temeljni del oblikovanja AI sistemov, zato ji dajemo prednost kot drugi sklop. To je skladno z Microsoftovim načelom **Secure by Design** iz [Secure Future Initiative](https://www.microsoft.com/security/blog/2025/04/17/microsofts-secure-by-design-journey-one-year-of-success/).
+Varnost je temeljni element oblikovanja AI sistemov, zato ji namenjamo posebno pozornost kot naš drugi sklop. To sovpada z Microsoftovim načelom **Secure by Design** iz [Secure Future Initiative](https://www.microsoft.com/security/blog/2025/04/17/microsofts-secure-by-design-journey-one-year-of-success/).
 
-Model Context Protocol (MCP) prinaša zmogljive nove zmožnosti za aplikacije, ki temeljijo na AI, hkrati pa uvaja edinstvene varnostne izzive, ki presegajo tradicionalna programska tveganja. MCP sistemi se soočajo tako z uveljavljenimi varnostnimi vprašanji (varno kodiranje, najmanjše privilegije, varnost dobavne verige) kot tudi z novimi, specifičnimi grožnjami za AI, kot so vbrizgavanje ukazov, zastrupitev orodij, ugrabitev sej, napadi z zmedo namestnika, ranljivosti pri prenosu žetonov in dinamične spremembe zmožnosti.
+Model Context Protocol (MCP) prinaša močne nove zmogljivosti za aplikacije, ki jih poganja AI, hkrati pa uvaja edinstvene varnostne izzive, ki presegajo tradicionalna tveganja programske opreme. MCP sistemi se soočajo tako z uveljavljenimi varnostnimi vprašanji (varno kodiranje, najmanjše privilegije, varnost oskrbovalnih verig) kot z novimi grožnjami, specifičnimi za AI, vključno z injekcijo pozivov, zastrupitvijo orodij, prevzemanjem sej, napadi "confused deputy", ranljivostmi pri prenosu žetonov in dinamično spremembo zmogljivosti.
 
-Ta lekcija raziskuje najpomembnejša varnostna tveganja pri implementacijah MCP—vključno z avtentikacijo, avtorizacijo, prekomernimi dovoljenji, posrednim vbrizgavanjem ukazov, varnostjo sej, težavami z zmedo namestnika, upravljanjem žetonov in ranljivostmi dobavne verige. Naučili se boste uporabnih ukrepov in najboljših praks za zmanjšanje teh tveganj ter uporabe Microsoftovih rešitev, kot so Prompt Shields, Azure Content Safety in GitHub Advanced Security, za krepitev vaše MCP implementacije.
+Ta lekcija raziskuje najpomembnejša varnostna tveganja v implementacijah MCP—vključno z avtentikacijo, avtoritacijo, prekomernimi dovoljenji, posredno injekcijo pozivov, varnostjo sej, težavami confused deputy, upravljanjem žetonov ter ranljivostmi v oskrbovalni verigi. Naučili se boste izvedljivih kontrol in najboljših praks za zmanjšanje teh tveganj ob uporabi Microsoftovih rešitev, kot so Prompt Shields, Azure Content Safety ter GitHub Advanced Security, ki krepijo vašo MCP namestitev.
 
 ## Cilji učenja
 
-Do konca te lekcije boste lahko:
+Na koncu te lekcije boste sposobni:
 
-- **Prepoznali MCP-specifične grožnje**: Razumeli edinstvena varnostna tveganja v MCP sistemih, vključno z vbrizgavanjem ukazov, zastrupitvijo orodij, prekomernimi dovoljenji, ugrabljanjem sej, težavami z zmedo namestnika, ranljivostmi pri prenosu žetonov in tveganji dobavne verige
-- **Uporabili varnostne ukrepe**: Implementirali učinkovite ukrepe, vključno z robustno avtentikacijo, dostopom z najmanjšimi privilegiji, varnim upravljanjem žetonov, nadzorom varnosti sej in preverjanjem dobavne verige
-- **Izkoristili Microsoftove varnostne rešitve**: Razumeli in uvedli Microsoft Prompt Shields, Azure Content Safety in GitHub Advanced Security za zaščito MCP delovnih obremenitev
-- **Preverili varnost orodij**: Prepoznali pomen validacije metapodatkov orodij, spremljanja dinamičnih sprememb in obrambe pred posrednimi napadi z vbrizgavanjem ukazov
-- **Integrirali najboljše prakse**: Združili uveljavljene varnostne temelje (varno kodiranje, utrjevanje strežnikov, ničelno zaupanje) z MCP-specifičnimi ukrepi za celovito zaščito
+- **Prepoznati grožnje specifične za MCP**: Razumeti edinstvena varnostna tveganja v MCP sistemih, vključno z injekcijo pozivov, zastrupitvijo orodij, prekomernimi dovoljenji, prevzemanjem sej, težavami confused deputy, ranljivostmi pri prenosu žetonov in tveganji v oskrbovalni verigi
+- **Uporabiti varnostne kontrole**: Uvesti učinkovite ukrepe, vključno z zanesljivo avtentikacijo, dostopom po načelu najmanjših privilegijev, varnim upravljanjem žetonov, kontrolami varnosti sej in preverjanjem oskrbovalne verige
+- **Izkoristiti Microsoftove varnostne rešitve**: Razumeti in uporabljati Microsoft Prompt Shields, Azure Content Safety in GitHub Advanced Security za zaščito delovnih obremenitev MCP
+- **Preveriti varnost orodij**: Prepoznati pomen validacije metapodatkov orodij, spremljanja dinamičnih sprememb in obrambe pred posredno injekcijo pozivov
+- **Integrirati najboljše prakse**: Združiti uveljavljene varnostne temelje (varno kodiranje, utrjevanje strežnikov, zero trust) s specifičnimi kontrolami MCP za celovito zaščito
 
-# MCP Varnostna arhitektura in ukrepi
+# MCP varnostna arhitektura in kontrole
 
-Sodobne MCP implementacije zahtevajo večplastne varnostne pristope, ki obravnavajo tako tradicionalne programske grožnje kot tudi specifične grožnje za AI. Hitro razvijajoča se specifikacija MCP še naprej izboljšuje svoje varnostne ukrepe, kar omogoča boljšo integracijo z varnostnimi arhitekturami podjetij in uveljavljenimi najboljšimi praksami.
+Sodobne implementacije MCP zahtevajo večplastne varnostne pristope, ki naslavljajo tako tradicionalno varnost programske opreme kot grožnje, specifične za AI. Hitro razvijajoča se specifikacija MCP še naprej izboljšuje svoje varnostne kontrole, omogočajoč boljšo integracijo z arhitekturami varnosti v podjetjih in uveljavljenimi najboljšimi praksami.
 
-Raziskave iz [Microsoft Digital Defense Report](https://aka.ms/mddr) kažejo, da bi bilo mogoče **98 % prijavljenih vdorov preprečiti z robustno varnostno higieno**. Najbolj učinkovita strategija zaščite združuje temeljne varnostne prakse z MCP-specifičnimi ukrepi—dokazano je, da osnovni varnostni ukrepi najbolj zmanjšujejo splošno varnostno tveganje.
+Raziskave iz [Microsoft Digital Defense Report](https://aka.ms/mddr) kažejo, da **bi 98 % prijavljenih varnostnih vdorov preprečila dobra varnostna higiena**. Najbolj učinkovit varnostni pristop združuje temeljne varnostne prakse z MCP-specifičnimi kontrolami—preizkušeni osnovni varnostni ukrepi ostajajo najbolj vplivni za zmanjšanje skupnega varnostnega tveganja.
 
-## Trenutna varnostna krajina
+## Trenutno stanje varnosti
 
-> **Opomba:** Te informacije odražajo MCP varnostne standarde na dan **18. avgust 2025**. Specifikacija MCP se hitro razvija, prihodnje implementacije pa lahko uvedejo nove vzorce avtentikacije in izboljšane ukrepe. Vedno se sklicujte na trenutno [MCP specifikacijo](https://spec.modelcontextprotocol.io/), [MCP GitHub repozitorij](https://github.com/modelcontextprotocol) in [dokumentacijo najboljših praks](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices) za najnovejša navodila.
+> **Opomba:** Ti podatki odražajo varnostne standarde MCP stanja na **5. februar 2026**, usklajene s **specifikacijo MCP 2025-11-25**. Protokol MCP se hitro razvija, prihodnje implementacije pa lahko uvedejo nove vzorce avtentikacije in izboljšane kontrole. Vedno preverjajte aktualno [specifikacijo MCP](https://spec.modelcontextprotocol.io/), [MCP GitHub repozitorij](https://github.com/modelcontextprotocol) in [dokumentacijo najboljših varnostnih praks](https://modelcontextprotocol.io/specification/2025-11-25/basic/security_best_practices) za najnovejša priporočila.
 
-### Razvoj MCP avtentikacije
+## 🏔️ MCP Security Summit Workshop (Sherpa)
 
-Specifikacija MCP se je bistveno razvila v svojem pristopu k avtentikaciji in avtorizaciji:
+Za **praktično varnostno usposabljanje** toplo priporočamo **MCP Security Summit Workshop** (Sherpa) - celovito vodeno odpravo do varnosti MCP strežnikov v Microsoft Azure.
 
-- **Prvotni pristop**: Zgodnje specifikacije so zahtevale, da razvijalci implementirajo lastne strežnike za avtentikacijo, pri čemer so MCP strežniki delovali kot OAuth 2.0 strežniki za avtorizacijo, ki neposredno upravljajo uporabniško avtentikacijo
-- **Trenutni standard (2025-06-18)**: Posodobljena specifikacija omogoča MCP strežnikom delegiranje avtentikacije zunanjim ponudnikom identitete (kot je Microsoft Entra ID), kar izboljšuje varnostni položaj in zmanjšuje zapletenost implementacije
-- **Varnost transportne plasti**: Izboljšana podpora za varne transportne mehanizme z ustreznimi vzorci avtentikacije za lokalne (STDIO) in oddaljene (Streamable HTTP) povezave
+### Pregled delavnice
+
+[MCP Security Summit Workshop](https://azure-samples.github.io/sherpa/) ponuja praktično, izvedljivo varnostno usposabljanje po preizkušeni metodologiji "ranljivost → izkoriščanje → popravilo → validacija". Naučili se boste:
+
+- **Učiti se s povzročanjem napak**: Izkusiti ranljivosti z uporabo namerno nezavarovanih strežnikov
+- **Uporabljati varnost Azure**: Izkoristiti Azure Entra ID, Key Vault, API Management in AI Content Safety
+- **Uporabljati obrambno večplastno strategijo**: Napredovati skozi faze z gradnjo celovitih varnostnih slojev
+- **Uporabljati OWASP standarde**: Vsaka tehnika je usklajena z [OWASP MCP Azure Security Guide](https://microsoft.github.io/mcp-azure-security-guide/)
+- **Pridobiti produkcijsko kodo**: Oditi z delujočimi, testiranimi implementacijami
+
+### Pot odpravljenja
+
+| Tabor | Osredotočenost | Kritična OWASP tveganja |
+|-------|----------------|-------------------------|
+| **Osnovni tabor** | Temelji MCP in ranljivosti avtentikacije | MCP01, MCP07 |
+| **Tabor 1: Identiteta** | OAuth 2.1, Azure Managed Identity, Key Vault | MCP01, MCP02, MCP07 |
+| **Tabor 2: Prehod** | API Management, zasebni endpoints, upravljanje | MCP02, MCP07, MCP09 |
+| **Tabor 3: V/I varnost** | Injekcija pozivov, zaščita PII, vsebinska varnost | MCP03, MCP05, MCP06 |
+| **Tabor 4: Nadzor** | Log Analytics, nadzorne plošče, zaznavanje groženj | MCP08 |
+| **Vrhunec** | Integracijski test rdeče in modre skupine | Vse |
+
+**Začnite**: [https://azure-samples.github.io/sherpa/](https://azure-samples.github.io/sherpa/)
+
+## OWASP MCP Top 10 varnostnih tveganj
+
+[OWASP MCP Azure Security Guide](https://microsoft.github.io/mcp-azure-security-guide/) opredeljuje deset najpomembnejših varnostnih tveganj za implementacije MCP:
+
+| Tveganje | Opis | Azure ustrezni ukrepi |
+|----------|-------|-----------------------|
+| **MCP01** | Nepravilno upravljanje žetonov in izpostavitev skrivnosti | Azure Key Vault, Managed Identity |
+| **MCP02** | Povišanje privilegijev z razširitvijo obsega | RBAC, pogojni dostop |
+| **MCP03** | Zastrupitev orodij | Validacija orodij, preverjanje integritete |
+| **MCP04** | Napadi v oskrbovalni verigi | GitHub Advanced Security, skeniranje odvisnosti |
+| **MCP05** | Injekcija in izvršitev ukazov | Validacija vhodnih podatkov, peskovnik okolje |
+| **MCP06** | Injekcija pozivov prek kontekstualnih podatkov | Azure AI Content Safety, Prompt Shields |
+| **MCP07** | Nezadostna avtentikacija in avtorizacija | Azure Entra ID, OAuth 2.1 s PKCE |
+| **MCP08** | Pomanjkanje revidiranja in telemetrije | Azure Monitor, Application Insights |
+| **MCP09** | Senci MCP strežniki | Vodstvo z API Center, omrežna izolacija |
+| **MCP10** | Injekcija konteksta in prekomerno deljenje | Klasifikacija podatkov, minimalna izpostavljenost |
+
+### Razvoj avtentikacije MCP
+
+Specifikacija MCP se je znatno razvila pri pristopih k avtentikaciji in avtorizaciji:
+
+- **Izvirni pristop**: Zgodnje specifikacije so zahtevale, da razvijalci implementirajo strežnike za avtentikacijo po meri, MCP strežniki pa so delovali kot avtoritativni strežniki OAuth 2.0, ki so neposredno upravljali avtentikacijo uporabnikov
+- **Trenutni standard (2025-11-25)**: Posodobljena specifikacija dovoljuje MCP strežnikom, da delegirajo avtentikacijo zunanjim ponudnikom identitete (npr. Microsoft Entra ID), kar izboljša varnost in zmanjša kompleksnost izvedbe
+- **Varnost transportnega sloja**: Izboljšana podpora za varne transportne mehanizme z ustreznimi vzorci avtentikacije za lokalne (STDIO) in oddaljene (Streamable HTTP) povezave
 
 ## Varnost avtentikacije in avtorizacije
 
 ### Trenutni varnostni izzivi
 
-Sodobne MCP implementacije se soočajo z več izzivi pri avtentikaciji in avtorizaciji:
+Sodobne implementacije MCP se soočajo z več izzivi na področju avtentikacije in avtorizacije:
 
-### Tveganja in vektorji groženj
+### Tveganja in način napadov
 
-- **Napačno konfigurirana logika avtorizacije**: Napačna implementacija avtorizacije v MCP strežnikih lahko izpostavi občutljive podatke in nepravilno uporabi nadzor dostopa
-- **Kompromis OAuth žetonov**: Kraja lokalnih žetonov MCP strežnika omogoča napadalcem, da se predstavljajo kot strežniki in dostopajo do storitev navzdol po toku
-- **Ranljivosti pri prenosu žetonov**: Nepravilno ravnanje z žetoni ustvarja obvode varnostnih ukrepov in vrzeli v odgovornosti
-- **Prekomerna dovoljenja**: Preveč privilegirani MCP strežniki kršijo načelo najmanjših privilegijev in širijo površino napada
+- **Napačno konfigurirana avtorizacijska logika**: Napačna implementacija avtorizacije v MCP strežnikih lahko razkrije občutljive podatke in nepravilno uveljavi dostopne kontrole
+- **Kompromitacija OAuth žetona**: Kraja žetona na lokalnem MCP strežniku omogoča napadalcem lažno predstavljanje strežnikov in dostop do odjemalskih storitev
+- **Ranljivosti prenosa žetonov**: Neprimerna obravnava žetonov pomeni zaobidenje varnostnih kontrol in težave pri sledljivosti
+- **Prekomerna dovoljenja**: MCP strežniki z nepotrebno visokimi privilegiji kršijo načelo najmanjših privilegijev ter povečajo površino za napade
 
-#### Prenos žetonov: Kritični anti-vzorec
+#### Prenos žetonov: Kritičen nepriporočen vzorec
 
-**Prenos žetonov je izrecno prepovedan** v trenutni MCP specifikaciji avtorizacije zaradi resnih varnostnih posledic:
+**Prenos žetonov je v trenutni MCP specifikaciji avtorizacije izrecno prepovedan** zaradi hudih varnostnih posledic:
 
-##### Obvodi varnostnih ukrepov
-- MCP strežniki in API-ji navzdol po toku izvajajo ključne varnostne ukrepe (omejevanje hitrosti, validacija zahtev, spremljanje prometa), ki so odvisni od pravilne validacije žetonov
-- Neposredna uporaba žetonov s strani odjemalcev za API-je obide te bistvene zaščite, kar spodkopava varnostno arhitekturo
+##### Zaobidenje varnostnih kontrol  
+- MCP strežniki in odjemalski API-ji izvajajo bistvene varnostne kontrole (omejevanje hitrosti, validacija zahtev, spremljanje prometa), ki so odvisne od pravilne validacije žetonov  
+- Neposredno uporabo žetonov med odjemalcem in API-jem zaobide te zaščite, s čimer oslabi varnostno arhitekturo  
 
-##### Izzivi pri odgovornosti in reviziji  
-- MCP strežniki ne morejo razlikovati med odjemalci, ki uporabljajo žetone, izdane navzgor po toku, kar prekinja revizijske sledi
-- Dnevniki strežnikov virov navzdol kažejo zavajajoče izvore zahtev namesto dejanskih posrednikov MCP strežnikov
-- Preiskava incidentov in skladnostne revizije postanejo bistveno težje
+##### Težave z odgovornostjo in revizijo  
+- MCP strežniki ne morejo razlikovati uporabnikov, ki uporabljajo žetone, izdane od zunaj, kar prekine revizijske sledi  
+- Dnevniki strežnikov nižjih slojev prikazujejo zavajajoče izvore zahtev namesto dejanskih posrednikov MCP strežnika  
+- Preiskave incidentov in revizije skladnosti postanejo znatno težje  
 
-##### Tveganja iztoka podatkov
-- Nevalidirane trditve žetonov omogočajo zlonamernim akterjem s kompromitiranimi žetoni uporabo MCP strežnikov kot posrednikov za iztok podatkov
-- Kršitve meja zaupanja omogočajo nepooblaščene vzorce dostopa, ki obidejo predvidene varnostne ukrepe
+##### Tveganja izlitja podatkov  
+- Nevalidirani zahtevki žetonov omogočajo zlonamernim subjektom z ukradenimi žetoni uporabo MCP strežnikov kot posrednikov za iznos podatkov  
+- Kršitve zaupnostnih mej dovoljujejo nepooblaščenim vzorcem dostopov, ki zaobidejo načrtovane varnostne kontrole  
 
-##### Vektorji napadov na več storitev
-- Kompromitirani žetoni, sprejeti s strani več storitev, omogočajo lateralno gibanje po povezanih sistemih
-- Predpostavke zaupanja med storitvami so lahko kršene, ko izvor žetonov ni mogoče preveriti
+##### Večstorinski napadalni vektorji  
+- Sprejeti ogroženi žetoni, ki jih sprejemajo številne storitve, omogočajo lateralni premik med povezanimi sistemi  
+- Predpostavke zaupanja med storitvami lahko kršijo, kadar izvora žetonov ni mogoče preveriti  
 
-### Varnostni ukrepi in omilitve
+### Varnostne kontrole in ublažitve
 
 **Ključne varnostne zahteve:**
 
-> **OBVEZNO**: MCP strežniki **NE SMEJO** sprejemati nobenih žetonov, ki niso bili izrecno izdani za MCP strežnik
+> **OBVEZNO**: MCP strežniki **NE SMEJO** sprejemati nobenih žetonov, ki niso izrecno izdani za ta MCP strežnik
 
-#### Ukrepi za avtentikacijo in avtorizacijo
+#### Kontrole avtentikacije in avtorizacije
 
-- **Temeljit pregled avtorizacije**: Izvedite celovite revizije logike avtorizacije MCP strežnikov, da zagotovite, da lahko občutljive vire dostopajo le predvideni uporabniki in odjemalci
-  - **Vodnik za implementacijo**: [Azure API Management kot avtentikacijski prehod za MCP strežnike](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)
+- **Natančen pregled avtorizacije:** Izvedite temeljite revizije avtorizacijske logike MCP strežnikov, da zagotovite, da lahko občutljive vire dostopajo le predvideni uporabniki in odjemalci
+  - **Vodnik za izvedbo**: [Azure API Management kot avtentikacijski prehod za MCP strežnike](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)
   - **Integracija identitete**: [Uporaba Microsoft Entra ID za avtentikacijo MCP strežnikov](https://den.dev/blog/mcp-server-auth-entra-id-session/)
 
-- **Varno upravljanje žetonov**: Implementirajte [Microsoftove najboljše prakse za validacijo in življenjski cikel žetonov](https://learn.microsoft.com/en-us/entra/identity-platform/access-tokens)
-  - Validirajte trditve občinstva žetonov, da se ujemajo z identiteto MCP strežnika
-  - Implementirajte pravilno rotacijo in politiko poteka žetonov
-  - Preprečite napade z ponovitvijo žetonov in nepooblaščeno uporabo
+- **Varnostno upravljanje žetonov:** Uporabite [Microsoftove prakse validacije žetonov in življenjskega cikla](https://learn.microsoft.com/en-us/entra/identity-platform/access-tokens)
+  - Preverite, da so zahtevki občinstva žetona usklajeni z identiteto MCP strežnika
+  - Uvedite pravilne politike rotacije in poteka žetonov
+  - Preprečite ponovne napade in nepooblaščeno uporabo žetonov
 
-- **Zaščitena hramba žetonov**: Zavarujte hrambo žetonov z enkripcijo tako v mirovanju kot med prenosom
-  - **Najboljše prakse**: [Smernice za varno hrambo in enkripcijo žetonov](https://youtu.be/uRdX37EcCwg?si=6fSChs1G4glwXRy2)
+- **Zaščitena shramba žetonov:** Varnostno shranjujte žetone s šifriranjem tako na počivališču kot v prenosu
+  - **Najboljše prakse:** [Smernice za varno shranjevanje in šifriranje žetonov](https://youtu.be/uRdX37EcCwg?si=6fSChs1G4glwXRy2)
 
-#### Implementacija nadzora dostopa
+#### Izvedba kontrole dostopa
 
-- **Načelo najmanjših privilegijev**: Dodelite MCP strežnikom le minimalna dovoljenja, potrebna za predvideno funkcionalnost
-  - Redni pregledi in posodobitve dovoljenj za preprečevanje kopičenja privilegijev
-  - **Microsoftova dokumentacija**: [Zagotavljanje dostopa z najmanjšimi privilegiji](https://learn.microsoft.com/entra/identity-platform/secure-least-privileged-access)
+- **Načelo najmanjših privilegijev:** MCP strežnikom dodeljujte le minimalne potrebne privilegije za predvideno funkcionalnost
+  - Redni pregledi in posodobitve dovoljenj za preprečevanje povišanja privilegijev
+  - **Microsoftova dokumentacija:** [Varno upravljanje dostopa z najmanjšimi privilegiji](https://learn.microsoft.com/entra/identity-platform/secure-least-privileged-access)
 
-- **Nadzor dostopa na podlagi vlog (RBAC)**: Implementirajte natančne dodelitve vlog
-  - Omejite vloge na specifične vire in dejanja
-  - Izogibajte se širokim ali nepotrebnim dovoljenjem, ki širijo površino napada
+- **Nadzor dostopa na podlagi vlog (RBAC):** Implementirajte natančna dodeljevanja vlog
+  - Zaostrite razpone vlog na specifične vire in dejanja
+  - Izogibajte se širokim ali nepotrebnim dovoljenjem, ki povečujejo površino napadov
 
-- **Nenehno spremljanje dovoljenj**: Implementirajte stalno revizijo in spremljanje dostopa
+- **Neprestano spremljanje dovoljenj:** Uvedite neprekinjeno revizijo in nadzor dostopa
   - Spremljajte vzorce uporabe dovoljenj za anomalije
-  - Takoj odpravite prekomerna ali neuporabljena dovoljenja
+  - Takoj odpravite prekomerne ali neuporabljene privilegije
 
-## Specifične varnostne grožnje za AI
+## Grožnje specifične za AI
 
-### Napadi z vbrizgavanjem ukazov in manipulacijo orodij
+### Napadi injekcije pozivov in manipulacije orodij
 
-Sodobne MCP implementacije se soočajo s sofisticiranimi napadi, specifičnimi za AI, ki jih tradicionalni varnostni ukrepi ne morejo v celoti nasloviti:
+Sodobne implementacije MCP se soočajo z naprednimi, AI-specifičnimi vektorji napadov, ki jih tradicionalne varnostne metode ne zaznajo v celoti:
 
-#### **Posredno vbrizgavanje ukazov (Cross-Domain Prompt Injection)**
+#### **Posredna injekcija pozivov (Cross-Domain Prompt Injection)**
 
-**Posredno vbrizgavanje ukazov** predstavlja eno najkritičnejših ranljivosti v MCP-podprtih AI sistemih. Napadalci vdelajo zlonamerna navodila v zunanjo vsebino—dokumente, spletne strani, e-pošto ali podatkovne vire—ki jih AI sistemi nato obravnavajo kot legitimne ukaze.
+**Posredna injekcija pozivov** je ena najpomembnejših ranljivosti v AI sistemih z omogočenim MCP. Napadalci v zunanje vsebine—dokumente, spletne strani, e-poštna sporočila ali podatkovne vire—vključijo zlonamerna navodila, ki jih AI sistemi nato obravnavajo kot legitimne ukaze.
 
 **Scenariji napadov:**
-- **Vbrizgavanje v dokumente**: Zlonamerna navodila, skrita v obdelanih dokumentih, ki sprožijo nenamerna dejanja AI
-- **Izkoriščanje spletne vsebine**: Kompromitirane spletne strani z vdelanimi ukazi, ki manipulirajo z vedenjem AI ob strganju
-- **Napadi prek e-pošte**: Zlonamerni ukazi v e-poštnih sporočilih, ki povzročijo uhajanje informacij ali nepooblaščena dejanja AI pomočnikov
-- **Kontaminacija podatkovnih virov**: Kompromitirane baze podatkov ali API-ji, ki strežejo okuženo vsebino AI sistemom
+- **Injekcija na osnovi dokumentov:** Zlonamerna navodila, skrita v procesiranih dokumentih, ki sprožijo nezaželeno AI dejanje
+- **Izraba spletnih vsebin:** Okvarjene spletne strani z vgrajenimi pozivi, ki manipulirajo vedenje AI ob strganju vsebine
+- **Napadi prek e-pošte:** Zlonamerni pozivi v elektronskih sporočilih, ki povzročijo, da AI asistenti razkrivajo informacije ali izvajajo nepooblaščene ukrepe
+- **Kontaminacija podatkovnih virov:** Okvarjene baze podatkov ali API-ji, ki AI sistemom služijo onesnaženo vsebino
 
-**Vpliv v resničnem svetu**: Ti napadi lahko povzročijo iztok podatkov, kršitve zasebnosti, generiranje škodljive vsebine in manipulacijo uporabniških interakcij. Za podrobno analizo glejte [Prompt Injection in MCP (Simon Willison)](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/).
+**Praktični vpliv:** Ti napadi lahko povzročijo iznos podatkov, kršitve zasebnosti, generiranje škodljive vsebine ter manipulacijo uporabniških interakcij. Za podrobno analizo glejte [Prompt Injection v MCP (Simon Willison)](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/).
 
-![Diagram napada z vbrizgavanjem ukazov](../../../translated_images/prompt-injection.ed9fbfde297ca877c15bc6daa808681cd3c3dc7bf27bbbda342ef1ba5fc4f52d.sl.png)
+![Prompt Injection Attack Diagram](../../../translated_images/sl/prompt-injection.ed9fbfde297ca877.webp)
 
-#### **Napadi z zastrupitvijo orodij**
+#### **Napadi zastrupitve orodij**
 
-**Zastrupitev orodij** cilja na metapodatke, ki definirajo MCP orodja, in izkorišča način, kako LLM-ji interpretirajo opise orodij in parametre za sprejemanje odločitev o izvajanju.
+**Zastrupitev orodij** cilja na metapodatke, ki definirajo MCP orodja, in uporablja, kako LLM modeli interpretirajo opise in parametre orodij za odločanje o izvršitvah.
 
 **Mehanizmi napada:**
-- **Manipulacija metapodatkov**: Napadalci vbrizgajo zlonamerna navodila v opise orodij, definicije parametrov ali primere uporabe
-- **Nevidna navodila**: Skriti ukazi v metapodatkih orodij, ki jih AI modeli obdelajo, a so nevidni za človeške uporabnike
-- **Dinamična sprememba orodij ("Rug Pulls")**: Orodja, ki jih uporabniki odobrijo, se kasneje spremenijo, da izvajajo zlonamerna dejanja brez uporabnikovega zavedanja
-- **Vbrizgavanje parametrov**: Zlonamerna vsebina, vdelana v sheme parametrov orodij, ki vpliva na vedenje modela
+- **Manipulacija metapodatkov:** Napadalci injicirajo zlonamerna navodila v opise orodij, definicije parametrov ali primere uporabe
+- **Nevidna navodila:** Skriti pozivi v metapodatkih orodij, ki jih AI modeli obravnavajo, a jih človeški uporabniki ne vidijo
+- **Dinamične spremembe orodij ("Rug Pulls")**: Orodja, ki jih uporabniki odobrijo, se kasneje spremenijo, da izvajajo zlonamerna dejanja, brez njihove vednosti
+- **Injekcija parametrov:** Zlonamerna vsebina v shemah parametrov orodja, ki vplivajo na obnašanje modela
 
-**Tveganja gostovanih strežnikov**: Oddaljeni MCP strežniki predstavljajo povečana tveganja, saj je mogoče definicije orodij posodobiti po začetni odobritvi uporabnika, kar ustvarja scenarije, kjer prej varna orodja postanejo zlonamerna. Za celovito analizo glejte [Tool Poisoning Attacks (Invariant Labs)](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks).
+**Tveganja gostovanih strežnikov:** Oddaljeni MCP strežniki imajo povečana tveganja, saj se definicije orodij lahko posodobijo po prvotni uporabniški odobritvi, kar ustvarja scenarije, kjer prej varna orodja postanejo zlonamerna. Za celovito analizo glejte [Tool Poisoning Attacks (Invariant Labs)](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks).
 
-![Diagram napada z vbrizgavanjem orodij](../../../translated_images/tool-injection.3b0b4a6b24de6befe7d3afdeae44138ef005881aebcfc84c6f61369ce31e3640.sl.png)
+![Tool Injection Attack Diagram](../../../translated_images/sl/tool-injection.3b0b4a6b24de6bef.webp)
 
-#### **Dodatni napadi na AI**
+#### **Dodatni AI napadalni vektorji**
 
-- **Posredno vbrizgavanje ukazov med domenami (XPIA)**: Sofisticirani napadi, ki izkoriščajo vsebino iz več domen za obhod varnostnih ukrepov
-- **Dinamična sprememba zmožnosti**: Spremembe zmožnosti orodij v realnem času, ki uidejo začetnim varnostnim ocenam
-- **Zastrupitev kontekstnega okna**: Napadi, ki manipulirajo z velikimi kontekstnimi okni za skrivanje zlonamernih navodil
-- **Napadi z zmedo modela**: Izkoriščanje omejitev modela za ustvarjanje nepredvidljivega ali nevarnega vedenja
+- **Cross-Domain Prompt Injection (XPIA):** Napredni napadi, ki izkoriščajo vsebino iz več domen za zaobidenje varnostnih kontrol
+- **Dinamična sprememba zmogljivosti**: Spremembe zmogljivosti orodij v realnem času, ki uidejo začetnim varnostnim ocenam
+- **Zastrupljanje konteksta**: Napadi, ki manipulirajo velike kontekstne okvire za skrivanje škodljivih navodil
+- **Napadi z zmedo modela**: Izkoriščanje omejitev modela za ustvarjanje nepredvidljivih ali nesigurnih vedenj
 
-### Vpliv varnostnih tveganj za AI
 
-**Visok vpliv posledic:**
-- **Iztok podatkov**: Nepooblaščen dostop in kraja občutljivih poslovnih ali osebnih podatkov
-- **Kršenje zasebnosti**: Razkritje osebno prepoznavnih informacij (PII) in zaupnih poslovnih podatkov  
+### Vpliv tveganja za varnost AI
+
+**Posledice z velikim vplivom:**
+- **Ekstrakcija podatkov**: Neavtoriziran dostop in kraja občutljivih podatkov podjetij ali osebnih podatkov
+- **Kršitve zasebnosti**: Razkritje osebno prepoznavnih informacij (PII) in zaupnih poslovnih podatkov  
 - **Manipulacija sistemov**: Nenamerne spremembe kritičnih sistemov in delovnih tokov
-- **Kraja poverilnic**: Kompromitiranje avtentikacijskih žetonov in poverilnic storitev
-- **Lateralno gibanje**: Uporaba kompromitiranih AI sistemov kot izhodišč za širše napade na omrežje
+- **Kraja poverilnic**: Kompromitacija avtentikacijskih žetonov in prijavnih podatkov storitev
+- **Bočno gibanje**: Uporaba kompromitiranih AI sistemov kot izhodišč za širše omrežne napade
 
-### Microsoftove varnostne rešitve za AI
+### Microsoft AI varnostne rešitve
 
-#### **AI Prompt Shields: Napredna zaščita pred napadi z vbrizgavanjem**
+#### **Ščiti AI pozivov: Napredna zaščita pred injekcijskimi napadi**
 
-Microsoft **AI Prompt Shields** zagotavljajo celovito obrambo pred neposrednimi in posrednimi napadi z vbrizgavanjem ukazov prek več varnostnih plasti:
+Microsoft **AI Prompt Shields** zagotavljajo celovito obrambo pred neposrednimi in posrednimi injekcijskimi napadi preko več varnostnih plasti:
 
 ##### **Osnovni zaščitni mehanizmi:**
 
 1. **Napredno zaznavanje in filtriranje**
-   - Algoritmi strojnega učenja
-- **Varnostna generacija sej**: Uporabljajte kriptografsko varne, nedeterministične ID-je sej, ki jih generirajo varni generatorji naključnih števil
-- **Povezava s specifičnim uporabnikom**: Povežite ID-je sej z informacijami, specifičnimi za uporabnika, z uporabo formatov, kot je `<user_id>:<session_id>`, da preprečite zlorabo sej med uporabniki
-- **Upravljanje življenjskega cikla sej**: Uvedite pravilno potekanje, rotacijo in preklic sej, da omejite okna ranljivosti
-- **Varnost prenosa**: Obvezna uporaba HTTPS za vso komunikacijo, da preprečite prestrezanje ID-jev sej
+   - Algoritmi strojnega učenja in tehnike obdelave naravnega jezika zaznavajo škodljiva navodila v zunanjih vsebinah
+   - Analiza dokumentov, spletnih strani, e-pošt in podatkovnih virov v realnem času za skrite grožnje
+   - Kontekstualno razumevanje legitimnih proti škodljivim vzorcem pozivov
 
-### Problem zmedenega namestnika
+2. **Tehnike osvetljevanja**  
+   - Loči zaupanja vredna sistemska navodila od potencialno kompromitiranih zunanjih vhodov
+   - Metode transformacije besedila, ki izboljšajo relevantnost modela, hkrati pa izolirajo škodljivo vsebino
+   - Pomaga AI sistemom vzdrževati pravilno hierarhijo navodil in ignorirati vcepljene ukaze
 
-**Problem zmedenega namestnika** se pojavi, ko strežniki MCP delujejo kot avtentikacijski posredniki med odjemalci in storitvami tretjih oseb, kar ustvarja priložnosti za obhod avtorizacije z izkoriščanjem statičnih ID-jev odjemalcev.
+3. **Sistemi za omejevalnike in označevanje podatkov**
+   - Izrecna definicija meja med zaupanja vrednimi sistemskimi sporočili in zunanjim vhodnim besedilom
+   - Posebni označevalci poudarjajo meja med zaupanja vrednimi in nezaupanja vrednimi podatkovnimi viri
+   - Jasna ločitev preprečuje zmedo navodil in nepooblaščen izvršitev ukazov
+
+4. **Neprekinjeno obveščanje o grožnjah**
+   - Microsoft neprestano spremlja nove vzorce napadov in posodablja obrambe
+   - Proaktivno lovljenje groženj za nove tehnike injekcij in napadalne vektorje
+   - Redne posodobitve varnostnih modelov za ohranjanje učinkovitosti proti spreminjajočim se grožnjam
+
+5. **Integracija varnosti vsebin Azure**
+   - Del celovitega kompleta Azure AI Content Safety
+   - Dodatno zaznavanje poizkusov "jailbreak", škodljive vsebine in kršitev varnostnih politik
+   - Enotne varnostne kontrole skozi vse komponente AI aplikacij
+
+**Viri za izvedbo**: [Microsoft Prompt Shields Documentation](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection)
+
+![Microsoft Prompt Shields Protection](../../../translated_images/sl/prompt-shield.ff5b95be76e9c78c.webp)
+
+
+## Napredne grožnje varnosti MCP
+
+### Ranljivosti prevzema seje
+
+**Prevzem seje** predstavlja kritičen napadni vektor v implementacijah MCP s stanjem, kjer nepooblaščene osebe pridobijo in zlorabljajo legitimne identifikatorje sej za prevzem strank in izvajanje nepooblaščenih dejanj.
+
+#### **Scenariji napadov in tveganja**
+
+- **Injekcija poziva pri prevzemu seje**: Napadalci s ukradenimi ID-ji sej vnašajo škodljive dogodke v strežnike, ki delijo stanje sej, kar lahko sproži škodljiva dejanja ali dostop do občutljivih podatkov
+- **Neposredna imitacija**: Ukradeni ID-ji sej omogočajo neposredne klice MCP strežniku, ki obidejo avtentikacijo, obravnavajoč napadalce kot legitimne uporabnike
+- **Kompromitirani nadaljevalni tokovi**: Napadalci lahko predčasno prekinejo zahteve, kar povzroči, da legitimni odjemalci nadaljujejo z morebitno škodljivo vsebino
+
+#### **Varnostne kontrole za upravljanje sej**
+
+**Kritične zahteve:**
+- **Preverjanje avtorizacije**: MCP strežniki, ki izvajajo avtorizacijo, **MORAO** preveriti VSE dohodne zahteve in **NE SMEJO** zanašati na seje za avtentikacijo
+- **Varnostno generiranje sej**: Uporabljajte kriptografsko varne, nedeterministične ID-je sej, ustvarjene z varnimi generatorji naključnih števil
+- **Povezava z uporabnikom**: Povežite ID-je sej z informacijami o uporabniku z uporabo formatov, kot je `<user_id>:<session_id>`, da preprečite zlorabo sej med uporabniki
+- **Upravljanje življenjskega cikla seje**: Izvedite pravilno potekanje, rotacijo in neveljavnost za omejitev ranljivosti
+- **Varnost prenosa**: Obvezna uporaba HTTPS za vso komunikacijo, da se prepreči prestrezanje ID-jev sej
+
+### Problem zmedene stranke (Confused Deputy)
+
+**Problem zmedene stranke** nastopi, ko MCP strežniki delujejo kot avtentikacijski posredniki med strankami in storitvami tretjih oseb, kar omogoča možnosti za zaobidenje avtorizacije preko izrabe statičnih ID-jev strank.
 
 #### **Mehanika napada in tveganja**
 
-- **Obhod privolitve na podlagi piškotkov**: Prejšnja avtentikacija uporabnika ustvari piškotke privolitve, ki jih napadalci izkoriščajo z zlonamernimi zahtevami za avtorizacijo z izdelanimi preusmeritvenimi URI-ji
-- **Kraja avtorizacijske kode**: Obstoječi piškotki privolitve lahko povzročijo, da strežniki za avtorizacijo preskočijo zaslone za privolitev in preusmerijo kode na končne točke, ki jih nadzorujejo napadalci  
-- **Neavtoriziran dostop do API-jev**: Ukradene avtorizacijske kode omogočajo izmenjavo žetonov in impersonacijo uporabnika brez izrecne odobritve
+- **Obhod soglasja z uporabo piškotkov**: Prejšnja uporabniška avtentikacija ustvari piškotke soglasja, ki jih napadalci izrabljajo z zlonamernimi avtorizacijskimi zahtevami z izdelanimi URI-ji preusmeritev
+- **Kraja avtorizacijskih kod**: Obstoječi piškotki soglasja lahko povzročijo, da avtorizacijski strežniki preskočijo zaslone soglasja in kode preusmerijo na napadalčeve končne točke  
+- **Neavtoriziran dostop do API-jev**: Ukradene avtorizacijske kode omogočajo izmenjavo žetonov in prevzem uporabnikov brez izrecnega dovoljenja
 
-#### **Strategije za zmanjšanje tveganj**
+#### **Strategije ublažitve**
 
-**Obvezni ukrepi:**
-- **Izrecne zahteve za privolitev**: Proxy strežniki MCP, ki uporabljajo statične ID-je odjemalcev, **MORAJO** pridobiti privolitev uporabnika za vsakega dinamično registriranega odjemalca
-- **Implementacija varnosti OAuth 2.1**: Upoštevajte trenutne najboljše prakse varnosti OAuth, vključno s PKCE (Proof Key for Code Exchange) za vse zahteve za avtorizacijo
-- **Stroga validacija odjemalcev**: Uvedite strogo validacijo preusmeritvenih URI-jev in identifikatorjev odjemalcev, da preprečite izkoriščanje
+**Obvezne kontrole:**
+- **Izrecna zahteva po soglasju**: MCP proxy strežniki, ki uporabljajo statične ID-je strank, **MOROJO** pridobiti soglasje uporabnika za vsako dinamično registrirano stranko
+- **Varnostna implementacija OAuth 2.1**: Upoštevajte trenutne varnostne prakse OAuth vključno s PKCE (Proof Key for Code Exchange) za vse avtorizacijske zahteve
+- **Stroga validacija strank**: Izvedite strogo preverjanje URI-jev preusmeritev in identifikatorjev strank za preprečevanje zlorab
 
-### Ranljivosti pri prenosu žetonov  
+### Ranljivosti v prehodu žetonov  
 
-**Prenos žetonov** predstavlja eksplicitni anti-vzorec, kjer strežniki MCP sprejemajo žetone odjemalcev brez ustrezne validacije in jih posredujejo navzdol API-jem, kar krši specifikacije avtorizacije MCP.
+**Prehod žetonov** predstavlja eksplicitni antiprimer, kjer MCP strežniki sprejemajo žetone strank brez ustrezne validacije in jih posredujejo navzdol proti API-jem, kar krši specifikacije avtorizacije MCP.
 
 #### **Varnostne posledice**
 
-- **Obhod nadzora**: Neposredna uporaba žetonov odjemalcev za API-je obide ključne omejitve hitrosti, validacijo in nadzorne ukrepe
-- **Korupcija revizijske sledi**: Žetoni, izdani zgoraj, onemogočajo identifikacijo odjemalcev, kar otežuje preiskave incidentov
-- **Izvlečenje podatkov prek proxyja**: Nevalidirani žetoni omogočajo zlonamernim akterjem uporabo strežnikov kot proxyjev za neavtoriziran dostop do podatkov
-- **Kršitve meja zaupanja**: Predpostavke zaupanja storitev navzdol so lahko kršene, ko izvor žetonov ni mogoče preveriti
-- **Razširitev napadov na več storitev**: Kompromitirani žetoni, sprejeti v več storitvah, omogočajo lateralno gibanje
+- **Obhod nadzora**: Neposredna uporaba žetonov stranke do API-ja obide ključne omejitve hitrosti, validacijo in nadzorne kontrole
+- **Pokvarjena revizijska sled**: Žetoni, izdani upstream, onemogočajo prepoznavanje stranke in onemogočajo preiskave incidentov
+- **Iztekanje podatkov preko proxyja**: Nevalidirani žetoni omogočajo zlonamernim akterjem uporabo strežnikov kot proxyjev za nepooblaščeno pridobivanje podatkov
+- **Kršitve meja zaupanja**: Zgodbe storitev downstream lahko kršijo predpostavke zaupanja, kadar izvora žetona ni mogoče potrditi
+- **Širjenje napadov na več storitev**: Sprejeti kompromitirani žetoni na več storitvah omogočajo bočno gibanje
 
-#### **Zahtevani varnostni ukrepi**
+#### **Zahtevane varnostne kontrole**
 
 **Nepogrešljive zahteve:**
-- **Validacija žetonov**: Strežniki MCP **NE SMEJO** sprejemati žetonov, ki niso izrecno izdani za strežnik MCP
-- **Preverjanje občinstva**: Vedno preverite, ali trditve o občinstvu žetonov ustrezajo identiteti strežnika MCP
-- **Pravilno upravljanje življenjskega cikla žetonov**: Uvedite kratkotrajne dostopne žetone z varnimi praksami rotacije
+- **Validacija žetonov**: MCP strežniki **NE SMEJO** sprejemati žetonov, ki niso izrecno izdani za MCP strežnik
+- **Preverjanje občinstva žetona**: Vedno preverite, da zahtevki občinstva žetona ustrezajo identiteti MCP strežnika
+- **Upravljanje življenjskega cikla žetonov**: Uvedite kratkoročne dostopne žetone z varnimi praksami rotacije
 
 
 ## Varnost dobavne verige za AI sisteme
 
-Varnost dobavne verige se je razvila onkraj tradicionalnih programskih odvisnosti in zajema celoten ekosistem AI. Sodobne implementacije MCP morajo strogo preverjati in spremljati vse komponente, povezane z AI, saj vsaka predstavlja potencialne ranljivosti, ki lahko ogrozijo celovitost sistema.
+Varnost dobavne verige se je razvila onkraj tradicionalnih programski odvisnosti in zajema celoten ekosistem AI. Sodobne implementacije MCP morajo strogo preverjati in nadzorovati vse AI-komponente, saj vsaka prinaša potencialne ranljivosti, ki bi lahko ogrozile integriteto sistema.
 
-### Razširjeni elementi dobavne verige AI
+### Razširjeni AI sestavni deli dobavne verige
 
 **Tradicionalne programske odvisnosti:**
 - Knjižnice in ogrodja odprte kode
 - Slike kontejnerjev in osnovni sistemi  
-- Orodja za razvoj in gradbene cevovode
-- Komponente infrastrukture in storitve
+- Orodja za razvoj in pipelines za gradnjo
+- Infrastrukturne komponente in storitve
 
-**Specifični elementi dobavne verige AI:**
-- **Osnovni modeli**: Predhodno usposobljeni modeli različnih ponudnikov, ki zahtevajo preverjanje izvora
-- **Storitve vdelave**: Zunanje storitve za vektorizacijo in semantično iskanje
-- **Ponudniki konteksta**: Viri podatkov, baze znanja in dokumentni repozitoriji  
-- **API-ji tretjih oseb**: Zunanje AI storitve, ML cevovodi in končne točke za obdelavo podatkov
-- **Artefakti modelov**: Teže, konfiguracije in različice modelov, prilagojene za specifične potrebe
-- **Viri podatkov za usposabljanje**: Nabori podatkov, uporabljeni za usposabljanje in prilagajanje modelov
+**Elementi dobavne verige specifični za AI:**
+- **Temeljni modeli**: Vnaprej naučeni modeli različnih ponudnikov, ki zahtevajo preverjanje izvora
+- **Storitev vgradnje (embedding)**: Zunanje storitve vektorizacije in semantičnega iskanja
+- **Ponujači konteksta**: Viri podatkov, baze znanja in skladišča dokumentov  
+- **API-ji tretjih oseb**: Zunanje AI storitve, ML pipelines in točke za obdelavo podatkov
+- **Modelni artefakti**: Teže, konfiguracije in fino nastavljene različice modelov
+- **Viri učnih podatkov**: Nabore podatkov za učenje in fino nastavitev modelov
 
 ### Celovita strategija varnosti dobavne verige
 
-#### **Preverjanje komponent in zaupanje**
-- **Validacija izvora**: Preverite izvor, licenciranje in celovitost vseh AI komponent pred integracijo
-- **Varnostna ocena**: Izvedite preglede ranljivosti in varnostne preglede za modele, vire podatkov in AI storitve
-- **Analiza ugleda**: Ocenite varnostne prakse in zgodovino ponudnikov AI storitev
+#### **Preverjanje in zaupanje komponent**
+- **Validacija izvora**: Preverite izvor, licenco in integriteto vseh AI komponent pred integracijo
+- **Varnostna ocenitev**: Izvedite skeniranje ranljivosti in varnostne preglede modelov, podatkovnih virov in AI storitev
+- **Analiza ugleda**: Ocenite varnostno zgodovino in prakse ponudnikov AI storitev
 - **Preverjanje skladnosti**: Zagotovite, da vse komponente izpolnjujejo organizacijske varnostne in regulativne zahteve
 
-#### **Varni cevovodi za uvajanje**  
-- **Avtomatizirana varnost CI/CD**: Integrirajte varnostne preglede v avtomatizirane cevovode za uvajanje
-- **Celovitost artefaktov**: Uvedite kriptografsko preverjanje za vse uvedene artefakte (koda, modeli, konfiguracije)
-- **Postopno uvajanje**: Uporabljajte progresivne strategije uvajanja z varnostnim preverjanjem na vsaki stopnji
-- **Zaupanja vredni repozitoriji artefaktov**: Uvajajte samo iz preverjenih, varnih repozitorijev artefaktov
+#### **Varnost avtomatiziranih pipelines za uvajanje**  
+- **Samodejno varnostno skeniranje CI/CD**: Vključite varnostne preglede v celotne avtomatizirane pipeline uvajanja
+- **Integriteta artefaktov**: Implementirajte kriptografsko preverjanje vseh uvajanih artefaktov (koda, modeli, konfiguracije)
+- **Postopno uvajanje**: Uporabite postopne strategije uvajanja z varnostno validacijo v vsaki fazi
+- **Zaupanja vredni artefaktni repozitoriji**: Uvajajte samo iz preverjenih, varnih registrov in repozitorijev artefaktov
 
-#### **Nenehno spremljanje in odzivanje**
-- **Pregled odvisnosti**: Nenehno spremljanje ranljivosti za vse programske in AI komponente
-- **Spremljanje modelov**: Nenehna ocena vedenja modelov, odklonov zmogljivosti in varnostnih anomalij
-- **Sledenje zdravju storitev**: Spremljanje zunanjih AI storitev glede razpoložljivosti, varnostnih incidentov in sprememb politik
-- **Integracija obveščanja o grožnjah**: Vključitev virov groženj, specifičnih za varnost AI in ML
+#### **Neprekinjeno spremljanje in odziv**
+- **Skeniranje odvisnosti**: Neprestano spremljanje ranljivosti vseh programskih in AI komponent
+- **Spremljanje modelov**: Neprekinjena ocena obnašanja modelov, drifta zmogljivosti in varnostnih anomalk
+- **Sledenje stanju storitev**: Spremljanje zunanjih AI storitev glede razpoložljivosti, varnostnih incidentov in sprememb politik
+- **Integracija obveščanja o grožnjah**: Vključevanje virov groženj specifičnih za AI in ML varnostna tveganja
 
 #### **Nadzor dostopa in načelo najmanjših privilegijev**
-- **Dovoljenja na ravni komponent**: Omejite dostop do modelov, podatkov in storitev glede na poslovne potrebe
-- **Upravljanje računov storitev**: Uvedite namenske račune storitev z minimalno potrebnimi dovoljenji
-- **Segmentacija omrežja**: Izolirajte AI komponente in omejite omrežni dostop med storitvami
-- **Nadzor API prehodov**: Uporabljajte centralizirane API prehode za nadzor in spremljanje dostopa do zunanjih AI storitev
+- **Dovoljenja na nivoju komponent**: Omezite dostop do modelov, podatkov in storitev glede na poslovno potrebo
+- **Upravljanje službenih računov**: Vpeljite namenske račune z minimalno zahtevanimi dovoljenji
+- **Segmentacija omrežja**: Izolacija AI komponent in omejevanje omrežnega dostopa med storitvami
+- **Nadzor API vrat**: Uporabljajte centralizirane API gateway za kontrolo in spremljanje dostopa do zunanjih AI storitev
 
 #### **Odziv na incidente in okrevanje**
-- **Postopki hitrega odziva**: Uveljavljeni procesi za popravljanje ali zamenjavo kompromitiranih AI komponent
-- **Rotacija poverilnic**: Avtomatizirani sistemi za rotacijo skrivnosti, API ključev in poverilnic storitev
-- **Zmožnosti povratka**: Sposobnost hitrega vračanja na prejšnje, preverjene različice AI komponent
-- **Okrevanje po kršitvi dobavne verige**: Specifični postopki za odzivanje na kompromitacije storitev AI navzgor
+- **Hitri odzivni postopki**: Uveljavljeni procesi za popravke ali zamenjavo kompromitiranih AI komponent
+- **Rotacija poverilnic**: Samodejni sistemi za rotacijo skrivnosti, API ključev in prijavnih podatkov storitev
+- **Možnosti povrnitve**: Zmožnost hitrega vračanja na prej znane dobre verzije AI komponent
+- **Okrevanje po vdoru dobavne verige**: Specifični postopki za odziv na kompromitacijo višjih AI storitev
 
-### Microsoftova varnostna orodja in integracija
+### Microsoft varnostna orodja in integracija
 
-**GitHub Advanced Security** zagotavlja celovito zaščito dobavne verige, vključno z:
-- **Pregledovanje skrivnosti**: Avtomatsko odkrivanje poverilnic, API ključev in žetonov v repozitorijih
-- **Pregledovanje odvisnosti**: Ocena ranljivosti za odvisnosti odprte kode in knjižnice
-- **Analiza CodeQL**: Statična analiza kode za varnostne ranljivosti in težave pri kodiranju
-- **Vpogledi v dobavno verigo**: Vidljivost v zdravje in varnost odvisnosti
+**GitHub Advanced Security** nudi celovito zaščito dobavne verige, vključno z:
+- **Skeniranje skrivnosti**: Samodejno zaznavanje poverilnic, API ključev in žetonov v repozitorijih
+- **Pregled odvisnosti**: Ocena ranljivosti odprtokodnih odvisnosti in knjižnic
+- **CodeQL analiza**: Statična analiza kode za varnostne ranljivosti in težave pri kodiranju
+- **Vpogled v dobavno verigo**: Pregled stanja odvisnosti in varnosti
 
-**Integracija Azure DevOps in Azure Repos:**
-- Brezhibna integracija varnostnega pregledovanja v Microsoftove razvojne platforme
-- Avtomatizirani varnostni pregledi v Azure Pipelines za AI delovne obremenitve
-- Uveljavljanje politik za varno uvajanje AI komponent
+**Integracija Azure DevOps & Azure Repos:**
+- Brezhibna integracija varnostnega skeniranja prek Microsoft razvojnih platform
+- Samodejni varnostni pregledi v Azure Pipelines za AI delovne obremenitve
+- Izvajanje politik za varno uvajanje AI komponent
 
 **Notranje prakse Microsofta:**
-Microsoft izvaja obsežne prakse varnosti dobavne verige v vseh svojih izdelkih. Več o preverjenih pristopih si preberite v [Pot do varne dobavne verige programske opreme pri Microsoftu](https://devblogs.microsoft.com/engineering-at-microsoft/the-journey-to-secure-the-software-supply-chain-at-microsoft/).
+Microsoft izvaja obširne varnostne prakse dobavne verige pri vseh izdelkih. Spoznajte dokazane pristope v [The Journey to Secure the Software Supply Chain at Microsoft](https://devblogs.microsoft.com/engineering-at-microsoft/the-journey-to-secure-the-software-supply-chain-at-microsoft/).
 
 
-## Osnovne varnostne najboljše prakse
+## Najboljše prakse temeljev varnosti
 
-Implementacije MCP podedujejo in gradijo na obstoječi varnostni drži vaše organizacije. Krepitev osnovnih varnostnih praks bistveno izboljša celotno varnost AI sistemov in MCP implementacij.
+Implementacije MCP dedujejo in gradijo na obstoječem varnostnem položaju vaše organizacije. Krepitev temeljnih varnostnih praks znatno izboljša splošno varnost AI sistemov in uvajanja MCP.
 
-### Temeljni varnostni principi
+### Temeljna varnostna izhodišča
 
-#### **Prakse varnega razvoja**
-- **Skladnost z OWASP**: Zaščitite se pred [OWASP Top 10](https://owasp.org/www-project-top-ten/) ranljivostmi spletnih aplikacij
-- **Zaščite specifične za AI**: Uvedite ukrepe za [OWASP Top 10 za LLM](https://genai.owasp.org/download/43299/?tmstv=1731900559)
-- **Varno upravljanje skrivnosti**: Uporabljajte namenske trezorje za žetone, API ključe in občutljive konfiguracijske podatke
-- **Šifriranje od konca do konca**: Uvedite varno komunikacijo med vsemi komponentami aplikacije in podatkovnimi tokovi
-- **Validacija vhodov**: Stroga validacija vseh uporabniških vnosov, API parametrov in virov podatkov
+#### **Varnostne prakse razvoja**
+- **Skladnost z OWASP**: Zaščita pred ranljivostmi spletnih aplikacij [OWASP Top 10](https://owasp.org/www-project-top-ten/)
+- **Specifična zaščita za AI**: Uvedba kontrol za [OWASP Top 10 za LLM](https://genai.owasp.org/download/43299/?tmstv=1731900559)
+- **Varno upravljanje skrivnosti**: Uporaba namenski trezorjev za žetone, API ključe in občutljive konfiguracijske podatke
+- **Končna do konca šifriranje**: Zagotovite varno komunikacijo skozi vse komponente aplikacije in tokove podatkov
+- **Validacija vhodov**: Stroga validacija vseh uporabniških vnosov, API parametrov in podatkovnih virov
 
-#### **Utrjevanje infrastrukture**
-- **Večfaktorska avtentikacija**: Obvezna MFA za vse administrativne in storitvene račune
-- **Upravljanje popravkov**: Avtomatizirano, pravočasno popravljanje operacijskih sistemov, ogrodij in odvisnosti  
-- **Integracija ponudnika identitete**: Centralizirano upravljanje identitete prek ponudnikov identitete v podjetju (Microsoft Entra ID, Active Directory)
-- **Segmentacija omrežja**: Logična izolacija komponent MCP za omejitev potenciala lateralnega gibanja
-- **Načelo najmanjših privilegijev**: Minimalno potrebna dovoljenja za vse sistemske komponente in račune
+#### **Okrepitev infrastrukture**
+- **Večfaktorska avtentikacija**: Obvezna MFA za vse administrativne in servisne račune
+- **Upravljanje popravil**: Samodejni, pravočasni popravki operacijskih sistemov, ogrodij in odvisnosti  
+- **Integracija ponudnikov identitet**: Centralizirano upravljanje identitet prek podjetniških ponudnikov identitete (Microsoft Entra ID, Active Directory)
+- **Segmentacija omrežja**: Logična izolacija MCP komponent za omejitev možnosti bočnega gibanja
+- **Načelo najmanjših privilegijev**: Najmanjša potrebna dovoljenja za vse sistemske komponente in račune
 
-#### **Spremljanje varnosti in zaznavanje**
-- **Celovito beleženje**: Podrobno beleženje aktivnosti AI aplikacij, vključno z interakcijami MCP odjemalec-strežnik
-- **Integracija SIEM**: Centralizirano upravljanje informacij o varnosti in dogodkih za zaznavanje anomalij
-- **Analitika vedenja**: Spremljanje, ki ga poganja AI, za zaznavanje nenavadnih vzorcev v sistemskem in uporabniškem vedenju
-- **Obveščanje o grožnjah**: Integracija zunanjih virov groženj in indikatorjev kompromitacije (IOCs)
-- **Odziv na incidente**: Dobro opredeljeni postopki za zaznavanje, odzivanje in okrevanje po varnostnih incidentih
+#### **Spremljanje in zaznavanje varnosti**
+- **Celovito beleženje**: Podrobno beleženje aktivnosti AI aplikacij, vključno s komunikacijo MCP odjemalec-strežnik
+- **Integracija SIEM**: Centralizirano upravljanje varnostnih informacij in dogodkov za zaznavanje anomalij
+- **Analitika vedenja**: AI-podprto spremljanje za odkrivanje nenavadnih vzorcev v vedenju sistema in uporabnikov
+- **Obveščanje o grožnjah**: Vključevanje zunanjih virov groženj in indikatorjev kompromitacije (IOC-je)
+- **Odziv na incidente**: Dobro definirani postopki za zaznavanje, odziv in obnovo po varnostnih incidentih
 
 #### **Arhitektura ničelnega zaupanja**
-- **Nikoli ne zaupaj, vedno preverjaj**: Nenehno preverjanje uporabnikov, naprav in omrežnih povezav
-- **Mikro-segmentacija**: Granularni nadzor omrežja, ki izolira posamezne delovne obremenitve in storitve
-- **Varnost, osredotočena na identiteto**: Varnostne politike, ki temeljijo na preverjenih identitetah, ne na lokaciji omrežja
-- **Nenehna ocena tveganja**: Dinamična ocena varnostne drže na podlagi trenutnega konteksta in vedenja
+- **Nikoli ne zaupaj, vedno preverjaj**: Neprestano preverjanje uporabnikov, naprav in omrežnih povezav
+- **Mikrosegmentacija**: Natančni omrežni nadzori, ki izolirajo posamezne delovne obremenitve in storitve
+- **Varnost osredotočena na identiteto**: Varnostne politike na podlagi preverjenih identitet namesto lokacije v omrežju
+- **Neprestana ocena tveganja**: Dinamična ocena varnostnega položaja glede na trenutni kontekst in vedenje
 - **Pogojni dostop**: Nadzor dostopa, ki se prilagaja glede na dejavnike tveganja, lokacijo in zaupanje naprave
 
-### Vzorci integracije v podjetju
+### Vzori integracije v podjetjih
 
-#### **Integracija v Microsoftov varnostni ekosistem**
-- **Microsoft Defender za oblak**: Celovito upravljanje varnostne drže v oblaku
-- **Azure Sentinel**: SIEM in SOAR zmogljivosti, zasnovane za zaščito AI delovnih obremenitev
-- **Microsoft Entra ID**: Upravljanje identitete in dostopa v podjetju s politikami pogojnega dostopa
-- **Azure Key Vault**: Centralizirano upravljanje skrivnosti s podporo strojne varnostne module (HSM)
-- **Microsoft Purview**: Upravljanje podatkov in skladnost za vire podatkov AI in delovne tokove
+#### **Integracija Microsoft varnostnega ekosistema**
+- **Microsoft Defender for Cloud**: Celovito upravljanje varnostnega položaja v oblaku
+- **Azure Sentinel**: Nativne oblačne zmogljivosti SIEM in SOAR za zaščito AI delovnih obremenitev
+- **Microsoft Entra ID**: Upravljanje identitet in dostopa znotraj podjetij s pravilniki pogojnega dostopa
+- **Azure Key Vault**: Centralizirano upravljanje skrivnosti z varnostnimi moduli strojne opreme (HSM)
+- **Microsoft Purview**: Upravljanje podatkov in skladnost za AI podatkovne vire in delovne tokove
 
 #### **Skladnost in upravljanje**
-- **Usklajenost z regulativami**: Zagotovite, da implementacije MCP izpolnjujejo zahteve skladnosti, specifične za industrijo (GDPR, HIPAA, SOC 2)
-- **Razvrščanje podatkov**: Pravilna kategorizacija in obravnava občutljivih podatkov, ki jih obdelujejo AI sistemi
-- **Revizijske sledi**: Celovito beleženje za skladnost z regulativami in forenzične preiskave
-- **Nadzor zasebnosti**: Uvedba načel zasebnosti po zasnovi v arhitekturi AI sistema
-- **Upravljanje sprememb**: Formalni postopki za varnostne preglede sprememb AI sistema
+- **Usklajenost z regulativami**: Zagotovite, da implementacije MCP izpolnjujejo specifične industrijske zahteve (GDPR, HIPAA, SOC 2)
+- **Klasifikacija podatkov**: Ustrezno kategoriziranje in upravljanje občutljivih podatkov, ki jih obdelujejo AI sistemi
+- **Revizijske sledi**: Celovito beleženje za skladnost in forenzične preiskave
+- **Nadzor zasebnosti**: Uvedba načel zasebnosti že v zasnovi AI sistemov
+- **Upravljanje sprememb**: Formalni postopki za varnostne preglede sprememb AI sistemov
 
-Te osnovne prakse ustvarjajo robustno varnostno osnovo, ki izboljša učinkovitost specifičnih varnostnih ukrepov MCP in zagotavlja celovito zaščito za aplikacije, ki jih poganja AI.
-
+Te temeljne prakse vzpostavljajo trdno varnostno osnovo, ki izboljšuje učinkovitost varnostnih kontrol specifičnih za MCP in zagotavlja celovito zaščito za AI-podprte aplikacije.
 ## Ključni varnostni poudarki
 
-- **Pristop slojevite varnosti**: Združite osnovne varnostne prakse (varno kodiranje, najmanjši privilegiji, preverjanje dobavne verige, nenehno spremljanje) s specifičnimi ukrepi za AI za celovito zaščito
+- **Večplastni varnostni pristop**: Združite osnovne varnostne prakse (varno kodiranje, najmanjša privilegija, preverjanje dobavne verige, stalno spremljanje) z AI-specifičnimi kontrolami za celovito zaščito
 
-- **Specifična pokrajina groženj za AI**: MCP sistemi se soočajo z edinstvenimi tveganji, vključno z vbrizgavanjem ukazov, zastrupljanjem orodij, ugrabitvijo sej, problemi zmedenega namestnika, ranljivostmi pri prenosu žetonov in prekomernimi dovoljenji, ki zahtevajo specializirane ukrepe
+- **AI-specifična ogroženost**: Sistemi MCP se soočajo z edinstvenimi tveganji, kot so injiciranje pozivov, zastrupitev orodij, prevzem sej, problem "zmedenega namestnika", ranljivosti pri prenosu žetonov in prekomerna dovoljenja, ki zahtevajo posebna blaženja
 
-- **Odličnost pri avtentikaciji in avtorizaciji**: Uvedite robustno avtentikacijo z uporabo zunanjih ponudnikov identitete (Microsoft Entra ID), uveljavite pravilno validacijo žetonov in nikoli ne sprejemajte žetonov, ki niso izrecno izdani za vaš strežnik MCP
+- **Odličnost pri preverjanju pristnosti in avtorizaciji**: Uporabite robustno preverjanje pristnosti z zunanjimi ponudniki identitete (Microsoft Entra ID), izvajajte pravilno validacijo žetonov in nikoli ne sprejemajte žetonov, ki niso izrecno izdani za vaš MCP strežnik
 
-- **Preprečevanje napadov na AI**: Uvedite Microsoft Prompt Shields in Azure Content Safety za obrambo pred posrednim vbrizgavanjem ukazov in zastrupljanjem orodij, hkrati pa validirajte metapodatke orodij in spremljajte dinamične spremembe
+- **Preprečevanje AI napadov**: Uporabite Microsoft Prompt Shields in Azure Content Safety za obrambo pred posrednim injiciranjem pozivov in zastrupitvijo orodij, hkrati preverjajte metapodatke orodij in spremljajte dinamične spremembe
 
-- **Varnost sej in prenosa**: Uporabljajte kriptografsko varne, nedeterministične ID-je sej, povezane z identitetami uporabnikov, uvedite pravilno upravljanje življenjskega cikla sej in nikoli ne uporabljajte sej za avtentikacijo
+- **Varnost sej in prenosa**: Uporabite kriptografsko varne, nedeterministične ID-je sej, vezane na uporabniške identitete, izvajajte pravilno upravljanje življenjskega cikla sej in nikoli ne uporabite sej za preverjanje pristnosti
 
-- **Najboljše prakse varnosti OAuth**: Preprečite napade zmedenega namestnika z
-### **Microsoftove varnostne rešitve**
-- [Microsoft Prompt Shields dokumentacija](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection)
-- [Azure Content Safety storitev](https://learn.microsoft.com/azure/ai-services/content-safety/)
-- [Microsoft Entra ID varnost](https://learn.microsoft.com/entra/identity-platform/secure-least-privileged-access)
-- [Najboljše prakse za upravljanje žetonov v Azure](https://learn.microsoft.com/entra/identity-platform/access-tokens)
+- **Najboljše prakse OAuth varnosti**: Preprečite napade "zmedenega namestnika" z izrecnim soglasjem uporabnika za dinamično registrirane odjemalce, pravilno implementacijo OAuth 2.1 z uporabo PKCE ter strogim preverjanjem URI-jev za preusmeritev
+
+- **Načela varnosti žetonov**: Izogibajte se anti-vzorčem prenosa žetonov, validirajte trditve o občinstvu žetonov, uporabljajte kratkotrajne žetone z varnim rotiranjem in vzdržujte jasne meje zaupanja
+
+- **Celovita varnost dobavne verige**: Ravnajte z vsemi komponentami AI ekosistema (modeli, vdelave, ponudniki konteksta, zunanji API-ji) z enako varnostno strogo kot s tradicionalnimi odvisnostmi programske opreme
+
+- **Stalna evolucija**: Bodite na tekočem z hitro razvijajočimi se specifikacijami MCP, prispevajte k varnostnim standardom skupnosti in vzdržujte prilagodljive varnostne drže, ko protokol zori
+
+- **Integracija Microsoft varnosti**: Izkoristite širok varnostni ekosistem Microsofta (Prompt Shields, Azure Content Safety, GitHub Advanced Security, Entra ID) za izboljšano zaščito nameščanja MCP
+
+## Celoviti viri
+
+### **Uradna MCP varnostna dokumentacija**
+- [Specifikacija MCP (trenutno: 2025-11-25)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
+- [Najboljše varnostne prakse MCP](https://modelcontextprotocol.io/specification/2025-11-25/basic/security_best_practices)
+- [Specifikacija avtorizacije MCP](https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization)
+- [MCP GitHub repozitorij](https://github.com/modelcontextprotocol)
+
+### **OWASP viri za varnost MCP**
+- [OWASP MCP Azure varnostni vodič](https://microsoft.github.io/mcp-azure-security-guide/) - Celovit OWASP MCP Top 10 z navodili za implementacijo na Azure
+- [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/) - Uradne OWASP varnostne grožnje za MCP
+- [Delavnica MCP Security Summit (Sherpa)](https://azure-samples.github.io/sherpa/) - Praktično varnostno usposabljanje za MCP na Azure
+
+### **Varnostni standardi in najboljše prakse**
+- [Najboljše varnostne prakse OAuth 2.0 (RFC 9700)](https://datatracker.ietf.org/doc/html/rfc9700)
+- [OWASP Top 10 za spletne aplikacije](https://owasp.org/www-project-top-ten/)
+- [OWASP Top 10 za velike jezikovne modele](https://genai.owasp.org/download/43299/?tmstv=1731900559)
+- [Microsoft Digital Defense Report](https://aka.ms/mddr)
+
+### **Raziskave in analize AI varnosti**
+- [Injiciranje pozivov v MCP (Simon Willison)](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/)
+- [Napadi zastrupitve orodij (Invariant Labs)](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks)
+- [Poročilo o raziskavah varnosti MCP (Wiz Security)](https://www.wiz.io/blog/mcp-security-research-briefing#remote-servers-22)
+
+### **Microsoft varnostne rešitve**
+- [Dokumentacija Microsoft Prompt Shields](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection)
+- [Storitev Azure Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/)
+- [Varnost Microsoft Entra ID](https://learn.microsoft.com/entra/identity-platform/secure-least-privileged-access)
+- [Najboljše prakse upravljanja žetonov Azure](https://learn.microsoft.com/entra/identity-platform/access-tokens)
 - [GitHub Advanced Security](https://github.com/security/advanced-security)
 
-### **Vodiči za implementacijo in vadnice**
-- [Azure API Management kot avtentikacijski prehod za MCP](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)
-- [Microsoft Entra ID avtentikacija z MCP strežniki](https://den.dev/blog/mcp-server-auth-entra-id-session/)
-- [Varno shranjevanje žetonov in šifriranje (video)](https://youtu.be/uRdX37EcCwg?si=6fSChs1G4glwXRy2)
+### **Vodiči in tutoriali za implementacijo**
+- [Azure API Management kot MCP avtentični prehod](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)
+- [Microsoft Entra ID preverjanje pristnosti z MCP strežniki](https://den.dev/blog/mcp-server-auth-entra-id-session/)
+- [Varnostno shranjevanje in šifriranje žetonov (video)](https://youtu.be/uRdX37EcCwg?si=6fSChs1G4glwXRy2)
 
 ### **DevOps in varnost dobavne verige**
-- [Varnost v Azure DevOps](https://azure.microsoft.com/products/devops)
-- [Varnost v Azure Repos](https://azure.microsoft.com/products/devops/repos/)
-- [Microsoftova pot do varnosti dobavne verige](https://devblogs.microsoft.com/engineering-at-microsoft/the-journey-to-secure-the-software-supply-chain-at-microsoft/)
+- [Varnost Azure DevOps](https://azure.microsoft.com/products/devops)
+- [Varnost Azure Repos](https://azure.microsoft.com/products/devops/repos/)
+- [Microsoftova pot do varne dobavne verige programske opreme](https://devblogs.microsoft.com/engineering-at-microsoft/the-journey-to-secure-the-software-supply-chain-at-microsoft/)
 
 ## **Dodatna varnostna dokumentacija**
 
-Za celovita varnostna navodila si oglejte te specializirane dokumente v tem razdelku:
+Za celovita varnostna navodila si oglejte ta specializirana besedila v tem razdelku:
 
-- **[Najboljše prakse za MCP varnost 2025](./mcp-security-best-practices-2025.md)** - Celovite najboljše prakse za MCP implementacije
-- **[Implementacija Azure Content Safety](./azure-content-safety-implementation.md)** - Praktični primeri implementacije za integracijo Azure Content Safety  
-- **[MCP varnostni nadzori 2025](./mcp-security-controls-2025.md)** - Najnovejši varnostni nadzori in tehnike za MCP uvajanja
-- **[Hiter referenčni vodnik za najboljše prakse MCP](./mcp-best-practices.md)** - Hiter referenčni vodnik za ključne MCP varnostne prakse
+- **[Najboljše varnostne prakse MCP 2025](./mcp-security-best-practices-2025.md)** - Popolne varnostne prakse za implementacije MCP
+- **[Implementacija Azure Content Safety](./azure-content-safety-implementation.md)** - Praktični primeri implementacije integracije Azure Content Safety  
+- **[Varnostne kontrole MCP 2025](./mcp-security-controls-2025.md)** - Najnovejše varnostne kontrole in tehnike za nameščanje MCP
+- **[Hitri referenčni vodič za najboljše prakse MCP](./mcp-best-practices.md)** - Hiter referenčni vodič za ključne varnostne prakse MCP
+
+### **Praktično varnostno usposabljanje**
+
+- **[Delavnica MCP Security Summit (Sherpa)](https://azure-samples.github.io/sherpa/)** - Celovita praktična delavnica za varovanje MCP strežnikov v Azure z naprednimi tabori od osnovnega do vrha
+- **[OWASP MCP Azure varnostni vodič](https://microsoft.github.io/mcp-azure-security-guide/)** - Referenčna arhitektura in navodila za implementacijo vseh OWASP MCP Top 10 tveganj
 
 ---
 
 ## Kaj sledi
 
-Naprej: [Poglavje 3: Začetek](../03-GettingStarted/README.md)
+Naslednje: [Poglavje 3: Začetek](../03-GettingStarted/README.md)
 
-**Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za prevajanje z umetno inteligenco [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne razlage, ki bi nastale zaradi uporabe tega prevoda.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Opozorilo**:  
+Ta dokument je bil preveden z uporabo storitve umetne inteligence [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v izvorni jeziku velja kot avtoritativni vir. Za kritične informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne prevzemamo odgovornosti.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

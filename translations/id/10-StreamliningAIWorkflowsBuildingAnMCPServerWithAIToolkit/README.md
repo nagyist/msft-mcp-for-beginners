@@ -1,70 +1,61 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1b000fd6e1b04c047578bfc5d07d54eb",
-  "translation_date": "2025-08-18T17:46:21+00:00",
-  "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md",
-  "language_code": "id"
-}
--->
 # Menyederhanakan Alur Kerja AI: Membangun Server MCP dengan AI Toolkit
 
-[![Versi MCP](https://img.shields.io/badge/MCP-1.9.3-blue.svg)](https://modelcontextprotocol.io/)
+[![MCP Spec](https://img.shields.io/badge/MCP%20Spec-2025--11--25-blue.svg)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
 [![Python](https://img.shields.io/badge/Python-3.10+-green.svg)](https://python.org)
 [![VS Code](https://img.shields.io/badge/VS%20Code-Latest-orange.svg)](https://code.visualstudio.com/)
 
-![logo](../../../translated_images/logo.ec93918ec338dadde1715c8aaf118079e0ed0502e9efdfcc84d6a0f4a9a70ae8.id.png)
+![logo](../../../translated_images/id/logo.ec93918ec338dadd.webp)
 
-## 🎯 Gambaran Umum
+## 🎯  Ikhtisar
 
-[![Membangun Agen AI di VS Code: 4 Lab Praktis dengan MCP dan AI Toolkit](../../../translated_images/11.0f6db6a0fb6068856d0468590a120ffe35dbccc49b93dc88b2003f306c81493a.id.png)](https://youtu.be/r34Csn3rkeQ)
+[![Build AI Agents in VS Code: 4 Hands-On Labs with MCP and AI Toolkit](../../../translated_images/id/11.0f6db6a0fb606885.webp)](https://youtu.be/r34Csn3rkeQ)
 
 _(Klik gambar di atas untuk menonton video pelajaran ini)_
 
-Selamat datang di **Workshop Model Context Protocol (MCP)**! Workshop praktis ini menggabungkan dua teknologi mutakhir untuk merevolusi pengembangan aplikasi AI:
+Selamat datang di **Model Context Protocol (MCP) Workshop**! Workshop praktis komprehensif ini menggabungkan dua teknologi mutakhir untuk merevolusi pengembangan aplikasi AI:
 
 - **🔗 Model Context Protocol (MCP)**: Standar terbuka untuk integrasi alat AI yang mulus
-- **🛠️ AI Toolkit untuk Visual Studio Code (AITK)**: Ekstensi pengembangan AI yang kuat dari Microsoft
+- **🛠️ AI Toolkit untuk Visual Studio Code (AITK)**: Ekstensi pengembangan AI canggih dari Microsoft
 
 ### 🎓 Apa yang Akan Anda Pelajari
 
-Di akhir workshop ini, Anda akan menguasai seni membangun aplikasi cerdas yang menghubungkan model AI dengan alat dan layanan dunia nyata. Mulai dari pengujian otomatis hingga integrasi API khusus, Anda akan mendapatkan keterampilan praktis untuk menyelesaikan tantangan bisnis yang kompleks.
+Pada akhir workshop ini, Anda akan menguasai seni membangun aplikasi cerdas yang menghubungkan model AI dengan alat dan layanan dunia nyata. Dari pengujian otomatis hingga integrasi API khusus, Anda akan memperoleh keterampilan praktis untuk memecahkan tantangan bisnis yang kompleks.
 
-## 🏗️ Teknologi yang Digunakan
+## 🏗️ Tumpukan Teknologi
 
 ### 🔌 Model Context Protocol (MCP)
 
-MCP adalah **"USB-C untuk AI"** - standar universal yang menghubungkan model AI dengan alat dan sumber data eksternal.
+MCP adalah **"USB-C untuk AI"** - standar universal yang menghubungkan model AI ke alat eksternal dan sumber data.
 
 **✨ Fitur Utama:**
 
 - 🔄 **Integrasi Standar**: Antarmuka universal untuk koneksi alat AI
 - 🏛️ **Arsitektur Fleksibel**: Server lokal & jarak jauh melalui transport stdio/SSE
 - 🧰 **Ekosistem Kaya**: Alat, prompt, dan sumber daya dalam satu protokol
-- 🔒 **Siap untuk Perusahaan**: Keamanan dan keandalan bawaan
+- 🔒 **Siap Perusahaan**: Keamanan dan keandalan bawaan
 
 **🎯 Mengapa MCP Penting:**
-Seperti USB-C yang menghilangkan kekacauan kabel, MCP menghilangkan kompleksitas integrasi AI. Satu protokol, kemungkinan tak terbatas.
+Seperti halnya USB-C menghilangkan kekacauan kabel, MCP menghilangkan kompleksitas integrasi AI. Satu protokol, kemungkinan tanpa batas.
 
 ### 🤖 AI Toolkit untuk Visual Studio Code (AITK)
 
-Ekstensi pengembangan AI unggulan dari Microsoft yang mengubah VS Code menjadi pusat kekuatan AI.
+Ekstensi pengembangan AI unggulan Microsoft yang mengubah VS Code menjadi kekuatan AI.
 
-**🚀 Kemampuan Inti:**
+**🚀 Kapabilitas Inti:**
 
 - 📦 **Katalog Model**: Akses model dari Azure AI, GitHub, Hugging Face, Ollama
 - ⚡ **Inferensi Lokal**: Eksekusi CPU/GPU/NPU yang dioptimalkan ONNX
-- 🏗️ **Pembangun Agen**: Pengembangan agen AI visual dengan integrasi MCP
-- 🎭 **Multi-Modal**: Dukungan teks, visi, dan keluaran terstruktur
+- 🏗️ **Agent Builder**: Pengembangan agen AI visual dengan integrasi MCP
+- 🎭 **Multi-Modal**: Dukungan teks, visi, dan output terstruktur
 
 **💡 Manfaat Pengembangan:**
 
-- Penerapan model tanpa konfigurasi
+- Penyebaran model tanpa konfigurasi
 - Rekayasa prompt visual
-- Playground pengujian real-time
-- Integrasi server MCP yang mulus
+- Tempat uji coba model waktu nyata
+- Integrasi server MCP tanpa hambatan
 
-## 📚 Perjalanan Belajar
+## 📚 Perjalanan Pembelajaran
 
 ### [🚀 Modul 1: Dasar-Dasar AI Toolkit](./lab1/README.md)
 
@@ -72,94 +63,94 @@ Ekstensi pengembangan AI unggulan dari Microsoft yang mengubah VS Code menjadi p
 
 - 🛠️ Instal dan konfigurasikan AI Toolkit untuk VS Code
 - 🗂️ Jelajahi Katalog Model (100+ model dari GitHub, ONNX, OpenAI, Anthropic, Google)
-- 🎮 Kuasai Playground Interaktif untuk pengujian model real-time
-- 🤖 Bangun agen AI pertama Anda dengan Pembangun Agen
-- 📊 Evaluasi kinerja model dengan metrik bawaan (F1, relevansi, kesamaan, koherensi)
-- ⚡ Pelajari kemampuan pemrosesan batch dan dukungan multi-modal
+- 🎮 Kuasai Interactive Playground untuk pengujian model waktu nyata
+- 🤖 Bangun agen AI pertama Anda dengan Agent Builder
+- 📊 Evaluasi performa model dengan metrik bawaan (F1, relevansi, kemiripan, koherensi)
+- ⚡ Pelajari pemrosesan batch dan dukungan multi-modal
 
-**🎯 Hasil Belajar**: Membuat agen AI fungsional dengan pemahaman komprehensif tentang kemampuan AITK
+**🎯 Hasil Pembelajaran**: Membuat agen AI fungsional dengan pemahaman lengkap tentang kapabilitas AITK
 
-### [🌐 Modul 2: Dasar-Dasar MCP dengan AI Toolkit](./lab2/README.md)
+### [🌐 Modul 2: MCP dengan Dasar-Dasar AI Toolkit](./lab2/README.md)
 
 **Durasi**: 20 menit
 
 - 🧠 Kuasai arsitektur dan konsep Model Context Protocol (MCP)
-- 🌐 Jelajahi ekosistem server MCP dari Microsoft
-- 🤖 Bangun agen otomatisasi browser menggunakan server MCP Playwright
-- 🔧 Integrasikan server MCP dengan Pembangun Agen AI Toolkit
+- 🌐 Jelajahi ekosistem server MCP Microsoft
+- 🤖 Bangun agen otomatisasi browser menggunakan Playwright MCP server
+- 🔧 Integrasikan server MCP dengan AI Toolkit Agent Builder
 - 📊 Konfigurasikan dan uji alat MCP dalam agen Anda
-- 🚀 Ekspor dan terapkan agen bertenaga MCP untuk penggunaan produksi
+- 🚀 Ekspor dan deploy agen bertenaga MCP untuk penggunaan produksi
 
-**🎯 Hasil Belajar**: Menerapkan agen AI yang diperkuat dengan alat eksternal melalui MCP
+**🎯 Hasil Pembelajaran**: Men-deploy agen AI yang diperkaya dengan alat eksternal melalui MCP
 
 ### [🔧 Modul 3: Pengembangan MCP Lanjutan dengan AI Toolkit](./lab3/README.md)
 
 **Durasi**: 20 menit
 
 - 💻 Buat server MCP khusus menggunakan AI Toolkit
-- 🐍 Konfigurasikan dan gunakan SDK Python MCP terbaru (v1.9.3)
+- 🐍 Konfigurasikan dan gunakan SDK MCP Python terbaru (v1.9.3)
 - 🔍 Siapkan dan gunakan MCP Inspector untuk debugging
-- 🛠️ Bangun Server MCP Cuaca dengan alur kerja debugging profesional
-- 🧪 Debug server MCP di lingkungan Pembangun Agen dan Inspector
+- 🛠️ Bangun Server Cuaca MCP dengan alur kerja debugging profesional
+- 🧪 Debug server MCP di lingkungan Agent Builder dan Inspector
 
-**🎯 Hasil Belajar**: Mengembangkan dan mendebug server MCP khusus dengan alat modern
+**🎯 Hasil Pembelajaran**: Mengembangkan dan mendebug server MCP kustom dengan alat modern
 
-### [🐙 Modul 4: Pengembangan MCP Praktis - Server Klon GitHub Kustom](./lab4/README.md)
+### [🐙 Modul 4: Pengembangan MCP Praktis - Server GitHub Clone Kustom](./lab4/README.md)
 
 **Durasi**: 30 menit
 
-- 🏗️ Bangun Server MCP Klon GitHub dunia nyata untuk alur kerja pengembangan
-- 🔄 Terapkan kloning repositori cerdas dengan validasi dan penanganan kesalahan
+- 🏗️ Bangun Server GitHub Clone MCP nyata untuk alur kerja pengembangan
+- 🔄 Implementasikan cloning repository pintar dengan validasi dan penanganan kesalahan
 - 📁 Buat manajemen direktori cerdas dan integrasi VS Code
-- 🤖 Gunakan Mode Agen GitHub Copilot dengan alat MCP khusus
+- 🤖 Gunakan GitHub Copilot Agent Mode dengan alat MCP kustom
 - 🛡️ Terapkan keandalan siap produksi dan kompatibilitas lintas platform
 
-**🎯 Hasil Belajar**: Menerapkan server MCP siap produksi yang menyederhanakan alur kerja pengembangan nyata
+**🎯 Hasil Pembelajaran**: Men-deploy server MCP siap produksi yang menyederhanakan alur kerja pengembangan nyata
 
-## 💡 Aplikasi Dunia Nyata & Dampaknya
+## 💡 Aplikasi Dunia Nyata & Dampak
 
 ### 🏢 Kasus Penggunaan Perusahaan
 
 #### 🔄 Otomasi DevOps
 
-Ubah alur kerja pengembangan Anda dengan otomatisasi cerdas:
+Transformasi alur kerja pengembangan Anda dengan otomatisasi cerdas:
 
-- **Manajemen Repositori Cerdas**: Tinjauan kode berbasis AI dan keputusan penggabungan
-- **CI/CD Cerdas**: Optimalisasi pipeline otomatis berdasarkan perubahan kode
-- **Triage Masalah**: Klasifikasi dan penugasan bug otomatis
+- **Manajemen Repository Pintar**: Review kode dan keputusan merge berbasis AI
+- **CI/CD Pintar**: Optimasi pipeline otomatis berdasarkan perubahan kode
+- **Triage Masalah**: Klasifikasi bug otomatis dan penugasan
 
 #### 🧪 Revolusi Jaminan Kualitas
 
 Tingkatkan pengujian dengan otomatisasi berbasis AI:
 
-- **Pembuatan Tes Cerdas**: Buat suite pengujian yang komprehensif secara otomatis
+- **Generasi Uji Pintar**: Membuat suite pengujian komprehensif secara otomatis
 - **Pengujian Regresi Visual**: Deteksi perubahan UI berbasis AI
-- **Pemantauan Kinerja**: Identifikasi dan penyelesaian masalah secara proaktif
+- **Monitoring Performa**: Identifikasi dan penyelesaian masalah secara proaktif
 
-#### 📊 Kecerdasan Alur Data
+#### 📊 Intelijen Pipeline Data
 
 Bangun alur kerja pemrosesan data yang lebih cerdas:
 
-- **Proses ETL Adaptif**: Transformasi data yang mengoptimalkan diri
-- **Deteksi Anomali**: Pemantauan kualitas data real-time
-- **Pengelolaan Alur Data Cerdas**: Manajemen aliran data yang pintar
+- **Proses ETL Adaptif**: Transformasi data yang mengoptimasi diri sendiri
+- **Deteksi Anomali**: Monitoring kualitas data waktu nyata
+- **Routing Pintar**: Manajemen aliran data cerdas
 
 #### 🎧 Peningkatan Pengalaman Pelanggan
 
 Ciptakan interaksi pelanggan yang luar biasa:
 
-- **Dukungan Kontekstual**: Agen AI dengan akses ke riwayat pelanggan
+- **Dukungan Berbasis Konteks**: Agen AI dengan akses ke riwayat pelanggan
 - **Penyelesaian Masalah Proaktif**: Layanan pelanggan prediktif
-- **Integrasi Multi-Saluran**: Pengalaman AI terpadu di berbagai platform
+- **Integrasi Multi-Channel**: Pengalaman AI terpadu lintas platform
 
-## 🛠️ Prasyarat & Pengaturan
+## 🛠️ Prasyarat & Persiapan
 
 ### 💻 Persyaratan Sistem
 
 | Komponen | Persyaratan | Catatan |
-|-----------|-------------|-------|
-| **Sistem Operasi** | Windows 10+, macOS 10.15+, Linux | Sistem operasi modern apa pun |
-| **Visual Studio Code** | Versi stabil terbaru | Diperlukan untuk AITK |
+|-----------|-------------|---------|
+| **Sistem Operasi** | Windows 10+, macOS 10.15+, Linux | OS modern apa pun |
+| **Visual Studio Code** | Versi stabil terbaru | Dibutuhkan untuk AITK |
 | **Node.js** | v18.0+ dan npm | Untuk pengembangan server MCP |
 | **Python** | 3.10+ | Opsional untuk server MCP Python |
 | **Memori** | Minimal 8GB RAM | 16GB direkomendasikan untuk model lokal |
@@ -171,15 +162,15 @@ Ciptakan interaksi pelanggan yang luar biasa:
 - **AI Toolkit** (ms-windows-ai-studio.windows-ai-studio)
 - **Python** (ms-python.python)
 - **Python Debugger** (ms-python.debugpy)
-- **GitHub Copilot** (GitHub.copilot) - Opsional tetapi berguna
+- **GitHub Copilot** (GitHub.copilot) - Opsional tapi berguna
 
 #### Alat Opsional
 
 - **uv**: Pengelola paket Python modern
 - **MCP Inspector**: Alat debugging visual untuk server MCP
-- **Playwright**: Untuk contoh otomatisasi web
+- **Playwright**: Untuk contoh otomasi web
 
-## 🎖️ Hasil Belajar & Jalur Sertifikasi
+## 🎖️ Hasil Pembelajaran & Jalur Sertifikasi
 
 ### 🏆 Daftar Periksa Penguasaan Keterampilan
 
@@ -189,9 +180,9 @@ Dengan menyelesaikan workshop ini, Anda akan mencapai penguasaan dalam:
 
 - [ ] **Penguasaan Protokol MCP**: Pemahaman mendalam tentang arsitektur dan pola implementasi
 - [ ] **Kemahiran AITK**: Penggunaan tingkat ahli AI Toolkit untuk pengembangan cepat
-- [ ] **Pengembangan Server Kustom**: Membangun, menerapkan, dan memelihara server MCP produksi
+- [ ] **Pengembangan Server Kustom**: Membuat, men-deploy, dan memelihara server MCP produksi
 - [ ] **Keunggulan Integrasi Alat**: Menghubungkan AI dengan alur kerja pengembangan yang ada secara mulus
-- [ ] **Aplikasi Pemecahan Masalah**: Menerapkan keterampilan yang dipelajari untuk tantangan bisnis nyata
+- [ ] **Penerapan Pemecahan Masalah**: Menerapkan keterampilan yang dipelajari ke tantangan bisnis nyata
 
 #### 🔧 Keterampilan Teknis
 
@@ -199,29 +190,38 @@ Dengan menyelesaikan workshop ini, Anda akan mencapai penguasaan dalam:
 - [ ] Merancang dan mengimplementasikan server MCP kustom
 - [ ] Mengintegrasikan Model GitHub dengan arsitektur MCP
 - [ ] Membangun alur kerja pengujian otomatis dengan Playwright
-- [ ] Menerapkan agen AI untuk penggunaan produksi
-- [ ] Mendebug dan mengoptimalkan kinerja server MCP
+- [ ] Men-deploy agen AI untuk penggunaan produksi
+- [ ] Debug dan optimalkan performa server MCP
 
-#### 🚀 Kemampuan Lanjutan
+#### 🚀 Kapabilitas Lanjutan
 
 - [ ] Merancang integrasi AI skala perusahaan
 - [ ] Menerapkan praktik keamanan terbaik untuk aplikasi AI
 - [ ] Merancang arsitektur server MCP yang skalabel
 - [ ] Membuat rantai alat khusus untuk domain tertentu
-- [ ] Membimbing orang lain dalam pengembangan berbasis AI
+- [ ] Membimbing orang lain dalam pengembangan AI-native
 
 ## 📖 Sumber Daya Tambahan
 
-- [Spesifikasi MCP](https://modelcontextprotocol.io/docs)
-- [Repositori GitHub AI Toolkit](https://github.com/microsoft/vscode-ai-toolkit)
-- [Koleksi Server MCP Contoh](https://github.com/modelcontextprotocol/servers)
+- [Spesifikasi MCP (2025-11-25)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
+- [Repositori AI Toolkit GitHub](https://github.com/microsoft/vscode-ai-toolkit)
+- [Koleksi Server MCP Sampel](https://github.com/modelcontextprotocol/servers)
 - [Panduan Praktik Terbaik](https://modelcontextprotocol.io/docs/best-practices)
+- [OWASP MCP Top 10](https://microsoft.github.io/mcp-azure-security-guide/mcp/) - Praktik keamanan terbaik
 
 ---
 
 **🚀 Siap merevolusi alur kerja pengembangan AI Anda?**
 
-Mari kita bangun masa depan aplikasi cerdas bersama dengan MCP dan AI Toolkit!
+Mari bangun masa depan aplikasi cerdas bersama MCP dan AI Toolkit!
 
+## Selanjutnya
+
+Lanjut ke: [Modul 11: MCP Server Hands-On Labs](../11-MCPServerHandsOnLabs/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang berwenang. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diketahui bahwa terjemahan otomatis dapat mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa asalnya harus dianggap sebagai sumber otoritatif. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,96 +1,89 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b62150e27d4b7b5797ee41146d176e6b",
-  "translation_date": "2025-08-19T18:39:28+00:00",
-  "source_file": "08-BestPractices/README.md",
-  "language_code": "my"
-}
--->
-# MCP ဖွံ့ဖြိုးရေးအကောင်းဆုံးအလေ့အကျင့်များ
+# MCP Development Best Practices
 
-[![MCP ဖွံ့ဖြိုးရေးအကောင်းဆုံးအလေ့အကျင့်များ](../../../translated_images/09.d0f6d86c9d72134ccf5a8d8c8650a0557e519936661fc894cad72d73522227cb.my.png)](https://youtu.be/W56H9W7x-ao)
+[![MCP Development Best Practices](../../../translated_images/my/09.d0f6d86c9d72134c.webp)](https://youtu.be/W56H9W7x-ao)
 
-_(ဤသင်ခန်းစာ၏ ဗီဒီယိုကို ကြည့်ရန် အထက်ပါပုံကို နှိပ်ပါ)_
+_(Click the image above to view video of this lesson)_
 
-## အကျဉ်းချုပ်
+## Overview
 
-ဤသင်ခန်းစာသည် MCP server များနှင့် production ပတ်ဝန်းကျင်များတွင် feature များ ဖွံ့ဖြိုးခြင်း၊ စမ်းသပ်ခြင်းနှင့် တင်သွင်းခြင်းဆိုင်ရာ အဆင့်မြင့်အကောင်းဆုံးအလေ့အကျင့်များကို အဓိကထားပါသည်။ MCP ecosystem များသည် ရှုပ်ထွေးမှုနှင့် အရေးပါမှုများ တိုးလာသည့်အခါတွင် စံသတ်မှတ်ထားသော ပုံစံများကို လိုက်နာခြင်းသည် ယုံကြည်စိတ်ချရမှု၊ ထိန်းသိမ်းနိုင်မှုနှင့် အပြန်အလှန်လုပ်ဆောင်နိုင်မှုကို အာမခံပေးပါသည်။ ဤသင်ခန်းစာသည် အမှန်တကယ် MCP implementation များမှ ရရှိသော အတွေ့အကြုံများကို စုစည်းထားပြီး သင်၏ server များကို သုံးစွဲသူများအတွက် ထိရောက်သော resource များ၊ prompt များနှင့် tool များဖြင့် ခိုင်ခံ့ပြီး ထိရောက်သော server များ ဖန်တီးနိုင်ရန် လမ်းညွှန်ပေးပါသည်။
+ဤသင်ခန်းစာ၌ MCP ဆာဗာများနှင့် features များကို production ပတ်ဝန်းကျင်များတွင် တည်ဆောက်၊ စစ်ဆေးနှင့် ဖြန့်ချိရာတွင် ရှိသော အဆင့်မြင့် အကောင်းဆုံး လုပ်ထုံးလုပ်နည်းများကို အာရုံစိုက်ပြသသည်။ MCP စနစ်များသည် တိုင်းပြည်တိုးတက်လာပြီး အရေးပါမှုများပြားလာသည့်အခါ ကျင့်သုံးနည်းများသည် ယုံကြည်စိတ်ချရမှု၊ ပြုပြင်ထိန်းသိမ်းနိုင်မှုနှင့် အပြန်အလှန် ဆက်သွယ်နိုင်မှုတို့ကို သေချာစေရန် အရေးပါသည်။ ဤသင်ခန်းစာသည် MCP အကောင်အထည်ဖော်မှုများမှ ရရှိသော အတွေ့အကြုံဆိုင်ရာ ဗဟုသုတများကို စုစည်း၍ တည်ငြိမ်၍ ထိရောက်သော ဆာဗာများ၊ အရင်းအမြစ်များ၊ prompt များနှင့် ကိရိယာများကို ဖန်တီးရာတွင် ဦးဆောင်လမ်းညွှန်ပေးသည်။
 
-## သင်ခန်းစာ၏ ရည်မှန်းချက်များ
+## Learning Objectives
 
-ဤသင်ခန်းစာ၏ နောက်ဆုံးတွင် သင်သည် အောက်ပါအရာများကို လုပ်ဆောင်နိုင်မည်ဖြစ်သည်-
+ဤသင်ခန်းစာ၏ အဆုံးတွင် သင်မှာ အောက်ပါအရာများကို နားလည်အသုံးချနိုင်ပါမည်-
 
-- MCP server နှင့် feature design တွင် စက်မှုလုပ်ငန်း၏ အကောင်းဆုံးအလေ့အကျင့်များကို အသုံးချနိုင်ခြင်း
-- MCP server များအတွက် စုံလင်သော စမ်းသပ်မှုမဟာဗျူဟာများ ဖန်တီးနိုင်ခြင်း
-- ရှုပ်ထွေးသော MCP application များအတွက် ထိရောက်ပြီး ပြန်အသုံးပြုနိုင်သော workflow ပုံစံများ ဖန်တီးနိုင်ခြင်း
-- MCP server များတွင် မှားယွင်းမှုကို ကိုင်တွယ်ခြင်း၊ log ထုတ်ခြင်းနှင့် observability ကို သင့်တော်စွာ အကောင်အထည်ဖော်နိုင်ခြင်း
-- MCP implementation များကို စွမ်းဆောင်ရည်၊ လုံခြုံရေးနှင့် ထိန်းသိမ်းနိုင်မှုအတွက် အကောင်းဆုံး optimize လုပ်နိုင်ခြင်း
+- MCP ဆာဗာနှင့် features ဒီဇိုင်းတွင် စက်မှုလုပ်ငန်း၏ အကောင်းဆုံးကျင့်သုံးနည်းများ ထည့်သွင်းအသုံးပြုခြင်း
+- MCP ဆာဗာများအတွက် စုံလင်သော စစ်ဆေးခြင်း မဟာဗျူဟာများ ဖန်တီးနိုင်ခြင်း
+- စွမ်းဆောင်ရည်မြင့် MCP အပလီကေးရှင်းများအတွက် ထိရောက်ပြီး ပြန်လည်အသုံးပြုနိုင်သော Workflow patterns များ ဒီဇိုင်းဆွဲခြင်း
+- MCP ဆာဗာများအတွင်း မှားယွင်းမှုများကို ဖြေရှင်းခြင်း၊ မှတ်တမ်းတင်ခြင်းနှင့် ကြည့်ရှုခြင်း ကို မှန်ကန်စွာ ဆောင်ရွက်ခြင်း
+- စွမ်းဆောင်ရည်၊ လုံခြုံမှုနှင့် ပြုပြင်ထိန်းသိမ်းမှုအတွက် MCP ကို 최적화 ပြုလုပ်ခြင်း
 
-## MCP အခြေခံအချက်များ
+## MCP Core Principles
 
-အကောင်အထည်ဖော်မှုဆိုင်ရာ အထူးအလေ့အကျင့်များကို စတင်မလုပ်မီ MCP ဖွံ့ဖြိုးမှုကို ထိရောက်စွာ လမ်းညွှန်ပေးသော အခြေခံအချက်များကို နားလည်ထားရန် အရေးကြီးပါသည်-
+အထူး implementation ကျင့်သုံးနည်းများကို ဆက်လက်ရှုမည့်အတွက် MCP ဖွံ့ဖြိုးတိုးတက်မှု အတွက် လမ်းညွှန်သော အခြေခံသဘောတရားများကို နားလည်ထားသင့်သည်-
 
-1. **စံပြဆက်သွယ်မှု**: MCP သည် JSON-RPC 2.0 ကို အခြေခံထားပြီး request များ၊ response များနှင့် error ကိုင်တွယ်မှုများအတွက် အဆင်ပြေသော format ကို ပေးစွမ်းပါသည်။
+1. **စံနှုန်းတကျ ဆက်သွယ်မှု**: MCP သည် JSON-RPC 2.0 ကို အခြေခံပြီး အချက်ပေး၊ တုံ့ပြန်ခြင်းနှင့် မှားယွင်းမှုကို ဆက်တိုက်တမ်းတပြိုင်နက် စံချိန်တမ်းအားဖြင့် အသုံးပြုပါသည်။
 
-2. **အသုံးပြုသူအခြေခံဒီဇိုင်း**: MCP implementation များတွင် အသုံးပြုသူ၏ သဘောတူညီမှု၊ ထိန်းချုပ်မှုနှင့် ပွင့်လင်းမြင်သာမှုကို အမြဲဦးစားပေးပါ။
+2. **အသုံးပြုသူ ဦးစားပေး ဒီဇိုင်း**: MCP implementation တွင် အသုံးပြုသူ၏ သဘောတူညီမှု၊ ထိန်းချုပ်မှု နှင့် ပြတ်သားမှုကို အမြဲ ဦးစားပေးပါ။
 
-3. **လုံခြုံရေးဦးစားပေးမှု**: authentication, authorization, validation နှင့် rate limiting အပါအဝင် ခိုင်ခံ့သော လုံခြုံရေးအတိုင်းအတာများကို အကောင်အထည်ဖော်ပါ။
+3. **လုံခြုံရေး အရင်ဆုံး**: အတည်ပြုခြင်း၊ ခွင့်ပြုခြင်း၊ တန်မှတ်ချက်စစ်ဆေးခြင်းနှင့် မျှသာ သတ်မှတ်ထားသော အားလုံးကန့်သတ်ချက်များကို ရေရှည် ခိုင်မာသော လုံခြုံရေး နည်းလမ်းများဖြင့် တည်ဆောက်ပါ။
 
-4. **Modular Architecture**: MCP server များကို tool နှင့် resource တစ်ခုစီ၏ ရည်ရွယ်ချက်ကို ရှင်းလင်းစွာ သတ်မှတ်ထားသော modular approach ဖြင့် ဒီဇိုင်းဆွဲပါ။
+4. **ပိုင်းစိတ်ထားသော ဖွဲ့စည်းတည်ဆောက်မှု**: MCP ဆာဗာကို တစ်စိတ်တစ်ပိုင်း အနေဖြင့် ဒီဇိုင်းဆွဲပြီး ကိရိယာနှင့် အရင်းအမြစ်တိုင်းသည် ဖော်ပြထားသော ရည်ရွယ်ချက်ရှင်းလင်းမှုရှိစေရန် ပြုလုပ်ပါ။
 
-5. **Stateful Connections**: MCP သည် request များစွာအတွင်း state ကို ထိန်းသိမ်းနိုင်စွမ်းရှိသောကြောင့် ပိုမိုချောမွေ့ပြီး အကြောင်းအရာနှင့် သက်ဆိုင်သော အပြန်အလှန်လုပ်ဆောင်မှုများကို အကောင်းဆုံး အသုံးချပါ။
+5. **အခြေနေထားချိတ်ဆက်မှုများ**: MCP ၏ အချက်အလက်တောင်းဆိုမှုများအတွင်း မျိုးစုံ လုပ်ဆောင်ချက်များအပေါ် အခြားအချက်အလက်များကို တစ်ဦးနောက်တစ်ဦး ဆက်ခံထား သွားနိုင်စေရန် အခြေခံထားသည်။
 
-## MCP အတည်ပြုထားသော အကောင်းဆုံးအလေ့အကျင့်များ
+## Official MCP Best Practices
 
-အောက်ပါအကောင်းဆုံးအလေ့အကျင့်များကို Model Context Protocol documentation မှ ရယူထားပါသည်-
+အောက်ပါအကောင်းဆုံးကျင့်သုံးနည်းများကို Model Context Protocol အတည်ပြုစာတမ်းမှ ရယူထားသည်-
 
-### လုံခြုံရေးဆိုင်ရာ အကောင်းဆုံးအလေ့အကျင့်များ
+### Security Best Practices
 
-1. **အသုံးပြုသူ၏ သဘောတူညီမှုနှင့် ထိန်းချုပ်မှု**: ဒေတာကို access လုပ်ခြင်း သို့မဟုတ် လုပ်ဆောင်မှုများကို ပြုလုပ်မီ အမြဲတမ်း အသုံးပြုသူ၏ သဘောတူညီမှုကို လိုအပ်ပါသည်။ မျှဝေသည့် ဒေတာနှင့် ခွင့်ပြုထားသော လုပ်ဆောင်မှုများကို ရှင်းလင်းစွာ ထိန်းချုပ်နိုင်စွမ်းပေးပါ။
+1. **အသုံးပြုသူ သဘောတူညီမှုနှင့် ထိန်းချုပ်မှု**: ဒေတာ အသုံးပြုခွင့်အား ရှင်းလင်းရှိပြီး အသုံးပြုခွင့် ရရှိမှသာ မည်သည့် operation မတိုင်းကိုမဆို ပြုလုပ်ရန် လိုအပ်သည်။ မည်သည့် ဒေတာ များကို မည်သူချမှတ်နိုင်ပြီး မည်သည့် လုပ်ဆောင်မှုများ ခွင့်ပြုထားသည်ကို သေချာ ရှင်းလင်း ထားရမည်။
 
-2. **ဒေတာကိုယ်ရေးကိုယ်တာ**: အသုံးပြုသူ၏ သဘောတူညီမှုမရှိဘဲ ဒေတာကို မဖော်ထုတ်ပါနှင့်။ သင့်တော်သော access control များဖြင့် ဒေတာကို ကာကွယ်ပါ။
+2. **ဒေတာ ပုဂ္ဂလိကရေး**: အသုံးပြုသူ၏ သဘောတူညီမှုရရှိမှသာ ဒေတာ ပြသပေးကာ အကာအကွယ်များအတွင်း ထိန်းသိမ်းရန်။ ခွင့်မရှိ ဒေတာ ပေးပို့မှုမှ ကာကွယ်ရန်။
 
-3. **Tool လုံခြုံမှု**: Tool တစ်ခုကို invoke လုပ်မီ အသုံးပြုသူ၏ သဘောတူညီမှုကို အမြဲတမ်း လိုအပ်ပါသည်။ Tool တစ်ခုစီ၏ လုပ်ဆောင်နိုင်မှုကို အသုံးပြုသူများ နားလည်စေရန်နှင့် ခိုင်ခံ့သော လုံခြုံရေးအကန့်အသတ်များကို အကောင်အထည်ဖော်ပါ။
+3. **ကိရိယာ လုံခြုံရေး**: မည်သည့်ကိရိယာကို အသုံးပြုမည်ဆို တစ်ဦးချင်း အသုံးပြုသူ၏ သဘောတူညီမှု ရရှိရန် လိုအပ်သည်။ တစ်ခုချင်း၏ လုပ်ဆောင်ချက်များကို အသုံးပြုသူ နားလည်ပြီး လုံခြုံစွာ ကန့်သတ်ထားခြင်း။
 
-4. **Tool ခွင့်ပြုချက်ထိန်းချုပ်မှု**: session တစ်ခုအတွင်း model သုံးစွဲနိုင်သော tool များကို configure လုပ်ပါ။ ခွင့်ပြုထားသော tool များသာ အသုံးပြုနိုင်စေရန် အာမခံပါ။
+4. **ကိရိယာ ခွင့်ပြုမှု ထိန်းချုပ်မှု**: မိုဒယ်တစ်ခုကို ရက်တာတစ်ခုအတွင်း အသုံးပြုခွင့် ရရှိထားသော ကိရိယာများကို သတ်မှတ်ရန်။
 
-5. **Authentication**: API key, OAuth token သို့မဟုတ် အခြား secure authentication နည်းလမ်းများကို အသုံးပြု၍ tool, resource သို့မဟုတ် sensitive operation များကို access လုပ်မီ သင့်တော်သော authentication ကို လိုအပ်ပါသည်။
+5. **အတည်ပြုခြင်း**: ကိရိယာ၊ အရင်းအမြစ်များ သို့မဟုတ် တူးတွဲ လုပ်ဆောင်ချက် အရန် လုံခြုံစိတ်ချရသော ဝင်ရောက်ခွင့် ရရှိရန် API key, OAuth token များ သုံးပြီး သင့်တင့်သော အတည်ပြုခြင်း ပုံစံများကို ချမှတ်ပါ။
 
-6. **Parameter Validation**: Tool invocation များအတွက် validation ကို အကောင်အထည်ဖော်ပါ။ Malformed သို့မဟုတ် မကောင်းသော input များ tool implementation များသို့ ရောက်မလာစေရန် ကာကွယ်ပါ။
+6. **ပါရာမီတာ စစ်ဆေးမှု**: ကိရိယာ အသုံးပြုမှုတိုင်းကို အမှားမရှိစေဖို့၊ မဟုတ်ကောင်းတဲ့ ထည့်သွင်းချက်မှ ကာကွယ်ရန် အပြည့်အစုံ စစ်ဆေးမှု လုပ်ပါ။
 
-7. **Rate Limiting**: Abuse ကို ကာကွယ်ရန်နှင့် server resource များကို တရားမျှတစွာ အသုံးပြုနိုင်စေရန် rate limiting ကို အကောင်အထည်ဖော်ပါ။
+7. **နှုန်းထားကန့်သတ်မှု**: ဆာဗာ အရင်းအမြစ်များကို ျဖန့်ဝေရန် ချိုးဖောက်မှုမှကာကွယ်ပြီး သင့်တော်သော အသုံးပြုမှုကို သေချာစေပါ။
 
-### အကောင်အထည်ဖော်မှုဆိုင်ရာ အကောင်းဆုံးအလေ့အကျင့်များ
+### Implementation Best Practices
 
-1. **Capability Negotiation**: Connection setup အတွင်း support လုပ်ထားသော feature များ၊ protocol version များ၊ ရရှိနိုင်သော tool များနှင့် resource များအကြောင်း အချက်အလက်များကို လဲလှယ်ပါ။
+1. **စွမ်းရည် ညှိနှိုင်းမှု**: ချိတ်ဆက်ခြင်း အစအဆင့်တွင် အားပေး features များ၊ protocol ဗားရှင်းများ၊ အသုံးပြုနိုင်သော ကိရိယာနှင့် အရင်းအမြစ်များအကြောင်း ဖြန့်ဝေကြပါ။
 
-2. **Tool Design**: အဓိကရည်ရွယ်ချက်တစ်ခုကိုသာ အကောင်းဆုံးလုပ်ဆောင်နိုင်သော tool များ ဖန်တီးပါ။ အများကြီးကို handle လုပ်ရန် ကြိုးစားသော monolithic tool များကို ရှောင်ပါ။
+2. **ကိရိယာ ဒီဇိုင်း**: အလုပ်သီးသန့် အတိအကျ ပြုလုပ်၍ ခွဲခြား ဆောင်ရွက်သည့် ကိရိယာများ ဖန်တီးပါ၊ မတူညီသော တာဝန်များဖြေရှင်းသည့် ကိရိယာ တစ်ခုတည်း မဟုတ်ရ။
 
-3. **Error Handling**: ပြဿနာများကို ရှာဖွေခြင်း၊ မှားယွင်းမှုများကို ချောမွေ့စွာ ကိုင်တွယ်ခြင်းနှင့် အကျိုးရှိသော feedback ပေးနိုင်ရန် standardized error message များနှင့် code များကို အကောင်အထည်ဖော်ပါ။
+3. **မှားယွင်းမှု ဖြေရှင်းမှု**: ပြဿနာ ရှာဖွေရန်၊ အစွန်းရောက်မှုများကို ထိရောက်စွာ ကိုင်တွယ်ရန် နှင့် လိုက်လျောညီမှုရှိသော ပြန်လည်သတိပေးချက်များ ပေးရန် စံနှုန်းတကျ အမှားစာကို ပေးပါ။
 
-4. **Logging**: Protocol interaction များကို auditing, debugging နှင့် monitoring လုပ်နိုင်ရန် structured log များကို configure လုပ်ပါ။
+4. **မှတ်တမ်းတင်ခြင်း**: auditing, debugging, protocol ဆက်ဆံရေးများ စောင့်ကြည့်ရန် ဖော်ပြမှုတကျ လုပ်ထားသော log များကို ညှိနှိုင်းပါ။
 
-5. **Progress Tracking**: အချိန်ကြာရှည်သော operation များအတွက် progress update များကို report လုပ်ပါ။ responsive user interface များကို enable လုပ်နိုင်ပါသည်။
+5. **တိုးတက်မှု စောင့်ကြည့်မှု**: အချိန်ကြာရှည် လုပ်ငန်းဆောင်တာ များအတွက် တိုးတက်မှု အခြေအနေများ ကြေညာ ပေးကာ အသုံးပြုသူ အင်တာဖေ့စ်ကို တုံ့ပြန်နိုင်စေပါ။
 
-6. **Request Cancellation**: မလိုအပ်တော့သော request များ သို့မဟုတ် အချိန်ကြာလွန်းသော request များကို client များ cancel လုပ်နိုင်စေရန် ခွင့်ပြုပါ။
+6. **တောင်းဆိုမှု ဖျက်သိမ်းခြင်း**: အသုံးပြုသူများသည် မလိုအပ်တော့သော သို့မဟုတ် ကြာရှည်နေသော အကြောင်းကြားချက်များကို ဖျက်သိမ်းနိုင်ဖို့ ခွင့်ပြုပါ။
 
-## ထပ်မံရရှိနိုင်သော ရင်းမြစ်များ
+## Additional References
 
-MCP အကောင်းဆုံးအလေ့အကျင့်များအကြောင်း အနောက်ဆုံးရသတင်းအချက်အလက်များအတွက် အောက်ပါကို ရှုပါ-
+MCP အကောင်းဆုံးကျင့်သုံးနည်းများအတွက် နောက်ဆုံးအသိပညာများ ရယူလိုပါက-
 
 - [MCP Documentation](https://modelcontextprotocol.io/)
-- [MCP Specification](https://spec.modelcontextprotocol.io/)
+- [MCP Specification (2025-11-25)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
 - [Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
+- [OWASP MCP Top 10](https://microsoft.github.io/mcp-azure-security-guide/mcp/) - လုံခြုံရေး ရင်းမြစ်နှင့် ကာကွယ်မှုများ
+- [MCP Security Summit Workshop (Sherpa)](https://azure-samples.github.io/sherpa/) - လက်တွေ့ လုံခြုံရေး သင်တန်း
 
-## အကောင်အထည်ဖော်မှုဆိုင်ရာ လက်တွေ့နမူနာများ
+## Practical Implementation Examples
 
-### Tool Design အကောင်းဆုံးအလေ့အကျင့်များ
+### Tool Design Best Practices
 
 #### 1. Single Responsibility Principle
 
-MCP tool တစ်ခုစီသည် ရှင်းလင်းပြီး အဓိကရည်ရွယ်ချက်တစ်ခုသာ ရှိရမည်။ အများကြီးကို handle လုပ်ရန် ကြိုးစားသော monolithic tool များကို ဖန်တီးခြင်းမဟုတ်ဘဲ အထူးပြုလုပ်ဆောင်နိုင်သော tool များကို ဖွံ့ဖြိုးပါ။
+MCP ကိရိယာ တစ်ခုချင်းစီတွင် ရည်ရွယ်ချက် သေချာ ပြတ်သားစေသင့်သည်။ အလုပ် အနှစ်သက် မပါဘဲ မတူညီသော အရာများ ကိုင်တွယ်သော ကိရိယာကြီးများ ဖန်တီးခြင်းမပြုဘဲ တစ်ခုချင်းစီ အထူးပြုလုပ်ထားသော ကိရိယာများ ဖန်တီးပါ။
 
 ```csharp
 // A focused tool that does one thing well
@@ -152,10 +145,10 @@ public class WeatherForecastTool : ITool
 
 #### 2. Consistent Error Handling
 
-အကျိုးရှိသော error message များနှင့် သင့်တော်သော recovery mechanism များဖြင့် error handling ကို ခိုင်ခံ့စွာ အကောင်အထည်ဖော်ပါ။
+သတိပေးချက်များ ရှင်းလင်းပြီး ပြန်လည်ကောင်းမွန်စွာ ကုစားနိုင်သော error handling ကို ပြုလုပ်ပါ။
 
 ```python
-# Python example with comprehensive error handling
+# အပြည့်အစုံ အမှားကိုင်တွယ်မှုနှင့် Python ဥပမာ
 class DataQueryTool:
     def get_name(self):
         return "dataQuery"
@@ -165,19 +158,19 @@ class DataQueryTool:
     
     async def execute(self, parameters):
         try:
-            # Parameter validation
+            # ပါရာမီတာအတည်ပြုမှု
             if "query" not in parameters:
                 raise ToolParameterError("Missing required parameter: query")
                 
             query = parameters["query"]
             
-            # Security validation
+            # လုံခြုံရေးအတည်ပြုမှု
             if self._contains_unsafe_sql(query):
                 raise ToolSecurityError("Query contains potentially unsafe SQL")
             
             try:
-                # Database operation with timeout
-                async with timeout(10):  # 10 second timeout
+                # ဝက်ဘ်ဆာဗာနဲ့တိုင်အချိန်ကို ချိန်ညှိထားပြီး ဒေတာဘေ့စ် လည်ပတ်မှု
+                async with timeout(10):  # ၁၀ စက္ကန့် တိုင်အချိန်
                     result = await self._database.execute_query(query)
                     
                 return ToolResponse(
@@ -186,37 +179,37 @@ class DataQueryTool:
             except asyncio.TimeoutError:
                 raise ToolExecutionError("Database query timed out after 10 seconds")
             except DatabaseConnectionError as e:
-                # Connection errors might be transient
+                # ချိတ်ဆက်မှုအမှားများသည် ခွဲခြားသက်တမ်းပေါ်မူတည်နိုင်သည်
                 self._log_error("Database connection error", e)
                 raise ToolExecutionError(f"Database connection error: {str(e)}")
             except DatabaseQueryError as e:
-                # Query errors are likely client errors
+                # အမေးအဖြေ အမှားများသည် ဖောက်သည်မှ ဖြစ်နိုင်သည်
                 self._log_error("Database query error", e)
                 raise ToolExecutionError(f"Invalid query: {str(e)}")
                 
         except ToolError:
-            # Let tool-specific errors pass through
+            # ကိရိယာကိုယ်ပိုင် အမှားများကို ဖြတ်သွားစေပါ
             raise
         except Exception as e:
-            # Catch-all for unexpected errors
+            # မမျှော်လင့်ထားသော အမှားများကို ဖမ်းယူခြင်း
             self._log_error("Unexpected error in DataQueryTool", e)
             raise ToolExecutionError(f"An unexpected error occurred: {str(e)}")
     
     def _contains_unsafe_sql(self, query):
-        # Implementation of SQL injection detection
+        # SQL ထိုးထွင်းမှု စစ်ဆေးရေး အကောင်အထည်ဖော်မှု
         pass
         
     def _log_error(self, message, error):
-        # Implementation of error logging
+        # အမှားမှတ်တမ်းရေးရန် အကောင်အထည်ဖော်မှု
         pass
 ```
 
 #### 3. Parameter Validation
 
-Malformed သို့မဟုတ် malicious input များကို ကာကွယ်ရန် parameter များကို အမြဲတမ်း validate လုပ်ပါ။
+အမှား မြည်သော သို့မဟုတ် နစ်နာရောဂါသည့် input များ ရောက်ရှိရန် မဖြစ်စေရန် ပါရာမီတာများကို အမြဲ စစ်ဆေးပါ။
 
 ```javascript
-// JavaScript/TypeScript example with detailed parameter validation
+// JavaScript/TypeScript နမူနာ၊ အသေးစိတ်ပါးပါး ပါရာမီတာ စစ်ဆေးခြင်းနှင့်အတူ
 class FileOperationTool {
   getName() {
     return "fileOperation";
@@ -251,7 +244,7 @@ class FileOperationTool {
   }
   
   async execute(parameters) {
-    // 1. Validate parameter presence
+    // 1. ပါရာမီတာ တက်ရှိမှုကို စစ်ဆေးပါ
     if (!parameters.operation) {
       throw new ToolError("Missing required parameter: operation");
     }
@@ -260,7 +253,7 @@ class FileOperationTool {
       throw new ToolError("Missing required parameter: path");
     }
     
-    // 2. Validate parameter types
+    // 2. ပါရာမီတာ အမျိုးအစားများကို စစ်ဆေးပါ
     if (typeof parameters.operation !== "string") {
       throw new ToolError("Parameter 'operation' must be a string");
     }
@@ -269,45 +262,45 @@ class FileOperationTool {
       throw new ToolError("Parameter 'path' must be a string");
     }
     
-    // 3. Validate parameter values
+    // 3. ပါရာမီတာ တန်ဖိုးများကို စစ်ဆေးပါ
     const validOperations = ["read", "write", "delete"];
     if (!validOperations.includes(parameters.operation)) {
       throw new ToolError(`Invalid operation. Must be one of: ${validOperations.join(", ")}`);
     }
     
-    // 4. Validate content presence for write operation
+    // 4. ရေးသားမှု လုပ်ငန်းအတွက် အကြောင်းအရာတက်ရှိမှုကို စစ်ဆေးပါ
     if (parameters.operation === "write" && !parameters.content) {
       throw new ToolError("Content parameter is required for write operation");
     }
     
-    // 5. Path safety validation
+    // 5. လမ်းကြောင်းလုံခြုံမှု စစ်ဆေးမှု
     if (!this.isPathWithinAllowedDirectories(parameters.path)) {
       throw new ToolError("Access denied: path is outside of allowed directories");
     }
     
-    // Implementation based on validated parameters
+    // စစ်ဆေးပြီး ပါရာမီတာများအပေါ် မူတည်၍ အကောင်အထည်ဖော်ခြင်း
     // ...
   }
   
   isPathWithinAllowedDirectories(path) {
-    // Implementation of path safety check
+    // လမ်းကြောင်းလုံခြုံမှု စစ်ဆေးမှု အကောင်အထည်ဖော်ခြင်း
     // ...
   }
 }
 ```
 
-### လုံခြုံရေးဆိုင်ရာ အကောင်အထည်ဖော်မှုနမူနာများ
+### Security Implementation Examples
 
-#### 1. Authentication နှင့် Authorization
+#### 1. Authentication and Authorization
 
 ```java
-// Java example with authentication and authorization
+// အတည်ပြုခြင်းနှင့် ခွင့်ပြုချက်ပေးခြင်းပါဝင်သော Java နမူနာ
 public class SecureDataAccessTool implements Tool {
     private final AuthenticationService authService;
     private final AuthorizationService authzService;
     private final DataService dataService;
     
-    // Dependency injection
+    // မူပိုင်ခွင့်ထည့်သွင်းခြင်း
     public SecureDataAccessTool(
             AuthenticationService authService,
             AuthorizationService authzService,
@@ -324,10 +317,10 @@ public class SecureDataAccessTool implements Tool {
     
     @Override
     public ToolResponse execute(ToolRequest request) {
-        // 1. Extract authentication context
+        // ၁။ အတည်ပြုခြင်း အကြောင်းအရာကို ခွဲထုတ်ပါ
         String authToken = request.getContext().getAuthToken();
         
-        // 2. Authenticate user
+        // ၂။ အသုံးပြုသူကို အတည်ပြုပါ
         UserIdentity user;
         try {
             user = authService.validateToken(authToken);
@@ -335,7 +328,7 @@ public class SecureDataAccessTool implements Tool {
             return ToolResponse.error("Authentication failed: " + e.getMessage());
         }
         
-        // 3. Check authorization for the specific operation
+        // ၃။ သတ်မှတ်ထားသော လုပ်ငန်းစဉ်အတွက် ခွင့်ပြုချက်ကို စစ်ဆေးပါ
         String dataId = request.getParameters().get("dataId").getAsString();
         String operation = request.getParameters().get("operation").getAsString();
         
@@ -344,7 +337,7 @@ public class SecureDataAccessTool implements Tool {
             return ToolResponse.error("Access denied: Insufficient permissions for this operation");
         }
         
-        // 4. Proceed with authorized operation
+        // ၄။ ခွင့်ပြုထားသော လုပ်ငန်းစဉ်ဖြင့် ဆက်လက်လုပ်ဆောင်ပါ
         try {
             switch (operation) {
                 case "read":
@@ -440,30 +433,30 @@ public class RateLimitingMiddleware
 }
 ```
 
-## MCP Tool များအတွက် စမ်းသပ်မှုဆိုင်ရာ အကောင်းဆုံးအလေ့အကျင့်များ
+## Testing Best Practices
 
-### Unit Testing MCP Tools
+### 1. Unit Testing MCP Tools
 
-Tool များကို isolation အတွင်း စမ်းသပ်ပါ။ အပြင်ပေါ်မှ အခွင့်အာနိသင်များကို mock လုပ်ပါ-
+သင့်ကိရိယာများကို သီးခြားစမ်းသပ်ပြီး အပြင်Dependencies များကို မော်ကွန်းလုပ်ပါ-
 
 ```typescript
-// TypeScript example of a tool unit test
+// TypeScript နမူနာအဖြစ်ကိရိယာယူနစ်စမ်းသပ်မှု
 describe('WeatherForecastTool', () => {
   let tool: WeatherForecastTool;
   let mockWeatherService: jest.Mocked<IWeatherService>;
   
   beforeEach(() => {
-    // Create a mock weather service
+    // မိုက်ခ်ဖောက်လှမ်းရာ မိုးလေဝသဝန်ဆောင်မှု တစ်ခုဖန်တီးပါ
     mockWeatherService = {
       getForecasts: jest.fn()
     } as any;
     
-    // Create the tool with the mock dependency
+    // မိုက်ခ်မီဆ်ကြောင့် ကိရိယာကို ဖန်တီးပါ
     tool = new WeatherForecastTool(mockWeatherService);
   });
   
   it('should return weather forecast for a location', async () => {
-    // Arrange
+    // စီစဉ်သည်
     const mockForecast = {
       location: 'Seattle',
       forecasts: [
@@ -475,23 +468,23 @@ describe('WeatherForecastTool', () => {
     
     mockWeatherService.getForecasts.mockResolvedValue(mockForecast);
     
-    // Act
+    // လုပ်ဆောင်သည်
     const response = await tool.execute({
       location: 'Seattle',
       days: 3
     });
     
-    // Assert
+    // အတည်ပြုသည်
     expect(mockWeatherService.getForecasts).toHaveBeenCalledWith('Seattle', 3);
     expect(response.content[0].text).toContain('Seattle');
     expect(response.content[0].text).toContain('Sunny');
   });
   
   it('should handle errors from the weather service', async () => {
-    // Arrange
+    // စီစဉ်သည်
     mockWeatherService.getForecasts.mockRejectedValue(new Error('Service unavailable'));
     
-    // Act & Assert
+    // လုပ်ဆောင်ခြင်းနှင့် အတည်ပြုခြင်း
     await expect(tool.execute({
       location: 'Seattle',
       days: 3
@@ -500,48 +493,48 @@ describe('WeatherForecastTool', () => {
 });
 ```
 
-### Integration Testing
+### 2. Integration Testing
 
-Client request များမှ server response များအထိ အပြည့်အစုံ flow ကို စမ်းသပ်ပါ-
+Client တောင်းဆိုမှုများမှ ဆာဗာ တုံ့ပြန်မှုများသို့ အလုပ်လည်ပတ်မှု အားလုံးကို စမ်းသပ်ပါ-
 
 ```python
-# Python integration test example
+# Python ပေါင်းစည်းစမ်းသပ်မှု ဥပမာ
 @pytest.mark.asyncio
 async def test_mcp_server_integration():
-    # Start a test server
+    # စမ်းသပ်မှုဆာဗာကို စတင်ရန်
     server = McpServer()
     server.register_tool(WeatherForecastTool(MockWeatherService()))
     await server.start(port=5000)
     
     try:
-        # Create a client
+        # client တစ်ခု ဖန်တီးရန်
         client = McpClient("http://localhost:5000")
         
-        # Test tool discovery
+        # ကိရိယာရှာဖွေမှု စမ်းသပ်ရန်
         tools = await client.discover_tools()
         assert "weatherForecast" in [t.name for t in tools]
         
-        # Test tool execution
+        # ကိရိယာအလုပ်လုပ်မှု စမ်းသပ်ရန်
         response = await client.execute_tool("weatherForecast", {
             "location": "Seattle",
             "days": 3
         })
         
-        # Verify response
+        # တုံ့ပြန်မှုကို အတည်ပြုရန်
         assert response.status_code == 200
         assert "Seattle" in response.content[0].text
         assert len(json.loads(response.content[0].text)["forecasts"]) == 3
         
     finally:
-        # Clean up
+        # သန့်ရှင်းရေးလုပ်ရန်
         await server.stop()
 ```
 
-## စွမ်းဆောင်ရည်မြှင့်တင်ခြင်း
+## Performance Optimization
 
-### Caching Strategies
+### 1. Caching Strategies
 
-Latency နှင့် resource အသုံးပြုမှုကို လျှော့ချရန် သင့်တော်သော caching ကို အကောင်အထည်ဖော်ပါ-
+ကျယ်ပြန့်သည့် တုံ့ပြန်မှု အချိန် လျှော့ချပွားရန် နှင့် အရင်းအမြစ် အသုံးပြုမှု လျော့ချရန် သင့်တော်သော cache ကို အသုံးပြုပါ-
 
 ```csharp
 // C# example with caching
@@ -610,18 +603,18 @@ public class CachedWeatherTool : ITool
 }
 ```
 
-#### Dependency Injection နှင့် Testability
+#### 2. Dependency Injection and Testability
 
-Constructor injection ဖြင့် dependency များကို tool များသို့ ပေးသွင်းပါ။ Test လုပ်နိုင်ပြီး configure လုပ်နိုင်သော tool များကို ဒီဇိုင်းဆွဲပါ-
+ကိရိယာများကို constructor injection ဖြင့် အခြေခံနိုင်ရန် ဒီဇိုင်းဆွဲပြီး စမ်းသပ်ရန် နေရာရစေပါ-
 
 ```java
-// Java example with dependency injection
+// Dependency injection ကို အသုံးပြုသော Java ဥပမာ
 public class CurrencyConversionTool implements Tool {
     private final ExchangeRateService exchangeService;
     private final CacheService cacheService;
     private final Logger logger;
     
-    // Dependencies injected through constructor
+    // Constructor မှတဆင့် ကြိုးပမ်းချိတ်ဆက်မှုများ ထည့်သွင်းထားသည်
     public CurrencyConversionTool(
             ExchangeRateService exchangeService,
             CacheService cacheService,
@@ -631,51 +624,51 @@ public class CurrencyConversionTool implements Tool {
         this.logger = logger;
     }
     
-    // Tool implementation
+    // ကိရိယာ အကောင်အထည်ဖော်မှု
     // ...
 }
 ```
 
-#### Composable Tools
+#### 3. Composable Tools
 
-ပိုမိုရှုပ်ထွေးသော workflow များ ဖန်တီးရန် tool များကို ပေါင်းစပ်နိုင်သော ပုံစံဖြင့် ဒီဇိုင်းဆွဲပါ-
+ပိုပြီးရှုပ်ထွေးသော workflow များ ဖန်တီးနိုင်ရန် ကိရိယာများကို ပေါင်းစည်းအသုံးပြုနိုင်စေရန် ဒီဇိုင်းဆွဲပါ-
 
 ```python
-# Python example showing composable tools
+# Python ဥပမာ - ပေါင်းစပ်အသုံးပြုနိုင်သော ကိရိယာများ ပြသခြင်း
 class DataFetchTool(Tool):
     def get_name(self):
         return "dataFetch"
     
-    # Implementation...
+    # အကောင်အထည်ဖော်ခြင်း...
 
 class DataAnalysisTool(Tool):
     def get_name(self):
         return "dataAnalysis"
     
-    # This tool can use results from the dataFetch tool
+    # ဤကိရိယာသည် dataFetch ကိရိယာမှ ရလာဒ်များကိုအသုံးပြုနိုင်သည်
     async def execute_async(self, request):
-        # Implementation...
+        # အကောင်အထည်ဖော်ခြင်း...
         pass
 
 class DataVisualizationTool(Tool):
     def get_name(self):
         return "dataVisualize"
     
-    # This tool can use results from the dataAnalysis tool
+    # ဤကိရိယာသည် dataAnalysis ကိရိယာမှ ရလာဒ်များကိုအသုံးပြုနိုင်သည်
     async def execute_async(self, request):
-        # Implementation...
+        # အကောင်အထည်ဖော်ခြင်း...
         pass
 
-# These tools can be used independently or as part of a workflow
+# ဤကိရိယာများကို လွတ်လပ်စွာ သုံးနိုင်သလို workflow ၏ အစိတ်အပိုင်းအဖြစ်လည်း အသုံးပြုနိုင်သည်
 ```
 
-### Schema Design အကောင်းဆုံးအလေ့အကျင့်များ
+### Schema Design Best Practices
 
-Schema သည် model နှင့် tool အကြား contract ဖြစ်သည်။ Schema များကို ကောင်းစွာ ဒီဇိုင်းဆွဲခြင်းသည် tool usability ကို တိုးတက်စေပါသည်။
+Schema သည် မိုဒယ်နှင့် သင့်ကိရိယာတို့အကြား စာချုပ်တစ်ခုဖြစ်သည်။ အကောင်းဆုံး schema များသည် ကိရိယာ အသုံးပြုမှုကို ပိုမိုကောင်းမွန်စေပါသည်။
 
-#### 1. Parameter များကို ရှင်းလင်းစွာ ဖော်ပြခြင်း
+#### 1. Clear Parameter Descriptions
 
-Parameter တစ်ခုစီအတွက် ဖော်ပြချက်များကို အမြဲထည့်ပါ-
+ပါရာမီတာတိုင်းအတွက် ဖော်ပြချက် အပြည့်အစုံပါရှိစေရန်-
 
 ```csharp
 public object GetSchema()
@@ -714,7 +707,7 @@ public object GetSchema()
 
 #### 2. Validation Constraints
 
-Invalid input များကို ကာကွယ်ရန် validation constraints များကို ထည့်ပါ-
+မမှန်ကန်သော input များအားကာကွယ်နိုင်ရန် စစ်ဆေးမှု ကန့်သတ်ချက်များထည့်ပါ-
 
 ```java
 Map<String, Object> getSchema() {
@@ -723,20 +716,20 @@ Map<String, Object> getSchema() {
     
     Map<String, Object> properties = new HashMap<>();
     
-    // Email property with format validation
+    // ပုံစံစစ်ဆေးမှုဖြင့် အီးမေးလ် အင်္ဂါရပ်
     Map<String, Object> email = new HashMap<>();
     email.put("type", "string");
     email.put("format", "email");
     email.put("description", "User email address");
     
-    // Age property with numeric constraints
+    // နံပါတ် ကြောင့် အဓိပ္ပါယ်သတ်မှတ်ထားသော အသက် အင်္ဂါရပ်
     Map<String, Object> age = new HashMap<>();
     age.put("type", "integer");
     age.put("minimum", 13);
     age.put("maximum", 120);
     age.put("description", "User age in years");
     
-    // Enumerated property
+    // ရွေးချယ်ထားသော အင်္ဂါရပ်
     Map<String, Object> subscription = new HashMap<>();
     subscription.put("type", "string");
     subscription.put("enum", Arrays.asList("free", "basic", "premium"));
@@ -756,15 +749,15 @@ Map<String, Object> getSchema() {
 
 #### 3. Consistent Return Structures
 
-Response structure များကို တိကျမှုရှိစေရန် ထိန်းသိမ်းပါ-
+မိုဒယ်များ အတွက် ရလဒ် အသိအမှတ်ပြုရ အဆင်ပြေစေရန် ပြန်လည်ပေးပုံများကို တစဉ်တည်းထားပါ-
 
 ```python
 async def execute_async(self, request):
     try:
-        # Process request
+        # တောင်းဆိုမှုကို အလုပ်လုပ်ပါ
         results = await self._search_database(request.parameters["query"])
         
-        # Always return a consistent structure
+        # အမြဲတမ်း တူညီသော ဖွဲ့စည်းမှုကို ပြန်လည်ပေးပါ
         return ToolResponse(
             result={
                 "matches": [self._format_item(item) for item in results],
@@ -797,11 +790,11 @@ def _format_item(self, item):
 
 ### Error Handling
 
-MCP tool များ၏ ယုံကြည်စိတ်ချရမှုကို ထိန်းသိမ်းရန် error handling သည် အရေးကြီးပါသည်။
+MCP ကိရိယာများ အတွက် ယုံကြည်စိတ်ချရမှု ပြန်လည်ထူထောင်ရန် အမှားစနစ်တကျ ကောင်းမွန်စွာ ဖြေရှင်းရမည်။
 
 #### 1. Graceful Error Handling
 
-Error များကို သင့်တော်သောအဆင့်တွင် ကိုင်တွယ်ပြီး အကျိုးရှိသော message များကို ပေးပါ-
+အမှားများကို ပြဿနာလျော့ပါးစေရန် အသင့်တော်တဲ့ အဆင့်များတွင် ကိုင်တွယ်ပြီး သတိပေးစာများ ဖော်ပြပါ-
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -845,13 +838,13 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 
 #### 2. Structured Error Responses
 
-Structured error information ကို အခွင့်အာနိသင်ရှိသလောက် ပြန်ပေးပါ-
+အပြည့်အစုံ error မှတ်တမ်းများ ပြန်ပေးနိုင်ပါက သာမန် error message ထက်ပိုကောင်းသည်-
 
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
     try {
-        // Implementation
+        // အကောင်အထည်ဖော်ခြင်း
     } catch (Exception ex) {
         Map<String, Object> errorResult = new HashMap<>();
         
@@ -869,7 +862,7 @@ public ToolResponse execute(ToolRequest request) {
                 .build();
         }
         
-        // Re-throw other exceptions as ToolExecutionException
+        // အခြားသော exception များကို ToolExecutionException အဖြစ် ထပ်မံပစ်ပေးခြင်း
         throw new ToolExecutionException("Tool execution failed: " + ex.getMessage(), ex);
     }
 }
@@ -877,37 +870,37 @@ public ToolResponse execute(ToolRequest request) {
 
 #### 3. Retry Logic
 
-Transient failure များအတွက် သင့်တော်သော retry logic ကို အကောင်အထည်ဖော်ပါ-
+တစ်ခါခါဖြစ်နိုင်သော အတိုကြာပြန်လည်ပြင်ဆင်မှုများအတွက် retry logic ကို ထည့်သွင်းပါ-
 
 ```python
 async def execute_async(self, request):
     max_retries = 3
     retry_count = 0
-    base_delay = 1  # seconds
+    base_delay = 1  # စက္ကန့်များ
     
     while retry_count < max_retries:
         try:
-            # Call external API
+            # အပြင် API ကိုခေါ်ရန်
             return await self._call_api(request.parameters)
         except TransientError as e:
             retry_count += 1
             if retry_count >= max_retries:
                 raise ToolExecutionException(f"Operation failed after {max_retries} attempts: {str(e)}")
                 
-            # Exponential backoff
+            # အဆင့်တိုးနည်း ပြန်ကြိုးပမ်းမှု
             delay = base_delay * (2 ** (retry_count - 1))
             logging.warning(f"Transient error, retrying in {delay}s: {str(e)}")
             await asyncio.sleep(delay)
         except Exception as e:
-            # Non-transient error, don't retry
+            # သက်တမ်းမကုန်သော အမှား၊ ပြန်ကြိုးမပမ်းပါနဲ့
             raise ToolExecutionException(f"Operation failed: {str(e)}")
 ```
 
-### စွမ်းဆောင်ရည်မြှင့်တင်ခြင်း
+### Performance Optimization
 
 #### 1. Caching
 
-စျေးကြီးသော operation များအတွက် caching ကို အကောင်အထည်ဖော်ပါ-
+စျေးကြီးပြီး လုပ်ဆောင်ရခက်သော ဖောင်ရှင်များအတွက် cache ကို အသုံးပြုပါ-
 
 ```csharp
 public class CachedDataTool : IMcpTool
@@ -955,7 +948,7 @@ public class CachedDataTool : IMcpTool
 
 #### 2. Asynchronous Processing
 
-I/O-bound operation များအတွက် asynchronous programming pattern များကို အသုံးပြုပါ-
+I/O ခက်ခဲမှုရှိသောလုပ်ငန်းများအတွက် asynchronous programming နည်းလမ်းများ အသုံးပြုပါ-
 
 ```java
 public class AsyncDocumentProcessingTool implements Tool {
@@ -966,23 +959,23 @@ public class AsyncDocumentProcessingTool implements Tool {
     public ToolResponse execute(ToolRequest request) {
         String documentId = request.getParameters().get("documentId").asText();
         
-        // For long-running operations, return a processing ID immediately
+        // ရေရှည်တိုးနေသော လုပ်ဆောင်မှုများအတွက်၊ လုပ်ဆောင်မှု ID ကို ချက်ချင်းပြန်ပေးပါ
         String processId = UUID.randomUUID().toString();
         
-        // Start async processing
+        // အဆင့်မြှင့် async လုပ်ဆောင်မှုကို စတင်ပါ
         CompletableFuture.runAsync(() -> {
             try {
-                // Perform long-running operation
+                // ရေရှည်တိုးနေသော လုပ်ဆောင်မှုကို ဆောင်ရွက်ပါ
                 documentService.processDocument(documentId);
                 
-                // Update status (would typically be stored in a database)
+                // အခြေအနေကို အပ်ဒိတ်လုပ်ပါ (သာမန္အားဖြင့် ဒေတာဘေ့စ်ထဲတွင် သိမ်းဆည်းထားသည်)
                 processStatusRepository.updateStatus(processId, "completed");
             } catch (Exception ex) {
                 processStatusRepository.updateStatus(processId, "failed", ex.getMessage());
             }
         }, executorService);
         
-        // Return immediate response with process ID
+        // လုပ်ဆောင်မှု ID ဖြင့် ချက်ချင်းတုံ့ပြန်ချက် ပေးပါ
         Map<String, Object> result = new HashMap<>();
         result.put("processId", processId);
         result.put("status", "processing");
@@ -991,7 +984,7 @@ public class AsyncDocumentProcessingTool implements Tool {
         return new ToolResponse.Builder().setResult(result).build();
     }
     
-    // Companion status check tool
+    // မိတ်ဖက်အခြေအနေ စစ်ဆေးရေးကိရိယာ
     public class ProcessStatusTool implements Tool {
         @Override
         public ToolResponse execute(ToolRequest request) {
@@ -1006,33 +999,33 @@ public class AsyncDocumentProcessingTool implements Tool {
 
 #### 3. Resource Throttling
 
-Overload ဖြစ်ခြင်းကို ကာကွယ်ရန် resource throttling ကို အကောင်အထည်ဖော်ပါ-
+ပိုလွန်သော လုပ်ဆောင်မှုကြောင့် ဆာဗာ ပုံမှန်လုပ်ဆောင်မှု ထိခိုက်မှုမဖြစ်အောင် resource throttling ကို ဆောင်ရွက်ပါ-
 
 ```python
 class ThrottledApiTool(Tool):
     def __init__(self):
         self.rate_limiter = TokenBucketRateLimiter(
-            tokens_per_second=5,  # Allow 5 requests per second
-            bucket_size=10        # Allow bursts up to 10 requests
+            tokens_per_second=5,  # စက္ကန့်တိုင်း ၅ ခုတောင်းဆိုခွင့် ပြုသည်
+            bucket_size=10        # တောင်းဆိုမှု ၁၀ ခုအထိ တစ်ပြိုင်နက်တင်ခွင့်ပြုသည်
         )
     
     async def execute_async(self, request):
-        # Check if we can proceed or need to wait
+        # ဆက်လက်လုပ်ဆောင်နိုင်မလား သို့မဟုတ် စောင့်ဆိုင်းရမလား စစ်ဆေးပါ
         delay = self.rate_limiter.get_delay_time()
         
         if delay > 0:
-            if delay > 2.0:  # If wait is too long
+            if delay > 2.0:  # စောင့်ဆိုင်းချိန် ရှည်လွန်နေပါက
                 raise ToolExecutionException(
                     f"Rate limit exceeded. Please try again in {delay:.1f} seconds."
                 )
             else:
-                # Wait for the appropriate delay time
+                # သင့်တော်သော မှီကာချိန်အထိ စောင့်ဆိုင်းပါ
                 await asyncio.sleep(delay)
         
-        # Consume a token and proceed with the request
+        # တိုကင်တစ်ခု သုံးပြီး တောင်းဆိုမှု ဆက်လက်လုပ်ဆောင်ပါ
         self.rate_limiter.consume()
         
-        # Call API
+        # API ကို ခေါ်ယူပါ
         result = await self._call_api(request.parameters)
         return ToolResponse(result=result)
 
@@ -1050,7 +1043,7 @@ class TokenBucketRateLimiter:
             if self.tokens >= 1:
                 return 0
             
-            # Calculate time until next token available
+            # နောင်တစ်ကြိမ်တိုကင်ရရှိရန် ကျန်ချိန်ကို တွက်ချက်ပါ
             return (1 - self.tokens) / self.tokens_per_second
     
     async def consume(self):
@@ -1062,17 +1055,17 @@ class TokenBucketRateLimiter:
         now = time.time()
         elapsed = now - self.last_refill
         
-        # Add new tokens based on elapsed time
+        # ဖြတ်သန်းခဲ့သောအချိန်အရ နယူးတိုကင်များကို ထည့်သွင်းပါ
         new_tokens = elapsed * self.tokens_per_second
         self.tokens = min(self.bucket_size, self.tokens + new_tokens)
         self.last_refill = now
 ```
 
-### လုံခြုံရေးဆိုင်ရာ အကောင်းဆုံးအလေ့အကျင့်များ
+### Security Best Practices
 
 #### 1. Input Validation
 
-Input parameter များကို အမြဲတမ်း validate လုပ်ပါ-
+အချက်အလက်များကို သေချာစွာ စစ်ဆေးပါ-
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -1115,33 +1108,33 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 
 #### 2. Authorization Checks
 
-သင့်တော်သော authorization check များကို အကောင်အထည်ဖော်ပါ-
+မှန်ကန်သော ခွင့်ပြုချက် စစ်ဆေးမှုများပြုလုပ်ပါ-
 
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
-    // Get user context from request
+    // တောင်းဆိုမှုမှ အသုံးပြုသူစနစ်အခြေအနေကို ရယူပါ
     UserContext user = request.getContext().getUserContext();
     
-    // Check if user has required permissions
+    // အသုံးပြုသူတွင် လိုအပ်သော ခွင့်ပြုချက်များ ရှိမရှိ စစ်ဆေးပါ
     if (!authorizationService.hasPermission(user, "documents:read")) {
         throw new ToolExecutionException("User does not have permission to access documents");
     }
     
-    // For specific resources, check access to that resource
+    // သတ်မှတ်ထားသော အရင်းအမြစ်များအတွက်၊ ထိုအရင်းအမြစ်သို့ ဝင်ရောက်ခွင့်ရှိမရှိ စစ်ဆေးပါ
     String documentId = request.getParameters().get("documentId").asText();
     if (!documentService.canUserAccess(user.getId(), documentId)) {
         throw new ToolExecutionException("Access denied to the requested document");
     }
     
-    // Proceed with tool execution
+    // ကိရိယာ အကောင်အထည်ဖော်မှု ဆက်လက်လုပ်ဆောင်ပါ
     // ...
 }
 ```
 
 #### 3. Sensitive Data Handling
 
-Sensitive data ကို သတိထားစွာ ကိုင်တွယ်ပါ-
+အရေးကြီးသော ဒေတာများကို သေချာစွာ ကျောမွမ်းထိန်းသိမ်းပါ-
 
 ```python
 class SecureDataTool(Tool):
@@ -1159,46 +1152,46 @@ class SecureDataTool(Tool):
         user_id = request.parameters["userId"]
         include_sensitive = request.parameters.get("includeSensitiveData", False)
         
-        # Get user data
+        # အသုံးပြုသူဒေတာကိုရယူပါ
         user_data = await self.user_service.get_user_data(user_id)
         
-        # Filter sensitive fields unless explicitly requested AND authorized
+        # ထူးခြားစိတ်ဝင်စားဖွယ်အားလုံးကို တောင်းဆိုခြင်းနှင့် ခွင့်ပြုထားသည်မှသာ စစ်ထုတ်ပါ
         if not include_sensitive or not self._is_authorized_for_sensitive_data(request):
             user_data = self._redact_sensitive_fields(user_data)
         
         return ToolResponse(result=user_data)
     
     def _is_authorized_for_sensitive_data(self, request):
-        # Check authorization level in request context
+        # တောင်းဆိုမှုအခြေအနေတွင် ခွင့်ပြုမှုအဆင့်ကို စစ်ဆေးပါ
         auth_level = request.context.get("authorizationLevel")
         return auth_level == "admin"
     
     def _redact_sensitive_fields(self, user_data):
-        # Create a copy to avoid modifying the original
+        # မူရင်းကို ပြောင်းလဲခြင်းမှ ကာကွယ်ရန် မိတ္တူတစ်ခု ဖန်တီးပါ
         redacted = user_data.copy()
         
-        # Redact specific sensitive fields
+        # ထူးခြားစိတ်ဝင်စားဖွယ် အကြောင်းအရာများကို ဖျက်စီးပါ
         sensitive_fields = ["ssn", "creditCardNumber", "password"]
         for field in sensitive_fields:
             if field in redacted:
                 redacted[field] = "REDACTED"
         
-        # Redact nested sensitive data
+        # အတွင်းထဲရှိ ထူးခြားစိတ်ဝင်စားဖွယ် ဒေတာများကို ဖျက်စီးပါ
         if "financialInfo" in redacted:
             redacted["financialInfo"] = {"available": True, "accessRestricted": True}
         
         return redacted
 ```
 
-## MCP Tool များအတွက် စမ်းသပ်မှုဆိုင်ရာ အကောင်းဆုံးအလေ့အကျင့်များ
+## Testing Best Practices for MCP Tools
 
-စုံလင်သော စမ်းသပ်မှုသည် MCP tool များသည် မှန်ကန်စွာ လုပ်ဆောင်နိုင်မှု၊ edge case များ handle လုပ်နိုင်မှုနှင့် စနစ်၏ အခြားအစိတ်အပိုင်းများနှင့် ပေါင်းစည်းနိုင်မှုကို အာမခံပေးပါသည်။
+စုံလင်သော စမ်းသပ်မှုများက MCP tools များမှန်ကန်စွာ လုပ်ဆောင်နိုင်ခြင်း၊ အထွေထွေကိစ္စများကို ကိုင်တွယ်နိုင်ခြင်းနှင့် စနစ်နှင့် ပေါင်းစပ်မှု မှန်ကန်မှု အားလုံးကို သေချာစေပါသည်။
 
 ### Unit Testing
 
-#### 1. Tool တစ်ခုစီကို Isolation အတွင်း စမ်းသပ်ပါ
+#### 1. Test Each Tool in Isolation
 
-Tool တစ်ခုစီ၏ လုပ်ဆောင်နိုင်မှုအတွက် အထူးပြု စမ်းသပ်မှုများ ဖန်တီးပါ-
+ကိရိယာ တစ်ခုချင်းစီ၏ လုပ်ဆောင်ချက်များအတွက် အာရုံစိုက်စမ်းသပ်မှုများ ဖန်တီးပါ-
 
 ```csharp
 [Fact]
@@ -1260,25 +1253,25 @@ public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
 
 #### 2. Schema Validation Testing
 
-Schema များသည် သက်တမ်းရှိပြီး constraint များကို သေချာစွာ enforce လုပ်နိုင်မှုကို စမ်းသပ်ပါ-
+Schema များသည် မှန်ကန်ပြီး ကန့်သတ်ချက်များကို မှန်ကန်စွာ လုပ်ဆောင်နိုင်ရေး စမ်းသပ်ပါ-
 
 ```java
 @Test
 public void testSchemaValidation() {
-    // Create tool instance
+    // ကိရိယာအထွက်ကိုဖန်တီးပါ
     SearchTool searchTool = new SearchTool();
     
-    // Get schema
+    // စကီးမားကိုယူပါ
     Object schema = searchTool.getSchema();
     
-    // Convert schema to JSON for validation
+    // စကီးမားကိုအတည်ပြုရန် JSON အဖြစ်ပြောင်းပါ
     String schemaJson = objectMapper.writeValueAsString(schema);
     
-    // Validate schema is valid JSONSchema
+    // စကီးမားသည်တရားဝင် JSONSchema ဖြစ်ကြောင်းအတည်ပြုပါ
     JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
     JsonSchema jsonSchema = factory.getJsonSchema(schemaJson);
     
-    // Test valid parameters
+    // တရားဝင်ပါရာမီတာများကိုစမ်းသပ်ပါ
     JsonNode validParams = objectMapper.createObjectNode()
         .put("query", "test query")
         .put("limit", 5);
@@ -1286,14 +1279,14 @@ public void testSchemaValidation() {
     ProcessingReport validReport = jsonSchema.validate(validParams);
     assertTrue(validReport.isSuccess());
     
-    // Test missing required parameter
+    // လိုအပ်သောပါရာမီတာပျောက်ဆုံးနေမှုကိုစမ်းသပ်ပါ
     JsonNode missingRequired = objectMapper.createObjectNode()
         .put("limit", 5);
         
     ProcessingReport missingReport = jsonSchema.validate(missingRequired);
     assertFalse(missingReport.isSuccess());
     
-    // Test invalid parameter type
+    // အကြောင်းမဲ့ပါရာမီတာအမျိုးအစားကိုစမ်းသပ်ပါ
     JsonNode invalidType = objectMapper.createObjectNode()
         .put("query", "test")
         .put("limit", "not-a-number");
@@ -1305,19 +1298,19 @@ public void testSchemaValidation() {
 
 #### 3. Error Handling Tests
 
-Error condition များအတွက် အထူးပြု စမ်းသပ်မှုများ ဖန်တီးပါ-
+အမှား ဖြစ်ရာနေရာများအတွက် ပိုမိုသီးခြားစမ်းသပ်မှုများ ဖန်တီးပါ-
 
 ```python
 @pytest.mark.asyncio
 async def test_api_tool_handles_timeout():
-    # Arrange
-    tool = ApiTool(timeout=0.1)  # Very short timeout
+    # စီစဉ်ပါ
+    tool = ApiTool(timeout=0.1)  # အချိန်ကုန်သက်တမ်းအလွန်တိုတောင်းသည်
     
-    # Mock a request that will time out
+    # အချိန်ကုန်လွန်မည့် တောင်းဆိုမှုကို မော်ခ်လုပ်ပါ
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
-            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # Longer than timeout
+            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # အချိန်ကုန်သက်တမ်းထက် ကြာရှည်သည်
         )
         
         request = ToolRequest(
@@ -1325,19 +1318,19 @@ async def test_api_tool_handles_timeout():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Act & Assert
+        # လုပ်ဆောင်ပြီး သေချာစစ်ဆေးပါ
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Verify exception message
+        # exception မက်ဆေ့ကို စစ်ဆေးပါ
         assert "timed out" in str(exc_info.value).lower()
 
 @pytest.mark.asyncio
 async def test_api_tool_handles_rate_limiting():
-    # Arrange
+    # စီစဉ်ပါ
     tool = ApiTool()
     
-    # Mock a rate-limited response
+    # အမြန်နှုန်းကန့်သတ်ချက်ရှိသည့် တုံ့ပြန်မှုကို မော်ခ်လုပ်ပါ
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
@@ -1351,11 +1344,11 @@ async def test_api_tool_handles_rate_limiting():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Act & Assert
+        # လုပ်ဆောင်ပြီး သေချာစစ်ဆေးပါ
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Verify exception contains rate limit information
+        # exception တွင် အမြန်နှုန်းကန့်သတ်ချက်အချက်အလက်ပါဝင်ပါသည်ကို စစ်ဆေးပါ
         error_msg = str(exc_info.value).lower()
         assert "rate limit" in error_msg
         assert "try again" in error_msg
@@ -1365,7 +1358,7 @@ async def test_api_tool_handles_rate_limiting():
 
 #### 1. Tool Chain Testing
 
-Tool များကို မျှော်မှန်းထားသော ပေါင်းစပ်မှုများတွင် အတူတကွ လုပ်ဆောင်နိုင်မှုကို စမ်းသပ်ပါ-
+မျှော်မှန်းထားသည့် ပေါင်းစပ်ကို အသုံးပြုပြီး ကိရိယာများ ပူးပေါင်းလုပ်ဆောင်မှုများ ကို စမ်းသပ်ပါ-
 
 ```csharp
 [Fact]
@@ -1406,7 +1399,7 @@ public async Task DataProcessingWorkflow_CompletesSuccessfully()
 
 #### 2. MCP Server Testing
 
-Tool registration နှင့် execution အပြည့်အစုံဖြင့် MCP server ကို စမ်းသပ်ပါ-
+အပြည့်အစုံ ကိရိယာ မှတ်ပုံတင်ခြင်းနဲ့ လုပ်ဆောင်မှုအတွက် MCP ဆာဗာကို စမ်းသပ်ပါ-
 
 ```java
 @SpringBootTest
@@ -1421,7 +1414,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolDiscovery() throws Exception {
-        // Test the discovery endpoint
+        // ရှာဖွေရေးအဆုံးအဖြတ်ကို စမ်းသပ်ပါ
         mockMvc.perform(get("/mcp/tools"))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.tools").isArray())
@@ -1432,7 +1425,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolExecution() throws Exception {
-        // Create tool request
+        // ကိရိယာ တောင်းဆိုမှုအား ဖန်တီးပါ
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
@@ -1442,7 +1435,7 @@ public class McpServerIntegrationTest {
         parameters.put("b", 7);
         request.put("parameters", parameters);
         
-        // Send request and verify response
+        // တောင်းဆိုချက် ပို့ပြီး အဖြေကို အတည်ပြုပါ
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -1452,17 +1445,17 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolValidation() throws Exception {
-        // Create invalid tool request
+        // မှားယွင်းသော ကိရိယာ တောင်းဆိုမှု ဖန်တီးပါ
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("operation", "divide");
         parameters.put("a", 10);
-        // Missing parameter "b"
+        // "b" ပါရာမီတာ ပျောက်နေပါသည်
         request.put("parameters", parameters);
         
-        // Send request and verify error response
+        // တောင်းဆိုချက် ပို့ပြီး အမှား ဖြစ်ပေါ်မှုအဖြေကို အတည်ပြုပါ
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -1474,15 +1467,15 @@ public class McpServerIntegrationTest {
 
 #### 3. End-to-End Testing
 
-Model prompt မှ tool execution အထိ workflow အပြည့်အစုံကို စမ်းသပ်ပါ-
+မော်ဒယ် prompt မှ ကိရိယာ အကောင်အထည်ဖော်ခြင်းအထိ စီးရီးလုံး လုပ်ငန်းစဉ်များ စမ်းသပ်ပါ-
 
 ```python
 @pytest.mark.asyncio
 async def test_model_interaction_with_tool():
-    # Arrange - Set up MCP client and mock model
+    # စီစဉ်ခြင်း - MCP client နှင့် မော်ဒယ် မော်က့်များကို သတ်မှတ်ခြင်း
     mcp_client = McpClient(server_url="http://localhost:5000")
     
-    # Mock model responses
+    # မော်ဒယ် မော်က့်တုံ့ပြန်ချက်များ
     mock_model = MockLanguageModel([
         MockResponse(
             "What's the weather in Seattle?",
@@ -1497,7 +1490,7 @@ async def test_model_interaction_with_tool():
         )
     ])
     
-    # Mock weather tool response
+    # မိုးလေဝသကိရိယာ တုံ့ပြန်ချက် မော်က့်
     with aioresponses() as mocked:
         mocked.post(
             "http://localhost:5000/mcp/execute",
@@ -1513,14 +1506,14 @@ async def test_model_interaction_with_tool():
             }
         )
         
-        # Act
+        # အက်ဆက် (လုပ်ဆောင်ခြင်း)
         response = await mcp_client.send_prompt(
             "What's the weather in Seattle?",
             model=mock_model,
             allowed_tools=["weatherForecast"]
         )
         
-        # Assert
+        # အတည်ပြုခြင်း
         assert "Seattle" in response.generated_text
         assert "65" in response.generated_text
         assert "Sunny" in response.generated_text
@@ -1529,11 +1522,11 @@ async def test_model_interaction_with_tool():
         assert response.tool_calls[0].tool_name == "weatherForecast"
 ```
 
-### စွမ်းဆောင်ရည် စမ်းသပ်မှု
+### Performance Testing
 
 #### 1. Load Testing
 
-MCP server သည် ဘယ်လောက်အထိ concurrent request များကို handle လုပ်နိုင်သည်ကို စမ်းသပ်ပါ-
+MCP ဆာဗာမှ တစ်ပြိုင်နက် တောင်းဆိုချက်သုံးစွဲသူ အရေအတွက်ကို စမ်းသပ်ပါ-
 
 ```csharp
 [Fact]
@@ -1568,7 +1561,7 @@ public async Task McpServer_HandlesHighConcurrency()
 
 #### 2. Stress Testing
 
-Extreme load အောက်တွင် စနစ်၏ အပြုအမူကို စမ်းသပ်ပါ-
+စနစ်အား အလွန်အထူး ပန့်ပယ်မှု (load) အောက်တွင် စမ်းသပ်ပါ-
 
 ```java
 @Test
@@ -1577,13 +1570,13 @@ public void testServerUnderStress() {
     int rampUpTimeSeconds = 60;
     int testDurationSeconds = 300;
     
-    // Set up JMeter for stress testing
+    // စနစ်ဖိအားစမ်းသပ်မှုအတွက် JMeter ကို စတင်ပြင်ဆင်ပါ
     StandardJMeterEngine jmeter = new StandardJMeterEngine();
     
-    // Configure JMeter test plan
+    // JMeter စမ်းသပ်မှုအစီအစဉ်ကို ပြင်ဆင်ပါ
     HashTree testPlanTree = new HashTree();
     
-    // Create test plan, thread group, samplers, etc.
+    // စမ်းသပ်မှုအစီအစဉ်၊ thread group၊ samplers စသည်ဖြင့် ပြုလုပ်ပါ
     TestPlan testPlan = new TestPlan("MCP Server Stress Test");
     testPlanTree.add(testPlan);
     
@@ -1595,7 +1588,7 @@ public void testServerUnderStress() {
     
     testPlanTree.add(threadGroup);
     
-    // Add HTTP sampler for tool execution
+    // ကိရိယာရှိ HTTP sampler ကို ထည့်ပါ
     HTTPSampler toolExecutionSampler = new HTTPSampler();
     toolExecutionSampler.setDomain("localhost");
     toolExecutionSampler.setPort(5000);
@@ -1606,29 +1599,29 @@ public void testServerUnderStress() {
     
     threadGroup.add(toolExecutionSampler);
     
-    // Add listeners
+    // နားထောင်သူများထည့်ပါ
     SummaryReport summaryReport = new SummaryReport();
     threadGroup.add(summaryReport);
     
-    // Run test
+    // စမ်းသပ်မှုကို ဖြင့်ပါ
     jmeter.configure(testPlanTree);
     jmeter.run();
     
-    // Validate results
+    // ရလဒ်များကို စစ်ဆေးသေချာပါ
     assertEquals(0, summaryReport.getErrorCount());
-    assertTrue(summaryReport.getAverage() < 200); // Average response time < 200ms
+    assertTrue(summaryReport.getAverage() < 200); // ပျမ်းမျှတုံ့ပြန်မှုအချိန် < 200ms
     assertTrue(summaryReport.getPercentile(90.0) < 500); // 90th percentile < 500ms
 }
 ```
 
-#### 3. Monitoring နှင့် Profiling
+#### 3. Monitoring and Profiling
 
-ရေရှည် စွမ်းဆောင်ရည် analysis အတွက် monitoring ကို စနစ်တကျ ပြုလုပ်ပါ-
+ရှည်လျားမည့် စွမ်းဆောင်ရည် ခွဲခြမ်းစိတ်ဖြာမှုနှင့် စောင့်ကြည့်မှု အစီအစဉ်များ ချမှတ်ပါ-
 
 ```python
-# Configure monitoring for an MCP server
+# MCP ဆာဗာအတွက် မွန်နီတာလုပ်ရန် စီစဉ်ပါ
 def configure_monitoring(server):
-    # Set up Prometheus metrics
+    # Prometheus များအတွက် မက်ထရစ်များ သတ်မှတ်ပါ
     prometheus_metrics = {
         "request_count": Counter("mcp_requests_total", "Total MCP requests"),
         "request_latency": Histogram(
@@ -1654,10 +1647,10 @@ def configure_monitoring(server):
         )
     }
     
-    # Add middleware for timing and recording metrics
+    # အချိန်ကြာမြင့်မှုနှင့် မက်ထရစ်များ မှတ်တမ်းတင်ရန် middleware ထည့်ပါ
     server.add_middleware(PrometheusMiddleware(prometheus_metrics))
     
-    # Expose metrics endpoint
+    # မက်ထရစ်များ အဆုံးခန်းကို ဖော်ပြပါ
     @server.router.get("/metrics")
     async def metrics():
         return generate_latest()
@@ -1665,29 +1658,29 @@ def configure_monitoring(server):
     return server
 ```
 
-## MCP Workflow Design Pattern များ
+## MCP Workflow Design Patterns
 
-MCP workflow များကို ကောင်းစွာ ဒီဇိုင်းဆွဲခြင်းသည် ထိရောက်မှု၊ ယုံကြည်စိတ်ချရမှုနှင့် ထိန်းသိမ်းနိုင်မှုကို တိုးတက်စေပါသည်။ လိုက်နာရန် အရေးကြီးသော pattern များမှာ-
+အဆင်ပြေ၊ ယုံကြည်စိတ်ချရမှုရှိပြီး ထိန်းသိမ်းထိန်းချုပ်ရလွယ်သော MCP workflow များ ဖန်တီးရာတွင် အရေးပါသော patterns များအောက်တွင်ရှိသည်-
 
 ### 1. Chain of Tools Pattern
 
-Tool များကို အစဉ်လိုက်ချိတ်ဆက်ပြီး tool တစ်ခု၏ output ကို နောက်တစ်ခု၏ input အဖြစ် အသုံးပြုပါ-
+ကိရိယာအများအပြားကို တစ်စိတ်တစ်ပိုင်း စဉ်ဆက်တိုက် ချိတ်ဆက်ပါ၊ တစ်ခု၏ ထုတ်ကုန်သည် နောက်တစ်ခု၏ input ဖြစ်ပါစေ-
 
 ```python
-# Python Chain of Tools implementation
+# Python Chain of Tools တည်ဆောက်မှု
 class ChainWorkflow:
     def __init__(self, tools_chain):
-        self.tools_chain = tools_chain  # List of tool names to execute in sequence
+        self.tools_chain = tools_chain  # အဆက်လိုက် အလုပ်လုပ်ရန် ကိရိယာအမည်စာရင်း
     
     async def execute(self, mcp_client, initial_input):
         current_result = initial_input
         all_results = {"input": initial_input}
         
         for tool_name in self.tools_chain:
-            # Execute each tool in the chain, passing previous result
+            # စပ်ဆက်ထားသော ကိရိယာတိုင်းကို အလုပ်လုပ်စေပြီး ယခင်ရလဒ်ကို ပေးပို့ပါ
             response = await mcp_client.execute_tool(tool_name, current_result)
             
-            # Store result and use as input for next tool
+            # ရလဒ်ကို သိမ်းဆည်းပြီး နောက်ထပ်ကိရိယာအတွက် ထည့်သွင်းဖြစ်အောင် အသုံးပြုပါ
             all_results[tool_name] = response.result
             current_result = response.result
         
@@ -1696,7 +1689,7 @@ class ChainWorkflow:
             "all_results": all_results
         }
 
-# Example usage
+# ตัวอย่างการใช้งาน
 data_processing_chain = ChainWorkflow([
     "dataFetch",
     "dataCleaner",
@@ -1712,13 +1705,540 @@ result = await data_processing_chain.execute(
 
 ### 2. Dispatcher Pattern
 
-Input အပေါ်မူတည်၍ specialized tool များသို့ dispatch လုပ်သော central tool ကို အသုံးပြုပါ-
+ထိပ်တန်းကိရိယာတစ်ခု အသုံးပြုပြီး input တစ်ခုအပေါ် မူတည်ကာ အထူးပြု ကိရိယာများ သို့ ဖြန့်ဝေပါ-
 
-@@CODE_BLOCK_32
-3. **စွမ်းဆောင်ရည်အခြေခံများ**: စွမ်းဆောင်ရည်အခြေခံများကို ထိန်းသိမ်းထားပြီး ပြန်လည်ကျဆင်းမှုများကို ဖမ်းဆီးပါ။
-4. **လုံခြုံရေးစစ်ဆေးမှုများ**: Pipeline အတွင်းတွင် လုံခြုံရေးစစ်ဆေးမှုများကို အလိုအလျောက်လုပ်ဆောင်ပါ။
+```csharp
+public class ContentDispatcherTool : IMcpTool
+{
+    private readonly IMcpClient _mcpClient;
+    
+    public ContentDispatcherTool(IMcpClient mcpClient)
+    {
+        _mcpClient = mcpClient;
+    }
+    
+    public string Name => "contentProcessor";
+    public string Description => "Processes content of various types";
+    
+    public object GetSchema()
+    {
+        return new {
+            type = "object",
+            properties = new {
+                content = new { type = "string" },
+                contentType = new { 
+                    type = "string",
+                    enum = new[] { "text", "html", "markdown", "csv", "code" }
+                },
+                operation = new { 
+                    type = "string",
+                    enum = new[] { "summarize", "analyze", "extract", "convert" }
+                }
+            },
+            required = new[] { "content", "contentType", "operation" }
+        };
+    }
+    
+    public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
+    {
+        var content = request.Parameters.GetProperty("content").GetString();
+        var contentType = request.Parameters.GetProperty("contentType").GetString();
+        var operation = request.Parameters.GetProperty("operation").GetString();
+        
+        // Determine which specialized tool to use
+        string targetTool = DetermineTargetTool(contentType, operation);
+        
+        // Forward to the specialized tool
+        var specializedResponse = await _mcpClient.ExecuteToolAsync(
+            targetTool,
+            new { content, options = GetOptionsForTool(targetTool, operation) }
+        );
+        
+        return new ToolResponse { Result = specializedResponse.Result };
+    }
+    
+    private string DetermineTargetTool(string contentType, string operation)
+    {
+        return (contentType, operation) switch
+        {
+            ("text", "summarize") => "textSummarizer",
+            ("text", "analyze") => "textAnalyzer",
+            ("html", _) => "htmlProcessor",
+            ("markdown", _) => "markdownProcessor",
+            ("csv", _) => "csvProcessor",
+            ("code", _) => "codeAnalyzer",
+            _ => throw new ToolExecutionException($"No tool available for {contentType}/{operation}")
+        };
+    }
+    
+    private object GetOptionsForTool(string toolName, string operation)
+    {
+        // Return appropriate options for each specialized tool
+        return toolName switch
+        {
+            "textSummarizer" => new { length = "medium" },
+            "htmlProcessor" => new { cleanUp = true, operation },
+            // Options for other tools...
+            _ => new { }
+        };
+    }
+}
+```
 
-### CI Pipeline (GitHub Actions) အတွက် နမူနာ
+### 3. Parallel Processing Pattern
+
+ထိရောက်မှုအတွက် ကိရိယာများ ကို တပြိုင်နက်မှာ လုပ်ဆောင်ပါ-
+
+```java
+public class ParallelDataProcessingWorkflow {
+    private final McpClient mcpClient;
+    
+    public ParallelDataProcessingWorkflow(McpClient mcpClient) {
+        this.mcpClient = mcpClient;
+    }
+    
+    public WorkflowResult execute(String datasetId) {
+        // အဆင့် ၁: ဒေတာစုစည်းမှု မိုက်တက်ဒေတာကို ယူပါ (အစဉ်အလာအတိုင်း)
+        ToolResponse metadataResponse = mcpClient.executeTool("datasetMetadata", 
+            Map.of("datasetId", datasetId));
+        
+        // အဆင့် ၂: သွင်ပြင်ဆင်ခြင်းများကို 병렬ဖြင့် စတင်ပြုလုပ်ပါ
+        CompletableFuture<ToolResponse> statisticalAnalysis = CompletableFuture.supplyAsync(() ->
+            mcpClient.executeTool("statisticalAnalysis", Map.of(
+                "datasetId", datasetId,
+                "type", "comprehensive"
+            ))
+        );
+        
+        CompletableFuture<ToolResponse> correlationAnalysis = CompletableFuture.supplyAsync(() ->
+            mcpClient.executeTool("correlationAnalysis", Map.of(
+                "datasetId", datasetId,
+                "method", "pearson"
+            ))
+        );
+        
+        CompletableFuture<ToolResponse> outlierDetection = CompletableFuture.supplyAsync(() ->
+            mcpClient.executeTool("outlierDetection", Map.of(
+                "datasetId", datasetId,
+                "sensitivity", "medium"
+            ))
+        );
+        
+        // 병렬လုပ်ငန်းအားလုံးပြီးဆုံးသည်အထိ စောင့်ဆိုင်းပါ
+        CompletableFuture<Void> allAnalyses = CompletableFuture.allOf(
+            statisticalAnalysis, correlationAnalysis, outlierDetection
+        );
+        
+        allAnalyses.join();  // ပြီးဆုံးမှုအထိ စောင့်ဆိုင်းပါ
+        
+        // အဆင့် ၃: ရလဒ်များ ပေါင်းစပ်ပါ
+        Map<String, Object> combinedResults = new HashMap<>();
+        combinedResults.put("metadata", metadataResponse.getResult());
+        combinedResults.put("statistics", statisticalAnalysis.join().getResult());
+        combinedResults.put("correlations", correlationAnalysis.join().getResult());
+        combinedResults.put("outliers", outlierDetection.join().getResult());
+        
+        // အဆင့် ၄: အကျဉ်းချုပ်အစီရင်ခံစာ ထုတ်လုပ်ပါ
+        ToolResponse summaryResponse = mcpClient.executeTool("reportGenerator", 
+            Map.of("analysisResults", combinedResults));
+        
+        // အပြည့်အစုံ လုပ်ငန်းစဉ်ရလဒ်ကို ပြန်လည်ပေးပါ
+        WorkflowResult result = new WorkflowResult();
+        result.setDatasetId(datasetId);
+        result.setAnalysisResults(combinedResults);
+        result.setSummaryReport(summaryResponse.getResult());
+        
+        return result;
+    }
+}
+```
+
+### 4. Error Recovery Pattern
+
+ကိရိယာများ ပျက်စီးမှုဖြစ်ပါက ကြယ်ပွင့် ယူပေးခြင်းဖြင့် ပြန်လည်ကောင်းမွန်စေပါ-
+
+```python
+class ResilientWorkflow:
+    def __init__(self, mcp_client):
+        self.client = mcp_client
+    
+    async def execute_with_fallback(self, primary_tool, fallback_tool, parameters):
+        try:
+            # ပထမဆုံး အဓိကကိရိယာကို စမ်းကြည့်ပါ
+            response = await self.client.execute_tool(primary_tool, parameters)
+            return {
+                "result": response.result,
+                "source": "primary",
+                "tool": primary_tool
+            }
+        except ToolExecutionException as e:
+            # အချက်အလက္ ပြတ်တင်းမှုကို မှတ်တမ်းတင်ပါ
+            logging.warning(f"Primary tool '{primary_tool}' failed: {str(e)}")
+            
+            # ဒုတိယ ကိရိယာသို့ ပြန်လည်ရောက်ပါ
+            try:
+                # ပြန်လည်အသုံးပြုမည့် ကိရိယာအတွက် အချက်အလက်များကို ပြောင်းလဲရန် လိုအပ်နိုင်သည်
+                fallback_params = self._adapt_parameters(parameters, primary_tool, fallback_tool)
+                
+                response = await self.client.execute_tool(fallback_tool, fallback_params)
+                return {
+                    "result": response.result,
+                    "source": "fallback",
+                    "tool": fallback_tool,
+                    "primaryError": str(e)
+                }
+            except ToolExecutionException as fallback_error:
+                # ကိရိယာ နှစ်ခုလုံး မအောင်မြင်ပါ
+                logging.error(f"Both primary and fallback tools failed. Fallback error: {str(fallback_error)}")
+                raise WorkflowExecutionException(
+                    f"Workflow failed: primary error: {str(e)}; fallback error: {str(fallback_error)}"
+                )
+    
+    def _adapt_parameters(self, params, from_tool, to_tool):
+        """Adapt parameters between different tools if needed"""
+        # ဒီအကောင်အထည်ဖော်မှုသည် အထူးသီး သန့် ကိရိယာများပေါ် မူတည်နိုင်သည်
+        # ဤနမူနာတွင် အစစ်အမှန် ပါရာမီတာများကို ပြန်လည်ပေးပို့မည် ဖြစ်သည်
+        return params
+
+# ဥပမာ အသုံးပြုမှု
+async def get_weather(workflow, location):
+    return await workflow.execute_with_fallback(
+        "premiumWeatherService",  # ပထမ (ကြေးရှိသော) ရာသီဥတု API
+        "basicWeatherService",    # ပြန်လည်အသုံးပြုမှု (အခမဲ့) ရာသီဥတု API
+        {"location": location}
+    )
+```
+
+### 5. Workflow Composition Pattern
+
+ရိုးရိုးလမ်းကြောင်း များကို ပေါင်းစပ်ခြင်းဖြင့် နောက်ဆုံးရလဒ် မှန်ကန်သော ရှုပ်ထွေးသော workflows ဖန်တီးပါ-
+
+```csharp
+public class CompositeWorkflow : IWorkflow
+{
+    private readonly List<IWorkflow> _workflows;
+    
+    public CompositeWorkflow(IEnumerable<IWorkflow> workflows)
+    {
+        _workflows = new List<IWorkflow>(workflows);
+    }
+    
+    public async Task<WorkflowResult> ExecuteAsync(WorkflowContext context)
+    {
+        var results = new Dictionary<string, object>();
+        
+        foreach (var workflow in _workflows)
+        {
+            var workflowResult = await workflow.ExecuteAsync(context);
+            
+            // Store each workflow's result
+            results[workflow.Name] = workflowResult;
+            
+            // Update context with the result for the next workflow
+            context = context.WithResult(workflow.Name, workflowResult);
+        }
+        
+        return new WorkflowResult(results);
+    }
+    
+    public string Name => "CompositeWorkflow";
+    public string Description => "Executes multiple workflows in sequence";
+}
+
+// Example usage
+var documentWorkflow = new CompositeWorkflow(new IWorkflow[] {
+    new DocumentFetchWorkflow(),
+    new DocumentProcessingWorkflow(),
+    new InsightGenerationWorkflow(),
+    new ReportGenerationWorkflow()
+});
+
+var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
+    Parameters = new { documentId = "12345" }
+});
+```
+
+# Testing MCP Servers: Best Practices and Top Tips
+
+## Overview
+
+စစ်ဆေးမှုသည် ယုံကြည်စိတ်ချရပြီး အရည်အသွေးမြင့် MCP ဆာဗာများ ဖွံ့ဖြိုးတိုးတက်မှု အတွက် အရေးကြီးသော အစိတ်အပိုင်းဖြစ်သည်။ ဤ လမ်းညွှန်မှာ unit test မှ စတင်၍ integration test နှင့် end-to-end စစ်ဆေးမှုများ အထိ MCP ဆာဗာ စမ်းသပ်မှုအတွက် စုံလင်သော အကောင်းဆုံးနည်းလမ်းများနှင့် အတော်အသင့် အကြံပြုချက်များ ပါဝင်သည်။
+
+## Why Testing Matters for MCP Servers
+
+MCP ဆာဗာများသည် AI model များနှင့် client application များအကြား အရေးပါသော middleware အဖြစ် တာဝန်ယူသည်။ သေချာစွာ စမ်းသပ်ခြင်းဖြင့်-
+
+- production နေရာများ၌ ယုံကြည်မှုရှိမှု
+- တောင်းဆိုမှု နှင့် တုံ့ပြန်မှု များကို မှန်ကန် ကျင့်သုံးမှု
+- MCP specification များ အတိုင်း အကောင်အထည်ဖော်မှုမှန်ကန်မှု
+- မှားယွင်းမှု နှင့် အထူးကိစ္စများမှ လွတ်မြောက်နိုင်မှု
+- ဖောက်ခွဲခြင်းဆိုင်ရာ စွမ်းဆောင်ရည် တည်ငြိမ်မှု
+
+တို့ကို အာမခံပေးသည်။
+
+## Unit Testing for MCP Servers
+
+### Unit Testing (Foundation)
+
+Unit test များအား တစ်စိတ်တစ်ပိုင်း အလိုအလျောက် MCP ဆာဗာ အစိတ်အပိုင်းများကို လေ့လာစစ်ဆေးရန် အသုံးပြုသည်။
+
+#### What to Test
+
+1. **Resource Handlers**: တစ်ခုချင်း resource handler လုပ်ငန်းစဉ်များကို သီးခြား စမ်းသပ်ပါ
+2. **Tool Implementations**: ကိရိယာလုပ်ဆောင်ချက်များကို input များစုံစမ်းပီး စစ်ဆေးပါ
+3. **Prompt Templates**: prompt template များသည် မှန်ကန်စွာ ဖော်ပြထားချက်ရှိမှု
+4. **Schema Validation**: ပါရာမီတာ စစ်ဆေးမှုသိပ္ပံကို စစ်ဆေးပါ
+5. **Error Handling**: input မှားယွင်းမှုများအတွက် မှားယွင်းချက် ပြန်ကြားမှု ပြည့်စုံမှု
+
+#### Best Practices for Unit Testing
+
+```csharp
+// Example unit test for a calculator tool in C#
+[Fact]
+public async Task CalculatorTool_Add_ReturnsCorrectSum()
+{
+    // Arrange
+    var calculator = new CalculatorTool();
+    var parameters = new Dictionary<string, object>
+    {
+        ["operation"] = "add",
+        ["a"] = 5,
+        ["b"] = 7
+    };
+    
+    // Act
+    var response = await calculator.ExecuteAsync(parameters);
+    var result = JsonSerializer.Deserialize<CalculationResult>(response.Content[0].ToString());
+    
+    // Assert
+    Assert.Equal(12, result.Value);
+}
+```
+
+```python
+# Python တွင် ကိန်းဂဏန်းတွက်စက်ကိရိယာအတွက် ဥပမာယူနစ်စမ်းသပ်မှု
+def test_calculator_tool_add():
+    # စီစဉ်မည်
+    calculator = CalculatorTool()
+    parameters = {
+        "operation": "add",
+        "a": 5,
+        "b": 7
+    }
+    
+    # လုပ်ဆောင်မည်
+    response = calculator.execute(parameters)
+    result = json.loads(response.content[0].text)
+    
+    # သေချာစစ်ဆေးမည်
+    assert result["value"] == 12
+```
+
+### Integration Testing (Middle Layer)
+
+Integration test များသည် MCP ဆာဗာတွင်း မျိုးစုံ အစိတ်အပိုင်းများ ဆက်စပ်မှုကို စမ်းသပ်သည်။
+
+#### What to Test
+
+1. **Server Initialization**: အမျိုးမျိုးသော ပုံစံများဖြင့် ဆာဗာစတင်မှု စမ်းသပ်ပါ
+2. **Route Registration**: endpoints အားလုံးအမှန်တည်နေမှု စစ်ဆေးပါ
+3. **Request Processing**: တောင်းဆိုမှု- တုံ့ပြန်မှု လည်ပတ်မှု စုစုပေါင်း စမ်းသပ်ပါ
+4. **Error Propagation**: အမှားများကို component များအတွင်းမှ ပြန်လည်ဆက်သွယ်မှု စစ်ဆေးပါ
+5. **Authentication & Authorization**: လုံခြုံရေး စနစ်များ စမ်းသပ်ပါ
+
+#### Best Practices for Integration Testing
+
+```csharp
+// Example integration test for MCP server in C#
+[Fact]
+public async Task Server_ProcessToolRequest_ReturnsValidResponse()
+{
+    // Arrange
+    var server = new McpServer();
+    server.RegisterTool(new CalculatorTool());
+    await server.StartAsync();
+    
+    var request = new McpRequest
+    {
+        Tool = "calculator",
+        Parameters = new Dictionary<string, object>
+        {
+            ["operation"] = "multiply",
+            ["a"] = 6,
+            ["b"] = 7
+        }
+    };
+    
+    // Act
+    var response = await server.ProcessRequestAsync(request);
+    
+    // Assert
+    Assert.NotNull(response);
+    Assert.Equal(McpStatusCodes.Success, response.StatusCode);
+    // Additional assertions for response content
+    
+    // Cleanup
+    await server.StopAsync();
+}
+```
+
+### End-to-End Testing (Top Layer)
+
+End-to-end test များသည် client မှ ဆာဗာအထိ စနစ်တစ်ခုလုံး၏ အပြုအမူကို စစ်ဆေးသည်။
+
+#### What to Test
+
+1. **Client-Server Communication**: တောင်းဆိုမှု-တုံ့ပြန်မှု စနစ်တွဲလုံး စမ်းသပ်ပါ
+2. **Real Client SDKs**: အမှန်တကယ် client အသုံးပြုမှု စမ်းသပ်ပါ
+3. **Performance Under Load**: မျိုးစုံ တောင်းဆိုမှုများ ရောက်ရှိစဉ် စွမ်းဆောင်ရည်စစ်ဆေးမှု
+4. **Error Recovery**: ပြဿနာမဖြစ်နေသော အခြေအနေကို ပြန်လည်ဖော်ထုတ်ခြင်း စမ်းသပ်ပါ
+5. **Long-Running Operations**: streaming နှင့် ကြာရှည်သော လုပ်ငန်းစဉ်ကို စစ်ဆေးပါ
+
+#### Best Practices for E2E Testing
+
+```typescript
+// TypeScript ဖြင့် client တစ်ခုနှင့် ဥပမာ E2E စမ်းသပ်ချက်
+describe('MCP Server E2E Tests', () => {
+  let client: McpClient;
+  
+  beforeAll(async () => {
+    // စမ်းသပ်မှုပတ်ဝန်းကျင်တွင် server ကို စတင်ပါ
+    await startTestServer();
+    client = new McpClient('http://localhost:5000');
+  });
+  
+  afterAll(async () => {
+    await stopTestServer();
+  });
+  
+  test('Client can invoke calculator tool and get correct result', async () => {
+    // လုပ်ဆောင်ပါ
+    const response = await client.invokeToolAsync('calculator', {
+      operation: 'divide',
+      a: 20,
+      b: 4
+    });
+    
+    // အတည်ပြုချက်ပေးပါ
+    expect(response.statusCode).toBe(200);
+    expect(response.content[0].text).toContain('5');
+  });
+});
+```
+
+## Mocking Strategies for MCP Testing
+
+Mocking သည် စမ်းသပ်မှုအတွင်း component များကို သီးခြားထားပြီး စမ်းသပ်ရာ အသုံးပြုသည်။
+
+### Components to Mock
+
+1. **External AI Models**: predictable စမ်းသပ်မှုအတွက် model response များကို mock လုပ်ပါ
+2. **External Services**: APIs, database နှင့် အခြား service များကို mock လုပ်ပါ
+3. **Authentication Services**: ကိုယ်ပိုင်သွားလာမှုအတွက် ကွန်တိန်နာများ mock လုပ်ပါ
+4. **Resource Providers**: စရိတ်ကြီး resource handler များကို mock လုပ်ပါ
+
+### Example: Mocking an AI Model Response
+
+```csharp
+// C# example with Moq
+var mockModel = new Mock<ILanguageModel>();
+mockModel
+    .Setup(m => m.GenerateResponseAsync(
+        It.IsAny<string>(),
+        It.IsAny<McpRequestContext>()))
+    .ReturnsAsync(new ModelResponse { 
+        Text = "Mocked model response",
+        FinishReason = FinishReason.Completed
+    });
+
+var server = new McpServer(modelClient: mockModel.Object);
+```
+
+```python
+# unittest.mock ဖြင့် Python ဥပမာ
+@patch('mcp_server.models.OpenAIModel')
+def test_with_mock_model(mock_model):
+    # mock ကို ဆက်တင်ပြုလုပ်ရန်
+    mock_model.return_value.generate_response.return_value = {
+        "text": "Mocked model response",
+        "finish_reason": "completed"
+    }
+    
+    # စမ်းသပ်မှုတွင် mock ကို အသုံးပြုရန်
+    server = McpServer(model_client=mock_model)
+    # စမ်းသပ်မှုကို ဆက်လက်ဆောင်ရွက်ရန်
+```
+
+## Performance Testing
+
+Performance testing သည် MCP ဆာဗာများအတွက် မအရေးမကြီးနိုင်သော အချက်ဖြစ်သည်။
+
+### What to Measure
+
+1. **Latency**: တုံ့ပြန်ချိန်
+2. **Throughput**: တစ်စက္ကန့်လျှင် ထိန်းသိမ်းနိုင်သော တောင်းဆိုမှု ပမာဏ
+3. **Resource Utilization**: CPU, စွမ်းအား မှတ်ဉာဏ် နှင့် ကွန်ယက်အသုံးပြုမှု
+4. **Concurrency Handling**: တပြိုင်နက်တောင်းဆိုမှုများ gain ဖြစ်နိုင်မှု စမ်းသပ်
+5. **Scaling Characteristics**: Load တိုးလာသည်နှင့်အမျှ စွမ်းဆောင်ရည်
+
+### Tools for Performance Testing
+
+- **k6**: လွတ်လပ်သော load testing tool
+- **JMeter**: စုံလင်မှုရှိသည့် performance test tool
+- **Locust**: Python အခြေခံ load testing
+- **Azure Load Testing**: Cloud based performance test
+
+### Example: Basic Load Test with k6
+
+```javascript
+// MCP ဆာဗာအတွက် k6 စမ်းသပ်မှု စာရွက်
+import http from 'k6/http';
+import { check, sleep } from 'k6';
+
+export const options = {
+  vus: 10,  // ၁၀ ဗာချျဝယ်အသုံးပြုသူများ
+  duration: '30s',
+};
+
+export default function () {
+  const payload = JSON.stringify({
+    tool: 'calculator',
+    parameters: {
+      operation: 'add',
+      a: Math.floor(Math.random() * 100),
+      b: Math.floor(Math.random() * 100)
+    }
+  });
+
+  const params = {
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer test-token'
+    },
+  };
+
+  const res = http.post('http://localhost:5000/api/tools/invoke', payload, params);
+  
+  check(res, {
+    'status is 200': (r) => r.status === 200,
+    'response time < 500ms': (r) => r.timings.duration < 500,
+  });
+  
+  sleep(1);
+}
+```
+
+## Test Automation for MCP Servers
+
+စမ်းသပ်မှုများကို အလိုအလျှောက်လုပ်ခြင်းဖြင့် အရည်အသွေး မပြောင်းလဲဘဲ အမြန် feedback လည်ပတ်မှုကို ရရှိစေပါသည်။
+
+### CI/CD Integration
+1. **Pull Requests များတွင် Unit စမ်းသပ်မှုများ လုပ်ဆောင်ရန်**: ကုဒ်ပြင်ဆင်မှုများသည် ယေဘူယျလုပ်ဆောင်မှုများ မပျက်စီးစေစေနိုင်ရန် သေချာစေရန်
+2. **Staging တွင် Integration စမ်းသပ်မှုများ**: အသုံးပြုမှုမတိုင်မီ ပတ်ဝန်းကျင်များတွင် Integration စမ်းသပ်မှုများ လုပ်ဆောင်ရန်
+3. **လုပ်ဆောင်မှု ဒီဂရီများ ထိန်းသိမ်းခြင်း**: နောက်ပြန်ဘေးနှိုးမှုများ ဖော်ထုတ်ရန် လုပ်ဆောင်မှု များကို တည်ငြိမ်စွာ ထိန်းသိမ်းရန်
+4. **စောင့်ကြပ်ရေး စစ်ဆေးမှုများ**: pipeline ၏ အစိတ်အပိုင်းတစ်ခုအဖြစ် လုံခြုံရေး စစ်ဆေးမှုများကို အလိုအလျောက် စနစ်တကျ လုပ်ဆောင်ရန်
+
+### သက်သေ CI Pipeline (GitHub Actions)
 
 ```yaml
 name: MCP Server Tests
@@ -1757,19 +2277,19 @@ jobs:
       run: dotnet run --project tests/PerformanceTests/PerformanceTests.csproj
 ```
 
-## MCP Specification နှင့်အညီ စစ်ဆေးခြင်း
+## MCP စနစ်သတ်မှတ်ချက်နှင့် ကိုက်ညီမှု စစ်ဆေးခြင်း
 
-သင့် server သည် MCP specification ကို မှန်ကန်စွာ အကောင်အထည်ဖော်ထားသည်ကို အတည်ပြုပါ။
+သင်၏ server သည် MCP စနစ်သတ်မှတ်ချက်ကို မှန်ကန်စွာ ဆောင်ရွက်နေကြောင်း အတည်ပြုပါ။
 
-### အဓိကလိုက်နာရမည့်အပိုင်းများ
+### အဓိက ကိုက်ညီမှု ဘာသာရပ်များ
 
-1. **API Endpoints**: လိုအပ်သော endpoints (/resources, /tools, စသည်) ကို စစ်ဆေးပါ။
-2. **Request/Response Format**: Schema ကို မှန်ကန်စွာ လိုက်နာမှုကို အတည်ပြုပါ။
-3. **Error Codes**: အခြေအနေအမျိုးမျိုးအတွက် မှန်ကန်သော status codes ကို စစ်ဆေးပါ။
-4. **Content Types**: အမျိုးမျိုးသော content types ကို ကိုင်တွယ်နိုင်မှုကို စစ်ဆေးပါ။
-5. **Authentication Flow**: Specification နှင့်အညီ authentication mechanism များကို စစ်ဆေးပါ။
+1. **API အဆုံးအနောက်များ**: လိုအပ်သော အဆုံးအနောက်များ (/resources, /tools, စသည်) ကို စမ်းသပ်ပါ
+2. **တောင်းဆိုမှု/တုံ့ပြန်မှု ဖော်မတ်**: schema ကို ကိုက်ညီမှုအတိုင်း စစ်ဆေးပါ
+3. **အမှားကုဒ်များ**: အခြေအနေ မျိုးစုံအတွက် မှန်ကန်သော အခြေအနေကုဒ်များကို အတည်ပြုပါ
+4. **အကြောင်းအရာ အမျိုးအစားများ**: အမျိုးမျိုးသော အကြောင်းအရာအမျိုးအစားများကို ကိုင်တွယ်မှု စမ်းသပ်ပါ
+5. **အတည်ပြုခြင်း စနစ်**: စနစ်သတ်မှတ်ချက်နှင့် ကိုက်ညီသော authentication မက်ခန်းနစ်များကို အတည်ပြုပါ
 
-### Compliance Test Suite
+### ကိုက်ညီမှု စမ်းသပ်မှု စုံလင်မှု
 
 ```csharp
 [Fact]
@@ -1796,62 +2316,65 @@ public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
 }
 ```
 
-## MCP Server စစ်ဆေးမှုအတွက် ထိရောက်သော အကြံဉာဏ် ၁၀ ခု
+## MCP Server စမ်းသပ်မှု အောင်မြင်ရန် ထိပ်တန်း ၁၀ ချက်
 
-1. **Tool Definitions ကို သီးခြားစစ်ဆေးပါ**: Schema definitions ကို tool logic မှ သီးခြားစစ်ဆေးပါ။
-2. **Parameterized Tests ကို အသုံးပြုပါ**: Edge cases အပါအဝင် input များစွာဖြင့် tools များကို စစ်ဆေးပါ။
-3. **Error Responses ကို စစ်ဆေးပါ**: Error conditions အားလုံးအတွက် မှန်ကန်သော error handling ကို အတည်ပြုပါ။
-4. **Authorization Logic ကို စစ်ဆေးပါ**: အသုံးပြုသူအခန်းကဏ္ဍများအတွက် မှန်ကန်သော access control ကို အတည်ပြုပါ။
-5. **Test Coverage ကို စောင့်ကြည့်ပါ**: အရေးကြီးသော code path များအတွက် coverage မြင့်မားစေရန် ရှိပါစေ။
-6. **Streaming Responses ကို စစ်ဆေးပါ**: Streaming content ကို မှန်ကန်စွာ ကိုင်တွယ်နိုင်မှုကို စစ်ဆေးပါ။
-7. **Network ပြဿနာများကို simulation လုပ်ပါ**: အဆင်မပြေသော network အခြေအနေများအောက်တွင် server ၏ အပြုအမူကို စစ်ဆေးပါ။
-8. **Resource Limits ကို စစ်ဆေးပါ**: Quotas သို့မဟုတ် rate limits များကို ရောက်ရှိသောအခါ server ၏ အပြုအမူကို စစ်ဆေးပါ။
-9. **Regression Tests ကို အလိုအလျောက်လုပ်ဆောင်ပါ**: Code ပြောင်းလဲမှုတိုင်းအတွက် စစ်ဆေးမှုများကို အလိုအလျောက်လုပ်ဆောင်ပါ။
-10. **Test Cases များကို Documentation ပြုလုပ်ပါ**: စစ်ဆေးမှုအခြေအနေများကို ရှင်းလင်းသော documentation ဖြင့် ထိန်းသိမ်းပါ။
+1. **စမ်းသပ်မှုကိရိယာ တွေကို သီးခြားစမ်းသပ်ပါ**: ကိရိယာ တရားဝင် မဟုတ်သော schema သတ်မှတ်ချက်များကို တစ်ကိုယ်တည်း စစ်ဆေးပါ
+2. **Parameter များပါဝင်သော စမ်းသပ်မှုများ အသုံးပြုပါ**: အမျိုးမျိုးသော Input များနှင့် အထိပ်တန်း များပါဝင်သော ပုံသေနည်းများဖြင့် ကိရိယာများကို စမ်းသပ်ပါ
+3. **အမှားတုံ့ပြန်မှုများကို စစ်ဆေးပါ**: ဖြစ်နိုင်သော အမှား အခြေအနေများအားလုံးအတွက် မှန်ကန်သော အမှား ကိုင်တွယ်မှုရှိစေရန်စမ်းသပ်ပါ
+4. **ခွင့်ပြုခွင့် စနစ် စမ်းသပ်ပါ**: အသုံးပြုသူ အဆင့်အတန်း အမျိုးမျိုးကို မွေးမြူသော လုံခြုံရေး ထိန်းချုပ်မှုရှိမရှိ အတည်ပြုပါ
+5. **စမ်းသပ်မှု ဖုံးလွှမ်းမှုကို စောင့်ကြည့်ပါ**: အရေးကြီးသော ကုဒ် လမ်းကြောင်းများမှ အမြင့်ဆုံး ဖုံးလွှမ်းမှု ရရှိရန် ကြိုးစားပါ
+6. **ထွက်ပေါက်ရေစီးတုံ့ပြန်မှုများ စမ်းသပ်ပါ**: Streaming အကြောင်းအရာ များကို မနောက်ကျဘဲ မှန်ကန်စွာ ကိုင်တွယ်ခြင်းကို စစ်ဆေးပါ
+7. **ကွန်ယက် ပြဿနာများ ကိုလိုက်နာစမ်းသပ်ပါ**: ဆိုးရွားသော ကွန်ယက် အခြေအနေ များတွင် စနစ်၏ လုပ်ဆောင်မှုကို စမ်းသပ်ပါ
+8. **အရင်းအမြစ် ကန့်သတ်ချက် စမ်းသပ်ပါ**: နံပါတ်နှုန်း သို့မဟုတ် အမြန်နှုန်း ကန့်သတ်ချက်များ ရောက်ရှိသောအခါ ဂေါ်လုပ်မှုကို စစ်ဆေးပါ
+9. **နောက်ပြန်စမ်းသပ်မှုများကို အလိုအလျောက်လုပ်စွမ်းမှု ဖန်တီးပါ**: ကုဒ် ပြင်ဆင်မှုတိုင်းတွင် ပြုလုပ်ရန် ခြုံငုံစမ်းသပ်မှုများ ထည့်သွင်းပါ
+10. **စမ်းသပ်မှု ကိစ္စများကို စာတမ်းထဲ မှတ်တမ်းတင်ပါ**: စမ်းသပ်မှု အခြေအနေများကို ပြတ်သားရှင်းလင်းစွာ မှတ်တမ်းတင်ထားပါ
 
-## Testing တွင် ဖြစ်နိုင်သော အမှားများ
+## ပုံမှန် ဖြစ်ပေါ်သော စမ်းသပ်မှု အခက်အခဲများ
 
-- **Happy path testing ကို အလွန်အကျွံ မှီခိုခြင်း**: Error cases များကို အပြည့်အဝ စစ်ဆေးပါ။
-- **စွမ်းဆောင်ရည် စစ်ဆေးမှုကို မလွှမ်းမိုးခြင်း**: Production ကို ထိခိုက်မီ bottlenecks များကို ရှာဖွေပါ။
-- **Isolation တွင်သာ စစ်ဆေးခြင်း**: Unit, integration, နှင့် E2E tests များကို ပေါင်းစပ်ပါ။
-- **API coverage မလုံလောက်ခြင်း**: Endpoints နှင့် features အားလုံးကို စစ်ဆေးပါ။
-- **Test environments မတူညီခြင်း**: Containers ကို အသုံးပြု၍ test environments တူညီမှုကို အတည်ပြုပါ။
+- **အောင်မြင်သော လမ်းကြောင်း စမ်းသပ်မှုတွင် အလွန် များပြားစွာထားရှိခြင်း**: အမှား ဖြစ်နိုင်ချေများကို အပြည့်အဝ စမ်းသပ်ပေးပါ
+- **လုပ်ဆောင်မှု စမ်းသပ်မှုကို မအလေးထားခြင်း**: ထုတ်လုပ်မှုကို ထိခိုက်ခွင့်မရအောင် ပြဿနာများကို ကြိုတင် ဖော်ထုတ်ပါ
+- **တစ်ကိုယ်တည်း စမ်းသပ်မှုများသာ လုပ်ခြင်း**: Unit, Integration နှင့် E2E စမ်းသပ်မှုများ စုပေါင်းအသုံးပြုပါ
+- **API ဖုံးလွှမ်းမှု မပြည့်မှီခြင်း**: အဆုံးအနောက်နှင့် လုပ်ဆောင်ချက်အားလုံးကို စမ်းသပ်ပေးပါ
+- **စမ်းသပ်မှု ပတ်ဝန်းကျင် မတိကျမှန်ကန်မှု**: တူညီသော စမ်းသပ်မှု ပတ်ဝန်းကျင်များ ဖန်တီးရန် containers အသုံးပြုပါ
 
-## နိဂုံး
+## နိဂုံးချုပ်
 
-MCP servers များကို ယုံကြည်ရသော၊ အရည်အသွေးမြင့်သော အဆင့်သို့ ရောက်ရှိစေရန် Comprehensive testing strategy တစ်ခုလိုအပ်သည်။ ဤလမ်းညွှန်စာအုပ်တွင် ဖော်ပြထားသော အကောင်းဆုံးအလေ့အကျင့်များနှင့် အကြံဉာဏ်များကို အကောင်အထည်ဖော်ခြင်းအားဖြင့် MCP implementations များကို အရည်အသွေး၊ ယုံကြည်မှုနှင့် စွမ်းဆောင်ရည်အမြင့်ဆုံး စံချိန်များနှင့် ကိုက်ညီစေရန် အာမခံနိုင်ပါသည်။
+ယုံကြည်စိတ်ချရပြီး၊ အရည်အသွေးမြင့် MCP server များ ဖွံ့ဖြိုးတည်ဆောက်ရန် လုံးဝလိုအပ်သော စမ်းသပ်မှု မဟာဗျူဟာ ဖြစ်ပါသည်။ ဤ လမ်းညွှန်စာအုပ်တွင် ဖော်ပြထားသော အကောင်းဆုံး လေ့ကျင့်မှုများနှင့် အကြံပြုချက်များကို အကောင်အထည်ဖော်ခြင်းအားဖြင့် သင်၏ MCP တွင် အရည်အသွေး၊ ယုံကြည်စိတ်ချရမှုနှင့် လုပ်ဆောင်မှု မြင့်မားမှုများကို အလွန်ကောင်းမွန်စေမည်ဖြစ်သည်။
 
-## အဓိကအချက်များ
+## အဓိက သတိပြုရန် အချက်များ
 
-1. **Tool Design**: Single responsibility principle ကို လိုက်နာပါ၊ dependency injection ကို အသုံးပြုပါ၊ composability အတွက် ဒီဇိုင်းဆွဲပါ။
-2. **Schema Design**: ရှင်းလင်းပြီး documentation ပြုလုပ်ထားသော schemas များကို validation constraints များနှင့်အတူ ဖန်တီးပါ။
-3. **Error Handling**: Error handling ကို သက်သာလွယ်ကူစွာ ပြုလုပ်ပါ၊ structured error responses နှင့် retry logic ကို အကောင်အထည်ဖော်ပါ။
-4. **Performance**: Caching, asynchronous processing, နှင့် resource throttling ကို အသုံးပြုပါ။
-5. **Security**: Input validation, authorization checks, နှင့် sensitive data handling ကို ကျယ်ကျယ်ပြန့်ပြန့် လုပ်ဆောင်ပါ။
-6. **Testing**: Comprehensive unit, integration, နှင့် end-to-end tests များကို ဖန်တီးပါ။
-7. **Workflow Patterns**: Chains, dispatchers, နှင့် parallel processing ကဲ့သို့သော patterns များကို အသုံးပြုပါ။
+1. **ကိရိယာ ဒီဇိုင်း**: တစ်ခုချင်း တာဝန်ယူမှု 원칙ကို လိုက်နာပါ၊ dependency injection ကို အသုံးပြုပါ၊ နှင့် composability အတွက် ဒီဇိုင်းဆွဲပါ
+2. **Schema ဒီဇိုင်း**: ပေါ်လွင်ရှင်းလင်းပြီး စနစ်တကျ မှတ်တမ်းထားသည့် schemas များကို ဖန်တီးပါ၊ မှန်ကန်သော သတ်မှတ်ချက်များဖြင့် အတည်ပြုပါ
+3. **အမှား ကိုင်တွယ်မှု**: ဖက်ဖက်လှလှအမှားကိုင်တွယ်မှု၊ ဖွဲ့စည်းထားသော အမှား တုံ့ပြန်မှုများ နှင့် ပြန်လည်ကြိုးစားခြင်း logic ကို အကောင်အထည်ဖော်ပါ
+4. **လုပ်ဆောင်မှု**: cache အသုံးပြုခြင်း၊ အဆင့်ဆင့် လုပ်ငန်းစဉ်များနှင့် အရင်းအမြစ် ထိန်းချုပ်မှုကို အသုံးပြုပါ
+5. **လုံခြုံရေး**: input အတည်ပြုချက် ပြည့်စုံစွာ ဆောင်ရွက်ခြင်း၊ ခွင့်ပြုချက် စစ်ဆေးခြင်း၊ နှင့် sensitive data ကို ကောင်းမွန်စွာ ကိုင်တွယ်ဆောင်ရွက်ခြင်း
+6. **စမ်းသပ်မှု**: အပြည့်အစုံ Unit၊ Integration နှင့် end-to-end စမ်းသပ်မှုများ ဖန်တီးပါ
+7. **လုပ်ငန်းစဉ် များ**: စံထား patterns များဖြစ်သော chains, dispatchers နှင့် parallel processing များကို အသုံးပြုပါ
 
 ## လေ့ကျင့်ခန်း
 
-Document processing system အတွက် MCP tool နှင့် workflow တစ်ခုကို ဒီဇိုင်းဆွဲပါ-
+စာရွက်စာတမ်း အမျိုးအစားများ (PDF, DOCX, TXT) အမျိုးမျိုးကို လက်ခံပြီး စာရွက်စာတမ်းမှ စာသားနှင့် အဓိကအချက်များ ထုတ်ယူသည့် MCP tool နှင့် လုပ်ငန်းစဉ်တစ်ခု ဒီဇိုင်းဆွဲပါ။  
+3. စာရွက်စာတမ်းများကို အမျိုးအစားနှင့် အကြောင်းအရာအရ ခွဲခြားခြင်း  
+4. စာရွက်စာတမ်းတစ်ခုစီ၏ အနှိပ်ကို ထုတ်ပေးခြင်း  
 
-1. PDF, DOCX, TXT ကဲ့သို့သော format များစွာကို လက်ခံပါ။
-2. Documents များမှ text နှင့် အရေးကြီးသော အချက်အလက်များကို ထုတ်ယူပါ။
-3. Documents များကို အမျိုးအစားနှင့် content အလိုက် ခွဲခြားပါ။
-4. Document တစ်ခုစီ၏ အကျဉ်းချုပ်ကို ဖန်တီးပါ။
+အဆိုပါ အခြေအနေတွင် သင်အသုံးပြုသင့်သည့် tool schema များ၊ အမှားကိုင်တွယ်မှုနှင့် workflow pattern ကို အကောင်အထည်ဖော်ပါ။ ဤ အကောင်အထည်ဖော်မှုကို မည်သို့ စမ်းသပ်မည်ဆိုသည်ကိုလည်း စဉ်းစားပါ။
 
-ဤ scenario အတွက် tool schemas, error handling, နှင့် အကောင်းဆုံးသင့်လျော်သော workflow pattern ကို အကောင်အထည်ဖော်ပါ။ ဤ implementation ကို စစ်ဆေးရန် သင်ဘယ်လိုလုပ်ဆောင်မည်ကို စဉ်းစားပါ။
+## ရင်းမြစ်များ
 
-## Resources 
+1. MCP အသိုင်းအဝိုင်းကို [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) တွင် လက်ရှိ ဖွံ့ဖြိုးတိုးတက်မှုများအပေါ် အမြဲတမ်း အပ်ဒိတ် ရယူရန်  
+2. [MCP ပရောဂျက်များ](https://github.com/modelcontextprotocol) သို့ ပံ့ပိုးမှု ပေးပါ  
+3. သင်၏ အဖွဲ့အစည်း၏ AI လုပ်ငန်းများတွင် MCP 원칙များကို အသုံးပြုပါ  
+4. သက်ဆိုင်ရာ စက်မှုလုပ်ငန်းများအတွက် အထူးပြု MCP အကောင်အထည်ဖော်မှုများကို လေ့လာပါ  
+5. multi-modal integration သို့မဟုတ် enterprise application integration ကဲ့သို့ အထူး MCP သင်ခန်းစာများကို ဆက်လက် တက်ရောက်မှတ်သားနိုင်ပါသည်  
+6. [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) မှ တစ်ဆက်တည်း သင်ယူထားသော 원칙များကို အားဖြင့် MCP ကိရိယာများနှင့် workflow များကို ကိုယ်တိုင် တည်ဆောက်မှု စမ်းသပ်ပါ  
 
-1. MCP community ကို [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) တွင် ပူးပေါင်းပါ။
-2. [MCP projects](https://github.com/modelcontextprotocol) တွင် open-source အတွက် အထောက်အကူပြုပါ။
-3. MCP principles များကို သင့်အဖွဲ့အစည်း၏ AI initiatives တွင် အသုံးချပါ။
-4. သင့်လုပ်ငန်းအတွက် အထူးပြု MCP implementations များကို ရှာဖွေပါ။
-5. Multi-modal integration သို့မဟုတ် enterprise application integration ကဲ့သို့သော MCP topics အတွက် အဆင့်မြင့်သင်တန်းများကို စဉ်းစားပါ။
-6. [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) မှတစ်ဆင့် သင်လေ့လာထားသော principles များကို အသုံးပြု၍ MCP tools နှင့် workflows ကို ကိုယ်တိုင် ဖန်တီးပါ။
+## နောက်တစ်ခု
 
-Next: Best Practices [case studies](../09-CaseStudy/README.md)
+နောက်တစ်ခု: [Case Studies](../09-CaseStudy/README.md)
 
-**ဝက်ဘ်ဆိုက်မှတ်ချက်**:  
-ဤစာရွက်စာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ကို အသုံးပြု၍ ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားနေပါသော်လည်း၊ အလိုအလျောက်ဘာသာပြန်ဆိုမှုများတွင် အမှားများ သို့မဟုတ် မမှန်ကန်မှုများ ပါဝင်နိုင်သည်ကို သတိပြုပါ။ မူလဘာသာစကားဖြင့် ရေးသားထားသော စာရွက်စာတမ်းကို အာဏာတည်သော ရင်းမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်များမှ ပြန်ဆိုမှုကို အကြံပြုပါသည်။ ဤဘာသာပြန်ကို အသုံးပြုခြင်းမှ ဖြစ်ပေါ်လာသော နားလည်မှုမှားများ သို့မဟုတ် အဓိပ္ပါယ်မှားများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။ 
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**ချက်ပြောချက်**:
+ဤစာတမ်းကို AI ဘာသာပြန်ရေးဝန်ဆောင်မှုဖြစ်သည့် [Co-op Translator](https://github.com/Azure/co-op-translator) ကူညီပြီးဘာသာပြန်ထားခြင်းဖြစ်ပါသည်။ ကျွန်ုပ်တို့သည်မှန်ကန်မှုအတွက်ကြိုးစားသော်လည်း အလိုအလျောက်ဘာသာပြန်မှုတွင် အမှားများ သို့မဟုတ်မှန်ကန်မှုနည်းပါးမှုများ ဖြစ်ပေါ်နိုင်ကြောင်း ကျေးဇူးပြု၍ သိရှိပါစေ။ မူလစာတမ်းကို မူရင်းဘာသာဖြင့်သာ တရားဝင်အရာအဖြစ်ယူဆသင့်ပါသည်။ အရေးပါတ်သော သတင်းအချက်အလက်များအတွက် နိုင်ငံတကာ လူသားဘာသာပြန်ပညာရှင်မှ ဘာသာပြန်ခြင်းကို အကြံပေးပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှု သို့မဟုတ် မမှန်ကန်မှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

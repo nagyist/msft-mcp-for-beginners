@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d940b5e0af75e3a3a4d1c3179120d1d9",
-  "translation_date": "2025-08-26T17:56:12+00:00",
-  "source_file": "03-GettingStarted/04-vscode/README.md",
-  "language_code": "fi"
-}
--->
 # GitHub Copilot Agent -tilan käyttäminen palvelimen kanssa
 
 Visual Studio Code ja GitHub Copilot voivat toimia asiakkaana ja käyttää MCP-palvelinta. Miksi haluaisimme tehdä niin, saatat kysyä? No, tämä tarkoittaa, että mitä tahansa MCP-palvelimen ominaisuuksia voidaan nyt käyttää suoraan IDE:ssäsi. Kuvittele esimerkiksi GitHubin MCP-palvelimen lisääminen – tämä mahdollistaisi GitHubin hallinnan kehotteiden avulla sen sijaan, että kirjoittaisit tiettyjä komentoja terminaaliin. Tai kuvittele mitä tahansa, mikä voisi parantaa kehittäjäkokemustasi, kaikki ohjattuna luonnollisella kielellä. Nyt alat nähdä hyödyn, eikö?
@@ -38,9 +29,9 @@ Voit hallita MCP-palvelintasi kahdella eri tavalla:
 
 ### Kuvakaappaukset
 
-![Ohjattu MCP-palvelimen konfigurointi Visual Studio Codessa](../../../../translated_images/chat-mode-agent.729a22473f822216dd1e723aaee1f7d4a2ede571ee0948037a2d9357a63b9d0b.fi.png)
-![Työkalujen valinta agenttikohtaisessa istunnossa](../../../../translated_images/agent-mode-select-tools.522c7ba5df0848f8f0d1e439c2e96159431bc620cb39ccf3f5dc611412fd0006.fi.png)
-![Virheiden helppo debuggaus MCP-kehityksen aikana](../../../../translated_images/mcp-list-servers.fce89eefe3f30032bed8952e110ab9d82fadf043fcfa071f7d40cf93fb1ea9e9.fi.png)
+![Ohjattu MCP-palvelimen konfigurointi Visual Studio Codessa](../../../../translated_images/fi/chat-mode-agent.729a22473f822216.webp)
+![Työkalujen valinta agenttikohtaisessa istunnossa](../../../../translated_images/fi/agent-mode-select-tools.522c7ba5df0848f8.webp)
+![Virheiden helppo debuggaus MCP-kehityksen aikana](../../../../translated_images/fi/mcp-list-servers.fce89eefe3f30032.webp)
 
 Puhutaan lisää käyttöliittymän käytöstä seuraavissa osioissa.
 
@@ -103,15 +94,15 @@ Kun olet lisännyt merkinnän, käynnistä palvelin:
 
 1. Etsi merkintäsi *mcp.json*-tiedostosta ja varmista, että löydät "play"-ikonin:
 
-  ![Palvelimen käynnistäminen Visual Studio Codessa](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.fi.png)  
+  ![Palvelimen käynnistäminen Visual Studio Codessa](../../../../translated_images/fi/vscode-start-server.8e3c986612e3555d.webp)  
 
 1. Klikkaa "play"-ikonia. Näet GitHub Copilot Chat -työkalukuvakkeen lisäävän käytettävissä olevien työkalujen määrää. Jos klikkaat työkalukuvaketta, näet rekisteröityjen työkalujen listan. Voit valita tai poistaa valinnan jokaisesta työkalusta riippuen siitä, haluatko GitHub Copilotin käyttävän niitä kontekstina:
 
-  ![Palvelimen käynnistäminen Visual Studio Codessa](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.fi.png)
+  ![Palvelimen käynnistäminen Visual Studio Codessa](../../../../translated_images/fi/vscode-tool.0b3bbea2fb7d8c26.webp)
 
 1. Työkalun suorittamiseksi kirjoita kehotus, jonka tiedät vastaavan yhden työkalusi kuvausta, esimerkiksi kehotus "lisää 22 ja 1":
 
-  ![Työkalun suorittaminen GitHub Copilotista](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.fi.png)
+  ![Työkalun suorittaminen GitHub Copilotista](../../../../translated_images/fi/vscode-agent.d5a0e0b897331060.webp)
 
   Näet vastauksen, joka sanoo 23.
 

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d26f746e21775c30b4d7ed97962b24df",
-  "translation_date": "2025-08-18T18:24:18+00:00",
-  "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
-  "language_code": "tl"
-}
--->
 # Pagpapatakbo ng sample na ito
 
 Inirerekomenda na i-install ang `uv` pero hindi ito kinakailangan, tingnan ang [mga tagubilin](https://docs.astral.sh/uv/#highlights)
@@ -43,7 +34,7 @@ Habang tumatakbo ang server sa isang terminal, magbukas ng isa pang terminal at 
 mcp dev server.py
 ```
 
-Dapat magsimula ito ng isang web server na may visual na interface na magpapahintulot sa iyo na subukan ang sample.
+Dapat magsimula ito ng isang web server na may visual interface na magpapahintulot sa iyo na subukan ang sample.
 
 Kapag nakakonekta na ang server:
 
@@ -53,7 +44,7 @@ Kapag nakakonekta na ang server:
 
 ### Pagsubok sa CLI mode
 
-Ang inspector na pinatakbo mo ay talagang isang Node.js app at ang `mcp dev` ay isang wrapper nito.
+Ang inspector na pinatakbo mo ay aktwal na isang Node.js app at ang `mcp dev` ay isang wrapper nito.
 
 Maaari mo itong patakbuhin nang direkta sa CLI mode sa pamamagitan ng pagpapatakbo ng sumusunod na command:
 
@@ -116,5 +107,7 @@ Dapat mong makita ang sumusunod na output:
 > Karaniwang mas mabilis patakbuhin ang inspector sa CLI mode kaysa sa browser.
 > Magbasa pa tungkol sa inspector [dito](https://github.com/modelcontextprotocol/inspector).
 
+---
+
 **Paunawa**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagama't sinisikap naming maging tumpak, pakitandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na opisyal na sanggunian. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagama't sinisikap naming maging tumpak, tandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa kanyang katutubong wika ang dapat ituring na opisyal na sanggunian. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

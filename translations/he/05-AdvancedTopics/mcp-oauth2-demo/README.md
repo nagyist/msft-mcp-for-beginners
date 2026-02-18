@@ -1,34 +1,49 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0a7083e660ca0d85fd6a947514c61993",
-  "translation_date": "2025-07-14T00:42:44+00:00",
-  "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
-  "language_code": "he"
-}
--->
-# הדגמת MCP OAuth2
+# הדגמת OAuth2 ב-MCP
 
-הפרויקט הזה הוא **יישום מינימלי ב-Spring Boot** שמשמש גם כ:
+## מבוא
 
-* **שרת הרשאות Spring** (המנפיק אסימוני גישה JWT דרך זרימת `client_credentials`), וגם  
-* **שרת משאבים** (המגן על נקודת הקצה שלו `/hello`).
+OAuth2 הוא הפרוטוקול הסטנדרטי בתעשייה לאישור, המאפשר גישה מאובטחת למשאבים מבלי לשתף פרטי הרשאה. ביישומי MCP (Model Context Protocol), OAuth2 מספק דרך חזקה לאימות ואישור לקוחות (כמו סוכני AI) לגשת לשרתי MCP ולכלים שלהם.
 
-הוא משקף את ההגדרות המוצגות ב-[פוסט הבלוג של Spring (2 באפריל 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+שיעור זה מדגים כיצד ליישם אימות OAuth2 עבור שרתי MCP באמצעות Spring Boot, דפוס נפוץ להטמעות ארגוניות והטמעות במערכות ייצור.
+
+## מטרות הלמידה
+
+בסיום שיעור זה, תוכל:
+- להבין כיצד OAuth2 מתממשק עם שרתי MCP
+- ליישם שרת הרשאה ב-Spring להנפקת אסימוני גישה
+- להגן על נקודות קצה של MCP באמצעות אימות מבוסס JWT
+- להגדיר זרימת client credentials לתקשורת מכונה-למכונה
+
+## דרישות מוקדמות
+
+- הבנה בסיסית ב-Java ו-Spring Boot
+- היכרות עם מושגי MCP מכוללים קודמים
+- התקנת Maven או Gradle
+
+---
+
+## סקירת הפרויקט
+
+פרויקט זה הוא **יישום מינימלי ב-Spring Boot** הפועל גם כ:
+
+* **שרת הרשאות Spring** (מנפיק אסימוני גישה JWT דרך זרימת `client_credentials`), וכן  
+* **שרת משאבים** (מגן על נקודת הקצה `/hello` שלו).
+
+הוא משקף את ההגדרה המוצגת ב-[פוסט בבלוג Spring (2 באפריל 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
 ## התחלה מהירה (מקומית)
 
 ```bash
-# build & run
+# לבנות ולהריץ
 ./mvnw spring-boot:run
 
-# obtain a token
+# לקבל טוקן
 curl -u mcp-client:secret -d grant_type=client_credentials \
      http://localhost:8081/oauth2/token | jq -r .access_token > token.txt
 
-# call the protected endpoint
+# לקרוא לנקודת הקצה המוגנת
 curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 ```
 
@@ -36,40 +51,40 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ## בדיקת תצורת OAuth2
 
-ניתן לבדוק את תצורת האבטחה של OAuth2 באמצעות השלבים הבאים:
+ניתן לבדוק את תצורת האבטחה של OAuth2 עם השלבים הבאים:
 
-### 1. ודא שהשרת פועל ומאובטח
+### 1. וודא שהשרת פועל ומאובטח
 
 ```bash
-# This should return 401 Unauthorized, confirming OAuth2 security is active
+# זה אמור להחזיר 401 ללא הרשאה, מאשר שהאבטחה של OAuth2 פעילה
 curl -v http://localhost:8081/
 ```
 
-### 2. קבל אסימון גישה באמצעות אישורי לקוח
+### 2. קבל אסימון גישה באמצעות client credentials
 
 ```bash
-# Get and extract the full token response
+# לקבל ולחלץ את תגובת הטוקן המלאה
 curl -v -X POST http://localhost:8081/oauth2/token \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -H "Authorization: Basic bWNwLWNsaWVudDpzZWNyZXQ=" \
   -d "grant_type=client_credentials&scope=mcp.access"
 
-# Or to extract just the token (requires jq)
+# או לחלץ רק את הטוקן (דורש jq)
 curl -s -X POST http://localhost:8081/oauth2/token \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -H "Authorization: Basic bWNwLWNsaWVudDpzZWNyZXQ=" \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-הערה: כותרת ה-Basic Authentication (`bWNwLWNsaWVudDpzZWNyZXQ=`) היא קידוד Base64 של `mcp-client:secret`.
+הערה: כותרת האימות הבסיסי (`bWNwLWNsaWVudDpzZWNyZXQ=`) היא קידוד Base64 של `mcp-client:secret`.
 
 ### 3. גש לנקודת הקצה המוגנת באמצעות האסימון
 
 ```bash
-# Using the saved token
+# שימוש בטוקן השמור
 curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
-# Or directly with the token value
+# או ישירות עם ערך הטוקן
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
@@ -95,14 +110,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-שם המארח המלא (FQDN) של ה-ingress יהפוך ל-**issuer** שלך (`https://<fqdn>`).  
-Azure מספקת תעודת TLS מהימנה אוטומטית עבור `*.azurecontainerapps.io`.
+שם ה-FQDN לכניסה יהפוך ל**מנפיק** שלך (`https://<fqdn>`).  
+Azure מספקת אישור TLS מהימן באופן אוטומטי עבור `*.azurecontainerapps.io`.
 
 ---
 
-## חיבור ל-**Azure API Management**
+## אינטגרציה עם **Azure API Management**
 
-הוסף מדיניות inbound זו ל-API שלך:
+הוסף מדיניות נכנסת זו ל-API שלך:
 
 ```xml
 <inbound>
@@ -116,13 +131,17 @@ Azure מספקת תעודת TLS מהימנה אוטומטית עבור `*.azurec
 </inbound>
 ```
 
-APIM ימשוך את ה-JWKS ויוודא כל בקשה.
+APIM ימשוך את JWKS ויוודא כל בקשה.
 
 ---
 
 ## מה הלאה
 
-- [5.4 Root contexts](../mcp-root-contexts/README.md)
+- [5.4 הקשרים שורשיים](../mcp-root-contexts/README.md)
 
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדייק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי דיוקים. המסמך המקורי בשפת המקור שלו צריך להיחשב כמקור הסמכות. למידע קריטי מומלץ להשתמש בתרגום מקצועי אנושי. אנו לא אחראים לכל אי הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

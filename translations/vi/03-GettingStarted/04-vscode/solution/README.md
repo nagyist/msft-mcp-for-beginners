@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5ef8f5821c1a04f7b1fc4f15098ecab8",
-  "translation_date": "2025-07-13T19:44:20+00:00",
-  "source_file": "03-GettingStarted/04-vscode/solution/README.md",
-  "language_code": "vi"
-}
--->
 Điều này tương ứng với việc chạy một lệnh như sau: `node build/index.js`.
 
 - Thay đổi mục server này cho phù hợp với vị trí file server của bạn hoặc theo yêu cầu để khởi động server tùy thuộc vào runtime và vị trí server bạn chọn.
@@ -23,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     Bạn sẽ thấy một công cụ được hiển thị phía trên ô nhập văn bản chat, yêu cầu bạn chọn để chạy công cụ như trong hình minh họa sau:
 
-    ![VS Code chỉ ra nó muốn chạy một công cụ](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.vi.png)
+    ![VS Code chỉ ra nó muốn chạy một công cụ](../../../../../translated_images/vi/vscode-agent.d5a0e0b897331060.webp)
 
     Việc chọn công cụ sẽ cho ra kết quả số học là "23" nếu câu lệnh của bạn giống như ví dụ đã nêu.
 

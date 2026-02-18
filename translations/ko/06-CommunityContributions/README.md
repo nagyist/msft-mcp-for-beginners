@@ -1,44 +1,35 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fcf1e12b62102bf7d16b78deb2b163b7",
-  "translation_date": "2025-07-29T00:21:16+00:00",
-  "source_file": "06-CommunityContributions/README.md",
-  "language_code": "ko"
-}
--->
-# 커뮤니티와 기여
+# 커뮤니티 및 기여
 
-[![MCP에 기여하는 방법: 도구, 문서, 코드 등](../../../translated_images/07.1179f6de46ff196eb3cc13c3510e01c37807a13f3bb9be3c779105ce26737c67.ko.png)](https://youtu.be/v1pvCYAWpRE)
+[![MCP에 기여하는 방법: 도구, 문서, 코드 및 기타](../../../translated_images/ko/07.1179f6de46ff196e.webp)](https://youtu.be/v1pvCYAWpRE)
 
-_(위 이미지를 클릭하면 이 강의의 동영상을 볼 수 있습니다)_
+_(위 이미지를 클릭하여 이 수업의 영상을 시청하세요)_
 
 ## 개요
 
-이 강의는 MCP 커뮤니티와 소통하고, MCP 생태계에 기여하며, 협업 개발의 모범 사례를 따르는 방법에 중점을 둡니다. 오픈소스 MCP 프로젝트에 참여하는 방법을 이해하는 것은 이 기술의 미래를 형성하려는 사람들에게 필수적입니다.
+이 수업은 MCP 커뮤니티와 소통하는 방법, MCP 생태계에 기여하는 방법, 그리고 협업 개발을 위한 모범 사례를 다룹니다. 오픈 소스 MCP 프로젝트에 참여하는 방법을 이해하는 것은 이 기술의 미래를 형성하려는 분들에게 필수적입니다.
 
 ## 학습 목표
 
-이 강의를 마치면 다음을 할 수 있습니다:
+이 수업을 마치면 다음을 할 수 있습니다:
 
-- MCP 커뮤니티와 생태계의 구조를 이해하기
-- MCP 커뮤니티 포럼과 토론에 효과적으로 참여하기
-- MCP 오픈소스 저장소에 기여하기
-- 맞춤형 MCP 도구와 서버를 생성하고 공유하기
-- MCP 개발 및 협업을 위한 모범 사례 따르기
-- MCP 개발을 위한 커뮤니티 리소스와 프레임워크 발견하기
+- MCP 커뮤니티 및 생태계 구조 이해
+- MCP 커뮤니티 포럼과 토론에 효과적으로 참여
+- MCP 오픈 소스 저장소에 기여
+- 맞춤형 MCP 도구 및 서버 생성 및 공유
+- MCP 개발 및 협업을 위한 모범 사례 준수
+- MCP 개발을 위한 커뮤니티 리소스 및 프레임워크 발견
 
 ## MCP 커뮤니티 생태계
 
-MCP 생태계는 프로토콜을 발전시키기 위해 협력하는 다양한 구성 요소와 참여자로 이루어져 있습니다.
+MCP 생태계는 프로토콜을 발전시키기 위해 함께 일하는 다양한 구성 요소와 참여자로 이루어져 있습니다.
 
 ### 주요 커뮤니티 구성 요소
 
-1. **핵심 프로토콜 유지관리자**: 공식 [Model Context Protocol GitHub 조직](https://github.com/modelcontextprotocol)은 핵심 MCP 사양과 참조 구현을 유지 관리합니다.
+1. **핵심 프로토콜 유지 관리자**: 공식 [Model Context Protocol GitHub 조직](https://github.com/modelcontextprotocol)은 핵심 MCP 명세와 참조 구현을 유지합니다
 2. **도구 개발자**: MCP 도구와 서버를 만드는 개인 및 팀
-3. **통합 제공자**: MCP를 제품과 서비스에 통합하는 회사
-4. **최종 사용자**: MCP를 애플리케이션에서 사용하는 개발자와 조직
-5. **기여자**: 코드, 문서 또는 기타 리소스를 기여하는 커뮤니티 구성원
+3. **통합 제공자**: 자사의 제품과 서비스에 MCP를 통합하는 회사들
+4. **최종 사용자**: 애플리케이션에서 MCP를 사용하는 개발자와 조직
+5. **기여자**: 코드, 문서 또는 기타 리소스를 기여하는 커뮤니티 멤버
 
 ### 커뮤니티 리소스
 
@@ -46,18 +37,18 @@ MCP 생태계는 프로토콜을 발전시키기 위해 협력하는 다양한 �
 
 - [MCP GitHub 조직](https://github.com/modelcontextprotocol)
 - [MCP 문서](https://modelcontextprotocol.io/)
-- [MCP 사양](https://modelcontextprotocol.io/docs/specification)
+- [MCP 명세](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
 - [GitHub 토론](https://github.com/orgs/modelcontextprotocol/discussions)
 - [MCP 예제 및 서버 저장소](https://github.com/modelcontextprotocol/servers)
 
 #### 커뮤니티 주도 리소스
 
 - [MCP 클라이언트](https://modelcontextprotocol.io/clients) - MCP 통합을 지원하는 클라이언트 목록
-- [커뮤니티 MCP 서버](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - 커뮤니티에서 개발한 MCP 서버의 증가하는 목록
-- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) - MCP 서버의 큐레이션된 목록
+- [커뮤니티 MCP 서버](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - 커뮤니티에서 개발한 MCP 서버 목록 증가 중
+- [Awesome MCP 서버](https://github.com/wong2/awesome-mcp-servers) - 엄선된 MCP 서버 목록
 - [PulseMCP](https://www.pulsemcp.com/) - MCP 리소스를 발견할 수 있는 커뮤니티 허브 및 뉴스레터
 - [Discord 서버](https://discord.gg/jHEGxQu2a5) - MCP 개발자와 연결
-- 언어별 SDK 구현
+- 언어별 SDK 구현체
 - 블로그 게시물 및 튜토리얼
 
 ## MCP에 기여하기
@@ -76,73 +67,73 @@ MCP 생태계는 다양한 유형의 기여를 환영합니다:
    - 기존 문서 개선
    - 튜토리얼 및 가이드 작성
    - 문서 번역
-   - 예제 및 샘플 애플리케이션 생성
+   - 예제 및 샘플 애플리케이션 작성
 
 3. **커뮤니티 지원**:
-   - 포럼 및 토론에서 질문에 답변하기
-   - 테스트 및 문제 보고
+   - 포럼 및 토론에서 질문에 답변
+   - 테스트 및 이슈 보고
    - 커뮤니티 이벤트 조직
    - 신규 기여자 멘토링
 
-### 핵심 프로토콜 기여 과정
+### 기여 프로세스: 핵심 프로토콜
 
-핵심 MCP 프로토콜 또는 공식 구현에 기여하려면 [공식 기여 지침](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md)의 원칙을 따르세요:
+핵심 MCP 프로토콜 또는 공식 구현에 기여하려면, [공식 기여 가이드라인](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md)의 원칙을 따르세요:
 
-1. **단순성과 최소주의**: MCP 사양은 새로운 개념을 추가하는 데 높은 기준을 유지합니다. 사양에 무언가를 추가하는 것은 제거하는 것보다 쉽습니다.
+1. **단순함과 최소주의**: MCP 명세는 새 개념 추가에 높은 기준을 유지합니다. 명세에 항목을 추가하는 것보다 삭제하는 것이 더 어렵습니다.
 
-2. **구체적 접근**: 사양 변경은 추측적인 아이디어가 아닌 특정 구현 문제를 기반으로 해야 합니다.
+2. **구체적 접근법**: 명세 변경은 투기적 아이디어가 아니라 구체적 구현 문제에 기반해야 합니다.
 
 3. **제안 단계**:
-   - 정의: 문제 영역을 탐구하고 다른 MCP 사용자가 유사한 문제를 겪고 있는지 확인
-   - 프로토타입: 예제 솔루션을 구축하고 실질적인 적용을 보여줌
-   - 작성: 프로토타입을 기반으로 사양 제안 작성
+   - 정의: 문제 영역 탐색, 다른 MCP 사용자도 유사한 문제를 겪는지 검증
+   - 프로토타입: 예제 솔루션 구축 및 실용성 시연
+   - 작성: 프로토타입을 바탕으로 명세 제안서 작성
 
 ### 개발 환경 설정
 
 ```bash
-# Fork the repository
+# 저장소를 포크하세요
 git clone https://github.com/YOUR-USERNAME/modelcontextprotocol.git
 cd modelcontextprotocol
 
-# Install dependencies
+# 의존성을 설치하세요
 npm install
 
-# For schema changes, validate and generate schema.json:
+# 스키마 변경의 경우, 검증하고 schema.json을 생성하세요:
 npm run check:schema:ts
 npm run generate:schema
 
-# For documentation changes
+# 문서 변경의 경우
 npm run check:docs
 npm run format
 
-# Preview documentation locally (optional):
+# 문서를 로컬에서 미리보기 (선택 사항):
 npm run serve:docs
 ```
 
-### 예제: 버그 수정 기여
+### 예제: 버그 수정 기여하기
 
 ```javascript
-// Original code with bug in the typescript-sdk
+// 타입스크립트 SDK의 버그가 있는 원본 코드
 export function validateResource(resource: unknown): resource is MCPResource {
   if (!resource || typeof resource !== 'object') {
     return false;
   }
   
-  // Bug: Missing property validation
-  // Current implementation:
+  // 버그: 누락된 속성 검증
+  // 현재 구현:
   const hasName = 'name' in resource;
   const hasSchema = 'schema' in resource;
   
   return hasName && hasSchema;
 }
 
-// Fixed implementation in a contribution
+// 기여로 수정된 구현
 export function validateResource(resource: unknown): resource is MCPResource {
   if (!resource || typeof resource !== 'object') {
     return false;
   }
   
-  // Improved validation
+  // 개선된 검증
   const hasName = 'name' in resource && typeof (resource as MCPResource).name === 'string';
   const hasSchema = 'schema' in resource && typeof (resource as MCPResource).schema === 'object';
   const hasDescription = !('description' in resource) || typeof (resource as MCPResource).description === 'string';
@@ -151,10 +142,10 @@ export function validateResource(resource: unknown): resource is MCPResource {
 }
 ```
 
-### 예제: 표준 라이브러리에 새로운 도구 기여
+### 예제: 표준 라이브러리에 새 도구 기여하기
 
 ```python
-# Example contribution: A CSV data processing tool for the MCP standard library
+# 예제 기여: MCP 표준 라이브러리를 위한 CSV 데이터 처리 도구
 
 from mcp_tools import Tool, ToolRequest, ToolResponse, ToolExecutionException
 import pandas as pd
@@ -216,14 +207,14 @@ class CsvProcessingTool(Tool):
     
     async def execute_async(self, request: ToolRequest) -> ToolResponse:
         try:
-            # Extract parameters
+            # 매개변수 추출
             operation = request.parameters.get("operation")
             output_format = request.parameters.get("outputFormat", "json")
             
-            # Get CSV data from either direct data or URL
+            # 직접 데이터 또는 URL에서 CSV 데이터 가져오기
             df = await self._get_dataframe(request)
             
-            # Process based on requested operation
+            # 요청된 작업에 따라 처리
             result = {}
             
             if operation == "summary":
@@ -284,7 +275,7 @@ class CsvProcessingTool(Tool):
     
     def _transform_data(self, df: pd.DataFrame, params: Dict[str, Any]) -> Dict[str, Any]:
         """Transforms the data based on parameters"""
-        # Implementation would include various transformations
+        # 구현에는 다양한 변환이 포함될 것입니다
         return {
             "status": "success",
             "message": "Transformation applied"
@@ -311,41 +302,41 @@ class CsvProcessingTool(Tool):
             raise ToolExecutionException(f"Unsupported output format: {format}")
 ```
 
-### 기여 지침
+### 기여 가이드라인
 
 MCP 프로젝트에 성공적으로 기여하려면:
 
-1. **작게 시작하기**: 문서화, 버그 수정 또는 작은 개선 사항으로 시작
-2. **스타일 가이드 따르기**: 프로젝트의 코딩 스타일과 규칙 준수
-3. **테스트 작성**: 코드 기여에 대한 단위 테스트 포함
-4. **작업 문서화**: 새로운 기능 또는 변경 사항에 대한 명확한 문서 추가
-5. **목표 지향 PR 제출**: 풀 리퀘스트를 단일 문제 또는 기능에 집중
-6. **피드백에 응답하기**: 기여에 대한 피드백에 적극적으로 응답
+1. **작게 시작**: 문서, 버그 수정 또는 작은 향상부터 시작하세요
+2. **스타일 가이드 준수**: 프로젝트의 코드 스타일과 규칙을 따르세요
+3. **테스트 작성**: 코드 기여에 단위 테스트 포함
+4. **작업 문서화**: 새로운 기능이나 변경 사항에 대해 명확한 문서 추가
+5. **타겟 PR 제출**: 하나의 문제 또는 기능에 집중한 풀 리퀘스트 유지
+6. **피드백 참여**: 기여에 대한 피드백에 적극적으로 응답
 
-### 기여 워크플로우 예제
+### 예제 기여 워크플로우
 
 ```bash
-# Clone the repository
+# 저장소를 복제하세요
 git clone https://github.com/modelcontextprotocol/typescript-sdk.git
 cd typescript-sdk
 
-# Create a new branch for your contribution
+# 기여를 위해 새 브랜치를 만드세요
 git checkout -b feature/my-contribution
 
-# Make your changes
+# 변경사항을 만드세요
 # ...
 
-# Run tests to ensure your changes don't break existing functionality
+# 변경사항이 기존 기능을 깨뜨리지 않는지 테스트를 실행하세요
 npm test
 
-# Commit your changes with a descriptive message
+# 설명이 포함된 메시지와 함께 변경사항을 커밋하세요
 git commit -am "Fix validation in resource handler"
 
-# Push your branch to your fork
+# 브랜치를 자신의 포크에 푸시하세요
 git push origin feature/my-contribution
 
-# Create a pull request from your branch to the main repository
-# Then engage with feedback and iterate on your PR as needed
+# 브랜치에서 메인 저장소로 풀 리퀘스트를 만드세요
+# 그 후 피드백에 참여하고 필요에 따라 PR을 반복하세요
 ```
 
 ## MCP 서버 생성 및 공유
@@ -354,21 +345,23 @@ MCP 생태계에 기여하는 가장 가치 있는 방법 중 하나는 맞춤�
 
 ### MCP 서버 개발 프레임워크
 
-MCP 서버 개발을 간소화하기 위한 여러 프레임워크가 제공됩니다:
+MCP 서버 개발을 단순화하는 다양한 프레임워크가 있습니다:
 
-1. **공식 SDK**:
+1. **공식 SDK** ([MCP 명세 2025-11-25](https://spec.modelcontextprotocol.io/specification/2025-11-25/)에 맞춤):
    - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
    - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
    - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
    - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
    - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
    - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
+   - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk)
+   - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk)
 
 2. **커뮤니티 프레임워크**:
    - [MCP-Framework](https://mcp-framework.com/) - TypeScript로 우아하고 빠르게 MCP 서버 구축
-   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - Java로 주석 기반 MCP 서버
-   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - Java 프레임워크 MCP 서버
-   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - MCP 서버를 위한 Next.js 시작 프로젝트
+   - [MCP 선언적 Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - Java로 주석 기반 MCP 서버 개발
+   - [Quarkus MCP 서버 SDK](https://github.com/quarkiverse/quarkus-mcp-server) - MCP 서버용 Java 프레임워크
+   - [Next.js MCP 서버 템플릿](https://github.com/vercel-labs/mcp-for-next.js) - MCP 서버를 위한 Next.js 스타터 프로젝트
 
 ### 공유 가능한 도구 개발
 
@@ -478,10 +471,10 @@ namespace McpFinanceTools
 // dotnet nuget push bin/Release/McpFinanceTools.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k YOUR_API_KEY
 ```
 
-#### Java 예제: 도구를 위한 Maven 패키지 생성
+#### Java 예제: 도구용 Maven 패키지 생성
 
 ```java
-// pom.xml configuration for a shareable MCP tool package
+// 공유 가능한 MCP 도구 패키지를 위한 pom.xml 구성
 <!-- 
 <project>
     <groupId>com.example</groupId>
@@ -542,7 +535,7 @@ public class WeatherForecastTool implements Tool {
     @Override
     public Object getSchema() {
         Map<String, Object> schema = new HashMap<>();
-        // Schema definition...
+        // 스키마 정의...
         return schema;
     }
     
@@ -553,10 +546,10 @@ public class WeatherForecastTool implements Tool {
             int days = request.getParameters().has("days") ? 
                 request.getParameters().get("days").asInt() : 3;
             
-            // Call weather API
+            // 날씨 API 호출
             Map<String, Object> forecast = getForecast(location, days);
             
-            // Build response
+            // 응답 생성
             return new ToolResponse.Builder()
                 .setResult(forecast)
                 .build();
@@ -566,23 +559,23 @@ public class WeatherForecastTool implements Tool {
     }
     
     private Map<String, Object> getForecast(String location, int days) {
-        // Implementation would call weather API
-        // Simplified example
+        // 구현에서는 날씨 API를 호출합니다
+        // 단순화된 예제
         Map<String, Object> result = new HashMap<>();
-        // Add forecast data...
+        // 예보 데이터 추가...
         return result;
     }
 }
 
-// Build and publish using Maven
+// Maven을 사용하여 빌드 및 배포
 // mvn clean package
 // mvn deploy
 ```
 
-#### Python 예제: PyPI 패키지 게시
+#### Python 예제: PyPI 패키지 배포
 
 ```python
-# Directory structure for a PyPI package:
+# PyPI 패키지의 디렉토리 구조:
 # mcp_nlp_tools/
 # ├── LICENSE
 # ├── README.md
@@ -592,7 +585,7 @@ public class WeatherForecastTool implements Tool {
 # │   ├── sentiment_tool.py
 # │   └── translation_tool.py
 
-# Example setup.py
+# setup.py 예제
 """
 from setuptools import setup, find_packages
 
@@ -620,7 +613,7 @@ setup(
 )
 """
 
-# Example NLP tool implementation (sentiment_tool.py)
+# NLP 도구 구현 예제 (sentiment_tool.py)
 from mcp_tools import Tool, ToolRequest, ToolResponse, ToolExecutionException
 from transformers import pipeline
 import torch
@@ -629,7 +622,7 @@ class SentimentAnalysisTool(Tool):
     """MCP tool for sentiment analysis of text"""
     
     def __init__(self, model_name="distilbert-base-uncased-finetuned-sst-2-english"):
-        # Load the sentiment analysis model
+        # 감정 분석 모델 로드
         self.sentiment_analyzer = pipeline("sentiment-analysis", model=model_name)
     
     def get_name(self):
@@ -657,14 +650,14 @@ class SentimentAnalysisTool(Tool):
     
     async def execute_async(self, request: ToolRequest) -> ToolResponse:
         try:
-            # Extract parameters
+            # 파라미터 추출
             text = request.parameters.get("text")
             include_score = request.parameters.get("includeScore", True)
             
-            # Analyze sentiment
+            # 감정 분석 수행
             sentiment_result = self.sentiment_analyzer(text)[0]
             
-            # Format result
+            # 결과 형식화
             result = {
                 "sentiment": sentiment_result["label"],
                 "text": text
@@ -673,82 +666,82 @@ class SentimentAnalysisTool(Tool):
             if include_score:
                 result["score"] = sentiment_result["score"]
             
-            # Return result
+            # 결과 반환
             return ToolResponse(result=result)
             
         except Exception as e:
             raise ToolExecutionException(f"Sentiment analysis failed: {str(e)}")
 
-# To publish:
+# 배포를 위해:
 # python setup.py sdist bdist_wheel
 # python -m twine upload dist/*
 ```
 
-### 모범 사례 공유
+### 공유 시 모범 사례
 
 MCP 도구를 커뮤니티와 공유할 때:
 
 1. **완전한 문서화**:
    - 목적, 사용법 및 예제 문서화
-   - 매개변수와 반환 값 설명
+   - 매개변수 및 반환값 설명
    - 외부 종속성 문서화
 
 2. **오류 처리**:
    - 견고한 오류 처리 구현
    - 유용한 오류 메시지 제공
-   - 엣지 케이스를 우아하게 처리
+   - 가장자리 케이스 우아하게 처리
 
-3. **성능 고려사항**:
-   - 속도와 리소스 사용을 모두 최적화
-   - 적절한 경우 캐싱 구현
-   - 확장성을 고려
+3. **성능 고려**:
+   - 속도와 자원 사용 최적화
+   - 적절할 때 캐싱 구현
+   - 확장성 고려
 
 4. **보안**:
-   - 안전한 API 키와 인증 사용
-   - 입력 유효성 검사 및 정리
+   - 안전한 API 키 및 인증 사용
+   - 입력값 검증 및 정제
    - 외부 API 호출에 대한 속도 제한 구현
 
 5. **테스트**:
    - 포괄적인 테스트 커버리지 포함
-   - 다양한 입력 유형과 엣지 케이스로 테스트
+   - 다양한 입력 유형 및 가장자리 케이스 테스트
    - 테스트 절차 문서화
 
 ## 커뮤니티 협업 및 모범 사례
 
-효과적인 협업은 MCP 생태계의 번영에 필수적입니다.
+효과적인 협업은 번창하는 MCP 생태계의 핵심입니다.
 
-### 커뮤니케이션 채널
+### 소통 채널
 
 - GitHub 이슈 및 토론
-- Microsoft Tech 커뮤니티
+- Microsoft Tech Community
 - Discord 및 Slack 채널
 - Stack Overflow (태그: `model-context-protocol` 또는 `mcp`)
 
 ### 코드 리뷰
 
-MCP 기여를 리뷰할 때:
+MCP 기여를 검토할 때:
 
-1. **명확성**: 코드가 명확하고 잘 문서화되었는가?
-2. **정확성**: 예상대로 작동하는가?
+1. **명확성**: 코드가 명확하고 잘 문서화되었나?
+2. **정확성**: 기대대로 작동하는가?
 3. **일관성**: 프로젝트 규칙을 따르는가?
-4. **완전성**: 테스트와 문서가 포함되었는가?
-5. **보안**: 보안 문제는 없는가?
+4. **완성도**: 테스트와 문서가 포함되었나?
+5. **보안**: 보안 문제가 있는가?
 
 ### 버전 호환성
 
-MCP를 개발할 때:
+MCP용 개발 시:
 
-1. **프로토콜 버전 관리**: 도구가 지원하는 MCP 프로토콜 버전을 준수
-2. **클라이언트 호환성**: 하위 호환성 고려
-3. **서버 호환성**: 서버 구현 지침 준수
-4. **중단 변경**: 중단 변경 사항을 명확히 문서화
+1. **프로토콜 버전 관리**: 도구가 지원하는 MCP 프로토콜 버전 준수
+2. **클라이언트 호환성**: 이전 버전과의 호환성 고려
+3. **서버 호환성**: 서버 구현 가이드라인 준수
+4. **파괴적 변경**: 파괴적 변경 사항을 명확히 문서화
 
-## 커뮤니티 프로젝트 예제: MCP 도구 레지스트리
+## 예제 커뮤니티 프로젝트: MCP 도구 레지스트리
 
-중요한 커뮤니티 기여는 MCP 도구를 위한 공개 레지스트리를 개발하는 것입니다.
+중요한 커뮤니티 기여로 MCP 도구를 위한 공개 레지스트리를 개발할 수 있습니다.
 
 ```python
-# Example schema for a community tool registry API
+# 커뮤니티 도구 등록 API 예제 스키마
 
 from fastapi import FastAPI, HTTPException, Depends
 from pydantic import BaseModel, Field, HttpUrl
@@ -756,7 +749,7 @@ from typing import List, Optional
 import datetime
 import uuid
 
-# Models for the tool registry
+# 도구 등록을 위한 모델
 class ToolSchema(BaseModel):
     """JSON Schema for a tool"""
     type: str
@@ -785,10 +778,10 @@ class Tool(ToolRegistration):
     rating: float = Field(default=0.0)
     ratings_count: int = Field(default=0)
 
-# FastAPI application for the registry
+# 등록을 위한 FastAPI 애플리케이션
 app = FastAPI(title="MCP Tool Registry")
 
-# In-memory database for this example
+# 이 예제를 위한 메모리 내 데이터베이스
 tools_db = {}
 
 @app.post("/tools", response_model=Tool)
@@ -826,19 +819,19 @@ async def delete_tool(tool_name: str):
 
 ## 주요 요점
 
-- MCP 커뮤니티는 다양하며 다양한 유형의 기여를 환영합니다.
-- MCP에 기여하는 것은 핵심 프로토콜 개선부터 맞춤형 도구 제작까지 다양합니다.
-- 기여 지침을 따르면 PR이 승인될 가능성이 높아집니다.
-- MCP 도구를 생성하고 공유하는 것은 생태계를 강화하는 가치 있는 방법입니다.
-- 커뮤니티 협업은 MCP의 성장과 개선에 필수적입니다.
+- MCP 커뮤니티는 다양하며 여러 유형의 기여를 환영합니다
+- MCP에 기여는 핵심 프로토콜 개선부터 맞춤 도구 개발까지 다양합니다
+- 기여 가이드라인 준수는 PR 수용 가능성을 높입니다
+- MCP 도구를 만들고 공유하는 것은 생태계 향상의 가치 있는 방법입니다
+- 커뮤니티 협업은 MCP 성장과 개선의 필수 요소입니다
 
-## 연습
+## 연습 문제
 
-1. 자신의 기술과 관심사에 따라 MCP 생태계에서 기여할 수 있는 영역을 식별하세요.
-2. MCP 저장소를 포크하고 로컬 개발 환경을 설정하세요.
-3. 커뮤니티에 도움이 될 작은 개선 사항, 버그 수정 또는 도구를 만드세요.
-4. 적절한 테스트와 문서를 포함하여 기여를 문서화하세요.
-5. 적절한 저장소에 풀 리퀘스트를 제출하세요.
+1. 본인의 역량과 관심사에 기반해 MCP 생태계에서 기여할 영역을 찾아보세요
+2. MCP 저장소를 포크하고 로컬 개발 환경을 설정하세요
+3. 커뮤니티에 도움이 될 작은 향상, 버그 수정 또는 도구를 만드세요
+4. 적절한 테스트와 문서화로 기여 내용을 문서화하세요
+5. 적절한 저장소에 풀 리퀘스트를 제출하세요
 
 ## 추가 리소스
 
@@ -846,7 +839,13 @@ async def delete_tool(tool_name: str):
 
 ---
 
-다음: [초기 채택에서 얻은 교훈](../07-LessonsfromEarlyAdoption/README.md)
+## 다음 내용
 
-**면책 조항**:  
-이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있지만, 자동 번역에는 오류나 부정확성이 포함될 수 있습니다. 원본 문서의 원어 버전을 권위 있는 출처로 간주해야 합니다. 중요한 정보에 대해서는 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 책임을 지지 않습니다.
+다음: [초기 도입의 교훈](../07-LessonsfromEarlyAdoption/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**면책 조항**:
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 노력하고 있으나, 자동 번역에는 오류나 부정확성이 포함될 수 있음을 유의하시기 바랍니다. 원본 문서의 원어 버전이 권위 있는 출처로 간주되어야 합니다. 중요한 정보의 경우 전문 인력에 의한 번역을 권장합니다. 이 번역의 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

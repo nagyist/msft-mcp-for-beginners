@@ -26,13 +26,14 @@ By the end of this lesson, you will be able to:
 
 ## Official SDK Resources
 
-The Model Context Protocol offers official SDKs for multiple languages:
+The Model Context Protocol offers official SDKs for multiple languages (aligned with [MCP Specification 2025-11-25](https://spec.modelcontextprotocol.io/specification/2025-11-25/)):
 
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
 - [Java with Spring SDK](https://github.com/modelcontextprotocol/java-sdk) **Note:** requires dependency on [Project Reactor](https://projectreactor.io). (See [discussion issue 246](https://github.com/orgs/modelcontextprotocol/discussions/246).)
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
 - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
+- [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
 
 ## Working with MCP SDKs
 
@@ -49,6 +50,12 @@ The repository includes [sample implementations](./samples/) in the following la
 - [Python](./samples/python/README.md)
 
 Each sample demonstrates key MCP concepts and implementation patterns for that specific language and ecosystem.
+
+### Practical Guides
+
+Additional guides for practical MCP implementation:
+
+- [Pagination and Large Result Sets](./pagination/README.md) - Handle cursor-based pagination for tools, resources, and large datasets
 
 ## Core Server Features
 
@@ -170,7 +177,7 @@ Let's have a look at the authorization flow more in detail:
 
 #### MCP authorization specification
 
-Learn more about the [MCP Authorization specification](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization#2-10-third-party-authorization-flow)
+Learn more about the [MCP Authorization specification](https://spec.modelcontextprotocol.io/specification/2025-11-25/basic/authorization/)
 
 ## Deploy Remote MCP Server to Azure
 
@@ -267,5 +274,7 @@ Design a practical MCP workflow that addresses a real-world problem in your doma
 ## Additional Resources
 
 ---
+
+## What's Next
 
 Next: [Advanced Topics](../05-AdvancedTopics/README.md)

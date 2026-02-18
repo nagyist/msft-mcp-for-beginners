@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5ef8f5821c1a04f7b1fc4f15098ecab8",
-  "translation_date": "2025-07-13T19:44:53+00:00",
-  "source_file": "03-GettingStarted/04-vscode/solution/README.md",
-  "language_code": "tl"
-}
--->
 Ito ay tumutukoy sa pagpapatakbo ng isang utos tulad ng: `node build/index.js`.
 
 - Baguhin ang entry ng server upang tumugma sa lokasyon ng iyong server file o kung ano ang kinakailangan upang simulan ang iyong server depende sa iyong napiling runtime at lokasyon ng server.
@@ -23,7 +14,7 @@ Ito ay tumutukoy sa pagpapatakbo ng isang utos tulad ng: `node build/index.js`.
 
     Makikita mo ang isang tool na ipinapakita sa itaas ng chat text box na nagsasabing piliin ito upang patakbuhin ang tool tulad ng nasa larawan:
 
-    ![VS Code na nagpapakita na nais nitong patakbuhin ang isang tool](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.tl.png)
+    ![VS Code na nagpapakita na nais nitong patakbuhin ang isang tool](../../../../../translated_images/tl/vscode-agent.d5a0e0b897331060.webp)
 
     Ang pagpili sa tool ay dapat magbigay ng numerikong resulta na nagsasabing "23" kung ang iyong prompt ay tulad ng nabanggit namin kanina.
 

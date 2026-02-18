@@ -80,3 +80,8 @@ This teamwork allows the system to quickly and safely help you plan your trip, j
 - [Azure OpenAI Service](https://azure.microsoft.com/en-us/products/ai-services/openai-service/)
 - [Azure AI Search](https://azure.microsoft.com/en-us/products/ai-services/ai-search/)
 - [Model Context Protocol (MCP)](https://modelcontextprotocol.io/)
+
+## What's Next
+
+- Back to: [Case Studies Overview](./README.md)
+- Next: [Updating ADO Items from YouTube](./UpdateADOItemsFromYT.md)

@@ -1,148 +1,139 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fcf1e12b62102bf7d16b78deb2b163b7",
-  "translation_date": "2025-08-18T17:47:05+00:00",
-  "source_file": "06-CommunityContributions/README.md",
-  "language_code": "id"
-}
--->
 # Komunitas dan Kontribusi
 
-[![Cara Berkontribusi pada MCP: Alat, Dokumentasi, Kode, dan Lainnya](../../../translated_images/07.1179f6de46ff196eb3cc13c3510e01c37807a13f3bb9be3c779105ce26737c67.id.png)](https://youtu.be/v1pvCYAWpRE)
+[![Cara Berkontribusi ke MCP: Alat, Dokumen, Kode dan Lebih Banyak Lagi](../../../translated_images/id/07.1179f6de46ff196e.webp)](https://youtu.be/v1pvCYAWpRE)
 
-_(Klik gambar di atas untuk menonton video pelajaran ini)_
+_(Klik gambar di atas untuk melihat video pelajaran ini)_
 
-## Gambaran Umum
+## Ikhtisar
 
-Pelajaran ini berfokus pada cara berinteraksi dengan komunitas MCP, berkontribusi pada ekosistem MCP, dan mengikuti praktik terbaik dalam pengembangan kolaboratif. Memahami cara berpartisipasi dalam proyek MCP open-source sangat penting bagi mereka yang ingin membentuk masa depan teknologi ini.
+Pelajaran ini berfokus pada cara berinteraksi dengan komunitas MCP, berkontribusi pada ekosistem MCP, dan mengikuti praktik terbaik untuk pengembangan kolaboratif. Memahami cara berpartisipasi dalam proyek open-source MCP sangat penting bagi mereka yang ingin membentuk masa depan teknologi ini.
 
 ## Tujuan Pembelajaran
 
-Pada akhir pelajaran ini, Anda akan dapat:
+Pada akhir pelajaran ini, Anda akan mampu:
 
 - Memahami struktur komunitas dan ekosistem MCP
 - Berpartisipasi secara efektif dalam forum dan diskusi komunitas MCP
-- Berkontribusi pada repositori open-source MCP
-- Membuat dan membagikan alat serta server MCP kustom
+- Berkontribusi ke repositori open-source MCP
+- Membuat dan membagikan alat dan server MCP kustom
 - Mengikuti praktik terbaik untuk pengembangan dan kolaborasi MCP
 - Menemukan sumber daya dan kerangka kerja komunitas untuk pengembangan MCP
 
 ## Ekosistem Komunitas MCP
 
-Ekosistem MCP terdiri dari berbagai komponen dan peserta yang bekerja sama untuk memajukan protokol ini.
+Ekosistem MCP terdiri dari berbagai komponen dan peserta yang bekerja sama untuk mengembangkan protokol.
 
 ### Komponen Utama Komunitas
 
-1. **Pemelihara Protokol Inti**: [Organisasi GitHub Model Context Protocol](https://github.com/modelcontextprotocol) secara resmi memelihara spesifikasi inti MCP dan implementasi referensi.
-2. **Pengembang Alat**: Individu dan tim yang membuat alat dan server MCP.
-3. **Penyedia Integrasi**: Perusahaan yang mengintegrasikan MCP ke dalam produk dan layanan mereka.
-4. **Pengguna Akhir**: Pengembang dan organisasi yang menggunakan MCP dalam aplikasi mereka.
-5. **Kontributor**: Anggota komunitas yang menyumbangkan kode, dokumentasi, atau sumber daya lainnya.
+1. **Pemelihara Protokol Inti**: Organisasi resmi [Model Context Protocol GitHub](https://github.com/modelcontextprotocol) memelihara spesifikasi inti MCP dan implementasi referensi  
+2. **Pengembang Alat**: Individu dan tim yang membuat alat dan server MCP  
+3. **Penyedia Integrasi**: Perusahaan yang mengintegrasikan MCP ke dalam produk dan layanan mereka  
+4. **Pengguna Akhir**: Pengembang dan organisasi yang menggunakan MCP dalam aplikasi mereka  
+5. **Kontributor**: Anggota komunitas yang berkontribusi kode, dokumentasi, atau sumber daya lainnya  
 
 ### Sumber Daya Komunitas
 
 #### Saluran Resmi
 
-- [Organisasi GitHub MCP](https://github.com/modelcontextprotocol)
-- [Dokumentasi MCP](https://modelcontextprotocol.io/)
-- [Spesifikasi MCP](https://modelcontextprotocol.io/docs/specification)
-- [Diskusi GitHub](https://github.com/orgs/modelcontextprotocol/discussions)
-- [Repositori Contoh & Server MCP](https://github.com/modelcontextprotocol/servers)
+- [Organisasi MCP GitHub](https://github.com/modelcontextprotocol)  
+- [Dokumentasi MCP](https://modelcontextprotocol.io/)  
+- [Spesifikasi MCP](https://spec.modelcontextprotocol.io/specification/2025-11-25/)  
+- [Diskusi GitHub](https://github.com/orgs/modelcontextprotocol/discussions)  
+- [Repositori Contoh & Server MCP](https://github.com/modelcontextprotocol/servers)  
 
-#### Sumber Daya yang Dikelola Komunitas
+#### Sumber Daya yang Didukung Komunitas
 
-- [Klien MCP](https://modelcontextprotocol.io/clients) - Daftar klien yang mendukung integrasi MCP
-- [Server MCP Komunitas](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - Daftar server MCP yang dikembangkan komunitas
-- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) - Daftar server MCP yang dikurasi
-- [PulseMCP](https://www.pulsemcp.com/) - Pusat komunitas & buletin untuk menemukan sumber daya MCP
-- [Server Discord](https://discord.gg/jHEGxQu2a5) - Terhubung dengan pengembang MCP
-- Implementasi SDK khusus bahasa
-- Artikel blog dan tutorial
+- [Klien MCP](https://modelcontextprotocol.io/clients) - Daftar klien yang mendukung integrasi MCP  
+- [Server MCP Komunitas](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - Daftar berkembang server MCP yang dikembangkan komunitas  
+- [Server MCP Hebat](https://github.com/wong2/awesome-mcp-servers) - Daftar kurasi server MCP  
+- [PulseMCP](https://www.pulsemcp.com/) - Pusat komunitas & newsletter untuk menemukan sumber daya MCP  
+- [Server Discord](https://discord.gg/jHEGxQu2a5) - Terhubung dengan pengembang MCP  
+- Implementasi SDK spesifik bahasa  
+- Postingan blog dan tutorial  
 
-## Berkontribusi pada MCP
+## Berkontribusi ke MCP
 
 ### Jenis Kontribusi
 
 Ekosistem MCP menyambut berbagai jenis kontribusi:
 
-1. **Kontribusi Kode**:
-   - Peningkatan protokol inti
-   - Perbaikan bug
-   - Implementasi alat dan server
-   - Perpustakaan klien/server dalam berbagai bahasa
+1. **Kontribusi Kode**:  
+   - Peningkatan protokol inti  
+   - Perbaikan bug  
+   - Implementasi alat dan server  
+   - Perpustakaan klien/server dalam berbagai bahasa  
 
-2. **Dokumentasi**:
-   - Meningkatkan dokumentasi yang ada
-   - Membuat tutorial dan panduan
-   - Menerjemahkan dokumentasi
-   - Membuat contoh dan aplikasi sampel
+2. **Dokumentasi**:  
+   - Memperbaiki dokumentasi yang ada  
+   - Membuat tutorial dan panduan  
+   - Menerjemahkan dokumentasi  
+   - Membuat contoh dan aplikasi sampel  
 
-3. **Dukungan Komunitas**:
-   - Menjawab pertanyaan di forum dan diskusi
-   - Menguji dan melaporkan masalah
-   - Mengorganisir acara komunitas
-   - Membimbing kontributor baru
+3. **Dukungan Komunitas**:  
+   - Menjawab pertanyaan di forum dan diskusi  
+   - Menguji dan melaporkan masalah  
+   - Menyelenggarakan acara komunitas  
+   - Membimbing kontributor baru  
 
 ### Proses Kontribusi: Protokol Inti
 
-Untuk berkontribusi pada protokol inti MCP atau implementasi resmi, ikuti prinsip-prinsip dari [panduan kontribusi resmi](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
+Untuk berkontribusi ke protokol inti MCP atau implementasi resmi, ikuti prinsip-prinsip dari [panduan kontribusi resmi](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
 
-1. **Kesederhanaan dan Minimalisme**: Spesifikasi MCP mempertahankan standar tinggi untuk menambahkan konsep baru. Lebih mudah menambahkan sesuatu ke spesifikasi daripada menghapusnya.
+1. **Kesederhanaan dan Minimalisme**: Spesifikasi MCP mempertahankan standar tinggi untuk menambah konsep baru. Lebih mudah menambahkan hal ke spesifikasi daripada menghapusnya.
 
-2. **Pendekatan Konkret**: Perubahan spesifikasi harus didasarkan pada tantangan implementasi spesifik, bukan ide spekulatif.
+2. **Pendekatan Konkret**: Perubahan spesifikasi harus berdasarkan tantangan implementasi spesifik, bukan ide spekulatif.
 
-3. **Tahapan Proposal**:
-   - Definisikan: Jelajahi ruang masalah, validasi bahwa pengguna MCP lain menghadapi masalah serupa.
-   - Prototipe: Bangun solusi contoh dan tunjukkan aplikasi praktisnya.
-   - Tulis: Berdasarkan prototipe, tulis proposal spesifikasi.
+3. **Tahapan Proposal**:  
+   - Definisikan: Jelajahi ruang masalah, validasi bahwa pengguna MCP lain menghadapi masalah serupa  
+   - Prototipe: Bangun solusi contoh dan tunjukkan aplikasi praktisnya  
+   - Tulis: Berdasarkan prototipe, buat proposal spesifikasi  
 
-### Pengaturan Lingkungan Pengembangan
+### Setup Lingkungan Pengembangan
 
 ```bash
-# Fork the repository
+# Fork repositori
 git clone https://github.com/YOUR-USERNAME/modelcontextprotocol.git
 cd modelcontextprotocol
 
-# Install dependencies
+# Pasang dependensi
 npm install
 
-# For schema changes, validate and generate schema.json:
+# Untuk perubahan skema, validasi dan generate schema.json:
 npm run check:schema:ts
 npm run generate:schema
 
-# For documentation changes
+# Untuk perubahan dokumentasi
 npm run check:docs
 npm run format
 
-# Preview documentation locally (optional):
+# Pratinjau dokumentasi secara lokal (opsional):
 npm run serve:docs
 ```
-
+  
 ### Contoh: Berkontribusi Perbaikan Bug
 
 ```javascript
-// Original code with bug in the typescript-sdk
+// Kode asli dengan bug di typescript-sdk
 export function validateResource(resource: unknown): resource is MCPResource {
   if (!resource || typeof resource !== 'object') {
     return false;
   }
   
-  // Bug: Missing property validation
-  // Current implementation:
+  // Bug: Validasi properti hilang
+  // Implementasi saat ini:
   const hasName = 'name' in resource;
   const hasSchema = 'schema' in resource;
   
   return hasName && hasSchema;
 }
 
-// Fixed implementation in a contribution
+// Implementasi yang diperbaiki dalam kontribusi
 export function validateResource(resource: unknown): resource is MCPResource {
   if (!resource || typeof resource !== 'object') {
     return false;
   }
   
-  // Improved validation
+  // Validasi yang ditingkatkan
   const hasName = 'name' in resource && typeof (resource as MCPResource).name === 'string';
   const hasSchema = 'schema' in resource && typeof (resource as MCPResource).schema === 'object';
   const hasDescription = !('description' in resource) || typeof (resource as MCPResource).description === 'string';
@@ -150,11 +141,11 @@ export function validateResource(resource: unknown): resource is MCPResource {
   return hasName && hasSchema && hasDescription;
 }
 ```
-
+  
 ### Contoh: Berkontribusi Alat Baru ke Perpustakaan Standar
 
 ```python
-# Example contribution: A CSV data processing tool for the MCP standard library
+# Contoh kontribusi: Alat pemrosesan data CSV untuk perpustakaan standar MCP
 
 from mcp_tools import Tool, ToolRequest, ToolResponse, ToolExecutionException
 import pandas as pd
@@ -216,14 +207,14 @@ class CsvProcessingTool(Tool):
     
     async def execute_async(self, request: ToolRequest) -> ToolResponse:
         try:
-            # Extract parameters
+            # Ekstrak parameter
             operation = request.parameters.get("operation")
             output_format = request.parameters.get("outputFormat", "json")
             
-            # Get CSV data from either direct data or URL
+            # Dapatkan data CSV dari data langsung atau URL
             df = await self._get_dataframe(request)
             
-            # Process based on requested operation
+            # Proses berdasarkan operasi yang diminta
             result = {}
             
             if operation == "summary":
@@ -284,7 +275,7 @@ class CsvProcessingTool(Tool):
     
     def _transform_data(self, df: pd.DataFrame, params: Dict[str, Any]) -> Dict[str, Any]:
         """Transforms the data based on parameters"""
-        # Implementation would include various transformations
+        # Implementasi akan mencakup berbagai transformasi
         return {
             "status": "success",
             "message": "Transformation applied"
@@ -310,44 +301,44 @@ class CsvProcessingTool(Tool):
         else:
             raise ToolExecutionException(f"Unsupported output format: {format}")
 ```
+  
+### Pedoman Kontribusi
 
-### Panduan Kontribusi
+Untuk membuat kontribusi yang sukses ke proyek MCP:
 
-Untuk membuat kontribusi yang sukses pada proyek MCP:
+1. **Mulai dari yang Kecil**: Mulai dengan dokumentasi, perbaikan bug, atau peningkatan kecil  
+2. **Ikuti Panduan Gaya**: Patuhi gaya pengkodean dan konvensi proyek  
+3. **Tulis Tes**: Sertakan tes unit untuk kontribusi kode Anda  
+4. **Dokumentasikan Pekerjaan Anda**: Tambahkan dokumentasi yang jelas untuk fitur atau perubahan baru  
+5. **Kirim PR yang Terfokus**: Jaga agar permintaan tarik fokus pada satu masalah atau fitur  
+6. **Tanggapi Masukan**: Responsif terhadap masukan atas kontribusi Anda  
 
-1. **Mulai dari yang Kecil**: Mulailah dengan dokumentasi, perbaikan bug, atau peningkatan kecil.
-2. **Ikuti Panduan Gaya**: Patuhi gaya penulisan kode dan konvensi proyek.
-3. **Tulis Tes**: Sertakan tes unit untuk kontribusi kode Anda.
-4. **Dokumentasikan Pekerjaan Anda**: Tambahkan dokumentasi yang jelas untuk fitur atau perubahan baru.
-5. **Kirim PR yang Terfokus**: Pastikan pull request Anda hanya mencakup satu masalah atau fitur.
-6. **Tanggapi Umpan Balik**: Bersikap responsif terhadap umpan balik pada kontribusi Anda.
-
-### Alur Kerja Kontribusi Contoh
+### Contoh Alur Kerja Kontribusi
 
 ```bash
-# Clone the repository
+# Kloning repositori
 git clone https://github.com/modelcontextprotocol/typescript-sdk.git
 cd typescript-sdk
 
-# Create a new branch for your contribution
+# Buat cabang baru untuk kontribusi Anda
 git checkout -b feature/my-contribution
 
-# Make your changes
+# Lakukan perubahan Anda
 # ...
 
-# Run tests to ensure your changes don't break existing functionality
+# Jalankan tes untuk memastikan perubahan Anda tidak merusak fungsi yang sudah ada
 npm test
 
-# Commit your changes with a descriptive message
+# Komit perubahan Anda dengan pesan yang deskriptif
 git commit -am "Fix validation in resource handler"
 
-# Push your branch to your fork
+# Dorong cabang Anda ke fork Anda
 git push origin feature/my-contribution
 
-# Create a pull request from your branch to the main repository
-# Then engage with feedback and iterate on your PR as needed
+# Buat pull request dari cabang Anda ke repositori utama
+# Kemudian tanggapi umpan balik dan iterasi pada PR Anda sesuai kebutuhan
 ```
-
+  
 ## Membuat dan Membagikan Server MCP
 
 Salah satu cara paling berharga untuk berkontribusi pada ekosistem MCP adalah dengan membuat dan membagikan server MCP kustom. Komunitas telah mengembangkan ratusan server untuk berbagai layanan dan kasus penggunaan.
@@ -356,23 +347,25 @@ Salah satu cara paling berharga untuk berkontribusi pada ekosistem MCP adalah de
 
 Beberapa kerangka kerja tersedia untuk menyederhanakan pengembangan server MCP:
 
-1. **SDK Resmi**:
-   - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
-   - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
-   - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
-   - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
-   - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
-   - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
+1. **SDK Resmi** (selaras dengan [Spesifikasi MCP 2025-11-25](https://spec.modelcontextprotocol.io/specification/2025-11-25/)):  
+   - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)  
+   - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)  
+   - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)  
+   - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)  
+   - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)  
+   - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)  
+   - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk)  
+   - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk)  
 
-2. **Kerangka Kerja Komunitas**:
-   - [MCP-Framework](https://mcp-framework.com/) - Bangun server MCP dengan elegan dan cepat menggunakan TypeScript.
-   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - Server MCP berbasis anotasi dengan Java.
-   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - Kerangka kerja Java untuk server MCP.
-   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - Proyek awal Next.js untuk server MCP.
+2. **Kerangka Kerja Komunitas**:  
+   - [MCP-Framework](https://mcp-framework.com/) - Bangun server MCP dengan elegan dan cepat menggunakan TypeScript  
+   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - Server MCP dengan anotasi menggunakan Java  
+   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - Kerangka kerja Java untuk server MCP  
+   - [Template Server MCP Next.js](https://github.com/vercel-labs/mcp-for-next.js) - Proyek awal Next.js untuk server MCP  
 
-### Mengembangkan Alat yang Dapat Dibagikan
+### Mengembangkan Alat yang Bisa Dibagikan
 
-#### Contoh .NET: Membuat Paket Alat yang Dapat Dibagikan
+#### Contoh .NET: Membuat Paket Alat yang Bisa Dibagikan
 
 ```csharp
 // Create a new .NET library project
@@ -477,11 +470,11 @@ namespace McpFinanceTools
 // dotnet pack -c Release
 // dotnet nuget push bin/Release/McpFinanceTools.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k YOUR_API_KEY
 ```
-
+  
 #### Contoh Java: Membuat Paket Maven untuk Alat
 
 ```java
-// pom.xml configuration for a shareable MCP tool package
+// konfigurasi pom.xml untuk paket alat MCP yang dapat dibagikan
 <!-- 
 <project>
     <groupId>com.example</groupId>
@@ -542,7 +535,7 @@ public class WeatherForecastTool implements Tool {
     @Override
     public Object getSchema() {
         Map<String, Object> schema = new HashMap<>();
-        // Schema definition...
+        // Definisi skema...
         return schema;
     }
     
@@ -553,10 +546,10 @@ public class WeatherForecastTool implements Tool {
             int days = request.getParameters().has("days") ? 
                 request.getParameters().get("days").asInt() : 3;
             
-            // Call weather API
+            // Panggil API cuaca
             Map<String, Object> forecast = getForecast(location, days);
             
-            // Build response
+            // Bangun respons
             return new ToolResponse.Builder()
                 .setResult(forecast)
                 .build();
@@ -566,23 +559,23 @@ public class WeatherForecastTool implements Tool {
     }
     
     private Map<String, Object> getForecast(String location, int days) {
-        // Implementation would call weather API
-        // Simplified example
+        // Implementasi akan memanggil API cuaca
+        // Contoh yang disederhanakan
         Map<String, Object> result = new HashMap<>();
-        // Add forecast data...
+        // Tambahkan data prakiraan...
         return result;
     }
 }
 
-// Build and publish using Maven
+// Bangun dan publikasikan menggunakan Maven
 // mvn clean package
 // mvn deploy
 ```
-
+  
 #### Contoh Python: Menerbitkan Paket PyPI
 
 ```python
-# Directory structure for a PyPI package:
+# Struktur direktori untuk paket PyPI:
 # mcp_nlp_tools/
 # ├── LICENSE
 # ├── README.md
@@ -592,7 +585,7 @@ public class WeatherForecastTool implements Tool {
 # │   ├── sentiment_tool.py
 # │   └── translation_tool.py
 
-# Example setup.py
+# Contoh setup.py
 """
 from setuptools import setup, find_packages
 
@@ -620,7 +613,7 @@ setup(
 )
 """
 
-# Example NLP tool implementation (sentiment_tool.py)
+# Contoh implementasi alat NLP (sentiment_tool.py)
 from mcp_tools import Tool, ToolRequest, ToolResponse, ToolExecutionException
 from transformers import pipeline
 import torch
@@ -629,7 +622,7 @@ class SentimentAnalysisTool(Tool):
     """MCP tool for sentiment analysis of text"""
     
     def __init__(self, model_name="distilbert-base-uncased-finetuned-sst-2-english"):
-        # Load the sentiment analysis model
+        # Memuat model analisis sentimen
         self.sentiment_analyzer = pipeline("sentiment-analysis", model=model_name)
     
     def get_name(self):
@@ -657,14 +650,14 @@ class SentimentAnalysisTool(Tool):
     
     async def execute_async(self, request: ToolRequest) -> ToolResponse:
         try:
-            # Extract parameters
+            # Mengambil parameter
             text = request.parameters.get("text")
             include_score = request.parameters.get("includeScore", True)
             
-            # Analyze sentiment
+            # Menganalisis sentimen
             sentiment_result = self.sentiment_analyzer(text)[0]
             
-            # Format result
+            # Memformat hasil
             result = {
                 "sentiment": sentiment_result["label"],
                 "text": text
@@ -673,45 +666,45 @@ class SentimentAnalysisTool(Tool):
             if include_score:
                 result["score"] = sentiment_result["score"]
             
-            # Return result
+            # Mengembalikan hasil
             return ToolResponse(result=result)
             
         except Exception as e:
             raise ToolExecutionException(f"Sentiment analysis failed: {str(e)}")
 
-# To publish:
+# Untuk menerbitkan:
 # python setup.py sdist bdist_wheel
 # python -m twine upload dist/*
 ```
-
+  
 ### Berbagi Praktik Terbaik
 
 Saat membagikan alat MCP dengan komunitas:
 
-1. **Dokumentasi Lengkap**:
-   - Dokumentasikan tujuan, penggunaan, dan contoh.
-   - Jelaskan parameter dan nilai pengembalian.
-   - Dokumentasikan ketergantungan eksternal.
+1. **Dokumentasi Lengkap**:  
+   - Dokumentasikan tujuan, penggunaan, dan contoh  
+   - Jelaskan parameter dan nilai pengembalian  
+   - Dokumentasikan ketergantungan eksternal apa pun  
 
-2. **Penanganan Kesalahan**:
-   - Terapkan penanganan kesalahan yang kuat.
-   - Berikan pesan kesalahan yang berguna.
-   - Tangani kasus tepi dengan baik.
+2. **Penanganan Kesalahan**:  
+   - Implementasikan penanganan kesalahan yang kuat  
+   - Berikan pesan kesalahan yang berguna  
+   - Tangani kasus tepi dengan baik  
 
-3. **Pertimbangan Kinerja**:
-   - Optimalkan untuk kecepatan dan penggunaan sumber daya.
-   - Terapkan caching jika diperlukan.
-   - Pertimbangkan skalabilitas.
+3. **Pertimbangan Kinerja**:  
+   - Optimalkan untuk kecepatan dan penggunaan sumber daya  
+   - Gunakan caching bila sesuai  
+   - Pertimbangkan skala  
 
-4. **Keamanan**:
-   - Gunakan kunci API dan autentikasi yang aman.
-   - Validasi dan sanitasi input.
-   - Terapkan pembatasan laju untuk panggilan API eksternal.
+4. **Keamanan**:  
+   - Gunakan kunci API dan autentikasi yang aman  
+   - Validasi dan sanitasi masukan  
+   - Terapkan pembatasan laju untuk panggilan API eksternal  
 
-5. **Pengujian**:
-   - Sertakan cakupan pengujian yang komprehensif.
-   - Uji dengan berbagai jenis input dan kasus tepi.
-   - Dokumentasikan prosedur pengujian.
+5. **Pengujian**:  
+   - Sertakan cakupan pengujian komprehensif  
+   - Uji dengan berbagai jenis masukan dan kasus tepi  
+   - Dokumentasikan prosedur pengujian  
 
 ## Kolaborasi Komunitas dan Praktik Terbaik
 
@@ -719,36 +712,36 @@ Kolaborasi yang efektif adalah kunci untuk ekosistem MCP yang berkembang.
 
 ### Saluran Komunikasi
 
-- Isu dan Diskusi GitHub
-- Microsoft Tech Community
-- Saluran Discord dan Slack
-- Stack Overflow (tag: `model-context-protocol` atau `mcp`)
+- Isu dan Diskusi GitHub  
+- Microsoft Tech Community  
+- Saluran Discord dan Slack  
+- Stack Overflow (tag: `model-context-protocol` atau `mcp`)  
 
 ### Tinjauan Kode
 
 Saat meninjau kontribusi MCP:
 
-1. **Kejelasan**: Apakah kode jelas dan terdokumentasi dengan baik?
-2. **Kebenaran**: Apakah kode berfungsi seperti yang diharapkan?
-3. **Konsistensi**: Apakah kode mengikuti konvensi proyek?
-4. **Kelengkapan**: Apakah tes dan dokumentasi disertakan?
-5. **Keamanan**: Apakah ada masalah keamanan?
+1. **Kejelasan**: Apakah kode jelas dan terdokumentasi dengan baik?  
+2. **Kebenaran**: Apakah bekerja sesuai harapan?  
+3. **Konsistensi**: Apakah mengikuti konvensi proyek?  
+4. **Kelengkapan**: Apakah tes dan dokumentasi disertakan?  
+5. **Keamanan**: Apakah ada masalah keamanan?  
 
 ### Kompatibilitas Versi
 
 Saat mengembangkan untuk MCP:
 
-1. **Versi Protokol**: Patuhi versi protokol MCP yang didukung alat Anda.
-2. **Kompatibilitas Klien**: Pertimbangkan kompatibilitas ke belakang.
-3. **Kompatibilitas Server**: Ikuti panduan implementasi server.
-4. **Perubahan yang Merusak**: Dokumentasikan dengan jelas perubahan yang merusak.
+1. **Versi Protokol**: Patuhi versi protokol MCP yang didukung alat Anda  
+2. **Kompatibilitas Klien**: Pertimbangkan kompatibilitas mundur  
+3. **Kompatibilitas Server**: Ikuti pedoman implementasi server  
+4. **Perubahan Besar**: Dokumentasikan dengan jelas semua perubahan besar  
 
-## Proyek Komunitas Contoh: Registri Alat MCP
+## Contoh Proyek Komunitas: Registri Alat MCP
 
-Kontribusi komunitas yang penting bisa berupa pengembangan registri publik untuk alat MCP.
+Kontribusi komunitas penting bisa berupa mengembangkan registri publik untuk alat MCP.
 
 ```python
-# Example schema for a community tool registry API
+# Skema contoh untuk API registri alat komunitas
 
 from fastapi import FastAPI, HTTPException, Depends
 from pydantic import BaseModel, Field, HttpUrl
@@ -756,7 +749,7 @@ from typing import List, Optional
 import datetime
 import uuid
 
-# Models for the tool registry
+# Model untuk registri alat
 class ToolSchema(BaseModel):
     """JSON Schema for a tool"""
     type: str
@@ -785,10 +778,10 @@ class Tool(ToolRegistration):
     rating: float = Field(default=0.0)
     ratings_count: int = Field(default=0)
 
-# FastAPI application for the registry
+# Aplikasi FastAPI untuk registri
 app = FastAPI(title="MCP Tool Registry")
 
-# In-memory database for this example
+# Basis data dalam memori untuk contoh ini
 tools_db = {}
 
 @app.post("/tools", response_model=Tool)
@@ -823,22 +816,22 @@ async def delete_tool(tool_name: str):
     del tools_db[tool_name]
     return {"message": f"Tool '{tool_name}' deleted"}
 ```
+  
+## Intisari Penting
 
-## Poin Penting
-
-- Komunitas MCP beragam dan menyambut berbagai jenis kontribusi.
-- Berkontribusi pada MCP dapat mencakup peningkatan protokol inti hingga alat kustom.
-- Mengikuti panduan kontribusi meningkatkan peluang PR Anda diterima.
-- Membuat dan membagikan alat MCP adalah cara berharga untuk meningkatkan ekosistem.
-- Kolaborasi komunitas sangat penting untuk pertumbuhan dan peningkatan MCP.
+- Komunitas MCP beragam dan menyambut berbagai jenis kontribusi  
+- Berkontribusi ke MCP bisa berupa peningkatan protokol inti hingga alat kustom  
+- Mengikuti pedoman kontribusi meningkatkan peluang PR Anda diterima  
+- Membuat dan membagikan alat MCP adalah cara berharga untuk meningkatkan ekosistem  
+- Kolaborasi komunitas sangat penting untuk pertumbuhan dan perbaikan MCP  
 
 ## Latihan
 
-1. Identifikasi area dalam ekosistem MCP di mana Anda dapat memberikan kontribusi berdasarkan keterampilan dan minat Anda.
-2. Fork repositori MCP dan atur lingkungan pengembangan lokal.
-3. Buat peningkatan kecil, perbaikan bug, atau alat yang akan bermanfaat bagi komunitas.
-4. Dokumentasikan kontribusi Anda dengan tes dan dokumentasi yang sesuai.
-5. Kirim pull request ke repositori yang sesuai.
+1. Identifikasi area dalam ekosistem MCP di mana Anda bisa memberi kontribusi berdasarkan keahlian dan minat Anda  
+2. Fork repositori MCP dan siapkan lingkungan pengembangan lokal  
+3. Buat peningkatan kecil, perbaikan bug, atau alat yang akan bermanfaat bagi komunitas  
+4. Dokumentasikan kontribusi Anda dengan tes dan dokumentasi yang tepat  
+5. Ajukan pull request ke repositori yang sesuai  
 
 ## Sumber Daya Tambahan
 
@@ -846,7 +839,13 @@ async def delete_tool(tool_name: str):
 
 ---
 
+## Selanjutnya
+
 Selanjutnya: [Pelajaran dari Adopsi Awal](../07-LessonsfromEarlyAdoption/README.md)
 
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang berwenang. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan terjemahan yang akurat, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber otoritatif. Untuk informasi yang penting, disarankan menggunakan terjemahan profesional oleh penerjemah manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "dd8da3f75addcef453fe11f02a270217",
-  "translation_date": "2025-07-14T08:17:59+00:00",
-  "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/README.md",
-  "language_code": "sw"
-}
--->
 # 🔧 Moduli 3: Maendeleo ya MCP ya Juu kwa AI Toolkit
 
 ![Duration](https://img.shields.io/badge/Duration-20_minutes-blue?style=flat-square)
@@ -64,7 +55,7 @@ Chombo chenye nguvu cha utatuzi wa makosa kinachotoa:
 2. **Unda wakala mpya** kwa usanidi ufuatao:
    - Jina la Wakala: `WeatherAgent`
 
-![Agent Creation](../../../../translated_images/Agent.c9c33f6a412b4cdedfb973fe5448bdb33de3f400055603111b875610e9b917ab.sw.png)
+![Agent Creation](../../../../translated_images/sw/Agent.c9c33f6a412b4cde.webp)
 
 ### Hatua 2: Anzisha Mradi wa Seva ya MCP
 
@@ -74,7 +65,7 @@ Chombo chenye nguvu cha utatuzi wa makosa kinachotoa:
 4. **Chagua kiolezo cha `python-weather`**
 5. **Pata jina seva yako:** `weather_mcp`
 
-![Python Template Selection](../../../../translated_images/Pythontemplate.9d0a2913c6491500bd673430f024dc44676af2808a27b5da9dcc0eb7063adc28.sw.png)
+![Python Template Selection](../../../../translated_images/sw/Pythontemplate.9d0a2913c6491500.webp)
 
 ### Hatua 3: Fungua na Kagua Mradi
 
@@ -340,7 +331,7 @@ USER_PROMPT
 How's the weather like in Seattle
 ```
 
-![Agent Builder Debug Result](../../../../translated_images/Result.6ac570f7d2b1d5389c561ab0566970fe0f13e75bdd976b6a7f0270bc715d07f8.sw.png)
+![Agent Builder Debug Result](../../../../translated_images/sw/Result.6ac570f7d2b1d538.webp)
 
 ### Hatua 8: Tatua Makosa kwa MCP Inspector
 
@@ -352,7 +343,7 @@ How's the weather like in Seattle
    - Fuatilia maombi ya mtandao
    - Tatua matatizo ya majibu ya seva
 
-![MCP Inspector Interface](../../../../translated_images/Inspector.5672415cd02fe8731774586cc0a1083e3275d2f8491602aecc8ac4d61f2c0d57.sw.png)
+![MCP Inspector Interface](../../../../translated_images/sw/Inspector.5672415cd02fe873.webp)
 
 ---
 

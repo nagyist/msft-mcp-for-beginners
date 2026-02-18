@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-13T21:56:06+00:00",
-  "source_file": "03-GettingStarted/08-testing/README.md",
-  "language_code": "en"
-}
--->
 ## Testing and Debugging
 
 Before you start testing your MCP server, it’s important to understand the available tools and best practices for debugging. Effective testing ensures your server behaves as expected and helps you quickly identify and fix issues. The following section outlines recommended methods for validating your MCP implementation.
@@ -48,7 +39,7 @@ npx @modelcontextprotocol/inspector node build/index.js
 
 This command starts an MCP server with its visual interface and opens a local web interface in your browser. You’ll see a dashboard showing your registered MCP servers, their available tools, resources, and prompts. The interface lets you interactively test tool execution, inspect server metadata, and view real-time responses, making it easier to validate and debug your MCP server implementations.
 
-Here’s an example of what it looks like: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.en.png)
+Here’s an example of what it looks like: ![Inspector](../../../../translated_images/en/connect.141db0b2bd05f096.webp)
 
 You can also run the tool in CLI mode by adding the `--cli` flag. Here’s an example of running it in CLI mode, which lists all the tools on the server:
 

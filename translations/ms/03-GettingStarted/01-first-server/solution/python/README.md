@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d26f746e21775c30b4d7ed97962b24df",
-  "translation_date": "2025-08-18T18:01:07+00:00",
-  "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
-  "language_code": "ms"
-}
--->
 # Menjalankan sampel ini
 
 Anda disarankan untuk memasang `uv` tetapi ia bukan keperluan, lihat [arahan](https://docs.astral.sh/uv/#highlights)
@@ -92,7 +83,7 @@ Ini akan menyenaraikan semua alat yang tersedia dalam pelayan. Anda sepatutnya m
 }
 ```
 
-Untuk memanggil alat, taipkan:
+Untuk memanggil alat taipkan:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
@@ -112,9 +103,11 @@ Anda sepatutnya melihat output berikut:
 }
 ```
 
-> ![!TIP]
+> [!TIP]
 > Biasanya lebih pantas menjalankan pemeriksa dalam mod CLI berbanding dalam pelayar.
 > Baca lebih lanjut tentang pemeriksa [di sini](https://github.com/modelcontextprotocol/inspector).
 
+---
+
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk memastikan ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat yang kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk memastikan ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat yang kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "dd8da3f75addcef453fe11f02a270217",
-  "translation_date": "2025-07-14T08:16:37+00:00",
-  "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/README.md",
-  "language_code": "vi"
-}
--->
 # 🔧 Module 3: Phát Triển MCP Nâng Cao với AI Toolkit
 
 ![Duration](https://img.shields.io/badge/Duration-20_minutes-blue?style=flat-square)
@@ -66,7 +57,7 @@ Công cụ gỡ lỗi mạnh mẽ cung cấp:
 2. **Tạo một agent mới** với cấu hình sau:  
    - Tên agent: `WeatherAgent`
 
-![Agent Creation](../../../../translated_images/Agent.c9c33f6a412b4cdedfb973fe5448bdb33de3f400055603111b875610e9b917ab.vi.png)
+![Agent Creation](../../../../translated_images/vi/Agent.c9c33f6a412b4cde.webp)
 
 ### Bước 2: Khởi Tạo Dự Án MCP Server
 
@@ -76,7 +67,7 @@ Công cụ gỡ lỗi mạnh mẽ cung cấp:
 4. **Chọn mẫu `python-weather`**  
 5. **Đặt tên server:** `weather_mcp`
 
-![Python Template Selection](../../../../translated_images/Pythontemplate.9d0a2913c6491500bd673430f024dc44676af2808a27b5da9dcc0eb7063adc28.vi.png)
+![Python Template Selection](../../../../translated_images/vi/Pythontemplate.9d0a2913c6491500.webp)
 
 ### Bước 3: Mở và Xem Xét Dự Án
 
@@ -342,7 +333,7 @@ USER_PROMPT
 How's the weather like in Seattle
 ```
 
-![Agent Builder Debug Result](../../../../translated_images/Result.6ac570f7d2b1d5389c561ab0566970fe0f13e75bdd976b6a7f0270bc715d07f8.vi.png)
+![Agent Builder Debug Result](../../../../translated_images/vi/Result.6ac570f7d2b1d538.webp)
 
 ### Bước 8: Gỡ Lỗi với MCP Inspector
 
@@ -354,7 +345,7 @@ How's the weather like in Seattle
    - Giám sát các yêu cầu mạng  
    - Gỡ lỗi phản hồi server
 
-![MCP Inspector Interface](../../../../translated_images/Inspector.5672415cd02fe8731774586cc0a1083e3275d2f8491602aecc8ac4d61f2c0d57.vi.png)
+![MCP Inspector Interface](../../../../translated_images/vi/Inspector.5672415cd02fe873.webp)
 
 ---
 

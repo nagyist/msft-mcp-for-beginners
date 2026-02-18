@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ed9cab32cc67c12d8969b407aa47100a",
-  "translation_date": "2025-07-13T17:51:41+00:00",
-  "source_file": "03-GettingStarted/01-first-server/solution/java/README.md",
-  "language_code": "es"
-}
--->
 # Servicio Básico de Calculadora MCP
 
 Este servicio ofrece operaciones básicas de calculadora a través del Protocolo de Contexto de Modelo (MCP) usando Spring Boot con transporte WebFlux. Está diseñado como un ejemplo sencillo para principiantes que están aprendiendo sobre implementaciones MCP.
@@ -73,7 +64,7 @@ El MCP Inspector es una herramienta útil para interactuar con servicios MCP. Pa
    - Haz clic en "List Tools" para ver las operaciones de calculadora disponibles
    - Selecciona una herramienta y haz clic en "Run Tool" para ejecutar una operación
 
-![Captura de pantalla de MCP Inspector](../../../../../../translated_images/tool.40e180a7b0d0fe2067cf96435532b01f63f7f8619d6b0132355a04b426b669ac.es.png)
+![Captura de pantalla de MCP Inspector](../../../../../../translated_images/es/tool.40e180a7b0d0fe20.webp)
 
 **Aviso legal**:  
 Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13231e9951b68efd9df8c56bd5cdb27e",
-  "translation_date": "2025-07-13T22:30:19+00:00",
-  "source_file": "03-GettingStarted/samples/java/calculator/README.md",
-  "language_code": "hu"
-}
--->
 # Basic Calculator MCP Service
 
 Ez a szolgáltatás alapvető számológép műveleteket biztosít a Model Context Protocol (MCP) segítségével, Spring Boot és WebFlux transport használatával. Egyszerű példaként készült kezdők számára, akik az MCP implementációkat tanulják.
@@ -201,7 +192,7 @@ Az MCP Inspector egy hasznos eszköz az MCP szolgáltatásokkal való interakci�
    - Kattints a "List Tools" gombra az elérhető számológép műveletek megtekintéséhez
    - Válassz ki egy eszközt, majd kattints a "Run Tool" gombra a művelet végrehajtásához
 
-![MCP Inspector Screenshot](../../../../../../translated_images/tool.c75a0b2380efcf1a47a8478f54380a36ddcca7943b98f56dabbac8b07e15c3bb.hu.png)
+![MCP Inspector Screenshot](../../../../../../translated_images/hu/tool.c75a0b2380efcf1a.webp)
 
 ### Docker használata
 

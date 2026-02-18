@@ -1,69 +1,60 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ee93d6093964ea579dbdc20b4d643e9b",
-  "translation_date": "2025-08-18T16:12:01+00:00",
-  "source_file": "03-GettingStarted/01-first-server/README.md",
-  "language_code": "ne"
-}
--->
-# MCP सुरु गर्न
+# MCP सँग सुरु गर्दै
 
-Model Context Protocol (MCP) सँगको तपाईंको पहिलो कदममा स्वागत छ! चाहे तपाईं MCP मा नयाँ हुनुहुन्छ वा आफ्नो ज्ञानलाई गहिरो बनाउन चाहनुहुन्छ, यो मार्गदर्शकले तपाईंलाई आवश्यक सेटअप र विकास प्रक्रियामा लैजानेछ। तपाईंले MCP कसरी AI मोडेल र एप्लिकेसनहरू बीच सहज एकीकरण सक्षम बनाउँछ भन्ने पत्ता लगाउनुहुनेछ, र MCP-संचालित समाधानहरू निर्माण र परीक्षण गर्न आफ्नो वातावरण छिटो तयार गर्ने तरिका सिक्नुहुनेछ।
+Model Context Protocol (MCP) सँग तपाईंको पहिलो कदमहरूमा स्वागत छ! तपाईं MCP मा नयाँ हुनुहुन्छ वा आफ्नो बुझाइलाई गहिरो बनाउन खोज्दै हुनुहुन्छ भने, यो मार्गदर्शकले तपाईंलाई आवश्यक सेटअप र विकास प्रक्रियामा लैजानेछ। तपाईंले पत्ता लगाउनुहुनेछ कि कसरी MCP ले AI मोडेलहरू र अनुप्रयोगहरू बीच सहज एकीकरण सक्षम पार्छ, र कसरी छिटो आफ्नो वातावरण तयार पारेर MCP-संचालित समाधानहरू निर्माण र परीक्षण गर्ने।
 
-> TLDR; यदि तपाईं AI एप्लिकेसनहरू निर्माण गर्नुहुन्छ भने, तपाईंले LLM (ठूलो भाषा मोडेल) लाई थप जानकार बनाउन उपकरणहरू र अन्य स्रोतहरू थप्न सक्नुहुन्छ। तर यदि तपाईं ती उपकरणहरू र स्रोतहरूलाई सर्भरमा राख्नुहुन्छ भने, एप्लिकेसन र सर्भरको क्षमता कुनै पनि क्लाइन्टले LLM सहित/बिना प्रयोग गर्न सक्दछ।
+> TLDR; यदि तपाईं AI अनुप्रयोगहरू बनाउनुहुन्छ भने, तपाईंलाई थाहा छ कि तपाईंले आफ्नो LLM (ठूलो भाषा मोडेल) मा उपकरणहरू र अन्य स्रोतहरू थप्न सक्नुहुन्छ, जसले LLM लाई अझ ज्ञानवान बनाउँछ। तर यदि तपाईं ती उपकरणहरू र स्रोतहरू सर्भरमा राख्नुहुन्छ भने, अनुप्रयोग र सर्भर क्षमताहरू कुनै पनि क्लाइन्टले LLM सहित वा बिना प्रयोग गर्न सक्छ।
 
 ## अवलोकन
 
-यो पाठले MCP वातावरण सेटअप गर्ने र तपाईंको पहिलो MCP एप्लिकेसनहरू निर्माण गर्ने व्यावहारिक मार्गदर्शन प्रदान गर्दछ। तपाईंले आवश्यक उपकरण र फ्रेमवर्क सेटअप गर्ने, आधारभूत MCP सर्भरहरू निर्माण गर्ने, होस्ट एप्लिकेसनहरू सिर्जना गर्ने, र तपाईंको कार्यान्वयनहरू परीक्षण गर्ने तरिका सिक्नुहुनेछ।
+यस पाठले MCP वातावरणहरू सेटअप गर्ने र तपाईंका पहिलो MCP अनुप्रयोगहरू निर्माण गर्ने व्यावहारिक मार्गदर्शन प्रदान गर्दछ। तपाईंले आवश्यक उपकरणहरू र फ्रेमवर्कहरू कसरी सेटअप गर्ने, आधारभूत MCP सर्भरहरू कसरी बनाउने, होस्ट अनुप्रयोगहरू कसरी सिर्जना गर्ने, र तपाईंका कार्यान्वयनहरू कसरी परीक्षण गर्ने सिक्नुहुनेछ।
 
-Model Context Protocol (MCP) एक खुला प्रोटोकल हो जसले एप्लिकेसनहरूले LLM लाई सन्दर्भ प्रदान गर्ने तरिका मानकीकरण गर्दछ। MCP लाई AI एप्लिकेसनहरूको लागि USB-C पोर्ट जस्तै सोच्नुहोस् - यसले AI मोडेललाई विभिन्न डेटा स्रोतहरू र उपकरणहरूसँग जडान गर्न मानकीकृत तरिका प्रदान गर्दछ।
+Model Context Protocol (MCP) एक खुला प्रोटोकल हो जसले अनुप्रयोगहरूले LLMs लाई सन्दर्भ कसरी प्रदान गर्ने भन्ने कुरा मानकीकृत गर्दछ। MCP लाई AI अनुप्रयोगहरूको लागि USB-C पोर्ट जस्तै सोच्नुहोस् - यसले AI मोडेलहरूलाई विभिन्न डेटा स्रोतहरू र उपकरणहरूसँग जडान गर्ने मानकीकृत तरिका प्रदान गर्दछ।
 
-## सिक्ने उद्देश्यहरू
+## सिकाइ उद्देश्यहरू
 
-यो पाठको अन्त्यसम्ममा, तपाईं सक्षम हुनुहुनेछ:
+यस पाठको अन्त्यसम्म, तपाईं सक्षम हुनुहुनेछ:
 
 - C#, Java, Python, TypeScript, र Rust मा MCP को लागि विकास वातावरण सेटअप गर्न
-- स्रोतहरू, प्रम्प्टहरू, र उपकरणहरू सहित अनुकूलित सुविधाहरू भएको आधारभूत MCP सर्भर निर्माण र तैनात गर्न
-- MCP सर्भरहरूसँग जडान गर्ने होस्ट एप्लिकेसनहरू सिर्जना गर्न
+- कस्टम सुविधाहरू (स्रोतहरू, प्रॉम्प्टहरू, र उपकरणहरू) सहित आधारभूत MCP सर्भरहरू निर्माण र तैनाथ गर्न
+- MCP सर्भरहरूसँग जडान गर्ने होस्ट अनुप्रयोगहरू सिर्जना गर्न
 - MCP कार्यान्वयनहरू परीक्षण र डिबग गर्न
 
 ## तपाईंको MCP वातावरण सेटअप गर्दै
 
-MCP मा काम सुरु गर्नु अघि, तपाईंको विकास वातावरण तयार पार्नु र आधारभूत कार्यप्रवाह बुझ्नु महत्त्वपूर्ण छ। यो खण्डले MCP सँग सहज सुरुवात सुनिश्चित गर्न प्रारम्भिक सेटअप चरणहरूमा तपाईंलाई मार्गदर्शन गर्नेछ।
+MCP सँग काम गर्न सुरु गर्नु अघि, तपाईंको विकास वातावरण तयार पार्नु र आधारभूत कार्यप्रवाह बुझ्नु महत्त्वपूर्ण छ। यस खण्डले तपाईंलाई सुरुवाती सेटअप चरणहरूमा मार्गदर्शन गर्नेछ ताकि MCP सँग सहज सुरुवात सुनिश्चित होस्।
 
-### पूर्वापेक्षाहरू
+### पूर्वआवश्यकताहरू
 
 MCP विकासमा डुब्नु अघि, सुनिश्चित गर्नुहोस् कि तपाईंले:
 
 - **विकास वातावरण**: तपाईंले रोजेको भाषा (C#, Java, Python, TypeScript, वा Rust) को लागि
-- **IDE/सम्पादक**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm, वा कुनै पनि आधुनिक कोड सम्पादक
+- **IDE/संपादक**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm, वा कुनै आधुनिक कोड संपादक
 - **प्याकेज प्रबन्धकहरू**: NuGet, Maven/Gradle, pip, npm/yarn, वा Cargo
-- **API कुञ्जीहरू**: तपाईंको होस्ट एप्लिकेसनहरूमा प्रयोग गर्न चाहनु भएको कुनै पनि AI सेवाहरूको लागि
+- **API कुञ्जीहरू**: तपाईंले होस्ट अनुप्रयोगहरूमा प्रयोग गर्ने कुनै पनि AI सेवाहरूका लागि
 
 ## आधारभूत MCP सर्भर संरचना
 
-MCP सर्भर सामान्यतया समावेश गर्दछ:
+एक MCP सर्भर सामान्यतया समावेश गर्दछ:
 
-- **सर्भर कन्फिगरेसन**: पोर्ट, प्रमाणीकरण, र अन्य सेटिङहरू सेटअप गर्नुहोस्
-- **स्रोतहरू**: LLM लाई उपलब्ध गराइएको डेटा र सन्दर्भ
-- **उपकरणहरू**: मोडेलहरूले आह्वान गर्न सक्ने कार्यक्षमता
-- **प्रम्प्टहरू**: पाठ उत्पन्न वा संरचना गर्न टेम्प्लेटहरू
+- **सर्भर कन्फिगरेसन**: पोर्ट, प्रमाणीकरण, र अन्य सेटिङहरू सेटअप गर्ने
+- **स्रोतहरू**: LLMs लाई उपलब्ध गराइने डेटा र सन्दर्भ
+- **उपकरणहरू**: मोडेलहरूले कल गर्न सक्ने कार्यक्षमता
+- **प्रॉम्प्टहरू**: पाठ सिर्जना वा संरचना गर्नका लागि टेम्प्लेटहरू
 
-TypeScript मा एक सरलीकृत उदाहरण यहाँ छ:
+यहाँ TypeScript मा एक सरल उदाहरण छ:
 
 ```typescript
 import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
 
-// Create an MCP server
+// एक MCP सर्भर सिर्जना गर्नुहोस्
 const server = new McpServer({
   name: "Demo",
   version: "1.0.0"
 });
 
-// Add an addition tool
+// एक थप उपकरण थप्नुहोस्
 server.tool("add",
   { a: z.number(), b: z.number() },
   async ({ a, b }) => ({
@@ -71,17 +62,20 @@ server.tool("add",
   })
 );
 
-// Add a dynamic greeting resource
+// एक गतिशील अभिवादन स्रोत थप्नुहोस्
 server.resource(
   "file",
-  // The 'list' parameter controls how the resource lists available files. Setting it to undefined disables listing for this resource.
+  // 'list' प्यारामिटरले स्रोतले उपलब्ध फाइलहरू कसरी सूचीबद्ध गर्छ नियन्त्रण गर्छ। यसलाई undefined मा सेट गर्दा यस स्रोतको लागि सूचीबद्धता अक्षम हुन्छ।
   new ResourceTemplate("file://{path}", { list: undefined }),
   async (uri, { path }) => ({
     contents: [{
       uri: uri.href,
       text: `File, ${path}!`
     }]
-// Add a file resource that reads the file contents
+  })
+);
+
+// फाइल सामग्री पढ्ने फाइल स्रोत थप्नुहोस्
 server.resource(
   "file",
   new ResourceTemplate("file://{path}", { list: undefined }),
@@ -115,89 +109,89 @@ server.prompt(
   })
 );
 
-// Start receiving messages on stdin and sending messages on stdout
+// stdin मा सन्देशहरू प्राप्त गर्न र stdout मा सन्देशहरू पठाउन सुरु गर्नुहोस्
 const transport = new StdioServerTransport();
 await server.connect(transport);
 ```
 
-माथिको कोडमा हामीले:
+अघिल्लो कोडमा हामीले:
 
 - MCP TypeScript SDK बाट आवश्यक कक्षाहरू आयात गरेका छौं।
 - नयाँ MCP सर्भर उदाहरण सिर्जना र कन्फिगर गरेका छौं।
-- कस्टम उपकरण (`calculator`) दर्ता गरेका छौं जसमा ह्यान्डलर फङ्क्शन छ।
-- MCP अनुरोधहरूको लागि सर्भरलाई सुन्न सुरु गरेका छौं।
+- कस्टम उपकरण (`calculator`) लाई ह्यान्डलर फंक्शनसहित दर्ता गरेका छौं।
+- MCP अनुरोधहरू सुन्न सर्भर सुरु गरेका छौं।
 
-## परीक्षण र डिबग गर्दै
+## परीक्षण र डिबगिङ
 
-तपाईंको MCP सर्भर परीक्षण सुरु गर्नु अघि, उपलब्ध उपकरणहरू र डिबगका लागि उत्तम अभ्यासहरू बुझ्नु महत्त्वपूर्ण छ। प्रभावकारी परीक्षणले तपाईंको सर्भर अपेक्षित रूपमा व्यवहार गर्छ भन्ने सुनिश्चित गर्दछ र समस्याहरू चाँडै पहिचान र समाधान गर्न मद्दत गर्दछ। निम्न खण्डले तपाईंको MCP कार्यान्वयनलाई मान्य गर्न सिफारिस गरिएका दृष्टिकोणहरू outlines गर्दछ।
+तपाईंको MCP सर्भर परीक्षण गर्न सुरु गर्नु अघि, उपलब्ध उपकरणहरू र डिबगिङका लागि उत्तम अभ्यासहरू बुझ्नु महत्त्वपूर्ण छ। प्रभावकारी परीक्षणले तपाईंको सर्भर अपेक्षित रूपमा व्यवहार गर्छ भन्ने सुनिश्चित गर्दछ र छिटो समस्याहरू पहिचान र समाधान गर्न मद्दत गर्दछ। तलको खण्डले तपाईंको MCP कार्यान्वयनलाई मान्य पार्न सिफारिस गरिएका दृष्टिकोणहरू वर्णन गर्दछ।
 
-MCP ले तपाईंलाई सर्भर परीक्षण र डिबग गर्न मद्दत गर्ने उपकरणहरू प्रदान गर्दछ:
+MCP ले तपाईंलाई सर्भरहरू परीक्षण र डिबग गर्न मद्दत गर्ने उपकरणहरू प्रदान गर्दछ:
 
-- **Inspector tool**, यो ग्राफिकल इन्टरफेसले तपाईंलाई सर्भरसँग जडान गर्न र उपकरणहरू, प्रम्प्टहरू, र स्रोतहरू परीक्षण गर्न अनुमति दिन्छ।
-- **curl**, तपाईं कमाण्ड लाइन उपकरण जस्तै curl वा HTTP कमाण्डहरू चलाउन सक्ने अन्य क्लाइन्ट प्रयोग गरेर पनि सर्भरसँग जडान गर्न सक्नुहुन्छ।
+- **Inspector उपकरण**, यो ग्राफिकल इन्टरफेसले तपाईंलाई सर्भरसँग जडान गर्न र तपाईंका उपकरणहरू, प्रॉम्प्टहरू र स्रोतहरू परीक्षण गर्न अनुमति दिन्छ।
+- **curl**, तपाईं कमाण्ड लाइन उपकरण जस्तै curl वा अन्य क्लाइन्टहरू प्रयोग गरेर पनि सर्भरसँग जडान गर्न सक्नुहुन्छ जसले HTTP आदेशहरू सिर्जना र चलाउन सक्छ।
 
 ### MCP Inspector प्रयोग गर्दै
 
 [MCP Inspector](https://github.com/modelcontextprotocol/inspector) एक दृश्य परीक्षण उपकरण हो जसले तपाईंलाई मद्दत गर्दछ:
 
-1. **सर्भर क्षमताहरू पत्ता लगाउनुहोस्**: उपलब्ध स्रोतहरू, उपकरणहरू, र प्रम्प्टहरू स्वचालित रूपमा पत्ता लगाउनुहोस्
-2. **उपकरण कार्यान्वयन परीक्षण गर्नुहोस्**: विभिन्न प्यारामिटरहरू प्रयास गर्नुहोस् र वास्तविक समयमा प्रतिक्रियाहरू हेर्नुहोस्
-3. **सर्भर मेटाडेटा हेर्नुहोस्**: सर्भर जानकारी, स्कीमाहरू, र कन्फिगरेसनहरू जाँच गर्नुहोस्
+1. **सर्भर क्षमताहरू पत्ता लगाउने**: उपलब्ध स्रोतहरू, उपकरणहरू, र प्रॉम्प्टहरू स्वचालित रूपमा पत्ता लगाउने
+2. **उपकरण कार्यान्वयन परीक्षण गर्ने**: विभिन्न प्यारामिटरहरू प्रयास गर्ने र वास्तविक समयमा प्रतिक्रिया हेर्ने
+3. **सर्भर मेटाडाटा हेर्ने**: सर्भर जानकारी, स्किमाहरू, र कन्फिगरेसनहरू जाँच गर्ने
 
 ```bash
-# ex TypeScript, installing and running MCP Inspector
+# उदाहरण TypeScript, MCP निरीक्षक स्थापना र चलाउने
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-माथिका कमाण्डहरू चलाउँदा, MCP Inspector ले तपाईंको ब्राउजरमा स्थानीय वेब इन्टरफेस सुरु गर्नेछ। तपाईंले आफ्नो दर्ता गरिएका MCP सर्भरहरू, तिनीहरूको उपलब्ध उपकरणहरू, स्रोतहरू, र प्रम्प्टहरू प्रदर्शन गर्ने ड्यासबोर्ड देख्न सक्नुहुन्छ। इन्टरफेसले तपाईंलाई अन्तरक्रियात्मक रूपमा उपकरण कार्यान्वयन परीक्षण गर्न, सर्भर मेटाडेटा निरीक्षण गर्न, र वास्तविक समय प्रतिक्रियाहरू हेर्न अनुमति दिन्छ, जसले तपाईंको MCP सर्भर कार्यान्वयनहरू मान्य र डिबग गर्न सजिलो बनाउँछ।
+तपाईं माथिका आदेशहरू चलाउँदा, MCP Inspector ले तपाईंको ब्राउजरमा स्थानीय वेब इन्टरफेस सुरु गर्नेछ। तपाईंले दर्ता गरिएका MCP सर्भरहरू, तिनीहरूको उपलब्ध उपकरणहरू, स्रोतहरू, र प्रॉम्प्टहरू देखाउने ड्यासबोर्ड देख्न सक्नुहुन्छ। इन्टरफेसले तपाईंलाई अन्तरक्रियात्मक रूपमा उपकरण कार्यान्वयन परीक्षण गर्न, सर्भर मेटाडाटा निरीक्षण गर्न, र वास्तविक समय प्रतिक्रियाहरू हेर्न अनुमति दिन्छ, जसले तपाईंका MCP सर्भर कार्यान्वयनहरू मान्य र डिबग गर्न सजिलो बनाउँछ।
 
-यो कस्तो देखिन सक्छ भन्ने स्क्रीनशट यहाँ छ:
+यहाँ यसको स्क्रिनशट छ:
 
-![MCP Inspector सर्भर जडान](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.ne.png)
+![MCP Inspector server connection](../../../../translated_images/ne/connected.73d1e042c24075d3.webp)
 
 ## सामान्य सेटअप समस्याहरू र समाधानहरू
 
 | समस्या | सम्भावित समाधान |
 |-------|-------------------|
-| जडान अस्वीकृत | सर्भर चलिरहेको छ र पोर्ट सही छ कि छैन जाँच गर्नुहोस् |
+| जडान अस्वीकृत | सर्भर चलिरहेको छ कि छैन र पोर्ट सही छ कि छैन जाँच गर्नुहोस् |
 | उपकरण कार्यान्वयन त्रुटिहरू | प्यारामिटर मान्यकरण र त्रुटि ह्यान्डलिङ समीक्षा गर्नुहोस् |
-| प्रमाणीकरण असफलता | API कुञ्जीहरू र अनुमतिहरू प्रमाणित गर्नुहोस् |
-| स्कीमा मान्यकरण त्रुटिहरू | प्यारामिटरहरू परिभाषित स्कीमासँग मेल खान सुनिश्चित गर्नुहोस् |
-| सर्भर सुरु नभएको | पोर्ट द्वन्द्व वा हराइरहेको निर्भरता जाँच गर्नुहोस् |
+| प्रमाणीकरण असफलता | API कुञ्जीहरू र अनुमति जाँच गर्नुहोस् |
+| स्किमा मान्यकरण त्रुटिहरू | प्यारामिटरहरू परिभाषित स्किमासँग मेल खान्छन् कि छैनन् सुनिश्चित गर्नुहोस् |
+| सर्भर सुरु नहुनु | पोर्ट द्वन्द्व वा हराइरहेका निर्भरता जाँच गर्नुहोस् |
 | CORS त्रुटिहरू | क्रस-ओरिजिन अनुरोधहरूको लागि उचित CORS हेडरहरू कन्फिगर गर्नुहोस् |
-| प्रमाणीकरण समस्याहरू | टोकनको वैधता र अनुमतिहरू प्रमाणित गर्नुहोस् |
+| प्रमाणीकरण समस्या | टोकन वैधता र अनुमति जाँच गर्नुहोस् |
 
 ## स्थानीय विकास
 
-स्थानीय विकास र परीक्षणको लागि, तपाईं आफ्नो मेसिनमा MCP सर्भरहरू चलाउन सक्नुहुन्छ:
+स्थानीय विकास र परीक्षणका लागि, तपाईंले MCP सर्भरहरू सिधै आफ्नो मेसिनमा चलाउन सक्नुहुन्छ:
 
-1. **सर्भर प्रक्रिया सुरु गर्नुहोस्**: आफ्नो MCP सर्भर एप्लिकेसन चलाउनुहोस्
-2. **नेटवर्किङ कन्फिगर गर्नुहोस्**: सर्भर अपेक्षित पोर्टमा पहुँचयोग्य छ सुनिश्चित गर्नुहोस्
+1. **सर्भर प्रक्रिया सुरु गर्नुहोस्**: तपाईंको MCP सर्भर अनुप्रयोग चलाउनुहोस्
+2. **नेटवर्किङ कन्फिगर गर्नुहोस्**: सर्भर अपेक्षित पोर्टमा पहुँचयोग्य छ कि छैन सुनिश्चित गर्नुहोस्
 3. **क्लाइन्टहरू जडान गर्नुहोस्**: `http://localhost:3000` जस्ता स्थानीय जडान URL हरू प्रयोग गर्नुहोस्
 
 ```bash
-# Example: Running a TypeScript MCP server locally
+# उदाहरण: स्थानीय रूपमा TypeScript MCP सर्भर चलाउँदै
 npm run start
-# Server running at http://localhost:3000
+# सर्भर http://localhost:3000 मा चलिरहेको छ
 ```
 
 ## तपाईंको पहिलो MCP सर्भर निर्माण गर्दै
 
-हामीले [मुख्य अवधारणाहरू](/01-CoreConcepts/README.md) अघिल्लो पाठमा कभर गरेका छौं, अब त्यो ज्ञानलाई काममा लगाउने समय हो।
+हामीले अघिल्लो पाठमा [मूल अवधारणाहरू](/01-CoreConcepts/README.md) कभर गरिसकेका छौं, अब त्यो ज्ञानलाई कार्यान्वयन गर्ने समय आएको छ।
 
 ### सर्भरले के गर्न सक्छ
 
-कोड लेख्न सुरु गर्नु अघि, सर्भरले के गर्न सक्छ भन्ने कुरा सम्झौं:
+कोड लेख्न सुरु गर्नु अघि, हामीलाई सम्झनुहोस् सर्भरले के गर्न सक्छ:
 
-MCP सर्भरले उदाहरणका लागि:
+एक MCP सर्भरले उदाहरणका लागि:
 
 - स्थानीय फाइलहरू र डेटाबेसहरू पहुँच गर्न सक्छ
 - रिमोट API हरूसँग जडान गर्न सक्छ
-- गणनाहरू गर्न सक्छ
-- अन्य उपकरणहरू र सेवाहरूको साथ एकीकृत गर्न सक्छ
+- गणना गर्न सक्छ
+- अन्य उपकरणहरू र सेवाहरू सँग एकीकरण गर्न सक्छ
 - अन्तरक्रियाको लागि प्रयोगकर्ता इन्टरफेस प्रदान गर्न सक्छ
 
-ठीक छ, अब हामीलाई थाहा छ कि यसले के गर्न सक्छ, कोडिङ सुरु गरौं।
+शानदार, अब हामीलाई थाहा छ के गर्न सक्छ, कोड लेख्न सुरु गरौं।
 
 ## अभ्यास: सर्भर सिर्जना गर्दै
 
@@ -213,7 +207,7 @@ MCP सर्भरले उदाहरणका लागि:
 #### TypeScript
 
 ```sh
-# Create project directory and initialize npm project
+# परियोजना निर्देशिका सिर्जना गर्नुहोस् र npm परियोजना आरम्भ गर्नुहोस्
 mkdir calculator-server
 cd calculator-server
 npm init -y
@@ -222,10 +216,10 @@ npm init -y
 #### Python
 
 ```sh
-# Create project dir
+# परियोजना निर्देशिका सिर्जना गर्नुहोस्
 mkdir calculator-server
 cd calculator-server
-# Open the folder in Visual Studio Code - Skip this if you are using a different IDE
+# फोल्डरलाई Visual Studio Code मा खोल्नुहोस् - यदि तपाईंले फरक IDE प्रयोग गर्दै हुनुहुन्छ भने यो छोड्नुहोस्
 code .
 ```
 
@@ -238,7 +232,7 @@ cd McpCalculatorServer
 
 #### Java
 
-Java को लागि, Spring Boot परियोजना सिर्जना गर्नुहोस्:
+Java का लागि, Spring Boot परियोजना सिर्जना गर्नुहोस्:
 
 ```bash
 curl https://start.spring.io/starter.zip \
@@ -252,12 +246,12 @@ curl https://start.spring.io/starter.zip \
   -o calculator-server.zip
 ```
 
-Zip फाइल निकाल्नुहोस्:
+जिप फाइल निकाल्नुहोस्:
 
 ```bash
 unzip calculator-server.zip -d calculator-server
 cd calculator-server
-# optional remove the unused test
+# वैकल्पिक रूपमा प्रयोग नगरिएको परीक्षण हटाउनुहोस्
 rm -rf src/test/java
 ```
 
@@ -371,15 +365,15 @@ cargo init
 
 ### -2- निर्भरता थप्नुहोस्
 
-अब तपाईंको परियोजना सिर्जना भएको छ, अब निर्भरता थप्ने समय हो:
+अब तपाईंले परियोजना सिर्जना गर्नुभयो, अब निर्भरता थपौं:
 
 #### TypeScript
 
 ```sh
-# If not already installed, install TypeScript globally
+# यदि पहिले नै स्थापना गरिएको छैन भने, TypeScript लाई विश्वव्यापी रूपमा स्थापना गर्नुहोस्
 npm install typescript -g
 
-# Install the MCP SDK and Zod for schema validation
+# MCP SDK र Zod लाई स्कीमा प्रमाणीकरणको लागि स्थापना गर्नुहोस्
 npm install @modelcontextprotocol/sdk zod
 npm install -D @types/node typescript
 ```
@@ -387,7 +381,7 @@ npm install -D @types/node typescript
 #### Python
 
 ```sh
-# Create a virtual env and install dependencies
+# भर्चुअल वातावरण सिर्जना गर्नुहोस् र निर्भरताहरू स्थापना गर्नुहोस्
 python -m venv venv
 venv\Scripts\activate
 pip install "mcp[cli]"
@@ -412,7 +406,7 @@ cargo add tokio --features rt-multi-thread
 
 #### TypeScript
 
-*package.json* फाइल खोल्नुहोस् र निम्न सामग्रीसँग प्रतिस्थापन गर्नुहोस् ताकि तपाईं सर्भर निर्माण र चलाउन सक्नुहुन्छ:
+*package.json* फाइल खोल्नुहोस् र निम्न सामग्रीले प्रतिस्थापन गर्नुहोस् ताकि तपाईं सर्भर निर्माण र चलाउन सक्नुहुनेछ:
 
 ```json
 {
@@ -421,8 +415,8 @@ cargo add tokio --features rt-multi-thread
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "tsc && node ./build/index.js",
-    "build": "tsc && node ./build/index.js"
+    "build": "tsc",
+    "start": "npm run build && node ./build/index.js",
   },
   "keywords": [],
   "author": "",
@@ -439,7 +433,7 @@ cargo add tokio --features rt-multi-thread
 }
 ```
 
-*tsconfig.json* फाइल निम्न सामग्रीसँग सिर्जना गर्नुहोस्:
+*tsconfig.json* सिर्जना गर्नुहोस् निम्न सामग्रीसहित:
 
 ```json
 {
@@ -459,7 +453,7 @@ cargo add tokio --features rt-multi-thread
 }
 ```
 
-तपाईंको स्रोत कोडको लागि एक डाइरेक्टरी सिर्जना गर्नुहोस्:
+तपाईंको स्रोत कोडको लागि डिरेक्टरी सिर्जना गर्नुहोस्:
 
 ```sh
 mkdir src
@@ -489,7 +483,7 @@ Java Spring Boot परियोजनाहरूको लागि, परि
 
 #### Rust
 
-Rust को लागि, *src/main.rs* फाइल `cargo init` चलाउँदा स्वतः सिर्जना हुन्छ। फाइल खोल्नुहोस् र डिफल्ट कोड मेटाउनुहोस्।
+Rust का लागि, `cargo init` चलाउँदा *src/main.rs* फाइल डिफल्ट रूपमा सिर्जना हुन्छ। फाइल खोल्नुहोस् र डिफल्ट कोड मेटाउनुहोस्।
 
 ### -4- सर्भर कोड सिर्जना गर्नुहोस्
 
@@ -502,14 +496,14 @@ import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mc
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
  
-// Create an MCP server
+// एक MCP सर्भर सिर्जना गर्नुहोस्
 const server = new McpServer({
   name: "Calculator MCP Server",
   version: "1.0.0"
 });
 ```
 
-अब तपाईंको सर्भर छ, तर यसले धेरै काम गर्दैन, यसलाई सुधारौं।
+अब तपाईंको सर्भर छ, तर यो धेरै गर्दैन, त्यसलाई सुधारौं।
 
 #### Python
 
@@ -517,7 +511,7 @@ const server = new McpServer({
 # server.py
 from mcp.server.fastmcp import FastMCP
 
-# Create an MCP server
+# एक MCP सर्भर सिर्जना गर्नुहोस्
 mcp = FastMCP("Demo")
 ```
 
@@ -548,7 +542,7 @@ await builder.Build().RunAsync();
 
 #### Java
 
-Java को लागि, मुख्य सर्भर कम्पोनेन्टहरू सिर्जना गर्नुहोस्। पहिलो, मुख्य एप्लिकेसन कक्षामा संशोधन गर्नुहोस्:
+Java का लागि, मुख्य सर्भर कम्पोनेन्टहरू सिर्जना गर्नुहोस्। पहिले, मुख्य अनुप्रयोग कक्षा संशोधन गर्नुहोस्:
 
 *src/main/java/com/microsoft/mcp/sample/server/McpServerApplication.java*:
 
@@ -576,7 +570,7 @@ public class McpServerApplication {
 }
 ```
 
-क्यालकुलेटर सेवा सिर्जना गर्नुहोस् *src/main/java/com/microsoft/mcp/sample/server/service/CalculatorService.java*:
+क्याल्कुलेटर सेवा सिर्जना गर्नुहोस् *src/main/java/com/microsoft/mcp/sample/server/service/CalculatorService.java*:
 
 ```java
 package com.microsoft.mcp.sample.server.service;
@@ -722,7 +716,7 @@ public class CalculatorService {
 }
 ```
 
-**उत्पादन-तयार सेवाको लागि वैकल्पिक कम्पोनेन्टहरू:**
+**उत्पादन-तयार सेवाका लागि वैकल्पिक कम्पोनेन्टहरू:**
 
 स्टार्टअप कन्फिगरेसन सिर्जना गर्नुहोस् *src/main/java/com/microsoft/mcp/sample/server/config/StartupConfig.java*:
 
@@ -749,7 +743,7 @@ public class StartupConfig {
 }
 ```
 
-स्वास्थ्य नियन्त्रणकर्ता सिर्जना गर्नुहोस् *src/main/java/com/microsoft/mcp/sample/server/controller/HealthController.java*:
+हेल्थ कन्ट्रोलर सिर्जना गर्नुहोस् *src/main/java/com/microsoft/mcp/sample/server/controller/HealthController.java*:
 
 ```java
 package com.microsoft.mcp.sample.server.controller;
@@ -805,7 +799,7 @@ public class GlobalExceptionHandler {
             this.message = message;
         }
 
-        // Getters
+        // गेटरहरू
         public String getCode() { return code; }
         public String getMessage() { return message; }
     }
@@ -826,6 +820,8 @@ Calculator MCP Server v1.0
 Spring Boot MCP Application
 ```
 
+</details>
+
 #### Rust
 
 *src/main.rs* फाइलको शीर्षमा निम्न कोड थप्नुहोस्। यसले तपाईंको MCP सर्भरका लागि आवश्यक पुस्तकालयहरू र मोड्युलहरू आयात गर्दछ।
@@ -841,7 +837,7 @@ use rmcp::{
 use std::error::Error;
 ```
 
-क्यालकुलेटर अनुरोध प्रतिनिधित्व गर्न एक struct सिर्जना गरौं।
+क्याल्कुलेटर सर्भर एक सरल सर्भर हुनेछ जसले दुई संख्याहरू जोड्न सक्छ। क्याल्कुलेटर अनुरोध प्रतिनिधित्व गर्न एक struct सिर्जना गरौं।
 
 ```rust
 #[derive(Debug, serde::Deserialize, schemars::JsonSchema)]
@@ -851,7 +847,7 @@ pub struct CalculatorRequest {
 }
 ```
 
-अब, क्यालकुलेटर सर्भर प्रतिनिधित्व गर्न एक struct सिर्जना गरौं। यो struct ले उपकरण राउटर समावेश गर्दछ, जुन उपकरणहरू दर्ता गर्न प्रयोग गरिन्छ।
+अर्को, क्याल्कुलेटर सर्भर प्रतिनिधित्व गर्न struct सिर्जना गर्नुहोस्। यस struct मा उपकरण राउटर हुनेछ, जुन उपकरणहरू दर्ता गर्न प्रयोग हुन्छ।
 
 ```rust
 #[derive(Debug, Clone)]
@@ -860,7 +856,7 @@ pub struct Calculator {
 }
 ```
 
-अब, हामी `Calculator` struct कार्यान्वयन गर्न सक्छौं ताकि नयाँ सर्भर उदाहरण सिर्जना गर्न र सर्भर जानकारी प्रदान गर्न सर्भर ह्यान्डलर कार्यान्वयन गर्न सकिन्छ।
+अब, हामी `Calculator` struct लाई नयाँ सर्भर उदाहरण सिर्जना गर्न र सर्भर ह्यान्डलर कार्यान्वयन गर्न सक्छौं जसले सर्भर जानकारी प्रदान गर्दछ।
 
 ```rust
 #[tool_router]
@@ -884,7 +880,7 @@ impl ServerHandler for Calculator {
 }
 ```
 
-अन्ततः, हामीले सर्भर सुरु गर्न मुख्य कार्यान्वयन गर्न आवश्यक छ। यो कार्यले `Calculator` struct को एक उदाहरण सिर्जना गर्नेछ र यसलाई मानक इनपुट/आउटपुटमा सेवा दिनेछ।
+अन्तमा, मुख्य फंक्शन कार्यान्वयन गर्न आवश्यक छ जसले सर्भर सुरु गर्दछ। यसले `Calculator` struct को उदाहरण सिर्जना गर्नेछ र मानक इनपुट/आउटपुट मार्फत सेवा दिनेछ।
 
 ```rust
 #[tokio::main]
@@ -895,11 +891,11 @@ async fn main() -> Result<(), Box<dyn Error>> {
 }
 ```
 
-अब सर्भर आधारभूत जानकारी प्रदान गर्न सेटअप गरिएको छ। अब, हामीले थप उपकरण थप्नुपर्छ।
+सर्भर अब आफैंको आधारभूत जानकारी प्रदान गर्न सेटअप गरिएको छ। अब, हामी थप गर्ने उपकरण थप्नेछौं।
 
 ### -5- उपकरण र स्रोत थप्दै
 
-उपकरण र स्रोत थप्न निम्न कोड थप्नुहोस्:
+तलको कोड थपेर उपकरण र स्रोत थप्नुहोस्:
 
 #### TypeScript
 
@@ -924,7 +920,7 @@ server.resource(
 );
 ```
 
-तपाईंको उपकरणले `a` र `b` प्यारामिटरहरू लिन्छ र एउटा फङ्क्शन चलाउँछ जसले निम्न प्रकारको प्रतिक्रिया उत्पादन गर्दछ:
+तपाईंको उपकरणले प्यारामिटरहरू `a` र `b` लिन्छ र यस्तो प्रतिक्रिया उत्पादन गर्ने फंक्शन चलाउँछ:
 
 ```typescript
 {
@@ -934,7 +930,7 @@ server.resource(
 }
 ```
 
-तपाईंको स्रोत `greeting` स्ट्रिङ मार्फत पहुँच गरिन्छ र `name` प्यारामिटर लिन्छ र उपकरणसँग मिल्दोजुल्दो प्रतिक्रिया उत्पादन गर्दछ:
+तपाईंको स्रोत "greeting" स्ट्रिङमार्फत पहुँचयोग्य छ र प्यारामिटर `name` लिन्छ र उपकरण जस्तै प्रतिक्रिया उत्पादन गर्छ:
 
 ```typescript
 {
@@ -946,28 +942,28 @@ server.resource(
 #### Python
 
 ```python
-# Add an addition tool
+# एउटा थप उपकरण थप्नुहोस्
 @mcp.tool()
 def add(a: int, b: int) -> int:
     """Add two numbers"""
     return a + b
 
 
-# Add a dynamic greeting resource
+# एक गतिशील अभिवादन स्रोत थप्नुहोस्
 @mcp.resource("greeting://{name}")
 def get_greeting(name: str) -> str:
     """Get a personalized greeting"""
     return f"Hello, {name}!"
 ```
 
-माथिको कोडमा हामीले:
+अघिल्लो कोडमा हामीले:
 
-- `add` नामक उपकरण परिभाषित गरेका छौं जसले `a` र `p` प्यारामिटरहरू लिन्छ, दुवै पूर्णांक।
-- `greeting` नामक स्रोत सिर्जना गरेका छौं जसले `name` प्यारामिटर लिन्छ।
+- `add` नामक उपकरण परिभाषित गरेका छौं जसले प्यारामिटरहरू `a` र `b` लिन्छ, दुवै पूर्णांक।
+- `greeting` नामक स्रोत सिर्जना गरेका छौं जसले प्यारामिटर `name` लिन्छ।
 
 #### .NET
 
-तपाईंको Program.cs फाइलमा यो थप्नुहोस्:
+यसलाई तपाईंको Program.cs फाइलमा थप्नुहोस्:
 
 ```csharp
 [McpServerToolType]
@@ -980,7 +976,7 @@ public static class CalculatorTool
 
 #### Java
 
-उपकरणहरू पहिले नै अघिल्लो चरणमा सिर्जना गरिएको छ।
+उपकरणहरू पहिले नै अघिल्लो चरणमा सिर्जना गरिएका छन्।
 
 #### Rust
 
@@ -998,12 +994,12 @@ async fn add(
 
 ### -6- अन्तिम कोड
 
-अब सर्भर सुरु गर्न आवश्यक अन्तिम कोड थपौं:
+सर्भर सुरु गर्न आवश्यक अन्तिम कोड थपौं:
 
 #### TypeScript
 
 ```typescript
-// Start receiving messages on stdin and sending messages on stdout
+// stdin मा सन्देशहरू प्राप्त गर्न सुरु गर्नुहोस् र stdout मा सन्देशहरू पठाउनुहोस्
 const transport = new StdioServerTransport();
 await server.connect(transport);
 ```
@@ -1016,13 +1012,13 @@ import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mc
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
 
-// Create an MCP server
+// एक MCP सर्भर सिर्जना गर्नुहोस्
 const server = new McpServer({
   name: "Calculator MCP Server",
   version: "1.0.0"
 });
 
-// Add an addition tool
+// एक थप उपकरण थप्नुहोस्
 server.tool(
   "add",
   { a: z.number(), b: z.number() },
@@ -1031,7 +1027,7 @@ server.tool(
   })
 );
 
-// Add a dynamic greeting resource
+// एक गतिशील अभिवादन स्रोत थप्नुहोस्
 server.resource(
   "greeting",
   new ResourceTemplate("greeting://{name}", { list: undefined }),
@@ -1043,7 +1039,7 @@ server.resource(
   })
 );
 
-// Start receiving messages on stdin and sending messages on stdout
+// stdin मा सन्देशहरू प्राप्त गर्न र stdout मा सन्देशहरू पठाउन सुरु गर्नुहोस्
 const transport = new StdioServerTransport();
 server.connect(transport);
 ```
@@ -1054,31 +1050,31 @@ server.connect(transport);
 # server.py
 from mcp.server.fastmcp import FastMCP
 
-# Create an MCP server
+# एक MCP सर्भर सिर्जना गर्नुहोस्
 mcp = FastMCP("Demo")
 
 
-# Add an addition tool
+# एक थप उपकरण थप्नुहोस्
 @mcp.tool()
 def add(a: int, b: int) -> int:
     """Add two numbers"""
     return a + b
 
 
-# Add a dynamic greeting resource
+# एक गतिशील अभिवादन स्रोत थप्नुहोस्
 @mcp.resource("greeting://{name}")
 def get_greeting(name: str) -> str:
     """Get a personalized greeting"""
     return f"Hello, {name}!"
 
-# Main execution block - this is required to run the server
+# मुख्य कार्यान्वयन ब्लक - सर्भर चलाउन यो आवश्यक छ
 if __name__ == "__main__":
     mcp.run()
 ```
 
 #### .NET
 
-Program.cs फाइल निम्न सामग्रीसँग सिर्जना गर्नुहोस्:
+तलको सामग्रीसहित Program.cs फाइल सिर्जना गर्नुहोस्:
 
 ```csharp
 using Microsoft.Extensions.DependencyInjection;
@@ -1110,7 +1106,7 @@ public static class CalculatorTool
 
 #### Java
 
-तपाईंको मुख्य एप्लिकेसन कक्षा पूर्ण रूपमा यस प्रकार देखिनुपर्छ:
+तपाईंको पूर्ण मुख्य अनुप्रयोग कक्षा यसरी देखिनु पर्छ:
 
 ```java
 // McpServerApplication.java
@@ -1139,7 +1135,7 @@ public class McpServerApplication {
 
 #### Rust
 
-Rust सर्भरको अन्तिम कोड यस प्रकार देखिनुपर्छ:
+Rust सर्भरको अन्तिम कोड यसरी देखिनु पर्छ:
 
 ```rust
 use rmcp::{
@@ -1200,7 +1196,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
 
 ### -7- सर्भर परीक्षण गर्नुहोस्
 
-सर्भर निम्न कमाण्ड प्रयोग गरेर सुरु गर्नुहोस्:
+तलको आदेश प्रयोग गरेर सर्भर सुरु गर्नुहोस्:
 
 #### TypeScript
 
@@ -1214,11 +1210,11 @@ npm run build
 mcp run server.py
 ```
 
-> MCP Inspector प्रयोग गर्न, `mcp dev server.py` प्रयोग गर्नुहोस् जसले स्वचालित रूपमा Inspector सुरु गर्छ र आवश्यक प्रोक्सी सेसन टोकन प्रदान गर्दछ। यदि `mcp run server.py` प्रयोग गर्दै हुनुहुन्छ भने, तपाईंले Inspector म्यानुअली सुरु गर्न र जडान कन्फिगर गर्न आवश्यक छ।
+> MCP Inspector प्रयोग गर्न, `mcp dev server.py` प्रयोग गर्नुहोस् जसले स्वचालित रूपमा Inspector सुरु गर्छ र आवश्यक प्रोक्सी सत्र टोकन प्रदान गर्छ। यदि `mcp run server.py` प्रयोग गर्दै हुनुहुन्छ भने, तपाईंले म्यानुअली Inspector सुरु गर्न र जडान कन्फिगर गर्नुपर्नेछ।
 
 #### .NET
 
-तपाईंको परियोजना डाइरेक्टरीमा सुनिश्चित गर्नुहोस्:
+पक्का गर्नुहोस् कि तपाईं आफ्नो परियोजना डिरेक्टरीमा हुनुहुन्छ:
 
 ```sh
 cd McpCalculatorServer
@@ -1234,7 +1230,7 @@ java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
 
 #### Rust
 
-सर्भरलाई फर्म्याट र चलाउन निम्न कमाण्डहरू चलाउनुहोस्:
+सर्भर फर्म्याट र चलाउन तलका आदेशहरू चलाउनुहोस्:
 
 ```sh
 cargo fmt
@@ -1243,10 +1239,10 @@ cargo run
 
 ### -8- Inspector प्रयोग गरेर चलाउनुहोस्
 
-Inspector एक उत्कृष्ट उपकरण हो जसले तपाईंको सर्भर सुरु गर्न सक्छ र तपाईंलाई यससँग अन्तरक्रिया गर्न अनुमति दिन्छ ताकि तपाईं परीक्षण गर्न सक्नुहुन्छ कि यो काम गर्छ। यसलाई सुरु गरौं:
+Inspector एक उत्कृष्ट उपकरण हो जसले तपाईंको सर्भर सुरु गर्न सक्छ र तपाईंलाई यससँग अन्तरक्रिया गर्न दिन्छ ताकि तपाईं परीक्षण गर्न सक्नुहुन्छ कि यो काम गर्छ कि गर्दैन। सुरु गरौं:
 
 > [!NOTE]
-> "कमाण्ड" क्षेत्रमा यो फरक देखिन सक्छ किनकि यसमा तपाईंको विशिष्ट रनटाइमको साथ सर्भर चलाउनको लागि कमाण्ड समावेश छ।
+> "command" फिल्डमा फरक देखिन सक्छ किनकि यसमा तपाईंको विशिष्ट रनटाइमसँग सर्भर चलाउने आदेश हुन्छ।
 
 #### TypeScript
 
@@ -1254,95 +1250,116 @@ Inspector एक उत्कृष्ट उपकरण हो जसले �
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-वा यसलाई तपाईंको *package.json* मा यस प्रकार थप्नुहोस्: `"inspector": "npx @modelcontextprotocol/inspector node build/index.js"` र त्यसपछि `npm run inspector` चलाउनुहोस्।
+वा यसलाई तपाईंको *package.json* मा यसरी थप्नुहोस्: `"inspector": "npx @modelcontextprotocol/inspector node build/index.js"` र त्यसपछि `npm run inspector` चलाउनुहोस्।
 
-Python ले Node.js उपकरणलाई "inspector" नामक उपकरणमा र्याप गर्दछ। यो उपकरण यस प्रकार कल गर्न सम्भव छ:
+#### Python
+
+Python ले Node.js उपकरण inspector लाई र्याप गर्दछ। यसलाई यसरी कल गर्न सकिन्छ:
 
 ```sh
 mcp dev server.py
 ```
 
-तर, यसले उपकरणमा उपलब्ध सबै विधिहरू कार्यान्वयन गर्दैन त्यसैले तपाईंलाई तलको Node.js उपकरण सिधै चलाउन सिफारिस गरिन्छ:
+तर, यसले उपकरणमा उपलब्ध सबै विधिहरू कार्यान्वयन गर्दैन त्यसैले तपाईंलाई सिधै Node.js उपकरण चलाउन सिफारिस गरिन्छ:
 
 ```sh
 npx @modelcontextprotocol/inspector mcp run server.py
 ```
 
-यदि तपाईं उपकरण वा IDE प्रयोग गर्दै हुनुहुन्छ जसले स्क्रिप्टहरू चलाउनका लागि कमाण्ड र तर्कहरू कन्फिगर गर्न अनुमति दिन्छ, 
-`python` लाई `Command` क्षेत्रमा सेट गर्नुहोस् र `server.py` लाई `Arguments` को रूपमा। यसले स्क्रिप्ट सही रूपमा चल्छ भन्ने सुनिश्चित गर्दछ।
+यदि तपाईं स्क्रिप्टहरू चलाउन आदेश र आर्गुमेन्टहरू कन्फिगर गर्न अनुमति दिने उपकरण वा IDE प्रयोग गर्दै हुनुहुन्छ,
+पक्का गर्नुहोस् कि `Command` फिल्डमा `python` सेट गरिएको छ र `Arguments` मा `server.py` छ। यसले स्क्रिप्ट सही रूपमा चल्ने सुनिश्चित गर्दछ।
 
 #### .NET
 
-तपाईंको परियोजना डाइरेक्टरीमा सुनिश्चित गर्नुहोस्:
+पक्का गर्नुहोस् कि तपाईं आफ्नो प्रोजेक्ट डाइरेक्टरीमा हुनुहुन्छ:
 
-@@
-![Connect](../../../../translated_images/tool.163d33e3ee307e209ef146d8f85060d2f7e83e9f59b3b1699a77204ae0454ad2.ne.png)
+```sh
+cd McpCalculatorServer
+npx @modelcontextprotocol/inspector dotnet run
+```
 
-**तपाईं अब सर्भरमा जडान हुनुभयो**  
-**जाभा सर्भर परीक्षण खण्ड अब पूरा भयो**
+#### Java
 
-अर्को खण्ड सर्भरसँग अन्तरक्रिया गर्ने बारेमा छ।
+पक्का गर्नुहोस् कि तपाईंको क्याल्कुलेटर सर्भर चलिरहेको छ
+फेरि इन्स्पेक्टर चलाउनुहोस्:
+
+```cmd
+npx @modelcontextprotocol/inspector
+```
+
+इन्स्पेक्टर वेब इन्टरफेसमा:
+
+1. ट्रान्सपोर्ट प्रकारको रूपमा "SSE" चयन गर्नुहोस्
+2. URL सेट गर्नुहोस्: `http://localhost:8080/sse`
+3. "Connect" मा क्लिक गर्नुहोस्
+
+![Connect](../../../../translated_images/ne/tool.163d33e3ee307e20.webp)
+
+**तपाईं अब सर्भरसँग जडान हुनुहुन्छ**
+**Java सर्भर परीक्षण खण्ड अब पूरा भयो**
+
+अर्को खण्ड सर्भरसँग अन्तरक्रिया गर्ने बारेमा हो।
 
 तपाईंले निम्न प्रयोगकर्ता इन्टरफेस देख्नु पर्नेछ:
 
-![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.ne.png)
+![Connect](../../../../translated_images/ne/connect.141db0b2bd05f096.webp)
 
-1. "Connect" बटन चयन गरेर सर्भरमा जडान गर्नुहोस्।  
-   सर्भरमा जडान भएपछि, तपाईंले अब निम्न देख्नु पर्नेछ:
+1. Connect बटन चयन गरेर सर्भरसँग जडान गर्नुहोस्
+  एक पटक तपाईं सर्भरसँग जडान भएपछि, तपाईंले अब निम्न देख्नु पर्नेछ:
 
-   ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.ne.png)
+  ![Connected](../../../../translated_images/ne/connected.73d1e042c24075d3.webp)
 
-2. "Tools" र "listTools" चयन गर्नुहोस्। तपाईंले "Add" देख्नु पर्नेछ। "Add" चयन गर्नुहोस् र प्यारामिटर मानहरू भर्नुहोस्।  
+1. "Tools" र "listTools" चयन गर्नुहोस्, तपाईंले "Add" देख्नु पर्नेछ, "Add" चयन गर्नुहोस् र प्यारामिटर मानहरू भर्नुहोस्।
 
-   तपाईंले निम्न प्रतिक्रिया देख्नु पर्नेछ, अर्थात् "add" उपकरणको परिणाम:
+  तपाईंले निम्न प्रतिक्रिया देख्नु पर्नेछ, अर्थात् "add" उपकरणबाट परिणाम:
 
-   ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.ne.png)
+  ![Result of running add](../../../../translated_images/ne/ran-tool.a5a6ee878c1369ec.webp)
 
 बधाई छ, तपाईंले आफ्नो पहिलो सर्भर सिर्जना र चलाउन सफल हुनुभयो!
 
 #### Rust
 
-MCP Inspector CLI प्रयोग गरेर Rust सर्भर चलाउन, निम्न आदेश प्रयोग गर्नुहोस्:
+MCP Inspector CLI सँग Rust सर्भर चलाउन, तलको कमाण्ड प्रयोग गर्नुहोस्:
 
 ```sh
 npx @modelcontextprotocol/inspector cargo run --cli --method tools/call --tool-name add --tool-arg a=1 b=2
 ```
 
-### आधिकारिक SDKs
+### आधिकारिक SDK हरू
 
-MCP ले विभिन्न भाषाहरूका लागि आधिकारिक SDKs प्रदान गर्दछ:
+MCP ले विभिन्न भाषाहरूका लागि आधिकारिक SDK हरू प्रदान गर्दछ:
 
-- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - माइक्रोसफ्टसँगको सहकार्यमा व्यवस्थापन गरिएको
-- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Spring AI सँगको सहकार्यमा व्यवस्थापन गरिएको
+- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Microsoft सँग सहकार्यमा मर्मत गरिएको
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Spring AI सँग सहकार्यमा मर्मत गरिएको
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - आधिकारिक TypeScript कार्यान्वयन
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - आधिकारिक Python कार्यान्वयन
 - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - आधिकारिक Kotlin कार्यान्वयन
-- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Loopwork AI सँगको सहकार्यमा व्यवस्थापन गरिएको
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Loopwork AI सँग सहकार्यमा मर्मत गरिएको
 - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - आधिकारिक Rust कार्यान्वयन
 
 ## मुख्य बुँदाहरू
 
-- MCP विकास वातावरण सेटअप गर्नु भाषासँग सम्बन्धित SDKs को साथमा सजिलो छ।  
-- MCP सर्भरहरू निर्माण गर्दा स्पष्ट स्किमासहित उपकरणहरू सिर्जना र दर्ता गर्नुपर्छ।  
-- परीक्षण र डिबगिङ विश्वसनीय MCP कार्यान्वयनहरूको लागि अत्यावश्यक छ।  
+- MCP विकास वातावरण सेटअप भाषा-विशिष्ट SDK हरूको साथ सरल छ
+- MCP सर्भरहरू निर्माण गर्दा स्पष्ट स्किमासहित उपकरणहरू सिर्जना र दर्ता गर्नुपर्छ
+- परीक्षण र डिबगिङ विश्वसनीय MCP कार्यान्वयनका लागि आवश्यक छ
 
 ## नमूनाहरू
 
-- [Java Calculator](../samples/java/calculator/README.md)  
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)  
-- [JavaScript Calculator](../samples/javascript/README.md)  
-- [TypeScript Calculator](../samples/typescript/README.md)  
-- [Python Calculator](../../../../03-GettingStarted/samples/python)  
-- [Rust Calculator](../../../../03-GettingStarted/samples/rust)  
+- [Java Calculator](../samples/java/calculator/README.md)
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](../samples/javascript/README.md)
+- [TypeScript Calculator](../samples/typescript/README.md)
+- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Rust Calculator](../../../../03-GettingStarted/samples/rust)
 
 ## कार्य
 
-आफ्नो रोजाइको उपकरणको साथमा एउटा साधारण MCP सर्भर सिर्जना गर्नुहोस्:
+आफ्नो रोजाइको उपकरणसहित सरल MCP सर्भर सिर्जना गर्नुहोस्:
 
-1. आफ्नो मनपर्ने भाषामा (जस्तै .NET, Java, Python, TypeScript, वा Rust) उपकरण कार्यान्वयन गर्नुहोस्।  
-2. इनपुट प्यारामिटरहरू र रिटर्न मानहरू परिभाषित गर्नुहोस्।  
-3. सर्भरले अपेक्षित रूपमा काम गरिरहेको सुनिश्चित गर्न इन्स्पेक्टर उपकरण चलाउनुहोस्।  
-4. विभिन्न इनपुटहरूसँग कार्यान्वयन परीक्षण गर्नुहोस्।  
+1. आफ्नो मनपर्ने भाषामा उपकरण कार्यान्वयन गर्नुहोस् (.NET, Java, Python, TypeScript, वा Rust)।
+2. इनपुट प्यारामिटरहरू र रिटर्न मानहरू परिभाषित गर्नुहोस्।
+3. सर्भर ठीकसँग काम गर्छ कि भनी सुनिश्चित गर्न इन्स्पेक्टर उपकरण चलाउनुहोस्।
+4. विभिन्न इनपुटहरूसँग कार्यान्वयन परीक्षण गर्नुहोस्।
 
 ## समाधान
 
@@ -1350,13 +1367,17 @@ MCP ले विभिन्न भाषाहरूका लागि आध
 
 ## थप स्रोतहरू
 
-- [Azure मा Model Context Protocol प्रयोग गरेर एजेन्टहरू निर्माण गर्नुहोस्](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)  
-- [Azure Container Apps (Node.js/TypeScript/JavaScript) सँग रिमोट MCP](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)  
-- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)  
+- [Azure मा Model Context Protocol प्रयोग गरेर एजेन्टहरू निर्माण गर्नुहोस्](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+- [Azure Container Apps सँग रिमोट MCP (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
+- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
-## अब के गर्ने
+## के छ अर्को
 
-अर्को: [MCP Clients सँग सुरु गर्नुहोस्](../02-client/README.md)  
+अर्को: [MCP क्लाइन्टहरूसँग सुरु गर्दै](../02-client/README.md)
 
-**अस्वीकरण**:  
-यो दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) प्रयोग गरेर अनुवाद गरिएको छ। हामी शुद्धताको लागि प्रयास गर्छौं, तर कृपया ध्यान दिनुहोस् कि स्वचालित अनुवादमा त्रुटिहरू वा अशुद्धताहरू हुन सक्छ। यसको मूल भाषा मा रहेको मूल दस्तावेज़लाई आधिकारिक स्रोत मानिनुपर्छ। महत्वपूर्ण जानकारीको लागि, व्यावसायिक मानव अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न हुने कुनै पनि गलतफहमी वा गलत व्याख्याको लागि हामी जिम्मेवार हुने छैनौं।
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**अस्वीकरण**:
+यो दस्तावेज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) प्रयोग गरी अनुवाद गरिएको हो। हामी शुद्धताका लागि प्रयासरत छौं, तर कृपया ध्यान दिनुहोस् कि स्वचालित अनुवादमा त्रुटि वा अशुद्धता हुन सक्छ। मूल दस्तावेज यसको मूल भाषामा आधिकारिक स्रोत मानिनु पर्छ। महत्वपूर्ण जानकारीका लागि व्यावसायिक मानव अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न कुनै पनि गलतफहमी वा गलत व्याख्याका लागि हामी जिम्मेवार छैनौं।
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

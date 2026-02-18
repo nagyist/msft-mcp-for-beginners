@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "07863f50601f395c3bdfce30f555f11a",
-  "translation_date": "2025-08-26T19:11:14+00:00",
-  "source_file": "03-GettingStarted/01-first-server/solution/dotnet/README.md",
-  "language_code": "lt"
-}
--->
 # Paleisti šį pavyzdį
 
 ## -1- Įdiekite priklausomybes
@@ -29,22 +20,22 @@ Kai serveris veikia viename terminale, atidarykite kitą terminalą ir paleiskit
 npx @modelcontextprotocol/inspector dotnet run
 ```
 
-Tai turėtų paleisti žiniatinklio serverį su vizualine sąsaja, leidžiančia išbandyti pavyzdį.
+Tai turėtų paleisti interneto serverį su vizualine sąsaja, leidžiančia išbandyti pavyzdį.
 
-Kai serveris prisijungęs:
+Kai serveris prisijungia:
 
-- pabandykite išvardyti įrankius ir paleisti `add` su argumentais 2 ir 4, turėtumėte matyti rezultatą 6.
-- eikite į išteklius ir išteklių šabloną, iškvieskite „greeting“, įveskite vardą ir turėtumėte matyti pasveikinimą su jūsų pateiktu vardu.
+- pabandykite išvardyti įrankius ir paleisti `add`, su argumentais 2 ir 4, turėtumėte matyti rezultatą 6.
+- eikite į resursus ir resursų šabloną, iškvieskite "greeting", įveskite vardą ir turėtumėte matyti pasisveikinimą su jūsų pateiktu vardu.
 
 ### Testavimas CLI režimu
 
-Galite paleisti jį tiesiogiai CLI režimu, vykdydami šią komandą:
+Galite paleisti tiesiogiai CLI režimu, vykdydami šią komandą:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli dotnet run --method tools/list
 ```
 
-Tai išvardins visus serveryje esančius įrankius. Turėtumėte matyti šį rezultatą:
+Tai išvardins visus įrankius, prieinamus serveryje. Turėtumėte matyti šį rezultatą:
 
 ```text
 {
@@ -94,9 +85,9 @@ Turėtumėte matyti šį rezultatą:
 }
 ```
 
-> ![!TIP]
-> Paprastai inspektorių paleisti CLI režimu yra daug greičiau nei naršyklėje.
-> Plačiau apie inspektorių skaitykite [čia](https://github.com/modelcontextprotocol/inspector).
+> [!TIP]
+> Paprastai daug greičiau paleisti inspektorių CLI režimu nei naršyklėje.
+> Daugiau apie inspektorių skaitykite [čia](https://github.com/modelcontextprotocol/inspector).
 
 ---
 

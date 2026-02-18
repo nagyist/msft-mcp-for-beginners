@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ed9cab32cc67c12d8969b407aa47100a",
-  "translation_date": "2025-07-13T17:55:52+00:00",
-  "source_file": "03-GettingStarted/01-first-server/solution/java/README.md",
-  "language_code": "tl"
-}
--->
 # Basic Calculator MCP Service
 
 Ang serbisyong ito ay nagbibigay ng mga pangunahing operasyon ng calculator gamit ang Model Context Protocol (MCP) sa pamamagitan ng Spring Boot na may WebFlux transport. Ito ay idinisenyo bilang isang simpleng halimbawa para sa mga nagsisimula na gustong matuto tungkol sa mga implementasyon ng MCP.
@@ -73,7 +64,7 @@ Ang MCP Inspector ay isang kapaki-pakinabang na tool para makipag-ugnayan sa mga
    - I-click ang "List Tools" para makita ang mga available na operasyon ng calculator
    - Piliin ang isang tool at i-click ang "Run Tool" para isagawa ang operasyon
 
-![MCP Inspector Screenshot](../../../../../../translated_images/tool.40e180a7b0d0fe2067cf96435532b01f63f7f8619d6b0132355a04b426b669ac.tl.png)
+![MCP Inspector Screenshot](../../../../../../translated_images/tl/tool.40e180a7b0d0fe20.webp)
 
 **Paalala**:  
 Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

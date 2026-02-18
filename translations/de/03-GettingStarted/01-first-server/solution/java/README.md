@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ed9cab32cc67c12d8969b407aa47100a",
-  "translation_date": "2025-07-13T17:51:48+00:00",
-  "source_file": "03-GettingStarted/01-first-server/solution/java/README.md",
-  "language_code": "de"
-}
--->
 # Basic Calculator MCP Service
 
 Dieser Service bietet grundlegende Taschenrechnerfunktionen über das Model Context Protocol (MCP) mit Spring Boot und WebFlux-Transport. Er ist als einfaches Beispiel für Einsteiger gedacht, die MCP-Implementierungen kennenlernen möchten.
@@ -73,7 +64,7 @@ Der MCP Inspector ist ein hilfreiches Werkzeug zur Interaktion mit MCP-Services.
    - Auf „List Tools“ klicken, um verfügbare Taschenrechner-Operationen anzuzeigen
    - Ein Werkzeug auswählen und auf „Run Tool“ klicken, um eine Operation auszuführen
 
-![MCP Inspector Screenshot](../../../../../../translated_images/tool.40e180a7b0d0fe2067cf96435532b01f63f7f8619d6b0132355a04b426b669ac.de.png)
+![MCP Inspector Screenshot](../../../../../../translated_images/de/tool.40e180a7b0d0fe20.webp)
 
 **Haftungsausschluss**:  
 Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

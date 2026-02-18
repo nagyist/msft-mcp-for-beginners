@@ -1,41 +1,55 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1b6c746d9e190deba4d8765267ffb94e",
-  "translation_date": "2025-07-17T13:51:21+00:00",
-  "source_file": "02-Security/azure-content-safety-implementation.md",
-  "language_code": "sk"
-}
--->
 # Implementácia Azure Content Safety s MCP
 
-Pre zvýšenie bezpečnosti MCP proti prompt injection, tool poisoning a ďalším špecifickým zraniteľnostiam AI sa dôrazne odporúča integrácia Azure Content Safety.
+> **OWASP MCP riešené riziko**: [MCP06 - Injektáž pokynov cez kontextuálne payloady](https://microsoft.github.io/mcp-azure-security-guide/mcp/mcp06-prompt-injection/)
 
-## Integrácia s MCP serverom
+Na posilnenie zabezpečenia MCP proti injektáži pokynov, otrave nástrojov a iným špecifickým zraniteľnostiam AI sa dôrazne odporúča integrácia Azure Content Safety. Tento implementačný návod je v súlade s [MCP Security Summit Workshop (Sherpa)](https://azure-samples.github.io/sherpa/) Camp 3: I/O Security.
 
-Pre integráciu Azure Content Safety s vaším MCP serverom pridajte filter content safety ako middleware do vášho spracovateľského reťazca požiadaviek:
+## Integrácia s MCP Serverom
 
-1. Inicializujte filter počas spustenia servera  
-2. Overte všetky prichádzajúce požiadavky na nástroje pred ich spracovaním  
-3. Skontrolujte všetky odchádzajúce odpovede pred ich odoslaním klientom  
-4. Logujte a upozorňujte na porušenia bezpečnosti  
-5. Implementujte vhodné spracovanie chýb pri neúspešných kontrolách content safety  
+Pre integráciu Azure Content Safety s vaším MCP serverom pridajte filter bezpečnosti obsahu ako middleware vo vašom pipeline spracovania požiadaviek:
 
-Týmto zabezpečíte silnú ochranu proti:  
-- útokom prompt injection  
-- pokusom o tool poisoning  
-- exfiltrácii dát cez škodlivé vstupy  
-- generovaniu škodlivého obsahu  
+1. Inicializujte filter počas spúšťania servera
+2. Overte všetky prichádzajúce požiadavky nástrojov pred ich spracovaním
+3. Skontrolujte všetky odchádzajúce odpovede pred ich odoslaním klientom
+4. Logujte a vyhlasujte upozornenia pri porušeniach bezpečnosti
+5. Implementujte vhodné ošetrenie chýb pri neúspešných kontrolách bezpečnosti obsahu
 
-## Najlepšie postupy pre integráciu Azure Content Safety
+Týmto poskytujete robustnú obranu proti:
+- útokom injektáže pokynov
+- pokusom o otravu nástrojov
+- exfiltrácii dát cez škodlivé vstupy
+- generovaniu škodlivého obsahu
 
-1. **Vlastné blokovacie zoznamy**: Vytvorte vlastné blokovacie zoznamy špecificky pre MCP injection vzory  
-2. **Nastavenie závažnosti**: Prispôsobte prahové hodnoty závažnosti podľa vášho konkrétneho prípadu použitia a tolerancie rizika  
-3. **Komplexné pokrytie**: Aplikujte kontroly content safety na všetky vstupy aj výstupy  
-4. **Optimalizácia výkonu**: Zvážte implementáciu cache pre opakované kontroly content safety  
-5. **Náhradné mechanizmy**: Definujte jasné náhradné správanie, keď služby content safety nie sú dostupné  
-6. **Spätná väzba pre používateľov**: Poskytujte používateľom jasnú spätnú väzbu, keď je obsah zablokovaný z dôvodu bezpečnostných obáv  
-7. **Kontinuálne zlepšovanie**: Pravidelne aktualizujte blokovacie zoznamy a vzory na základe nových hrozieb
+## Najlepšie praktiky pre integráciu Azure Content Safety
 
+1. **Vlastné blokovacie zoznamy**: Vytvorte vlastné blokovacie zoznamy špecificky pre MCP vzory injektáže
+2. **Ladanie závažnosti**: Prispôsobte prahové hodnoty závažnosti podľa vášho konkrétneho použitia a tolerancie rizika
+3. **Komplexné pokrytie**: Aplikujte kontroly bezpečnosti obsahu na všetky vstupy a výstupy
+4. **Optimalizácia výkonu**: Zvážte implementáciu cachovania pre opakujúce sa kontroly bezpečnosti obsahu
+5. **Náhradné mechanizmy**: Definujte jasné náhradné správanie, keď sú služby bezpečnosti obsahu nedostupné
+6. **Spätná väzba pre používateľa**: Poskytnite používateľom jasnú spätnú väzbu, keď je obsah zablokovaný z dôvodu bezpečnostných obáv
+7. **Priebežné zlepšovanie**: Pravidelne aktualizujte blokovacie zoznamy a vzory na základe nových hrozieb
+
+## Ďalšie zdroje
+
+### OWASP MCP bezpečnostné usmernenia
+- [OWASP MCP Azure Security Guide](https://microsoft.github.io/mcp-azure-security-guide/) - Komplexný OWASP MCP Top 10 s implementáciou pre Azure
+- [MCP06 - Injektáž pokynov](https://microsoft.github.io/mcp-azure-security-guide/mcp/mcp06-prompt-injection/) - Podrobné vzory na zmiernenie injektáže pokynov
+- [MCP Security Summit Workshop](https://azure-samples.github.io/sherpa/) - Praktický Camp 3: I/O Security pokrýva bezpečnosť obsahu
+
+### Dokumentácia Azure
+- [Prehľad Azure Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/)
+- [Dokumentácia Prompt Shields](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection)
+- [Rýchly štart Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text)
+
+## Čo nasleduje
+
+- Návrat na: [Prehľad bezpečnostného modulu](./README.md)
+- Pokračovať na: [Modul 3: Začíname](../03-GettingStarted/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+Tento dokument bol preložený pomocou služby automatického prekladu AI [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, berte na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za žiadne nedorozumenia alebo nesprávne výklady vyplývajúce z použitia tohto prekladu.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

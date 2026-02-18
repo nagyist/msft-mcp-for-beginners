@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-13T22:03:46+00:00",
-  "source_file": "03-GettingStarted/08-testing/README.md",
-  "language_code": "ro"
-}
--->
 ## Testare și depanare
 
 Înainte de a începe testarea serverului tău MCP, este important să înțelegi uneltele disponibile și cele mai bune practici pentru depanare. Testarea eficientă asigură că serverul tău funcționează conform așteptărilor și te ajută să identifici și să rezolvi rapid problemele. Secțiunea următoare prezintă metode recomandate pentru validarea implementării MCP.
@@ -48,7 +39,7 @@ npx @modelcontextprotocol/inspector node build/index.js
 
 Comanda de mai sus pornește un MCP și interfața sa vizuală și lansează o interfață web locală în browserul tău. Te poți aștepta să vezi un panou de control care afișează serverele MCP înregistrate, uneltele, resursele și prompturile disponibile. Interfața îți permite să testezi interactiv execuția uneltelor, să inspectezi metadatele serverului și să vezi răspunsurile în timp real, facilitând validarea și depanarea implementărilor serverului MCP.
 
-Iată cum poate arăta: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.ro.png)
+Iată cum poate arăta: ![Inspector](../../../../translated_images/ro/connect.141db0b2bd05f096.webp)
 
 Poți rula acest instrument și în modul CLI, caz în care adaugi atributul `--cli`. Iată un exemplu de rulare în modul "CLI" care listează toate uneltele de pe server:
 

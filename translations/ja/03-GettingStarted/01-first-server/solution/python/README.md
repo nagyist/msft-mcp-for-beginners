@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d26f746e21775c30b4d7ed97962b24df",
-  "translation_date": "2025-08-11T10:26:11+00:00",
-  "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
-  "language_code": "ja"
-}
--->
 # サンプルの実行方法
 
 `uv`をインストールすることを推奨しますが、必須ではありません。[インストール手順](https://docs.astral.sh/uv/#highlights)をご覧ください。
@@ -55,7 +46,7 @@ mcp dev server.py
 
 実行したインスペクターは実際にはNode.jsアプリであり、`mcp dev`はそのラッパーです。
 
-以下のコマンドを実行することで、CLIモードで直接起動することができます:
+以下のコマンドを実行することで、CLIモードで直接起動できます:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
@@ -116,5 +107,7 @@ npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call 
 > インスペクターをブラウザで実行するよりも、CLIモードで実行する方が通常はかなり高速です。
 > インスペクターについての詳細は[こちら](https://github.com/modelcontextprotocol/inspector)をご覧ください。
 
+---
+
 **免責事項**:  
-この文書は、AI翻訳サービス [Co-op Translator](https://github.com/Azure/co-op-translator) を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご承知ください。元の言語で記載された文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や誤解釈について、当社は責任を負いません。
+この文書は、AI翻訳サービス [Co-op Translator](https://github.com/Azure/co-op-translator) を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご承知ください。元の言語で記載された文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や誤解釈について、当方は責任を負いません。

@@ -183,3 +183,8 @@ To deepen your understanding, explore these official resources:
 - [What is the Azure MCP Server?](https://learn.microsoft.com/en-us/azure/developer/azure-mcp-server/)
 - [Model Context Protocol (MCP) Introduction](https://modelcontextprotocol.io/introduction)
 - [Add plugins from a MCP Server (Python)](https://learn.microsoft.com/en-us/semantic-kernel/concepts/plugins/adding-mcp-plugins)
+
+## What's Next
+
+- Back to: [Case Studies Overview](../README.md)
+- Continue to: [Module 10: Streamlining AI Workflows with AI Toolkit](../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)

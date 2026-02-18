@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13231e9951b68efd9df8c56bd5cdb27e",
-  "translation_date": "2025-07-13T22:26:37+00:00",
-  "source_file": "03-GettingStarted/samples/java/calculator/README.md",
-  "language_code": "tr"
-}
--->
 # Temel Hesap Makinesi MCP Servisi
 
 Bu servis, Model Context Protocol (MCP) üzerinden Spring Boot ve WebFlux taşıma katmanını kullanarak temel hesap makinesi işlemleri sağlar. MCP uygulamalarını öğrenen yeni başlayanlar için basit bir örnek olarak tasarlanmıştır.
@@ -201,7 +192,7 @@ MCP Inspector, MCP servisleri ile etkileşim için faydalı bir araçtır. Bu he
    - "List Tools" butonuna tıklayarak mevcut hesap makinesi işlemlerini görün
    - Bir aracı seçip "Run Tool" ile işlemi çalıştırın
 
-![MCP Inspector Ekran Görüntüsü](../../../../../../translated_images/tool.c75a0b2380efcf1a47a8478f54380a36ddcca7943b98f56dabbac8b07e15c3bb.tr.png)
+![MCP Inspector Ekran Görüntüsü](../../../../../../translated_images/tr/tool.c75a0b2380efcf1a.webp)
 
 ### Docker Kullanarak
 

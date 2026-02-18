@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5ef8f5821c1a04f7b1fc4f15098ecab8",
-  "translation_date": "2025-07-13T19:38:40+00:00",
-  "source_file": "03-GettingStarted/04-vscode/solution/README.md",
-  "language_code": "de"
-}
--->
 Dies entspricht dem Ausführen eines Befehls wie: `node build/index.js`.
 
 - Ändern Sie diesen Server-Eintrag so, dass er auf den absoluten Pfad Ihrer Serverdatei zeigt oder passen Sie ihn an, um den Start Ihres Servers entsprechend Ihrer gewählten Laufzeit und Serverposition zu ermöglichen.
@@ -23,7 +14,7 @@ Dies entspricht dem Ausführen eines Befehls wie: `node build/index.js`.
 
     Sie sollten ein Tool sehen, das über dem Chat-Textfeld angezeigt wird und Sie auffordert, das Tool auszuwählen, um es auszuführen, wie in dieser Darstellung:
 
-    ![VS Code zeigt an, dass es ein Tool ausführen möchte](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.de.png)
+    ![VS Code zeigt an, dass es ein Tool ausführen möchte](../../../../../translated_images/de/vscode-agent.d5a0e0b897331060.webp)
 
     Wenn Sie das Tool auswählen, sollte ein numerisches Ergebnis mit „23“ erscheinen, falls Ihre Eingabeaufforderung wie oben beschrieben war.
 

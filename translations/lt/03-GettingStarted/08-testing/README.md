@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-08-26T19:13:18+00:00",
-  "source_file": "03-GettingStarted/08-testing/README.md",
-  "language_code": "lt"
-}
--->
 ## Testavimas ir derinimas
 
 Prieš pradėdami testuoti savo MCP serverį, svarbu suprasti, kokie įrankiai ir geriausios praktikos yra prieinami derinimui. Efektyvus testavimas užtikrina, kad jūsų serveris veikia kaip tikėtasi, ir padeda greitai identifikuoti bei išspręsti problemas. Šiame skyriuje pateikiami rekomenduojami MCP įgyvendinimo validavimo metodai.
@@ -48,7 +39,7 @@ npx @modelcontextprotocol/inspector node build/index.js
 
 Ši komanda paleidžia MCP ir jo vizualinę sąsają, taip pat atidaro vietinę interneto sąsają jūsų naršyklėje. Galite tikėtis pamatyti prietaisų skydelį, kuriame rodomi registruoti MCP serveriai, jų prieinami įrankiai, resursai ir užklausos. Sąsaja leidžia interaktyviai testuoti įrankių vykdymą, analizuoti serverio metaduomenis ir matyti realaus laiko atsakymus, todėl lengviau validuoti ir derinti MCP serverio įgyvendinimus.
 
-Štai kaip tai gali atrodyti: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.lt.png)
+Štai kaip tai gali atrodyti: ![Inspector](../../../../translated_images/lt/connect.141db0b2bd05f096.webp)
 
 Taip pat galite paleisti šį įrankį CLI režimu, pridėdami atributą `--cli`. Štai pavyzdys, kaip paleisti įrankį "CLI" režimu, kuris išvardija visus serverio įrankius:
 

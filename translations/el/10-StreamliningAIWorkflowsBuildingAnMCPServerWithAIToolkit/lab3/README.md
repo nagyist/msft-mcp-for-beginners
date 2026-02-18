@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "dd8da3f75addcef453fe11f02a270217",
-  "translation_date": "2025-07-14T08:13:50+00:00",
-  "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/README.md",
-  "language_code": "el"
-}
--->
 # 🔧 Ενότητα 3: Προχωρημένη Ανάπτυξη MCP με το AI Toolkit
 
 ![Duration](https://img.shields.io/badge/Duration-20_minutes-blue?style=flat-square)
@@ -64,7 +55,7 @@ CO_OP_TRANSLATOR_METADATA:
 2. **Δημιουργήστε νέο agent** με την παρακάτω ρύθμιση:
    - Όνομα Agent: `WeatherAgent`
 
-![Agent Creation](../../../../translated_images/Agent.c9c33f6a412b4cdedfb973fe5448bdb33de3f400055603111b875610e9b917ab.el.png)
+![Agent Creation](../../../../translated_images/el/Agent.c9c33f6a412b4cde.webp)
 
 ### Βήμα 2: Αρχικοποίηση Έργου MCP Server
 
@@ -74,7 +65,7 @@ CO_OP_TRANSLATOR_METADATA:
 4. **Επιλέξτε το πρότυπο `python-weather`**
 5. **Ονομάστε τον server σας:** `weather_mcp`
 
-![Python Template Selection](../../../../translated_images/Pythontemplate.9d0a2913c6491500bd673430f024dc44676af2808a27b5da9dcc0eb7063adc28.el.png)
+![Python Template Selection](../../../../translated_images/el/Pythontemplate.9d0a2913c6491500.webp)
 
 ### Βήμα 3: Άνοιγμα και Εξέταση του Έργου
 
@@ -340,7 +331,7 @@ USER_PROMPT
 How's the weather like in Seattle
 ```
 
-![Agent Builder Debug Result](../../../../translated_images/Result.6ac570f7d2b1d5389c561ab0566970fe0f13e75bdd976b6a7f0270bc715d07f8.el.png)
+![Agent Builder Debug Result](../../../../translated_images/el/Result.6ac570f7d2b1d538.webp)
 
 ### Βήμα 8: Αποσφαλμάτωση με MCP Inspector
 
@@ -352,7 +343,7 @@ How's the weather like in Seattle
    - Παρακολουθήστε αιτήματα δικτύου
    - Αποσφαλματώστε τις απαντήσεις του server
 
-![MCP Inspector Interface](../../../../translated_images/Inspector.5672415cd02fe8731774586cc0a1083e3275d2f8491602aecc8ac4d61f2c0d57.el.png)
+![MCP Inspector Interface](../../../../translated_images/el/Inspector.5672415cd02fe873.webp)
 
 ---
 

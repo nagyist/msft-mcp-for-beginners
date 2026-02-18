@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "dd8da3f75addcef453fe11f02a270217",
-  "translation_date": "2025-07-14T08:13:32+00:00",
-  "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/README.md",
-  "language_code": "tr"
-}
--->
 # 🔧 Modül 3: AI Toolkit ile Gelişmiş MCP Geliştirme
 
 ![Duration](https://img.shields.io/badge/Duration-20_minutes-blue?style=flat-square)
@@ -60,7 +51,7 @@ Gerçek zamanlı sunucu izleme, araç çalıştırma görselleştirme, ağ istek
 2. Aşağıdaki yapılandırmayla **yeni bir agent oluşturun**:
    - Agent Adı: `WeatherAgent`
 
-![Agent Creation](../../../../translated_images/Agent.c9c33f6a412b4cdedfb973fe5448bdb33de3f400055603111b875610e9b917ab.tr.png)
+![Agent Creation](../../../../translated_images/tr/Agent.c9c33f6a412b4cde.webp)
 
 ### Adım 2: MCP Sunucu Projesini Başlatın
 
@@ -70,7 +61,7 @@ Gerçek zamanlı sunucu izleme, araç çalıştırma görselleştirme, ağ istek
 4. `python-weather` şablonunu seçin
 5. Sunucunuza isim verin: `weather_mcp`
 
-![Python Template Selection](../../../../translated_images/Pythontemplate.9d0a2913c6491500bd673430f024dc44676af2808a27b5da9dcc0eb7063adc28.tr.png)
+![Python Template Selection](../../../../translated_images/tr/Pythontemplate.9d0a2913c6491500.webp)
 
 ### Adım 3: Projeyi Açın ve İnceleyin
 
@@ -334,7 +325,7 @@ USER_PROMPT
 How's the weather like in Seattle
 ```
 
-![Agent Builder Debug Result](../../../../translated_images/Result.6ac570f7d2b1d5389c561ab0566970fe0f13e75bdd976b6a7f0270bc715d07f8.tr.png)
+![Agent Builder Debug Result](../../../../translated_images/tr/Result.6ac570f7d2b1d538.webp)
 
 ### Adım 8: MCP Inspector ile Hata Ayıklama
 
@@ -346,7 +337,7 @@ How's the weather like in Seattle
    - Ağ isteklerini izleyin
    - Sunucu yanıtlarını hata ayıklayın
 
-![MCP Inspector Interface](../../../../translated_images/Inspector.5672415cd02fe8731774586cc0a1083e3275d2f8491602aecc8ac4d61f2c0d57.tr.png)
+![MCP Inspector Interface](../../../../translated_images/tr/Inspector.5672415cd02fe873.webp)
 
 ---
 

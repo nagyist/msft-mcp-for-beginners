@@ -1,95 +1,92 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4d3415b9d2bf58bc69be07f945a69e07",
-  "translation_date": "2025-08-26T18:35:12+00:00",
-  "source_file": "09-CaseStudy/travelagentsample.md",
-  "language_code": "lt"
-}
--->
-# Atvejo analizė: Azure AI kelionių agentai – pavyzdinė įgyvendinimo schema
+# Bylos studija: Azure AI kelionių agentai – atskaitos įgyvendinimas
 
 ## Apžvalga
 
-[Azure AI kelionių agentai](https://github.com/Azure-Samples/azure-ai-travel-agents) yra išsamus „Microsoft“ sukurtas pavyzdinis sprendimas, kuris demonstruoja, kaip sukurti daugiaveiksnį, dirbtiniu intelektu paremtą kelionių planavimo programą, naudojant Model Context Protocol (MCP), Azure OpenAI ir Azure AI Search. Šis projektas pristato geriausią praktiką, kaip koordinuoti kelis dirbtinio intelekto agentus, integruoti įmonės duomenis ir sukurti saugią, pritaikomą platformą realioms situacijoms.
+[Azure AI kelionių agentai](https://github.com/Azure-Samples/azure-ai-travel-agents) yra išsamus „Microsoft“ sukurtas atskaitos sprendimas, kuris demonstruoja, kaip sukurti daugialypį, dirbtinio intelekto palaikomą kelionių planavimo programą, naudojant Modelio konteksto protokolą (MCP), Azure OpenAI ir Azure AI Search. Šis projektas pristato geriausias praktikas, kaip koordinuoti kelis DI agentus, integruoti įmonių duomenis ir suteikti saugią, išplečiamą platformą realiems scenarijams.
 
-## Pagrindinės funkcijos
-- **Daugiaveiksnė koordinacija:** Naudojamas MCP, kad būtų koordinuojami specializuoti agentai (pvz., skrydžių, viešbučių ir maršrutų agentai), kurie bendradarbiauja vykdydami sudėtingas kelionių planavimo užduotis.
-- **Įmonės duomenų integracija:** Prisijungia prie Azure AI Search ir kitų įmonės duomenų šaltinių, kad pateiktų naujausią ir aktualią informaciją kelionių rekomendacijoms.
-- **Saugus, pritaikomas architektūros sprendimas:** Naudojamos Azure paslaugos autentifikacijai, autorizacijai ir pritaikomam diegimui, laikantis įmonės saugumo geriausios praktikos.
-- **Pritaikomi įrankiai:** Įgyvendinami MCP įrankiai ir šablonai, leidžiantys greitai prisitaikyti prie naujų sričių ar verslo poreikių.
-- **Vartotojo patirtis:** Pateikiama pokalbių sąsaja, leidžianti vartotojams bendrauti su kelionių agentais, naudojant Azure OpenAI ir MCP.
+## Pagrindinės savybės
+- **Daugialypė agentų orkestra:** Naudoja MCP kelių specializuotų agentų (pvz., skrydžių, viešbučių ir maršrutų agentų) koordinavimui, kurie bendradarbiauja vykdydami sudėtingas kelionių planavimo užduotis.
+- **Įmonių duomenų integracija:** Prisijungia prie Azure AI Search ir kitų įmonių duomenų šaltinių, teikdama naujausią ir aktualią informaciją kelionių rekomendacijoms.
+- **Saugumo ir mastelio architektūra:** Pasinaudoja Azure paslaugomis autentifikacijai, autorizacijai ir masteliui užtikrinti, laikydamasi geriausių įmonių saugumo praktikų.
+- **Išplečiami įrankiai:** Įgyvendina pakartotinai naudojamus MCP įrankius ir skatinimo šablonus, leidžiančius greitai prisitaikyti prie naujų sričių ar verslo reikalavimų.
+- **Vartotojo patirtis:** Pateikia pokalbių sąsają vartotojams bendrauti su kelionių agentais, kurią palaiko Azure OpenAI ir MCP.
 
 ## Architektūra
-![Architektūra](https://raw.githubusercontent.com/Azure-Samples/azure-ai-travel-agents/main/docs/ai-travel-agents-architecture-diagram.png)
+![Architecture](https://raw.githubusercontent.com/Azure-Samples/azure-ai-travel-agents/main/docs/ai-travel-agents-architecture-diagram.png)
 
 ### Architektūros diagramos aprašymas
 
-Azure AI kelionių agentų sprendimas sukurtas taip, kad būtų modulinis, pritaikomas ir saugiai integruotų kelis dirbtinio intelekto agentus bei įmonės duomenų šaltinius. Pagrindiniai komponentai ir duomenų srautas yra tokie:
+Azure AI kelionių agentų sprendimas yra sukurtas moduliu, galintis masteliuotis ir saugiai integruoti kelis DI agentus bei įmonių duomenų šaltinius. Pagrindiniai komponentai ir duomenų srautas yra šie:
 
-- **Vartotojo sąsaja:** Vartotojai bendrauja su sistema per pokalbių sąsają (pvz., internetinį pokalbį ar „Teams“ botą), kuri siunčia užklausas ir gauna kelionių rekomendacijas.
-- **MCP serveris:** Veikia kaip centrinis koordinatorius, priimantis vartotojo įvestį, valdantis kontekstą ir koordinuojantis specializuotų agentų (pvz., FlightAgent, HotelAgent, ItineraryAgent) veiksmus per Model Context Protocol.
-- **Dirbtinio intelekto agentai:** Kiekvienas agentas atsakingas už tam tikrą sritį (skrydžiai, viešbučiai, maršrutai) ir įgyvendinamas kaip MCP įrankis. Agentai naudoja šablonus ir logiką užklausoms apdoroti bei atsakymams generuoti.
-- **Azure OpenAI paslauga:** Užtikrina pažangų natūralios kalbos supratimą ir generavimą, leidžiantį agentams interpretuoti vartotojo ketinimus ir generuoti pokalbių atsakymus.
-- **Azure AI Search ir įmonės duomenys:** Agentai užklausia Azure AI Search ir kitus įmonės duomenų šaltinius, kad gautų naujausią informaciją apie skrydžius, viešbučius ir kelionių galimybes.
-- **Autentifikacija ir saugumas:** Integruojama su Microsoft Entra ID saugiai autentifikacijai ir taikomi minimalios prieigos kontrolės principai visiems ištekliams.
-- **Diegimas:** Sukurta diegimui Azure Container Apps, užtikrinant pritaikomumą, stebėjimą ir veikimo efektyvumą.
+- **Vartotojo sąsaja:** Vartotojai sąveikauja su sistema per pokalbių UI (pvz., interneto pokalbį ar Teams botą), kuris siunčia vartotojo užklausas ir gauna kelionių rekomendacijas.
+- **MCP serveris:** Veikia kaip centrinis koordinatorius, priimantis vartotojo įvestį, valdančius kontekstą ir koordinuojantis specializuotų agentų (pvz., FlightAgent, HotelAgent, ItineraryAgent) veiksmus naudojant Modelio konteksto protokolą.
+- **DI agentai:** Kiekvienas agentas atsakingas už konkrečią sritį (skrydžiai, viešbučiai, maršrutai) ir įgyvendinamas kaip MCP įrankis. Agentai naudoja skatinimo šablonus ir logiką užklausoms apdoroti ir atsakymams generuoti.
+- **Azure OpenAI paslauga:** Teikia pažangų natūralios kalbos supratimą ir generavimą, leidžiantį agentams interpretuoti vartotojo ketinimus ir generuoti pokalbių atsakymus.
+- **Azure AI Search ir įmonių duomenys:** Agentai užklausia Azure AI Search ir kitus įmonių duomenų šaltinius, kad gautų naujausią informaciją apie skrydžius, viešbučius ir kelionių galimybes.
+- **Autentifikacija ir saugumas:** Integruojasi su Microsoft Entra ID, kad užtikrintų saugią autentifikaciją ir taiko mažiausių teisių prieigos kontrolę visiems ištekliams.
+- **Diegimas:** Sukurtas diegimui Azure Container Apps, užtikrinant mastelį, stebėjimą ir veiklos efektyvumą.
 
-Ši architektūra leidžia sklandžiai koordinuoti kelis dirbtinio intelekto agentus, saugiai integruoti įmonės duomenis ir sukurti tvirtą, pritaikomą platformą, skirtą kurti specifinėms dirbtinio intelekto sprendimams.
+Ši architektūra leidžia sklandžiai koordinuoti kelis DI agentus, saugiai integruoti įmonių duomenis ir sukurti tvirtą, išplečiamą platformą domeno specifinėms DI programoms.
 
-## Architektūros diagramos paaiškinimas žingsnis po žingsnio
-Įsivaizduokite, kad planuojate didelę kelionę ir turite komandą ekspertų, kurie padeda jums su kiekviena detale. Azure AI kelionių agentų sistema veikia panašiai, naudodama skirtingas dalis (kaip komandos narius), kurių kiekviena turi specialią užduotį. Štai kaip viskas susijungia:
+## Išsamus architektūros diagramos paaiškinimas
+Įsivaizduokite, kad planuojate didelę kelionę ir turite komandą ekspertų asistentų, kurie padeda jums su kiekviena detale. Azure AI kelionių agentų sistema veikia panašiai, naudodama skirtingas dalis (kaip komandos narius), kurių kiekvienas turi specialią užduotį. Štai kaip visa tai dera:
 
 ### Vartotojo sąsaja (UI):
-Tai tarsi kelionių agento registratūra. Čia jūs (vartotojas) užduodate klausimus ar pateikiate prašymus, pvz., „Suraskite man skrydį į Paryžių.“ Tai gali būti pokalbių langas svetainėje ar žinučių programėlėje.
+Galvokite apie tai kaip jūsų kelionių agente priekinę registratūrą. Čia jūs (vartotojas) užduodate klausimus ar darote užklausas, pvz., „Rask man skrydį į Paryžių.“ Tai gali būti pokalbių langas svetainėje arba žinučių programėlėje.
 
 ### MCP serveris (Koordinatorius):
-MCP serveris yra kaip vadybininkas, kuris išklauso jūsų prašymą registratūroje ir nusprendžia, kuris specialistas turėtų atlikti kiekvieną dalį. Jis seka jūsų pokalbį ir užtikrina, kad viskas vyktų sklandžiai.
+MCP serveris yra kaip vadybininkas, kuris klausosi jūsų užklausos prie registratūros ir nusprendžia, kuris specialistas turi susitvarkyti su kiekviena dalimi. Jis seka jūsų pokalbį ir užtikrina, kad viskas veiktų sklandžiai.
 
-### Dirbtinio intelekto agentai (Specialistai):
-Kiekvienas agentas yra tam tikros srities ekspertas – vienas žino viską apie skrydžius, kitas apie viešbučius, o dar kitas apie jūsų maršruto planavimą. Kai paprašote kelionės, MCP serveris siunčia jūsų prašymą tinkamam agentui (-ams). Šie agentai naudoja savo žinias ir įrankius, kad surastų geriausius variantus jums.
+### DI agentai (specialistų asistentai):
+Kiekvienas agentas yra ekspertas tam tikroje srityje – vienas žino viską apie skrydžius, kitas apie viešbučius, dar kitas apie jūsų maršruto planavimą. Kai klausi apie kelionę, MCP serveris siunčia jūsų užklausą tinkamam agentui (-ams). Šie agentai naudoja savo žinias ir įrankius, kad rastų jums geriausias galimybes.
 
-### Azure OpenAI paslauga (Kalbos ekspertas):
-Tai tarsi turėti kalbos ekspertą, kuris tiksliai supranta, ko jūs prašote, nesvarbu, kaip tai suformuluojate. Jis padeda agentams suprasti jūsų prašymus ir atsakyti natūralia, pokalbių kalba.
+### Azure OpenAI paslauga (kalbos ekspertas):
+Tai kaip turėti kalbos ekspertą, kuris tiksliai supranta, ką jūs klausiate, nesvarbu, kaip tą išreiškiate. Ji padeda agentams suprasti jūsų užklausas ir atsakyti natūralia, pokalbių kalba.
 
-### Azure AI Search ir įmonės duomenys (Informacijos biblioteka):
-Įsivaizduokite didžiulę, naujausią biblioteką su visa naujausia kelionių informacija – skrydžių tvarkaraščiais, viešbučių prieinamumu ir kt. Agentai ieško šioje bibliotekoje, kad pateiktų tiksliausius atsakymus jums.
+### Azure AI Search ir įmonių duomenys (informacijos biblioteka):
+Įsivaizduokite milžinišką, nuolat atnaujinamą biblioteką su visa naujausia kelionių informacija – skrydžių tvarkaraščiai, viešbučių prieinamumas ir kt. Agentai ieško šioje bibliotekoje, kad gautų kuo tikslesnius atsakymus jums.
 
-### Autentifikacija ir saugumas (Apsaugos darbuotojas):
-Kaip apsaugos darbuotojas tikrina, kas gali patekti į tam tikras zonas, ši dalis užtikrina, kad tik autorizuoti asmenys ir agentai galėtų pasiekti jautrią informaciją. Tai saugo jūsų duomenis.
+### Autentifikacija ir saugumas (saugumo sargas):
+Kaip saugumiečiai tikrina, kas gali patekti į tam tikras teritorijas, taip ši dalis užtikrina, kad tik įgalioti asmenys ir agentai gali pasiekti jautrią informaciją. Jis saugo jūsų duomenis ir privatumo nepaliestumą.
 
-### Diegimas Azure Container Apps (Pastatas):
-Visi šie asistentai ir įrankiai dirba kartu saugiame, pritaikomame pastate (debesyje). Tai reiškia, kad sistema gali aptarnauti daug vartotojų vienu metu ir visada yra prieinama, kai jums jos reikia.
+### Diegimas Azure Container Apps platformoje (pastatas):
+Visi šie asistentai ir įrankiai veikia kartu saugiame, mastelio galimybę turinčiame „pastate“ (debesyje). Tai reiškia, kad sistema vienu metu gali aptarnauti daug vartotojų ir būtų visada pasiekiama, kai jos reikia.
 
-## Kaip viskas veikia kartu:
+## Kaip visa tai veikia kartu:
 
-- Jūs pradedate užduodami klausimą registratūroje (UI).
-- Vadybininkas (MCP serveris) nusprendžia, kuris specialistas (agentas) turėtų jums padėti.
-- Specialistas naudoja kalbos ekspertą (OpenAI), kad suprastų jūsų prašymą, ir biblioteką (AI Search), kad surastų geriausią atsakymą.
-- Apsaugos darbuotojas (Autentifikacija) užtikrina, kad viskas būtų saugu.
-- Visa tai vyksta patikimame, pritaikomame pastate (Azure Container Apps), todėl jūsų patirtis yra sklandi ir saugi.
-
-Šis komandinis darbas leidžia sistemai greitai ir saugiai padėti jums planuoti kelionę, kaip ekspertų kelionių agentų komanda, dirbanti moderniame biure!
+Jūs pradedate užklausdami prie registratūros (UI).
+Vadybininkas (MCP serveris) nustato, kuris specialistas (agentas) turi jums padėti.
+Specialistas naudoja kalbos ekspertą (OpenAI), kad suprastų jūsų užklausą, ir biblioteką (AI Search), kad rastų geriausią atsakymą.
+Saugumo sargas (autentifikacija) užtikrina, kad viskas būtų saugu.
+Visa tai vyksta patikimame, masteliuotame pastate (Azure Container Apps), todėl jūsų patirtis yra sklandi ir saugi.
+Šis komandinis darbas leidžia sistemai greitai ir saugiai padėti jums planuoti kelionę, lyg komanda ekspertų kelionių agentų, kurie kartu dirba moderniame biure!
 
 ## Techninis įgyvendinimas
-- **MCP serveris:** Talpina pagrindinę koordinavimo logiką, pateikia agentų įrankius ir valdo kontekstą daugiapakopėms kelionių planavimo užduotims.
-- **Agentai:** Kiekvienas agentas (pvz., FlightAgent, HotelAgent) įgyvendinamas kaip MCP įrankis su savo šablonais ir logika.
-- **Azure integracija:** Naudojama Azure OpenAI natūralios kalbos supratimui ir Azure AI Search duomenų paieškai.
-- **Saugumas:** Integruojama su Microsoft Entra ID autentifikacijai ir taikomi minimalios prieigos kontrolės principai visiems ištekliams.
-- **Diegimas:** Palaikomas diegimas Azure Container Apps, užtikrinant pritaikomumą ir veikimo efektyvumą.
+- **MCP serveris:** Laiko pagrindinę orkestracijos logiką, teikia agentų įrankius ir valdo kontekstą daugiažingsnių kelionių planavimo darbo srautams.
+- **Agentai:** Kiekvienas agentas (pvz., FlightAgent, HotelAgent) įgyvendintas kaip MCP įrankis su savo skatinimo šablonais ir logika.
+- **Azure integracija:** Naudoja Azure OpenAI natūralios kalbos supratimui ir Azure AI Search duomenų paieškai.
+- **Saugumas:** Integruojamas su Microsoft Entra ID autentifikacijai ir taiko mažiausių teisių prieigos kontrolę visiems ištekliams.
+- **Diegimas:** Palaiko diegimą Azure Container Apps dėl mastelio ir veiklos efektyvumo.
 
 ## Rezultatai ir poveikis
-- Demonstruoja, kaip MCP gali būti naudojamas koordinuoti kelis dirbtinio intelekto agentus realiame, gamybos lygio scenarijuje.
-- Paspartina sprendimų kūrimą, pateikdamas pritaikomas schemas agentų koordinavimui, duomenų integracijai ir saugiam diegimui.
-- Tarnauja kaip pavyzdys, kaip kurti specifines, dirbtiniu intelektu paremtas programas, naudojant MCP ir Azure paslaugas.
+- Demonstruoja, kaip MCP galima naudoti kelių DI agentų orkestravimui realiame, gamybiniame scenarijuje.
+- Paspartina sprendimų kūrimą, teikdama pakartotinai naudojamus modelius agentų koordinavimui, duomenų integracijai ir saugiam diegimui.
+- Tarnauja kaip šablonas kuriant srities specifines, dirbtiniu intelektu paremtas programas naudojant MCP ir Azure paslaugas.
 
 ## Nuorodos
-- [Azure AI kelionių agentų GitHub saugykla](https://github.com/Azure-Samples/azure-ai-travel-agents)
+- [Azure AI Travel Agents GitHub saugykla](https://github.com/Azure-Samples/azure-ai-travel-agents)
 - [Azure OpenAI paslauga](https://azure.microsoft.com/en-us/products/ai-services/openai-service/)
 - [Azure AI Search](https://azure.microsoft.com/en-us/products/ai-services/ai-search/)
-- [Model Context Protocol (MCP)](https://modelcontextprotocol.io/)
+- [Modelio konteksto protokolas (MCP)](https://modelcontextprotocol.io/)
+
+## Kas toliau
+
+- Atgal į: [Bylų studijų apžvalga](./README.md)
+- Toliau: [ADO elementų atnaujinimas iš YouTube](./UpdateADOItemsFromYT.md)
 
 ---
 
-**Atsakomybės apribojimas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama naudoti profesionalų žmogaus vertimą. Mes neprisiimame atsakomybės už nesusipratimus ar klaidingus aiškinimus, atsiradusius dėl šio vertimo naudojimo.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Atšaukimas**:
+Šis dokumentas buvo išverstas naudojant dirbtinio intelekto vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų arba netikslumų. Pirminis dokumentas gimtąja kalba turi būti laikomas autoritetingu šaltiniu. Svarbiai informacijai rekomenduojama pasitelkti profesionalų žmonių vertimą. Mes neatsakome už jokių nesusipratimų ar klaidingų interpretacijų pasekmes, kilusias dėl šio vertimo naudojimo.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

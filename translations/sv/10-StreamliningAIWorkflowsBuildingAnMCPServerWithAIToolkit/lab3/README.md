@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "dd8da3f75addcef453fe11f02a270217",
-  "translation_date": "2025-07-14T08:14:38+00:00",
-  "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/README.md",
-  "language_code": "sv"
-}
--->
 # 🔧 Modul 3: Avancerad MCP-utveckling med AI Toolkit
 
 ![Duration](https://img.shields.io/badge/Duration-20_minutes-blue?style=flat-square)
@@ -65,7 +56,7 @@ Ett kraftfullt felsökningsverktyg som erbjuder:
 2. **Skapa en ny agent** med följande konfiguration:  
    - Agentnamn: `WeatherAgent`
 
-![Agent Creation](../../../../translated_images/Agent.c9c33f6a412b4cdedfb973fe5448bdb33de3f400055603111b875610e9b917ab.sv.png)
+![Agent Creation](../../../../translated_images/sv/Agent.c9c33f6a412b4cde.webp)
 
 ### Steg 2: Initiera MCP Server-projekt
 
@@ -75,7 +66,7 @@ Ett kraftfullt felsökningsverktyg som erbjuder:
 4. **Välj mallen `python-weather`**  
 5. **Namnge din server:** `weather_mcp`
 
-![Python Template Selection](../../../../translated_images/Pythontemplate.9d0a2913c6491500bd673430f024dc44676af2808a27b5da9dcc0eb7063adc28.sv.png)
+![Python Template Selection](../../../../translated_images/sv/Pythontemplate.9d0a2913c6491500.webp)
 
 ### Steg 3: Öppna och granska projektet
 
@@ -341,7 +332,7 @@ USER_PROMPT
 How's the weather like in Seattle
 ```
 
-![Agent Builder Debug Result](../../../../translated_images/Result.6ac570f7d2b1d5389c561ab0566970fe0f13e75bdd976b6a7f0270bc715d07f8.sv.png)
+![Agent Builder Debug Result](../../../../translated_images/sv/Result.6ac570f7d2b1d538.webp)
 
 ### Steg 8: Felsök med MCP Inspector
 
@@ -353,7 +344,7 @@ How's the weather like in Seattle
    - Övervaka nätverksförfrågningar  
    - Felsök serverrespons  
 
-![MCP Inspector Interface](../../../../translated_images/Inspector.5672415cd02fe8731774586cc0a1083e3275d2f8491602aecc8ac4d61f2c0d57.sv.png)
+![MCP Inspector Interface](../../../../translated_images/sv/Inspector.5672415cd02fe873.webp)
 
 ---
 

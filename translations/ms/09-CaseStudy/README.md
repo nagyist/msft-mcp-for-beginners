@@ -1,125 +1,173 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "61a160248efabe92b09d7b08293d17db",
-  "translation_date": "2025-08-18T17:49:41+00:00",
-  "source_file": "09-CaseStudy/README.md",
-  "language_code": "ms"
-}
--->
 # MCP dalam Tindakan: Kajian Kes Dunia Sebenar
 
-[![MCP dalam Tindakan: Kajian Kes Dunia Sebenar](../../../translated_images/10.3262cc80b4de5071fde8ba74c5c5d6738a0a9f398dcc0423f0210f632e2238b8.ms.png)](https://youtu.be/IxshWb2Az5w)
+[![MCP dalam Tindakan: Kajian Kes Dunia Sebenar](../../../translated_images/ms/10.3262cc80b4de5071.webp)](https://youtu.be/IxshWb2Az5w)
 
 _(Klik imej di atas untuk menonton video pelajaran ini)_
 
-Model Context Protocol (MCP) sedang mengubah cara aplikasi AI berinteraksi dengan data, alat, dan perkhidmatan. Bahagian ini mempersembahkan kajian kes dunia sebenar yang menunjukkan aplikasi praktikal MCP dalam pelbagai senario perusahaan.
+Protokol Konteks Model (MCP) sedang mengubah cara aplikasi AI berinteraksi dengan data, alat, dan perkhidmatan. Bahagian ini mempersembahkan kajian kes dunia sebenar yang menunjukkan aplikasi praktikal MCP dalam pelbagai senario perusahaan.
 
 ## Gambaran Keseluruhan
 
-Bahagian ini memaparkan contoh konkrit pelaksanaan MCP, menonjolkan bagaimana organisasi menggunakan protokol ini untuk menyelesaikan cabaran perniagaan yang kompleks. Dengan mengkaji kajian kes ini, anda akan mendapat pandangan tentang kepelbagaian, skalabiliti, dan manfaat praktikal MCP dalam senario dunia sebenar.
+Bahagian ini mempamerkan contoh konkrit pelaksanaan MCP, menyoroti bagaimana organisasi menggunakan protokol ini untuk menyelesaikan cabaran perniagaan yang kompleks. Dengan mengkaji kajian kes ini, anda akan mendapat wawasan tentang kepelbagaian, kebolehskalaan, dan manfaat praktikal MCP dalam senario dunia sebenar.
 
 ## Objektif Pembelajaran Utama
 
 Dengan meneroka kajian kes ini, anda akan:
 
 - Memahami bagaimana MCP boleh digunakan untuk menyelesaikan masalah perniagaan tertentu
-- Mempelajari corak integrasi dan pendekatan seni bina yang berbeza
+- Mempelajari pelbagai corak integrasi dan pendekatan seni bina
 - Mengenali amalan terbaik untuk melaksanakan MCP dalam persekitaran perusahaan
-- Mendapatkan pandangan tentang cabaran dan penyelesaian yang dihadapi dalam pelaksanaan dunia sebenar
-- Mengenal pasti peluang untuk menerapkan corak serupa dalam projek anda sendiri
+- Mendapatkan wawasan mengenai cabaran dan penyelesaian yang ditemui dalam pelaksanaan dunia sebenar
+- Mengenal pasti peluang untuk menggunakan corak yang serupa dalam projek anda sendiri
 
-## Kajian Kes Pilihan
+## Kajian Kes Terpilih
 
-### 1. [Azure AI Travel Agents – Pelaksanaan Rujukan](./travelagentsample.md)
+### 1. [Ejen Perjalanan AI Azure – Pelaksanaan Rujukan](./travelagentsample.md)
 
-Kajian kes ini mengkaji penyelesaian rujukan komprehensif Microsoft yang menunjukkan cara membina aplikasi perancangan perjalanan berkuasa AI dengan pelbagai ejen menggunakan MCP, Azure OpenAI, dan Azure AI Search. Projek ini memaparkan:
+Kajian kes ini mengkaji penyelesaian rujukan menyeluruh Microsoft yang menunjukkan cara membina aplikasi perancangan perjalanan berbilang ejen yang dipacu AI menggunakan MCP, Azure OpenAI, dan Azure AI Search. Projek ini mempamerkan:
 
-- Orkestrasi pelbagai ejen melalui MCP
-- Integrasi data perusahaan dengan Azure AI Search
-- Seni bina yang selamat dan boleh diskalakan menggunakan perkhidmatan Azure
-- Alat yang boleh diperluaskan dengan komponen MCP yang boleh digunakan semula
-- Pengalaman pengguna perbualan yang dikuasakan oleh Azure OpenAI
+- Orkestrasi berbilang ejen melalui MCP  
+- Integrasi data perusahaan dengan Azure AI Search  
+- Seni bina yang selamat dan boleh diskala menggunakan perkhidmatan Azure  
+- Alat yang boleh dikembangkan dengan komponen MCP boleh guna semula  
+- Pengalaman pengguna perbualan yang didayakan oleh Azure OpenAI  
 
-Perincian seni bina dan pelaksanaan memberikan pandangan berharga tentang cara membina sistem pelbagai ejen yang kompleks dengan MCP sebagai lapisan koordinasi.
+Seni bina dan butiran pelaksanaan memberikan wawasan berharga tentang membina sistem berbilang ejen yang kompleks dengan MCP sebagai lapisan penyelarasan.
 
-### 2. [Mengemas Kini Item Azure DevOps dari Data YouTube](./UpdateADOItemsFromYT.md)
+### 2. [Mengemas Kini Item Azure DevOps daripada Data YouTube](./UpdateADOItemsFromYT.md)
 
-Kajian kes ini menunjukkan aplikasi praktikal MCP untuk mengautomasi proses aliran kerja. Ia menunjukkan bagaimana alat MCP boleh digunakan untuk:
+Kajian kes ini menunjukkan aplikasi praktikal MCP untuk mengautomasikan proses aliran kerja. Ia menunjukkan bagaimana alat MCP boleh digunakan untuk:
 
-- Mengekstrak data dari platform dalam talian (YouTube)
-- Mengemas kini item kerja dalam sistem Azure DevOps
-- Mencipta aliran kerja automasi yang boleh diulang
-- Mengintegrasikan data merentasi sistem yang berbeza
+- Mengekstrak data daripada platform dalam talian (YouTube)  
+- Mengemas kini item kerja dalam sistem Azure DevOps  
+- Mewujudkan aliran kerja automasi berulang  
+- Mengintegrasikan data merentasi sistem yang berbeza  
 
-Contoh ini menggambarkan bagaimana pelaksanaan MCP yang agak mudah boleh memberikan peningkatan kecekapan yang ketara dengan mengautomasi tugas rutin dan meningkatkan konsistensi data merentasi sistem.
+Contoh ini menggambarkan bagaimana pelaksanaan MCP yang agak mudah dapat memberikan peningkatan kecekapan yang ketara dengan mengautomasikan tugas rutin dan meningkatkan konsistensi data merentasi sistem.
 
 ### 3. [Pengambilan Dokumentasi Masa Nyata dengan MCP](./docs-mcp/README.md)
 
-Kajian kes ini membimbing anda melalui sambungan klien konsol Python ke pelayan Model Context Protocol (MCP) untuk mengambil dan mencatat dokumentasi Microsoft yang kontekstual secara masa nyata. Anda akan belajar cara:
+Kajian kes ini membimbing anda untuk menyambungkan klien konsol Python kepada pelayan Model Context Protocol (MCP) untuk mengambil dan merekod dokumentasi Microsoft yang kontekstual dan masa nyata. Anda akan belajar bagaimana untuk:
 
-- Menyambung ke pelayan MCP menggunakan klien Python dan MCP SDK rasmi
-- Menggunakan klien HTTP penstriman untuk pengambilan data masa nyata yang cekap
-- Memanggil alat dokumentasi di pelayan dan mencatat respons terus ke konsol
-- Mengintegrasikan dokumentasi Microsoft terkini ke dalam aliran kerja anda tanpa meninggalkan terminal
+- Menyambung kepada pelayan MCP menggunakan klien Python dan SDK MCP rasmi  
+- Menggunakan klien HTTP streaming untuk pengambilan data masa nyata yang cekap  
+- Memanggil alat dokumentasi pada pelayan dan merekod respons terus ke konsol  
+- Mengintegrasikan dokumentasi Microsoft terkini ke dalam aliran kerja tanpa meninggalkan terminal  
 
-Bab ini termasuk tugasan praktikal, sampel kod kerja minimum, dan pautan ke sumber tambahan untuk pembelajaran mendalam. Lihat panduan penuh dan kod dalam bab yang dipautkan untuk memahami bagaimana MCP boleh mengubah akses dokumentasi dan produktiviti pembangun dalam persekitaran berasaskan konsol.
+Bab ini termasuk tugasan praktikal, contoh kod yang berfungsi minimum, dan pautan kepada sumber tambahan untuk pembelajaran lebih mendalam. Lihat panduan penuh dan kod dalam bab yang dipautkan untuk memahami bagaimana MCP boleh mengubah akses dokumentasi dan produktiviti pembangun dalam persekitaran berasaskan konsol.
 
 ### 4. [Aplikasi Web Penjana Pelan Kajian Interaktif dengan MCP](./docs-mcp/README.md)
 
-Kajian kes ini menunjukkan cara membina aplikasi web interaktif menggunakan Chainlit dan Model Context Protocol (MCP) untuk menjana pelan kajian yang diperibadikan untuk mana-mana topik. Pengguna boleh menentukan subjek (seperti "pensijilan AI-900") dan tempoh kajian (contohnya, 8 minggu), dan aplikasi akan menyediakan pecahan kandungan yang disyorkan minggu demi minggu. Chainlit membolehkan antara muka sembang perbualan, menjadikan pengalaman lebih menarik dan adaptif.
+Kajian kes ini menunjukkan bagaimana membina aplikasi web interaktif menggunakan Chainlit dan Model Context Protocol (MCP) untuk menjana pelan kajian yang diperibadikan bagi mana-mana topik. Pengguna boleh menentukan subjek (seperti "pensijilan AI-900") dan tempoh kajian (contohnya, 8 minggu), dan aplikasi akan menyediakan pecahan mengikut minggu bagi kandungan yang disyorkan. Chainlit membolehkan antara muka sembang perbualan, menjadikan pengalaman lebih menarik dan adaptif.
 
-- Aplikasi web perbualan yang dikuasakan oleh Chainlit
-- Arahan yang didorong pengguna untuk topik dan tempoh
-- Cadangan kandungan minggu demi minggu menggunakan MCP
-- Respons adaptif masa nyata dalam antara muka sembang
+- Aplikasi web perbualan didayakan oleh Chainlit  
+- Permintaan yang dikawal pengguna untuk topik dan tempoh  
+- Cadangan kandungan mengikut minggu menggunakan MCP  
+- Respons masa nyata dan adaptif dalam antara muka sembang  
 
-Projek ini menggambarkan bagaimana AI perbualan dan MCP boleh digabungkan untuk mencipta alat pendidikan dinamik yang didorong pengguna dalam persekitaran web moden.
+Projek ini menggambarkan bagaimana AI perbualan dan MCP boleh digabungkan untuk mencipta alat pendidikan dinamik yang dikawal pengguna dalam persekitaran web moden.
 
-### 5. [Dokumentasi Dalam Editor dengan Pelayan MCP dalam VS Code](./docs-mcp/README.md)
+### 5. [Dokumen Dalam Penyunting dengan Pelayan MCP dalam VS Code](./docs-mcp/README.md)
 
-Kajian kes ini menunjukkan bagaimana anda boleh membawa Microsoft Learn Docs terus ke dalam persekitaran VS Code anda menggunakan pelayan MCP—tidak perlu lagi bertukar tab penyemak imbas! Anda akan melihat cara:
+Kajian kes ini menunjukkan bagaimana anda boleh membawa Microsoft Learn Docs terus ke persekitaran VS Code anda menggunakan pelayan MCP—tidak perlu bertukar tab penyemak imbas lagi! Anda akan melihat bagaimana untuk:
 
-- Mencari dan membaca dokumen secara langsung dalam VS Code menggunakan panel MCP atau palet arahan
-- Merujuk dokumentasi dan memasukkan pautan terus ke dalam fail README atau markdown kursus anda
-- Menggunakan GitHub Copilot dan MCP bersama-sama untuk aliran kerja dokumentasi dan kod yang dikuasakan AI
-- Mengesahkan dan meningkatkan dokumentasi anda dengan maklum balas masa nyata dan ketepatan yang bersumberkan Microsoft
-- Mengintegrasikan MCP dengan aliran kerja GitHub untuk pengesahan dokumentasi berterusan
+- Mencari dan membaca dokumen secara serta-merta dalam VS Code menggunakan panel MCP atau palet perintah  
+- Merujuk dokumentasi dan memasukkan pautan terus ke dalam README atau fail markdown kursus anda  
+- Menggunakan GitHub Copilot dan MCP bersama untuk aliran kerja dokumentasi dan kod yang lancar bertenaga AI  
+- Mengesahkan dan mempertingkat dokumentasi anda dengan maklum balas masa nyata dan ketepatan sumber Microsoft  
+- Mengintegrasikan MCP dengan aliran kerja GitHub untuk pengesahan dokumentasi berterusan  
 
-Pelaksanaan ini termasuk:
+Pelaksanaan merangkumi:
 
-- Contoh konfigurasi `.vscode/mcp.json` untuk persediaan mudah
-- Panduan bergambar pengalaman dalam editor
-- Petua untuk menggabungkan Copilot dan MCP untuk produktiviti maksimum
+- Konfigurasi `.vscode/mcp.json` contoh untuk persediaan mudah  
+- Panduan melalui tangkapan skrin pengalaman dalam penyunting  
+- Petua untuk menggabungkan Copilot dan MCP bagi produktiviti maksimum  
 
-Senario ini sesuai untuk penulis kursus, penulis dokumentasi, dan pembangun yang ingin kekal fokus dalam editor mereka semasa bekerja dengan dokumen, Copilot, dan alat pengesahan—semuanya dikuasakan oleh MCP.
+Senario ini sesuai untuk penulis kursus, penulis dokumentasi, dan pembangun yang ingin kekal fokus dalam penyunting mereka semasa bekerja dengan dokumen, Copilot, dan alat pengesahan—semuanya didayakan oleh MCP.
 
 ### 6. [Penciptaan Pelayan MCP APIM](./apimsample.md)
 
-Kajian kes ini menyediakan panduan langkah demi langkah tentang cara mencipta pelayan MCP menggunakan Azure API Management (APIM). Ia merangkumi:
+Kajian kes ini memberikan panduan langkah demi langkah tentang cara mencipta pelayan MCP menggunakan Azure API Management (APIM). Ia merangkumi:
 
-- Menyediakan pelayan MCP dalam Azure API Management
-- Mendedahkan operasi API sebagai alat MCP
-- Mengkonfigurasi dasar untuk had kadar dan keselamatan
-- Menguji pelayan MCP menggunakan Visual Studio Code dan GitHub Copilot
+- Menyediakan pelayan MCP dalam Azure API Management  
+- Mendedahkan operasi API sebagai alat MCP  
+- Mengkonfigurasi dasar untuk penghadkan kadar dan keselamatan  
+- Menguji pelayan MCP menggunakan Visual Studio Code dan GitHub Copilot  
 
-Contoh ini menggambarkan bagaimana memanfaatkan keupayaan Azure untuk mencipta pelayan MCP yang kukuh yang boleh digunakan dalam pelbagai aplikasi, meningkatkan integrasi sistem AI dengan API perusahaan.
+Contoh ini menunjukkan bagaimana memanfaatkan keupayaan Azure untuk mencipta pelayan MCP yang kukuh yang boleh digunakan dalam pelbagai aplikasi, meningkatkan integrasi sistem AI dengan API perusahaan.
+
+### 7. [Daftar MCP GitHub — Mempercepatkan Integrasi Agentik](https://github.com/mcp)
+
+Kajian kes ini mengkaji bagaimana Daftar MCP GitHub, yang dilancarkan pada September 2025, menangani cabaran kritikal dalam ekosistem AI: penemuan dan penyebaran pelayan Model Context Protocol (MCP) yang terpecah-pecah.
+
+#### Gambaran Keseluruhan  
+**Daftar MCP** menyelesaikan masalah yang semakin membesar iaitu pelayan MCP yang berselerak di pelbagai repositori dan daftar, yang sebelum ini menyebabkan integrasi menjadi perlahan dan mudah berlaku kesilapan. Pelayan-pelayan ini membolehkan ejen AI berinteraksi dengan sistem luaran seperti API, pangkalan data, dan sumber dokumentasi.
+
+#### Pernyataan Masalah  
+Pembangun yang membina aliran kerja agentik menghadapi beberapa cabaran:  
+- **Penemuan terhad** pelayan MCP di pelbagai platform  
+- **Soalan persediaan berulang** yang berselerak di forum dan dokumentasi  
+- **Risiko keselamatan** daripada sumber yang tidak disahkan dan tidak dipercayai  
+- **Ketiadaan standardisasi** dalam kualiti dan keserasian pelayan  
+
+#### Seni Bina Penyelesaian  
+Daftar MCP GitHub memusatkan pelayan MCP yang dipercayai dengan ciri utama:  
+- **Pemasangan satu klik** integrasi melalui VS Code untuk persediaan mudah  
+- **Susunan signal-over-noise** berdasarkan bintang, aktiviti, dan pengesahan komuniti  
+- **Integrasi langsung** dengan GitHub Copilot dan alat serasi MCP lain  
+- **Model sumbangan terbuka** membolehkan komuniti dan rakan perusahaan menyumbang  
+
+#### Impak Perniagaan  
+Daftar ini telah memberikan penambahbaikan yang ketara:  
+- **Penambahan pantas** untuk pembangun menggunakan alat seperti Microsoft Learn MCP Server, yang menstrimkan dokumentasi rasmi terus ke dalam ejen  
+- **Produktiviti lebih baik** melalui pelayan khusus seperti `github-mcp-server`, yang membolehkan automasi GitHub dengan bahasa semula jadi (pembuatan PR, pelaksanaan semula CI, pengimbasan kod)  
+- **Kepercayaan ekosistem lebih kukuh** menerusi senarai yang dikurasi dan standard konfigurasi yang telus  
+
+#### Nilai Strategik  
+Bagi pengamal yang mengkhusus dalam pengurusan kitaran hayat ejen dan aliran kerja yang boleh diulang, Daftar MCP menyediakan:  
+- **Keupayaan penyebaran ejen modular** dengan komponen standard  
+- **Saluran penilaian berasaskan daftar** untuk pengujian dan pengesahan konsisten  
+- **Interoperabiliti merentasi alat** yang membolehkan integrasi lancar antara platform AI berbeza  
+
+Kajian kes ini menunjukkan bahawa Daftar MCP bukan sekadar direktori—ia adalah platform asas untuk integrasi model berskala dan penyebaran sistem agentik dunia sebenar.
 
 ## Kesimpulan
 
-Kajian kes ini menonjolkan kepelbagaian dan aplikasi praktikal Model Context Protocol dalam senario dunia sebenar. Daripada sistem pelbagai ejen yang kompleks kepada aliran kerja automasi yang disasarkan, MCP menyediakan cara standard untuk menghubungkan sistem AI dengan alat dan data yang mereka perlukan untuk memberikan nilai.
+Tujuh kajian kes menyeluruh ini menunjukkan kepelbagaian yang luar biasa dan aplikasi praktikal Protokol Konteks Model merentasi pelbagai senario dunia sebenar. Daripada sistem perancangan perjalanan pelbagai ejen yang kompleks dan pengurusan API perusahaan kepada aliran kerja dokumentasi yang mudah dan Daftar MCP GitHub yang revolusioner, contoh ini mempamerkan bagaimana MCP menyediakan cara standard, boleh diskala untuk menghubungkan sistem AI dengan alat, data, dan perkhidmatan yang mereka perlukan untuk menyampaikan nilai yang luar biasa.
 
-Dengan mengkaji pelaksanaan ini, anda boleh mendapatkan pandangan tentang corak seni bina, strategi pelaksanaan, dan amalan terbaik yang boleh digunakan dalam projek MCP anda sendiri. Contoh-contoh ini menunjukkan bahawa MCP bukan sekadar rangka kerja teori tetapi penyelesaian praktikal untuk cabaran perniagaan sebenar.
+Kajian kes merangkumi pelbagai dimensi pelaksanaan MCP:  
+- **Integrasi Perusahaan**: Pengurusan API Azure dan automasi Azure DevOps  
+- **Orkestrasi Berbilang Ejen**: Perancangan perjalanan dengan ejen AI yang diselaraskan  
+- **Produktiviti Pembangun**: Integrasi VS Code dan akses dokumentasi masa nyata  
+- **Pembangunan Ekosistem**: Daftar MCP GitHub sebagai platform asas  
+- **Aplikasi Pendidikan**: Penjana pelan kajian interaktif dan antara muka perbualan  
+
+Dengan mengkaji pelaksanaan ini, anda mendapat wawasan kritikal dalam:  
+- **Corak seni bina** untuk skala dan kes penggunaan berbeza  
+- **Strategi pelaksanaan** yang mengimbangi fungsi dengan kebolehselenggaraan  
+- **Pertimbangan keselamatan dan kebolehskalaan** untuk pengeluaran  
+- **Amalan terbaik** untuk pembangunan pelayan MCP dan integrasi klien  
+- **Pemikiran ekosistem** untuk membina penyelesaian berkuasa AI yang saling berkaitan  
+
+Contoh-contoh ini secara kolektif menunjukkan bahawa MCP bukan sekadar rangka kerja teori tetapi protokol matang yang siap digunakan untuk penyelesaian praktikal cabaran perniagaan kompleks. Sama ada anda membina alat automasi mudah atau sistem berbilang ejen yang sofistikated, corak dan pendekatan yang digambarkan di sini menyediakan asas kukuh untuk projek MCP anda sendiri.
 
 ## Sumber Tambahan
 
-- [Repositori GitHub Azure AI Travel Agents](https://github.com/Azure-Samples/azure-ai-travel-agents)
-- [Alat MCP Azure DevOps](https://github.com/microsoft/azure-devops-mcp)
-- [Alat MCP Playwright](https://github.com/microsoft/playwright-mcp)
-- [Pelayan MCP Microsoft Docs](https://github.com/MicrosoftDocs/mcp)
-- [Contoh Komuniti MCP](https://github.com/microsoft/mcp)
+- [Repositori GitHub Ejen Perjalanan AI Azure](https://github.com/Azure-Samples/azure-ai-travel-agents)  
+- [Alat MCP Azure DevOps](https://github.com/microsoft/azure-devops-mcp)  
+- [Alat MCP Playwright](https://github.com/microsoft/playwright-mcp)  
+- [Pelayan Dokumentasi MCP Microsoft](https://github.com/MicrosoftDocs/mcp)  
+- [Daftar MCP GitHub — Mempercepatkan Integrasi Agentik](https://github.com/mcp)  
+- [Contoh Komuniti MCP](https://github.com/microsoft/mcp)  
 
-Seterusnya: Makmal Praktikal [Mempermudah Aliran Kerja AI: Membangun Pelayan MCP dengan AI Toolkit](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
+## Apa Seterusnya
 
-**Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk memastikan ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat penting, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+- Sebelumnya: [Modul 8: Amalan Terbaik](../08-BestPractices/README.md)  
+- Seterusnya: [Modul 10: Mempermudah Aliran Kerja AI: Membina Pelayan MCP dengan AI Toolkit](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Penafian**:
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber utama yang sah. Untuk maklumat penting, disyorkan terjemahan profesional oleh manusia. Kami tidak bertanggungjawab atas sebarang salah faham atau tafsiran yang timbul daripada penggunaan terjemahan ini.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

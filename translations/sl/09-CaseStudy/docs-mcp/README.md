@@ -1,52 +1,43 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4319d291c9d124ecafea52b3d04bfa0e",
-  "translation_date": "2025-07-14T06:30:38+00:00",
-  "source_file": "09-CaseStudy/docs-mcp/README.md",
-  "language_code": "sl"
-}
--->
-# Študija primera: Povezava s strežnikom Microsoft Learn Docs MCP iz odjemalca
+# Študija primera: Povezava s strežnikom Microsoft Learn Docs MCP iz odjemalske aplikacije
 
-Ste se kdaj znašli v situaciji, ko preklapljate med spletnimi stranmi z dokumentacijo, Stack Overflow in neskončnimi zavihki iskalnikov, medtem ko poskušate rešiti težavo v svoji kodi? Morda imate drugi zaslon samo za dokumentacijo ali pa ves čas preklapljate med IDE-jem in brskalnikom. Bi bilo ne boljše, če bi lahko dokumentacijo pripeljali neposredno v svoj delovni proces — integrirano v vaše aplikacije, IDE ali celo lastna orodja? V tej študiji primera bomo raziskali, kako to storiti tako, da se neposredno povežete s strežnikom Microsoft Learn Docs MCP iz svoje odjemalske aplikacije.
+Ste se kdaj znašli v situaciji, ko preklapljate med dokumentacijskimi spletnimi mesti, Stack Overflow in neskončnimi zavihki iskalnikov, vse to med reševanjem težave v vaši kodi? Morda imate drug monitor samo za dokumentacijo ali pa ves čas uporabljate alt-tab med vašim IDE in brskalnikom. Ali ne bi bilo bolje, če bi lahko dokumentacijo prinesli neposredno v svoj potek dela—integrirano v vaše aplikacije, vaš IDE ali celo lastna orodja? V tej študiji primera bomo raziskali, kako točno to narediti z neposredno povezavo na strežnik Microsoft Learn Docs MCP iz lastne odjemalske aplikacije.
 
 ## Pregled
 
-Sodobni razvoj ni le pisanje kode — gre za iskanje pravih informacij ob pravem času. Dokumentacija je povsod, a redko tam, kjer jo najbolj potrebujete: znotraj vaših orodij in delovnih tokov. Z integracijo pridobivanja dokumentacije neposredno v vaše aplikacije lahko prihranite čas, zmanjšate preklapljanje med konteksti in povečate produktivnost. V tem razdelku vam bomo pokazali, kako povezati odjemalca s strežnikom Microsoft Learn Docs MCP, da boste lahko dostopali do dokumentacije v realnem času, prilagojene kontekstu, brez da bi zapustili svojo aplikacijo.
+Sodobni razvoj ni le pisanje kode—gre za iskanje pravih informacij ob pravem času. Dokumentacija je povsod, a redko tam, kjer jo najbolj potrebujete: znotraj vaših orodij in potekov dela. Z integracijo iskanja dokumentacije neposredno v vaše aplikacije lahko prihranite čas, zmanjšate menjavo konteksta in povečate produktivnost. V tem razdelku vam bomo prikazali, kako povezati odjemalsko aplikacijo s strežnikom Microsoft Learn Docs MCP, da boste lahko dostopali do dokumentacije v realnem času, zavedajoče se konteksta, ne da bi morali zapustiti svojo aplikacijo.
 
-Vodili vas bomo skozi postopek vzpostavitve povezave, pošiljanja zahtevka in učinkovitega upravljanja s pretočnimi odgovori. Ta pristop ne le poenostavi vaš delovni proces, ampak odpira vrata za gradnjo pametnejših in bolj uporabnih orodij za razvijalce.
+Pregledali bomo postopek vzpostavitve povezave, pošiljanja zahtev in učinkovite obdelave pretočnih odgovorov. Ta pristop ne samo poenostavi vaš potek dela, ampak tudi odpre vrata za izgradnjo pametnejših, bolj uporabnih razvojnih orodij.
 
 ## Cilji učenja
 
-Zakaj to počnemo? Ker so najboljše izkušnje za razvijalce tiste, ki odpravijo ovire. Predstavljajte si svet, kjer vaš urejevalnik kode, klepetalni robot ali spletna aplikacija takoj odgovori na vaša vprašanja o dokumentaciji, z uporabo najnovejših vsebin iz Microsoft Learn. Ob koncu tega poglavja boste znali:
+Zakaj to počnemo? Ker so najboljše izkušnje za razvijalce tiste, ki odstranjujejo ovire. Predstavljajte si svet, kjer vaš urejevalnik kode, chatbot ali spletna aplikacija lahko takoj odgovarjajo na vaša vprašanja o dokumentaciji, z uporabo najnovejše vsebine iz Microsoft Learn. Do konca tega poglavja boste znali:
 
-- Razumeti osnove komunikacije med MCP strežnikom in odjemalcem za dokumentacijo
-- Implementirati konzolno ali spletno aplikacijo za povezavo s strežnikom Microsoft Learn Docs MCP
-- Uporabiti pretočne HTTP odjemalce za pridobivanje dokumentacije v realnem času
-- Beležiti in interpretirati odgovore dokumentacije v vaši aplikaciji
+- Razumeti osnove komunikacije med strežnikom in odjemalcem MCP za dokumentacijo
+- Uvesti konzolno ali spletno aplikacijo za povezavo s strežnikom Microsoft Learn Docs MCP
+- Uporabiti pretočne HTTP odjemalce za iskanje dokumentacije v realnem času
+- Beležiti in interpretirati odgovore dokumentacije v svoji aplikaciji
 
-Videli boste, kako vam te veščine pomagajo graditi orodja, ki niso le reaktivna, ampak resnično interaktivna in prilagojena kontekstu.
+Videli boste, kako vam te veščine pomagajo graditi orodja, ki niso le reaktivna, ampak resnično interaktivna in zavedajoča se konteksta.
 
-## Scenarij 1 - Pridobivanje dokumentacije v realnem času z MCP
+## Scenarij 1 - Iskanje dokumentacije v realnem času z MCP
 
-V tem scenariju vam bomo pokazali, kako povezati odjemalca s strežnikom Microsoft Learn Docs MCP, da boste lahko dostopali do dokumentacije v realnem času, prilagojene kontekstu, brez da bi zapustili svojo aplikacijo.
+V tem scenariju vam bomo pokazali, kako povezati odjemalca s strežnikom Microsoft Learn Docs MCP, da boste lahko dostopali do dokumentacije v realnem času, zavedajoče se konteksta, ne da bi morali zapustiti svojo aplikacijo.
 
 Pojdimo v prakso. Vaša naloga je napisati aplikacijo, ki se poveže s strežnikom Microsoft Learn Docs MCP, pokliče orodje `microsoft_docs_search` in zabeleži pretočni odgovor v konzolo.
 
 ### Zakaj ta pristop?
-Ker je to osnova za gradnjo bolj naprednih integracij — ne glede na to, ali želite poganjati klepetalnega robota, razširitev IDE ali spletno nadzorno ploščo.
+Ker predstavlja osnovo za gradnjo naprednejših integracij—ali želite poganjati chatbota, razširitev IDE ali spletno nadzorno ploščo.
 
 Kodo in navodila za ta scenarij boste našli v mapi [`solution`](./solution/README.md) znotraj te študije primera. Koraki vas bodo vodili skozi vzpostavitev povezave:
 - Uporabite uradni MCP SDK in pretočnega HTTP odjemalca za povezavo
-- Pokličite orodje `microsoft_docs_search` z iskalnim parametrom za pridobitev dokumentacije
-- Implementirajte ustrezno beleženje in obravnavo napak
+- Pokličite orodje `microsoft_docs_search` z iskalnim parametrom, da pridobite dokumentacijo
+- Uvedite ustrezno beleženje in obravnavo napak
 - Ustvarite interaktivni konzolni vmesnik, ki uporabnikom omogoča vnos več iskalnih poizvedb
 
 Ta scenarij prikazuje, kako:
 - Povezati se s strežnikom Docs MCP
 - Poslati poizvedbo
-- Razčleniti in izpisati rezultate
+- Analyzirati in izpisati rezultate
 
 Tako bi lahko izgledalo izvajanje rešitve:
 
@@ -55,7 +46,7 @@ Prompt> What is Azure Key Vault?
 Answer> Azure Key Vault is a cloud service for securely storing and accessing secrets. ...
 ```
 
-Spodaj je minimalen primer rešitve. Celotna koda in podrobnosti so na voljo v mapi rešitve.
+Spodaj je minimalen primer rešitve. Celotna koda in podrobnosti so na voljo v mapi z rešitvijo.
 
 <details>
 <summary>Python</summary>
@@ -80,9 +71,10 @@ if __name__ == "__main__":
 - Za navodila za namestitev in uporabo glejte datoteko [`README.md`](./solution/python/README.md) v isti mapi.
 </details>
 
-## Scenarij 2 - Interaktivna spletna aplikacija za ustvarjanje študijskega načrta z MCP
 
-V tem scenariju se boste naučili, kako integrirati Docs MCP v spletni razvojni projekt. Cilj je omogočiti uporabnikom iskanje dokumentacije Microsoft Learn neposredno iz spletnega vmesnika, s čimer bo dokumentacija takoj dostopna znotraj vaše aplikacije ali spletne strani.
+## Scenarij 2 - Interaktivna spletna aplikacija za generiranje študijskega načrta z MCP
+
+V tem scenariju se boste naučili, kako integrirati Docs MCP v spletni razvojni projekt. Cilj je uporabnikom omogočiti iskanje dokumentacije Microsoft Learn neposredno iz spletnega vmesnika, kar omogoča takojšen dostop do dokumentacije znotraj vaše aplikacije ali strani.
 
 Videli boste, kako:
 - Nastaviti spletno aplikacijo
@@ -108,14 +100,14 @@ Assistant> Here’s a detailed 6-week roadmap to start your preparation for the 
 Let me know if you want module-specific recommendations or need more customized weekly tasks!
 ```
 
-Spodaj je minimalen primer rešitve. Celotna koda in podrobnosti so na voljo v mapi rešitve.
+Spodaj je minimalen primer rešitve. Celotna koda in podrobnosti so na voljo v mapi z rešitvijo.
 
-![Pregled scenarija 2](../../../../translated_images/scenario2.0c92726d5cd81f68238e5ba65f839a0b300d5b74b8ca7db28bc8f900c3e7d037.sl.png)
+![Pregled scenarija 2](../../../../translated_images/sl/scenario2.0c92726d5cd81f68.webp)
 
 <details>
 <summary>Python (Chainlit)</summary>
 
-Chainlit je ogrodje za gradnjo pogovornih AI spletnih aplikacij. Omogoča enostavno ustvarjanje interaktivnih klepetalnih robotov in asistentov, ki lahko kličejo MCP orodja in v realnem času prikazujejo rezultate. Idealno je za hitro prototipiranje in uporabniku prijazne vmesnike.
+Chainlit je ogrodje za gradnjo konverzacijskih AI spletnih aplikacij. Omogoča enostavno ustvarjanje interaktivnih chatbotov in pomočnikov, ki lahko kličejo MCP orodja in prikazujejo rezultate v realnem času. Idealen je za hitro prototipiranje in uporabniško prijazne vmesnike.
 
 ```python
 import chainlit as cl
@@ -138,18 +130,19 @@ def handle_message(message):
 - Za navodila za namestitev in zagon glejte [`README.md`](./solution/python/README.md).
 </details>
 
-## Scenarij 3: Dokumentacija v urejevalniku z MCP strežnikom v VS Code
 
-Če želite Microsoft Learn Docs neposredno v VS Code (namesto preklapljanja med zavihki brskalnika), lahko uporabite MCP strežnik v svojem urejevalniku. To vam omogoča:
-- Iskanje in branje dokumentacije v VS Code brez zapuščanja razvojnega okolja.
-- Navedbo dokumentacije in vstavljanje povezav neposredno v vaše README ali učne datoteke.
-- Uporabo GitHub Copilot in MCP skupaj za nemoten, AI-podprt delovni proces z dokumentacijo.
+## Scenarij 3: Dokumentacija znotraj urejevalnika z MCP strežnikom v VS Code
+
+Če želite Microsoft Learn Docs direktno znotraj VS Code (namesto preklapljanja med zavihki brskalnika), lahko uporabite MCP strežnik v svojem urejevalniku. To vam omogoča:
+- Iskanje in branje dokumentacije v VS Code, ne da bi zapustili razvojno okolje.
+- Referenciranje dokumentacije in vstavljanje povezav neposredno v vaše README ali datoteke z vajami.
+- Uporabo GitHub Copilot in MCP skupaj za brezhiben potek dela dokumentacije, ki ga poganja AI.
 
 **Videli boste, kako:**
-- Dodati veljavno datoteko `.vscode/mcp.json` v koren vaše delovne mape (primer spodaj).
+- Dodati veljavno datoteko `.vscode/mcp.json` v korenovni direktorij delovnega prostora (glejte primer spodaj).
 - Odpreti MCP ploščo ali uporabiti ukazno paleto v VS Code za iskanje in vstavljanje dokumentacije.
-- Navedbo dokumentacije neposredno v vaših markdown datotekah med delom.
-- Združiti ta delovni proces z GitHub Copilot za še večjo produktivnost.
+- Referencirati dokumentacijo neposredno v markdown datotekah med delom.
+- Kombinirati ta potek dela z GitHub Copilot za še večjo produktivnost.
 
 Tukaj je primer, kako nastaviti MCP strežnik v VS Code:
 
@@ -165,31 +158,40 @@ Tukaj je primer, kako nastaviti MCP strežnik v VS Code:
 
 </details>
 
-> Za podroben vodič s posnetki zaslona in korak za korakom navodili glejte [`README.md`](./solution/scenario3/README.md).
+> Za podroben vodnik s posnetki zaslona in navodili korak-po-korak glejte [`README.md`](./solution/scenario3/README.md).
 
-![Pregled scenarija 3](../../../../translated_images/step4-prompt-chat.12187bb001605efc5077992b621f0fcd1df12023c5dce0464f8eb8f3d595218f.sl.png)
+![Pregled scenarija 3](../../../../translated_images/sl/step4-prompt-chat.12187bb001605efc.webp)
 
-Ta pristop je idealen za vse, ki gradijo tehnične tečaje, pišejo dokumentacijo ali razvijajo kodo z rednimi potrebami po referencah.
+Ta pristop je idealen za vsakogar, ki gradi tehnične tečaje, piše dokumentacijo ali razvija kodo s pogostimi potrebami po referencah.
 
 ## Ključne ugotovitve
 
-Integracija dokumentacije neposredno v vaša orodja ni le priročnost — je prelomnica za produktivnost. Z povezavo s strežnikom Microsoft Learn Docs MCP iz vašega odjemalca lahko:
+Integracija dokumentacije neposredno v vaša orodja ni le udobje—je revolucija za produktivnost. Z neposredno povezavo na strežnik Microsoft Learn Docs MCP iz vašega odjemalca lahko:
 
-- Odpravite preklapljanje med kodo in dokumentacijo
-- Pridobite ažurno, kontekstno prilagojeno dokumentacijo v realnem času
-- Gradite pametnejša, bolj interaktivna orodja za razvijalce
+- Odpravite menjavo konteksta med kodo in dokumentacijo
+- Pridobite ažurno, kontekstno zavedajočo se dokumentacijo v realnem času
+- Gradite pametnejša, bolj interaktivna razvojna orodja
 
 Te veščine vam bodo pomagale ustvariti rešitve, ki niso le učinkovite, ampak tudi prijetne za uporabo.
 
 ## Dodatni viri
 
-Za poglobljeno razumevanje si oglejte te uradne vire:
+Za poglobitev razumevanja raziščite te uradne vire:
 
 - [Microsoft Learn Docs MCP Server (GitHub)](https://github.com/MicrosoftDocs/mcp)
-- [Začetek z Azure MCP Server (mcp-python)](https://learn.microsoft.com/en-us/azure/developer/azure-mcp-server/get-started#create-the-python-app)
-- [Kaj je Azure MCP Server?](https://learn.microsoft.com/en-us/azure/developer/azure-mcp-server/)
+- [Začetek z Azure MCP strežnikom (mcp-python)](https://learn.microsoft.com/en-us/azure/developer/azure-mcp-server/get-started#create-the-python-app)
+- [Kaj je Azure MCP strežnik?](https://learn.microsoft.com/en-us/azure/developer/azure-mcp-server/)
 - [Uvod v Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction)
 - [Dodajanje vtičnikov iz MCP strežnika (Python)](https://learn.microsoft.com/en-us/semantic-kernel/concepts/plugins/adding-mcp-plugins)
 
-**Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.
+## Kaj sledi
+
+- Nazaj na: [Pregled študij primerov](../README.md)
+- Nadaljujte z: [Modul 10: Poenostavitev AI potekov dela z AI Toolkit](../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Omejitev odgovornosti**:
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem prvotnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni prevod s strani človeka. Za kakršnekoli nesporazume ali napačne razlage, ki izhajajo iz uporabe tega prevoda, ne prevzemamo odgovornosti.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

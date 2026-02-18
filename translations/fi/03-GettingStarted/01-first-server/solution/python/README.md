@@ -1,23 +1,14 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d26f746e21775c30b4d7ed97962b24df",
-  "translation_date": "2025-08-18T16:14:31+00:00",
-  "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
-  "language_code": "fi"
-}
--->
 # Tämän esimerkin suorittaminen
 
 Suosittelemme asentamaan `uv`, mutta se ei ole pakollista. Katso [ohjeet](https://docs.astral.sh/uv/#highlights)
 
-## -0- Luo virtuaaliympäristö
+## -0- Luo virtuaalinen ympäristö
 
 ```bash
 python -m venv venv
 ```
 
-## -1- Aktivoi virtuaaliympäristö
+## -1- Aktivoi virtuaalinen ympäristö
 
 ```bash
 venv\Scripts\activate
@@ -53,7 +44,7 @@ Kun palvelin on yhdistetty:
 
 ### Testaus CLI-tilassa
 
-Ajamaasi tarkastustyökalua käytetään itse asiassa Node.js-sovelluksena, ja `mcp dev` on sen ympärille rakennettu käynnistysohjelma.
+Käynnistämäsi tarkastaja on itse asiassa Node.js-sovellus, ja `mcp dev` on sen ympärille rakennettu käynnistysohjelma.
 
 Voit käynnistää sen suoraan CLI-tilassa suorittamalla seuraavan komennon:
 
@@ -61,7 +52,7 @@ Voit käynnistää sen suoraan CLI-tilassa suorittamalla seuraavan komennon:
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 ```
 
-Tämä listaa kaikki palvelimessa käytettävissä olevat työkalut. Sinun pitäisi nähdä seuraava tuloste:
+Tämä listaa kaikki palvelimessa saatavilla olevat työkalut. Sinun pitäisi nähdä seuraava tuloste:
 
 ```text
 {
@@ -112,9 +103,11 @@ Sinun pitäisi nähdä seuraava tuloste:
 }
 ```
 
-> [!TIP]  
-> Tarkastustyökalun suorittaminen CLI-tilassa on yleensä paljon nopeampaa kuin selaimessa.  
-> Lue lisää tarkastustyökalusta [täältä](https://github.com/modelcontextprotocol/inspector).  
+> [!TIP]
+> Tarkastajan suorittaminen CLI-tilassa on yleensä paljon nopeampaa kuin selaimessa.
+> Lue lisää tarkastajasta [täältä](https://github.com/modelcontextprotocol/inspector).
+
+---
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Kriittisen tiedon osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Kriittisen tiedon osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.

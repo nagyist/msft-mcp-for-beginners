@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13231e9951b68efd9df8c56bd5cdb27e",
-  "translation_date": "2025-07-13T22:21:25+00:00",
-  "source_file": "03-GettingStarted/samples/java/calculator/README.md",
-  "language_code": "ar"
-}
--->
 # خدمة الآلة الحاسبة الأساسية MCP
 
 تقدم هذه الخدمة عمليات آلة حاسبة أساسية عبر بروتوكول سياق النموذج (MCP) باستخدام Spring Boot مع نقل WebFlux. تم تصميمها كمثال بسيط للمبتدئين الذين يتعلمون عن تطبيقات MCP.
@@ -201,7 +192,7 @@ java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
    - انقر على "List Tools" لرؤية العمليات المتاحة في الآلة الحاسبة
    - اختر أداة وانقر على "Run Tool" لتنفيذ عملية
 
-![لقطة شاشة MCP Inspector](../../../../../../translated_images/tool.c75a0b2380efcf1a47a8478f54380a36ddcca7943b98f56dabbac8b07e15c3bb.ar.png)
+![لقطة شاشة MCP Inspector](../../../../../../translated_images/ar/tool.c75a0b2380efcf1a.webp)
 
 ### باستخدام Docker
 

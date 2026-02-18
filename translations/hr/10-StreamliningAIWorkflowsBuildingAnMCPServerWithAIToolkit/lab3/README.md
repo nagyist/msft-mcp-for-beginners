@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "dd8da3f75addcef453fe11f02a270217",
-  "translation_date": "2025-07-14T08:20:29+00:00",
-  "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/README.md",
-  "language_code": "hr"
-}
--->
 # 🔧 Modul 3: Napredni razvoj MCP-a s AI Toolkitom
 
 ![Duration](https://img.shields.io/badge/Duration-20_minutes-blue?style=flat-square)
@@ -64,7 +55,7 @@ Snažan alat za otklanjanje pogrešaka koji omogućuje:
 2. **Kreirajte novog agenta** s konfiguracijom:  
    - Ime agenta: `WeatherAgent`
 
-![Agent Creation](../../../../translated_images/Agent.c9c33f6a412b4cdedfb973fe5448bdb33de3f400055603111b875610e9b917ab.hr.png)
+![Agent Creation](../../../../translated_images/hr/Agent.c9c33f6a412b4cde.webp)
 
 ### Korak 2: Inicijalizirajte MCP Server projekt
 
@@ -74,7 +65,7 @@ Snažan alat za otklanjanje pogrešaka koji omogućuje:
 4. **Odaberite predložak `python-weather`**  
 5. **Imenujte svoj server:** `weather_mcp`
 
-![Python Template Selection](../../../../translated_images/Pythontemplate.9d0a2913c6491500bd673430f024dc44676af2808a27b5da9dcc0eb7063adc28.hr.png)
+![Python Template Selection](../../../../translated_images/hr/Pythontemplate.9d0a2913c6491500.webp)
 
 ### Korak 3: Otvorite i pregledajte projekt
 
@@ -340,7 +331,7 @@ USER_PROMPT
 How's the weather like in Seattle
 ```
 
-![Agent Builder Debug Result](../../../../translated_images/Result.6ac570f7d2b1d5389c561ab0566970fe0f13e75bdd976b6a7f0270bc715d07f8.hr.png)
+![Agent Builder Debug Result](../../../../translated_images/hr/Result.6ac570f7d2b1d538.webp)
 
 ### Korak 8: Otklanjanje pogrešaka s MCP Inspectorom
 
@@ -352,7 +343,7 @@ How's the weather like in Seattle
    - Praćenje mrežnih zahtjeva  
    - Otklanjanje pogrešaka odgovora servera  
 
-![MCP Inspector Interface](../../../../translated_images/Inspector.5672415cd02fe8731774586cc0a1083e3275d2f8491602aecc8ac4d61f2c0d57.hr.png)
+![MCP Inspector Interface](../../../../translated_images/hr/Inspector.5672415cd02fe873.webp)
 
 ---
 

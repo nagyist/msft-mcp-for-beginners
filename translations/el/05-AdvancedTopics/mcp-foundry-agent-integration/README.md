@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
-  "translation_date": "2025-07-17T05:46:29+00:00",
-  "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
-  "language_code": "el"
-}
--->
 # Model Context Protocol (MCP) Ενσωμάτωση με Azure AI Foundry
 
 Αυτός ο οδηγός δείχνει πώς να ενσωματώσετε τους διακομιστές Model Context Protocol (MCP) με τους agents του Azure AI Foundry, επιτρέποντας ισχυρή ορχήστρωση εργαλείων και δυνατότητες AI για επιχειρήσεις.
@@ -60,7 +51,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Python Implementation
 
-***Note*** Μπορείτε να εκτελέσετε αυτό το [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb)
+***Note*** Μπορείτε να εκτελέσετε αυτό το [notebook](mcp_support_python.ipynb)
 
 ### 1. Εγκατάσταση Απαραίτητων Πακέτων
 
@@ -189,7 +180,7 @@ with project_client:
 
 ## .NET Implementation
 
-***Note*** Μπορείτε να εκτελέσετε αυτό το [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb)
+***Note*** Μπορείτε να εκτελέσετε αυτό το [notebook](mcp_support_dotnet.ipynb)
 
 ### 1. Εγκατάσταση Απαραίτητων Πακέτων
 

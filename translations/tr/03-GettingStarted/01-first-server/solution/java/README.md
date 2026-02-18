@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ed9cab32cc67c12d8969b407aa47100a",
-  "translation_date": "2025-07-13T17:54:22+00:00",
-  "source_file": "03-GettingStarted/01-first-server/solution/java/README.md",
-  "language_code": "tr"
-}
--->
 # Temel Hesap Makinesi MCP Servisi
 
 Bu servis, Spring Boot ile WebFlux taşıma kullanarak Model Context Protocol (MCP) üzerinden temel hesap makinesi işlemleri sağlar. MCP uygulamalarını öğrenen yeni başlayanlar için basit bir örnek olarak tasarlanmıştır.
@@ -73,7 +64,7 @@ MCP Inspector, MCP servisleriyle etkileşimde bulunmak için faydalı bir araçt
    - Mevcut hesap makinesi işlemlerini görmek için "List Tools" butonuna tıklayın
    - Bir aracı seçin ve işlemi çalıştırmak için "Run Tool" butonuna tıklayın
 
-![MCP Inspector Ekran Görüntüsü](../../../../../../translated_images/tool.40e180a7b0d0fe2067cf96435532b01f63f7f8619d6b0132355a04b426b669ac.tr.png)
+![MCP Inspector Ekran Görüntüsü](../../../../../../translated_images/tr/tool.40e180a7b0d0fe20.webp)
 
 **Feragatname**:  
 Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

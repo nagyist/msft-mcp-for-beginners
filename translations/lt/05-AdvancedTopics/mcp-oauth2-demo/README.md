@@ -1,34 +1,49 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0a7083e660ca0d85fd6a947514c61993",
-  "translation_date": "2025-08-26T18:51:51+00:00",
-  "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
-  "language_code": "lt"
-}
--->
-# MCP OAuth2 Demo
+# MCP OAuth2 demonstracija
 
-Šis projektas yra **minimalus Spring Boot taikymas**, kuris veikia kaip:
+## Įvadas
 
-* **Spring Authorization Server** (išduodantis JWT prieigos žetonus per `client_credentials` srautą), ir  
-* **Resource Server** (apsaugantis savo `/hello` galinį tašką).
+OAuth2 yra pramonės standartas autorizacijai, leidžiantis saugiai prieiti prie išteklių nesidalinant prisijungimo duomenimis. MCP (Modelio konteksto protokolo) įgyvendinimuose OAuth2 suteikia patikimą būdą autentifikuoti ir autorizuoti klientus (pvz., DI agentus) pasiekti MCP serverius ir jų įrankius.
 
-Jis atspindi konfigūraciją, aprašytą [Spring tinklaraščio įraše (2025 m. balandžio 2 d.)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Ši pamoka demonstruoja, kaip įdiegti OAuth2 autentifikaciją MCP serveriams naudojant Spring Boot, įprastą modelį verslo ir produkcinėms aplinkoms.
+
+## Mokymosi tikslai
+
+Pamokos pabaigoje jūs:
+- Suprasite, kaip OAuth2 integruojamas su MCP serveriais
+- Įdiegsite Spring autorizacijos serverį žetonų išdavimui
+- Apsaugosite MCP galinius taškus naudojant JWT autentifikaciją
+- Sukonfigūruosite kliento kredencialų srautą mašinų tarpusavio komunikacijai
+
+## Išankstinės sąlygos
+
+- Pagrindinės Java ir Spring Boot žinios
+- Susipažinimas su MCP koncepcijomis iš ankstesnių modulių
+- Įdiegtas Maven arba Gradle
 
 ---
 
-## Greitas startas (lokaliai)
+## Projekto apžvalga
+
+Šis projektas yra **minimalus Spring Boot aplikacija**, kuri veikia tiek kaip:
+
+* **Spring autorizacijos serveris** (išduoda JWT prieigos žetonus per `client_credentials` srautą), ir  
+* **Išteklių serveris** (apsaugo savo `/hello` galinį tašką).
+
+Tai atspindi nustatymą parodytą [Spring tinklaraščio įraše (2025-04-02)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+
+---
+
+## Greitas paleidimas (vietinis)
 
 ```bash
-# build & run
+# sukurti ir paleisti
 ./mvnw spring-boot:run
 
-# obtain a token
+# gauti žetoną
 curl -u mcp-client:secret -d grant_type=client_credentials \
      http://localhost:8081/oauth2/token | jq -r .access_token > token.txt
 
-# call the protected endpoint
+# iškviesti apsaugotą pabaigos tašką
 curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 ```
 
@@ -36,44 +51,44 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ## OAuth2 konfigūracijos testavimas
 
-OAuth2 saugumo konfigūraciją galite patikrinti atlikdami šiuos veiksmus:
+Galite patikrinti OAuth2 saugos konfigūraciją atlikdami šiuos veiksmus:
 
 ### 1. Patikrinkite, ar serveris veikia ir yra apsaugotas
 
 ```bash
-# This should return 401 Unauthorized, confirming OAuth2 security is active
+# Tai turėtų grąžinti 401 Unauthorized, patvirtinant, kad OAuth2 saugumas yra aktyvus
 curl -v http://localhost:8081/
 ```
 
-### 2. Gaukite prieigos žetoną naudodami klientų kredencialus
+### 2. Gaukite prieigos žetoną naudodami kliento kredencialus
 
 ```bash
-# Get and extract the full token response
+# Gaukite ir išskleiskite visą žetono atsakymą
 curl -v -X POST http://localhost:8081/oauth2/token \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -H "Authorization: Basic bWNwLWNsaWVudDpzZWNyZXQ=" \
   -d "grant_type=client_credentials&scope=mcp.access"
 
-# Or to extract just the token (requires jq)
+# Arba išskleisti tik žetoną (reikalauja jq)
 curl -s -X POST http://localhost:8081/oauth2/token \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -H "Authorization: Basic bWNwLWNsaWVudDpzZWNyZXQ=" \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Pastaba: Basic Authentication antraštė (`bWNwLWNsaWVudDpzZWNyZXQ=`) yra Base64 kodavimas iš `mcp-client:secret`.
+Pastaba: Basic Authentication antraštė (`bWNwLWNsaWVudDpzZWNyZXQ=`) yra Base64 kodavimas `mcp-client:secret`.
 
-### 3. Pasiekite apsaugotą galinį tašką naudodami žetoną
+### 3. Prieikite prie apsaugoto galinio taško naudodami žetoną
 
 ```bash
-# Using the saved token
+# Naudojant išsaugotą žetoną
 curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
-# Or directly with the token value
+# Arba tiesiogiai su žetono reikšme
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Sėkmingas atsakymas su "Hello from MCP OAuth2 Demo!" patvirtina, kad OAuth2 konfigūracija veikia tinkamai.
+Sėkmingas atsakymas su „Hello from MCP OAuth2 Demo!“ patvirtina, kad OAuth2 konfigūracija veikia teisingai.
 
 ---
 
@@ -95,14 +110,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-Įėjimo FQDN tampa jūsų **issuer** (`https://<fqdn>`).  
+Įėjimo FQDN tampa jūsų **išdavėju** (`https://<fqdn>`).  
 Azure automatiškai suteikia patikimą TLS sertifikatą `*.azurecontainerapps.io`.
 
 ---
 
-## Integracija su **Azure API Management**
+## Integracija su **Azure API valdymu**
 
-Pridėkite šią įeinančią politiką prie savo API:
+Pridėkite šią įeinančios politikos taisyklę prie savo API:
 
 ```xml
 <inbound>
@@ -116,15 +131,17 @@ Pridėkite šią įeinančią politiką prie savo API:
 </inbound>
 ```
 
-APIM gaus JWKS ir patikrins kiekvieną užklausą.
+APIM atsisiųs JWKS ir patikrins kiekvieną užklausą.
 
 ---
 
 ## Kas toliau
 
-- [5.4 Root contexts](../mcp-root-contexts/README.md)
+- [5.4 Šakninių kontekstų apžvalga](../mcp-root-contexts/README.md)
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Atsakomybės apribojimas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama naudoti profesionalų žmogaus vertimą. Mes neprisiimame atsakomybės už nesusipratimus ar klaidingus interpretavimus, atsiradusius dėl šio vertimo naudojimo.
+Šis dokumentas buvo išverstas naudojant dirbtinio intelekto vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors stengiamės užtikrinti tikslumą, prašome atkreipti dėmesį, kad automatizuoti vertimai gali turėti klaidų arba netikslumų. Pirminis dokumentas gimtąja kalba turėtų būti laikomas pagrindiniu šaltiniu. Svarbiai informacijai rekomenduojama pasitelkti profesionalų žmogišką vertimą. Mes neatsakome už bet kokius nesusipratimus ar neteisingą interpretaciją, kilusią dėl šio vertimo naudojimo.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

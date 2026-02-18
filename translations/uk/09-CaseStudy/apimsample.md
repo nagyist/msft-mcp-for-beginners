@@ -1,76 +1,68 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2228721599c0c8673de83496b4d7d7a9",
-  "translation_date": "2025-08-19T19:05:51+00:00",
-  "source_file": "09-CaseStudy/apimsample.md",
-  "language_code": "uk"
-}
--->
-# Дослідження: Відкриття REST API в API Management як сервер MCP
+# Кейс: Відкриття REST API в Azure API Management як MCP сервер
 
-Azure API Management — це сервіс, який надає шлюз для ваших API-ендпоінтів. Він працює як проксі перед вашими API і може вирішувати, що робити з вхідними запитами.
+Azure API Management — це сервіс, що надає шлюз поверх ваших API-ендпоінтів. Як це працює: Azure API Management виступає як проксі перед вашими API та вирішує, що робити з вхідними запитами.
 
-Використовуючи його, ви отримуєте цілий набір функцій, таких як:
+Використовуючи його, ви отримуєте багато додаткових можливостей, таких як:
 
-- **Безпека**: можна використовувати все — від API-ключів і JWT до керованої ідентичності.
-- **Обмеження швидкості**: чудова функція, яка дозволяє визначити, скільки викликів може пройти за певний проміжок часу. Це допомагає забезпечити гарний досвід для всіх користувачів і запобігти перевантаженню вашого сервісу.
-- **Масштабування та балансування навантаження**: можна налаштувати кілька ендпоінтів для розподілу навантаження і визначити, як саме це робити.
-- **AI-функції, такі як семантичне кешування**, обмеження токенів, моніторинг токенів тощо. Ці функції покращують швидкість відповіді та допомагають контролювати витрати токенів. [Дізнайтеся більше тут](https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities).
+- **Безпека**: можна використовувати все — від API ключів, JWT до керованих ідентичностей.
+- **Обмеження швидкості**: чудова функція, що дозволяє контролювати кількість викликів за певний інтервал часу. Це допомагає забезпечити гарний досвід усім користувачам і уникнути перевантажень вашого сервісу.
+- **Масштабування та балансування навантаження**. Можна налаштувати кілька кінцевих точок для розподілу навантаження і обрати спосіб "балансування" навантаження.
+- **AI-функції, такі як семантичне кешування**, обмеження токенів, моніторинг токенів і більше. Ці функції покращують швидкість відгуку і допомагають контролювати витрати токенів. [Докладніше тут](https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities).
 
 ## Чому MCP + Azure API Management?
 
-Model Context Protocol швидко стає стандартом для агентних AI-додатків і способу відкриття інструментів та даних у послідовний спосіб. Azure API Management є природним вибором, коли потрібно "керувати" API. MCP-сервери часто інтегруються з іншими API для обробки запитів до інструментів, наприклад. Тому поєднання Azure API Management і MCP має багато сенсу.
+Model Context Protocol швидко стає стандартом для агентських AI-додатків і способу послідовного відкриття інструментів і даних. Azure API Management — природний вибір, коли потрібно "керувати" API. MCP сервери часто інтегруються з іншими API для обробки запитів до інструментів, наприклад. Тому комбінація Azure API Management і MCP є логічною.
 
 ## Огляд
 
-У цьому конкретному випадку ми навчимося відкривати API-ендпоінти як сервер MCP. Це дозволить легко зробити ці ендпоінти частиною агентного додатка, використовуючи при цьому функції Azure API Management.
+У цьому конкретному кейсі ми навчимося відкривати API-ендпоінти як MCP сервер. Це дасть змогу легко інтегрувати ці ендпоінти до агентського додатку, користуючись при цьому можливостями Azure API Management.
 
-## Основні функції
+## Ключові можливості
 
-- Ви обираєте методи ендпоінтів, які хочете відкрити як інструменти.
-- Додаткові функції залежать від того, що ви налаштуєте в політиках для вашого API. Тут ми покажемо, як додати обмеження швидкості.
+- Ви вибираєте, які методи ендпоінтів хочете відкрити як інструменти.
+- Додаткові можливості залежать від налаштувань політик для вашого API. Тут ми покажемо, як додати обмеження швидкості.
 
 ## Попередній крок: імпорт API
 
-Якщо у вас вже є API в Azure API Management, чудово, тоді цей крок можна пропустити. Якщо ні, перегляньте це посилання: [імпорт API в Azure API Management](https://learn.microsoft.com/en-us/azure/api-management/import-and-publish#import-and-publish-a-backend-api).
+Якщо у вас вже є API в Azure API Management — прекрасно, цей крок можна пропустити. Якщо ні, ознайомтеся з посиланням: [імпорт API в Azure API Management](https://learn.microsoft.com/en-us/azure/api-management/import-and-publish#import-and-publish-a-backend-api).
 
-## Відкриття API як сервер MCP
+## Відкриття API як MCP сервер
 
-Щоб відкрити API-ендпоінти, виконайте наступні кроки:
+Щоб відкрити API-ендпоінти, виконайте такі кроки:
 
-1. Перейдіть до Azure Portal за адресою <https://portal.azure.com/?Microsoft_Azure_ApiManagement=mcp>.  
-   Перейдіть до вашого екземпляра API Management.
+1. Перейдіть до Azure Portal за адресою <https://portal.azure.com/?Microsoft_Azure_ApiManagement=mcp>
+   Перейдіть до вашого екземпляру Azure API Management.
 
-1. У лівому меню виберіть **APIs > MCP Servers > + Create new MCP Server**.
+1. У лівому меню оберіть APIs > MCP Servers > + Create new MCP Server.
 
-1. У полі API виберіть REST API, який потрібно відкрити як сервер MCP.
+1. У API виберіть REST API, який хочете відкрити як MCP сервер.
 
-1. Виберіть одну або кілька операцій API, які потрібно відкрити як інструменти. Ви можете вибрати всі операції або лише конкретні.
+1. Виберіть одну чи декілька операцій API, які відкриєте як інструменти. Можна вибрати всі операції або лише конкретні.
 
-    ![Вибір методів для відкриття](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/create-mcp-server-small.png)
+    ![Select methods to expose](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/create-mcp-server-small.png)
 
-1. Натисніть **Create**.
 
-1. Перейдіть до меню **APIs** і **MCP Servers**, ви побачите наступне:
+1. Оберіть **Create**.
 
-    ![Список серверів MCP](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-list.png)
+1. Перейдіть до меню **APIs** > **MCP Servers**, ви побачите таке:
 
-    Сервер MCP створено, і операції API відкрито як інструменти. Сервер MCP відображається в панелі MCP Servers. У колонці URL показано ендпоінт сервера MCP, який можна викликати для тестування або в клієнтському додатку.
+    ![See the MCP Server in the main pane](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-list.png)
 
-## Додатково: Налаштування політик
+    MCP сервер створено, а операції API відкрито як інструменти. MCP сервер відображається у списку MCP Servers. У стовпці URL вказана кінцева точка MCP сервера, яку можна викликати для тестування або у клієнтському додатку.
 
-Azure API Management має основну концепцію політик, де ви можете налаштувати різні правила для ваших ендпоінтів, наприклад, обмеження швидкості або семантичне кешування. Ці політики створюються у форматі XML.
+## За бажанням: налаштування політик
 
-Ось як можна налаштувати політику для обмеження швидкості вашого сервера MCP:
+Azure API Management використовує політики — основну концепцію, де ви налаштовуєте правила для ендпоінтів, наприклад обмеження швидкості або семантичне кешування. Політики описуються в XML.
 
-1. У порталі, у розділі APIs, виберіть **MCP Servers**.
+Ось як можна налаштувати політику, щоб обмежити швидкість для вашого MCP сервера:
 
-1. Виберіть створений сервер MCP.
+1. У порталі відкрийте APIs > **MCP Servers**.
 
-1. У лівому меню, у розділі MCP, виберіть **Policies**.
+1. Оберіть створений MCP сервер.
 
-1. У редакторі політик додайте або змініть політики, які ви хочете застосувати до інструментів сервера MCP. Політики визначаються у форматі XML. Наприклад, можна додати політику для обмеження викликів до інструментів сервера MCP (у цьому прикладі — 5 викликів за 30 секунд на одну IP-адресу клієнта). Ось XML, який встановлює обмеження швидкості:
+1. У лівому меню під MCP оберіть **Policies**.
+
+1. У редакторі політик додайте або відредагуйте політики, які хочете застосувати до інструментів MCP сервера. Політики задані у форматі XML. Наприклад, можна додати політику для обмеження викликів до інструментів MCP сервера (у прикладі 5 викликів за 30 секунд на IP клієнта). Ось XML, що реалізує це обмеження:
 
     ```xml
      <rate-limit-by-key calls="5" 
@@ -82,27 +74,27 @@ Azure API Management має основну концепцію політик, д
 
     Ось зображення редактора політик:
 
-    ![Редактор політик](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-policies-small.png)
+    ![Policy editor](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-policies-small.png)
+ 
+## Спробуємо
 
-## Перевірка роботи
+Переконаємося, що наш MCP Сервер працює як треба.
 
-Переконаймося, що наш сервер MCP працює належним чином.
+Для цього ми використаємо Visual Studio Code і GitHub Copilot в режимі агента. Ми додамо MCP сервер до файлу *mcp.json*. Таким чином Visual Studio Code буде виступати клієнтом з агентними можливостями, а кінцеві користувачі зможуть вводити запити й взаємодіяти з сервером.
 
-Для цього ми використаємо Visual Studio Code, GitHub Copilot і його режим Agent. Ми додамо сервер MCP до файлу *mcp.json*. Таким чином, Visual Studio Code буде діяти як клієнт із агентними можливостями, і кінцеві користувачі зможуть вводити запити та взаємодіяти з сервером.
+Давайте побачимо, як додати MCP сервер у Visual Studio Code:
 
-Ось як додати сервер MCP у Visual Studio Code:
+1. Виконайте команду MCP: **Add Server command з Command Palette**.
 
-1. Використовуйте команду **MCP: Add Server** з Command Palette.
+1. Коли з'явиться вибір, оберіть тип сервера: **HTTP (HTTP або Server Sent Events)**.
 
-1. Коли з'явиться запит, виберіть тип сервера: **HTTP (HTTP or Server Sent Events)**.
+1. Введіть URL MCP сервера в Azure API Management. Наприклад: **https://<apim-service-name>.azure-api.net/<api-name>-mcp/sse** (для SSE) або **https://<apim-service-name>.azure-api.net/<api-name>-mcp/mcp** (для MCP), зверніть увагу на різницю в `/sse` або `/mcp`.
 
-1. Введіть URL сервера MCP в API Management. Наприклад: **https://<apim-service-name>.azure-api.net/<api-name>-mcp/sse** (для SSE-ендпоінта) або **https://<apim-service-name>.azure-api.net/<api-name>-mcp/mcp** (для MCP-ендпоінта). Зверніть увагу на різницю між транспортами: `/sse` або `/mcp`.
+1. Введіть ID сервера на свій вибір. Це не критично, але допоможе вам згадати, що це за екземпляр сервера.
 
-1. Введіть ідентифікатор сервера на ваш вибір. Це неважливе значення, але воно допоможе вам запам'ятати, що це за екземпляр сервера.
+1. Оберіть, куди зберігати конфігурацію — в налаштуваннях робочої області чи користувача.
 
-1. Виберіть, чи зберігати конфігурацію у налаштуваннях робочого простору чи користувача.
-
-  - **Налаштування робочого простору** — конфігурація сервера зберігається у файлі .vscode/mcp.json, доступному лише в поточному робочому просторі.
+  - **Workspace settings** — конфігурація сервера зберігається у файлі .vscode/mcp.json, доступному лише у поточній робочій області.
 
     *mcp.json*
 
@@ -115,7 +107,7 @@ Azure API Management має основну концепцію політик, д
     }
     ```
 
-    або якщо ви обрали потоковий HTTP як транспорт, це буде трохи інакше:
+    Якщо обрати стрімінг HTTP як транспорт, буде незначна різниця:
 
     ```json
     "servers": {
@@ -126,17 +118,17 @@ Azure API Management має основну концепцію політик, д
     }
     ```
 
-  - **Налаштування користувача** — конфігурація сервера додається до вашого глобального файлу *settings.json* і доступна у всіх робочих просторах. Конфігурація виглядає приблизно так:
+  - **User settings** — конфігурація додається до глобального файлу *settings.json* і доступна у всіх робочих областях. Конфігурація виглядає приблизно так:
 
-    ![Налаштування користувача](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-servers-visual-studio-code.png)
+    ![User setting](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-servers-visual-studio-code.png)
 
-1. Вам також потрібно додати конфігурацію, заголовок для автентифікації з Azure API Management. Використовується заголовок **Ocp-Apim-Subscription-Key**.
+1. Також потрібно додати конфігурацію заголовка, щоб коректно автентифікуватися в Azure API Management. Використовується заголовок **Ocp-Apim-Subscription-Key**.
 
     - Ось як додати його до налаштувань:
 
-    ![Додавання заголовка для автентифікації](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-with-header-visual-studio-code.png). Це викличе запит на введення значення API-ключа, яке можна знайти в Azure Portal для вашого екземпляра Azure API Management.
+    ![Adding header for authentication](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-with-header-visual-studio-code.png), це призведе до появи запиту ввести значення API ключа, який можна знайти у порталі Azure для екземпляру Azure API Management.
 
-   - Щоб додати його до *mcp.json*, зробіть це так:
+   - Для додавання в *mcp.json*, додайте так:
 
     ```json
     "inputs": [
@@ -158,44 +150,54 @@ Azure API Management має основну концепцію політик, д
     }
     ```
 
-### Використання режиму Agent
+### Використання режиму агента
 
-Тепер ми все налаштували у налаштуваннях або у *.vscode/mcp.json*. Спробуймо це.
+Тепер ми все налаштували — у налаштуваннях або у *.vscode/mcp.json*. Спробуємо.
 
-Повинен з'явитися значок інструментів, де будуть відображені інструменти, відкриті вашим сервером:
+Поруч має бути іконка Tools, де відображаються відкриті інструменти сервера:
 
-![Інструменти сервера](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/tools-button-visual-studio-code.png)
+![Tools from the server](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/tools-button-visual-studio-code.png)
 
-1. Натисніть на значок інструментів, і ви побачите список інструментів:
+1. Натисніть іконку Tools, має відкритися список інструментів:
 
-    ![Список інструментів](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/select-tools-visual-studio-code.png)
+    ![Tools](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/select-tools-visual-studio-code.png)
 
-1. Введіть запит у чаті, щоб викликати інструмент. Наприклад, якщо ви обрали інструмент для отримання інформації про замовлення, ви можете запитати агента про замовлення. Ось приклад запиту:
+1. Введіть запит у чат, щоб викликати інструмент. Наприклад, якщо ви вибрали інструмент для отримання інформації про замовлення, можна запитати агента про замовлення. Ось приклад запиту:
 
     ```text
     get information from order 2
     ```
 
-    Тепер з'явиться значок інструментів із запитом продовжити виклик інструмента. Виберіть продовжити виконання інструмента, і ви побачите результат, наприклад:
+    Тепер з’явиться іконка інструментів, що запросить підтвердження виклику інструменту. Підтвердіть запуск — ви побачите результат, наприклад:
 
-    ![Результат запиту](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/chat-results-visual-studio-code.png)
+    ![Result from prompt](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/chat-results-visual-studio-code.png)
 
-    **Те, що ви бачите, залежить від налаштованих інструментів, але ідея полягає в тому, що ви отримуєте текстову відповідь, як показано вище.**
+    **що саме ви побачите, залежить від налаштованих інструментів, але ідея в тому, щоб отримати текстову відповідь, як на зображенні вище**
+
 
 ## Посилання
 
 Ось де можна дізнатися більше:
 
-- [Підручник з Azure API Management і MCP](https://learn.microsoft.com/en-us/azure/api-management/export-rest-mcp-server)
-- [Приклад на Python: Захист віддалених серверів MCP за допомогою Azure API Management (експериментальний)](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)
+- [Покроковий посібник з Azure API Management і MCP](https://learn.microsoft.com/en-us/azure/api-management/export-rest-mcp-server)
+- [Приклад на Python: Захищені віддалені MCP сервери з Azure API Management (експериментальний)](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)
 
 - [Лабораторія авторизації клієнтів MCP](https://github.com/Azure-Samples/AI-Gateway/tree/main/labs/mcp-client-authorization)
 
-- [Використання розширення Azure API Management для VS Code для імпорту та управління API](https://learn.microsoft.com/en-us/azure/api-management/visual-studio-code-tutorial)
+- [Використання розширення Azure API Management для VS Code для імпорту та керування API](https://learn.microsoft.com/en-us/azure/api-management/visual-studio-code-tutorial)
 
-- [Реєстрація та виявлення віддалених серверів MCP в Azure API Center](https://learn.microsoft.com/en-us/azure/api-center/register-discover-mcp-server)
-- [AI Gateway](https://github.com/Azure-Samples/AI-Gateway) — чудовий репозиторій, що демонструє багато AI-можливостей з Azure API Management.
-- [Майстер-класи AI Gateway](https://azure-samples.github.io/AI-Gateway/) — містять майстер-класи з використанням Azure Portal, що є чудовим способом почати оцінку AI-можливостей.
+- [Реєстрація та відкриття віддалених MCP серверів в Azure API Center](https://learn.microsoft.com/en-us/azure/api-center/register-discover-mcp-server)
+- [AI Gateway](https://github.com/Azure-Samples/AI-Gateway) Відмінне репо, що демонструє багато можливостей штучного інтелекту з Azure API Management
+- [Майстер-класи AI Gateway](https://azure-samples.github.io/AI-Gateway/) Містить воркшопи з Azure Portal — чудовий спосіб оцінити AI можливості.
 
-**Відмова від відповідальності**:  
-Цей документ було перекладено за допомогою сервісу автоматичного перекладу [Co-op Translator](https://github.com/Azure/co-op-translator). Хоча ми прагнемо до точності, звертаємо вашу увагу, що автоматичні переклади можуть містити помилки або неточності. Оригінальний документ на його рідній мові слід вважати авторитетним джерелом. Для критично важливої інформації рекомендується професійний людський переклад. Ми не несемо відповідальності за будь-які непорозуміння або неправильні тлумачення, що виникли внаслідок використання цього перекладу.
+## Що далі
+
+- Назад до: [Огляд кейсів](./README.md)
+- Далі: [Azure AI Travel Agents](./travelagentsample.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Відмова від відповідальності**:
+Цей документ було перекладено за допомогою сервісу автоматичного перекладу [Co-op Translator](https://github.com/Azure/co-op-translator). Хоча ми прагнемо до точності, зверніть увагу, що автоматичні переклади можуть містити помилки або неточності. Оригінальний документ його рідною мовою слід вважати офіційним джерелом інформації. Для критично важливої інформації рекомендується звертатися до професійного людського перекладу. Ми не несемо відповідальності за будь-які непорозуміння або неправильні тлумачення, що виникли внаслідок використання цього перекладу.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

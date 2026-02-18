@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "dd8da3f75addcef453fe11f02a270217",
-  "translation_date": "2025-07-14T08:17:17+00:00",
-  "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/README.md",
-  "language_code": "ms"
-}
--->
 # 🔧 Modul 3: Pembangunan MCP Lanjutan dengan AI Toolkit
 
 ![Duration](https://img.shields.io/badge/Duration-20_minutes-blue?style=flat-square)
@@ -64,7 +55,7 @@ Alat penyahpepijatan yang kuat yang menyediakan:
 2. **Cipta agen baru** dengan konfigurasi berikut:
    - Nama Agen: `WeatherAgent`
 
-![Agent Creation](../../../../translated_images/Agent.c9c33f6a412b4cdedfb973fe5448bdb33de3f400055603111b875610e9b917ab.ms.png)
+![Agent Creation](../../../../translated_images/ms/Agent.c9c33f6a412b4cde.webp)
 
 ### Langkah 2: Mulakan Projek Pelayan MCP
 
@@ -74,7 +65,7 @@ Alat penyahpepijatan yang kuat yang menyediakan:
 4. **Pilih templat `python-weather`**
 5. **Namakan pelayan anda:** `weather_mcp`
 
-![Python Template Selection](../../../../translated_images/Pythontemplate.9d0a2913c6491500bd673430f024dc44676af2808a27b5da9dcc0eb7063adc28.ms.png)
+![Python Template Selection](../../../../translated_images/ms/Pythontemplate.9d0a2913c6491500.webp)
 
 ### Langkah 3: Buka dan Semak Projek
 
@@ -340,7 +331,7 @@ USER_PROMPT
 How's the weather like in Seattle
 ```
 
-![Agent Builder Debug Result](../../../../translated_images/Result.6ac570f7d2b1d5389c561ab0566970fe0f13e75bdd976b6a7f0270bc715d07f8.ms.png)
+![Agent Builder Debug Result](../../../../translated_images/ms/Result.6ac570f7d2b1d538.webp)
 
 ### Langkah 8: Nyahpepijat dengan MCP Inspector
 
@@ -352,7 +343,7 @@ How's the weather like in Seattle
    - Pantau permintaan rangkaian
    - Nyahpepijat respons pelayan
 
-![MCP Inspector Interface](../../../../translated_images/Inspector.5672415cd02fe8731774586cc0a1083e3275d2f8491602aecc8ac4d61f2c0d57.ms.png)
+![MCP Inspector Interface](../../../../translated_images/ms/Inspector.5672415cd02fe873.webp)
 
 ---
 

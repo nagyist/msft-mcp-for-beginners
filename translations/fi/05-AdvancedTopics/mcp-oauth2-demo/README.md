@@ -1,79 +1,94 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0a7083e660ca0d85fd6a947514c61993",
-  "translation_date": "2025-07-14T00:42:31+00:00",
-  "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
-  "language_code": "fi"
-}
--->
 # MCP OAuth2 Demo
 
-Tämä projekti on **minimaalinen Spring Boot -sovellus**, joka toimii sekä:
+## Johdanto
 
-* **Spring Authorization Serverina** (joka myöntää JWT-pääsytunnuksia `client_credentials`-virran kautta), että  
-* **Resource Serverina** (suojaten oman `/hello`-päätepisteensä).
+OAuth2 on alan standardiprotokolla valtuutukseen, joka mahdollistaa turvallisen pääsyn resursseihin ilman tunnistetietojen jakamista. MCP (Model Context Protocol) -toteutuksissa OAuth2 tarjoaa vankan tavan todentaa ja valtuuttaa asiakkaat (kuten tekoälyagentit) pääsemään MCP-palvelimille ja niiden työkaluihin.
 
-Se vastaa asetusta, joka on esitelty [Springin blogikirjoituksessa (2.4.2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Tämä opetus näyttää, kuinka toteuttaa OAuth2-todennus MCP-palvelimille käyttäen Spring Bootia, joka on yleinen malli yritys- ja tuotantoympäristöissä.
+
+## Oppimistavoitteet
+
+Tämän oppitunnin lopussa osaat:
+- Ymmärtää, miten OAuth2 integroituu MCP-palvelimiin
+- Toteuttaa Spring Authorization Serverin tokenien myöntämistä varten
+- Suojata MCP-päätepisteet JWT-pohjaisella todennuksella
+- Määrittää client credentials -vuon koneiden väliseen viestintään
+
+## Esivaatimukset
+
+- Perustietämys Javasta ja Spring Bootista
+- Tutustuminen MCP-käsitteisiin aiemmista moduuleista
+- Maven tai Gradle asennettuna
 
 ---
 
-## Nopeasti käyntiin (paikallinen)
+## Projektin yleiskuvaus
+
+Tämä projekti on **minimaalinen Spring Boot -sovellus**, joka toimii sekä:
+
+* **Spring Authorization Serverina** (joka myöntää JWT-pääsytokeneita `client_credentials`-vuon kautta), että  
+* **Resource Serverina** (joka suojaa oman `/hello`-päätepisteensä).
+
+Se peilaa asetusta, joka on esitetty [Spring-blogikirjoituksessa (2.4.2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+
+---
+
+## Nopeasti käyntiin (paikallisesti)
 
 ```bash
-# build & run
+# käännä ja suorita
 ./mvnw spring-boot:run
 
-# obtain a token
+# hanki tunnus
 curl -u mcp-client:secret -d grant_type=client_credentials \
      http://localhost:8081/oauth2/token | jq -r .access_token > token.txt
 
-# call the protected endpoint
+# kutsu suojattua päätepistettä
 curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 ```
 
 ---
 
-## OAuth2-konfiguraation testaaminen
+## OAuth2-konfiguraation testaus
 
-Voit testata OAuth2-turvakonfiguraatiota seuraavilla vaiheilla:
+Voit testata OAuth2-tietoturvakonfiguraatiota seuraavin vaiheisin:
 
-### 1. Varmista, että palvelin on käynnissä ja suojattu
+### 1. Varmista palvelimen käynnissäolo ja suojaus
 
 ```bash
-# This should return 401 Unauthorized, confirming OAuth2 security is active
+# Tämän pitäisi palauttaa 401 Unauthorized, vahvistaen että OAuth2-suojaus on aktiivinen
 curl -v http://localhost:8081/
 ```
 
-### 2. Hanki pääsytunnus client credentials -menetelmällä
+### 2. Hanki pääsytoken client credentials -menetelmällä
 
 ```bash
-# Get and extract the full token response
+# Hae ja pura täydellinen tunnistusmerkin vastaus
 curl -v -X POST http://localhost:8081/oauth2/token \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -H "Authorization: Basic bWNwLWNsaWVudDpzZWNyZXQ=" \
   -d "grant_type=client_credentials&scope=mcp.access"
 
-# Or to extract just the token (requires jq)
+# Tai pura pelkkä tunnistusmerkki (vaatii jq:n)
 curl -s -X POST http://localhost:8081/oauth2/token \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -H "Authorization: Basic bWNwLWNsaWVudDpzZWNyZXQ=" \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Huom: Basic Authentication -otsikko (`bWNwLWNsaWVudDpzZWNyZXQ=`) on Base64-koodaus merkkijonosta `mcp-client:secret`.
+Huomautus: Basic-todennusotsikko (`bWNwLWNsaWVudDpzZWNyZXQ=`) on Base64-koodaus merkkijonosta `mcp-client:secret`.
 
-### 3. Käytä suojattua päätepistettä tunnuksella
+### 3. Käytä suojattua päätepistettä tokenilla
 
 ```bash
-# Using the saved token
+# Tallennetun tunnisteen käyttäminen
 curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
-# Or directly with the token value
+# Tai suoraan tunnistearvolla
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Onnistunut vastaus, jossa lukee "Hello from MCP OAuth2 Demo!", vahvistaa, että OAuth2-konfiguraatio toimii oikein.
+Onnistunut vastaus "Hello from MCP OAuth2 Demo!" vahvistaa, että OAuth2-konfiguraatio toimii oikein.
 
 ---
 
@@ -95,14 +110,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-Ingressin FQDN toimii **issuerinä** (`https://<fqdn>`).  
-Azure tarjoaa automaattisesti luotettavan TLS-varmenteen osoitteelle `*.azurecontainerapps.io`.
+Sisäänpääsyn FQDN toimii sinun **issuerinä** (`https://<fqdn>`).  
+Azure tarjoaa automaattisesti luotettavan TLS-varmenteen `*.azurecontainerapps.io`-domainille.
 
 ---
 
-## Integrointi **Azure API Managementiin**
+## Yhdistäminen **Azure API Management**iin
 
-Lisää tämä inbound-politiikka API:si:
+Lisää tämä inbound-politiikka API:llesi:
 
 ```xml
 <inbound>
@@ -124,5 +139,9 @@ APIM hakee JWKS:n ja validoi jokaisen pyynnön.
 
 - [5.4 Root contexts](../mcp-root-contexts/README.md)
 
-**Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Vastuuvapauslauseke**:
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Pyrimme tarkkuuteen, mutta ota huomioon, että automaattikäännöksissä voi esiintyä virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäisellä kielellä tulisi pitää auktoritatiivisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinkäsityksistä tai virhetulkinnoista.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

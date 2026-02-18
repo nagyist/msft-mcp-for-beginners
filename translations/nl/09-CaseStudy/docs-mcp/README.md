@@ -1,61 +1,52 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4319d291c9d124ecafea52b3d04bfa0e",
-  "translation_date": "2025-07-14T06:26:19+00:00",
-  "source_file": "09-CaseStudy/docs-mcp/README.md",
-  "language_code": "nl"
-}
--->
 # Case Study: Verbinden met de Microsoft Learn Docs MCP Server vanuit een Client
 
-Heb je ooit gemerkt dat je heen en weer schakelt tussen documentatiesites, Stack Overflow en eindeloze zoekmachinetabs, terwijl je probeert een probleem in je code op te lossen? Misschien gebruik je een tweede monitor alleen voor documentatie, of wissel je constant tussen je IDE en een browser. Zou het niet handiger zijn als je de documentatie direct in je workflow kon integreren—ingebouwd in je apps, je IDE, of zelfs je eigen aangepaste tools? In deze case study onderzoeken we hoe je precies dat kunt doen door rechtstreeks verbinding te maken met de Microsoft Learn Docs MCP-server vanuit je eigen clientapplicatie.
+Heb je ooit gemerkt dat je voortdurend schakelt tussen documentatiesites, Stack Overflow en eindeloze zoekmachinetabs, terwijl je een probleem in je code probeert op te lossen? Misschien gebruik je een tweede monitor alleen voor documentatie, of wissel je constant met alt-tab tussen je IDE en een browser. Zou het niet beter zijn als je de documentatie direct in je workflow kunt integreren—verwerkt in je apps, je IDE, of zelfs je eigen aangepaste tools? In deze case study onderzoeken we hoe je precies dat kunt doen door rechtstreeks verbinding te maken met de Microsoft Learn Docs MCP-server vanuit je eigen clientapplicatie.
 
 ## Overzicht
 
-Modern ontwikkelen is meer dan alleen code schrijven—het gaat erom de juiste informatie op het juiste moment te vinden. Documentatie is overal, maar zelden daar waar je het het meest nodig hebt: binnen je tools en workflows. Door het ophalen van documentatie direct in je applicaties te integreren, bespaar je tijd, verminder je het wisselen van context en verhoog je je productiviteit. In dit hoofdstuk laten we zien hoe je een client verbindt met de Microsoft Learn Docs MCP-server, zodat je real-time, contextbewuste documentatie kunt raadplegen zonder je app te verlaten.
+Modern ontwikkelen is meer dan alleen code schrijven—het gaat om het vinden van de juiste informatie op het juiste moment. Documentatie is overal, maar zelden daar waar je het het meest nodig hebt: binnen je tools en workflows. Door het ophalen van documentatie direct in je applicaties te integreren, kun je tijd besparen, minder contextwisselingen hebben en de productiviteit verhogen. In deze sectie laten we zien hoe je een client verbindt met de Microsoft Learn Docs MCP-server, zodat je real-time, contextbewuste documentatie kunt benaderen zonder je app te verlaten.
 
-We lopen samen door het proces van het opzetten van een verbinding, het versturen van een verzoek en het efficiënt afhandelen van streaming responses. Deze aanpak stroomlijnt niet alleen je workflow, maar opent ook de deur naar het bouwen van slimmere, meer behulpzame ontwikkelaarstools.
+We nemen je mee door het proces van het tot stand brengen van een verbinding, het verzenden van een verzoek, en het efficiënt afhandelen van streaming responses. Deze aanpak stroomlijnt niet alleen je workflow, maar opent ook de deur naar het bouwen van slimmere, behulpzamere ontwikkelaarstools.
 
 ## Leerdoelen
 
-Waarom doen we dit? Omdat de beste ontwikkelaarservaringen die zijn waarbij frictie wordt weggenomen. Stel je een wereld voor waarin je code-editor, chatbot of webapp direct je documentatievragen kan beantwoorden, met de nieuwste inhoud van Microsoft Learn. Aan het einde van dit hoofdstuk weet je hoe je:
+Waarom doen we dit? Omdat de beste ontwikkelaarservaringen degenen zijn die frictie wegnemen. Stel je een wereld voor waarin je code-editor, chatbot of webapp direct je documentatievragen kan beantwoorden, met de nieuwste inhoud van Microsoft Learn. Aan het eind van dit hoofdstuk weet je hoe je:
 
 - De basis van MCP server-client communicatie voor documentatie begrijpt
-- Een console- of webapplicatie implementeert die verbinding maakt met de Microsoft Learn Docs MCP-server
+- Een console- of webapplicatie implementeert om verbinding te maken met de Microsoft Learn Docs MCP-server
 - Streaming HTTP-clients gebruikt voor real-time documentatie ophalen
-- Documentatie responses logt en interpreteert in je applicatie
+- Documentatieresponsen logt en interpreteert in je applicatie
 
-Je zult zien hoe deze vaardigheden je helpen tools te bouwen die niet alleen reactief zijn, maar echt interactief en contextbewust.
+Je zult zien hoe deze vaardigheden je kunnen helpen tools te bouwen die niet alleen reactief zijn, maar echt interactief en contextbewust.
 
 ## Scenario 1 - Real-Time Documentatie Ophalen met MCP
 
-In dit scenario laten we zien hoe je een client verbindt met de Microsoft Learn Docs MCP-server, zodat je real-time, contextbewuste documentatie kunt raadplegen zonder je app te verlaten.
+In dit scenario laten we zien hoe je een client verbindt met de Microsoft Learn Docs MCP-server, zodat je real-time, contextbewuste documentatie kunt benaderen zonder je app te verlaten.
 
-Laten we dit in de praktijk brengen. Je taak is om een app te schrijven die verbinding maakt met de Microsoft Learn Docs MCP-server, het `microsoft_docs_search`-tool aanroept en de streaming response naar de console logt.
+Laten we dit in praktijk brengen. Je opdracht is een app te schrijven die verbinding maakt met de Microsoft Learn Docs MCP-server, de `microsoft_docs_search` tool aanroept, en de streaming response logt naar de console.
 
-### Waarom deze aanpak?
-Omdat het de basis vormt voor het bouwen van geavanceerdere integraties—of je nu een chatbot, een IDE-extensie of een webdashboard wilt aandrijven.
+### Waarom deze aanpak?  
+Omdat het de basis is voor het bouwen van meer geavanceerde integraties—of je nu een chatbot, een IDE-extensie of een webdashboard wilt aansturen.
 
-Je vindt de code en instructies voor dit scenario in de [`solution`](./solution/README.md) map binnen deze case study. De stappen begeleiden je bij het opzetten van de verbinding:
-- Gebruik de officiële MCP SDK en een streamable HTTP-client voor de verbinding
-- Roep het `microsoft_docs_search`-tool aan met een queryparameter om documentatie op te halen
-- Implementeer correcte logging en foutafhandeling
-- Maak een interactieve console-interface zodat gebruikers meerdere zoekopdrachten kunnen invoeren
+Je vindt de code en instructies voor dit scenario in de [`solution`](./solution/README.md) map binnen deze case study. De stappen begeleiden je bij het opzetten van de verbinding:  
+- Gebruik de officiële MCP SDK en streaming HTTP-client voor de verbinding  
+- Roep de `microsoft_docs_search` tool aan met een queryparameter om documentatie op te halen  
+- Implementeer juiste logging en foutafhandeling  
+- Maak een interactieve console-interface om gebruikers toe te staan meerdere zoekopdrachten in te voeren
 
-Dit scenario laat zien hoe je:
-- Verbindt met de Docs MCP-server
-- Een query verstuurt
-- De resultaten parseert en afdrukt
+Dit scenario toont hoe te:  
+- Verbinden met de Docs MCP-server  
+- Een query verzenden  
+- De resultaten parsen en afdrukken
 
-Zo zou het eruit kunnen zien als je de oplossing uitvoert:
+Zo kan het eruitzien als je de oplossing draait:
 
 ```
 Prompt> What is Azure Key Vault?
 Answer> Azure Key Vault is a cloud service for securely storing and accessing secrets. ...
 ```
 
-Hieronder staat een minimale voorbeeldoplossing. De volledige code en details zijn beschikbaar in de solution-map.
+Hieronder staat een minimale voorbeeldoplossing. De volledige code en details vind je in de solution map.
 
 <details>
 <summary>Python</summary>
@@ -76,20 +67,21 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-- Voor de volledige implementatie en logging, zie [`scenario1.py`](../../../../09-CaseStudy/docs-mcp/solution/python/scenario1.py).
-- Voor installatie- en gebruiksinstructies, zie het [`README.md`](./solution/python/README.md) bestand in dezelfde map.
+- Voor de complete implementatie en logging, zie [`scenario1.py`](../../../../09-CaseStudy/docs-mcp/solution/python/scenario1.py).  
+- Voor installatie- en gebruiksinstructies, zie het [`README.md`](./solution/python/README.md) bestand in dezelfde map.  
 </details>
+
 
 ## Scenario 2 - Interactieve Studieplangenerator Webapp met MCP
 
-In dit scenario leer je hoe je Docs MCP integreert in een webontwikkelingsproject. Het doel is om gebruikers in staat te stellen Microsoft Learn-documentatie direct vanuit een webinterface te doorzoeken, waardoor documentatie direct toegankelijk is binnen je app of site.
+In dit scenario leer je hoe je Docs MCP integreert in een webontwikkelingsproject. Het doel is gebruikers in staat te stellen Microsoft Learn documentatie direct te doorzoeken vanuit een webinterface, waardoor documentatie direct toegankelijk is binnen je app of site.
 
-Je ziet hoe je:
-- Een webapp opzet
-- Verbindt met de Docs MCP-server
-- Gebruikersinvoer verwerkt en resultaten toont
+Je ziet hoe je:  
+- Een webapp opzet  
+- Verbindt met de Docs MCP-server  
+- Gebruikersinput verwerkt en resultaten toont
 
-Zo zou het eruit kunnen zien als je de oplossing uitvoert:
+Zo kan het eruitzien als je de oplossing draait:
 
 ```
 User> I want to learn about AI102 - so suggest the roadmap to get it started from learn for 6 weeks
@@ -108,14 +100,14 @@ Assistant> Here’s a detailed 6-week roadmap to start your preparation for the 
 Let me know if you want module-specific recommendations or need more customized weekly tasks!
 ```
 
-Hieronder staat een minimale voorbeeldoplossing. De volledige code en details zijn beschikbaar in de solution-map.
+Hieronder staat een minimale voorbeeldoplossing. De volledige code en details vind je in de solution map.
 
-![Scenario 2 Overzicht](../../../../translated_images/scenario2.0c92726d5cd81f68238e5ba65f839a0b300d5b74b8ca7db28bc8f900c3e7d037.nl.png)
+![Scenario 2 Overzicht](../../../../translated_images/nl/scenario2.0c92726d5cd81f68.webp)
 
 <details>
 <summary>Python (Chainlit)</summary>
 
-Chainlit is een framework voor het bouwen van conversatie-AI webapps. Het maakt het eenvoudig om interactieve chatbots en assistenten te creëren die MCP-tools kunnen aanroepen en resultaten in real time kunnen tonen. Ideaal voor snelle prototyping en gebruiksvriendelijke interfaces.
+Chainlit is een framework voor het bouwen van conversatie-AI webapps. Het maakt het makkelijk om interactieve chatbots en assistenten te creëren die MCP-tools kunnen aanroepen en resultaten realtime tonen. Het is ideaal voor snelle prototyping en gebruiksvriendelijke interfaces.
 
 ```python
 import chainlit as cl
@@ -134,21 +126,22 @@ def handle_message(message):
         cl.Message(content="Error: " + response.text).send()
 ```
 
-- Voor de volledige implementatie, zie [`scenario2.py`](../../../../09-CaseStudy/docs-mcp/solution/python/scenario2.py).
-- Voor installatie- en gebruiksinstructies, zie het [`README.md`](./solution/python/README.md).
+- Voor de volledige implementatie, zie [`scenario2.py`](../../../../09-CaseStudy/docs-mcp/solution/python/scenario2.py).  
+- Voor installatie- en gebruiksinstructies, zie het [`README.md`](./solution/python/README.md).  
 </details>
+
 
 ## Scenario 3: In-Editor Docs met MCP Server in VS Code
 
-Als je Microsoft Learn Docs direct in VS Code wilt gebruiken (in plaats van te wisselen tussen browser tabs), kun je de MCP-server in je editor gebruiken. Hiermee kun je:
-- Documentatie zoeken en lezen in VS Code zonder je programmeeromgeving te verlaten.
-- Documentatie verwijzen en links direct invoegen in je README- of cursusbestanden.
+Wil je Microsoft Learn Docs direct in je VS Code krijgen (in plaats van te wisselen tussen browsertabs), dan kun je de MCP-server in je editor gebruiken. Hierdoor kun je:
+- Documentatie zoeken en lezen in VS Code zonder je programmeeromgeving te verlaten.  
+- Documentatie refereren en links direct invoegen in je README- of cursusbestanden.  
 - GitHub Copilot en MCP samen gebruiken voor een naadloze, AI-gestuurde documentatieworkflow.
 
-**Je leert hoe je:**
-- Een geldig `.vscode/mcp.json` bestand toevoegt aan de root van je workspace (zie voorbeeld hieronder).
-- Het MCP-paneel opent of de commandopalet in VS Code gebruikt om documentatie te zoeken en in te voegen.
-- Documentatie direct in je markdown-bestanden verwijst terwijl je werkt.
+**Je zult zien hoe je:**  
+- Een geldig `.vscode/mcp.json` bestand toevoegt aan je workspace root (zie voorbeeld hieronder).  
+- Het MCP-paneel opent of de commandopalet in VS Code gebruikt om docs te zoeken en in te voegen.  
+- Documentatie direct in je markdownbestanden refereert terwijl je werkt.  
 - Deze workflow combineert met GitHub Copilot voor nog meer productiviteit.
 
 Hier is een voorbeeld van hoe je de MCP-server in VS Code instelt:
@@ -165,31 +158,40 @@ Hier is een voorbeeld van hoe je de MCP-server in VS Code instelt:
 
 </details>
 
-> Voor een gedetailleerde walkthrough met screenshots en stapsgewijze handleiding, zie [`README.md`](./solution/scenario3/README.md).
+> Voor een gedetailleerde walkthrough met screenshots en stapsgewijze gids, zie [`README.md`](./solution/scenario3/README.md).
 
-![Scenario 3 Overzicht](../../../../translated_images/step4-prompt-chat.12187bb001605efc5077992b621f0fcd1df12023c5dce0464f8eb8f3d595218f.nl.png)
+![Scenario 3 Overzicht](../../../../translated_images/nl/step4-prompt-chat.12187bb001605efc.webp)
 
 Deze aanpak is ideaal voor iedereen die technische cursussen bouwt, documentatie schrijft of code ontwikkelt met frequente referentiebehoeften.
 
-## Belangrijkste Leerpunten
+## Belangrijkste Aandachtspunten
 
-Documentatie direct in je tools integreren is niet alleen handig—het verandert de manier waarop je productief bent. Door verbinding te maken met de Microsoft Learn Docs MCP-server vanuit je client, kun je:
+Documentatie direct in je tools integreren is niet slechts gemak—het verandert de productiviteit fundamenteel. Door verbinding te maken met de Microsoft Learn Docs MCP-server vanuit je client, kun je:
 
-- Het wisselen van context tussen code en documentatie elimineren
-- Up-to-date, contextbewuste documentatie in real time ophalen
-- Slimmere, interactievere ontwikkelaarstools bouwen
+- Contextwisselingen tussen code en documentatie elimineren  
+- Altijd actuele, contextbewuste documentatie in real time ophalen  
+- Slimmere, meer interactieve ontwikkelaarstools bouwen
 
-Deze vaardigheden helpen je oplossingen te creëren die niet alleen efficiënt zijn, maar ook prettig in gebruik.
+Deze vaardigheden helpen je oplossingen te maken die niet alleen efficiënt zijn, maar ook plezierig in gebruik.
 
 ## Aanvullende Bronnen
 
-Om je kennis te verdiepen, bekijk deze officiële bronnen:
+Om je begrip te verdiepen, verken deze officiële bronnen:
 
-- [Microsoft Learn Docs MCP Server (GitHub)](https://github.com/MicrosoftDocs/mcp)
-- [Aan de slag met Azure MCP Server (mcp-python)](https://learn.microsoft.com/en-us/azure/developer/azure-mcp-server/get-started#create-the-python-app)
-- [Wat is de Azure MCP Server?](https://learn.microsoft.com/en-us/azure/developer/azure-mcp-server/)
-- [Model Context Protocol (MCP) Introductie](https://modelcontextprotocol.io/introduction)
-- [Plugins toevoegen van een MCP Server (Python)](https://learn.microsoft.com/en-us/semantic-kernel/concepts/plugins/adding-mcp-plugins)
+- [Microsoft Learn Docs MCP Server (GitHub)](https://github.com/MicrosoftDocs/mcp)  
+- [Aan de slag met Azure MCP Server (mcp-python)](https://learn.microsoft.com/en-us/azure/developer/azure-mcp-server/get-started#create-the-python-app)  
+- [Wat is de Azure MCP Server?](https://learn.microsoft.com/en-us/azure/developer/azure-mcp-server/)  
+- [Model Context Protocol (MCP) Introductie](https://modelcontextprotocol.io/introduction)  
+- [Plugins toevoegen van een MCP Server (Python)](https://learn.microsoft.com/en-us/semantic-kernel/concepts/plugins/adding-mcp-plugins)  
 
-**Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+## Wat Nu?
+
+- Terug naar: [Case Studies Overzicht](../README.md)  
+- Verder naar: [Module 10: Streamlining AI Workflows with AI Toolkit](../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Disclaimer**:
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel wij streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt een professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
-  "translation_date": "2025-07-16T22:27:45+00:00",
-  "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
-  "language_code": "fa"
-}
--->
 # ادغام پروتکل زمینه مدل (MCP) با Azure AI Foundry
 
 این راهنما نحوه ادغام سرورهای پروتکل زمینه مدل (MCP) با عامل‌های Azure AI Foundry را نشان می‌دهد که امکان هماهنگی قدرتمند ابزارها و قابلیت‌های هوش مصنوعی سازمانی را فراهم می‌کند.
@@ -60,7 +51,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## پیاده‌سازی Python
 
-***توجه*** می‌توانید این [دفترچه یادداشت](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb) را اجرا کنید
+***توجه*** می‌توانید این [دفترچه یادداشت](mcp_support_python.ipynb) را اجرا کنید
 
 ### ۱. نصب بسته‌های مورد نیاز
 
@@ -189,7 +180,7 @@ with project_client:
 
 ## پیاده‌سازی .NET
 
-***توجه*** می‌توانید این [دفترچه یادداشت](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb) را اجرا کنید
+***توجه*** می‌توانید این [دفترچه یادداشت](mcp_support_dotnet.ipynb) را اجرا کنید
 
 ### ۱. نصب بسته‌های مورد نیاز
 

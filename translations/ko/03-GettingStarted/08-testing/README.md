@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-13T21:58:25+00:00",
-  "source_file": "03-GettingStarted/08-testing/README.md",
-  "language_code": "ko"
-}
--->
 ## 테스트 및 디버깅
 
 MCP 서버 테스트를 시작하기 전에, 사용 가능한 도구와 디버깅을 위한 모범 사례를 이해하는 것이 중요합니다. 효과적인 테스트는 서버가 예상대로 작동하는지 확인하고 문제를 신속하게 식별하고 해결하는 데 도움을 줍니다. 다음 섹션에서는 MCP 구현을 검증하기 위한 권장 방법을 설명합니다.
@@ -48,7 +39,7 @@ npx @modelcontextprotocol/inspector node build/index.js
 
 위 명령은 MCP와 시각적 인터페이스를 시작하며, 브라우저에서 로컬 웹 인터페이스를 엽니다. 대시보드에는 등록된 MCP 서버, 사용 가능한 도구, 리소스, 프롬프트가 표시됩니다. 이 인터페이스를 통해 도구 실행을 대화식으로 테스트하고, 서버 메타데이터를 검사하며, 실시간 응답을 확인할 수 있어 MCP 서버 구현을 검증하고 디버깅하기가 훨씬 수월해집니다.
 
-화면 예시는 다음과 같습니다: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.ko.png)
+화면 예시는 다음과 같습니다: ![Inspector](../../../../translated_images/ko/connect.141db0b2bd05f096.webp)
 
 또한 `--cli` 옵션을 추가해 CLI 모드로 도구를 실행할 수도 있습니다. 다음은 서버의 모든 도구를 나열하는 CLI 모드 실행 예시입니다:
 

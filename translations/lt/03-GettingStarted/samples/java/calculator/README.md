@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13231e9951b68efd9df8c56bd5cdb27e",
-  "translation_date": "2025-08-26T20:42:31+00:00",
-  "source_file": "03-GettingStarted/samples/java/calculator/README.md",
-  "language_code": "lt"
-}
--->
 # Pagrindinė Skaičiuotuvo MCP Paslauga
 
 Ši paslauga teikia pagrindines skaičiuotuvo operacijas per Model Context Protocol (MCP), naudojant Spring Boot su WebFlux transportu. Ji sukurta kaip paprastas pavyzdys pradedantiesiems, norintiems susipažinti su MCP įgyvendinimu.
@@ -201,7 +192,7 @@ MCP Inspector yra naudingas įrankis sąveikai su MCP paslaugomis. Norėdami jį
    - Spustelėkite "List Tools", kad pamatytumėte galimas skaičiuotuvo operacijas
    - Pasirinkite įrankį ir spustelėkite "Run Tool", kad vykdytumėte operaciją
 
-![MCP Inspector Ekrano Nuotrauka](../../../../../../translated_images/tool.c75a0b2380efcf1a47a8478f54380a36ddcca7943b98f56dabbac8b07e15c3bb.lt.png)
+![MCP Inspector Ekrano Nuotrauka](../../../../../../translated_images/lt/tool.c75a0b2380efcf1a.webp)
 
 ### Naudojant Docker
 

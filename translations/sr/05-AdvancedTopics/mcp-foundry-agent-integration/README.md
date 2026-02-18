@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
-  "translation_date": "2025-07-17T11:52:32+00:00",
-  "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
-  "language_code": "sr"
-}
--->
 # Интеграција Model Context Protocol (MCP) са Azure AI Foundry
 
 Овај водич показује како да интегришете сервере Model Context Protocol (MCP) са Azure AI Foundry агентима, омогућавајући моћну оркестрацију алата и корпоративне AI могућности.
@@ -60,7 +51,7 @@ Model Context Protocol је стандардизован начин за AI ап
 
 ## Python имплементација
 
-***Note*** Можете покренути овај [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb)
+***Note*** Можете покренути овај [notebook](mcp_support_python.ipynb)
 
 ### 1. Инсталирање потребних пакета
 
@@ -189,7 +180,7 @@ with project_client:
 
 ## .NET имплементација
 
-***Note*** Можете покренути овај [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb)
+***Note*** Можете покренути овај [notebook](mcp_support_dotnet.ipynb)
 
 ### 1. Инсталирање потребних пакета
 

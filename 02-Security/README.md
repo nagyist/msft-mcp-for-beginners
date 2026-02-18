@@ -28,14 +28,58 @@ Research from the [Microsoft Digital Defense Report](https://aka.ms/mddr) demons
 
 ## Current Security Landscape
 
-> **Note:** This information reflects MCP security standards as of **August 18, 2025**. The MCP protocol continues evolving rapidly, and future implementations may introduce new authentication patterns and enhanced controls. Always refer to the current [MCP Specification](https://spec.modelcontextprotocol.io/), [MCP GitHub repository](https://github.com/modelcontextprotocol), and [security best practices documentation](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices) for the latest guidance.
+> **Note:** This information reflects MCP security standards as of **February 5, 2026**, aligned with **MCP Specification 2025-11-25**. The MCP protocol continues evolving rapidly, and future implementations may introduce new authentication patterns and enhanced controls. Always refer to the current [MCP Specification](https://spec.modelcontextprotocol.io/), [MCP GitHub repository](https://github.com/modelcontextprotocol), and [security best practices documentation](https://modelcontextprotocol.io/specification/2025-11-25/basic/security_best_practices) for the latest guidance.
+
+## 🏔️ MCP Security Summit Workshop (Sherpa)
+
+For **hands-on security training**, we highly recommend the **MCP Security Summit Workshop** (Sherpa) - a comprehensive guided expedition to securing MCP servers in Microsoft Azure.
+
+### Workshop Overview
+
+The [MCP Security Summit Workshop](https://azure-samples.github.io/sherpa/) provides practical, actionable security training through a proven "vulnerable → exploit → fix → validate" methodology. You'll:
+
+- **Learn by Breaking Things**: Experience vulnerabilities firsthand by exploiting intentionally insecure servers
+- **Use Azure-Native Security**: Leverage Azure Entra ID, Key Vault, API Management, and AI Content Safety
+- **Follow Defense-in-Depth**: Progress through camps building comprehensive security layers
+- **Apply OWASP Standards**: Every technique maps to the [OWASP MCP Azure Security Guide](https://microsoft.github.io/mcp-azure-security-guide/)
+- **Get Production Code**: Walk away with working, tested implementations
+
+### The Expedition Route
+
+| Camp | Focus | OWASP Risks Covered |
+|------|-------|---------------------|
+| **Base Camp** | MCP fundamentals & authentication vulnerabilities | MCP01, MCP07 |
+| **Camp 1: Identity** | OAuth 2.1, Azure Managed Identity, Key Vault | MCP01, MCP02, MCP07 |
+| **Camp 2: Gateway** | API Management, Private Endpoints, governance | MCP02, MCP07, MCP09 |
+| **Camp 3: I/O Security** | Prompt injection, PII protection, content safety | MCP03, MCP05, MCP06 |
+| **Camp 4: Monitoring** | Log Analytics, dashboards, threat detection | MCP08 |
+| **The Summit** | Red Team / Blue Team integration test | All |
+
+**Get Started**: [https://azure-samples.github.io/sherpa/](https://azure-samples.github.io/sherpa/)
+
+## OWASP MCP Top 10 Security Risks
+
+The [OWASP MCP Azure Security Guide](https://microsoft.github.io/mcp-azure-security-guide/) details the ten most critical security risks for MCP implementations:
+
+| Risk | Description | Azure Mitigation |
+|------|-------------|------------------|
+| **MCP01** | Token Mismanagement & Secret Exposure | Azure Key Vault, Managed Identity |
+| **MCP02** | Privilege Escalation via Scope Creep | RBAC, Conditional Access |
+| **MCP03** | Tool Poisoning | Tool validation, integrity verification |
+| **MCP04** | Supply Chain Attacks | GitHub Advanced Security, dependency scanning |
+| **MCP05** | Command Injection & Execution | Input validation, sandboxing |
+| **MCP06** | Prompt Injection via Contextual Payloads | Azure AI Content Safety, Prompt Shields |
+| **MCP07** | Insufficient Authentication & Authorization | Azure Entra ID, OAuth 2.1 with PKCE |
+| **MCP08** | Lack of Audit & Telemetry | Azure Monitor, Application Insights |
+| **MCP09** | Shadow MCP Servers | API Center governance, network isolation |
+| **MCP10** | Context Injection & Over-Sharing | Data classification, minimal exposure |
 
 ### Evolution of MCP Authentication
 
 The MCP specification has evolved significantly in its approach to authentication and authorization:
 
 - **Original Approach**: Early specifications required developers to implement custom authentication servers, with MCP servers acting as OAuth 2.0 Authorization Servers managing user authentication directly
-- **Current Standard (2025-06-18)**: Updated specification allows MCP servers to delegate authentication to external identity providers (such as Microsoft Entra ID), improving security posture and reducing implementation complexity
+- **Current Standard (2025-11-25)**: Updated specification allows MCP servers to delegate authentication to external identity providers (such as Microsoft Entra ID), improving security posture and reducing implementation complexity
 - **Transport Layer Security**: Enhanced support for secure transport mechanisms with proper authentication patterns for both local (STDIO) and remote (Streamable HTTP) connections
 
 ## Authentication & Authorization Security
@@ -399,10 +443,15 @@ These foundational practices create a robust security baseline that enhances the
 ## Comprehensive Resources
 
 ### **Official MCP Security Documentation**
-- [MCP Specification (Current: 2025-06-18)](https://spec.modelcontextprotocol.io/specification/2025-06-18/)
-- [MCP Security Best Practices](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices)
-- [MCP Authorization Specification](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization)
+- [MCP Specification (Current: 2025-11-25)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
+- [MCP Security Best Practices](https://modelcontextprotocol.io/specification/2025-11-25/basic/security_best_practices)
+- [MCP Authorization Specification](https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization)
 - [MCP GitHub Repository](https://github.com/modelcontextprotocol)
+
+### **OWASP MCP Security Resources**
+- [OWASP MCP Azure Security Guide](https://microsoft.github.io/mcp-azure-security-guide/) - Comprehensive OWASP MCP Top 10 with Azure implementation guidance
+- [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/) - Official OWASP MCP security risks
+- [MCP Security Summit Workshop (Sherpa)](https://azure-samples.github.io/sherpa/) - Hands-on security training for MCP on Azure
 
 ### **Security Standards & Best Practices**
 - [OAuth 2.0 Security Best Practices (RFC 9700)](https://datatracker.ietf.org/doc/html/rfc9700)
@@ -440,6 +489,11 @@ For comprehensive security guidance, refer to these specialized documents in thi
 - **[Azure Content Safety Implementation](./azure-content-safety-implementation.md)** - Practical implementation examples for Azure Content Safety integration  
 - **[MCP Security Controls 2025](./mcp-security-controls-2025.md)** - Latest security controls and techniques for MCP deployments
 - **[MCP Best Practices Quick Reference](./mcp-best-practices.md)** - Quick reference guide for essential MCP security practices
+
+### **Hands-On Security Training**
+
+- **[MCP Security Summit Workshop (Sherpa)](https://azure-samples.github.io/sherpa/)** - Comprehensive hands-on workshop for securing MCP servers in Azure with progressive camps from Base Camp to Summit
+- **[OWASP MCP Azure Security Guide](https://microsoft.github.io/mcp-azure-security-guide/)** - Reference architecture and implementation guidance for all OWASP MCP Top 10 risks
 
 ---
 

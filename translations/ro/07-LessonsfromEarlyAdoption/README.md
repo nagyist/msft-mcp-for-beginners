@@ -1,52 +1,43 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "41f16dac486d2086a53bc644a01cbe42",
-  "translation_date": "2025-08-19T16:21:01+00:00",
-  "source_file": "07-LessonsfromEarlyAdoption/README.md",
-  "language_code": "ro"
-}
--->
-# 🌟 Lecții de la Primii Utilizatori
+# 🌟 Lecții de la Primii Adoptatori
 
-[![Lecții de la Primii Utilizatori MCP](../../../translated_images/08.980bb2babbaadd8a97739effc9b31e5f1abd8f4c4a3fbc90fb9f931a866674d0.ro.png)](https://youtu.be/jds7dSmNptE)
+[![Lecții de la Primii Adoptatori MCP](../../../translated_images/ro/08.980bb2babbaadd8a.webp)](https://youtu.be/jds7dSmNptE)
 
 _(Faceți clic pe imaginea de mai sus pentru a viziona videoclipul acestei lecții)_
 
 ## 🎯 Ce Acoperă Acest Modul
 
-Acest modul explorează modul în care organizațiile și dezvoltatorii reali utilizează Model Context Protocol (MCP) pentru a rezolva provocări reale și a stimula inovația. Prin studii de caz detaliate și proiecte practice, veți descoperi cum MCP permite integrarea AI sigură și scalabilă, conectând modele lingvistice, instrumente și date de întreprindere.
+Acest modul explorează cum organizațiile reale și dezvoltatorii folosesc Model Context Protocol (MCP) pentru a rezolva provocări reale și a stimula inovația. Prin studii de caz detaliate, proiecte practice și exemple concrete, veți descoperi cum MCP permite integrarea AI securizată și scalabilă care leagă modele de limbaj, instrumente și date enterprise.
 
-### 📚 Vedeți MCP în Acțiune
+### 📚 Vezi MCP în Acțiune
 
-Doriți să vedeți aceste principii aplicate în instrumente gata de producție? Consultați [**10 Servere MCP Microsoft Care Transformă Productivitatea Dezvoltatorilor**](microsoft-mcp-servers.md), care prezintă servere MCP reale de la Microsoft pe care le puteți utiliza astăzi.
+Doriți să vedeți aceste principii aplicate în instrumente pregătite pentru producție? Consultați [**10 servere Microsoft MCP care transformă productivitatea dezvoltatorilor**](microsoft-mcp-servers.md), care prezintă servere reale Microsoft MCP pe care le puteți folosi astăzi.
 
-## Prezentare Generală
+## Prezentare generală
 
-Această lecție explorează modul în care primii utilizatori au folosit Model Context Protocol (MCP) pentru a rezolva provocări reale și a stimula inovația în diverse industrii. Prin studii de caz detaliate și proiecte practice, veți vedea cum MCP permite o integrare AI standardizată, sigură și scalabilă—conectând modele lingvistice mari, instrumente și date de întreprindere într-un cadru unificat. Veți dobândi experiență practică în proiectarea și construirea soluțiilor bazate pe MCP, veți învăța din modele de implementare dovedite și veți descoperi cele mai bune practici pentru implementarea MCP în medii de producție. Lecția evidențiază, de asemenea, tendințele emergente, direcțiile viitoare și resursele open-source pentru a vă ajuta să rămâneți în fruntea tehnologiei MCP și a ecosistemului său în evoluție.
+Această lecție explorează modul în care primii adoptatori au folosit Model Context Protocol (MCP) pentru a rezolva provocări reale și a stimula inovația în diverse industrii. Prin studii de caz detaliate și proiecte practice, veți vedea cum MCP permite o integrare AI standardizată, securizată și scalabilă — conectând modele mari de limbaj, instrumente și date enterprise într-un cadru unificat. Veți dobândi experiență practică în proiectarea și construirea soluțiilor bazate pe MCP, veți învăța din modele de implementare dovedite și veți descoperi cele mai bune practici pentru implementarea MCP în mediile de producție. Lecția evidențiază, de asemenea, tendințe emergente, direcții viitoare și resurse open-source pentru a vă ajuta să rămâneți în avangarda tehnologiei MCP și a ecosistemului său în evoluție.
 
 ## Obiective de Învățare
 
-- Analizați implementările MCP din lumea reală în diverse industrii
-- Proiectați și construiți aplicații complete bazate pe MCP
-- Explorați tendințele emergente și direcțiile viitoare în tehnologia MCP
-- Aplicați cele mai bune practici în scenarii reale de dezvoltare
+- Analiza implementărilor MCP din lumea reală în diferite industrii
+- Proiectarea și construirea aplicațiilor complete bazate pe MCP
+- Explorarea tendințelor emergente și direcțiilor viitoare în tehnologia MCP
+- Aplicarea celor mai bune practici în scenarii reale de dezvoltare
 
-## Implementări MCP din Lumea Reală
+## Implementări MCP din lumea reală
 
-### Studiu de Caz 1: Automatizarea Suportului pentru Clienți în Întreprinderi
+### Studiu de caz 1: Automatizarea suportului clienți enterprise
 
-O corporație multinațională a implementat o soluție bazată pe MCP pentru a standardiza interacțiunile AI în sistemele lor de suport pentru clienți. Acest lucru le-a permis să:
+O corporație multinațională a implementat o soluție bazată pe MCP pentru a standardiza interacțiunile AI în sistemele lor de suport clienți. Aceasta le-a permis să:
 
-- Creeze o interfață unificată pentru mai mulți furnizori de LLM
+- Creeze o interfață unificată pentru mai mulți furnizori LLM
 - Mențină o gestionare consecventă a prompturilor între departamente
 - Implementeze controale robuste de securitate și conformitate
-- Schimbe cu ușurință între diferite modele AI în funcție de nevoi specifice
+- Facă comutări ușoare între diferite modele AI în funcție de necesități specifice
 
-**Implementare Tehnică:**
+**Implementare tehnică:**
 
 ```python
-# Python MCP server implementation for customer support
+# Implementarea serverului MCP în Python pentru suport clienți
 import logging
 import asyncio
 from modelcontextprotocol import create_server, ServerConfig
@@ -56,21 +47,21 @@ from modelcontextprotocol.resources import ResourceDefinition
 from modelcontextprotocol.prompts import PromptDefinition
 from modelcontextprotocol.tool import ToolDefinition
 
-# Configure logging
+# Configurează jurnalizarea
 logging.basicConfig(level=logging.INFO)
 
 async def main():
-    # Create server configuration
+    # Creează configurația serverului
     config = ServerConfig(
         name="Enterprise Customer Support Server",
         version="1.0.0",
         description="MCP server for handling customer support inquiries"
     )
     
-    # Initialize MCP server
+    # Inițializează serverul MCP
     server = create_server(config)
     
-    # Register knowledge base resources
+    # Înregistrează resursele bazei de cunoștințe
     server.resources.register(
         ResourceDefinition(
             name="customer_kb",
@@ -79,7 +70,7 @@ async def main():
         lambda params: get_customer_documentation(params)
     )
     
-    # Register prompt templates
+    # Înregistrează șabloanele de prompturi
     server.prompts.register(
         PromptDefinition(
             name="support_template",
@@ -88,7 +79,7 @@ async def main():
         lambda params: get_support_templates(params)
     )
     
-    # Register support tools
+    # Înregistrează uneltele de suport
     server.tools.register(
         ToolDefinition(
             name="ticketing",
@@ -97,7 +88,7 @@ async def main():
         handle_ticketing_operations
     )
     
-    # Start server with HTTP transport
+    # Pornește serverul cu transport HTTP
     transport = create_http_transport(port=8080)
     await server.run(transport)
 
@@ -105,18 +96,18 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-**Rezultate:** Reducere cu 30% a costurilor modelelor, îmbunătățire cu 45% a consistenței răspunsurilor și conformitate sporită la nivel global.
+**Rezultate:** Reducere cu 30% a costurilor modelelor, îmbunătățire cu 45% a consistenței răspunsurilor și conformitate sporită în operațiunile globale.
 
-### Studiu de Caz 2: Asistent de Diagnosticare în Sănătate
+### Studiu de caz 2: Asistent diagnostic medical
 
 Un furnizor de servicii medicale a dezvoltat o infrastructură MCP pentru a integra mai multe modele AI medicale specializate, asigurând în același timp protecția datelor sensibile ale pacienților:
 
 - Comutare fără probleme între modele medicale generaliste și specializate
-- Controale stricte de confidențialitate și trasee de audit
-- Integrare cu sistemele existente de Evidență Electronică a Pacienților (EHR)
+- Controale stricte de confidențialitate și urme de audit
+- Integrare cu sistemele existente de evidență electronică a sănătății (EHR)
 - Inginerie consecventă a prompturilor pentru terminologia medicală
 
-**Implementare Tehnică:**
+**Implementare tehnică:**
 
 ```csharp
 // C# MCP host application implementation in healthcare application
@@ -182,27 +173,27 @@ public class DiagnosticAssistant
 }
 ```
 
-**Rezultate:** Sugestii de diagnosticare îmbunătățite pentru medici, menținând în același timp conformitatea completă cu HIPAA și reducerea semnificativă a schimbărilor de context între sisteme.
+**Rezultate:** Sugestii de diagnostic îmbunătățite pentru medici, păstrând conformitatea completă HIPAA și reducere semnificativă a schimbărilor de context între sisteme.
 
-### Studiu de Caz 3: Analiza Riscurilor în Servicii Financiare
+### Studiu de caz 3: Analiza riscurilor în servicii financiare
 
 O instituție financiară a implementat MCP pentru a standardiza procesele de analiză a riscurilor în diferite departamente:
 
-- Crearea unei interfețe unificate pentru modelele de risc de credit, detectare a fraudei și investiții
-- Implementarea controalelor stricte de acces și a versiunilor modelelor
-- Asigurarea auditabilității tuturor recomandărilor AI
-- Menținerea unui format de date consecvent între sisteme diverse
+- Creată o interfață unificată pentru modelele de risc de credit, detectare fraudă și risc investițional
+- Implementate controale stricte de acces și versionare a modelelor
+- Asigurată auditabilitate pentru toate recomandările AI
+- Menținută o formatare consecventă a datelor între sistemele diverse
 
-**Implementare Tehnică:**
+**Implementare tehnică:**
 
 ```java
-// Java MCP server for financial risk assessment
+// Server Java MCP pentru evaluarea riscului financiar
 import org.mcp.server.*;
 import org.mcp.security.*;
 
 public class FinancialRiskMCPServer {
     public static void main(String[] args) {
-        // Create MCP server with financial compliance features
+        // Creează server MCP cu funcționalități de conformitate financiară
         MCPServer server = new MCPServerBuilder()
             .withModelProviders(
                 new ModelProvider("risk-assessment-primary", new AzureOpenAIProvider()),
@@ -225,27 +216,27 @@ public class FinancialRiskMCPServer {
 }
 ```
 
-**Rezultate:** Conformitate reglementară îmbunătățită, cicluri de implementare a modelelor mai rapide cu 40% și consistență sporită în evaluarea riscurilor între departamente.
+**Rezultate:** Conformitate sporită cu reglementările, cicluri de implementare a modelelor mai rapide cu 40% și consistență îmbunătățită în evaluarea riscurilor.
 
-### Studiu de Caz 4: Serverul MCP Playwright de la Microsoft pentru Automatizarea Browserului
+### Studiu de caz 4: Serverul Microsoft Playwright MCP pentru automatizarea browserului
 
-Microsoft a dezvoltat [serverul MCP Playwright](https://github.com/microsoft/playwright-mcp) pentru a permite automatizarea browserului într-un mod sigur și standardizat prin Model Context Protocol. Acest server gata de producție permite agenților AI și LLM-urilor să interacționeze cu browserele web într-un mod controlat, auditat și extensibil—facilitând cazuri de utilizare precum testarea automată a web-ului, extragerea de date și fluxurile de lucru end-to-end.
+Microsoft a dezvoltat [serverul Playwright MCP](https://github.com/microsoft/playwright-mcp) pentru a permite automatizarea browserului securizată și standardizată prin Model Context Protocol. Acest server pregătit pentru producție permite agenților AI și LLM-urilor să interacționeze cu browserele web într-un mod controlat, auditat și extensibil — susținând cazuri de utilizare precum testarea web automată, extragerea datelor și fluxuri de lucru end-to-end.
 
-> **🎯 Instrument Gata de Producție**
+> **🎯 Instrument pregătit pentru producție**
 > 
-> Acest studiu de caz prezintă un server MCP real pe care îl puteți utiliza astăzi! Aflați mai multe despre serverul MCP Playwright și alte 9 servere MCP Microsoft gata de producție în [**Ghidul Serverelor MCP Microsoft**](microsoft-mcp-servers.md#8--playwright-mcp-server).
+> Acest studiu de caz prezintă un server MCP real pe care îl puteți folosi astăzi! Aflați mai multe despre Playwright MCP Server și alte 9 servere Microsoft MCP pregătite pentru producție în [**Ghidul Serverelor Microsoft MCP**](microsoft-mcp-servers.md#8--playwright-mcp-server).
 
-**Caracteristici Cheie:**
-- Expune capabilități de automatizare a browserului (navigare, completare de formulare, captură de ecran etc.) ca instrumente MCP
+**Caracteristici cheie:**
+- Expune capacități de automatizare a browserului (navigare, completare formulare, captură de ecran etc.) ca instrumente MCP
 - Implementează controale stricte de acces și sandboxing pentru a preveni acțiunile neautorizate
-- Furnizează jurnale de audit detaliate pentru toate interacțiunile cu browserul
-- Suportă integrarea cu Azure OpenAI și alți furnizori LLM pentru automatizare condusă de agenți
-- Alimentează capabilitățile de navigare web ale GitHub Copilot
+- Oferă jurnale detaliate de audit pentru toate interacțiunile cu browserul
+- Suportă integrarea cu Azure OpenAI și alți furnizori LLM pentru automatizarea bazată pe agenți
+- Susține agenții de codare GitHub Copilot cu capabilități de navigare web
 
-**Implementare Tehnică:**
+**Implementare tehnică:**
 
 ```typescript
-// TypeScript: Registering Playwright browser automation tools in an MCP server
+// TypeScript: Înregistrarea instrumentelor de automatizare a browserului Playwright într-un server MCP
 import { createServer, ToolDefinition } from 'modelcontextprotocol';
 import { launch } from 'playwright';
 
@@ -255,7 +246,7 @@ const server = createServer({
   description: 'MCP server for browser automation using Playwright'
 });
 
-// Register a tool for navigating to a URL and capturing a screenshot
+// Înregistrează un instrument pentru navigarea către un URL și capturarea unei capturi de ecran
 server.tools.register(
   new ToolDefinition({
     name: 'navigate_and_screenshot',
@@ -274,37 +265,37 @@ server.tools.register(
   }
 );
 
-// Start the MCP server
+// Pornește serverul MCP
 server.listen(8080);
 ```
 
 **Rezultate:**
 
-- Automatizare sigură și programatică a browserului pentru agenți AI și LLM-uri
-- Reducerea efortului de testare manuală și îmbunătățirea acoperirii testelor pentru aplicațiile web
-- Furnizarea unui cadru reutilizabil și extensibil pentru integrarea instrumentelor bazate pe browser în medii de întreprindere
-- Alimentarea capabilităților de navigare web ale GitHub Copilot
+- Automatizare securizată și programatică a browserului pentru agenți AI și LLM-uri
+- Reducere a efortului manual în testare și îmbunătățire a acoperirii testelor pentru aplicații web
+- Oferă un cadru reutilizabil și extensibil pentru integrarea instrumentelor bazate pe browser în medii enterprise
+- Susține capabilitățile de navigare web ale GitHub Copilot
 
 **Referințe:**
 
-- [Repository GitHub Server MCP Playwright](https://github.com/microsoft/playwright-mcp)
-- [Soluții Microsoft AI și Automatizare](https://azure.microsoft.com/en-us/products/ai-services/)
+- [Playwright MCP Server GitHub](https://github.com/microsoft/playwright-mcp)
+- [Microsoft AI și soluții de automatizare](https://azure.microsoft.com/en-us/products/ai-services/)
 
-### Studiu de Caz 5: Azure MCP – Protocol de Context Model la Nivel de Întreprindere ca Serviciu
+### Studiu de caz 5: Azure MCP – Model Context Protocol de nivel enterprise ca serviciu
 
-Serverul Azure MCP ([https://aka.ms/azmcp](https://aka.ms/azmcp)) este implementarea gestionată de Microsoft a Model Context Protocol la nivel de întreprindere, concepută pentru a oferi capabilități scalabile, sigure și conforme de server MCP ca serviciu cloud. Azure MCP permite organizațiilor să implementeze rapid, să gestioneze și să integreze servere MCP cu serviciile Azure AI, datele și securitatea, reducând sarcina operațională și accelerând adoptarea AI.
+Serverul Azure MCP ([https://aka.ms/azmcp](https://aka.ms/azmcp)) este implementarea Microsoft gestionată, de nivel enterprise, a Model Context Protocol, concepută pentru a oferi capabilități scalabile, securizate și conforme de server MCP ca serviciu în cloud. Azure MCP permite organizațiilor să implementeze rapid, să gestioneze și să integreze servere MCP cu serviciile Azure AI, date și securitate, reducând povara operațională și accelerând adoptarea AI.
 
-> **🎯 Instrument Gata de Producție**
+> **🎯 Instrument pregătit pentru producție**
 > 
-> Acesta este un server MCP real pe care îl puteți utiliza astăzi! Aflați mai multe despre serverul MCP Azure AI Foundry în [**Ghidul Serverelor MCP Microsoft**](microsoft-mcp-servers.md).
+> Acesta este un server MCP real pe care îl puteți folosi astăzi! Aflați mai multe despre Azure AI Foundry MCP Server în [**Ghidul Serverelor Microsoft MCP**](microsoft-mcp-servers.md).
 
-- Găzduire complet gestionată a serverului MCP cu scalare, monitorizare și securitate integrate
+- Găzduire complet gestionată pentru server MCP cu scalare, monitorizare și securitate integrate
 - Integrare nativă cu Azure OpenAI, Azure AI Search și alte servicii Azure
-- Autentificare și autorizare la nivel de întreprindere prin Microsoft Entra ID
+- Autentificare și autorizare enterprise prin Microsoft Entra ID
 - Suport pentru instrumente personalizate, șabloane de prompturi și conectori de resurse
-- Conformitate cu cerințele de securitate și reglementare ale întreprinderii
+- Conformitate cu cerințele de securitate și reglementare enterprise
 
-**Implementare Tehnică:**
+**Implementare tehnică:**
 
 ```yaml
 # Example: Azure MCP server deployment configuration (YAML)
@@ -332,163 +323,164 @@ spec:
 ```
 
 **Rezultate:**  
-- Reducerea timpului necesar pentru proiectele AI de întreprindere prin furnizarea unei platforme MCP gata de utilizare și conforme
-- Simplificarea integrării LLM-urilor, instrumentelor și surselor de date de întreprindere
-- Securitate, observabilitate și eficiență operațională îmbunătățite pentru sarcinile MCP
-- Calitate îmbunătățită a codului cu cele mai bune practici Azure SDK și modele actuale de autentificare
+- Reducerea timpului până la valoare pentru proiectele enterprise AI oferind o platformă MCP pregătită, conformă  
+- Simplificarea integrării LLM-urilor, instrumentelor și surselor de date enterprise  
+- Creșterea securității, observabilității și eficienței operaționale pentru sarcinile MCP  
+- Îmbunătățirea calității codului prin cele mai bune practici Azure SDK și modele actuale de autentificare
 
 **Referințe:**  
-- [Documentația Azure MCP](https://aka.ms/azmcp)
-- [Repository GitHub Server MCP Azure](https://github.com/Azure/azure-mcp)
-- [Servicii AI Azure](https://azure.microsoft.com/en-us/products/ai-services/)
-- [Centrul MCP Microsoft](https://mcp.azure.com)
+- [Documentație Azure MCP](https://aka.ms/azmcp)  
+- [Azure MCP Server GitHub](https://github.com/Azure/azure-mcp)  
+- [Servicii Azure AI](https://azure.microsoft.com/en-us/products/ai-services/)  
+- [Microsoft MCP Center](https://mcp.azure.com)
 
-### Studiu de Caz 6: NLWeb
+## Studiu de caz 6: NLWeb  
 
-MCP (Model Context Protocol) este un protocol emergent pentru Chatbot-uri și asistenți AI pentru a interacționa cu instrumente. Fiecare instanță NLWeb este, de asemenea, un server MCP, care suportă o metodă principală, ask, utilizată pentru a adresa o întrebare unui site web în limbaj natural. Răspunsul returnat utilizează schema.org, un vocabular larg utilizat pentru descrierea datelor web. În termeni simpli, MCP este pentru NLWeb ceea ce HTTP este pentru HTML. NLWeb combină protocoale, formate Schema.org și cod de exemplu pentru a ajuta site-urile să creeze rapid aceste puncte finale, beneficiind atât oamenii prin interfețe conversaționale, cât și mașinile prin interacțiuni naturale agent-la-agent.
+MCP (Model Context Protocol) este un protocol emergent pentru chatboți și asistenți AI care interacționează cu instrumente. Fiecare instanță NLWeb este de asemenea un server MCP, care suportă o metodă de bază, ask, folosită pentru a pune o întrebare în limbaj natural unui site web. Răspunsul returnat utilizează schema.org, un vocabular larg folosit pentru descrierea datelor web. Aproximativ, MCP este pentru NLWeb ceea ce HTTP este pentru HTML. NLWeb combină protocoale, formate Schema.org și cod exemplu pentru a ajuta site-urile să creeze rapid aceste endpoint-uri, beneficiind atât oamenii prin interfețe conversaționale, cât și mașinile prin interacțiuni naturale agent-la-agent.
 
 Există două componente distincte ale NLWeb:
-- Un protocol, foarte simplu la început, pentru a interfața cu un site în limbaj natural și un format, utilizând JSON și schema.org pentru răspunsul returnat. Consultați documentația API-ului REST pentru mai multe detalii.
-- O implementare simplă a (1) care valorifică marcajele existente, pentru site-urile care pot fi abstractizate ca liste de elemente (produse, rețete, atracții, recenzii etc.). Împreună cu un set de widget-uri de interfață utilizator, site-urile pot oferi cu ușurință interfețe conversaționale pentru conținutul lor. Consultați documentația despre Viața unei interogări de chat pentru mai multe detalii despre cum funcționează acest lucru.
+- Un protocol, foarte simplu la început, pentru interfațarea cu un site în limbaj natural și un format, utilizând json și schema.org pentru răspunsul returnat. Consultați documentația REST API pentru mai multe detalii.
+- O implementare directă a (1) care utilizează markup-ul existent, pentru site-uri ce pot fi abstractizate ca liste de elemente (produse, rețete, atracții, recenzii etc.). Împreună cu un set de widget-uri interfață-utilizator, site-urile pot oferi cu ușurință interfețe conversaționale conținutului lor. Consultați documentația Life of a chat query pentru mai multe detalii despre cum funcționează.
 
 **Referințe:**  
-- [Documentația Azure MCP](https://aka.ms/azmcp)  
+- [Documentație Azure MCP](https://aka.ms/azmcp)  
 - [NLWeb](https://github.com/microsoft/NlWeb)
 
-### Studiu de Caz 7: Serverul MCP Azure AI Foundry – Integrarea Agenților AI în Întreprinderi
+### Studiu de caz 7: Azure AI Foundry MCP Server – Integrare agenți AI enterprise
 
-Serverele MCP Azure AI Foundry demonstrează cum poate fi utilizat MCP pentru a orchestra și gestiona agenți AI și fluxuri de lucru în medii de întreprindere. Prin integrarea MCP cu Azure AI Foundry, organizațiile pot standardiza interacțiunile agenților, valorifica gestionarea fluxurilor de lucru din Foundry și asigura implementări sigure și scalabile.
+Serverele Azure AI Foundry MCP demonstrează cum MCP poate fi folosit pentru orchestrarea și gestionarea agenților AI și fluxurilor de lucru în medii enterprise. Prin integrarea MCP cu Azure AI Foundry, organizațiile pot standardiza interacțiunile agenților, valorifica gestionarea fluxurilor Foundry și asigura implementări sigure și scalabile.
 
-> **🎯 Instrument Gata de Producție**
+> **🎯 Instrument pregătit pentru producție**
 > 
-> Acesta este un server MCP real pe care îl puteți utiliza astăzi! Aflați mai multe despre serverul MCP Azure AI Foundry în [**Ghidul Serverelor MCP Microsoft**](microsoft-mcp-servers.md#9--azure-ai-foundry-mcp-server).
+> Acesta este un server MCP real pe care îl puteți folosi astăzi! Aflați mai multe despre Azure AI Foundry MCP Server în [**Ghidul Serverelor Microsoft MCP**](microsoft-mcp-servers.md#9--azure-ai-foundry-mcp-server).
 
-**Caracteristici Cheie:**
-- Acces cuprinzător la ecosistemul AI al Azure, inclusiv cataloage de modele și gestionarea implementărilor
+**Caracteristici cheie:**
+- Acces complet la ecosistemul AI Azure, inclusiv cataloage de modele și gestionarea implementărilor
 - Indexare a cunoștințelor cu Azure AI Search pentru aplicații RAG
-- Instrumente de evaluare a performanței și calității modelelor AI
-- Integrare cu Catalogul și Laboratoarele Azure AI Foundry pentru modele de cercetare de ultimă generație
+- Instrumente de evaluare a performanței modelelor AI și asigurare a calității
+- Integrare cu Azure AI Foundry Catalog și Labs pentru modele de cercetare avansate
 - Capacități de gestionare și evaluare a agenților pentru scenarii de producție
 
 **Rezultate:**
-- Prototipare rapidă și monitorizare robustă a fluxurilor de lucru ale agenților AI
-- Integrare fără probleme cu serviciile AI Azure pentru scenarii avansate
-- Interfață unificată pentru construirea, implementarea și monitorizarea fluxurilor de lucru ale agenților
-- Securitate, conformitate și eficiență operațională îmbunătățite pentru întreprinderi
-- Accelerarea adoptării AI, menținând în același timp controlul asupra proceselor complexe conduse de agenți
+- Prototipare rapidă și monitorizare robustă a fluxurilor de lucru cu agenți AI
+- Integrare fără cusur cu serviciile Azure AI pentru scenarii avansate
+- Interfață unificată pentru construirea, implementarea și monitorizarea conductelor agenților
+- Securitate, conformitate și eficiență operațională îmbunătățite pentru enterprise
+- Accelerarea adoptării AI menținând controlul asupra proceselor complexe conduse de agenți
 
 **Referințe:**
-- [Repository GitHub Server MCP Azure AI Foundry](https://github.com/azure-ai-foundry/mcp-foundry)
-- [Integrarea Agenților AI Azure cu MCP (Blogul Microsoft Foundry)](https://devblogs.microsoft.com/foundry/integrating-azure-ai-agents-mcp/)
+- [Azure AI Foundry MCP Server GitHub Repository](https://github.com/azure-ai-foundry/mcp-foundry)
+- [Integrarea agenților Azure AI cu MCP (Microsoft Foundry Blog)](https://devblogs.microsoft.com/foundry/integrating-azure-ai-agents-mcp/)
 
-### Studiu de Caz 8: Foundry MCP Playground – Experimentare și Prototipare
+### Studiu de caz 8: Foundry MCP Playground – Experimentare și prototipare
 
-Foundry MCP Playground oferă un mediu gata de utilizare pentru experimentarea cu servere MCP și integrările Azure AI Foundry. Dezvoltatorii pot prototipa rapid, testa și evalua modele AI și fluxuri de lucru ale agenților utilizând resurse din Catalogul și Laboratoarele Azure AI Foundry. Playground-ul simplifică configurarea, oferă proiecte de exemplu și sprijină dezvoltarea colaborativă, facilitând explorarea celor mai bune practici și a scenariilor noi cu un efort minim. Este deosebit de util pentru echipele care doresc să valideze idei, să împărtășească experimente și să accelereze învățarea fără a avea nevoie de infrastructuri complexe. Prin reducerea barierei de intrare, playground-ul ajută la stimularea inovației și a contribuțiilor comunității în ecosistemul MCP și Azure AI Foundry.
+Foundry MCP Playground oferă un mediu pregătit pentru utilizare pentru experimentarea cu servere MCP și integrări Azure AI Foundry. Dezvoltatorii pot prototipa, testa și evalua rapid modele AI și fluxuri de lucru cu agenți folosind resurse din Azure AI Foundry Catalog și Labs. Playground-ul simplifică configurarea, oferă proiecte exemplu și suportă dezvoltarea colaborativă, facilitând explorarea celor mai bune practici și a noilor scenarii cu un minim de încercare. Este deosebit de util pentru echipele care doresc să valideze idei, să partajeze experimente și să accelereze învățarea fără infrastructură complexă. Prin reducerea barierelor de intrare, playground-ul stimulează inovația și contribuțiile comunității în ecosistemul MCP și Azure AI Foundry.
 
 **Referințe:**
 
-- [Repository GitHub Foundry MCP Playground](https://github.com/azure-ai-foundry/foundry-mcp-playground)
+- [Foundry MCP Playground GitHub Repository](https://github.com/azure-ai-foundry/foundry-mcp-playground)
 
-### Studiu de Caz 9: Serverul MCP Microsoft Learn Docs – Acces la Documentație Alimentat de AI
+### Studiu de caz 9: Microsoft Learn Docs MCP Server – Acces documentație asistat de AI
 
-Serverul MCP Microsoft Learn Docs este un serviciu găzduit în cloud care oferă asistenților AI acces în timp real la documentația oficială Microsoft prin Model Context Protocol. Acest server gata de producție se conectează la ecosistemul cuprinzător Microsoft Learn și permite căutări semantice în toate sursele oficiale Microsoft.
-> **🎯 Instrument Pregătit pentru Producție**
+Serverul Microsoft Learn Docs MCP este un serviciu cloud găzduit care oferă asistenți AI acces în timp real la documentația oficială Microsoft prin Model Context Protocol. Acest server pregătit pentru producție se conectează la ecosistemul amplu Microsoft Learn și permite căutarea semantică în toate sursele oficiale Microsoft.
+
+> **🎯 Instrument pregătit pentru producție**
 > 
-> Acesta este un server MCP real pe care îl poți folosi chiar astăzi! Află mai multe despre Serverul MCP din Microsoft Learn Docs în [**Ghidul Serverelor MCP Microsoft**](microsoft-mcp-servers.md#1--microsoft-learn-docs-mcp-server).
+> Acesta este un server MCP real pe care îl puteți folosi astăzi! Aflați mai multe despre Microsoft Learn Docs MCP Server în [**Ghidul Serverelor Microsoft MCP**](microsoft-mcp-servers.md#1--microsoft-learn-docs-mcp-server).
+
 **Caracteristici cheie:**
-- Acces în timp real la documentația oficială Microsoft, documentația Azure și Microsoft 365
+- Acces în timp real la documentația oficială Microsoft, documentația Azure și documentația Microsoft 365
 - Capacități avansate de căutare semantică care înțeleg contextul și intenția
 - Informații mereu actualizate pe măsură ce conținutul Microsoft Learn este publicat
-- Acoperire cuprinzătoare în sursele Microsoft Learn, documentația Azure și Microsoft 365
-- Returnează până la 10 fragmente de conținut de înaltă calitate cu titluri de articole și URL-uri
+- Acoperire completă a documentației Microsoft Learn, Azure și Microsoft 365
+- Returnează până la 10 segmentări de conținut de înaltă calitate cu titluri și URL-uri
 
-**De ce este esențial:**
-- Rezolvă problema „cunoștințelor AI depășite” pentru tehnologiile Microsoft
-- Asigură accesul asistenților AI la cele mai recente funcționalități .NET, C#, Azure și Microsoft 365
-- Furnizează informații autorizate, de primă mână, pentru generarea precisă de cod
-- Esențial pentru dezvoltatorii care lucrează cu tehnologii Microsoft în continuă evoluție
+**De ce este critic:**
+- Rezolvă problema "cunoștințelor AI învechite" pentru tehnologiile Microsoft
+- Asigură accesul asistenților AI la cele mai noi funcții .NET, C#, Azure și Microsoft 365
+- Oferă informații autoritare, din sursă primară, pentru generarea exactă a codului
+- Esențial pentru dezvoltatorii care lucrează cu tehnologii Microsoft în rapidă evoluție
 
 **Rezultate:**
-- Precizie îmbunătățită dramatic a codului generat de AI pentru tehnologiile Microsoft
-- Reducerea timpului petrecut căutând documentație actualizată și bune practici
-- Productivitate sporită a dezvoltatorilor prin recuperarea documentației conștiente de context
-- Integrare fără întreruperi în fluxurile de lucru de dezvoltare, fără a părăsi IDE-ul
+- Precizie dramatic îmbunătățită a codului generat AI pentru tehnologiile Microsoft
+- Timp redus de căutare a documentației curente și a celor mai bune practici
+- Productivitate crescută a dezvoltatorilor prin recuperare contextuală a documentației
+- Integrare fără întreruperi în fluxurile de dezvoltare fără a părăsi IDE-ul
 
 **Referințe:**
 - [Microsoft Learn Docs MCP Server GitHub Repository](https://github.com/MicrosoftDocs/mcp)
-- [Microsoft Learn Documentation](https://learn.microsoft.com/)
+- [Documentația Microsoft Learn](https://learn.microsoft.com/)
 
 ## Proiecte practice
 
-### Proiect 1: Construirea unui server MCP multi-furnizor
+### Proiect 1: Construiește un server MCP multi-furnizor
 
-**Obiectiv:** Crearea unui server MCP care poate direcționa cererile către mai mulți furnizori de modele AI pe baza unor criterii specifice.
+**Obiectiv:** Creează un server MCP care să poată redirecționa cereri către mai mulți furnizori de modele AI în funcție de criterii specifice.
 
 **Cerințe:**
 
-- Suport pentru cel puțin trei furnizori diferiți de modele (de exemplu, OpenAI, Anthropic, modele locale)
+- Suport pentru cel puțin trei furnizori diferiți de modele (ex: OpenAI, Anthropic, modele locale)
 - Implementarea unui mecanism de rutare bazat pe metadatele cererii
-- Crearea unui sistem de configurare pentru gestionarea acreditivelor furnizorilor
-- Adăugarea unui sistem de cache pentru optimizarea performanței și costurilor
+- Crearea unui sistem de configurare pentru gestionarea credențialelor furnizorilor
+- Adăugarea caching-ului pentru optimizarea performanței și a costurilor
 - Construirea unui tablou de bord simplu pentru monitorizarea utilizării
 
 **Pași de implementare:**
 
-1. Configurarea infrastructurii de bază a serverului MCP
-2. Implementarea adaptoarelor pentru fiecare serviciu de model AI
-3. Crearea logicii de rutare bazate pe atributele cererii
-4. Adăugarea mecanismelor de cache pentru cererile frecvente
-5. Dezvoltarea tabloului de bord pentru monitorizare
-6. Testarea cu diverse tipare de cereri
+1. Configurarea infrastructurii de bază a serverului MCP  
+2. Implementarea adaptoarelor pentru fiecare serviciu de model AI  
+3. Crearea logicii de rutare bazată pe atributele cererilor  
+4. Adăugarea mecanismelor de caching pentru cererile frecvente  
+5. Dezvoltarea tabloului de bord pentru monitorizare  
+6. Testarea cu diferite tipare de cereri  
 
-**Tehnologii:** Alegeți dintre Python (.NET/Java/Python în funcție de preferință), Redis pentru cache și un framework web simplu pentru tablou de bord.
+**Tehnologii:** Alegeți între Python (.NET/Java/Python după preferință), Redis pentru caching și un framework web simplu pentru tablou de bord.
 
-### Proiect 2: Sistem de gestionare a șabloanelor de prompturi la nivel de organizație
-
-**Obiectiv:** Dezvoltarea unui sistem bazat pe MCP pentru gestionarea, versionarea și implementarea șabloanelor de prompturi într-o organizație.
-
-**Cerințe:**
-
-- Crearea unui depozit centralizat pentru șabloanele de prompturi
-- Implementarea fluxurilor de lucru pentru versionare și aprobare
-- Construirea capacităților de testare a șabloanelor cu intrări de probă
-- Dezvoltarea controalelor de acces bazate pe roluri
-- Crearea unei API pentru recuperarea și implementarea șabloanelor
-
-**Pași de implementare:**
-
-1. Proiectarea schemei bazei de date pentru stocarea șabloanelor
-2. Crearea API-ului de bază pentru operațiuni CRUD pe șabloane
-3. Implementarea sistemului de versionare
-4. Construirea fluxului de lucru pentru aprobare
-5. Dezvoltarea cadrului de testare
-6. Crearea unei interfețe web simple pentru gestionare
-7. Integrarea cu un server MCP
-
-**Tehnologii:** Alegerea unui framework backend, bază de date SQL sau NoSQL și un framework frontend pentru interfața de gestionare.
-
-### Proiect 3: Platformă de generare de conținut bazată pe MCP
-
-**Obiectiv:** Construirea unei platforme de generare de conținut care utilizează MCP pentru a oferi rezultate consistente pentru diferite tipuri de conținut.
+### Proiect 2: Sistem enterprise de management al prompturilor
+**Obiectiv:** Dezvoltați un sistem bazat pe MCP pentru gestionarea, versionarea și implementarea șabloanelor de prompturi în cadrul unei organizații.
 
 **Cerințe:**
 
-- Suport pentru mai multe formate de conținut (postări pe blog, social media, texte de marketing)
-- Implementarea generării bazate pe șabloane cu opțiuni de personalizare
-- Crearea unui sistem de revizuire și feedback pentru conținut
-- Urmărirea metricilor de performanță ale conținutului
-- Suport pentru versionarea și iterarea conținutului
+- Creați un depozit centralizat pentru șabloanele de prompturi
+- Implementați versionarea și fluxuri de aprobare
+- Construiți capabilități de testare a șabloanelor cu intrări de probă
+- Dezvoltați controale de acces bazate pe roluri
+- Creați un API pentru recuperarea și implementarea șabloanelor
 
 **Pași de implementare:**
 
-1. Configurarea infrastructurii client MCP
-2. Crearea șabloanelor pentru diferite tipuri de conținut
-3. Construirea fluxului de generare a conținutului
-4. Implementarea sistemului de revizuire
-5. Dezvoltarea sistemului de urmărire a metricilor
-6. Crearea unei interfețe pentru gestionarea șabloanelor și generarea de conținut
+1. Proiectați schema bazei de date pentru stocarea șabloanelor
+2. Creați API-ul de bază pentru operațiuni CRUD pe șabloane
+3. Implementați sistemul de versionare
+4. Construiți fluxul de aprobare
+5. Dezvoltați cadrul de testare
+6. Creați o interfață web simplă pentru management
+7. Integrați cu un server MCP
 
-**Tehnologii:** Limbajul de programare preferat, framework web și sistem de baze de date.
+**Tehnologii:** Alegerea dvs. de framework backend, bază de date SQL sau NoSQL și un framework frontend pentru interfața de management.
+
+### Proiect 3: Platformă de generare conținut bazată pe MCP
+
+**Obiectiv:** Construiți o platformă de generare conținut care folosește MCP pentru a oferi rezultate consistente pentru diferite tipuri de conținut.
+
+**Cerințe:**
+
+- Suport pentru multiple formate de conținut (articole de blog, social media, texte de marketing)
+- Implementați generare bazată pe șabloane cu opțiuni de personalizare
+- Creați un sistem de revizuire și feedback pentru conținut
+- Monitorizați metricile de performanță ale conținutului
+- Suportați versionarea și iterarea conținutului
+
+**Pași de implementare:**
+
+1. Configurați infrastructura client MCP
+2. Creați șabloane pentru diferite tipuri de conținut
+3. Construiți fluxul de generare a conținutului
+4. Implementați sistemul de revizuire
+5. Dezvoltați sistemul de monitorizare a metricilor
+6. Creați o interfață pentru gestionarea șabloanelor și generarea conținutului
+
+**Tehnologii:** Limbajul de programare preferat, framework web și sistemul de baze de date.
 
 ## Direcții viitoare pentru tehnologia MCP
 
@@ -496,28 +488,28 @@ Serverul MCP Microsoft Learn Docs este un serviciu găzduit în cloud care ofer�
 
 1. **MCP Multi-Modal**
    - Extinderea MCP pentru a standardiza interacțiunile cu modele de imagine, audio și video
-   - Dezvoltarea capacităților de raționament între moduri
+   - Dezvoltarea capacităților de raționament cross-modal
    - Formate standardizate de prompturi pentru diferite modalități
 
 2. **Infrastructură MCP Federată**
    - Rețele MCP distribuite care pot partaja resurse între organizații
    - Protocoale standardizate pentru partajarea securizată a modelelor
-   - Tehnici de calcul care păstrează confidențialitatea
+   - Tehnici de calcul ce păstrează intimitatea
 
 3. **Piețe MCP**
    - Ecosisteme pentru partajarea și monetizarea șabloanelor și pluginurilor MCP
    - Procese de asigurare a calității și certificare
-   - Integrare cu piețele de modele
+   - Integrare cu piețe de modele
 
 4. **MCP pentru Edge Computing**
    - Adaptarea standardelor MCP pentru dispozitive edge cu resurse limitate
-   - Protocoale optimizate pentru medii cu lățime de bandă redusă
-   - Implementări MCP specializate pentru ecosistemele IoT
+   - Protocoale optimizate pentru medii cu bandă redusă
+   - Implementări MCP specializate pentru ecosisteme IoT
 
-5. **Cadre de reglementare**
-   - Dezvoltarea extensiilor MCP pentru conformitate cu reglementările
-   - Urmăriri standardizate și interfețe de explicabilitate
-   - Integrare cu cadrele emergente de guvernanță AI
+5. **Cadre Reglementare**
+   - Dezvoltarea extensiilor MCP pentru conformitate reglementară
+   - Trasee de audit standardizate și interfețe explicabile
+   - Integrare cu cadre emergente de guvernanță AI
 
 ### Soluții MCP de la Microsoft
 
@@ -525,59 +517,61 @@ Microsoft și Azure au dezvoltat mai multe depozite open-source pentru a ajuta d
 
 #### Organizația Microsoft
 
-1. [playwright-mcp](https://github.com/microsoft/playwright-mcp) - Un server MCP Playwright pentru automatizarea și testarea browserului
-2. [files-mcp-server](https://github.com/microsoft/files-mcp-server) - O implementare a serverului MCP OneDrive pentru testare locală și contribuții comunitare
-3. [NLWeb](https://github.com/microsoft/NlWeb) - NLWeb este o colecție de protocoale deschise și instrumente open-source asociate. Se concentrează pe stabilirea unui strat fundamental pentru Web-ul AI
+1. [playwright-mcp](https://github.com/microsoft/playwright-mcp) - Un server Playwright MCP pentru automatizarea și testarea browserului
+2. [files-mcp-server](https://github.com/microsoft/files-mcp-server) - Implementare server MCP OneDrive pentru testări locale și contribuții comunitare
+3. [NLWeb](https://github.com/microsoft/NlWeb) - NLWeb este o colecție de protocoale deschise și unelte open source asociate. Accentul principal este stabilirea unui strat fundamental pentru Web-ul AI
 
 #### Organizația Azure-Samples
 
-1. [mcp](https://github.com/Azure-Samples/mcp) - Linkuri către exemple, instrumente și resurse pentru construirea și integrarea serverelor MCP pe Azure folosind mai multe limbaje
-2. [mcp-auth-servers](https://github.com/Azure-Samples/mcp-auth-servers) - Servere MCP de referință care demonstrează autentificarea cu specificația actuală a Model Context Protocol
-3. [remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions) - Pagină de pornire pentru implementările serverului MCP Remote în Azure Functions, cu linkuri către depozite specifice limbajului
-4. [remote-mcp-functions-python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Șablon de pornire rapidă pentru construirea și implementarea serverelor MCP personalizate folosind Azure Functions cu Python
-5. [remote-mcp-functions-dotnet](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - Șablon de pornire rapidă pentru construirea și implementarea serverelor MCP personalizate folosind Azure Functions cu .NET/C#
-6. [remote-mcp-functions-typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Șablon de pornire rapidă pentru construirea și implementarea serverelor MCP personalizate folosind Azure Functions cu TypeScript
-7. [remote-mcp-apim-functions-python](https://github.com/Azure-Samples/remote-mcp-apim-functions-python) - Azure API Management ca Gateway AI pentru serverele MCP Remote folosind Python
-8. [AI-Gateway](https://github.com/Azure-Samples/AI-Gateway) - Experimente APIM ❤️ AI, inclusiv capabilități MCP, integrare cu Azure OpenAI și AI Foundry
+1. [mcp](https://github.com/Azure-Samples/mcp) - Linkuri către exemple, unelte și resurse pentru construirea și integrarea serverelor MCP pe Azure folosind mai multe limbaje
+2. [mcp-auth-servers](https://github.com/Azure-Samples/mcp-auth-servers) - Servere MCP de referință care demonstrează autentificarea conform specificației curente Model Context Protocol
+3. [remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions) - Pagina de întâmpinare pentru implementările Remote MCP Server în Azure Functions cu linkuri către depozite specifice limbajelor
+4. [remote-mcp-functions-python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Șablon quickstart pentru construirea și implementarea serverelor MCP personalizate la distanță folosind Azure Functions cu Python
+5. [remote-mcp-functions-dotnet](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - Șablon quickstart pentru construirea și implementarea serverelor MCP personalizate la distanță folosind Azure Functions cu .NET/C#
+6. [remote-mcp-functions-typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Șablon quickstart pentru construirea și implementarea serverelor MCP personalizate la distanță folosind Azure Functions cu TypeScript
+7. [remote-mcp-apim-functions-python](https://github.com/Azure-Samples/remote-mcp-apim-functions-python) - Azure API Management ca AI Gateway către serverele MCP la distanță folosind Python
+8. [AI-Gateway](https://github.com/Azure-Samples/AI-Gateway) - Experimente APIM ❤️ AI inclusiv capabilități MCP, integrând Azure OpenAI și AI Foundry
 
-Aceste depozite oferă diverse implementări, șabloane și resurse pentru lucrul cu Model Context Protocol în diferite limbaje de programare și servicii Azure. Ele acoperă o gamă largă de cazuri de utilizare, de la implementări de bază ale serverului până la autentificare, implementare în cloud și scenarii de integrare la nivel de întreprindere.
+Aceste depozite oferă implementări, șabloane și resurse diverse pentru lucrul cu Model Context Protocol în diferite limbaje de programare și servicii Azure. Acoperă o gamă largă de cazuri de utilizare de la implementări de bază ale serverelor până la autentificare, implementare în cloud și scenarii de integrare enterprise.
 
-#### Directorul de resurse MCP
+#### Directorul Resurselor MCP
 
-Directorul [MCP Resources](https://github.com/microsoft/mcp/tree/main/Resources) din depozitul oficial Microsoft MCP oferă o colecție curată de resurse de exemplu, șabloane de prompturi și definiții de instrumente pentru utilizarea cu serverele Model Context Protocol. Acest director este conceput pentru a ajuta dezvoltatorii să înceapă rapid cu MCP, oferind blocuri de construcție reutilizabile și exemple de bune practici pentru:
+Directorul [MCP Resources](https://github.com/microsoft/mcp/tree/main/Resources) din depozitul oficial Microsoft MCP oferă o colecție curată de resurse de probă, șabloane de prompturi și definiții de unelte pentru utilizarea cu serverele Model Context Protocol. Acest director este conceput pentru a ajuta dezvoltatorii să înceapă rapid cu MCP oferind blocuri reutilizabile și exemple de bune practici pentru:
 
-- **Șabloane de prompturi:** Șabloane de prompturi gata de utilizare pentru sarcini și scenarii AI comune, care pot fi adaptate pentru propriile implementări MCP.
-- **Definiții de instrumente:** Exemple de scheme și metadate ale instrumentelor pentru a standardiza integrarea și invocarea instrumentelor pe diferite servere MCP.
-- **Exemple de resurse:** Exemple de definiții de resurse pentru conectarea la surse de date, API-uri și servicii externe în cadrul MCP.
-- **Implementări de referință:** Exemple practice care demonstrează cum să structurați și să organizați resursele, prompturile și instrumentele în proiecte MCP reale.
+- **Șabloane de Prompturi:** Șabloane gata de utilizare pentru sarcini și scenarii AI comune, adaptabile pentru implementările proprii de server MCP.
+- **Definiții de Unelte:** Scheme și metadate exemplu pentru unelte pentru a standardiza integrarea și invocarea uneltelor în diferite servere MCP.
+- **Resurse de Probare:** Definiții exemplu ale resurselor pentru conectarea la surse de date, API-uri și servicii externe în cadrul MCP.
+- **Implementări de Referință:** Exemple practice care demonstrează cum să structurați și organizați resurse, prompturi și unelte în proiecte MCP din lumea reală.
 
-Aceste resurse accelerează dezvoltarea, promovează standardizarea și ajută la asigurarea celor mai bune practici atunci când se construiesc și implementează soluții bazate pe MCP.
+Aceste resurse accelerează dezvoltarea, promovează standardizarea și ajută la asigurarea celor mai bune practici la construirea și implementarea soluțiilor bazate pe MCP.
 
-#### Directorul de resurse MCP
+#### Directorul Resurselor MCP
 
-- [MCP Resources (Sample Prompts, Tools, and Resource Definitions)](https://github.com/microsoft/mcp/tree/main/Resources)
+- [Resurse MCP (exemple de prompturi, unelte și definiții de resurse)](https://github.com/microsoft/mcp/tree/main/Resources)
 
 ### Oportunități de cercetare
 
-- Tehnici eficiente de optimizare a prompturilor în cadrul MCP
-- Modele de securitate pentru implementări MCP multi-chiriaș
-- Benchmarking de performanță între diferite implementări MCP
-- Metode de verificare formală pentru serverele MCP
+- Tehnici eficiente de optimizare a prompturilor în cadrul MEC
+- Modele de securitate pentru implementări MCP multi-chiriași
+- Benchmarking-ul performanței între diverse implementări MCP
+- Metode formale de verificare pentru serverele MCP
 
 ## Concluzie
 
-Model Context Protocol (MCP) modelează rapid viitorul integrării AI standardizate, sigure și interoperabile în diverse industrii. Prin studiile de caz și proiectele practice din această lecție, ați văzut cum adoptatorii timpurii—incluzând Microsoft și Azure—utilizează MCP pentru a rezolva provocări reale, a accelera adoptarea AI și a asigura conformitatea, securitatea și scalabilitatea. Abordarea modulară a MCP permite organizațiilor să conecteze modele lingvistice mari, instrumente și date de întreprindere într-un cadru unificat și audibil. Pe măsură ce MCP continuă să evolueze, implicarea activă în comunitate, explorarea resurselor open-source și aplicarea celor mai bune practici vor fi esențiale pentru construirea de soluții AI robuste și pregătite pentru viitor.
+Model Context Protocol (MCP) modelează rapid viitorul integrării AI standardizate, securizate și interoperabile în diverse industrii. Prin studiile de caz și proiectele practice din această lecție, ați putut vedea cum adoptatorii timpurii—printre care Microsoft și Azure—folosesc MCP pentru a rezolva provocări reale, a accelera adoptarea AI și a asigura conformitate, securitate și scalabilitate. Abordarea modulară a MCP permite organizațiilor să conecteze modele de limbaj mari, unelte și date enterprise într-un cadru unificat și auditat. Pe măsură ce MCP evoluează, menținerea implicării în comunitate, explorarea resurselor open-source și aplicarea celor mai bune practici vor fi cruciale pentru construirea unor soluții AI robuste, pregătite pentru viitor.
 
 ## Resurse suplimentare
 
-- [MCP Foundry GitHub Repository](https://github.com/azure-ai-foundry/mcp-foundry)
+- [Depozitul GitHub MCP Foundry](https://github.com/azure-ai-foundry/mcp-foundry)
 - [Foundry MCP Playground](https://github.com/azure-ai-foundry/foundry-mcp-playground)
-- [Integrating Azure AI Agents with MCP (Microsoft Foundry Blog)](https://devblogs.microsoft.com/foundry/integrating-azure-ai-agents-mcp/)
-- [MCP GitHub Repository (Microsoft)](https://github.com/microsoft/mcp)
-- [MCP Resources Directory (Sample Prompts, Tools, and Resource Definitions)](https://github.com/microsoft/mcp/tree/main/Resources)
-- [MCP Community & Documentation](https://modelcontextprotocol.io/introduction)
-- [Azure MCP Documentation](https://aka.ms/azmcp)
-- [Playwright MCP Server GitHub Repository](https://github.com/microsoft/playwright-mcp)
+- [Integrarea agenților Azure AI cu MCP (Blog Microsoft Foundry)](https://devblogs.microsoft.com/foundry/integrating-azure-ai-agents-mcp/)
+- [Depozitul GitHub MCP (Microsoft)](https://github.com/microsoft/mcp)
+- [Directorul Resurselor MCP (exemple de prompturi, unelte și definiții de resurse)](https://github.com/microsoft/mcp/tree/main/Resources)
+- [Comunitatea MCP & Documentație](https://modelcontextprotocol.io/introduction)
+- [Specificația MCP (2025-11-25)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
+- [Documentația Azure MCP](https://aka.ms/azmcp)
+- [OWASP MCP Top 10](https://microsoft.github.io/mcp-azure-security-guide/mcp/) - cele mai bune practici de securitate
+- [Depozitul GitHub Playwright MCP Server](https://github.com/microsoft/playwright-mcp)
 - [Files MCP Server (OneDrive)](https://github.com/microsoft/files-mcp-server)
 - [Azure-Samples MCP](https://github.com/Azure-Samples/mcp)
 - [MCP Auth Servers (Azure-Samples)](https://github.com/Azure-Samples/mcp-auth-servers)
@@ -587,16 +581,24 @@ Model Context Protocol (MCP) modelează rapid viitorul integrării AI standardiz
 - [Remote MCP Functions TypeScript (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions-typescript)
 - [Remote MCP APIM Functions Python (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)
 - [AI-Gateway (Azure-Samples)](https://github.com/Azure-Samples/AI-Gateway)
-- [Microsoft AI and Automation Solutions](https://azure.microsoft.com/en-us/products/ai-services/)
+- [Soluții Microsoft AI și Automatizare](https://azure.microsoft.com/en-us/products/ai-services/)
 
 ## Exerciții
 
 1. Analizați unul dintre studiile de caz și propuneți o abordare alternativă de implementare.
 2. Alegeți una dintre ideile de proiect și creați o specificație tehnică detaliată.
-3. Cercetați o industrie care nu este acoperită în studiile de caz și conturați cum MCP ar putea aborda provocările sale specifice.
-4. Explorați una dintre direcțiile viitoare și creați un concept pentru o nouă extensie MCP care să o sprijine.
+3. Cercetați o industrie neacoperită în studiile de caz și schițați cum MCP ar putea aborda provocările sale specifice.
+4. Explorați una dintre direcțiile viitoare și creați un concept pentru o nouă extensie MCP pentru a o susține.
 
-Următor: [Microsoft MCP Server](../07-LessonsfromEarlyAdoption/microsoft-mcp-servers.md)
+## Ce urmează
 
-**Declinarea responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși depunem eforturi pentru acuratețe, vă rugăm să aveți în vedere că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+Explorați mai mult: [Serverele Microsoft MCP](./microsoft-mcp-servers.md)
+
+Continuați la: [Modul 8: Cele mai bune practici](../08-BestPractices/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Declinarea responsabilității**:
+Acest document a fost tradus utilizând serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să oferim o traducere exactă, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original, în limba sa nativă, trebuie considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot rezulta din utilizarea acestei traduceri.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

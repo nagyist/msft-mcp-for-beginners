@@ -1,60 +1,75 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0a7083e660ca0d85fd6a947514c61993",
-  "translation_date": "2025-07-14T00:41:55+00:00",
-  "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
-  "language_code": "el"
-}
--->
-# MCP OAuth2 Demo
+# Επίδειξη MCP OAuth2
 
-Αυτό το έργο είναι μια **ελάχιστη εφαρμογή Spring Boot** που λειτουργεί και ως:
+## Εισαγωγή
 
-* **Διακομιστής Εξουσιοδότησης Spring** (εκδίδοντας JWT access tokens μέσω της ροής `client_credentials`), και  
-* **Διακομιστής Πόρων** (προστατεύοντας το δικό του endpoint `/hello`).
+Το OAuth2 είναι το πρωτόκολλο βιομηχανικού προτύπου για εξουσιοδότηση, επιτρέποντας ασφαλή πρόσβαση σε πόρους χωρίς κοινή χρήση διαπιστευτηρίων. Στις υλοποιήσεις MCP (Πρωτόκολλο Πλαισίου Μοντέλου), το OAuth2 παρέχει έναν στιβαρό τρόπο αυθεντικοποίησης και εξουσιοδότησης πελατών (όπως πράκτορες AI) για την πρόσβαση σε MCP διακομιστές και τα εργαλεία τους.
 
-Αντιγράφει τη ρύθμιση που παρουσιάζεται στο [Spring blog post (2 Απρ 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Αυτό το μάθημα δείχνει πώς να υλοποιήσετε αυθεντικοποίηση OAuth2 για διακομιστές MCP χρησιμοποιώντας το Spring Boot, ένα κοινό μοτίβο για επιχειρησιακές και παραγωγικές αναπτύξεις.
+
+## Στόχοι Μάθησης
+
+Στο τέλος αυτού του μαθήματος, θα μπορείτε να:
+- Κατανοείτε πώς το OAuth2 ενσωματώνεται με τους διακομιστές MCP
+- Υλοποιείτε έναν Spring Authorization Server για την έκδοση token
+- Προστατεύετε τα endpoints MCP με αυθεντικοποίηση βασισμένη σε JWT
+- Ρυθμίζετε τη ροή client credentials για επικοινωνία μηχανής με μηχανή
+
+## Προαπαιτούμενα
+
+- Βασική κατανόηση Java και Spring Boot
+- Εξοικείωση με έννοιες MCP από προηγούμενα μαθήματα
+- Εγκατεστημένα Maven ή Gradle
+
+---
+
+## Επισκόπηση Έργου
+
+Αυτό το έργο είναι μια **ελάχιστη εφαρμογή Spring Boot** που λειτουργεί ως:
+
+* **Spring Authorization Server** (εκδίδοντας JWT access tokens μέσω της ροής `client_credentials`), και  
+* **Resource Server** (προστατεύοντας το δικό του endpoint `/hello`).
+
+Αντιγράφει τη ρύθμιση που παρουσιάστηκε στο [άρθρο του Spring blog (2 Απρ 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
 ## Γρήγορη εκκίνηση (τοπικά)
 
 ```bash
-# build & run
+# κατασκευή και εκτέλεση
 ./mvnw spring-boot:run
 
-# obtain a token
+# απόκτηση ενός διακριτικού
 curl -u mcp-client:secret -d grant_type=client_credentials \
      http://localhost:8081/oauth2/token | jq -r .access_token > token.txt
 
-# call the protected endpoint
+# κλήση του προστατευμένου σημείου τερματισμού
 curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 ```
 
 ---
 
-## Δοκιμή της διαμόρφωσης OAuth2
+## Δοκιμή της Ρύθμισης OAuth2
 
 Μπορείτε να δοκιμάσετε τη ρύθμιση ασφαλείας OAuth2 με τα παρακάτω βήματα:
 
-### 1. Επιβεβαιώστε ότι ο διακομιστής τρέχει και είναι ασφαλής
+### 1. Επιβεβαιώστε ότι ο διακομιστής λειτουργεί και είναι ασφαλής
 
 ```bash
-# This should return 401 Unauthorized, confirming OAuth2 security is active
+# Αυτό θα πρέπει να επιστρέφει 401 Unauthorized, επιβεβαιώνοντας ότι η ασφάλεια OAuth2 είναι ενεργή
 curl -v http://localhost:8081/
 ```
 
 ### 2. Πάρτε ένα access token χρησιμοποιώντας client credentials
 
 ```bash
-# Get and extract the full token response
+# Λάβετε και εξαγάγετε την πλήρη απόκριση token
 curl -v -X POST http://localhost:8081/oauth2/token \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -H "Authorization: Basic bWNwLWNsaWVudDpzZWNyZXQ=" \
   -d "grant_type=client_credentials&scope=mcp.access"
 
-# Or to extract just the token (requires jq)
+# Ή εξαγάγετε μόνο το token (απαιτεί jq)
 curl -s -X POST http://localhost:8081/oauth2/token \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -H "Authorization: Basic bWNwLWNsaWVudDpzZWNyZXQ=" \
@@ -66,18 +81,18 @@ curl -s -X POST http://localhost:8081/oauth2/token \
 ### 3. Πρόσβαση στο προστατευμένο endpoint χρησιμοποιώντας το token
 
 ```bash
-# Using the saved token
+# Χρησιμοποιώντας το αποθηκευμένο διακριτικό
 curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
-# Or directly with the token value
+# Ή απευθείας με την τιμή του διακριτικού
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-Μια επιτυχημένη απάντηση με το μήνυμα "Hello from MCP OAuth2 Demo!" επιβεβαιώνει ότι η διαμόρφωση OAuth2 λειτουργεί σωστά.
+Μια επιτυχής απάντηση με το μήνυμα "Hello from MCP OAuth2 Demo!" επιβεβαιώνει ότι η ρύθμιση OAuth2 λειτουργεί σωστά.
 
 ---
 
-## Δημιουργία container
+## Δημιουργία Container
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -95,14 +110,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-Το ingress FQDN γίνεται ο **issuer** σας (`https://<fqdn>`).  
-Η Azure παρέχει αυτόματα ένα αξιόπιστο πιστοποιητικό TLS για το `*.azurecontainerapps.io`.
+Το FQDN εισόδου γίνεται ο **issuer** σας (`https://<fqdn>`).  
+Το Azure παρέχει αυτόματα ένα αξιόπιστο πιστοποιητικό TLS για το `*.azurecontainerapps.io`.
 
 ---
 
-## Ενσωμάτωση στο **Azure API Management**
+## Ενσωμάτωση σε **Azure API Management**
 
-Προσθέστε αυτή την inbound πολιτική στο API σας:
+Προσθέστε αυτή την εισερχόμενη πολιτική στο API σας:
 
 ```xml
 <inbound>
@@ -116,7 +131,7 @@ az containerapp up -n mcp-oauth2 \
 </inbound>
 ```
 
-Το APIM θα ανακτήσει το JWKS και θα επικυρώνει κάθε αίτημα.
+Το APIM θα ανακτά το JWKS και θα επικυρώνει κάθε αίτηση.
 
 ---
 
@@ -124,5 +139,9 @@ az containerapp up -n mcp-oauth2 \
 
 - [5.4 Root contexts](../mcp-root-contexts/README.md)
 
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Αποποίηση ευθυνών**:  
-Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε την ακρίβεια, παρακαλούμε να έχετε υπόψη ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη γλώσσα του θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.
+Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία μετάφρασης Τεχνητής Νοημοσύνης [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε την ακρίβεια, παρακαλούμε να λάβετε υπόψη ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν σφάλματα ή ανακρίβειες. Το πρωτότυπο έγγραφο στη μητρική του γλώσσα πρέπει να θεωρείται η αξιόπιστη πηγή. Για κρίσιμες πληροφορίες συνιστάται επαγγελματική μετάφραση από ανθρώπινο μεταφραστή. Δεν φέρουμε καμία ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

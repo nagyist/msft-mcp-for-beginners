@@ -1,15 +1,6 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d26f746e21775c30b4d7ed97962b24df",
-  "translation_date": "2025-08-18T17:34:16+00:00",
-  "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
-  "language_code": "it"
-}
--->
 # Eseguire questo esempio
 
-Si consiglia di installare `uv`, ma non è obbligatorio. Vedi [istruzioni](https://docs.astral.sh/uv/#highlights)
+Si consiglia di installare `uv`, ma non è obbligatorio. Consulta le [istruzioni](https://docs.astral.sh/uv/#highlights).
 
 ## -0- Creare un ambiente virtuale
 
@@ -43,13 +34,13 @@ Con il server in esecuzione in un terminale, apri un altro terminale ed esegui i
 mcp dev server.py
 ```
 
-Questo dovrebbe avviare un server web con un'interfaccia visiva che ti permette di testare l'esempio.
+Questo avvierà un server web con un'interfaccia visiva che ti permetterà di testare l'esempio.
 
 Una volta che il server è connesso:
 
-- prova a elencare gli strumenti ed esegui `add`, con gli argomenti 2 e 4, dovresti vedere 6 come risultato.
+- prova a elencare gli strumenti ed esegui `add`, con gli argomenti 2 e 4. Dovresti vedere 6 come risultato.
 
-- vai alle risorse e al modello di risorsa e chiama get_greeting, inserisci un nome e dovresti vedere un saluto con il nome che hai fornito.
+- vai alle risorse e al modello di risorsa e chiama `get_greeting`, inserisci un nome e dovresti vedere un saluto con il nome che hai fornito.
 
 ### Test in modalità CLI
 
@@ -92,7 +83,7 @@ Questo elencherà tutti gli strumenti disponibili nel server. Dovresti vedere il
 }
 ```
 
-Per invocare uno strumento digita:
+Per invocare uno strumento, digita:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
@@ -116,5 +107,7 @@ Dovresti vedere il seguente output:
 > Di solito è molto più veloce eseguire l'inspector in modalità CLI rispetto al browser.
 > Leggi di più sull'inspector [qui](https://github.com/modelcontextprotocol/inspector).
 
+---
+
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Sebbene ci impegniamo per garantire l'accuratezza, si prega di notare che le traduzioni automatiche potrebbero contenere errori o imprecisioni. Il documento originale nella sua lingua nativa dovrebbe essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale eseguita da un traduttore umano. Non siamo responsabili per eventuali fraintendimenti o interpretazioni errate derivanti dall'uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Sebbene ci impegniamo per garantire l'accuratezza, si prega di tenere presente che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa dovrebbe essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un traduttore umano. Non siamo responsabili per eventuali incomprensioni o interpretazioni errate derivanti dall'uso di questa traduzione.

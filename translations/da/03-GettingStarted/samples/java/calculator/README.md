@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13231e9951b68efd9df8c56bd5cdb27e",
-  "translation_date": "2025-07-13T22:27:43+00:00",
-  "source_file": "03-GettingStarted/samples/java/calculator/README.md",
-  "language_code": "da"
-}
--->
 # Basic Calculator MCP Service
 
 Denne service tilbyder grundlæggende lommeregnerfunktioner via Model Context Protocol (MCP) ved brug af Spring Boot med WebFlux transport. Den er designet som et simpelt eksempel for begyndere, der vil lære om MCP-implementeringer.
@@ -201,7 +192,7 @@ MCP Inspector er et nyttigt værktøj til at interagere med MCP-services. For at
    - Klik på "List Tools" for at se tilgængelige lommeregneroperationer
    - Vælg et værktøj og klik på "Run Tool" for at udføre en operation
 
-![MCP Inspector Screenshot](../../../../../../translated_images/tool.c75a0b2380efcf1a47a8478f54380a36ddcca7943b98f56dabbac8b07e15c3bb.da.png)
+![MCP Inspector Screenshot](../../../../../../translated_images/da/tool.c75a0b2380efcf1a.webp)
 
 ### Brug af Docker
 

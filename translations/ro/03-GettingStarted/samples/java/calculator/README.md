@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13231e9951b68efd9df8c56bd5cdb27e",
-  "translation_date": "2025-07-13T22:31:09+00:00",
-  "source_file": "03-GettingStarted/samples/java/calculator/README.md",
-  "language_code": "ro"
-}
--->
 # Serviciu Calculator de Bază MCP
 
 Acest serviciu oferă operații de bază pentru calculator prin Model Context Protocol (MCP) folosind Spring Boot cu transport WebFlux. Este conceput ca un exemplu simplu pentru începători care învață despre implementările MCP.
@@ -201,7 +192,7 @@ MCP Inspector este un instrument util pentru interacțiunea cu serviciile MCP. P
    - Apasă „List Tools” pentru a vedea operațiile disponibile ale calculatorului
    - Selectează o unealtă și apasă „Run Tool” pentru a executa o operație
 
-![Captură ecran MCP Inspector](../../../../../../translated_images/tool.c75a0b2380efcf1a47a8478f54380a36ddcca7943b98f56dabbac8b07e15c3bb.ro.png)
+![Captură ecran MCP Inspector](../../../../../../translated_images/ro/tool.c75a0b2380efcf1a.webp)
 
 ### Folosind Docker
 

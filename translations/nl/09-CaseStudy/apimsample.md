@@ -1,76 +1,68 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2228721599c0c8673de83496b4d7d7a9",
-  "translation_date": "2025-08-18T16:24:23+00:00",
-  "source_file": "09-CaseStudy/apimsample.md",
-  "language_code": "nl"
-}
--->
-# Casestudy: REST API blootstellen in API Management als een MCP-server
+# Case Study: REST API blootstellen in API Management als een MCP-server
 
-Azure API Management is een service die een Gateway biedt bovenop je API-eindpunten. Het werkt als een proxy voor je API's en kan bepalen wat er met inkomende verzoeken gebeurt.
+Azure API Management is een service die een Gateway biedt bovenop je API-eindpunten. Azure API Management fungeert als een proxy voor je API's en kan bepalen wat er met inkomende verzoeken gebeurt.
 
-Door het te gebruiken, voeg je een hele reeks functies toe, zoals:
+Door het te gebruiken voeg je een heleboel functies toe zoals:
 
 - **Beveiliging**, je kunt alles gebruiken van API-sleutels, JWT tot managed identity.
-- **Rate limiting**, een geweldige functie waarmee je kunt bepalen hoeveel oproepen er per bepaalde tijdseenheid worden verwerkt. Dit zorgt ervoor dat alle gebruikers een goede ervaring hebben en voorkomt dat je service wordt overspoeld met verzoeken.
-- **Schalen & Load balancing**. Je kunt meerdere eindpunten instellen om de belasting te verdelen en ook bepalen hoe je wilt "load balancen".
-- **AI-functies zoals semantische caching**, tokenlimieten, tokenmonitoring en meer. Dit zijn geweldige functies die de responsiviteit verbeteren en je helpen je tokengebruik bij te houden. [Lees hier meer](https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities).
+- **Rate limiting**, een geweldige functie is dat je kunt bepalen hoeveel oproepen er per tijdseenheid doorkomen. Dit helpt ervoor te zorgen dat alle gebruikers een goede ervaring hebben en dat je service niet wordt overspoeld met verzoeken.
+- **Schaalbaarheid & Load balancing**. Je kunt een aantal eindpunten opzetten om de belasting te verdelen en je kunt ook bepalen hoe je wilt "load balancen".
+- **AI-functies zoals semantische caching**, tokenlimieten en tokenmonitoring en meer. Dit zijn geweldige functies die de reactietijd verbeteren en helpen je bovenop je tokenuitgaven te blijven. [Lees hier meer](https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities).
 
 ## Waarom MCP + Azure API Management?
 
-Model Context Protocol wordt snel een standaard voor agentische AI-apps en hoe tools en data op een consistente manier worden blootgesteld. Azure API Management is een logische keuze wanneer je API's moet "beheren". MCP-servers integreren vaak met andere API's om verzoeken naar een tool op te lossen. Daarom is het combineren van Azure API Management en MCP een logische stap.
+Model Context Protocol wordt snel een standaard voor agentachtige AI-apps en hoe tools en data op een consistente manier te ontsluiten. Azure API Management is een natuurlijke keuze wanneer je API's moet "beheren". MCP-servers integreren vaak met andere API's om verzoeken naar een tool te resolven bijvoorbeeld. Daarom is de combinatie van Azure API Management en MCP heel logisch.
 
 ## Overzicht
 
-In dit specifieke gebruiksscenario leren we hoe we API-eindpunten kunnen blootstellen als een MCP-server. Door dit te doen, kunnen we deze eindpunten eenvoudig onderdeel maken van een agentische app en tegelijkertijd profiteren van de functies van Azure API Management.
+In deze specifieke use case leren we API-eindpunten blootstellen als een MCP-server. Door dit te doen kunnen we deze eindpunten gemakkelijk onderdeel maken van een agentachtige app en tegelijkertijd profiteren van de functies van Azure API Management.
 
 ## Belangrijkste functies
 
-- Je selecteert de eindpuntmethoden die je wilt blootstellen als tools.
-- De extra functies die je krijgt, zijn afhankelijk van wat je configureert in de beleidssectie voor je API. Hier laten we zien hoe je rate limiting kunt toevoegen.
+- Je selecteert de eindpuntmethodes die je wil blootstellen als tools.
+- De extra functies die je krijgt hangen af van wat je configureert in het beleidsgedeelte van je API. Hier laten we zien hoe je rate limiting kunt toevoegen.
 
-## Voorbereiding: een API importeren
+## Vooraf: importeer een API
 
-Als je al een API in Azure API Management hebt, kun je deze stap overslaan. Zo niet, bekijk dan deze link: [een API importeren in Azure API Management](https://learn.microsoft.com/en-us/azure/api-management/import-and-publish#import-and-publish-a-backend-api).
+Als je al een API hebt in Azure API Management, top, dan kun je deze stap overslaan. Zo niet, bekijk dan deze link, [een API importeren in Azure API Management](https://learn.microsoft.com/en-us/azure/api-management/import-and-publish#import-and-publish-a-backend-api).
 
 ## API blootstellen als MCP-server
 
-Om de API-eindpunten bloot te stellen, volg je deze stappen:
+Volg onderstaande stappen om de API-eindpunten bloot te stellen:
 
-1. Navigeer naar de Azure Portal via <https://portal.azure.com/?Microsoft_Azure_ApiManagement=mcp>.  
-   Navigeer naar je API Management-instantie.
+1. Navigeer naar de Azure Portal via <https://portal.azure.com/?Microsoft_Azure_ApiManagement=mcp>  
+Ga naar je API Management instantie.
 
-1. Selecteer in het linkermenu **API's > MCP-servers > + Nieuwe MCP-server maken**.
+1. Selecteer in het linkermenu APIs > MCP Servers > + Create new MCP Server.
 
-1. Selecteer bij API een REST API om bloot te stellen als een MCP-server.
+1. Kies bij API een REST API om bloot te stellen als MCP-server.
 
-1. Selecteer een of meer API-operaties om bloot te stellen als tools. Je kunt alle operaties selecteren of alleen specifieke operaties.
+1. Selecteer een of meerdere API-operaties om bloot te stellen als tools. Je kunt alle operaties selecteren of alleen specifieke operaties.
 
-    ![Selecteer methoden om bloot te stellen](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/create-mcp-server-small.png)
+    ![Select methods to expose](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/create-mcp-server-small.png)
 
-1. Selecteer **Maken**.
 
-1. Navigeer naar de menuoptie **API's** en **MCP-servers**, je zou het volgende moeten zien:
+1. Selecteer **Create**.
 
-    ![Bekijk de MCP-server in het hoofdvenster](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-list.png)
+1. Ga naar het menu **APIs** en **MCP Servers**, je zou het volgende moeten zien:
 
-    De MCP-server is gemaakt en de API-operaties zijn blootgesteld als tools. De MCP-server wordt weergegeven in het MCP-serverspaneel. De URL-kolom toont het eindpunt van de MCP-server dat je kunt gebruiken voor testen of binnen een clientapplicatie.
+    ![See the MCP Server in the main pane](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-list.png)
+
+    De MCP-server is aangemaakt en de API-operaties zijn blootgesteld als tools. De MCP-server staat in het MCP Servers-paneel. De kolom URL toont het eindpunt van de MCP-server dat je kunt aanroepen voor testen of binnen een clientapplicatie.
 
 ## Optioneel: Beleidsregels configureren
 
-Azure API Management heeft het kernconcept van beleidsregels waarmee je verschillende regels kunt instellen voor je eindpunten, zoals bijvoorbeeld rate limiting of semantische caching. Deze beleidsregels worden geschreven in XML.
+Azure API Management heeft het kernconcept van policy's waarin je regels instelt voor je eindpunten zoals rate limiting of semantische caching. Deze policies worden geschreven in XML.
 
-Hier is hoe je een beleidsregel kunt instellen om je MCP-server te rate-limiten:
+Hier zie je hoe je een policy instelt om rate limiting te configureren voor je MCP-server:
 
-1. Selecteer in de portal onder API's **MCP-servers**.
+1. Selecteer in de portal onder APIs **MCP Servers**.
 
 1. Selecteer de MCP-server die je hebt gemaakt.
 
-1. Selecteer in het linkermenu onder MCP **Beleidsregels**.
+1. Selecteer in het linkermenu onder MCP **Policies**.
 
-1. Voeg in de beleidseditor de beleidsregels toe of bewerk ze die je wilt toepassen op de tools van de MCP-server. De beleidsregels worden gedefinieerd in XML-formaat. Bijvoorbeeld, je kunt een beleidsregel toevoegen om oproepen naar de tools van de MCP-server te beperken (in dit voorbeeld, 5 oproepen per 30 seconden per client-IP-adres). Hier is XML die dit zal veroorzaken:
+1. Voeg in de beleidseditor de gewenste policies toe of bewerk ze voor de tools van de MCP-server. De policies zijn in XML. Bijvoorbeeld, je kunt een policy toevoegen die oproepen naar de MCP-server beperkt (in dit voorbeeld 5 oproepen per 30 seconden per client-IP-adres). Hier is de XML die de rate limiting activeert:
 
     ```xml
      <rate-limit-by-key calls="5" 
@@ -82,27 +74,27 @@ Hier is hoe je een beleidsregel kunt instellen om je MCP-server te rate-limiten:
 
     Hier is een afbeelding van de beleidseditor:
 
-    ![Beleidseditor](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-policies-small.png)
-
+    ![Policy editor](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-policies-small.png)
+ 
 ## Probeer het uit
 
-Laten we ervoor zorgen dat onze MCP-server werkt zoals bedoeld.
+Laten we zeker weten dat onze MCP-server werkt zoals bedoeld.
 
-Hiervoor gebruiken we Visual Studio Code en GitHub Copilot in de Agent-modus. We voegen de MCP-server toe aan een *mcp.json*-bestand. Door dit te doen, zal Visual Studio Code fungeren als een client met agentische mogelijkheden en kunnen eindgebruikers een prompt typen en interactie hebben met de server.
+Hiervoor gebruiken we Visual Studio Code en GitHub Copilot met de Agent-modus. We voegen de MCP-server toe aan een *mcp.json* bestand. Zo fungeert Visual Studio Code als client met agentcapaciteiten en kunnen eindgebruikers een prompt typen en met de server interactie hebben.
 
-Laten we zien hoe je de MCP-server toevoegt in Visual Studio Code:
+Zo voeg je de MCP-server toe in Visual Studio Code:
 
-1. Gebruik de MCP: **Server toevoegen-opdracht vanuit de Command Palette**.
+1. Gebruik de MCP: **Add Server command from the Command Palette**.
 
-1. Wanneer daarom wordt gevraagd, selecteer het servertype: **HTTP (HTTP of Server Sent Events)**.
+1. Selecteer het server type: **HTTP (HTTP of Server Sent Events)**.
 
-1. Voer de URL van de MCP-server in API Management in. Voorbeeld: **https://<apim-service-name>.azure-api.net/<api-name>-mcp/sse** (voor SSE-eindpunt) of **https://<apim-service-name>.azure-api.net/<api-name>-mcp/mcp** (voor MCP-eindpunt), let op het verschil tussen de transporten: `/sse` of `/mcp`.
+1. Voer de URL van de MCP-server in Azure API Management in. Bijvoorbeeld: **https://<apim-service-name>.azure-api.net/<api-name>-mcp/sse** (voor SSE-eindpunt) of **https://<apim-service-name>.azure-api.net/<api-name>-mcp/mcp** (voor MCP-eindpunt). Merk het verschil op in het pad: `/sse` of `/mcp`.
 
-1. Voer een server-ID naar keuze in. Dit is geen belangrijke waarde, maar het helpt je herinneren wat deze serverinstantie is.
+1. Geef een server-ID op naar keuze. Dit is niet heel belangrijk maar helpt je herinneren welke server dit is.
 
-1. Selecteer of je de configuratie wilt opslaan in je werkruimte-instellingen of gebruikersinstellingen.
+1. Kies of je de configuratie opslaat in je workspace settings of user settings.
 
-  - **Werkruimte-instellingen** - De serverconfiguratie wordt opgeslagen in een .vscode/mcp.json-bestand dat alleen beschikbaar is in de huidige werkruimte.
+  - **Workspace settings** - De serverconfiguratie wordt opgeslagen in een .vscode/mcp.json bestand dat alleen beschikbaar is in de huidige workspace.
 
     *mcp.json*
 
@@ -115,7 +107,7 @@ Laten we zien hoe je de MCP-server toevoegt in Visual Studio Code:
     }
     ```
 
-    of als je streaming HTTP als transport kiest, zou het iets anders zijn:
+    of als je streaming HTTP als transport kiest, ziet het er iets anders uit:
 
     ```json
     "servers": {
@@ -126,17 +118,17 @@ Laten we zien hoe je de MCP-server toevoegt in Visual Studio Code:
     }
     ```
 
-  - **Gebruikersinstellingen** - De serverconfiguratie wordt toegevoegd aan je globale *settings.json*-bestand en is beschikbaar in alle werkruimtes. De configuratie ziet er ongeveer zo uit:
+  - **User settings** - De serverconfiguratie wordt toegevoegd aan je globale *settings.json* bestand en is beschikbaar in alle workspaces. De configuratie ziet er ongeveer zo uit:
 
-    ![Gebruikersinstelling](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-servers-visual-studio-code.png)
+    ![User setting](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-servers-visual-studio-code.png)
 
-1. Je moet ook een configuratie toevoegen, een header om ervoor te zorgen dat het correct authenticeert met Azure API Management. Het gebruikt een header genaamd **Ocp-Apim-Subscription-Key**.
+1. Je moet ook een configuratie toevoegen, een header om ervoor te zorgen dat de authenticatie correct werkt met Azure API Management. Het gebruikt een header genaamd **Ocp-Apim-Subscription-Key**.
 
-    - Hier is hoe je het kunt toevoegen aan instellingen:
+    - Zo voeg je deze toe aan de settings:
 
-    ![Header toevoegen voor authenticatie](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-with-header-visual-studio-code.png), dit zal een prompt veroorzaken om je te vragen naar de API-sleutelwaarde die je kunt vinden in Azure Portal voor je Azure API Management-instantie.
+    ![Adding header for authentication](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-with-header-visual-studio-code.png), hierdoor krijg je een prompt om je de API key in te voeren, die je in de Azure Portal kunt vinden bij je Azure API Management instantie.
 
-   - Om het toe te voegen aan *mcp.json*, kun je het als volgt toevoegen:
+   - Voeg het anders toe aan *mcp.json* zoals volgt:
 
     ```json
     "inputs": [
@@ -158,44 +150,54 @@ Laten we zien hoe je de MCP-server toevoegt in Visual Studio Code:
     }
     ```
 
-### Agent-modus gebruiken
+### Gebruik de Agent-modus
 
-Nu zijn we helemaal ingesteld in instellingen of in *.vscode/mcp.json*. Laten we het proberen.
+Nu alles is ingesteld in de settings of in *.vscode/mcp.json*, laten we het testen.
 
-Er zou een Tools-icoon moeten zijn zoals hieronder, waar de blootgestelde tools van je server worden weergegeven:
+Er zou een Tools-icoon moeten zijn zoals hieronder, waar de blootgestelde tools van je server worden getoond:
 
-![Tools van de server](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/tools-button-visual-studio-code.png)
+![Tools from the server](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/tools-button-visual-studio-code.png)
 
-1. Klik op het tools-icoon en je zou een lijst met tools moeten zien zoals hieronder:
+1. Klik op het tools-icoon en je ziet een lijst met tools zoals hieronder:
 
     ![Tools](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/select-tools-visual-studio-code.png)
 
-1. Voer een prompt in de chat in om de tool aan te roepen. Bijvoorbeeld, als je een tool hebt geselecteerd om informatie over een bestelling op te halen, kun je de agent vragen naar een bestelling. Hier is een voorbeeldprompt:
+1. Typ een prompt in de chat om de tool aan te roepen. Bijvoorbeeld, als je een tool hebt geselecteerd om informatie te krijgen over een bestelling, kun je de agent daarover vragen. Bijvoorbeeld deze prompt:
 
     ```text
     get information from order 2
     ```
 
-    Je krijgt nu een tools-icoon te zien dat je vraagt om door te gaan met het aanroepen van een tool. Selecteer om door te gaan met het uitvoeren van de tool, je zou nu een output moeten zien zoals hieronder:
+    Nu krijg je een tools-icoon waarmee je wordt gevraagd door te gaan met het aanroepen van de tool. Selecteer om door te gaan en je ziet een output zoals hieronder:
 
-    ![Resultaat van prompt](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/chat-results-visual-studio-code.png)
+    ![Result from prompt](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/chat-results-visual-studio-code.png)
 
-    **Wat je hierboven ziet, hangt af van welke tools je hebt ingesteld, maar het idee is dat je een tekstuele reactie krijgt zoals hierboven.**
+    **Wat je hierboven ziet, hangt af van welke tools je hebt ingesteld, maar het idee is dat je een tekstuele reactie krijgt zoals hierboven**
+
 
 ## Referenties
 
-Hier kun je meer leren:
+Zo kun je meer leren:
 
 - [Tutorial over Azure API Management en MCP](https://learn.microsoft.com/en-us/azure/api-management/export-rest-mcp-server)
-- [Python voorbeeld: Beveilig externe MCP-servers met Azure API Management (experimenteel)](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)
+- [Pythonvoorbeeld: Beveilig remote MCP-servers met Azure API Management (experimenteel)](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)
 
-- [MCP client autorisatie lab](https://github.com/Azure-Samples/AI-Gateway/tree/main/labs/mcp-client-authorization)
+- [MCP-client autorisatie lab](https://github.com/Azure-Samples/AI-Gateway/tree/main/labs/mcp-client-authorization)
 
-- [Gebruik de Azure API Management-extensie voor VS Code om API's te importeren en beheren](https://learn.microsoft.com/en-us/azure/api-management/visual-studio-code-tutorial)
+- [Gebruik de Azure API Management extensie voor VS Code om API's te importeren en beheren](https://learn.microsoft.com/en-us/azure/api-management/visual-studio-code-tutorial)
 
-- [Registreer en ontdek externe MCP-servers in Azure API Center](https://learn.microsoft.com/en-us/azure/api-center/register-discover-mcp-server)
+- [Registreer en ontdek remote MCP-servers in Azure API Center](https://learn.microsoft.com/en-us/azure/api-center/register-discover-mcp-server)
 - [AI Gateway](https://github.com/Azure-Samples/AI-Gateway) Geweldige repo die veel AI-mogelijkheden toont met Azure API Management
-- [AI Gateway workshops](https://azure-samples.github.io/AI-Gateway/) Bevat workshops met gebruik van Azure Portal, wat een geweldige manier is om te beginnen met het evalueren van AI-mogelijkheden.
+- [AI Gateway workshops](https://azure-samples.github.io/AI-Gateway/) Bevat workshops met Azure Portal, een geweldige manier om AI-mogelijkheden te verkennen.
 
-**Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+## Wat nu
+
+- Terug naar: [Case Studies Overzicht](./README.md)
+- Volgende: [Azure AI Reisagenten](./travelagentsample.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Kennisgeving**:
+Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel wij streven naar nauwkeurigheid, kan het voorkomen dat automatische vertalingen fouten of onnauwkeurigheden bevatten. Het oorspronkelijke document in de originele taal moet als de gezaghebbende bron worden beschouwd. Voor belangrijke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerd geïnterpreteerde informatie voortvloeiend uit het gebruik van deze vertaling.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

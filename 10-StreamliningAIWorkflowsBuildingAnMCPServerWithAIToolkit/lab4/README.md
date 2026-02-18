@@ -198,4 +198,11 @@ We hope this workshop has sparked ideas that will transform how you build and in
 
 ---
 
+## What's Next
+
+Congratulations on completing all labs in Module 10!
+
+- Back to: [Module 10 Overview](../README.md)
+- Continue to: [Module 11: MCP Server Hands-On Labs](../../11-MCPServerHandsOnLabs/README.md)
+
 

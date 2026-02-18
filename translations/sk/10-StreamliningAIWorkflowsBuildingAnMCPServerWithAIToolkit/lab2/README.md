@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "a22b7dd11cd7690f99f9195877cafdc3",
-  "translation_date": "2025-07-14T08:00:42+00:00",
-  "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab2/README.md",
-  "language_code": "sk"
-}
--->
 # 🌐 Modul 2: MCP so základmi AI Toolkit
 
 [![Duration](https://img.shields.io/badge/Duration-20%20minutes-blue.svg)]()
@@ -202,7 +193,7 @@ Okrem Microsoft serverov MCP ekosystém zahŕňa:
    - **Názov**: `BrowserAgent`
    - **Model**: Vyberte GPT-4o
 
-![BrowserAgent](../../../../translated_images/BrowserAgent.09c1adde5e136573b64ab1baecd830049830e295eac66cb18bebb85fb386e00a.sk.png)
+![BrowserAgent](../../../../translated_images/sk/BrowserAgent.09c1adde5e136573.webp)
 
 ### 🔧 Fáza 2: Pracovný postup integrácie MCP
 
@@ -211,7 +202,7 @@ Okrem Microsoft serverov MCP ekosystém zahŕňa:
 2. **Kliknite na "Add Tool"** pre otvorenie menu integrácií
 3. **Vyberte "MCP Server"** z dostupných možností
 
-![AddMCP](../../../../translated_images/AddMCP.afe3308ac20aa94469a5717b632d77b2197b9838a438b05d39aeb2db3ec47ef1.sk.png)
+![AddMCP](../../../../translated_images/sk/AddMCP.afe3308ac20aa944.webp)
 
 **🔍 Pochopenie typov nástrojov:**
 - **Vstavané nástroje**: Predkonfigurované funkcie AI Toolkitu
@@ -221,10 +212,10 @@ Okrem Microsoft serverov MCP ekosystém zahŕňa:
 
 #### Krok 4: Výber MCP servera
 1. **Zvoľte možnosť "MCP Server"** pre pokračovanie  
-![AddMCPServer](../../../../translated_images/AddMCPServer.69b911ccef872cbd0d0c0c2e6a00806916e1673e543b902a23dee23e6ff54b4c.sk.png)
+![AddMCPServer](../../../../translated_images/sk/AddMCPServer.69b911ccef872cbd.webp)
 
 2. **Prehliadajte MCP katalóg** a preskúmajte dostupné integrácie  
-![MCPCatalog](../../../../translated_images/MCPCatalog.a817d053145699006264f5a475f2b48fbd744e43633f656b6453c15a09ba5130.sk.png)
+![MCPCatalog](../../../../translated_images/sk/MCPCatalog.a817d05314569900.webp)
 
 ### 🎮 Fáza 3: Konfigurácia Playwright MCP
 
@@ -233,12 +224,12 @@ Okrem Microsoft serverov MCP ekosystém zahŕňa:
 2. **Vyberte "Playwright"** zo zoznamu
 3. **Prijmite predvolený MCP ID** alebo ho prispôsobte pre svoje prostredie
 
-![MCPID](../../../../translated_images/MCPID.67d446052979e819c945ff7b6430196ef587f5217daadd3ca52fa9659c1245c9.sk.png)
+![MCPID](../../../../translated_images/sk/MCPID.67d446052979e819.webp)
 
 #### Krok 6: Aktivujte Playwright funkcie
 **🔑 Kľúčový krok**: Vyberte **VŠETKY** dostupné Playwright metódy pre maximálnu funkcionalitu
 
-![Tools](../../../../translated_images/Tools.3ea23c447b4d9feccbd7101e6dcf9e27cb0e5273f351995fde62c5abf9a78b4c.sk.png)
+![Tools](../../../../translated_images/sk/Tools.3ea23c447b4d9fec.webp)
 
 **🛠️ Nevyhnutné Playwright nástroje:**
 - **Navigácia**: `goto`, `goBack`, `goForward`, `reload`
@@ -254,7 +245,7 @@ Okrem Microsoft serverov MCP ekosystém zahŕňa:
 - Žiadne chybové hlásenia v paneli integrácie
 - Stav Playwright servera ukazuje „Connected“
 
-![AgentTools](../../../../translated_images/AgentTools.053cfb96a17e02199dcc6563010d2b324d4fc3ebdd24889657a6950647a52f63.sk.png)
+![AgentTools](../../../../translated_images/sk/AgentTools.053cfb96a17e0219.webp)
 
 **🔧 Riešenie bežných problémov:**
 - **Pripojenie zlyhalo**: Skontrolujte internetové pripojenie a nastavenia firewallu
@@ -320,7 +311,7 @@ Navigate to github.com/kinfey and provide a comprehensive analysis including:
 Include screenshots at key steps and provide actionable insights.
 ```
 
-![Prompt](../../../../translated_images/Prompt.bfc846605db4999f4d9c1b09c710ef63cae7b3057444e68bf07240fb142d9f8f.sk.png)
+![Prompt](../../../../translated_images/sk/Prompt.bfc846605db4999f.webp)
 
 ### 🚀 Fáza 5: Spustenie a testovanie
 
@@ -332,19 +323,19 @@ Include screenshots at key steps and provide actionable insights.
    - Screenshoty zachytávajú každý dôležitý krok
    - Výsledky analýzy sa zobrazujú v reálnom čase
 
-![Browser](../../../../translated_images/Browser.ec011d0bd64d0d112c8a29bd8cc44c76d0bbfd0b019cb2983ef679328435ce5d.sk.png)
+![Browser](../../../../translated_images/sk/Browser.ec011d0bd64d0d11.webp)
 
 #### Krok 11: Analyzujte výsledky a poznatky
 Prezrite si komplexnú analýzu v rozhraní Agent Buildera:
 
-![Result](../../../../translated_images/Result.8638f2b6703e9ea6d58d4e4475e39456b6a51d4c787f9bf481bae694d370a69a.sk.png)
+![Result](../../../../translated_images/sk/Result.8638f2b6703e9ea6.webp)
 
 ### 🌟 Fáza 6: Pokročilé funkcie a nasadenie
 
 #### Krok 12: Export a produkčné nasadenie
 Agent Builder podporuje viacero možností nasadenia:
 
-![Code](../../../../translated_images/Code.d9eeeead0b96db0ca19c5b10ad64cfea8c1d0d1736584262970a4d43e1403d13.sk.png)
+![Code](../../../../translated_images/sk/Code.d9eeeead0b96db0c.webp)
 
 ## 🎓 Zhrnutie modulu 2 a ďalšie kroky
 

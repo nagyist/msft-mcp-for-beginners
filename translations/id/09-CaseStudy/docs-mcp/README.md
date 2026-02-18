@@ -1,54 +1,45 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4319d291c9d124ecafea52b3d04bfa0e",
-  "translation_date": "2025-07-14T06:27:09+00:00",
-  "source_file": "09-CaseStudy/docs-mcp/README.md",
-  "language_code": "id"
-}
--->
 # Studi Kasus: Menghubungkan ke Microsoft Learn Docs MCP Server dari Klien
 
-Pernahkah Anda merasa harus bolak-balik antara situs dokumentasi, Stack Overflow, dan tab mesin pencari yang tak berujung, sambil mencoba memecahkan masalah dalam kode Anda? Mungkin Anda punya monitor kedua khusus untuk dokumentasi, atau terus-menerus berganti jendela antara IDE dan browser. Bukankah akan lebih baik jika dokumentasi bisa langsung masuk ke dalam alur kerja Anda—terintegrasi ke dalam aplikasi, IDE, atau bahkan alat kustom Anda sendiri? Dalam studi kasus ini, kita akan mengeksplorasi cara melakukannya dengan menghubungkan langsung ke Microsoft Learn Docs MCP server dari aplikasi klien Anda sendiri.
+Pernahkah Anda merasa sibuk berpindah-pindah antara situs dokumentasi, Stack Overflow, dan tab mesin pencari yang tak ada habisnya, sambil mencoba memecahkan masalah di kode Anda? Mungkin Anda menyimpan monitor kedua hanya untuk dokumen, atau Anda terus-menerus beralih antara IDE dan browser. Bukankah akan lebih baik jika Anda bisa membawa dokumentasi itu langsung ke dalam alur kerja Anda—terintegrasi ke dalam aplikasi Anda, IDE Anda, atau bahkan alat kustom Anda sendiri? Dalam studi kasus ini, kami akan menjelajahi bagaimana melakukan hal itu dengan menghubungkan langsung ke Microsoft Learn Docs MCP server dari aplikasi klien Anda sendiri.
 
 ## Gambaran Umum
 
-Pengembangan modern bukan hanya soal menulis kode—tapi juga menemukan informasi yang tepat pada waktu yang tepat. Dokumentasi ada di mana-mana, tapi jarang berada di tempat yang paling Anda butuhkan: di dalam alat dan alur kerja Anda. Dengan mengintegrasikan pengambilan dokumentasi langsung ke dalam aplikasi Anda, Anda bisa menghemat waktu, mengurangi perpindahan konteks, dan meningkatkan produktivitas. Di bagian ini, kami akan menunjukkan cara menghubungkan klien ke Microsoft Learn Docs MCP server, sehingga Anda dapat mengakses dokumentasi real-time yang peka konteks tanpa harus meninggalkan aplikasi Anda.
+Pengembangan modern bukan hanya tentang menulis kode—ini tentang menemukan informasi yang tepat pada waktu yang tepat. Dokumentasi ada di mana-mana, tetapi jarang ada di tempat Anda paling membutuhkannya: di dalam alat dan alur kerja Anda. Dengan mengintegrasikan pengambilan dokumentasi langsung ke dalam aplikasi Anda, Anda dapat menghemat waktu, mengurangi pergantian konteks, dan meningkatkan produktivitas. Di bagian ini, kami akan menunjukkan cara menghubungkan klien ke Microsoft Learn Docs MCP server, sehingga Anda dapat mengakses dokumentasi kontekstual secara real-time tanpa pernah meninggalkan aplikasi Anda.
 
-Kami akan membimbing Anda melalui proses membangun koneksi, mengirim permintaan, dan menangani respons streaming secara efisien. Pendekatan ini tidak hanya menyederhanakan alur kerja Anda, tapi juga membuka peluang untuk membangun alat pengembang yang lebih cerdas dan membantu.
+Kami akan menuntun Anda melalui proses membangun koneksi, mengirim permintaan, dan menangani respons streaming secara efisien. Pendekatan ini tidak hanya memperlancar alur kerja Anda, tetapi juga membuka pintu untuk membangun alat pengembang yang lebih cerdas dan berguna.
 
 ## Tujuan Pembelajaran
 
-Kenapa kita melakukan ini? Karena pengalaman pengembang terbaik adalah yang menghilangkan hambatan. Bayangkan sebuah dunia di mana editor kode, chatbot, atau aplikasi web Anda bisa langsung menjawab pertanyaan dokumentasi, menggunakan konten terbaru dari Microsoft Learn. Di akhir bab ini, Anda akan bisa:
+Mengapa kita melakukan ini? Karena pengalaman pengembang terbaik adalah yang menghilangkan hambatan. Bayangkan dunia dimana editor kode Anda, chatbot, atau aplikasi web dapat menjawab pertanyaan dokumentasi Anda dengan instan, menggunakan konten terbaru dari Microsoft Learn. Pada akhir bab ini, Anda akan tahu cara:
 
 - Memahami dasar komunikasi server-klien MCP untuk dokumentasi
-- Mengimplementasikan aplikasi konsol atau web untuk terhubung ke Microsoft Learn Docs MCP server
-- Menggunakan klien HTTP streaming untuk pengambilan dokumentasi secara real-time
+- Mengimplementasikan aplikasi konsol atau web untuk menghubungkan ke Microsoft Learn Docs MCP server
+- Menggunakan klien HTTP streaming untuk pengambilan dokumentasi real-time
 - Mencatat dan menginterpretasi respons dokumentasi dalam aplikasi Anda
 
-Anda akan melihat bagaimana keterampilan ini membantu Anda membangun alat yang tidak hanya reaktif, tapi benar-benar interaktif dan peka konteks.
+Anda akan melihat bagaimana keterampilan ini dapat membantu Anda membangun alat yang bukan hanya reaktif, tetapi benar-benar interaktif dan sadar konteks.
 
 ## Skenario 1 - Pengambilan Dokumentasi Real-Time dengan MCP
 
-Dalam skenario ini, kami akan menunjukkan cara menghubungkan klien ke Microsoft Learn Docs MCP server, sehingga Anda dapat mengakses dokumentasi real-time yang peka konteks tanpa meninggalkan aplikasi Anda.
+Dalam skenario ini, kami akan menunjukkan cara menghubungkan klien ke Microsoft Learn Docs MCP server, sehingga Anda dapat mengakses dokumentasi kontekstual secara real-time tanpa meninggalkan aplikasi Anda.
 
-Mari kita praktikkan. Tugas Anda adalah membuat aplikasi yang terhubung ke Microsoft Learn Docs MCP server, memanggil alat `microsoft_docs_search`, dan mencatat respons streaming ke konsol.
+Mari kita praktikkan ini. Tugas Anda adalah menulis aplikasi yang menghubungkan ke Microsoft Learn Docs MCP server, memanggil alat `microsoft_docs_search`, dan mencatat respons streaming ke konsol.
 
-### Kenapa menggunakan pendekatan ini?
-Karena ini adalah dasar untuk membangun integrasi yang lebih canggih—apakah Anda ingin membuat chatbot, ekstensi IDE, atau dashboard web.
+### Kenapa pendekatan ini?
+Karena ini adalah fondasi untuk membangun integrasi yang lebih canggih—baik Anda ingin menggerakkan chatbot, ekstensi IDE, atau dashboard web.
 
-Anda akan menemukan kode dan instruksi untuk skenario ini di folder [`solution`](./solution/README.md) dalam studi kasus ini. Langkah-langkahnya akan memandu Anda dalam menyiapkan koneksi:
+Anda akan menemukan kode dan instruksi untuk skenario ini di folder [`solution`](./solution/README.md) dalam studi kasus ini. Langkah-langkahnya akan memandu Anda melalui pengaturan koneksi:
 - Gunakan SDK MCP resmi dan klien HTTP yang mendukung streaming untuk koneksi
-- Panggil alat `microsoft_docs_search` dengan parameter query untuk mengambil dokumentasi
-- Terapkan pencatatan dan penanganan error yang tepat
-- Buat antarmuka konsol interaktif agar pengguna bisa memasukkan beberapa query pencarian
+- Panggil alat `microsoft_docs_search` dengan parameter kueri untuk mengambil dokumentasi
+- Terapkan pencatatan yang tepat dan penanganan kesalahan
+- Buat antarmuka konsol interaktif supaya pengguna dapat memasukkan banyak kueri pencarian
 
-Skenario ini menunjukkan cara:
+Skenario ini memperlihatkan bagaimana:
 - Menghubungkan ke Docs MCP server
-- Mengirim query
+- Mengirim kueri
 - Mengurai dan mencetak hasil
 
-Berikut contoh tampilan saat menjalankan solusi:
+Inilah contoh tampilan saat menjalankan solusi:
 
 ```
 Prompt> What is Azure Key Vault?
@@ -80,16 +71,17 @@ if __name__ == "__main__":
 - Untuk instruksi instalasi dan penggunaan, lihat file [`README.md`](./solution/python/README.md) di folder yang sama.
 </details>
 
+
 ## Skenario 2 - Aplikasi Web Generator Rencana Studi Interaktif dengan MCP
 
-Dalam skenario ini, Anda akan belajar cara mengintegrasikan Docs MCP ke dalam proyek pengembangan web. Tujuannya adalah memungkinkan pengguna mencari dokumentasi Microsoft Learn langsung dari antarmuka web, sehingga dokumentasi bisa diakses secara instan dalam aplikasi atau situs Anda.
+Dalam skenario ini, Anda akan belajar cara mengintegrasikan Docs MCP ke dalam proyek pengembangan web. Tujuannya adalah memungkinkan pengguna mencari dokumentasi Microsoft Learn langsung dari antarmuka web, membuat dokumentasi dapat diakses secara instan dalam aplikasi atau situs Anda.
 
-Anda akan melihat cara:
+Anda akan melihat bagaimana cara:
 - Menyiapkan aplikasi web
 - Menghubungkan ke Docs MCP server
 - Menangani input pengguna dan menampilkan hasil
 
-Berikut contoh tampilan saat menjalankan solusi:
+Inilah contoh tampilan saat menjalankan solusi:
 
 ```
 User> I want to learn about AI102 - so suggest the roadmap to get it started from learn for 6 weeks
@@ -110,12 +102,12 @@ Let me know if you want module-specific recommendations or need more customized 
 
 Di bawah ini adalah contoh solusi minimal. Kode lengkap dan detail tersedia di folder solusi.
 
-![Scenario 2 Overview](../../../../translated_images/scenario2.0c92726d5cd81f68238e5ba65f839a0b300d5b74b8ca7db28bc8f900c3e7d037.id.png)
+![Scenario 2 Overview](../../../../translated_images/id/scenario2.0c92726d5cd81f68.webp)
 
 <details>
 <summary>Python (Chainlit)</summary>
 
-Chainlit adalah framework untuk membangun aplikasi web AI percakapan. Framework ini memudahkan pembuatan chatbot dan asisten interaktif yang dapat memanggil alat MCP dan menampilkan hasil secara real-time. Cocok untuk prototipe cepat dan antarmuka yang ramah pengguna.
+Chainlit adalah kerangka kerja untuk membangun aplikasi web AI percakapan. Ini memudahkan pembuatan chatbot interaktif dan asisten yang dapat memanggil alat MCP dan menampilkan hasil secara real-time. Ini ideal untuk prototipe cepat dan antarmuka ramah pengguna.
 
 ```python
 import chainlit as cl
@@ -135,23 +127,24 @@ def handle_message(message):
 ```
 
 - Untuk implementasi lengkap, lihat [`scenario2.py`](../../../../09-CaseStudy/docs-mcp/solution/python/scenario2.py).
-- Untuk instruksi setup dan menjalankan, lihat [`README.md`](./solution/python/README.md).
+- Untuk instruksi pemasangan dan menjalankan, lihat [`README.md`](./solution/python/README.md).
 </details>
+
 
 ## Skenario 3: Dokumentasi Dalam Editor dengan MCP Server di VS Code
 
-Jika Anda ingin mendapatkan Microsoft Learn Docs langsung di dalam VS Code (tanpa harus berganti tab browser), Anda bisa menggunakan MCP server di editor Anda. Ini memungkinkan Anda untuk:
-- Mencari dan membaca dokumentasi di VS Code tanpa meninggalkan lingkungan pengkodean.
-- Mereferensikan dokumentasi dan menyisipkan tautan langsung ke README atau file kursus Anda.
-- Memanfaatkan GitHub Copilot dan MCP bersama-sama untuk alur kerja dokumentasi yang mulus dan didukung AI.
+Jika Anda ingin mendapatkan Microsoft Learn Docs langsung di dalam VS Code (alih-alih berpindah tab browser), Anda dapat menggunakan MCP server di editor Anda. Ini memungkinkan Anda untuk:
+- Mencari dan membaca dokumen di VS Code tanpa meninggalkan lingkungan coding Anda.
+- Merujuk dokumentasi dan memasukkan tautan langsung ke file README atau kursus Anda.
+- Memanfaatkan GitHub Copilot dan MCP bersama-sama untuk alur kerja dokumentasi bertenaga AI yang mulus.
 
 **Anda akan belajar cara:**
 - Menambahkan file `.vscode/mcp.json` yang valid ke root workspace Anda (lihat contoh di bawah).
-- Membuka panel MCP atau menggunakan command palette di VS Code untuk mencari dan menyisipkan dokumentasi.
-- Mereferensikan dokumentasi langsung di file markdown saat Anda bekerja.
+- Membuka panel MCP atau menggunakan palet perintah di VS Code untuk mencari dan menyisipkan dokumen.
+- Merujuk dokumentasi langsung di file markdown saat Anda bekerja.
 - Menggabungkan alur kerja ini dengan GitHub Copilot untuk produktivitas yang lebih tinggi.
 
-Berikut contoh cara menyiapkan MCP server di VS Code:
+Berikut contoh cara mengatur MCP server di VS Code:
 
 ```json
 {
@@ -165,31 +158,40 @@ Berikut contoh cara menyiapkan MCP server di VS Code:
 
 </details>
 
-> Untuk panduan lengkap dengan tangkapan layar dan langkah demi langkah, lihat [`README.md`](./solution/scenario3/README.md).
+> Untuk panduan detail dengan tangkapan layar dan langkah demi langkah, lihat [`README.md`](./solution/scenario3/README.md).
 
-![Scenario 3 Overview](../../../../translated_images/step4-prompt-chat.12187bb001605efc5077992b621f0fcd1df12023c5dce0464f8eb8f3d595218f.id.png)
+![Scenario 3 Overview](../../../../translated_images/id/step4-prompt-chat.12187bb001605efc.webp)
 
-Pendekatan ini sangat cocok untuk siapa saja yang membangun kursus teknis, menulis dokumentasi, atau mengembangkan kode dengan kebutuhan referensi yang sering.
+Pendekatan ini ideal untuk siapa saja yang membangun kursus teknis, menulis dokumentasi, atau mengembangkan kode dengan kebutuhan referensi yang sering.
 
 ## Poin Penting
 
-Mengintegrasikan dokumentasi langsung ke dalam alat Anda bukan hanya soal kenyamanan—ini adalah perubahan besar untuk produktivitas. Dengan menghubungkan ke Microsoft Learn Docs MCP server dari klien Anda, Anda bisa:
+Mengintegrasikan dokumentasi langsung ke dalam alat Anda bukan hanya kemudahan—ini mengubah cara produktivitas. Dengan menghubungkan ke Microsoft Learn Docs MCP server dari klien Anda, Anda dapat:
 
-- Menghilangkan perpindahan konteks antara kode dan dokumentasi
-- Mengambil dokumentasi yang up-to-date dan peka konteks secara real-time
+- Menghilangkan pergantian konteks antara kode dan dokumentasi Anda
+- Mengambil dokumen yang mutakhir dan sadar konteks secara real-time
 - Membangun alat pengembang yang lebih cerdas dan interaktif
 
-Keterampilan ini akan membantu Anda menciptakan solusi yang tidak hanya efisien, tapi juga menyenangkan untuk digunakan.
+Keterampilan ini akan membantu Anda menciptakan solusi yang tidak hanya efisien, tetapi juga menyenangkan untuk digunakan.
 
 ## Sumber Daya Tambahan
 
-Untuk memperdalam pemahaman Anda, jelajahi sumber resmi berikut:
+Untuk memperdalam pemahaman Anda, jelajahi sumber daya resmi ini:
 
 - [Microsoft Learn Docs MCP Server (GitHub)](https://github.com/MicrosoftDocs/mcp)
-- [Memulai dengan Azure MCP Server (mcp-python)](https://learn.microsoft.com/en-us/azure/developer/azure-mcp-server/get-started#create-the-python-app)
+- [Mulai dengan Azure MCP Server (mcp-python)](https://learn.microsoft.com/en-us/azure/developer/azure-mcp-server/get-started#create-the-python-app)
 - [Apa itu Azure MCP Server?](https://learn.microsoft.com/en-us/azure/developer/azure-mcp-server/)
 - [Pengenalan Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction)
-- [Menambahkan plugin dari MCP Server (Python)](https://learn.microsoft.com/en-us/semantic-kernel/concepts/plugins/adding-mcp-plugins)
+- [Tambahkan plugin dari MCP Server (Python)](https://learn.microsoft.com/en-us/semantic-kernel/concepts/plugins/adding-mcp-plugins)
 
-**Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+## Selanjutnya
+
+- Kembali ke: [Gambaran Studi Kasus](../README.md)
+- Lanjut ke: [Modul 10: Mempercepat Alur Kerja AI dengan AI Toolkit](../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Penafian**:
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber otoritatif. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau kesalahan tafsir yang timbul dari penggunaan terjemahan ini.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-13T21:56:26+00:00",
-  "source_file": "03-GettingStarted/08-testing/README.md",
-  "language_code": "es"
-}
--->
 ## Pruebas y Depuración
 
 Antes de comenzar a probar tu servidor MCP, es importante entender las herramientas disponibles y las mejores prácticas para la depuración. Realizar pruebas efectivas garantiza que tu servidor funcione como se espera y te ayuda a identificar y resolver problemas rápidamente. La siguiente sección describe los enfoques recomendados para validar tu implementación MCP.
@@ -48,7 +39,7 @@ npx @modelcontextprotocol/inspector node build/index.js
 
 El comando anterior inicia un MCP y su interfaz visual, y lanza una interfaz web local en tu navegador. Puedes esperar ver un panel que muestra tus servidores MCP registrados, sus herramientas, recursos y prompts disponibles. La interfaz te permite probar interactivamente la ejecución de herramientas, inspeccionar metadatos del servidor y ver respuestas en tiempo real, facilitando la validación y depuración de tus implementaciones MCP.
 
-Así es como puede verse: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.es.png)
+Así es como puede verse: ![Inspector](../../../../translated_images/es/connect.141db0b2bd05f096.webp)
 
 También puedes ejecutar esta herramienta en modo CLI, para lo cual agregas el atributo `--cli`. Aquí tienes un ejemplo de ejecución en modo "CLI" que lista todas las herramientas en el servidor:
 

@@ -1,8 +1,14 @@
-# MCP Security Controls - August 2025 Update
+# MCP Security Controls - February 2026 Update
 
-> **Current Standard**: This document reflects [MCP Specification 2025-06-18](https://spec.modelcontextprotocol.io/specification/2025-06-18/) security requirements and official [MCP Security Best Practices](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices).
+> **Current Standard**: This document reflects [MCP Specification 2025-11-25](https://spec.modelcontextprotocol.io/specification/2025-11-25/) security requirements and official [MCP Security Best Practices](https://modelcontextprotocol.io/specification/2025-11-25/basic/security_best_practices).
 
-The Model Context Protocol (MCP) has matured significantly with enhanced security controls addressing both traditional software security and AI-specific threats. This document provides comprehensive security controls for secure MCP implementations as of August 2025.
+The Model Context Protocol (MCP) has matured significantly with enhanced security controls addressing both traditional software security and AI-specific threats. This document provides comprehensive security controls for secure MCP implementations aligned with the OWASP MCP Top 10 framework.
+
+## 🏔️ Hands-On Security Training
+
+For practical, hands-on security implementation experience, we recommend the **[MCP Security Summit Workshop (Sherpa)](https://azure-samples.github.io/sherpa/)** - a comprehensive guided expedition to securing MCP servers in Azure using a "vulnerable → exploit → fix → validate" methodology.
+
+All security controls in this document align with the **[OWASP MCP Azure Security Guide](https://microsoft.github.io/mcp-azure-security-guide/)**, which provides reference architectures and Azure-specific implementation guidance for the OWASP MCP Top 10 risks.
 
 ## **MANDATORY Security Requirements**
 
@@ -22,11 +28,9 @@ The Model Context Protocol (MCP) has matured significantly with enhanced securit
 
 ### **External Identity Provider Integration**
 
-**Current MCP Standard (2025-06-18)** allows MCP servers to delegate authentication to external identity providers, representing a significant security improvement:
+**Current MCP Standard (2025-11-25)** allows MCP servers to delegate authentication to external identity providers, representing a significant security improvement:
 
-### **External Identity Provider Integration**
-
-**Current MCP Standard (2025-06-18)** allows MCP servers to delegate authentication to external identity providers, representing a significant security improvement:
+**OWASP MCP Risk Addressed**: [MCP07 - Insufficient Authentication & Authorization](https://microsoft.github.io/mcp-azure-security-guide/mcp/mcp07-authz/)
 
 **Security Benefits:**
 1. **Eliminates Custom Authentication Risks**: Reduces vulnerability surface by avoiding custom authentication implementations
@@ -52,6 +56,8 @@ The Model Context Protocol (MCP) has matured significantly with enhanced securit
 - **Regular Access Reviews**: Periodic validation of user permissions and privilege assignments
 
 ## 2. **Token Security & Anti-Passthrough Controls**
+
+**OWASP MCP Risk Addressed**: [MCP01 - Token Mismanagement & Secret Exposure](https://microsoft.github.io/mcp-azure-security-guide/mcp/mcp01-token-mismanagement/)
 
 ### **Token Passthrough Prevention**
 
@@ -136,6 +142,11 @@ Session Lifecycle:
 - Reduced attack surface but requires robust token validation
 
 ## 4. **AI-Specific Security Controls**
+
+**OWASP MCP Risks Addressed**:
+- [MCP06 - Prompt Injection via Contextual Payloads](https://microsoft.github.io/mcp-azure-security-guide/mcp/mcp06-prompt-injection/)
+- [MCP03 - Tool Poisoning](https://microsoft.github.io/mcp-azure-security-guide/mcp/mcp03-tool-poisoning/)
+- [MCP05 - Command Injection & Execution](https://microsoft.github.io/mcp-azure-security-guide/mcp/mcp05-command-injection/)
 
 ### **Prompt Injection Defense**
 
@@ -271,6 +282,8 @@ Access Control:
 
 ## 7. **Supply Chain Security Controls**
 
+**OWASP MCP Risk Addressed**: [MCP04 - Supply Chain Attacks](https://microsoft.github.io/mcp-azure-security-guide/mcp/mcp04-supply-chain/)
+
 ### **Dependency Verification**
 
 **Comprehensive Component Security:**
@@ -311,6 +324,8 @@ AI Components:
 - **Automated Response**: Immediate containment of compromised components
 
 ## 8. **Monitoring & Detection Controls**
+
+**OWASP MCP Risk Addressed**: [MCP08 - Lack of Audit & Telemetry](https://microsoft.github.io/mcp-azure-security-guide/mcp/mcp08-telemetry/)
 
 ### **Security Information and Event Management (SIEM)**
 
@@ -402,9 +417,14 @@ Recovery Procedures:
 ## **Implementation Resources**
 
 ### **Official MCP Documentation**
-- [MCP Specification (2025-06-18)](https://spec.modelcontextprotocol.io/specification/2025-06-18/)
-- [MCP Security Best Practices](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices)
-- [MCP Authorization Specification](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization)
+- [MCP Specification (2025-11-25)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
+- [MCP Security Best Practices](https://modelcontextprotocol.io/specification/2025-11-25/basic/security_best_practices)
+- [MCP Authorization Specification](https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization)
+
+### **OWASP MCP Security Resources**
+- [OWASP MCP Azure Security Guide](https://microsoft.github.io/mcp-azure-security-guide/) - Comprehensive OWASP MCP Top 10 with Azure implementation
+- [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/) - Official OWASP MCP security risks
+- [MCP Security Summit Workshop (Sherpa)](https://azure-samples.github.io/sherpa/) - Hands-on security training for MCP on Azure
 
 ### **Microsoft Security Solutions**
 - [Microsoft Prompt Shields](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection)
@@ -419,4 +439,9 @@ Recovery Procedures:
 
 ---
 
-> **Important**: These security controls reflect the current MCP specification (2025-06-18). Always verify against the latest [official documentation](https://spec.modelcontextprotocol.io/) as standards continue to evolve rapidly.
+> **Important**: These security controls reflect the current MCP specification (2025-11-25). Always verify against the latest [official documentation](https://spec.modelcontextprotocol.io/) as standards continue to evolve rapidly.
+
+## What's Next
+
+- Return to: [Security Module Overview](./README.md)
+- Continue to: [Module 3: Getting Started](../03-GettingStarted/README.md)

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
-  "translation_date": "2025-07-17T12:43:57+00:00",
-  "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
-  "language_code": "my"
-}
--->
 # Model Context Protocol (MCP) ကို Azure AI Foundry နှင့် ပေါင်းစပ်ခြင်း
 
 ဤလမ်းညွှန်သည် Model Context Protocol (MCP) ဆာဗာများကို Azure AI Foundry အေးဂျင့်များနှင့် ပေါင်းစပ်၍ အင်အားကြီးသော ကိရိယာများ စီမံခန့်ခွဲမှုနှင့် စီးပွားရေးအဆင့် AI စွမ်းဆောင်ရည်များကို အသုံးပြုနိုင်ရန် ပြသထားသည်။
@@ -60,7 +51,7 @@ Model Context Protocol သည် AI အက်ပလီကေးရှင်း�
 
 ## Python Implementation
 
-***[!NOTE]*** သင်သည် ဤ [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb) ကို ပြေးနိုင်သည်
+***[!NOTE]*** သင်သည် ဤ [notebook](mcp_support_python.ipynb) ကို ပြေးနိုင်သည်
 
 ### ၁။ လိုအပ်သော ပက်ကေ့ဂျ်များ တပ်ဆင်ခြင်း
 
@@ -189,7 +180,7 @@ with project_client:
 
 ## .NET Implementation
 
-***[!NOTE]*** သင်သည် ဤ [notebook](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb) ကို ပြေးနိုင်သည်
+***[!NOTE]*** သင်သည် ဤ [notebook](mcp_support_dotnet.ipynb) ကို ပြေးနိုင်သည်
 
 ### ၁။ လိုအပ်သော ပက်ကေ့ဂျ်များ တပ်ဆင်ခြင်း
 

@@ -1,76 +1,68 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2228721599c0c8673de83496b4d7d7a9",
-  "translation_date": "2025-08-19T15:24:44+00:00",
-  "source_file": "09-CaseStudy/apimsample.md",
-  "language_code": "cs"
-}
--->
 # Případová studie: Zpřístupnění REST API v API Management jako MCP server
 
-Azure API Management je služba, která poskytuje bránu nad vašimi API koncovými body. Funguje tak, že Azure API Management působí jako proxy před vašimi API a rozhoduje, co dělat s příchozími požadavky.
+Azure API Management je služba, která poskytuje bránu nad vašimi API koncovými body. Funguje tak, že Azure API Management působí jako proxy před vašimi API a může rozhodovat, co dělat s příchozími požadavky.
 
-Použitím této služby získáte celou řadu funkcí, jako například:
+Použitím této služby přidáte celou řadu funkcí, jako jsou:
 
-- **Zabezpečení** – můžete využít vše od API klíčů, JWT až po spravovanou identitu.
-- **Omezení rychlosti** – skvělá funkce, která umožňuje rozhodnout, kolik volání projde za určitou časovou jednotku. To pomáhá zajistit skvělý uživatelský zážitek a zároveň chrání vaši službu před přetížením požadavky.
-- **Škálování a vyvažování zátěže** – můžete nastavit několik koncových bodů pro vyvážení zátěže a také rozhodnout, jakým způsobem bude zátěž vyvažována.
-- **AI funkce jako sémantická cache**, limit tokenů, monitorování tokenů a další. Tyto funkce zlepšují odezvu a pomáhají vám mít přehled o spotřebě tokenů. [Více informací zde](https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities).
+- **Bezpečnost**, můžete použít vše od API klíčů, JWT až po spravovanou identitu.
+- **Omezení rychlosti**, skvělá funkce umožňující rozhodnout, kolik volání projde za určitou jednotku času. To pomáhá zajistit všem uživatelům skvělý zážitek a také tomu, že váš servis nebude přetížen požadavky.
+- **Škálování a vyvažování zátěže**. Můžete nastavit několik koncových bodů pro vyvážení zátěže a také určovat, jakým způsobem „vyvažovat zátěž“.
+- **AI funkce jako sémantické cachování**, limit tokenů a monitorování tokenů a další. Toto jsou skvělé funkce, které zlepšují odezvu a zároveň pomáhají mít přehled o spotřebě tokenů. [Více informací zde](https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities). 
 
 ## Proč MCP + Azure API Management?
 
-Model Context Protocol (MCP) se rychle stává standardem pro agentní AI aplikace a způsobem, jak konzistentně zpřístupnit nástroje a data. Azure API Management je přirozenou volbou, když potřebujete "spravovat" API. MCP servery často integrují další API pro zpracování požadavků na nástroje. Proto kombinace Azure API Management a MCP dává velký smysl.
+Model Context Protocol se rychle stává standardem pro agentní AI aplikace a způsob, jak zpřístupnit nástroje a data konzistentním způsobem. Azure API Management je přirozenou volbou, když potřebujete „spravovat“ API. MCP Servery se často integrují s dalšími API, aby například vyřešily požadavky na nástroje. Kombinace Azure API Management a MCP proto dává velký smysl.
 
 ## Přehled
 
-V tomto konkrétním příkladu se naučíme zpřístupnit API koncové body jako MCP server. Tímto způsobem můžeme snadno začlenit tyto koncové body do agentní aplikace a zároveň využít funkcí Azure API Management.
+V tomto specifickém případě se naučíme zpřístupnit API koncové body jako MCP Server. Tímto způsobem můžeme snadno začlenit tyto koncové body do agentní aplikace a zároveň využívat funkce Azure API Management.
 
 ## Klíčové funkce
 
-- Můžete vybrat metody koncových bodů, které chcete zpřístupnit jako nástroje.
-- Další funkce závisí na tom, co nakonfigurujete v sekci politik pro vaše API. Zde vám ukážeme, jak přidat omezení rychlosti.
+- Vyberete metody koncových bodů, které chcete zpřístupnit jako nástroje.
+- Další funkce, které získáte, závisí na tom, co nakonfigurujete v části policy pro vaše API. Zde ukážeme, jak přidat omezení rychlosti.
 
 ## Předkrok: import API
 
-Pokud již máte API v Azure API Management, můžete tento krok přeskočit. Pokud ne, podívejte se na tento odkaz: [import API do Azure API Management](https://learn.microsoft.com/en-us/azure/api-management/import-and-publish#import-and-publish-a-backend-api).
+Pokud již máte API v Azure API Management, můžete tento krok přeskočit. Pokud ne, podívejte se na tento odkaz, [import API do Azure API Management](https://learn.microsoft.com/en-us/azure/api-management/import-and-publish#import-and-publish-a-backend-api).
 
-## Zpřístupnění API jako MCP server
+## Zpřístupnění API jako MCP Server
 
 Pro zpřístupnění API koncových bodů postupujte podle těchto kroků:
 
-1. Přejděte na Azure Portal na následující adresu: <https://portal.azure.com/?Microsoft_Azure_ApiManagement=mcp>.  
-   Přejděte do instance vašeho API Management.
+1. Přejděte do Azure Portal na adresu <https://portal.azure.com/?Microsoft_Azure_ApiManagement=mcp>  
+Přejděte ke své instanci API Management.
 
-1. V levém menu vyberte **APIs > MCP Servers > + Create new MCP Server**.
+1. V levém menu vyberte APIs > MCP Servers > + Vytvořit nový MCP Server.
 
-1. V sekci API vyberte REST API, které chcete zpřístupnit jako MCP server.
+1. V položce API vyberte REST API, které chcete zpřístupnit jako MCP server.
 
-1. Vyberte jednu nebo více operací API, které chcete zpřístupnit jako nástroje. Můžete vybrat všechny operace nebo jen konkrétní.
+1. Vyberte jednu nebo více operací API, které chcete zpřístupnit jako nástroje. Můžete vybrat všechny operace nebo jen vybrané.
 
-    ![Vyberte metody ke zpřístupnění](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/create-mcp-server-small.png)
+    ![Vyberte metody k zpřístupnění](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/create-mcp-server-small.png)
 
-1. Klikněte na **Create**.
 
-1. Přejděte do menu **APIs** a **MCP Servers**, měli byste vidět následující:
+1. Vyberte **Create** (Vytvořit).
 
-    ![Zobrazení MCP serveru v hlavním panelu](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-list.png)
+1. Přejděte do nabídky **APIs** a **MCP Servers**, měli byste vidět následující:
 
-    MCP server je vytvořen a operace API jsou zpřístupněny jako nástroje. MCP server je uveden v panelu MCP Servers. Sloupec URL zobrazuje koncový bod MCP serveru, který můžete použít pro testování nebo v klientské aplikaci.
+    ![Zobrazení MCP Serveru v hlavním panelu](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-list.png)
+
+    MCP server je vytvořen a operace API jsou zpřístupněny jako nástroje. MCP server je zobrazen v nabídce MCP Servers. Sloupec URL ukazuje koncový bod MCP serveru, který můžete volat pro testování nebo v klientské aplikaci.
 
 ## Volitelné: Konfigurace politik
 
-Azure API Management má základní koncept politik, kde nastavujete různé pravidla pro vaše koncové body, například omezení rychlosti nebo sémantickou cache. Tyto politiky jsou psány ve formátu XML.
+Azure API Management má základní koncept politik, kde nastavujete různá pravidla pro své koncové body, například omezení rychlosti nebo sémantické cachování. Tyto politiky se vytvářejí v XML.
 
-Zde je postup, jak nastavit politiku pro omezení rychlosti vašeho MCP serveru:
+Zde je postup, jak nastavit politiku pro omezení rychlosti vašeho MCP Serveru:
 
-1. V portálu, v sekci **APIs**, vyberte **MCP Servers**.
+1. V portálu, pod APIs vyberte **MCP Servers**.
 
-1. Vyberte MCP server, který jste vytvořili.
+1. Zvolte MCP server, který jste vytvořili.
 
-1. V levém menu, pod MCP, vyberte **Policies**.
+1. V levém menu, pod MCP, vyberte **Policies** (Politiky).
 
-1. V editoru politik přidejte nebo upravte politiky, které chcete aplikovat na nástroje MCP serveru. Politiky jsou definovány ve formátu XML. Například můžete přidat politiku, která omezuje volání nástrojů MCP serveru (v tomto příkladu 5 volání za 30 sekund na jednu IP adresu klienta). Zde je XML, které způsobí omezení rychlosti:
+1. V editoru politik přidejte nebo upravte politiky, které chcete aplikovat na nástroje MCP serveru. Politiky jsou definovány ve formátu XML. Například můžete přidat politiku omezení volání na nástroje MCP serveru (v tomto příkladu 5 volání za 30 sekund na IP adresu klienta). Toto XML způsobí omezení rychlosti:
 
     ```xml
      <rate-limit-by-key calls="5" 
@@ -83,26 +75,26 @@ Zde je postup, jak nastavit politiku pro omezení rychlosti vašeho MCP serveru:
     Zde je obrázek editoru politik:
 
     ![Editor politik](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-policies-small.png)
+ 
+## Vyzkoušejte to
 
-## Vyzkoušení
+Ujistíme se, že náš MCP Server funguje podle očekávání.
 
-Ujistěme se, že náš MCP server funguje podle očekávání.
+K tomu použijeme Visual Studio Code a GitHub Copilot v režimu Agenta. Přidáme MCP server do souboru *mcp.json*. Tím Visual Studio Code bude fungovat jako klient s agentními schopnostmi a koncoví uživatelé budou moci psát prompt a komunikovat s tímto serverem.
 
-K tomu použijeme Visual Studio Code a GitHub Copilot v režimu agenta. Přidáme MCP server do souboru *mcp.json*. Tímto způsobem bude Visual Studio Code fungovat jako klient s agentními schopnostmi a koncoví uživatelé budou moci zadávat výzvy a interagovat s tímto serverem.
+Podívejme se, jak přidat MCP server do Visual Studio Code:
 
-Postup přidání MCP serveru do Visual Studio Code:
+1. Použijte příkaz MCP: **Add Server z nabídky příkazů**.
 
-1. Použijte příkaz **MCP: Add Server** z Command Palette.
+1. Po výzvě vyberte typ serveru: **HTTP (HTTP nebo Server Sent Events)**.
 
-1. Když budete vyzváni, vyberte typ serveru: **HTTP (HTTP nebo Server Sent Events)**.
+1. Zadejte URL MCP serveru v API Management. Příklad: **https://<apim-service-name>.azure-api.net/<api-name>-mcp/sse** (pro SSE endpoint) nebo **https://<apim-service-name>.azure-api.net/<api-name>-mcp/mcp** (pro MCP endpoint), všimněte si rozdílu v přenosech je `/sse` nebo `/mcp`.
 
-1. Zadejte URL MCP serveru v API Management. Příklad: **https://<apim-service-name>.azure-api.net/<api-name>-mcp/sse** (pro SSE endpoint) nebo **https://<apim-service-name>.azure-api.net/<api-name>-mcp/mcp** (pro MCP endpoint). Všimněte si rozdílu mezi transporty `/sse` nebo `/mcp`.
+1. Zadejte ID serveru podle vlastního výběru. Není to důležitá hodnota, ale pomůže vám si zapamatovat, o jakou instanci serveru se jedná.
 
-1. Zadejte ID serveru dle vašeho výběru. Toto není důležitá hodnota, ale pomůže vám si zapamatovat, co je tato instance serveru.
+1. Vyberte, zda uložit konfiguraci do nastavení pracovního prostoru nebo uživatelských nastavení.
 
-1. Vyberte, zda chcete konfiguraci uložit do nastavení pracovního prostoru nebo uživatelského nastavení.
-
-  - **Nastavení pracovního prostoru** – Konfigurace serveru je uložena do souboru .vscode/mcp.json, který je dostupný pouze v aktuálním pracovním prostoru.
+  - **Nastavení pracovního prostoru** - Konfigurace serveru je uložena pouze v souboru .vscode/mcp.json dostupném v aktuálním pracovním prostoru.
 
     *mcp.json*
 
@@ -115,7 +107,7 @@ Postup přidání MCP serveru do Visual Studio Code:
     }
     ```
 
-    nebo pokud zvolíte streaming HTTP jako transport, bude to mírně odlišné:
+    nebo pokud zvolíte streamovací HTTP jako přenos, bude to trochu jiné:
 
     ```json
     "servers": {
@@ -126,17 +118,17 @@ Postup přidání MCP serveru do Visual Studio Code:
     }
     ```
 
-  - **Uživatelské nastavení** – Konfigurace serveru je přidána do vašeho globálního souboru *settings.json* a je dostupná ve všech pracovních prostorech. Konfigurace vypadá podobně jako následující:
+  - **Uživatelská nastavení** - Konfigurace serveru je přidána do globálního souboru *settings.json* a je dostupná ve všech pracovních prostorech. Konfigurace vypadá přibližně takto:
 
     ![Uživatelské nastavení](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-servers-visual-studio-code.png)
 
-1. Také musíte přidat konfiguraci, hlavičku pro správné ověření vůči Azure API Management. Používá se hlavička nazvaná **Ocp-Apim-Subscription-Key**.
+1. Také je potřeba přidat konfiguraci, hlavičku k správné autentizaci vůči Azure API Management. Používá hlavičku s názvem **Ocp-Apim-Subscription-Key**. 
 
-    - Zde je postup, jak ji přidat do nastavení:
+    - Zde je návod, jak ji přidat do nastavení:
 
-    ![Přidání hlavičky pro ověření](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-with-header-visual-studio-code.png). Tím se zobrazí výzva k zadání hodnoty API klíče, kterou najdete v Azure Portalu pro vaši instanci Azure API Management.
+    ![Přidání hlavičky pro autentizaci](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-with-header-visual-studio-code.png), což způsobí zobrazení výzvy k zadání hodnoty API klíče, kterou najdete v Azure portálu pro vaši instanci Azure API Management.
 
-   - Pokud ji chcete přidat do *mcp.json*, můžete ji přidat takto:
+   - Pro přidání přímo do *mcp.json* ji můžete přidat takto:
 
     ```json
     "inputs": [
@@ -158,44 +150,54 @@ Postup přidání MCP serveru do Visual Studio Code:
     }
     ```
 
-### Použití režimu agenta
+### Použití režimu Agenta
 
-Nyní máme vše nastaveno buď v nastavení, nebo v *.vscode/mcp.json*. Vyzkoušejme to.
+Nyní jsme vše nastavili buď v nastavení, nebo v *.vscode/mcp.json*. Zkusme to.
 
-Měla by se zobrazit ikona nástrojů, kde jsou uvedeny zpřístupněné nástroje z vašeho serveru:
+Měla by se zobrazit ikona Nástroje, kde jsou vyjmenovány nástroje zpřístupněné vaším serverem:
 
 ![Nástroje ze serveru](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/tools-button-visual-studio-code.png)
 
-1. Klikněte na ikonu nástrojů a měli byste vidět seznam nástrojů, jako je tento:
+1. Klikněte na ikonu nástrojů a uvidíte seznam nástrojů:
 
     ![Nástroje](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/select-tools-visual-studio-code.png)
 
-1. Zadejte výzvu do chatu pro spuštění nástroje. Například pokud jste vybrali nástroj pro získání informací o objednávce, můžete se agenta zeptat na objednávku. Zde je příklad výzvy:
+1. Zadejte prompt do chatu pro zavolání nástroje. Například, pokud jste vybrali nástroj pro získání informací o objednávce, můžete se agenta zeptat na objednávku. Zde je příklad promptu:
 
     ```text
     get information from order 2
     ```
 
-    Nyní se zobrazí ikona nástrojů, která vás vyzve k pokračování v volání nástroje. Vyberte pokračování, měli byste nyní vidět výstup, jako je tento:
+    Nyní se vám zobrazí ikona nástroje s výzvou pokračovat ve volání nástroje. Zvolte pokračování a nyní uvidíte výstup jako na obrázku:
 
-    ![Výsledek výzvy](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/chat-results-visual-studio-code.png)
+    ![Výsledek promptu](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/chat-results-visual-studio-code.png)
 
-    **To, co vidíte výše, závisí na tom, jaké nástroje jste nastavili, ale myšlenka je, že dostanete textovou odpověď jako výše.**
+    **to, co vidíte výše, závisí na tom, jaké nástroje jste nastavili, ale podstata je, že obdržíte textovou odpověď, jak je výše uvedeno**
 
-## Odkazy
+
+## Reference
 
 Zde se můžete dozvědět více:
 
 - [Návod na Azure API Management a MCP](https://learn.microsoft.com/en-us/azure/api-management/export-rest-mcp-server)
-- [Python ukázka: Zabezpečení vzdálených MCP serverů pomocí Azure API Management (experimentální)](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)
+- [Python příklad: Zabezpečení vzdálených MCP serverů pomocí Azure API Management (experimentální)](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)
 
-- [Laboratoř autorizace MCP klienta](https://github.com/Azure-Samples/AI-Gateway/tree/main/labs/mcp-client-authorization)
+- [MCP klient autorizace lab](https://github.com/Azure-Samples/AI-Gateway/tree/main/labs/mcp-client-authorization)
 
-- [Použití rozšíření Azure API Management pro VS Code k importu a správě API](https://learn.microsoft.com/en-us/azure/api-management/visual-studio-code-tutorial)
+- [Použijte rozšíření Azure API Management pro VS Code k importu a správě API](https://learn.microsoft.com/en-us/azure/api-management/visual-studio-code-tutorial)
 
 - [Registrace a objevování vzdálených MCP serverů v Azure API Center](https://learn.microsoft.com/en-us/azure/api-center/register-discover-mcp-server)
-- [AI Gateway](https://github.com/Azure-Samples/AI-Gateway) Skvělý repozitář ukazující mnoho AI schopností s Azure API Management
-- [Workshopy AI Gateway](https://azure-samples.github.io/AI-Gateway/) Obsahuje workshopy využívající Azure Portal, což je skvělý způsob, jak začít hodnotit AI schopnosti.
+- [AI Gateway](https://github.com/Azure-Samples/AI-Gateway) Skvělé repozitář, který ukazuje mnoho AI schopností s Azure API Management
+- [AI Gateway workshopy](https://azure-samples.github.io/AI-Gateway/) Obsahuje workshopy využívající Azure Portal, což je skvělý způsob, jak začít hodnotit AI schopnosti.
 
-**Prohlášení**:  
-Tento dokument byl přeložen pomocí služby pro automatický překlad [Co-op Translator](https://github.com/Azure/co-op-translator). I když se snažíme o co největší přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za závazný zdroj. Pro důležité informace doporučujeme profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+## Co dál
+
+- Zpět na: [Přehled případových studií](./README.md)
+- Dále: [Azure AI Travel Agents](./travelagentsample.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Prohlášení o vyloučení odpovědnosti**:  
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro kritické informace se doporučuje profesionální lidský překlad. Nejsme odpovědni za jakékoliv nedorozumění nebo mylné výklady vzniklé z použití tohoto překladu.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

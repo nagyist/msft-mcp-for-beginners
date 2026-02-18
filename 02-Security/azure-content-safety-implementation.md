@@ -1,6 +1,8 @@
 # Implementing Azure Content Safety with MCP
 
-To strengthen MCP security against prompt injection, tool poisoning, and other AI-specific vulnerabilities, integrating Azure Content Safety is highly recommended. 
+> **OWASP MCP Risk Addressed**: [MCP06 - Prompt Injection via Contextual Payloads](https://microsoft.github.io/mcp-azure-security-guide/mcp/mcp06-prompt-injection/)
+
+To strengthen MCP security against prompt injection, tool poisoning, and other AI-specific vulnerabilities, integrating Azure Content Safety is highly recommended. This implementation guide aligns with the [MCP Security Summit Workshop (Sherpa)](https://azure-samples.github.io/sherpa/) Camp 3: I/O Security.
 
 ## Integration with MCP Server
 
@@ -27,3 +29,20 @@ This provides a robust defense against:
 5. **Fallback Mechanisms**: Define clear fallback behaviors when content safety services are unavailable
 6. **User Feedback**: Provide clear feedback to users when content is blocked due to safety concerns
 7. **Continuous Improvement**: Regularly update blocklists and patterns based on emerging threats
+
+## Additional Resources
+
+### OWASP MCP Security Guidance
+- [OWASP MCP Azure Security Guide](https://microsoft.github.io/mcp-azure-security-guide/) - Comprehensive OWASP MCP Top 10 with Azure implementation
+- [MCP06 - Prompt Injection](https://microsoft.github.io/mcp-azure-security-guide/mcp/mcp06-prompt-injection/) - Detailed prompt injection mitigation patterns
+- [MCP Security Summit Workshop](https://azure-samples.github.io/sherpa/) - Hands-on Camp 3: I/O Security covers content safety
+
+### Azure Documentation
+- [Azure Content Safety Overview](https://learn.microsoft.com/azure/ai-services/content-safety/)
+- [Prompt Shields Documentation](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection)
+- [Azure AI Content Safety Quickstart](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text)
+
+## What's Next
+
+- Return to: [Security Module Overview](./README.md)
+- Continue to: [Module 3: Getting Started](../03-GettingStarted/README.md)

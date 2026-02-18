@@ -1,47 +1,50 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f5300fd1b5e84520d500b2a8f568a1d8",
-  "translation_date": "2025-07-17T08:55:19+00:00",
-  "source_file": "02-Security/azure-content-safety.md",
-  "language_code": "th"
-}
--->
-# ความปลอดภัยขั้นสูงของ MCP ด้วย Azure Content Safety
+# ความปลอดภัย MCP ขั้นสูงด้วย Azure Content Safety
 
-Azure Content Safety มีเครื่องมือทรงพลังหลายอย่างที่ช่วยเพิ่มความปลอดภัยให้กับการใช้งาน MCP ของคุณ:
+> **OWASP MCP ความเสี่ยงที่จัดการ**: [MCP06 - การฉีดคำสั่งผ่านน้ำหนักบริบท](https://microsoft.github.io/mcp-azure-security-guide/mcp/mcp06-prompt-injection/)
+
+Azure Content Safety มีเครื่องมือทรงพลังหลายอย่างที่ช่วยเพิ่มความปลอดภัยให้กับการใช้งาน MCP ของคุณ สำหรับการฝึกปฏิบัติจริง ดูที่ [MCP Security Summit Workshop (Sherpa)](https://azure-samples.github.io/sherpa/) ค่าย 3: ความปลอดภัย I/O
 
 ## Prompt Shields
 
-AI Prompt Shields ของ Microsoft ให้การปกป้องที่แข็งแกร่งจากการโจมตีแบบ prompt injection ทั้งโดยตรงและโดยอ้อม ผ่าน:
+Microsoft AI Prompt Shields ให้การป้องกันที่แข็งแกร่งต่อการโจมตีการฉีดคำสั่งโดยตรงและทางอ้อมผ่าน:
 
-1. **การตรวจจับขั้นสูง**: ใช้การเรียนรู้ของเครื่องเพื่อระบุคำสั่งที่เป็นอันตรายซ่อนอยู่ในเนื้อหา
-2. **การเน้นจุดสำคัญ**: แปลงข้อความนำเข้าเพื่อช่วยให้ระบบ AI แยกแยะระหว่างคำสั่งที่ถูกต้องกับข้อมูลภายนอก
-3. **ตัวคั่นและการทำเครื่องหมายข้อมูล**: กำหนดขอบเขตระหว่างข้อมูลที่เชื่อถือได้และข้อมูลที่ไม่น่าเชื่อถือ
-4. **การผสานรวมกับ Content Safety**: ทำงานร่วมกับ Azure AI Content Safety เพื่อตรวจจับความพยายามเจลเบรกและเนื้อหาที่เป็นอันตราย
-5. **การอัปเดตอย่างต่อเนื่อง**: Microsoft อัปเดตกลไกการป้องกันอย่างสม่ำเสมอเพื่อต่อสู้กับภัยคุกคามใหม่ๆ
+1. **การตรวจจับขั้นสูง**: ใช้การเรียนรู้ของเครื่องในการระบุคำสั่งที่เป็นอันตรายที่ฝังอยู่ในเนื้อหา
+2. **การเน้นจุด**: แปลงข้อความนำเข้าสำหรับช่วยระบบ AI แยกแยะระหว่างคำสั่งที่ถูกต้องกับข้อมูลภายนอก
+3. **ตัวคั่นและการทำเครื่องหมายข้อมูล**: ทำเครื่องหมายขอบเขตระหว่างข้อมูลที่เชื่อถือได้และไม่เชื่อถือได้
+4. **การผสานกับ Content Safety**: ทำงานร่วมกับ Azure AI Content Safety เพื่อตรวจจับความพยายามเจลเบรกและเนื้อหาที่เป็นอันตราย
+5. **การอัปเดตอย่างต่อเนื่อง**: Microsoft อัปเดตกลไกการป้องกันอย่างสม่ำเสมอเพื่อตอบสนองภัยคุกคามใหม่ๆ
 
 ## การใช้งาน Azure Content Safety กับ MCP
 
-แนวทางนี้ให้การปกป้องหลายชั้น:
-- สแกนข้อมูลนำเข้าก่อนประมวลผล
-- ตรวจสอบผลลัพธ์ก่อนส่งกลับ
-- ใช้บล็อกลิสต์สำหรับรูปแบบที่เป็นอันตรายที่รู้จัก
-- ใช้โมเดล Content Safety ของ Azure ที่อัปเดตอย่างต่อเนื่อง
+แนวทางนี้ให้การป้องกันหลายชั้น:
+- สแกนข้อมูลนำเข้าก่อนจัดการ
+- ตรวจสอบข้อมูลส่งออกก่อนส่งกลับ
+- ใช้บล็อกลิสต์สำหรับรูปแบบที่ทราบว่ามีอันตราย
+- ใช้โมเดลความปลอดภัยของ Azure ที่อัปเดตอย่างต่อเนื่อง
 
 ## แหล่งข้อมูล Azure Content Safety
 
-หากต้องการเรียนรู้เพิ่มเติมเกี่ยวกับการใช้งาน Azure Content Safety กับเซิร์ฟเวอร์ MCP ของคุณ ให้ดูแหล่งข้อมูลอย่างเป็นทางการเหล่านี้:
+เพื่อเรียนรู้เพิ่มเติมเกี่ยวกับการใช้งาน Azure Content Safety กับเซิร์ฟเวอร์ MCP ของคุณ ให้ศึกษาจากแหล่งข้อมูลอย่างเป็นทางการเหล่านี้:
 
-1. [Azure AI Content Safety Documentation](https://learn.microsoft.com/azure/ai-services/content-safety/) - เอกสารอย่างเป็นทางการของ Azure Content Safety
-2. [Prompt Shield Documentation](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/prompt-shield) - เรียนรู้วิธีป้องกันการโจมตีแบบ prompt injection
-3. [Content Safety API Reference](https://learn.microsoft.com/rest/api/contentsafety/) - เอกสารอ้างอิง API สำหรับการใช้งาน Content Safety
-4. [Quickstart: Azure Content Safety with C#](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-csharp) - คู่มือเริ่มต้นใช้งานด้วย C#
-5. [Content Safety Client Libraries](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-client-libraries-rest-api) - ไลบรารีสำหรับลูกค้าในหลายภาษาโปรแกรม
-6. [Detecting Jailbreak Attempts](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection) - คำแนะนำเฉพาะสำหรับการตรวจจับและป้องกันความพยายามเจลเบรก
-7. [Best Practices for Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/best-practices) - แนวทางปฏิบัติที่ดีที่สุดสำหรับการใช้งาน Content Safety อย่างมีประสิทธิภาพ
+1. [เอกสาร Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/) - เอกสารทางการสำหรับ Azure Content Safety
+2. [เอกสาร Prompt Shield](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/prompt-shield) - เรียนรู้วิธีป้องกันโจมตีการฉีดคำสั่ง
+3. [เอกสาร API Content Safety](https://learn.microsoft.com/rest/api/contentsafety/) - เอกสาร API รายละเอียดสำหรับการใช้งาน Content Safety
+4. [เริ่มต้นอย่างรวดเร็ว: Azure Content Safety ด้วย C#](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-csharp) - คู่มือการใช้งานอย่างรวดเร็วด้วย C#
+5. [ไลบรารีไคลเอนต์ Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-client-libraries-rest-api) - ไลบรารีไคลเอนต์สำหรับภาษาโปรแกรมต่างๆ
+6. [การตรวจจับความพยายามเจลเบรก](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection) - คำแนะนำเฉพาะสำหรับการตรวจจับและป้องกันความพยายามเจลเบรก
+7. [แนวทางปฏิบัติที่ดีที่สุดสำหรับ Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/best-practices) - แนวทางปฏิบัติที่ดีที่สุดสำหรับการใช้งาน content safety อย่างมีประสิทธิภาพ
 
-สำหรับการใช้งานที่ลึกซึ้งยิ่งขึ้น ดูได้จาก [Azure Content Safety Implementation guide](./azure-content-safety-implementation.md) ของเรา
+สำหรับแนวทางการใช้งานที่ลึกซึ้งขึ้น ดูที่ [คู่มือการใช้งาน Azure Content Safety](./azure-content-safety-implementation.md)
 
+## ต่อไปนี้คืออะไร
+
+- อ่าน: [การใช้งาน Azure Content Safety](./azure-content-safety-implementation.md)
+- กลับไปที่: [ภาพรวมโมดูลความปลอดภัย](./README.md)
+- ต่อไปที่: [โมดูล 3: เริ่มต้นใช้งาน](../03-GettingStarted/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลโดยผู้เชี่ยวชาญมนุษย์ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใด ๆ ที่เกิดจากการใช้การแปลนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาด้วย AI [Co-op Translator](https://github.com/Azure/co-op-translator) ถึงแม้เราจะพยายามให้การแปลถูกต้อง แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่แม่นยำ เอกสารต้นฉบับในภาษาดั้งเดิมควรถือเป็นแหล่งข้อมูลที่น่าเชื่อถือที่สุด สำหรับข้อมูลที่สำคัญ ควรใช้บริการแปลโดยมืออาชีพที่เป็นมนุษย์ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการแปลความหมายผิดใด ๆ ที่เกิดจากการใช้การแปลนี้
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

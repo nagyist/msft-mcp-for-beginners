@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13231e9951b68efd9df8c56bd5cdb27e",
-  "translation_date": "2025-07-13T22:30:53+00:00",
-  "source_file": "03-GettingStarted/samples/java/calculator/README.md",
-  "language_code": "sk"
-}
--->
 # Basic Calculator MCP Service
 
 Táto služba poskytuje základné kalkulačné operácie cez Model Context Protocol (MCP) pomocou Spring Boot s WebFlux transportom. Je navrhnutá ako jednoduchý príklad pre začiatočníkov, ktorí sa učia o implementáciách MCP.
@@ -201,7 +192,7 @@ MCP Inspector je užitočný nástroj na interakciu so službami MCP. Pre použi
    - Kliknite na "List Tools" pre zobrazenie dostupných kalkulačných operácií
    - Vyberte nástroj a kliknite na "Run Tool" pre vykonanie operácie
 
-![MCP Inspector Screenshot](../../../../../../translated_images/tool.c75a0b2380efcf1a47a8478f54380a36ddcca7943b98f56dabbac8b07e15c3bb.sk.png)
+![MCP Inspector Screenshot](../../../../../../translated_images/sk/tool.c75a0b2380efcf1a.webp)
 
 ### Použitie Dockeru
 

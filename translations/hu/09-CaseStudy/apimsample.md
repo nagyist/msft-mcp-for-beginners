@@ -1,76 +1,68 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2228721599c0c8673de83496b4d7d7a9",
-  "translation_date": "2025-08-19T14:50:13+00:00",
-  "source_file": "09-CaseStudy/apimsample.md",
-  "language_code": "hu"
-}
--->
-# Esettanulmány: REST API közzététele az API Management-ben MCP szerverként
+# Esettanulmány: REST API közzététele API Management-ben MCP szerverként
 
-Az Azure API Management egy szolgáltatás, amely átjárót biztosít az API végpontjai fölött. Úgy működik, hogy az Azure API Management proxyként viselkedik az API-k előtt, és eldönti, mit tegyen a beérkező kérésekkel.
+Az Azure API Management egy olyan szolgáltatás, amely egy átjárót biztosít az API végpontjaid fölött. Az Azure API Management úgy működik, hogy proxyként lép fel az API-jaid előtt, és eldönti, hogy az érkező kérésekkel mit tegyen.
 
-Használatával számos funkciót adhat hozzá, például:
+Használatával számos funkciót adhatsz hozzá, mint például:
 
-- **Biztonság**, használhat API kulcsokat, JWT-t vagy kezelt identitást.
-- **Sebességkorlátozás**, nagyszerű funkció, amely lehetővé teszi, hogy meghatározza, hány hívás engedélyezett egy adott időegység alatt. Ez segít biztosítani, hogy minden felhasználó nagyszerű élményt kapjon, és hogy a szolgáltatása ne legyen túlterhelve kérésekkel.
-- **Skálázás és terheléselosztás**, beállíthat több végpontot a terhelés kiegyensúlyozására, és eldöntheti, hogyan történjen a "terheléselosztás".
-- **AI funkciók, mint például szemantikus gyorsítótárazás**, token limit és token monitorozás, és még sok más. Ezek nagyszerű funkciók, amelyek javítják a válaszidőt, valamint segítenek nyomon követni a tokenek felhasználását. [További információ itt](https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities).
+- **Biztonság**, használhatsz mindent az API kulcsoktól, JWT-től a kezelt identitásig.
+- **Hívásszám korlátozás**, nagyszerű funkció, hogy eldöntheted, mennyi hívás engedélyezett egy adott időegység alatt. Ez segít biztosítani, hogy minden felhasználó jó élményt kapjon, és hogy szolgáltatásod ne legyen túlterhelve kérésekkel.
+- **Skálázás és terheléselosztás**. Beállíthatsz több végpontot a terhelés kiegyenlítésére, és dönthetsz arról is, hogyan végezze a "terheléselosztást".
+- **Mesterséges intelligencia funkciók, mint szemantikus gyorsítótárazás**, tokenlimit és tokenfigyelés, és még sok más. Ezek nagyszerű funkciók, amelyek javítják a válaszkészséget, valamint segítenek kontroll alatt tartani a token költést. [További információk itt](https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities).
 
 ## Miért MCP + Azure API Management?
 
-A Model Context Protocol gyorsan szabvánnyá válik az ügynöki AI alkalmazások számára, és eszközök és adatok egységes módon történő közzétételére. Az Azure API Management természetes választás, ha API-kat kell "kezelni". Az MCP szerverek gyakran más API-kat integrálnak, hogy például egy eszköz kérését megoldják. Ezért az Azure API Management és MCP kombinálása logikus lépés.
+A Model Context Protocol gyorsan szabvánnyá válik az agentikus AI alkalmazások és az eszközök, adatok következetes módon történő közzétételéhez. Az Azure API Management természetes választás, amikor API-kat kell "kezelni". Az MCP szerverek gyakran integrálódnak más API-kkal, hogy például egy eszköz alól oldják meg a kéréseket. Ezért az Azure API Management és az MCP kombinálása logikus.
 
 ## Áttekintés
 
-Ebben a konkrét esetben megtanuljuk, hogyan tegyük közzé az API végpontokat MCP szerverként. Ezzel könnyen az ügynöki alkalmazás részévé tehetjük ezeket a végpontokat, miközben kihasználjuk az Azure API Management funkcióit.
+Ebben az adott esetben megtanuljuk, hogyan tegyük közzé az API végpontokat MCP szerverként. Ezzel egyszerűen részeivé tehetjük azokat egy agentikus alkalmazásnak, miközben kihasználjuk az Azure API Management funkcióit.
 
-## Főbb jellemzők
+## Főbb funkciók
 
-- Kiválaszthatja azokat a végpont metódusokat, amelyeket eszközként szeretne közzétenni.
-- Az extra funkciók attól függnek, hogy mit konfigurál az API politikai szekciójában. Itt például megmutatjuk, hogyan adhat hozzá sebességkorlátozást.
+- Kiválaszthatod, mely végpont metódusokat szeretnéd eszközként közzétenni.
+- Az egyéb funkciók attól függnek, mit konfigurálsz a policy szekcióban az API-dhoz. Itt megmutatjuk, hogyan adhatsz hozzá hívásszám korlátozást.
 
-## Előzetes lépés: API importálása
+## Előlépés: API importálása
 
-Ha már van API-ja az Azure API Management-ben, nagyszerű, akkor ezt a lépést kihagyhatja. Ha nincs, nézze meg ezt a linket: [API importálása az Azure API Management-be](https://learn.microsoft.com/en-us/azure/api-management/import-and-publish#import-and-publish-a-backend-api).
+Ha már van API-d az Azure API Management-ben, akkor kiváló, ezt a lépést átugorhatod. Ha nincs, nézd meg ezt a linket, [API importálása az Azure API Management-be](https://learn.microsoft.com/en-us/azure/api-management/import-and-publish#import-and-publish-a-backend-api).
 
-## API közzététele MCP szerverként
+## API végpontok közzététele MCP szerverként
 
-Az API végpontok közzétételéhez kövesse az alábbi lépéseket:
+Az API végpontok közzétételéhez kövesd a következő lépéseket:
 
-1. Nyissa meg az Azure Portalt a következő címen: <https://portal.azure.com/?Microsoft_Azure_ApiManagement=mcp>  
-   Lépjen az API Management példányához.
+1. Lépj be az Azure Portálba a következő címen: <https://portal.azure.com/?Microsoft_Azure_ApiManagement=mcp>  
+Navigálj az API Management példányodhoz.
 
-1. A bal oldali menüben válassza az **APIs > MCP Servers > + Create new MCP Server** lehetőséget.
+1. A bal oldali menüben válaszd az APIs > MCP Servers > + Új MCP Server létrehozása.
 
-1. Az API-nál válasszon egy REST API-t, amelyet MCP szerverként szeretne közzétenni.
+1. Az API-ban válassz egy REST API-t, amit MCP szerverként szeretnél közzétenni.
 
-1. Válasszon ki egy vagy több API műveletet, amelyeket eszközként szeretne közzétenni. Kiválaszthatja az összes műveletet, vagy csak bizonyos műveleteket.
+1. Válassz ki egy vagy több API műveletet, amit eszközként szeretnél közzétenni. Kiválaszthatod az összes műveletet vagy csak bizonyos műveleteket.
 
-    ![Válassza ki a közzétenni kívánt metódusokat](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/create-mcp-server-small.png)
+    ![Válaszd ki a közzétenni kívánt metódusokat](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/create-mcp-server-small.png)
 
-1. Válassza a **Create** lehetőséget.
 
-1. Lépjen az **APIs** és **MCP Servers** menüpontra, ekkor a következőt kell látnia:
+1. Kattints a **Létrehozás** gombra.
 
-    ![Az MCP szerver megjelenítése a fő panelen](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-list.png)
+1. Navigálj az **APIs** és **MCP Servers** menüpontokra, ilyet fogsz látni:
 
-    Az MCP szerver létrejött, és az API műveletek eszközként közzétételre kerültek. Az MCP szerver az MCP Servers panelen jelenik meg. Az URL oszlop mutatja az MCP szerver végpontját, amelyet teszteléshez vagy kliens alkalmazásban hívhat meg.
+    ![MCP szerver a fő nézetben](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-list.png)
 
-## Opcionális: Politika konfigurálása
+    Az MCP szerver létrejött, az API műveletek eszközként közzétéve. Az MCP szerver megjelenik az MCP Servers panelen. Az URL oszlop mutatja az MCP szerver végpontját, amit tesztelésre vagy kliens alkalmazásból hívhatsz.
 
-Az Azure API Management alapvető koncepciója a politikák, ahol különböző szabályokat állíthat be a végpontjaihoz, például sebességkorlátozást vagy szemantikus gyorsítótárazást. Ezeket a politikákat XML-ben szerkesztheti.
+## Opcionális: Szabályzatok konfigurálása
 
-Így állíthat be politikát az MCP szerver sebességkorlátozására:
+Az Azure API Management központi eleme a szabályzat (policy), amelyekkel különféle szabályokat állíthatsz be a végpontjaidra, például hívásszám korlátozás vagy szemantikus gyorsítótárazás. Ezeket szabályzatokat XML-ben írjuk.
 
-1. A portálon, az **APIs** alatt válassza az **MCP Servers** lehetőséget.
+Így állíthatsz be szabályzatot az MCP szervered hívásszám korlátozásához:
 
-1. Válassza ki a létrehozott MCP szervert.
+1. A portálon az APIs alatt válaszd ki az **MCP Servers**-t.
 
-1. A bal oldali menüben, az MCP alatt válassza a **Policies** lehetőséget.
+1. Válaszd ki a létrehozott MCP szervert.
 
-1. A politika szerkesztőben adja hozzá vagy szerkessze azokat a politikákat, amelyeket az MCP szerver eszközeire szeretne alkalmazni. A politikák XML formátumban vannak meghatározva. Például hozzáadhat egy politikát, amely korlátozza az MCP szerver eszközeinek hívásait (ebben a példában 5 hívás 30 másodperc alatt kliens IP-címenként). Íme egy XML, amely sebességkorlátozást okoz:
+1. A bal menüben az MCP alatt válaszd a **Policies**-t.
+
+1. A szabályzat szerkesztőben add hozzá vagy szerkeszd a szabályzatokat, amelyeket alkalmazni szeretnél az MCP szerver eszközeire. Ezek XML formátumban vannak megadva. Például hozzáadhatsz egy szabályzatot, amely korlátozza az MCP szerver eszközeire érkező hívásokat (példánkban 5 hívás 30 másodpercenként egy ügyfél IP címenként). Az alábbi XML fogja beállítani a korlátozást:
 
     ```xml
      <rate-limit-by-key calls="5" 
@@ -80,29 +72,29 @@ Az Azure API Management alapvető koncepciója a politikák, ahol különböző 
     />
     ```
 
-    Íme egy kép a politika szerkesztőről:
+    Íme a szabályzatszerkesztő képe:
 
-    ![Politika szerkesztő](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-policies-small.png)
+    ![Szabályzat szerkesztő](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-policies-small.png)
+ 
+## Próbáld ki!
 
-## Próbálja ki
+Győződjünk meg róla, hogy az MCP szerverünk rendeltetésszerűen működik.
 
-Győződjön meg róla, hogy az MCP szerver megfelelően működik.
+Ehhez a Visual Studio Code-ot és a GitHub Copilot Agent módját fogjuk használni. Hozzáadjuk az MCP szervert egy *mcp.json* fájlhoz. Így a Visual Studio Code egy agentikus képességekkel rendelkező kliensként fog működni, és a végfelhasználók parancsot írhatnak, amely interakcióba lép a szerverrel.
 
-Ehhez használjuk a Visual Studio Code-ot és a GitHub Copilotot annak Agent módjában. Hozzáadjuk az MCP szervert egy *mcp.json* fájlhoz. Ezzel a Visual Studio Code kliensként fog működni ügynöki képességekkel, és a végfelhasználók képesek lesznek beírni egy promptot, hogy interakcióba lépjenek a szerverrel.
+Nézzük, hogyan adhatod hozzá az MCP szervert a Visual Studio Code-ban:
 
-Így adhatja hozzá az MCP szervert a Visual Studio Code-ban:
+1. Használd az MCP: **Add Server parancsát a Command Palette-ből**.
 
-1. Használja az MCP: **Add Server parancsot a Command Palette-ből**.
+1. Amikor megkérdezi, válaszd ki a szerver típusát: **HTTP (HTTP vagy Server Sent Events)**.
 
-1. Amikor megkérdezi, válassza ki a szerver típusát: **HTTP (HTTP vagy Server Sent Events)**.
+1. Add meg az Azure API Management-ben lévő MCP szerver URL-jét. Példa: **https://<apim-service-name>.azure-api.net/<api-name>-mcp/sse** (SSE végponthoz) vagy **https://<apim-service-name>.azure-api.net/<api-name>-mcp/mcp** (MCP végponthoz), vedd észre a különbséget a szállítási utak között: `/sse` vagy `/mcp`.
 
-1. Adja meg az MCP szerver URL-jét az API Management-ben. Példa: **https://<apim-service-name>.azure-api.net/<api-name>-mcp/sse** (SSE végpont esetén) vagy **https://<apim-service-name>.azure-api.net/<api-name>-mcp/mcp** (MCP végpont esetén), vegye figyelembe, hogy a különbség a szállítások között a `/sse` vagy `/mcp`.
+1. Add meg a választott szerver azonosítót. Ez nem egy fontos érték, de segít emlékezni, hogy ez az adott szerver példány melyik.
 
-1. Adjon meg egy szerverazonosítót saját választása szerint. Ez nem fontos érték, de segít emlékezni, hogy mi ez a szerver példány.
+1. Válaszd ki, hogy a konfigurációt a munkaterület beállításaiban vagy a felhasználói beállításokban mented-e.
 
-1. Válassza ki, hogy a konfigurációt a munkaterület beállításaihoz vagy a felhasználói beállításokhoz menti-e.
-
-  - **Munkaterület beállításai** - A szerver konfigurációja egy .vscode/mcp.json fájlba kerül, amely csak az aktuális munkaterületen érhető el.
+  - **Workspace settings** - A szerver konfiguráció egy .vscode/mcp.json fájlba kerül, amely csak az adott munkaterületen elérhető.
 
     *mcp.json*
 
@@ -115,7 +107,7 @@ Ehhez használjuk a Visual Studio Code-ot és a GitHub Copilotot annak Agent mó
     }
     ```
 
-    vagy ha streaming HTTP-t választ szállításként, kissé eltérő lesz:
+    vagy ha streaming HTTP-t választasz szállítási formának, akkor kissé más lesz:
 
     ```json
     "servers": {
@@ -126,17 +118,17 @@ Ehhez használjuk a Visual Studio Code-ot és a GitHub Copilotot annak Agent mó
     }
     ```
 
-  - **Felhasználói beállítások** - A szerver konfigurációja hozzáadódik a globális *settings.json* fájlhoz, és minden munkaterületen elérhető. A konfiguráció hasonlóan néz ki:
+  - **User settings** - A szerver konfiguráció globálisan a *settings.json* fájlodba kerül, és minden munkaterületen elérhető. A konfiguráció hasonló ehhez:
 
     ![Felhasználói beállítás](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-servers-visual-studio-code.png)
 
-1. Ezenkívül hozzá kell adnia egy konfigurációt, egy fejlécet, hogy biztosítsa a megfelelő hitelesítést az Azure API Management felé. Ez egy **Ocp-Apim-Subscription-Key** nevű fejlécet használ.
+1. Emellett hozzá kell adnod egy konfigurációt, egy fejlécet, hogy megfelelően hitelesítsen az Azure API Management felé. Egy **Ocp-Apim-Subscription-Key** nevű fejlécet használ.
 
-    - Így adhatja hozzá a beállításokhoz:
+    - Így adhatod hozzá a beállításokhoz:
 
-    ![Hitelesítési fejléc hozzáadása](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-with-header-visual-studio-code.png), ez megjeleníti a promptot, amelyben meg kell adnia az API kulcs értékét, amelyet az Azure Portalban talál az Azure API Management példányához.
+    ![Hitelesítéshez fejléchez hozzáadás](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-with-header-visual-studio-code.png), ez egy promptot fog megjeleníteni, amely kéri az API kulcs értékét, amit az Azure Portálban találhatsz az API Management példányodhoz.
 
-   - Ha inkább az *mcp.json*-hoz szeretné hozzáadni, így teheti meg:
+   - Ha inkább az *mcp.json*-hoz adod hozzá, így nézhet ki:
 
     ```json
     "inputs": [
@@ -158,44 +150,54 @@ Ehhez használjuk a Visual Studio Code-ot és a GitHub Copilotot annak Agent mó
     }
     ```
 
-### Ügynök mód használata
+### Használat agent módban
 
-Most már minden be van állítva, akár a beállításokban, akár a *.vscode/mcp.json*-ban. Próbáljuk ki.
+Most, hogy minden beállítva van akár a beállításokban, akár a *.vscode/mcp.json*-ban, próbáljuk ki.
 
-Egy eszköz ikon jelenik meg, ahol a szerver által közzétett eszközök listázva vannak:
+Egy ilyen Eszközök ikont kell látnod, ahol a szerveredből közzétett eszközök listázva vannak:
 
-![Eszközök a szerverről](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/tools-button-visual-studio-code.png)
+![Szerver eszközei](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/tools-button-visual-studio-code.png)
 
-1. Kattintson az eszköz ikonra, és a következő eszközlistát kell látnia:
+1. Kattints az eszköz ikonra, és egy eszközlista fog megjelenni:
 
     ![Eszközök](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/select-tools-visual-studio-code.png)
 
-1. Írjon be egy promptot a csevegésbe, hogy meghívja az eszközt. Például, ha kiválasztott egy eszközt, amely információt ad egy rendelésről, kérdezze meg az ügynököt a rendelésről. Íme egy példa prompt:
+1. Írj be egy promptot a chatbe az eszköz meghívásához. Például ha kiválasztottál egy eszközt, amivel rendelési információt kérhetsz, megkérdezheted az agenset egy rendelésről. Példa prompt:
 
     ```text
     get information from order 2
     ```
 
-    Most megjelenik egy eszköz ikon, amely arra kéri, hogy folytassa az eszköz hívását. Válassza ki, hogy folytatja az eszköz futtatását, ekkor a következő kimenetet kell látnia:
+    Meg fog jelenni egy eszköz ikon, amely megkérdez, hogy folytatod-e az eszköz meghívását. Válaszd a folytatást, és ilyesmi választ fogsz látni:
 
-    ![Eredmény a promptból](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/chat-results-visual-studio-code.png)
+    ![Válasz a promptból](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/chat-results-visual-studio-code.png)
 
-    **amit fent lát, az attól függ, hogy milyen eszközöket állított be, de az ötlet az, hogy szöveges választ kap, mint fent**
+    **a fent látott eredmény attól függ, milyen eszközöket állítottál be, de az ötlet az, hogy hasonló szöveges választ kapj**
+
 
 ## Hivatkozások
 
-Íme, hogyan tanulhat többet:
+Ezekből tanulhatsz tovább:
 
-- [Azure API Management és MCP oktatóanyag](https://learn.microsoft.com/en-us/azure/api-management/export-rest-mcp-server)
-- [Python példa: Távoli MCP szerverek biztonságos használata Azure API Management segítségével (kísérleti)](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)
+- [Útmutató az Azure API Management és MCP használatához](https://learn.microsoft.com/en-us/azure/api-management/export-rest-mcp-server)
+- [Python példa: Biztonságos távoli MCP szerverek Azure API Management használatával (kísérleti)](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)
 
-- [MCP kliens hitelesítési labor](https://github.com/Azure-Samples/AI-Gateway/tree/main/labs/mcp-client-authorization)
+- [MCP kliens autorizációs labor](https://github.com/Azure-Samples/AI-Gateway/tree/main/labs/mcp-client-authorization)
 
-- [Az Azure API Management kiterjesztés használata a VS Code-ban API-k importálására és kezelésére](https://learn.microsoft.com/en-us/azure/api-management/visual-studio-code-tutorial)
+- [Az Azure API Management bővítmény használata VS Code-ban API-k importálására és kezelésére](https://learn.microsoft.com/en-us/azure/api-management/visual-studio-code-tutorial)
 
 - [Távoli MCP szerverek regisztrálása és felfedezése az Azure API Centerben](https://learn.microsoft.com/en-us/azure/api-center/register-discover-mcp-server)
-- [AI Gateway](https://github.com/Azure-Samples/AI-Gateway) Nagyszerű repo, amely számos AI képességet mutat be az Azure API Management segítségével
-- [AI Gateway workshopok](https://azure-samples.github.io/AI-Gateway/) Workshopokat tartalmaz az Azure Portal használatával, amely nagyszerű módja az AI képességek értékelésének megkezdéséhez.
+- [AI Gateway](https://github.com/Azure-Samples/AI-Gateway) Nagyszerű tároló, amely sok AI képességet mutat be az Azure API Management segítségével
+- [AI Gateway workshopok](https://azure-samples.github.io/AI-Gateway/) Tartalmaz workshopokat Azure Portál használatával, ami nagyszerű mód az AI képességek értékelésének megkezdéséhez.
 
-**Felelősségkizárás**:  
-Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével készült. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális, emberi fordítást igénybe venni. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+## Mi következik
+
+- Vissza ide: [Esettanulmányok áttekintése](./README.md)
+- Következő: [Azure AI Utazási Ügynökök](./travelagentsample.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Felelősségkizárás**:
+Ez a dokumentum az AI fordító szolgáltatás [Co-op Translator](https://github.com/Azure/co-op-translator) használatával készült. Bár az pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum anyanyelvű változata tekintendő hiteles forrásnak. Fontos információk esetén szakmai emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből eredő esetleges félreértésekért vagy téves értelmezésekért.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

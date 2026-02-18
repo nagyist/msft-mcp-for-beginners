@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-13T22:04:22+00:00",
-  "source_file": "03-GettingStarted/08-testing/README.md",
-  "language_code": "hr"
-}
--->
 ## Testiranje i otklanjanje pogrešaka
 
 Prije nego što započnete s testiranjem vašeg MCP servera, važno je razumjeti dostupne alate i najbolje prakse za otklanjanje pogrešaka. Učinkovito testiranje osigurava da vaš server radi kako se očekuje i pomaže vam brzo identificirati i riješiti probleme. Sljedeći odjeljak opisuje preporučene pristupe za provjeru vaše MCP implementacije.
@@ -48,7 +39,7 @@ npx @modelcontextprotocol/inspector node build/index.js
 
 Gornja naredba pokreće MCP i njegov vizualni sučelje te otvara lokalno web sučelje u vašem pregledniku. Možete očekivati nadzornu ploču koja prikazuje vaše registrirane MCP servere, njihove dostupne alate, resurse i upite. Sučelje vam omogućuje interaktivno testiranje izvršavanja alata, pregled metapodataka servera i praćenje odgovora u stvarnom vremenu, što olakšava provjeru i otklanjanje pogrešaka u implementacijama MCP servera.
 
-Evo kako to može izgledati: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.hr.png)
+Evo kako to može izgledati: ![Inspector](../../../../translated_images/hr/connect.141db0b2bd05f096.webp)
 
 Također možete pokrenuti ovaj alat u CLI načinu rada dodavanjem atributa `--cli`. Evo primjera pokretanja alata u "CLI" načinu koji prikazuje sve alate na serveru:
 

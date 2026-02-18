@@ -1,96 +1,89 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b62150e27d4b7b5797ee41146d176e6b",
-  "translation_date": "2025-08-11T12:44:36+00:00",
-  "source_file": "08-BestPractices/README.md",
-  "language_code": "ko"
-}
--->
 # MCP 개발 모범 사례
 
-[![MCP 개발 모범 사례](../../../translated_images/09.d0f6d86c9d72134ccf5a8d8c8650a0557e519936661fc894cad72d73522227cb.ko.png)](https://youtu.be/W56H9W7x-ao)
+[![MCP Development Best Practices](../../../translated_images/ko/09.d0f6d86c9d72134c.webp)](https://youtu.be/W56H9W7x-ao)
 
-_(위 이미지를 클릭하면 이 강의의 동영상을 볼 수 있습니다)_
+_(위 이미지 클릭 시 본 수업의 영상 시청)_
 
 ## 개요
 
-이 강의는 MCP 서버와 기능을 생산 환경에서 개발, 테스트 및 배포할 때 필요한 고급 모범 사례에 초점을 맞춥니다. MCP 생태계가 점점 복잡해지고 중요성이 커짐에 따라, 확립된 패턴을 따르는 것은 신뢰성, 유지보수성 및 상호운용성을 보장하는 데 필수적입니다. 이 강의는 실제 MCP 구현에서 얻은 실용적인 지혜를 통합하여 강력하고 효율적인 서버를 만들고 효과적인 리소스, 프롬프트 및 도구를 활용하는 방법을 안내합니다.
+이 수업은 MCP 서버 및 기능을 프로덕션 환경에서 개발, 테스트 및 배포할 때의 고급 모범 사례에 중점을 둡니다. MCP 생태계가 복잡성과 중요성이 커짐에 따라, 확립된 패턴을 따르는 것은 신뢰성, 유지보수성 및 상호 운용성을 보장합니다. 본 수업은 실제 MCP 구현에서 얻은 실용적 지혜를 통합하여 견고하고 효율적인 서버를 효과적인 리소스, 프롬프트 및 도구와 함께 만드는 데 도움을 줍니다.
 
 ## 학습 목표
 
-이 강의를 마치면 다음을 수행할 수 있습니다:
+이 수업이 끝나면 다음을 할 수 있습니다:
 
-- MCP 서버와 기능 설계에서 업계 모범 사례를 적용
+- MCP 서버 및 기능 설계에서 업계 모범 사례 적용
 - MCP 서버에 대한 포괄적인 테스트 전략 수립
-- 복잡한 MCP 애플리케이션을 위한 효율적이고 재사용 가능한 워크플로 패턴 설계
-- MCP 서버에서 적절한 오류 처리, 로깅 및 관찰성 구현
-- 성능, 보안 및 유지보수를 최적화한 MCP 구현
+- 복잡한 MCP 애플리케이션을 위한 효율적이고 재사용 가능한 워크플로우 패턴 설계
+- MCP 서버에서 적절한 오류 처리, 로깅 및 관측성 구현
+- MCP 구현의 성능, 보안, 유지보수성 최적화
 
 ## MCP 핵심 원칙
 
-구체적인 구현 사례를 살펴보기 전에, 효과적인 MCP 개발을 이끄는 핵심 원칙을 이해하는 것이 중요합니다:
+구체적인 구현 관행에 들어가기 전에, 효과적인 MCP 개발을 안내하는 핵심 원칙을 이해하는 것이 중요합니다:
 
-1. **표준화된 통신**: MCP는 JSON-RPC 2.0을 기반으로 하며, 모든 구현에서 요청, 응답 및 오류 처리를 위한 일관된 형식을 제공합니다.
+1. **표준화된 통신**: MCP는 JSON-RPC 2.0을 기반으로 하여 모든 구현 사이에 요청, 응답 및 오류 처리를 위한 일관된 형식을 제공합니다.
 
-2. **사용자 중심 설계**: MCP 구현에서 항상 사용자 동의, 제어 및 투명성을 우선시하십시오.
+2. **사용자 중심 설계**: 항상 MCP 구현에서 사용자 동의, 제어 및 투명성을 최우선으로 합니다.
 
-3. **보안 우선**: 인증, 권한 부여, 유효성 검사 및 속도 제한을 포함한 강력한 보안 조치를 구현하십시오.
+3. **보안 우선**: 인증, 권한 부여, 검증, 속도 제한 등 강력한 보안 조치를 구현합니다.
 
-4. **모듈형 아키텍처**: 각 도구와 리소스가 명확하고 집중된 목적을 가지도록 MCP 서버를 모듈형으로 설계하십시오.
+4. **모듈식 아키텍처**: 각 도구와 리소스가 명확하고 집중된 목적을 가지는 모듈식 접근방식으로 MCP 서버를 설계합니다.
 
-5. **상태 유지 연결**: 여러 요청에 걸쳐 상태를 유지할 수 있는 MCP의 기능을 활용하여 더 일관되고 컨텍스트를 고려한 상호작용을 만드십시오.
+5. **상태 유지 연결**: 여러 요청에 걸쳐 상태를 유지하는 MCP의 능력을 활용하여 더 일관되고 문맥 인지적인 상호작용을 만듭니다.
 
 ## 공식 MCP 모범 사례
 
-다음 모범 사례는 공식 모델 컨텍스트 프로토콜 문서에서 가져왔습니다:
+다음 모범 사례는 공식 모델 컨텍스트 프로토콜 문서에서 유래했습니다:
 
 ### 보안 모범 사례
 
-1. **사용자 동의 및 제어**: 데이터를 액세스하거나 작업을 수행하기 전에 항상 명시적인 사용자 동의를 요구하십시오. 공유되는 데이터와 승인된 작업에 대한 명확한 제어를 제공하십시오.
+1. **사용자 동의 및 제어**: 데이터 접근 또는 작업 수행 전에 명시적인 사용자 동의를 항상 요구합니다. 공유되는 데이터와 승인된 작업에 대해 명확한 제어를 제공합니다.
 
-2. **데이터 프라이버시**: 명시적인 동의 없이 사용자 데이터를 노출하지 말고 적절한 액세스 제어로 보호하십시오. 무단 데이터 전송을 방지하십시오.
+2. **데이터 프라이버시**: 명시적 동의가 있는 경우에만 사용자 데이터를 노출하며 적절한 접근 제어로 보호합니다. 무단 데이터 전송을 방지합니다.
 
-3. **도구 안전성**: 도구를 호출하기 전에 명시적인 사용자 동의를 요구하십시오. 각 도구의 기능을 사용자에게 명확히 이해시키고 강력한 보안 경계를 적용하십시오.
+3. **도구 안전성**: 도구 호출 전에 명확한 사용자 동의를 요구합니다. 사용자가 각 도구의 기능을 이해하도록 하고 강력한 보안 경계를 시행합니다.
 
-4. **도구 권한 제어**: 세션 중 모델이 사용할 수 있는 도구를 구성하여 명시적으로 승인된 도구만 접근 가능하도록 하십시오.
+4. **도구 권한 제어**: 세션 중 모델이 사용할 수 있는 도구를 구성하여 명시적으로 승인된 도구만 접근할 수 있도록 보장합니다.
 
-5. **인증**: API 키, OAuth 토큰 또는 기타 안전한 인증 방법을 사용하여 도구, 리소스 또는 민감한 작업에 대한 액세스를 부여하기 전에 적절한 인증을 요구하십시오.
+5. **인증**: API 키, OAuth 토큰 또는 기타 안전한 인증 방식을 사용하여 도구, 리소스 또는 민감 작업에 접근하기 전에 적절한 인증을 요구합니다.
 
-6. **매개변수 유효성 검사**: 잘못된 입력이나 악의적인 입력이 도구 구현에 도달하지 않도록 모든 도구 호출에 대해 유효성을 검사하십시오.
+6. **매개변수 검증**: 모든 도구 호출에 대해 검증을 시행하여 잘못되거나 악의적인 입력이 도구 구현에 도달하지 않도록 합니다.
 
-7. **속도 제한**: 서버 리소스의 남용을 방지하고 공정한 사용을 보장하기 위해 속도 제한을 구현하십시오.
+7. **속도 제한**: 서버 자원의 남용을 방지하고 공정한 사용을 보장하기 위해 속도 제한을 구현합니다.
 
 ### 구현 모범 사례
 
-1. **기능 협상**: 연결 설정 중 지원되는 기능, 프로토콜 버전, 사용 가능한 도구 및 리소스에 대한 정보를 교환하십시오.
+1. **기능 협상**: 연결 설정 중 지원 기능, 프로토콜 버전, 사용 가능한 도구 및 리소스에 대한 정보를 교환합니다.
 
-2. **도구 설계**: 여러 문제를 처리하는 거대한 도구보다는 특정 작업에 뛰어난 집중된 도구를 만드십시오.
+2. **도구 설계**: 여러 관심사를 처리하는 거대 도구 대신 하나의 작업에 집중하는 도구를 만듭니다.
 
-3. **오류 처리**: 문제를 진단하고 실패를 우아하게 처리하며 실행 가능한 피드백을 제공할 수 있도록 표준화된 오류 메시지와 코드를 구현하십시오.
+3. **오류 처리**: 문제 진단, 실패 우아한 처리 및 실행 가능한 피드백 제공을 위한 표준화된 오류 메시지와 코드를 구현합니다.
 
-4. **로깅**: 프로토콜 상호작용을 감사, 디버깅 및 모니터링하기 위해 구조화된 로그를 구성하십시오.
+4. **로깅**: 감사, 디버그 및 프로토콜 상호작용 모니터링을 위한 구조화된 로그를 구성합니다.
 
-5. **진행 상황 추적**: 장시간 실행되는 작업에 대해 진행 상황 업데이트를 보고하여 반응형 사용자 인터페이스를 가능하게 하십시오.
+5. **진행 추적**: 장시간 실행 작업에 대해 진행 상황 업데이트를 보고하여 반응형 사용자 인터페이스를 가능하게 합니다.
 
-6. **요청 취소**: 더 이상 필요하지 않거나 너무 오래 걸리는 요청을 클라이언트가 취소할 수 있도록 허용하십시오.
+6. **요청 취소**: 필요없거나 너무 오래 걸리는 진행 중인 요청을 클라이언트가 취소할 수 있도록 합니다.
 
 ## 추가 참고 자료
 
-MCP 모범 사례에 대한 최신 정보를 얻으려면 다음을 참조하십시오:
+최신 MCP 모범 사례 정보는 다음을 참조하세요:
 
 - [MCP 문서](https://modelcontextprotocol.io/)
-- [MCP 사양](https://spec.modelcontextprotocol.io/)
+- [MCP 명세 (2025-11-25)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
 - [GitHub 저장소](https://github.com/modelcontextprotocol)
 - [보안 모범 사례](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
+- [OWASP MCP Top 10](https://microsoft.github.io/mcp-azure-security-guide/mcp/) - 보안 위험 및 완화책
+- [MCP 보안 정상회담 워크숍 (Sherpa)](https://azure-samples.github.io/sherpa/) - 실습 보안 교육
 
-## 실용적인 구현 예제
+## 실용적 구현 예시
 
 ### 도구 설계 모범 사례
 
 #### 1. 단일 책임 원칙
 
-각 MCP 도구는 명확하고 집중된 목적을 가져야 합니다. 여러 문제를 처리하려는 거대한 도구를 만드는 대신 특정 작업에 뛰어난 전문화된 도구를 개발하십시오.
+각 MCP 도구는 명확하고 집중된 목적을 가져야 합니다. 여러 관심사를 처리하려는 거대 도구를 만들기보다 특정 작업에 뛰어난 전문 도구를 개발하세요.
 
 ```csharp
 // A focused tool that does one thing well
@@ -152,10 +145,10 @@ public class WeatherForecastTool : ITool
 
 #### 2. 일관된 오류 처리
 
-정보 제공 오류 메시지와 적절한 복구 메커니즘을 갖춘 강력한 오류 처리를 구현하십시오.
+정보가 풍부한 오류 메시지와 적절한 복구 메커니즘을 갖춘 견고한 오류 처리를 구현하세요.
 
 ```python
-# Python example with comprehensive error handling
+# 포괄적인 오류 처리를 포함한 파이썬 예제
 class DataQueryTool:
     def get_name(self):
         return "dataQuery"
@@ -165,19 +158,19 @@ class DataQueryTool:
     
     async def execute(self, parameters):
         try:
-            # Parameter validation
+            # 매개변수 검증
             if "query" not in parameters:
                 raise ToolParameterError("Missing required parameter: query")
                 
             query = parameters["query"]
             
-            # Security validation
+            # 보안 검증
             if self._contains_unsafe_sql(query):
                 raise ToolSecurityError("Query contains potentially unsafe SQL")
             
             try:
-                # Database operation with timeout
-                async with timeout(10):  # 10 second timeout
+                # 타임아웃이 있는 데이터베이스 작업
+                async with timeout(10):  # 10초 타임아웃
                     result = await self._database.execute_query(query)
                     
                 return ToolResponse(
@@ -186,37 +179,37 @@ class DataQueryTool:
             except asyncio.TimeoutError:
                 raise ToolExecutionError("Database query timed out after 10 seconds")
             except DatabaseConnectionError as e:
-                # Connection errors might be transient
+                # 연결 오류는 일시적일 수 있음
                 self._log_error("Database connection error", e)
                 raise ToolExecutionError(f"Database connection error: {str(e)}")
             except DatabaseQueryError as e:
-                # Query errors are likely client errors
+                # 쿼리 오류는 클라이언트 오류일 가능성이 높음
                 self._log_error("Database query error", e)
                 raise ToolExecutionError(f"Invalid query: {str(e)}")
                 
         except ToolError:
-            # Let tool-specific errors pass through
+            # 도구별 오류는 통과시킴
             raise
         except Exception as e:
-            # Catch-all for unexpected errors
+            # 예상치 못한 오류에 대한 포괄적 처리
             self._log_error("Unexpected error in DataQueryTool", e)
             raise ToolExecutionError(f"An unexpected error occurred: {str(e)}")
     
     def _contains_unsafe_sql(self, query):
-        # Implementation of SQL injection detection
+        # SQL 인젝션 탐지 구현
         pass
         
     def _log_error(self, message, error):
-        # Implementation of error logging
+        # 오류 로깅 구현
         pass
 ```
 
-#### 3. 매개변수 유효성 검사
+#### 3. 매개변수 검증
 
-잘못된 입력이나 악의적인 입력을 방지하기 위해 항상 매개변수를 철저히 검증하십시오.
+항상 매개변수를 철저히 검증하여 잘못되거나 악의적인 입력을 방지하세요.
 
 ```javascript
-// JavaScript/TypeScript example with detailed parameter validation
+// 자세한 매개변수 검증이 포함된 JavaScript/TypeScript 예제
 class FileOperationTool {
   getName() {
     return "fileOperation";
@@ -251,7 +244,7 @@ class FileOperationTool {
   }
   
   async execute(parameters) {
-    // 1. Validate parameter presence
+    // 1. 매개변수 존재 여부 검증
     if (!parameters.operation) {
       throw new ToolError("Missing required parameter: operation");
     }
@@ -260,7 +253,7 @@ class FileOperationTool {
       throw new ToolError("Missing required parameter: path");
     }
     
-    // 2. Validate parameter types
+    // 2. 매개변수 타입 검증
     if (typeof parameters.operation !== "string") {
       throw new ToolError("Parameter 'operation' must be a string");
     }
@@ -269,45 +262,45 @@ class FileOperationTool {
       throw new ToolError("Parameter 'path' must be a string");
     }
     
-    // 3. Validate parameter values
+    // 3. 매개변수 값 검증
     const validOperations = ["read", "write", "delete"];
     if (!validOperations.includes(parameters.operation)) {
       throw new ToolError(`Invalid operation. Must be one of: ${validOperations.join(", ")}`);
     }
     
-    // 4. Validate content presence for write operation
+    // 4. 쓰기 작업을 위한 내용 존재 여부 검증
     if (parameters.operation === "write" && !parameters.content) {
       throw new ToolError("Content parameter is required for write operation");
     }
     
-    // 5. Path safety validation
+    // 5. 경로 안전성 검증
     if (!this.isPathWithinAllowedDirectories(parameters.path)) {
       throw new ToolError("Access denied: path is outside of allowed directories");
     }
     
-    // Implementation based on validated parameters
+    // 검증된 매개변수를 기반으로 한 구현
     // ...
   }
   
   isPathWithinAllowedDirectories(path) {
-    // Implementation of path safety check
+    // 경로 안전성 검사 구현
     // ...
   }
 }
 ```
 
-### 보안 구현 예제
+### 보안 구현 예시
 
 #### 1. 인증 및 권한 부여
 
 ```java
-// Java example with authentication and authorization
+// 인증 및 권한 부여가 포함된 Java 예제
 public class SecureDataAccessTool implements Tool {
     private final AuthenticationService authService;
     private final AuthorizationService authzService;
     private final DataService dataService;
     
-    // Dependency injection
+    // 의존성 주입
     public SecureDataAccessTool(
             AuthenticationService authService,
             AuthorizationService authzService,
@@ -324,10 +317,10 @@ public class SecureDataAccessTool implements Tool {
     
     @Override
     public ToolResponse execute(ToolRequest request) {
-        // 1. Extract authentication context
+        // 1. 인증 컨텍스트 추출
         String authToken = request.getContext().getAuthToken();
         
-        // 2. Authenticate user
+        // 2. 사용자 인증
         UserIdentity user;
         try {
             user = authService.validateToken(authToken);
@@ -335,7 +328,7 @@ public class SecureDataAccessTool implements Tool {
             return ToolResponse.error("Authentication failed: " + e.getMessage());
         }
         
-        // 3. Check authorization for the specific operation
+        // 3. 특정 작업에 대한 권한 확인
         String dataId = request.getParameters().get("dataId").getAsString();
         String operation = request.getParameters().get("operation").getAsString();
         
@@ -344,7 +337,7 @@ public class SecureDataAccessTool implements Tool {
             return ToolResponse.error("Access denied: Insufficient permissions for this operation");
         }
         
-        // 4. Proceed with authorized operation
+        // 4. 권한이 부여된 작업 진행
         try {
             switch (operation) {
                 case "read":
@@ -444,26 +437,26 @@ public class RateLimitingMiddleware
 
 ### 1. MCP 도구 단위 테스트
 
-외부 종속성을 모의(Mock)하여 도구를 독립적으로 테스트하십시오:
+도구를 독립적으로 테스트하고 외부 종속성을 모킹하세요:
 
 ```typescript
-// TypeScript example of a tool unit test
+// 도구 단위 테스트의 TypeScript 예제
 describe('WeatherForecastTool', () => {
   let tool: WeatherForecastTool;
   let mockWeatherService: jest.Mocked<IWeatherService>;
   
   beforeEach(() => {
-    // Create a mock weather service
+    // 목 날씨 서비스 생성
     mockWeatherService = {
       getForecasts: jest.fn()
     } as any;
     
-    // Create the tool with the mock dependency
+    // 목 의존성을 가진 도구 생성
     tool = new WeatherForecastTool(mockWeatherService);
   });
   
   it('should return weather forecast for a location', async () => {
-    // Arrange
+    // 준비
     const mockForecast = {
       location: 'Seattle',
       forecasts: [
@@ -475,23 +468,23 @@ describe('WeatherForecastTool', () => {
     
     mockWeatherService.getForecasts.mockResolvedValue(mockForecast);
     
-    // Act
+    // 실행
     const response = await tool.execute({
       location: 'Seattle',
       days: 3
     });
     
-    // Assert
+    // 검증
     expect(mockWeatherService.getForecasts).toHaveBeenCalledWith('Seattle', 3);
     expect(response.content[0].text).toContain('Seattle');
     expect(response.content[0].text).toContain('Sunny');
   });
   
   it('should handle errors from the weather service', async () => {
-    // Arrange
+    // 준비
     mockWeatherService.getForecasts.mockRejectedValue(new Error('Service unavailable'));
     
-    // Act & Assert
+    // 실행 및 검증
     await expect(tool.execute({
       location: 'Seattle',
       days: 3
@@ -502,38 +495,38 @@ describe('WeatherForecastTool', () => {
 
 ### 2. 통합 테스트
 
-클라이언트 요청에서 서버 응답까지의 전체 흐름을 테스트하십시오:
+클라이언트 요청부터 서버 응답까지의 전체 흐름을 테스트하세요:
 
 ```python
-# Python integration test example
+# 파이썬 통합 테스트 예제
 @pytest.mark.asyncio
 async def test_mcp_server_integration():
-    # Start a test server
+    # 테스트 서버 시작
     server = McpServer()
     server.register_tool(WeatherForecastTool(MockWeatherService()))
     await server.start(port=5000)
     
     try:
-        # Create a client
+        # 클라이언트 생성
         client = McpClient("http://localhost:5000")
         
-        # Test tool discovery
+        # 도구 검색 테스트
         tools = await client.discover_tools()
         assert "weatherForecast" in [t.name for t in tools]
         
-        # Test tool execution
+        # 도구 실행 테스트
         response = await client.execute_tool("weatherForecast", {
             "location": "Seattle",
             "days": 3
         })
         
-        # Verify response
+        # 응답 확인
         assert response.status_code == 200
         assert "Seattle" in response.content[0].text
         assert len(json.loads(response.content[0].text)["forecasts"]) == 3
         
     finally:
-        # Clean up
+        # 정리 작업
         await server.stop()
 ```
 
@@ -541,7 +534,7 @@ async def test_mcp_server_integration():
 
 ### 1. 캐싱 전략
 
-지연 시간과 리소스 사용을 줄이기 위해 적절한 캐싱을 구현하십시오:
+지연 시간과 리소스 사용량을 줄이기 위해 적절한 캐싱을 구현하세요:
 
 ```csharp
 // C# example with caching
@@ -610,18 +603,18 @@ public class CachedWeatherTool : ITool
 }
 ```
 
-#### 2. 의존성 주입 및 테스트 가능성
+#### 2. 의존성 주입과 테스트 용이성
 
-도구가 생성자 주입을 통해 의존성을 받을 수 있도록 설계하여 테스트 가능성과 구성 가능성을 높이십시오:
+의존성을 생성자 주입 통해 받아들이도록 도구를 설계하여 테스트 가능하고 구성 가능하게 만드세요:
 
 ```java
-// Java example with dependency injection
+// 의존성 주입이 포함된 자바 예제
 public class CurrencyConversionTool implements Tool {
     private final ExchangeRateService exchangeService;
     private final CacheService cacheService;
     private final Logger logger;
     
-    // Dependencies injected through constructor
+    // 생성자를 통한 의존성 주입
     public CurrencyConversionTool(
             ExchangeRateService exchangeService,
             CacheService cacheService,
@@ -631,51 +624,51 @@ public class CurrencyConversionTool implements Tool {
         this.logger = logger;
     }
     
-    // Tool implementation
+    // 도구 구현
     // ...
 }
 ```
 
-#### 3. 구성 가능한 도구
+#### 3. 조합 가능한 도구
 
-더 복잡한 워크플로를 생성하기 위해 도구를 함께 구성할 수 있도록 설계하십시오:
+더 복잡한 워크플로우를 만들기 위해 도구를 조합할 수 있도록 설계하세요:
 
 ```python
-# Python example showing composable tools
+# 조합 가능한 도구를 보여주는 파이썬 예제
 class DataFetchTool(Tool):
     def get_name(self):
         return "dataFetch"
     
-    # Implementation...
+    # 구현...
 
 class DataAnalysisTool(Tool):
     def get_name(self):
         return "dataAnalysis"
     
-    # This tool can use results from the dataFetch tool
+    # 이 도구는 dataFetch 도구의 결과를 사용할 수 있습니다
     async def execute_async(self, request):
-        # Implementation...
+        # 구현...
         pass
 
 class DataVisualizationTool(Tool):
     def get_name(self):
         return "dataVisualize"
     
-    # This tool can use results from the dataAnalysis tool
+    # 이 도구는 dataAnalysis 도구의 결과를 사용할 수 있습니다
     async def execute_async(self, request):
-        # Implementation...
+        # 구현...
         pass
 
-# These tools can be used independently or as part of a workflow
+# 이 도구들은 독립적으로 사용하거나 워크플로우의 일부로 사용할 수 있습니다
 ```
 
 ### 스키마 설계 모범 사례
 
-스키마는 모델과 도구 간의 계약입니다. 잘 설계된 스키마는 도구 사용성을 향상시킵니다.
+스키마는 모델과 도구 간의 계약입니다. 잘 설계된 스키마는 도구 사용성을 높입니다.
 
 #### 1. 명확한 매개변수 설명
 
-각 매개변수에 대한 설명 정보를 항상 포함하십시오:
+각 매개변수에 설명 정보를 항상 포함하세요:
 
 ```csharp
 public object GetSchema()
@@ -712,9 +705,9 @@ public object GetSchema()
 }
 ```
 
-#### 2. 유효성 검사 제약 조건
+#### 2. 검증 제약조건
 
-잘못된 입력을 방지하기 위해 유효성 검사 제약 조건을 포함하십시오:
+잘못된 입력을 방지하기 위해 검증 제약조건을 포함하세요:
 
 ```java
 Map<String, Object> getSchema() {
@@ -723,20 +716,20 @@ Map<String, Object> getSchema() {
     
     Map<String, Object> properties = new HashMap<>();
     
-    // Email property with format validation
+    // 형식 검증이 포함된 이메일 속성
     Map<String, Object> email = new HashMap<>();
     email.put("type", "string");
     email.put("format", "email");
     email.put("description", "User email address");
     
-    // Age property with numeric constraints
+    // 숫자 제약 조건이 있는 나이 속성
     Map<String, Object> age = new HashMap<>();
     age.put("type", "integer");
     age.put("minimum", 13);
     age.put("maximum", 120);
     age.put("description", "User age in years");
     
-    // Enumerated property
+    // 열거형 속성
     Map<String, Object> subscription = new HashMap<>();
     subscription.put("type", "string");
     subscription.put("enum", Arrays.asList("free", "basic", "premium"));
@@ -756,15 +749,15 @@ Map<String, Object> getSchema() {
 
 #### 3. 일관된 반환 구조
 
-모델이 결과를 해석하기 쉽게 응답 구조의 일관성을 유지하십시오:
+모델이 결과를 해석하기 쉽도록 응답 구조를 일관되게 유지하세요:
 
 ```python
 async def execute_async(self, request):
     try:
-        # Process request
+        # 요청을 처리합니다
         results = await self._search_database(request.parameters["query"])
         
-        # Always return a consistent structure
+        # 항상 일관된 구조를 반환합니다
         return ToolResponse(
             result={
                 "matches": [self._format_item(item) for item in results],
@@ -797,11 +790,11 @@ def _format_item(self, item):
 
 ### 오류 처리
 
-강력한 오류 처리는 MCP 도구의 신뢰성을 유지하는 데 필수적입니다.
+신뢰성을 유지하려면 견고한 오류 처리가 필수입니다.
 
 #### 1. 우아한 오류 처리
 
-적절한 수준에서 오류를 처리하고 정보 제공 메시지를 제공하십시오:
+적절한 수준에서 오류를 처리하고 정보성 메시지를 제공하세요:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -845,13 +838,13 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 
 #### 2. 구조화된 오류 응답
 
-가능한 경우 구조화된 오류 정보를 반환하십시오:
+가능한 경우 구조화된 오류 정보를 반환하세요:
 
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
     try {
-        // Implementation
+        // 구현
     } catch (Exception ex) {
         Map<String, Object> errorResult = new HashMap<>();
         
@@ -869,7 +862,7 @@ public ToolResponse execute(ToolRequest request) {
                 .build();
         }
         
-        // Re-throw other exceptions as ToolExecutionException
+        // 다른 예외를 ToolExecutionException으로 다시 던짐
         throw new ToolExecutionException("Tool execution failed: " + ex.getMessage(), ex);
     }
 }
@@ -877,29 +870,29 @@ public ToolResponse execute(ToolRequest request) {
 
 #### 3. 재시도 로직
 
-일시적인 실패에 대해 적절한 재시도 로직을 구현하십시오:
+일시적 실패에 대해 적절한 재시도 로직을 구현하세요:
 
 ```python
 async def execute_async(self, request):
     max_retries = 3
     retry_count = 0
-    base_delay = 1  # seconds
+    base_delay = 1  # 초
     
     while retry_count < max_retries:
         try:
-            # Call external API
+            # 외부 API 호출
             return await self._call_api(request.parameters)
         except TransientError as e:
             retry_count += 1
             if retry_count >= max_retries:
                 raise ToolExecutionException(f"Operation failed after {max_retries} attempts: {str(e)}")
                 
-            # Exponential backoff
+            # 지수 백오프
             delay = base_delay * (2 ** (retry_count - 1))
             logging.warning(f"Transient error, retrying in {delay}s: {str(e)}")
             await asyncio.sleep(delay)
         except Exception as e:
-            # Non-transient error, don't retry
+            # 일시적이지 않은 오류, 재시도하지 않음
             raise ToolExecutionException(f"Operation failed: {str(e)}")
 ```
 
@@ -907,7 +900,7 @@ async def execute_async(self, request):
 
 #### 1. 캐싱
 
-비용이 많이 드는 작업에 대해 캐싱을 구현하십시오:
+비용이 큰 작업에 대해 캐싱을 구현하세요:
 
 ```csharp
 public class CachedDataTool : IMcpTool
@@ -955,7 +948,7 @@ public class CachedDataTool : IMcpTool
 
 #### 2. 비동기 처리
 
-I/O 중심 작업에 대해 비동기 프로그래밍 패턴을 사용하십시오:
+I/O 바운드 작업에 대해 비동기 프로그래밍 패턴을 사용하세요:
 
 ```java
 public class AsyncDocumentProcessingTool implements Tool {
@@ -966,23 +959,23 @@ public class AsyncDocumentProcessingTool implements Tool {
     public ToolResponse execute(ToolRequest request) {
         String documentId = request.getParameters().get("documentId").asText();
         
-        // For long-running operations, return a processing ID immediately
+        // 장시간 실행되는 작업의 경우 즉시 처리 ID를 반환합니다
         String processId = UUID.randomUUID().toString();
         
-        // Start async processing
+        // 비동기 처리를 시작합니다
         CompletableFuture.runAsync(() -> {
             try {
-                // Perform long-running operation
+                // 장시간 실행되는 작업을 수행합니다
                 documentService.processDocument(documentId);
                 
-                // Update status (would typically be stored in a database)
+                // 상태를 업데이트합니다 (일반적으로 데이터베이스에 저장됩니다)
                 processStatusRepository.updateStatus(processId, "completed");
             } catch (Exception ex) {
                 processStatusRepository.updateStatus(processId, "failed", ex.getMessage());
             }
         }, executorService);
         
-        // Return immediate response with process ID
+        // 프로세스 ID와 함께 즉시 응답을 반환합니다
         Map<String, Object> result = new HashMap<>();
         result.put("processId", processId);
         result.put("status", "processing");
@@ -991,7 +984,7 @@ public class AsyncDocumentProcessingTool implements Tool {
         return new ToolResponse.Builder().setResult(result).build();
     }
     
-    // Companion status check tool
+    // 동반 상태 확인 도구
     public class ProcessStatusTool implements Tool {
         @Override
         public ToolResponse execute(ToolRequest request) {
@@ -1006,33 +999,33 @@ public class AsyncDocumentProcessingTool implements Tool {
 
 #### 3. 리소스 제한
 
-과부하를 방지하기 위해 리소스 제한을 구현하십시오:
+과부하를 방지하기 위해 리소스 제한을 구현하세요:
 
 ```python
 class ThrottledApiTool(Tool):
     def __init__(self):
         self.rate_limiter = TokenBucketRateLimiter(
-            tokens_per_second=5,  # Allow 5 requests per second
-            bucket_size=10        # Allow bursts up to 10 requests
+            tokens_per_second=5,  # 초당 5개의 요청 허용
+            bucket_size=10        # 최대 10개의 요청 버스트 허용
         )
     
     async def execute_async(self, request):
-        # Check if we can proceed or need to wait
+        # 진행할 수 있는지 또는 대기해야 하는지 확인
         delay = self.rate_limiter.get_delay_time()
         
         if delay > 0:
-            if delay > 2.0:  # If wait is too long
+            if delay > 2.0:  # 대기 시간이 너무 긴 경우
                 raise ToolExecutionException(
                     f"Rate limit exceeded. Please try again in {delay:.1f} seconds."
                 )
             else:
-                # Wait for the appropriate delay time
+                # 적절한 지연 시간 동안 대기
                 await asyncio.sleep(delay)
         
-        # Consume a token and proceed with the request
+        # 토큰을 소모하고 요청 진행
         self.rate_limiter.consume()
         
-        # Call API
+        # API 호출
         result = await self._call_api(request.parameters)
         return ToolResponse(result=result)
 
@@ -1050,7 +1043,7 @@ class TokenBucketRateLimiter:
             if self.tokens >= 1:
                 return 0
             
-            # Calculate time until next token available
+            # 다음 토큰 사용 가능 시간 계산
             return (1 - self.tokens) / self.tokens_per_second
     
     async def consume(self):
@@ -1062,7 +1055,7 @@ class TokenBucketRateLimiter:
         now = time.time()
         elapsed = now - self.last_refill
         
-        # Add new tokens based on elapsed time
+        # 경과 시간에 따라 새로운 토큰 추가
         new_tokens = elapsed * self.tokens_per_second
         self.tokens = min(self.bucket_size, self.tokens + new_tokens)
         self.last_refill = now
@@ -1070,9 +1063,9 @@ class TokenBucketRateLimiter:
 
 ### 보안 모범 사례
 
-#### 1. 입력 유효성 검사
+#### 1. 입력 검증
 
-항상 입력 매개변수를 철저히 검증하십시오:
+항상 매개변수를 철저히 검증하세요:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -1113,35 +1106,35 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 }
 ```
 
-#### 2. 권한 확인
+#### 2. 권한 검사
 
-적절한 권한 확인을 구현하십시오:
+적절한 권한 검사를 구현하세요:
 
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
-    // Get user context from request
+    // 요청에서 사용자 컨텍스트 가져오기
     UserContext user = request.getContext().getUserContext();
     
-    // Check if user has required permissions
+    // 사용자가 필요한 권한을 가지고 있는지 확인
     if (!authorizationService.hasPermission(user, "documents:read")) {
         throw new ToolExecutionException("User does not have permission to access documents");
     }
     
-    // For specific resources, check access to that resource
+    // 특정 리소스의 경우 해당 리소스에 대한 접근 권한 확인
     String documentId = request.getParameters().get("documentId").asText();
     if (!documentService.canUserAccess(user.getId(), documentId)) {
         throw new ToolExecutionException("Access denied to the requested document");
     }
     
-    // Proceed with tool execution
+    // 도구 실행 진행
     // ...
 }
 ```
 
-#### 3. 민감한 데이터 처리
+#### 3. 민감 데이터 처리
 
-민감한 데이터를 신중하게 처리하십시오:
+민감 데이터를 조심스럽게 처리하세요:
 
 ```python
 class SecureDataTool(Tool):
@@ -1159,31 +1152,31 @@ class SecureDataTool(Tool):
         user_id = request.parameters["userId"]
         include_sensitive = request.parameters.get("includeSensitiveData", False)
         
-        # Get user data
+        # 사용자 데이터 가져오기
         user_data = await self.user_service.get_user_data(user_id)
         
-        # Filter sensitive fields unless explicitly requested AND authorized
+        # 명시적으로 요청되고 권한이 부여되지 않은 경우 민감한 필드 필터링
         if not include_sensitive or not self._is_authorized_for_sensitive_data(request):
             user_data = self._redact_sensitive_fields(user_data)
         
         return ToolResponse(result=user_data)
     
     def _is_authorized_for_sensitive_data(self, request):
-        # Check authorization level in request context
+        # 요청 컨텍스트에서 권한 수준 확인
         auth_level = request.context.get("authorizationLevel")
         return auth_level == "admin"
     
     def _redact_sensitive_fields(self, user_data):
-        # Create a copy to avoid modifying the original
+        # 원본 변경을 피하기 위해 복사본 생성
         redacted = user_data.copy()
         
-        # Redact specific sensitive fields
+        # 특정 민감한 필드 가리기
         sensitive_fields = ["ssn", "creditCardNumber", "password"]
         for field in sensitive_fields:
             if field in redacted:
                 redacted[field] = "REDACTED"
         
-        # Redact nested sensitive data
+        # 중첩된 민감한 데이터 가리기
         if "financialInfo" in redacted:
             redacted["financialInfo"] = {"available": True, "accessRestricted": True}
         
@@ -1192,13 +1185,13 @@ class SecureDataTool(Tool):
 
 ## MCP 도구 테스트 모범 사례
 
-포괄적인 테스트는 MCP 도구가 올바르게 작동하고, 엣지 케이스를 처리하며, 시스템의 다른 부분과 제대로 통합되도록 보장합니다.
+포괄적인 테스트는 MCP 도구가 올바르게 작동하고 극단적 사례를 처리하며 시스템과 적절히 통합되도록 보장합니다.
 
 ### 단위 테스트
 
 #### 1. 각 도구를 독립적으로 테스트
 
-각 도구의 기능에 대한 집중된 테스트를 작성하십시오:
+각 도구 기능에 집중한 테스트를 만드세요:
 
 ```csharp
 [Fact]
@@ -1258,27 +1251,27 @@ public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
 }
 ```
 
-#### 2. 스키마 유효성 검사 테스트
+#### 2. 스키마 검증 테스트
 
-스키마가 유효하며 제약 조건을 올바르게 적용하는지 테스트하십시오:
+스키마가 유효하며 제약을 제대로 시행하는지 테스트하세요:
 
 ```java
 @Test
 public void testSchemaValidation() {
-    // Create tool instance
+    // 도구 인스턴스 생성
     SearchTool searchTool = new SearchTool();
     
-    // Get schema
+    // 스키마 가져오기
     Object schema = searchTool.getSchema();
     
-    // Convert schema to JSON for validation
+    // 유효성 검사용으로 스키마를 JSON으로 변환
     String schemaJson = objectMapper.writeValueAsString(schema);
     
-    // Validate schema is valid JSONSchema
+    // 스키마가 유효한 JSONSchema인지 검증
     JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
     JsonSchema jsonSchema = factory.getJsonSchema(schemaJson);
     
-    // Test valid parameters
+    // 유효한 매개변수 테스트
     JsonNode validParams = objectMapper.createObjectNode()
         .put("query", "test query")
         .put("limit", 5);
@@ -1286,14 +1279,14 @@ public void testSchemaValidation() {
     ProcessingReport validReport = jsonSchema.validate(validParams);
     assertTrue(validReport.isSuccess());
     
-    // Test missing required parameter
+    // 필수 매개변수가 누락된 경우 테스트
     JsonNode missingRequired = objectMapper.createObjectNode()
         .put("limit", 5);
         
     ProcessingReport missingReport = jsonSchema.validate(missingRequired);
     assertFalse(missingReport.isSuccess());
     
-    // Test invalid parameter type
+    // 잘못된 매개변수 유형 테스트
     JsonNode invalidType = objectMapper.createObjectNode()
         .put("query", "test")
         .put("limit", "not-a-number");
@@ -1305,19 +1298,19 @@ public void testSchemaValidation() {
 
 #### 3. 오류 처리 테스트
 
-오류 조건에 대한 특정 테스트를 작성하십시오:
+오류 조건에 대한 특정 테스트를 만드세요:
 
 ```python
 @pytest.mark.asyncio
 async def test_api_tool_handles_timeout():
-    # Arrange
-    tool = ApiTool(timeout=0.1)  # Very short timeout
+    # 정렬
+    tool = ApiTool(timeout=0.1)  # 매우 짧은 타임아웃
     
-    # Mock a request that will time out
+    # 타임아웃 될 요청을 모킹
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
-            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # Longer than timeout
+            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # 타임아웃보다 긴
         )
         
         request = ToolRequest(
@@ -1325,19 +1318,19 @@ async def test_api_tool_handles_timeout():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Act & Assert
+        # 실행 및 검증
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Verify exception message
+        # 예외 메시지 확인
         assert "timed out" in str(exc_info.value).lower()
 
 @pytest.mark.asyncio
 async def test_api_tool_handles_rate_limiting():
-    # Arrange
+    # 정렬
     tool = ApiTool()
     
-    # Mock a rate-limited response
+    # 속도 제한 응답 모킹
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
@@ -1351,11 +1344,11 @@ async def test_api_tool_handles_rate_limiting():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Act & Assert
+        # 실행 및 검증
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Verify exception contains rate limit information
+        # 예외에 속도 제한 정보 포함 확인
         error_msg = str(exc_info.value).lower()
         assert "rate limit" in error_msg
         assert "try again" in error_msg
@@ -1365,7 +1358,7 @@ async def test_api_tool_handles_rate_limiting():
 
 #### 1. 도구 체인 테스트
 
-예상되는 조합으로 함께 작동하는 도구를 테스트하십시오:
+기대하는 조합에서 도구들이 함께 작동하는지 테스트하세요:
 
 ```csharp
 [Fact]
@@ -1406,7 +1399,7 @@ public async Task DataProcessingWorkflow_CompletesSuccessfully()
 
 #### 2. MCP 서버 테스트
 
-전체 도구 등록 및 실행을 포함한 MCP 서버를 테스트하십시오:
+전체 도구 등록과 실행으로 MCP 서버를 테스트하세요:
 
 ```java
 @SpringBootTest
@@ -1421,7 +1414,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolDiscovery() throws Exception {
-        // Test the discovery endpoint
+        // 발견 엔드포인트 테스트
         mockMvc.perform(get("/mcp/tools"))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.tools").isArray())
@@ -1432,7 +1425,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolExecution() throws Exception {
-        // Create tool request
+        // 도구 요청 생성
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
@@ -1442,7 +1435,7 @@ public class McpServerIntegrationTest {
         parameters.put("b", 7);
         request.put("parameters", parameters);
         
-        // Send request and verify response
+        // 요청 전송 및 응답 확인
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -1452,17 +1445,17 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolValidation() throws Exception {
-        // Create invalid tool request
+        // 잘못된 도구 요청 생성
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("operation", "divide");
         parameters.put("a", 10);
-        // Missing parameter "b"
+        // 누락된 매개변수 "b"
         request.put("parameters", parameters);
         
-        // Send request and verify error response
+        // 요청 전송 및 오류 응답 확인
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -1474,15 +1467,15 @@ public class McpServerIntegrationTest {
 
 #### 3. 엔드 투 엔드 테스트
 
-모델 프롬프트에서 도구 실행까지의 전체 워크플로를 테스트하십시오:
+모델 프롬프트부터 도구 실행까지의 완전한 워크플로우를 테스트하세요:
 
 ```python
 @pytest.mark.asyncio
 async def test_model_interaction_with_tool():
-    # Arrange - Set up MCP client and mock model
+    # 정렬 - MCP 클라이언트 및 모형 설정
     mcp_client = McpClient(server_url="http://localhost:5000")
     
-    # Mock model responses
+    # 모형 응답 모의
     mock_model = MockLanguageModel([
         MockResponse(
             "What's the weather in Seattle?",
@@ -1497,7 +1490,7 @@ async def test_model_interaction_with_tool():
         )
     ])
     
-    # Mock weather tool response
+    # 날씨 도구 응답 모의
     with aioresponses() as mocked:
         mocked.post(
             "http://localhost:5000/mcp/execute",
@@ -1513,14 +1506,14 @@ async def test_model_interaction_with_tool():
             }
         )
         
-        # Act
+        # 실행
         response = await mcp_client.send_prompt(
             "What's the weather in Seattle?",
             model=mock_model,
             allowed_tools=["weatherForecast"]
         )
         
-        # Assert
+        # 단언
         assert "Seattle" in response.generated_text
         assert "65" in response.generated_text
         assert "Sunny" in response.generated_text
@@ -1533,7 +1526,7 @@ async def test_model_interaction_with_tool():
 
 #### 1. 부하 테스트
 
-MCP 서버가 처리할 수 있는 동시 요청 수를 테스트하십시오:
+MCP 서버가 얼마나 많은 동시 요청을 처리할 수 있는지 테스트하세요:
 
 ```csharp
 [Fact]
@@ -1568,7 +1561,7 @@ public async Task McpServer_HandlesHighConcurrency()
 
 #### 2. 스트레스 테스트
 
-극한 부하 상태에서 시스템을 테스트하십시오:
+극한 부하 하에서 시스템을 테스트하세요:
 
 ```java
 @Test
@@ -1577,13 +1570,13 @@ public void testServerUnderStress() {
     int rampUpTimeSeconds = 60;
     int testDurationSeconds = 300;
     
-    // Set up JMeter for stress testing
+    // 스트레스 테스트를 위해 JMeter 설치
     StandardJMeterEngine jmeter = new StandardJMeterEngine();
     
-    // Configure JMeter test plan
+    // JMeter 테스트 계획 구성
     HashTree testPlanTree = new HashTree();
     
-    // Create test plan, thread group, samplers, etc.
+    // 테스트 계획, 스레드 그룹, 샘플러 등을 생성
     TestPlan testPlan = new TestPlan("MCP Server Stress Test");
     testPlanTree.add(testPlan);
     
@@ -1595,7 +1588,7 @@ public void testServerUnderStress() {
     
     testPlanTree.add(threadGroup);
     
-    // Add HTTP sampler for tool execution
+    // 도구 실행을 위한 HTTP 샘플러 추가
     HTTPSampler toolExecutionSampler = new HTTPSampler();
     toolExecutionSampler.setDomain("localhost");
     toolExecutionSampler.setPort(5000);
@@ -1606,29 +1599,29 @@ public void testServerUnderStress() {
     
     threadGroup.add(toolExecutionSampler);
     
-    // Add listeners
+    // 리스너 추가
     SummaryReport summaryReport = new SummaryReport();
     threadGroup.add(summaryReport);
     
-    // Run test
+    // 테스트 실행
     jmeter.configure(testPlanTree);
     jmeter.run();
     
-    // Validate results
+    // 결과 검증
     assertEquals(0, summaryReport.getErrorCount());
-    assertTrue(summaryReport.getAverage() < 200); // Average response time < 200ms
-    assertTrue(summaryReport.getPercentile(90.0) < 500); // 90th percentile < 500ms
+    assertTrue(summaryReport.getAverage() < 200); // 평균 응답 시간 < 200ms
+    assertTrue(summaryReport.getPercentile(90.0) < 500); // 90번째 백분위수 < 500ms
 }
 ```
 
 #### 3. 모니터링 및 프로파일링
 
-장기적인 성능 분석을 위해 모니터링을 설정하십시오:
+장기적 성능 분석을 위한 모니터링을 설정하세요:
 
 ```python
-# Configure monitoring for an MCP server
+# MCP 서버 모니터링 구성
 def configure_monitoring(server):
-    # Set up Prometheus metrics
+    # Prometheus 메트릭 설정
     prometheus_metrics = {
         "request_count": Counter("mcp_requests_total", "Total MCP requests"),
         "request_latency": Histogram(
@@ -1654,10 +1647,10 @@ def configure_monitoring(server):
         )
     }
     
-    # Add middleware for timing and recording metrics
+    # 타이밍 및 메트릭 기록을 위한 미들웨어 추가
     server.add_middleware(PrometheusMiddleware(prometheus_metrics))
     
-    # Expose metrics endpoint
+    # 메트릭 엔드포인트 노출
     @server.router.get("/metrics")
     async def metrics():
         return generate_latest()
@@ -1665,29 +1658,29 @@ def configure_monitoring(server):
     return server
 ```
 
-## MCP 워크플로 설계 패턴
+## MCP 워크플로우 설계 패턴
 
-잘 설계된 MCP 워크플로는 효율성, 신뢰성 및 유지보수성을 향상시킵니다. 다음은 따라야 할 주요 패턴입니다:
+잘 설계된 MCP 워크플로우는 효율성, 신뢰성, 유지보수성을 향상시킵니다. 주요 패턴은 다음과 같습니다:
 
 ### 1. 도구 체인 패턴
 
-각 도구의 출력이 다음 도구의 입력이 되는 순서로 여러 도구를 연결하십시오:
+여러 도구를 순서대로 연결하여 각 도구의 출력이 다음 도구 입력이 되게 합니다:
 
 ```python
-# Python Chain of Tools implementation
+# 파이썬 체인 오브 툴 구현
 class ChainWorkflow:
     def __init__(self, tools_chain):
-        self.tools_chain = tools_chain  # List of tool names to execute in sequence
+        self.tools_chain = tools_chain  # 순차적으로 실행할 도구 이름 목록
     
     async def execute(self, mcp_client, initial_input):
         current_result = initial_input
         all_results = {"input": initial_input}
         
         for tool_name in self.tools_chain:
-            # Execute each tool in the chain, passing previous result
+            # 체인에 있는 각 도구를 실행하고 이전 결과를 전달
             response = await mcp_client.execute_tool(tool_name, current_result)
             
-            # Store result and use as input for next tool
+            # 결과를 저장하고 다음 도구의 입력으로 사용
             all_results[tool_name] = response.result
             current_result = response.result
         
@@ -1696,7 +1689,7 @@ class ChainWorkflow:
             "all_results": all_results
         }
 
-# Example usage
+# 사용 예시
 data_processing_chain = ChainWorkflow([
     "dataFetch",
     "dataCleaner",
@@ -1712,7 +1705,7 @@ result = await data_processing_chain.execute(
 
 ### 2. 디스패처 패턴
 
-입력에 따라 전문화된 도구로 전달하는 중앙 도구를 사용하십시오:
+입력에 따라 전문 도구로 분배하는 중앙 도구를 사용하세요:
 
 ```csharp
 public class ContentDispatcherTool : IMcpTool
@@ -1794,7 +1787,7 @@ public class ContentDispatcherTool : IMcpTool
 
 ### 3. 병렬 처리 패턴
 
-효율성을 위해 여러 도구를 동시에 실행하십시오:
+효율성을 위해 여러 도구를 동시에 실행하세요:
 
 ```java
 public class ParallelDataProcessingWorkflow {
@@ -1805,11 +1798,11 @@ public class ParallelDataProcessingWorkflow {
     }
     
     public WorkflowResult execute(String datasetId) {
-        // Step 1: Fetch dataset metadata (synchronous)
+        // 1단계: 데이터셋 메타데이터 가져오기(동기식)
         ToolResponse metadataResponse = mcpClient.executeTool("datasetMetadata", 
             Map.of("datasetId", datasetId));
         
-        // Step 2: Launch multiple analyses in parallel
+        // 2단계: 여러 분석을 병렬로 시작
         CompletableFuture<ToolResponse> statisticalAnalysis = CompletableFuture.supplyAsync(() ->
             mcpClient.executeTool("statisticalAnalysis", Map.of(
                 "datasetId", datasetId,
@@ -1831,25 +1824,25 @@ public class ParallelDataProcessingWorkflow {
             ))
         );
         
-        // Wait for all parallel tasks to complete
+        // 모든 병렬 작업이 완료될 때까지 대기
         CompletableFuture<Void> allAnalyses = CompletableFuture.allOf(
             statisticalAnalysis, correlationAnalysis, outlierDetection
         );
         
-        allAnalyses.join();  // Wait for completion
+        allAnalyses.join();  // 완료 대기
         
-        // Step 3: Combine results
+        // 3단계: 결과 병합
         Map<String, Object> combinedResults = new HashMap<>();
         combinedResults.put("metadata", metadataResponse.getResult());
         combinedResults.put("statistics", statisticalAnalysis.join().getResult());
         combinedResults.put("correlations", correlationAnalysis.join().getResult());
         combinedResults.put("outliers", outlierDetection.join().getResult());
         
-        // Step 4: Generate summary report
+        // 4단계: 요약 보고서 생성
         ToolResponse summaryResponse = mcpClient.executeTool("reportGenerator", 
             Map.of("analysisResults", combinedResults));
         
-        // Return complete workflow result
+        // 전체 워크플로우 결과 반환
         WorkflowResult result = new WorkflowResult();
         result.setDatasetId(datasetId);
         result.setAnalysisResults(combinedResults);
@@ -1862,7 +1855,7 @@ public class ParallelDataProcessingWorkflow {
 
 ### 4. 오류 복구 패턴
 
-도구 실패에 대해 우아한 대체 방법을 구현하십시오:
+도구 실패에 대해 우아한 대체 수단을 구현하세요:
 
 ```python
 class ResilientWorkflow:
@@ -1871,7 +1864,7 @@ class ResilientWorkflow:
     
     async def execute_with_fallback(self, primary_tool, fallback_tool, parameters):
         try:
-            # Try primary tool first
+            # 먼저 기본 도구를 시도하십시오
             response = await self.client.execute_tool(primary_tool, parameters)
             return {
                 "result": response.result,
@@ -1879,12 +1872,12 @@ class ResilientWorkflow:
                 "tool": primary_tool
             }
         except ToolExecutionException as e:
-            # Log the failure
+            # 실패를 기록하십시오
             logging.warning(f"Primary tool '{primary_tool}' failed: {str(e)}")
             
-            # Fall back to secondary tool
+            # 보조 도구로 대체하십시오
             try:
-                # Might need to transform parameters for fallback tool
+                # 보조 도구에 맞게 매개변수를 변환해야 할 수 있습니다
                 fallback_params = self._adapt_parameters(parameters, primary_tool, fallback_tool)
                 
                 response = await self.client.execute_tool(fallback_tool, fallback_params)
@@ -1895,7 +1888,7 @@ class ResilientWorkflow:
                     "primaryError": str(e)
                 }
             except ToolExecutionException as fallback_error:
-                # Both tools failed
+                # 두 도구 모두 실패했습니다
                 logging.error(f"Both primary and fallback tools failed. Fallback error: {str(fallback_error)}")
                 raise WorkflowExecutionException(
                     f"Workflow failed: primary error: {str(e)}; fallback error: {str(fallback_error)}"
@@ -1903,22 +1896,22 @@ class ResilientWorkflow:
     
     def _adapt_parameters(self, params, from_tool, to_tool):
         """Adapt parameters between different tools if needed"""
-        # This implementation would depend on the specific tools
-        # For this example, we'll just return the original parameters
+        # 이 구현은 특정 도구에 따라 달라집니다
+        # 이 예제에서는 원래 매개변수만 반환합니다
         return params
 
-# Example usage
+# 사용 예
 async def get_weather(workflow, location):
     return await workflow.execute_with_fallback(
-        "premiumWeatherService",  # Primary (paid) weather API
-        "basicWeatherService",    # Fallback (free) weather API
+        "premiumWeatherService",  # 기본(유료) 날씨 API
+        "basicWeatherService",    # 보조(무료) 날씨 API
         {"location": location}
     )
 ```
 
-### 5. 워크플로 구성 패턴
+### 5. 워크플로우 구성 패턴
 
-더 간단한 워크플로를 구성하여 복잡한 워크플로를 만드십시오:
+간단한 워크플로우를 조합하여 복잡한 워크플로우를 구축하세요:
 
 ```csharp
 public class CompositeWorkflow : IWorkflow
@@ -1969,30 +1962,30 @@ var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
 
 ## 개요
 
-테스트는 신뢰할 수 있고 고품질의 MCP 서버를 개발하는 데 중요한 요소입니다. 이 가이드는 단위 테스트에서 통합 테스트 및 엔드 투 엔드 검증에 이르기까지 개발 주기 전반에 걸쳐 MCP 서버를 테스트하기 위한 포괄적인 모범 사례와 팁을 제공합니다.
+테스트는 신뢰할 수 있고 고품질의 MCP 서버 개발의 핵심 요소입니다. 이 가이드는 단위 테스트부터 통합 테스트, 엔드 투 엔드 검증에 이르는 개발 수명주기 동안 MCP 서버 테스트를 위한 포괄적인 모범 사례와 팁을 제공합니다.
 
 ## MCP 서버 테스트가 중요한 이유
 
 MCP 서버는 AI 모델과 클라이언트 애플리케이션 간의 중요한 미들웨어 역할을 합니다. 철저한 테스트는 다음을 보장합니다:
 
-- 생산 환경에서의 신뢰성
-- 요청 및 응답 처리의 정확성
-- MCP 사양의 올바른 구현
-- 실패 및 엣지 케이스에 대한 복원력
-- 다양한 부하에서의 일관된 성능
+- 프로덕션 환경에서의 신뢰성
+- 요청 및 응답의 정확한 처리
+- MCP 명세의 적절한 구현
+- 실패 및 극한 사례에 대한 복원력
+- 다양한 부하에서 일관된 성능
 
 ## MCP 서버 단위 테스트
 
-### 단위 테스트 (기초)
+### 단위 테스트 (기초 단계)
 
 단위 테스트는 MCP 서버의 개별 구성 요소를 독립적으로 검증합니다.
 
 #### 테스트 대상
 
-1. **리소스 핸들러**: 각 리소스 핸들러의 로직을 독립적으로 테스트
-2. **도구 구현**: 다양한 입력으로 도구 동작 검증
-3. **프롬프트 템플릿**: 프롬프트 템플릿이 올바르게 렌더링되는지 확인
-4. **스키마 유효성 검사**: 매개변수 유효성 검사 로직 테스트
+1. **리소스 핸들러**: 각 리소스 핸들러의 로직 독립적 테스트
+2. **도구 구현**: 다양한 입력에 대한 도구 동작 검증
+3. **프롬프트 템플릿**: 프롬프트 템플릿이 올바르게 렌더되는지 확인
+4. **스키마 검증**: 매개변수 검증 로직 테스트
 5. **오류 처리**: 잘못된 입력에 대한 오류 응답 검증
 
 #### 단위 테스트 모범 사례
@@ -2021,9 +2014,9 @@ public async Task CalculatorTool_Add_ReturnsCorrectSum()
 ```
 
 ```python
-# Example unit test for a calculator tool in Python
+# Python에서 계산기 도구에 대한 예제 단위 테스트
 def test_calculator_tool_add():
-    # Arrange
+    # 준비
     calculator = CalculatorTool()
     parameters = {
         "operation": "add",
@@ -2031,24 +2024,24 @@ def test_calculator_tool_add():
         "b": 7
     }
     
-    # Act
+    # 실행
     response = calculator.execute(parameters)
     result = json.loads(response.content[0].text)
     
-    # Assert
+    # 검증
     assert result["value"] == 12
 ```
 
 ### 통합 테스트 (중간 계층)
 
-통합 테스트는 MCP 서버의 구성 요소 간 상호작용을 검증합니다.
+통합 테스트는 MCP 서버 구성 요소 간 상호작용을 검증합니다.
 
 #### 테스트 대상
 
 1. **서버 초기화**: 다양한 구성으로 서버 시작 테스트
-2. **경로 등록**: 모든 엔드포인트가 올바르게 등록되었는지 확인
-3. **요청 처리**: 전체 요청-응답 주기 테스트
-4. **오류 전파**: 구성 요소 간 오류가 올바르게 처리되는지 확인
+2. **라우트 등록**: 모든 엔드포인트가 제대로 등록되었는지 확인
+3. **요청 처리**: 전체 요청-응답 사이클 테스트
+4. **오류 전파**: 구성 요소 간 오류가 적절히 처리되는지 확인
 5. **인증 및 권한 부여**: 보안 메커니즘 테스트
 
 #### 통합 테스트 모범 사례
@@ -2089,25 +2082,25 @@ public async Task Server_ProcessToolRequest_ReturnsValidResponse()
 
 ### 엔드 투 엔드 테스트 (최상위 계층)
 
-엔드 투 엔드 테스트는 클라이언트에서 서버까지의 전체 시스템 동작을 검증합니다.
+엔드 투 엔드 테스트는 클라이언트에서 서버까지 전체 시스템 동작을 검증합니다.
 
 #### 테스트 대상
 
-1. **클라이언트-서버 통신**: 전체 요청-응답 주기 테스트
-2. **실제 클라이언트 SDK**: 실제 클라이언트 구현으로 테스트
-3. **부하 상태에서의 성능**: 여러 동시 요청으로 동작 검증
-4. **오류 복구**: 실패에서 시스템 복구 테스트
-5. **장시간 실행 작업**: 스트리밍 및 장시간 작업 처리 검증
+1. **클라이언트-서버 통신**: 완전한 요청-응답 사이클 테스트
+2. **실제 클라이언트 SDK**: 실제 클라이언트 구현체와 테스트
+3. **부하 하 성능**: 다수 동시 요청 시 동작 검증
+4. **오류 복구**: 실패 시 시스템 복구 테스트
+5. **장기간 작업**: 스트리밍 및 장기 작업 처리 검증
 
 #### 엔드 투 엔드 테스트 모범 사례
 
 ```typescript
-// Example E2E test with a client in TypeScript
+// TypeScript로 작성된 클라이언트를 사용한 E2E 테스트 예제
 describe('MCP Server E2E Tests', () => {
   let client: McpClient;
   
   beforeAll(async () => {
-    // Start server in test environment
+    // 테스트 환경에서 서버 시작
     await startTestServer();
     client = new McpClient('http://localhost:5000');
   });
@@ -2117,32 +2110,32 @@ describe('MCP Server E2E Tests', () => {
   });
   
   test('Client can invoke calculator tool and get correct result', async () => {
-    // Act
+    // 실행
     const response = await client.invokeToolAsync('calculator', {
       operation: 'divide',
       a: 20,
       b: 4
     });
     
-    // Assert
+    // 검증
     expect(response.statusCode).toBe(200);
     expect(response.content[0].text).toContain('5');
   });
 });
 ```
 
-## MCP 테스트를 위한 모의(Mock) 전략
+## MCP 테스트를 위한 모킹 전략
 
-모의(Mock)는 테스트 중 구성 요소를 분리하는 데 필수적입니다.
+모킹은 테스트하는 동안 구성 요소를 격리할 때 필수적입니다.
 
-### 모의할 구성 요소
+### 모킹할 구성 요소
 
-1. **외부 AI 모델**: 예측 가능한 테스트를 위해 모델 응답 모의
-2. **외부 서비스**: API 종속성(데이터베이스, 타사 서비스) 모의
-3. **인증 서비스**: ID 제공자 모의
-4. **리소스 제공자**: 비용이 많이 드는 리소스 핸들러 모의
+1. **외부 AI 모델**: 예측 가능한 테스트를 위해 모델 응답 모킹
+2. **외부 서비스**: API 종속성(데이터베이스, 서드파티 서비스) 모킹
+3. **인증 서비스**: 신원 제공자 모킹
+4. **리소스 제공자**: 비용이 큰 리소스 핸들러 모킹
 
-### 예제: AI 모델 응답 모의
+### 예시: AI 모델 응답 모킹
 
 ```csharp
 // C# example with Moq
@@ -2160,48 +2153,48 @@ var server = new McpServer(modelClient: mockModel.Object);
 ```
 
 ```python
-# Python example with unittest.mock
+# unittest.mock를 사용한 Python 예제
 @patch('mcp_server.models.OpenAIModel')
 def test_with_mock_model(mock_model):
-    # Configure mock
+    # 목 설정
     mock_model.return_value.generate_response.return_value = {
         "text": "Mocked model response",
         "finish_reason": "completed"
     }
     
-    # Use mock in test
+    # 테스트에서 목 사용
     server = McpServer(model_client=mock_model)
-    # Continue with test
+    # 테스트 계속 진행
 ```
 
 ## 성능 테스트
 
-성능 테스트는 생산 MCP 서버에 필수적입니다.
+성능 테스트는 프로덕션 MCP 서버에 필수적입니다.
 
 ### 측정 대상
 
 1. **지연 시간**: 요청에 대한 응답 시간
-2. **처리량**: 초당 처리되는 요청 수
-3. **리소스 사용량**: CPU, 메모리, 네트워크 사용량
-4. **동시 처리 능력**: 병렬 요청 처리 동작
+2. **처리량**: 초당 처리 요청 수
+3. **자원 활용도**: CPU, 메모리, 네트워크 사용량
+4. **동시성 처리**: 병렬 요청 시 동작
 5. **확장 특성**: 부하 증가 시 성능
 
 ### 성능 테스트 도구
 
 - **k6**: 오픈소스 부하 테스트 도구
-- **JMeter**: 종합적인 성능 테스트
-- **Locust**: Python 기반 부하 테스트
+- **JMeter**: 종합 성능 테스트
+- **Locust**: 파이썬 기반 부하 테스트
 - **Azure Load Testing**: 클라우드 기반 성능 테스트
 
-### 예제: k6를 사용한 기본 부하 테스트
+### 예시: k6를 이용한 기본 부하 테스트
 
 ```javascript
-// k6 script for load testing MCP server
+// MCP 서버 부하 테스트를 위한 k6 스크립트
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
 export const options = {
-  vus: 10,  // 10 virtual users
+  vus: 10,  // 10명의 가상 사용자
   duration: '30s',
 };
 
@@ -2233,18 +2226,17 @@ export default function () {
 }
 ```
 
-## MCP 서버 테스트 자동화
+## MCP 서버를 위한 테스트 자동화
 
-테스트를 자동화하면 일관된 품질과 빠른 피드백 루프를 보장합니다.
+테스트 자동화는 일관된 품질 유지와 빠른 피드백 루프를 보장합니다.
 
 ### CI/CD 통합
+1. **풀 리퀘스트에서 단위 테스트 실행**: 코드 변경 사항이 기존 기능을 깨뜨리지 않는지 확인
+2. **스테이징 환경에서 통합 테스트**: 사전 운영 환경에서 통합 테스트 실행
+3. **성능 기준선 유지**: 회귀를 감지하기 위해 성능 벤치마크 유지
+4. **보안 스캔**: 파이프라인의 일부로 보안 테스트 자동화
 
-1. **풀 요청에서 단위 테스트 실행**: 코드 변경이 기존 기능을 깨뜨리지 않도록 보장
-2. **스테이징에서 통합 테스트 실행**: 사전 생산 환경에서 통합 테스트 실행
-3. **성능 기준**: 성능 벤치마크를 유지하여 회귀 문제를 감지
-4. **보안 스캔**: 파이프라인의 일부로 보안 테스트를 자동화
-
-### 예시 CI 파이프라인 (GitHub Actions)
+### 예제 CI 파이프라인 (GitHub Actions)
 
 ```yaml
 name: MCP Server Tests
@@ -2283,17 +2275,17 @@ jobs:
       run: dotnet run --project tests/PerformanceTests/PerformanceTests.csproj
 ```
 
-## MCP 사양 준수 테스트
+## MCP 사양 준수를 위한 테스트
 
 서버가 MCP 사양을 올바르게 구현했는지 확인하세요.
 
 ### 주요 준수 영역
 
-1. **API 엔드포인트**: 필수 엔드포인트 (/resources, /tools 등) 테스트
-2. **요청/응답 형식**: 스키마 준수 여부 확인
-3. **에러 코드**: 다양한 시나리오에 대한 올바른 상태 코드 확인
+1. **API 엔드포인트**: 필수 엔드포인트 테스트(/resources, /tools 등)
+2. **요청/응답 포맷**: 스키마 준수 검증
+3. **오류 코드**: 다양한 시나리오에 대한 올바른 상태 코드 확인
 4. **콘텐츠 유형**: 다양한 콘텐츠 유형 처리 테스트
-5. **인증 흐름**: 사양에 맞는 인증 메커니즘 확인
+5. **인증 흐름**: 사양에 맞는 인증 메커니즘 검증
 
 ### 준수 테스트 스위트
 
@@ -2322,62 +2314,69 @@ public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
 }
 ```
 
-## 효과적인 MCP 서버 테스트를 위한 10가지 팁
+## 효과적인 MCP 서버 테스트를 위한 상위 10가지 팁
 
-1. **도구 정의를 별도로 테스트**: 도구 로직과는 독립적으로 스키마 정의를 검증
-2. **매개변수화된 테스트 사용**: 다양한 입력값, 특히 극단적인 경우를 포함하여 도구를 테스트
-3. **에러 응답 확인**: 모든 가능한 에러 조건에 대한 적절한 에러 처리 확인
-4. **권한 부여 로직 테스트**: 다양한 사용자 역할에 대한 적절한 접근 제어 확인
-5. **테스트 커버리지 모니터링**: 중요한 코드 경로에 대해 높은 커버리지를 목표로 설정
-6. **스트리밍 응답 테스트**: 스트리밍 콘텐츠 처리 확인
-7. **네트워크 문제 시뮬레이션**: 열악한 네트워크 조건에서의 동작 테스트
-8. **자원 제한 테스트**: 할당량 또는 속도 제한에 도달했을 때의 동작 확인
-9. **회귀 테스트 자동화**: 코드 변경 시마다 실행되는 테스트 스위트 구축
-10. **테스트 케이스 문서화**: 테스트 시나리오에 대한 명확한 문서 유지
+1. **도구 정의를 별도로 테스트**: 도구 로직과 독립적으로 스키마 정의 검증
+2. **매개변수화된 테스트 사용**: 다양한 입력값과 경계값을 포함한 도구 테스트
+3. **오류 응답 확인**: 가능한 모든 오류 조건에 대한 적절한 오류 처리 검증
+4. **권한 부여 로직 테스트**: 다양한 사용자 역할에 대한 적절한 접근 제어 보장
+5. **테스트 커버리지 모니터링**: 핵심 경로 코드를 높은 커버리지로 목표 설정
+6. **스트리밍 응답 테스트**: 스트리밍 콘텐츠의 올바른 처리 검증
+7. **네트워크 문제 시뮬레이션**: 열악한 네트워크 조건에서 동작 테스트
+8. **리소스 한도 테스트**: 할당량 또는 속도 제한 도달 시 동작 검증
+9. **회귀 테스트 자동화**: 모든 코드 변경 시 실행되는 스위트 구축
+10. **테스트 케이스 문서화**: 테스트 시나리오를 명확하게 문서화 유지
 
 ## 일반적인 테스트 함정
 
-- **행복 경로 테스트에 지나치게 의존**: 에러 케이스를 철저히 테스트해야 함
-- **성능 테스트 무시**: 프로덕션에 영향을 미치기 전에 병목 현상을 식별
-- **단독 테스트만 수행**: 단위, 통합, E2E 테스트를 결합하여 실행
-- **불완전한 API 커버리지**: 모든 엔드포인트와 기능이 테스트되었는지 확인
-- **일관성 없는 테스트 환경**: 컨테이너를 사용하여 일관된 테스트 환경 유지
+- **정상 경로 테스트에 과도한 의존**: 오류 케이스를 철저히 테스트할 것
+- **성능 테스트 무시**: 프로덕션에 영향을 미치기 전에 병목 지점 파악
+- **분리된 테스트만 수행**: 단위, 통합, E2E 테스트 결합
+- **불완전한 API 커버리지**: 모든 엔드포인트 및 기능 테스트 보장
+- **일관되지 않은 테스트 환경**: 컨테이너를 사용해 일관된 테스트 환경 유지
 
 ## 결론
 
-포괄적인 테스트 전략은 신뢰할 수 있고 고품질의 MCP 서버를 개발하는 데 필수적입니다. 이 가이드에서 제시된 모범 사례와 팁을 구현함으로써 MCP 구현이 최고 수준의 품질, 신뢰성, 성능을 충족하도록 할 수 있습니다.
+신뢰할 수 있고 고품질의 MCP 서버 개발을 위해 포괄적인 테스트 전략이 필수적입니다. 이 가이드에 제시된 모범 사례와 팁을 구현하면 MCP 구현이 최고 수준의 품질, 신뢰성 및 성능을 충족함을 보장할 수 있습니다.
+
 
 ## 주요 요점
 
-1. **도구 설계**: 단일 책임 원칙을 따르고, 의존성 주입을 사용하며, 구성 가능성을 고려하여 설계
-2. **스키마 설계**: 명확하고 잘 문서화된 스키마를 생성하고 적절한 검증 제약 조건 추가
-3. **에러 처리**: 우아한 에러 처리, 구조화된 에러 응답, 재시도 로직 구현
-4. **성능**: 캐싱, 비동기 처리, 자원 제한 적용
-5. **보안**: 철저한 입력 검증, 권한 확인, 민감한 데이터 처리 적용
-6. **테스트**: 포괄적인 단위, 통합, E2E 테스트 생성
+1. **도구 설계**: 단일 책임 원칙 준수, 의존성 주입 사용, 조합 가능성을 고려한 설계
+2. **스키마 설계**: 명확하고 잘 문서화된 스키마 생성, 적절한 유효성 검사 제약 조건 포함
+3. **오류 처리**: 우아한 오류 처리, 구조화된 오류 응답 및 재시도 로직 구현
+4. **성능**: 캐싱, 비동기 처리, 리소스 제한 사용
+5. **보안**: 철저한 입력 검증, 권한 검사, 민감 데이터 처리 적용
+6. **테스트**: 포괄적인 단위, 통합, 엔드투엔드 테스트 생성
 7. **워크플로 패턴**: 체인, 디스패처, 병렬 처리와 같은 확립된 패턴 적용
 
-## 연습
+## 실습
 
-다음 시나리오에 적합한 MCP 도구와 워크플로를 설계하세요:
+다음 작업을 수행하는 문서 처리 시스템을 위한 MCP 도구 및 워크플로 설계:
 
-1. 여러 형식(PDF, DOCX, TXT)의 문서를 수락
-2. 문서에서 텍스트와 주요 정보를 추출
-3. 문서를 유형과 내용별로 분류
-4. 각 문서의 요약 생성
+1. 여러 형식(PDF, DOCX, TXT)의 문서 수락
+2. 문서에서 텍스트 및 주요 정보 추출
+3. 문서 유형 및 내용에 따라 분류
+4. 각 문서 요약 생성
 
-이 구현에 적합한 도구 스키마, 에러 처리, 워크플로 패턴을 설계하세요. 이 구현을 테스트하는 방법도 고려하세요.
+이 시나리오에 가장 적합한 도구 스키마, 오류 처리, 워크플로 패턴을 구현하세요. 또한 이 구현을 어떻게 테스트할지 고려해 보세요.
 
-## 리소스
+## 자료
 
-1. 최신 정보를 얻기 위해 [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs)에서 MCP 커뮤니티에 참여하세요
-2. 오픈소스 [MCP 프로젝트](https://github.com/modelcontextprotocol)에 기여하세요
-3. MCP 원칙을 자신의 조직의 AI 이니셔티브에 적용하세요
-4. 자신의 산업에 특화된 MCP 구현을 탐색하세요
-5. 멀티모달 통합 또는 엔터프라이즈 애플리케이션 통합과 같은 특정 MCP 주제에 대한 고급 과정을 고려하세요
-6. [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)을 통해 배운 원칙을 사용하여 자신만의 MCP 도구와 워크플로를 실험적으로 구축하세요  
+1. 최신 개발 소식을 접하려면 [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs)에서 MCP 커뮤니티에 참여하세요.
+2. 오픈 소스 [MCP 프로젝트](https://github.com/modelcontextprotocol)에 기여하세요.
+3. 귀하 조직의 AI 이니셔티브에 MCP 원칙을 적용하세요.
+4. 귀하 산업에 특화된 MCP 구현도 탐색해 보세요.
+5. 다중 모달 통합 또는 엔터프라이즈 애플리케이션 통합 같은 특정 MCP 주제에 대한 고급 과정을 수강하는 것을 고려하세요.
+6. [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)을 통해 배운 원칙으로 자신만의 MCP 도구와 워크플로를 실험해 보세요.
 
-다음: 모범 사례 [사례 연구](../09-CaseStudy/README.md)
+## 다음 단계
 
+다음: [사례 연구](../09-CaseStudy/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **면책 조항**:  
-이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있지만, 자동 번역에는 오류나 부정확성이 포함될 수 있습니다. 원본 문서의 원어 버전을 권위 있는 출처로 간주해야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 책임을 지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 노력하고 있으나, 자동 번역에는 오류나 부정확성이 포함될 수 있음을 알려드립니다. 원문 문서는 해당 언어의 공식 자료로 간주되어야 합니다. 중요한 정보의 경우 전문 인간 번역을 권장합니다. 본 번역 사용으로 인한 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,39 +1,30 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "14a2dfbea55ef735660a06bd6bdfe5f3",
-  "translation_date": "2025-07-14T06:13:27+00:00",
-  "source_file": "09-CaseStudy/UpdateADOItemsFromYT.md",
-  "language_code": "fi"
-}
--->
-# Case Study: Azure DevOps -kohteiden päivittäminen YouTube-datan avulla MCP:llä
+# Tapaustutkimus: Azure DevOps -kohteiden päivittäminen YouTube-datan avulla MCP:llä
 
-> **Disclaimer:** Verkossa on olemassa työkaluja ja raportteja, jotka voivat automatisoida Azure DevOps -kohteiden päivittämisen esimerkiksi YouTube-alustalta saatavalla datalla. Seuraava esimerkki on tarkoitettu ainoastaan havainnollistamaan, miten MCP-työkaluja voidaan hyödyntää automaatio- ja integraatiotehtävissä.
+> **Vastuuvapauslauseke:** On olemassa erilaisia verkkotyökaluja ja raportteja, jotka voivat automatisoida Azure DevOps -kohteiden päivittämisen dataa hyödyntäen esimerkiksi YouTubesta. Seuraava skenaario on esitetty puhtaasti esimerkkinä siitä, miten MCP-työkaluja voidaan soveltaa automaatio- ja integraatiotehtävissä.
 
 ## Yleiskatsaus
 
-Tässä case studyssä esitellään yksi tapa, jolla Model Context Protocol (MCP) ja sen työkalut voivat automatisoida Azure DevOps (ADO) -työkohteiden päivittämisen verkkoalustoilta, kuten YouTubesta, saatavalla tiedolla. Kuvaus on vain yksi esimerkki näiden työkalujen laajemmista mahdollisuuksista, joita voidaan soveltaa monenlaisiin vastaaviin automaatiotarpeisiin.
+Tämä tapaustutkimus havainnollistaa yhtä esimerkkiä siitä, miten Model Context Protocol (MCP) ja sen työkalut voivat automatisoida Azure DevOps (ADO) -työkohteiden päivittämisen tiedoilla, jotka on haettu verkkoalustoilta, kuten YouTubesta. Kuvailluilla työkaluilla on laajempi sovellusalue, ja ne voidaan mukauttaa moniin samanlaisiin automaatiotarpeisiin.
 
-Tässä esimerkissä Advocate seuraa verkossa pidettyjä sessioita ADO-kohteiden avulla, joista jokainen sisältää YouTube-videon URL-osoitteen. MCP-työkaluja hyödyntämällä Advocate voi pitää ADO-kohteet ajan tasalla viimeisimmillä videon katselumäärillä toistettavalla ja automatisoidulla tavalla. Tätä lähestymistapaa voidaan soveltaa myös muihin tilanteisiin, joissa verkosta saatava tieto pitää integroida ADO:hon tai muihin järjestelmiin.
+Tässä esimerkissä Advocatet seuraavat verkkosessioita käyttämällä ADO-kohteita, joissa jokaiseen on liitetty YouTube-videon URL-osoite. MCP-työkaluja hyödyntämällä Advocate voi pitää ADO-kohteet ajan tasalla videoiden ajantasaisilla mittareilla, kuten katselumäärillä, toistuvasti ja automaattisesti. Tätä lähestymistapaa voidaan yleistäen soveltaa muihin käyttötapauksiin, joissa verkkolähteistä saatavat tiedot on integroitava ADO:hon tai muihin järjestelmiin.
 
-## Tilannekuvaus
+## Skenaario
 
-Advocate vastaa verkossa pidettyjen sessioiden ja yhteisön osallistumisten vaikutusten seurannasta. Jokainen sessio kirjataan ADO-työkohteeksi 'DevRel' -projektiin, ja työkohteessa on kenttä YouTube-videon URL-osoitteelle. Tarkkojen raporttien laatimiseksi Advocate tarvitsee päivittää ADO-kohde videon nykyisellä katselumäärällä sekä tiedolla, milloin tämä tieto on haettu.
+Advocate vastaa verkkosessioiden ja yhteisön osallistumisen vaikutusten seurannasta. Jokainen sessio kirjataan ADO-työkohteeksi 'DevRel'-projektiin, ja kohteessa on kenttä YouTube-videon URL-osoitteelle. Tarkkojen raporttien laatimiseksi Advocate päivittää ADO-kohteen nykyisellä videon katselumäärällä ja tiedon haun päivämäärällä.
 
 ## Käytetyt työkalut
 
-- [Azure DevOps MCP](https://github.com/microsoft/azure-devops-mcp): Mahdollistaa ohjelmallisen pääsyn ja päivitykset ADO-työkohteisiin MCP:n kautta.
-- [Playwright MCP](https://github.com/microsoft/playwright-mcp): Automatisoi selaintoiminnot ja poimii reaaliaikaista dataa verkkosivuilta, kuten YouTube-videon tilastoja.
+- [Azure DevOps MCP](https://github.com/microsoft/azure-devops-mcp): Mahdollistaa ADO-työkohteiden ohjelmallisen haun ja päivityksen MCP:n kautta.
+- [Playwright MCP](https://github.com/microsoft/playwright-mcp): Automatana selaimen toimintoja live-datan hakemiseen verkkosivuilta, kuten YouTube-videon tilastoja.
 
 ## Vaiheittainen työnkulku
 
-1. **ADO-kohteen tunnistaminen**: Aloita ADO-työkohteen ID:llä (esim. 1234) 'DevRel' -projektissa.
-2. **YouTube-URL:n hakeminen**: Käytä Azure DevOps MCP -työkalua saadaksesi YouTube-URL työkohteesta.
-3. **Katselumäärän poiminta**: Käytä Playwright MCP -työkalua siirtyäksesi YouTube-URL:iin ja poimiaksesi nykyinen katselumäärä.
-4. **ADO-kohteen päivittäminen**: Kirjoita uusin katselumäärä ja hakupäivämäärä 'Impact and Learnings' -osioon ADO-työkohteessa Azure DevOps MCP -työkalulla.
+1. **ADO-kohteen tunnistus**: Aloita ADO-työkohteen ID:llä (esim. 1234) projektissa 'DevRel'.
+2. **YouTube-URL:n haku**: Käytä Azure DevOps MCP -työkalua saadaksesi YouTube-videon URL-osoitteen työkohteesta.
+3. **Videon katselukertojen poiminta**: Käytä Playwright MCP -työkalua navigoidaksesi YouTube-osoitteeseen ja poimi nykyinen katselumäärä.
+4. **ADO-kohteen päivitys**: Kirjoita viimeisin katselumäärä ja tiedon hakupäivä 'Impact and Learnings' -osioon ADO-työkohteessa käyttäen Azure DevOps MCP -työkalua.
 
-## Esimerkkiprompt
+## Esimerkkipyyntö
 
 ```bash
 - Work with the ADO Item ID: 1234
@@ -47,23 +38,22 @@ Advocate vastaa verkossa pidettyjen sessioiden ja yhteisön osallistumisten vaik
 
 ```mermaid
 flowchart TD
-    A[Start: Advocate identifies ADO Item ID] --> B[Get YouTube URL from ADO Item using Azure DevOps MCP]
-    B --> C[Extract current video views using Playwright MCP]
-    C --> D[Update ADO Item's Impact and Learnings section with view count and date]
-    D --> E[End]
+    A[Aloitus: Asianajaja tunnistaa ADO-kohteen tunnuksen] --> B[Hae YouTube-URL ADO-kohteesta käyttäen Azure DevOps MCP:tä]
+    B --> C[Poimi nykyiset videokatselukerrat käyttäen Playwright MCP:tä]
+    C --> D[Päivitä ADO-kohteen Vaikutus ja opit -osio katselukertojen määrällä ja päivämäärällä]
+    D --> E[Lopetus]
 ```
-
 ## Tekninen toteutus
 
-- **MCP-orchestrointi**: Työnkulun hallinnasta vastaa MCP-palvelin, joka koordinoi Azure DevOps MCP:n ja Playwright MCP:n käyttöä.
-- **Automaatio**: Prosessi voidaan käynnistää manuaalisesti tai ajastaa toistumaan säännöllisesti, jotta ADO-kohteet pysyvät ajan tasalla.
-- **Laajennettavuus**: Sama malli voidaan laajentaa päivittämään ADO-kohteita muilla verkkometriikoilla (esim. tykkäykset, kommentit) tai muilta alustoilta.
+- **MCP:n orkestrointi**: Työnkulun koordinoinnista vastaa MCP-palvelin, joka hallinnoi sekä Azure DevOps MCP:n että Playwright MCP:n käyttöä.
+- **Automaatio**: Prosessi voidaan käynnistää manuaalisesti tai ajoittaa suoritettavaksi säännöllisin väliajoin ADO-kohteiden ajantasaisuuden varmistamiseksi.
+- **Laajennettavuus**: Sama kaava voidaan laajentaa päivittämään ADO-kohteita muilla verkkometristä saaduilla tiedoilla (esim. tykkäykset, kommentit) tai muilta alustoilta.
 
 ## Tulokset ja vaikutus
 
-- **Tehokkuus**: Vähentää Advocaten manuaalista työtä automatisoimalla videomittareiden haun ja päivityksen.
-- **Tarkkuus**: Varmistaa, että ADO-kohteet heijastavat verkosta saatavilla olevaa ajantasaisinta tietoa.
-- **Toistettavuus**: Tarjoaa uudelleenkäytettävän työnkulun vastaaviin tilanteisiin, joissa käytetään muita tietolähteitä tai mittareita.
+- **Tehokkuus**: Vähentää Advocaten manuaalista työtä videoiden mittaritiedon hakemisessa ja päivittämisessä.
+- **Tarkkuus**: Varmistaa, että ADO-kohteet sisältävät aina viimeisimmät verkosta saatavat tiedot.
+- **Toistettavuus**: Tarjoaa uudelleenkäytettävän työnkulun vastaaviin skenaarioihin, jotka sisältävät muita datalähteitä tai mittareita.
 
 ## Viitteet
 
@@ -71,5 +61,14 @@ flowchart TD
 - [Playwright MCP](https://github.com/microsoft/playwright-mcp)
 - [Model Context Protocol (MCP)](https://modelcontextprotocol.io/)
 
+## Seuraavaksi
+
+- Takaisin: [Tapaustutkimusten yleiskatsaus](./README.md)
+- Seuraava: [Reaaliaikainen dokumenttien haku MCP:llä](./docs-mcp/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.
+Tämä asiakirja on käännetty tekoälypohjaisella käännöspalvelulla [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, automaattiset käännökset saattavat sisältää virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäiskielellä tulisi pitää auktoritatiivisena lähteenä. Tärkeiden tietojen osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

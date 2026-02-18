@@ -1,20 +1,35 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0a7083e660ca0d85fd6a947514c61993",
-  "translation_date": "2025-07-14T00:39:17+00:00",
-  "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
-  "language_code": "en"
-}
--->
 # MCP OAuth2 Demo
 
-This project is a **minimal Spring Boot application** that serves as both:
+## Introduction
+
+OAuth2 is the industry-standard protocol for authorization, enabling secure access to resources without sharing credentials. In MCP (Model Context Protocol) implementations, OAuth2 provides a robust way to authenticate and authorize clients (such as AI agents) to access MCP servers and their tools.
+
+This lesson demonstrates how to implement OAuth2 authentication for MCP servers using Spring Boot, a common pattern for enterprise and production deployments.
+
+## Learning Objectives
+
+By the end of this lesson, you will:
+- Understand how OAuth2 integrates with MCP servers
+- Implement a Spring Authorization Server for token issuance
+- Protect MCP endpoints with JWT-based authentication
+- Configure client credentials flow for machine-to-machine communication
+
+## Prerequisites
+
+- Basic understanding of Java and Spring Boot
+- Familiarity with MCP concepts from earlier modules
+- Maven or Gradle installed
+
+---
+
+## Project Overview
+
+This project is a **minimal Spring Boot application** that acts as both:
 
 * a **Spring Authorization Server** (issuing JWT access tokens via the `client_credentials` flow), and  
-* a **Resource Server** (securing its own `/hello` endpoint).
+* a **Resource Server** (protecting its own `/hello` endpoint).
 
-It follows the setup demonstrated in the [Spring blog post (2 Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+It mirrors the setup shown in the [Spring blog post (2 Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
@@ -36,7 +51,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ## Testing the OAuth2 Configuration
 
-You can test the OAuth2 security setup with the following steps:
+You can test the OAuth2 security configuration with the following steps:
 
 ### 1. Verify the server is running and secured
 
@@ -73,7 +88,7 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-A successful response with "Hello from MCP OAuth2 Demo!" confirms that the OAuth2 setup is working correctly.
+A successful response with "Hello from MCP OAuth2 Demo!" confirms that the OAuth2 configuration is working correctly.
 
 ---
 
@@ -96,7 +111,7 @@ az containerapp up -n mcp-oauth2 \
 ```
 
 The ingress FQDN becomes your **issuer** (`https://<fqdn>`).  
-Azure automatically provides a trusted TLS certificate for `*.azurecontainerapps.io`.
+Azure provides a trusted TLS certificate automatically for `*.azurecontainerapps.io`.
 
 ---
 
@@ -116,7 +131,7 @@ Add this inbound policy to your API:
 </inbound>
 ```
 
-APIM will retrieve the JWKS and validate every request.
+APIM will fetch the JWKS and validate every request.
 
 ---
 
@@ -124,5 +139,9 @@ APIM will retrieve the JWKS and validate every request.
 
 - [5.4 Root contexts](../mcp-root-contexts/README.md)
 
-**Disclaimer**:  
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Disclaimer**:
 This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

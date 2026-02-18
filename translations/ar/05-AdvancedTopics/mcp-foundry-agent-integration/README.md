@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
-  "translation_date": "2025-07-16T23:38:01+00:00",
-  "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
-  "language_code": "ar"
-}
--->
 # دمج بروتوكول سياق النموذج (MCP) مع Azure AI Foundry
 
 يوضح هذا الدليل كيفية دمج خوادم بروتوكول سياق النموذج (MCP) مع وكلاء Azure AI Foundry، مما يتيح تنسيق أدوات قوي وقدرات ذكاء اصطناعي على مستوى المؤسسات.
@@ -60,7 +51,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## تنفيذ Python
 
-***ملاحظة*** يمكنك تشغيل هذا [الدفتر](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_python.ipynb)
+***ملاحظة*** يمكنك تشغيل هذا [الدفتر](mcp_support_python.ipynb)
 
 ### 1. تثبيت الحزم المطلوبة
 
@@ -189,7 +180,7 @@ with project_client:
 
 ## تنفيذ .NET
 
-***ملاحظة*** يمكنك تشغيل هذا [الدفتر](../../../../05-AdvancedTopics/mcp-foundry-agent-integration/mcp_support_dotnet.ipynb)
+***ملاحظة*** يمكنك تشغيل هذا [الدفتر](mcp_support_dotnet.ipynb)
 
 ### 1. تثبيت الحزم المطلوبة
 

@@ -1,127 +1,173 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "61a160248efabe92b09d7b08293d17db",
-  "translation_date": "2025-08-26T18:34:02+00:00",
-  "source_file": "09-CaseStudy/README.md",
-  "language_code": "lt"
-}
--->
-# MCP veiksme: realių atvejų analizės
+# MCP veiksme: realaus pasaulio atvejų analizė
 
-[![MCP veiksme: realių atvejų analizės](../../../translated_images/10.3262cc80b4de5071fde8ba74c5c5d6738a0a9f398dcc0423f0210f632e2238b8.lt.png)](https://youtu.be/IxshWb2Az5w)
+[![MCP veiksme: realaus pasaulio atvejų analizė](../../../translated_images/lt/10.3262cc80b4de5071.webp)](https://youtu.be/IxshWb2Az5w)
 
-_(Spustelėkite aukščiau esančią nuotrauką, kad peržiūrėtumėte šios pamokos vaizdo įrašą)_
+_(Spustelėkite aukščiau esantį paveikslėlį, kad peržiūrėtumėte šios pamokos vaizdo įrašą)_
 
-Modelio konteksto protokolas (MCP) keičia būdą, kaip dirbtinio intelekto programos sąveikauja su duomenimis, įrankiais ir paslaugomis. Šiame skyriuje pateikiamos realių atvejų analizės, kurios parodo praktinius MCP taikymo pavyzdžius įvairiose įmonių situacijose.
+Modelio konteksto protokolas (MCP) keičia tai, kaip dirbtinio intelekto programos sąveikauja su duomenimis, įrankiais ir paslaugomis. Ši skiltis pristato realaus pasaulio atvejų analizę, demonstruojančią MCP praktinį pritaikymą įvairiose įmonių situacijose.
 
 ## Apžvalga
 
-Šiame skyriuje pristatomi konkretūs MCP įgyvendinimo pavyzdžiai, pabrėžiant, kaip organizacijos naudoja šį protokolą sudėtingoms verslo problemoms spręsti. Analizuodami šias atvejų analizes, sužinosite apie MCP universalumą, mastelio pritaikomumą ir praktinę naudą realiose situacijose.
+Šioje skiltyje pateikiami konkretūs MCP įgyvendinimo pavyzdžiai, parodantys, kaip organizacijos naudoja šį protokolą spręsdamos sudėtingas verslo užduotis. Analizuodami šias atvejų studijas, įgisite įžvalgų apie MCP universalumą, mastelį ir praktinę naudą realaus pasaulio aplinkoje.
 
 ## Pagrindiniai mokymosi tikslai
 
-Analizuodami šias atvejų analizes, jūs:
+Analizuodami šias atvejų studijas, jūs:
 
-- Suprasite, kaip MCP gali būti taikomas konkrečioms verslo problemoms spręsti
-- Sužinosite apie skirtingus integracijos modelius ir architektūrinius sprendimus
-- Atpažinsite geriausias MCP įgyvendinimo praktikas įmonių aplinkoje
-- Suprasite iššūkius ir sprendimus, su kuriais susiduriama realiuose įgyvendinimuose
-- Atpažinsite galimybes pritaikyti panašius modelius savo projektuose
+- Suprasite, kaip MCP galima taikyti konkrečioms verslo problemoms spręsti
+- Sužinosite apie skirtingus integracijos modelius ir architektūrinius požiūrius
+- Atpažinsite geriausias praktikas MCP diegimui įmonių aplinkoje
+- Įgisite įžvalgų apie iššūkius ir sprendimus, susiduriančius realiose diegimo situacijose
+- Nustatysite galimybes taikyti panašius modelius savo projektuose
 
-## Pateiktos atvejų analizės
+## Išskirtinės atvejų studijos
 
-### 1. [Azure AI kelionių agentai – pavyzdinė įgyvendinimo analizė](./travelagentsample.md)
+### 1. [„Azure AI Travel Agents“ – kontrolinis pavyzdys](./travelagentsample.md)
 
-Šioje atvejų analizėje nagrinėjamas „Microsoft“ pavyzdinis sprendimas, kuris demonstruoja, kaip sukurti kelių agentų, dirbtiniu intelektu pagrįstą kelionių planavimo programą naudojant MCP, „Azure OpenAI“ ir „Azure AI Search“. Projektas parodo:
+Ši atvejų studija nagrinėja Microsoft išsamų kontrolinį sprendimą, kuris demonstruoja, kaip sukurti daugiaagentinę, dirbtiniu intelektu pagrįstą kelionių planavimo programą naudojant MCP, Azure OpenAI ir Azure AI Search. Projekte pristatoma:
 
-- Kelių agentų koordinavimą per MCP
-- Įmonės duomenų integraciją su „Azure AI Search“
-- Saugios, mastelio pritaikomos architektūros kūrimą naudojant „Azure“ paslaugas
-- Išplečiamus įrankius su pakartotinai naudojamais MCP komponentais
-- Pokalbių vartotojo patirtį, pagrįstą „Azure OpenAI“
+- Daugiaagentinė orkestracija per MCP
+- Įmonių duomenų integracija su Azure AI Search
+- Saugios, mastelį keičiančios architektūros naudojimas su Azure paslaugomis
+- Plėtojami įrankiai su daugiakartinio naudojimo MCP komponentais
+- Pokalbių naudotojo patirtis, kurią palaiko Azure OpenAI
 
-Architektūros ir įgyvendinimo detalės suteikia vertingų įžvalgų, kaip kurti sudėtingas kelių agentų sistemas, kuriose MCP veikia kaip koordinavimo sluoksnis.
+Architektūros ir įgyvendinimo detalės suteikia vertingų įžvalgų apie sudėtingų daugiaagentinių sistemų kūrimą naudojant MCP kaip koordinavimo sluoksnį.
 
-### 2. [Azure DevOps elementų atnaujinimas iš „YouTube“ duomenų](./UpdateADOItemsFromYT.md)
+### 2. [„Azure DevOps“ elementų atnaujinimas iš YouTube duomenų](./UpdateADOItemsFromYT.md)
 
-Šioje atvejų analizėje pateikiamas praktinis MCP taikymas darbo procesų automatizavimui. Ji parodo, kaip MCP įrankiai gali būti naudojami:
+Ši atvejų studija demonstruoja MCP praktinį taikymą darbo srautų procesų automatizavimui. Joje parodyta, kaip MCP įrankiai gali būti naudojami:
 
-- Duomenims iš internetinių platformų (pvz., „YouTube“) išgauti
-- Darbo elementams „Azure DevOps“ sistemose atnaujinti
-- Kartojamiems automatizavimo procesams kurti
-- Duomenims integruoti tarp skirtingų sistemų
+- Išgauti duomenis iš internetinių platformų (YouTube)
+- Atnaujinti darbo elementus Azure DevOps sistemose
+- Kurti pakartojamus automatizavimo darbo srautus
+- Integruoti duomenis tarp skirtingų sistemų
 
-Šis pavyzdys iliustruoja, kaip net palyginti paprasti MCP įgyvendinimai gali suteikti reikšmingų efektyvumo pranašumų, automatizuojant rutinines užduotis ir gerinant duomenų nuoseklumą tarp sistemų.
+Šis pavyzdys iliustruoja, kaip net santykinai paprasti MCP diegimai gali suteikti ženklių efektyvumo pranašumų automatizuojant rutininius darbus ir gerinant duomenų nuoseklumą tarp sistemų.
 
-### 3. [Realaus laiko dokumentacijos gavimas naudojant MCP](./docs-mcp/README.md)
+### 3. [Dokumentacijos realaus laiko gavimas su MCP](./docs-mcp/README.md)
 
-Šioje atvejų analizėje pateikiama, kaip prijungti „Python“ konsolės klientą prie Modelio konteksto protokolo (MCP) serverio, kad būtų galima gauti ir registruoti realaus laiko, kontekstui pritaikytą „Microsoft“ dokumentaciją. Sužinosite, kaip:
+Ši atvejų studija nukreipia, kaip prijungti Python konsolės klientą prie Modelio konteksto protokolo (MCP) serverio, kad būtų galima gauti ir registruoti realaus laiko, kontekstą atitinkančią Microsoft dokumentaciją. Išmoksite:
 
-- Prisijungti prie MCP serverio naudojant „Python“ klientą ir oficialų MCP SDK
-- Naudoti srautinius HTTP klientus efektyviam, realaus laiko duomenų gavimui
-- Kviesti dokumentacijos įrankius serveryje ir registruoti atsakymus tiesiai konsolėje
-- Integruoti naujausią „Microsoft“ dokumentaciją į savo darbo eigą neišeinant iš terminalo
+- Prisijungti prie MCP serverio naudojant Python klientą ir oficialų MCP SDK
+- Naudoti srautinio HTTP kliento mechanizmus efektyviam duomenų gavimui realiu laiku
+- Iškvietinėti dokumentacijos įrankius serveryje ir atsakymus tiesiogiai registruoti konsolėje
+- Integruoti naujausią Microsoft dokumentaciją į savo darbo eigą neišeinant iš terminalo
 
-Šis skyrius apima praktinę užduotį, minimalų veikiančio kodo pavyzdį ir nuorodas į papildomus išteklius gilesniam mokymuisi. Peržiūrėkite visą vadovą ir kodą susietame skyriuje, kad suprastumėte, kaip MCP gali pakeisti dokumentacijos prieigą ir kūrėjų produktyvumą konsolės aplinkoje.
+Skyrius apima praktinį užduotį, minimalų veikiančio kodo pavyzdį ir nuorodas į papildomus išteklius gilesniam mokymuisi. Peržiūrėkite visą žingsnis po žingsnio aprašymą ir kodą susietame skyriuje, kad suprastumėte, kaip MCP gali pakeisti dokumentacijos prieigą ir kūrėjų produktyvumą konsolės aplinkose.
 
-### 4. [Interaktyvi mokymosi plano generatoriaus žiniatinklio programa su MCP](./docs-mcp/README.md)
+### 4. [Interaktyvi studijų plano generatoriaus žiniatinklio programa su MCP](./docs-mcp/README.md)
 
-Šioje atvejų analizėje parodoma, kaip sukurti interaktyvią žiniatinklio programą naudojant „Chainlit“ ir Modelio konteksto protokolą (MCP), kad būtų galima generuoti suasmenintus mokymosi planus bet kuria tema. Vartotojai gali nurodyti temą (pvz., „AI-900 sertifikatas“) ir mokymosi trukmę (pvz., 8 savaites), o programa pateiks savaitės rekomendacijas. „Chainlit“ suteikia pokalbių sąsają, kuri daro patirtį įtraukiančią ir pritaikomą.
+Ši atvejų studija parodo, kaip sukurti interaktyvią žiniatinklio programą naudojant Chainlit ir Modelio konteksto protokolą (MCP) individualizuotiems studijų planams generuoti bet kuriai temai. Vartotojai gali nurodyti temą (pvz., „AI-900 sertifikatas“) ir studijų trukmę (pvz., 8 savaitės), o programa pateiks savaitinį rekomenduojamos medžiagos suskirstymą. Chainlit suteikia pokalbių sąsają, dėl kurios patirtis tampa įtraukianči ir adaptuojama.
 
-- Pokalbių žiniatinklio programa, pagrįsta „Chainlit“
-- Vartotojo nurodomi raginimai temai ir trukmei
-- Savaitės turinio rekomendacijos naudojant MCP
-- Realaus laiko, pritaikomi atsakymai pokalbių sąsajoje
+- Pokalbių žiniatinklio programa, veikianti Chainlit pagrindu
+- Vartotojo iniciatyva valdomi užklausimai temai ir trukmei
+- Savaitinis turinio rekomendacijų pateikimas naudojant MCP
+- Realaus laiko adaptuojami atsakymai pokalbių sąsajoje
 
-Projektas iliustruoja, kaip pokalbių dirbtinis intelektas ir MCP gali būti derinami kuriant dinamiškus, vartotojo poreikiams pritaikytus mokymo įrankius šiuolaikinėje žiniatinklio aplinkoje.
+Projektas iliustruoja, kaip galima sujungti pokalbių AI ir MCP, kad būtų sukurti dinamiški, vartotojo valdomi švietimo įrankiai šiuolaikinėje žiniatinklio aplinkoje.
 
-### 5. [Dokumentacija redaktoriuje su MCP serveriu „VS Code“](./docs-mcp/README.md)
+### 5. [Dokumentacija redaktoriuje su MCP serveriu VS Code](./docs-mcp/README.md)
 
-Šioje atvejų analizėje parodoma, kaip „Microsoft Learn Docs“ galima tiesiogiai integruoti į „VS Code“ aplinką naudojant MCP serverį – nebereikia perjunginėti naršyklės skirtukų! Sužinosite, kaip:
+Ši atvejų studija demonstruoja, kaip galite Microsoft Learn dokumentaciją įkelti tiesiai į savo VS Code aplinką naudodami MCP serverį – nebebus reikalo perjungti naršyklės langų! Išmoksite:
 
-- Akimirksniu ieškoti ir skaityti dokumentaciją „VS Code“ naudojant MCP skydelį arba komandų paletę
-- Nuorodas į dokumentaciją įterpti tiesiai į savo README ar kursų Markdown failus
-- Naudoti „GitHub Copilot“ ir MCP kartu, kad būtų užtikrintas sklandus, dirbtiniu intelektu pagrįstas dokumentacijos ir kodo darbo procesas
-- Tikrinti ir tobulinti savo dokumentaciją naudojant realaus laiko atsiliepimus ir „Microsoft“ šaltinių tikslumą
-- Integruoti MCP su „GitHub“ darbo procesais nuolatiniam dokumentacijos tikrinimui
+- Iškart ieškoti ir skaityti dokumentus VS Code viduje naudojant MCP skydelį arba komandų paletę
+- Nuorodoms į dokumentaciją nurodyti ir įterpti jas tiesiai į „README“ arba mokymo rinkmenos markdown failus
+- Naudoti GitHub Copilot ir MCP kartu sklandžiam, dirbtinio intelekto pagrindu veikiančiam dokumentacijos ir kodo darbo srautui
+- Tikrinti ir tobulinti savo dokumentaciją su realaus laiko atsiliepimais ir Microsoft patikimumu
+- Integruoti MCP su GitHub darbo srautais nuolatinės dokumentacijos validacijai
 
 Įgyvendinimas apima:
 
-- Pavyzdinę `.vscode/mcp.json` konfigūraciją lengvam nustatymui
-- Ekrano nuotraukomis pagrįstus vadovus apie darbo su redaktoriumi patirtį
-- Patarimus, kaip maksimaliai išnaudoti „Copilot“ ir MCP produktyvumą
+- Pavyzdinę `.vscode/mcp.json` konfigūraciją patogiam nustatymui
+- Ekrano nuotraukomis pagrįstus vadovus apie darbo redaktoriuje patirtį
+- Patarimus, kaip derinti Copilot ir MCP maksimaliai produktyvumui
 
-Šis scenarijus idealiai tinka kursų autoriams, dokumentacijos kūrėjams ir kūrėjams, kurie nori išlikti susikoncentravę redaktoriuje, dirbdami su dokumentacija, „Copilot“ ir tikrinimo įrankiais – visa tai valdoma MCP.
+Šis scenarijus puikiai tinka kursų autoriams, dokumentacijos rašytojams ir programuotojams, kurie nori likti susikaupę redaktoriuje dirbdami su dokumentacija, Copilot ir tikrinimo įrankiais – visa tai veikia MCP pagrindu.
 
 ### 6. [APIM MCP serverio kūrimas](./apimsample.md)
 
-Šioje atvejų analizėje pateikiamas žingsnis po žingsnio vadovas, kaip sukurti MCP serverį naudojant „Azure API Management“ (APIM). Ji apima:
+Ši atvejų studija pateikia žingsnis po žingsnio vadovą, kaip sukurti MCP serverį naudojant Azure API valdymą (APIM). Aptariama:
 
-- MCP serverio nustatymą „Azure API Management“
-- API operacijų eksponavimą kaip MCP įrankius
-- Politikų konfigūravimą, skirtą užklausų ribojimui ir saugumui
-- MCP serverio testavimą naudojant „Visual Studio Code“ ir „GitHub Copilot“
+- MCP serverio nustatymas Azure API valdyme
+- API operacijų atskleidimas kaip MCP įrankių
+- Taisyklių konfigūravimas dėl greičio ribojimo ir saugumo
+- MCP serverio testavimas naudojant Visual Studio Code ir GitHub Copilot
 
-Šis pavyzdys iliustruoja, kaip pasinaudoti „Azure“ galimybėmis kuriant patikimą MCP serverį, kuris gali būti naudojamas įvairiose programose, pagerinant dirbtinio intelekto sistemų integraciją su įmonių API.
+Šis pavyzdys iliustruoja, kaip panaudoti Azure galimybes kuriant tvirtą MCP serverį, kurį galima naudoti įvairiose programose, gerinant DI sistemų integraciją su įmonių API.
+
+### 7. [GitHub MCP registras – pagreitinant agentišką integraciją](https://github.com/mcp)
+
+Ši atvejų studija nagrinėja, kaip 2025 metų rugsėjį paleistas GitHub MCP registras sprendžia kritinę DI ekosistemos problemą: išskaidytą Modelio konteksto protokolo (MCP) serverių paiešką ir diegimą.
+
+#### Apžvalga
+**MCP registras** sprendžia augančią problemą, susijusią su išsisklaidžiusiais MCP serveriais tarp saugyklų ir registrų, dėl ko integracija buvo lėta ir klaidų linkusi. Šie serveriai leidžia DI agentams sąveikauti su išorinėmis sistemomis, kaip API, duomenų bazėmis ir dokumentacijos šaltiniais.
+
+#### Problemos aprašymas
+Kūrėjai, kurdami agentiškus darbo srautus, susidūrė su iššūkiais:
+- **Prasta MCP serverių radimo galimybė** skirtingose platformose
+- **Dublikatiniai diegimo klausimai** forumuose ir dokumentacijoje
+- **Saugumo rizikos** iš nepatikrintų ir nepatikimų šaltinių
+- **Trūksta standartizacijos** serverių kokybei ir suderinamumui
+
+#### Sprendimo architektūra
+GitHub MCP registras zentralizuoja patikimus MCP serverius su svarbiomis savybėmis:
+- **Vieno spustelėjimo diegimas** per VS Code sklandžiam nustatymui
+- **Signalo triukšme rūšiavimas** pagal žvaigždutes, aktyvumą ir bendruomenės patvirtinimus
+- **Tiesioginė integracija** su GitHub Copilot ir kitais MCP suderinamais įrankiais
+- **Atviras dalyvavimo modelis** leidžiantis bendruomenei ir įmonių partneriams prisidėti
+
+#### Verslo poveikis
+Registras užtikrino matomus patobulinimus:
+- **Greitesnis įsijungimas** kūrėjams, naudojantiems tokias priemones kaip Microsoft Learn MCP serveris, kuris transliuoja oficialią dokumentaciją tiesiai agentams
+- **Didėjanti produktyvumas** per specializuotus serverius, pvz., `github-mcp-server`, leidžiančius natūraliu kalbos komandų valdymą GitHub (PR kūrimas, CI perkartojimas, kodo nuskaitymas)
+- **Sustiprintas ekosistemos pasitikėjimas** dėl kuruojamų sąrašų ir skaidrių konfigūracijos standartų
+
+#### Strateginė vertė
+Agentų gyvavimo ciklo valdymo ir atkuriamų darbo srautų specialistams MCP registras suteikia:
+- **Modulinį agentų diegimą** su standartizuotomis sudedamosiomis dalimis
+- **Registru pagrįstas vertinimo grandines** nuosekliam testavimui ir validavimui
+- **Įrankių tarpusavio suderinamumą** leidžiantį sklandžiai integruotis tarp skirtingų DI platformų
+
+Ši atvejų studija parodo, kad MCP registras yra ne tik katalogas, bet ir pagrindinė platforma mastelio, realaus pasaulio modelių integracijai ir agentiškų sistemų diegimui.
 
 ## Išvada
 
-Šios atvejų analizės pabrėžia Modelio konteksto protokolo universalumą ir praktinį pritaikymą realiose situacijose. Nuo sudėtingų kelių agentų sistemų iki tikslinių automatizavimo procesų MCP suteikia standartizuotą būdą sujungti dirbtinio intelekto sistemas su įrankiais ir duomenimis, kurių joms reikia, kad sukurtų vertę.
+Šios septynios išsamios atvejų studijos demonstruoja nepaprastą Modelio konteksto protokolo (MCP) universalumą ir praktinį pritaikymą skirtingose realaus pasaulio situacijose. Nuo sudėtingų daugiaagentinių kelionių planavimo sistemų ir įmonių API valdymo iki supaprastintų dokumentacijos darbo srautų ir revoliucinio GitHub MCP registro – šie pavyzdžiai parodo, kaip MCP suteikia standartizuotą, mastelį keičiančią galimybę sujungti DI sistemas su joms reikalingais įrankiais, duomenimis ir paslaugomis, teikiančiomis išskirtinę vertę.
 
-Analizuodami šiuos įgyvendinimus, galite įgyti įžvalgų apie architektūrinius modelius, įgyvendinimo strategijas ir geriausias praktikas, kurias galima pritaikyti savo MCP projektuose. Pavyzdžiai rodo, kad MCP nėra tik teorinis pagrindas, bet ir praktinis sprendimas realioms verslo problemoms.
+Atvejų studijos apima kelis MCP diegimo aspektus:
+- **Įmonių integracija**: Azure API valdymas ir Azure DevOps automatizavimas
+- **Daugiaagentinė orkestracija**: kelionių planavimas su koordinuotais AI agentais
+- **Kūrėjų produktyvumas**: VS Code integracija ir dokumentacijos realaus laiko prieiga
+- **Ekosistemos kūrimas**: GitHub MCP registras kaip pagrindinė platforma
+- **Švietimo taikymai**: interaktyvūs studijų planų generatoriai ir pokalbių sąsajos
+
+Analizuodami šiuos diegimus, įgisite esminių įžvalgų apie:
+- **Architektūrinius modelius** skirtingiems mastams ir naudojimo scenarijams
+- **Įgyvendinimo strategijas**, subalansuojančias funkcionalumą ir palaikomumą
+- **Saugumo ir mastelio didinimo** aspektus produkciniame naudojime
+- **Geriausias praktikas** MCP serverių kūrimui ir klientų integracijai
+- **Ekosistemos mąstymą** kuriant susijusias dirbtinio intelekto sprendimų sistemas
+
+Šie pavyzdžiai kartu demonstruoja, kad MCP nėra vien teorinis modelis, bet brandus, gamybai paruoštas protokolas, leidžiantis praktiškai spręsti sudėtingas verslo užduotis. Nesvarbu, ar kuriate paprastus automatizavimo įrankius, ar pažangias daugiaagentines sistemas – čia pateikti modeliai ir požiūriai suteikia tvirtą pagrindą jūsų pačių MCP projektams.
 
 ## Papildomi ištekliai
 
-- [Azure AI kelionių agentų „GitHub“ saugykla](https://github.com/Azure-Samples/azure-ai-travel-agents)
+- [Azure AI Travel Agents GitHub saugykla](https://github.com/Azure-Samples/azure-ai-travel-agents)
 - [Azure DevOps MCP įrankis](https://github.com/microsoft/azure-devops-mcp)
 - [Playwright MCP įrankis](https://github.com/microsoft/playwright-mcp)
 - [Microsoft Docs MCP serveris](https://github.com/MicrosoftDocs/mcp)
+- [GitHub MCP registras – pagreitinant agentišką integraciją](https://github.com/mcp)
 - [MCP bendruomenės pavyzdžiai](https://github.com/microsoft/mcp)
 
-Kitas: Praktinis užsiėmimas [Dirbtinio intelekto darbo procesų optimizavimas: MCP serverio kūrimas su AI įrankių rinkiniu](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
+## Kas toliau
+
+- Ankstesnis: [8 modulis: geriausios praktikos](../08-BestPractices/README.md)
+- Kitas: [10 modulis: AI darbo srautų supaprastinimas: MCP serverio kūrimas su AI įrankių rinkiniu](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Atsakomybės apribojimas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama naudoti profesionalų žmogaus vertimą. Mes neprisiimame atsakomybės už nesusipratimus ar klaidingus interpretavimus, atsiradusius dėl šio vertimo naudojimo.
+Šis dokumentas buvo išverstas naudojant dirbtinio intelekto vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors stengiamės užtikrinti tikslumą, atkreipkite dėmesį, kad automatizuoti vertimai gali turėti klaidų arba netikslumų. Originalus dokumentas gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Svarbiai informacijai rekomenduojamas profesionalus žmogaus vertimas. Mes neatsakome už jokias nesusipratimus ar klaidingas interpretacijas, kilusias dėl šio vertimo naudojimo.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

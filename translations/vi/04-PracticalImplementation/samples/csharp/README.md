@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0bc7bd48f55f1565f1d95ccb2c16f728",
-  "translation_date": "2025-07-13T23:08:20+00:00",
-  "source_file": "04-PracticalImplementation/samples/csharp/README.md",
-  "language_code": "vi"
-}
--->
 # Mẫu
 
 Ví dụ trước cho thấy cách sử dụng một dự án .NET cục bộ với loại `stdio`. Và cách chạy server cục bộ trong một container. Đây là một giải pháp tốt trong nhiều tình huống. Tuy nhiên, việc có server chạy từ xa, như trong môi trường đám mây, cũng rất hữu ích. Đây là lúc loại `http` phát huy tác dụng.
@@ -26,7 +17,7 @@ Các dự án khác đến từ [.NET Aspire](https://learn.microsoft.com/dotnet
 
 1. Khi trình duyệt web mở bảng điều khiển .NET Aspire, chú ý URL `http`. Nó sẽ có dạng như `http://localhost:5058/`.
 
-   ![.NET Aspire Dashboard](../../../../../translated_images/dotnet-aspire-dashboard.0a7095710e9301e90df2efd867e1b675b3b9bc2ccd7feb1ebddc0751522bc37c.vi.png)
+   ![.NET Aspire Dashboard](../../../../../translated_images/vi/dotnet-aspire-dashboard.0a7095710e9301e9.webp)
 
 ## Kiểm thử Streamable HTTP với MCP Inspector
 
@@ -38,7 +29,7 @@ Khởi động server và chạy lệnh sau trong terminal:
 npx @modelcontextprotocol/inspector http://localhost:5058
 ```
 
-![MCP Inspector](../../../../../translated_images/mcp-inspector.c223422b9b494fb4a518a3b3911b3e708e6a5715069470f9163ee2ee8d5f1ba9.vi.png)
+![MCP Inspector](../../../../../translated_images/vi/mcp-inspector.c223422b9b494fb4.webp)
 
 - Chọn `Streamable HTTP` làm loại Transport.
 - Trong trường Url, nhập URL của server đã ghi chú trước đó, và thêm `/mcp` vào cuối. Nó phải là `http` (không phải `https`), ví dụ như `http://localhost:5058/mcp`.
@@ -83,7 +74,7 @@ azd up
 
 Khi quá trình triển khai kết thúc, bạn sẽ thấy thông báo như sau:
 
-![Azd deployment success](../../../../../translated_images/azd-deployment-success.bd42940493f1b834a5ce6251a6f88966546009b350df59d0cc4a8caabe94a4f1.vi.png)
+![Azd deployment success](../../../../../translated_images/vi/azd-deployment-success.bd42940493f1b834.webp)
 
 Lấy URL và sử dụng nó trong MCP Inspector và GitHub Copilot Chat.
 

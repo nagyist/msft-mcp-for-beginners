@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5ef8f5821c1a04f7b1fc4f15098ecab8",
-  "translation_date": "2025-07-13T19:40:43+00:00",
-  "source_file": "03-GettingStarted/04-vscode/solution/README.md",
-  "language_code": "hi"
-}
--->
 यह कमांड चलाने के समान है: `node build/index.js`।
 
 - इस server entry को अपने सर्वर फाइल के स्थान के अनुसार या आपके चुने हुए runtime और सर्वर स्थान के आधार पर सर्वर शुरू करने के लिए आवश्यक कमांड के अनुसार बदलें।
@@ -23,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     आपको चैट टेक्स्ट बॉक्स के ऊपर एक टूल दिखेगा जो आपको टूल चलाने के लिए चयन करने का संकेत देगा, जैसा कि इस चित्र में दिखाया गया है:
 
-    ![VS Code indicating it wanting to run a tool](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.hi.png)
+    ![VS Code indicating it wanting to run a tool](../../../../../translated_images/hi/vscode-agent.d5a0e0b897331060.webp)
 
     टूल का चयन करने पर यदि आपका प्रॉम्प्ट जैसा हमने ऊपर बताया था, तो आपको "23" जैसा संख्यात्मक परिणाम मिलेगा।
 

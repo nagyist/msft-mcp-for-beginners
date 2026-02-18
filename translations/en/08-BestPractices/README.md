@@ -1,45 +1,36 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b62150e27d4b7b5797ee41146d176e6b",
-  "translation_date": "2025-08-19T14:08:33+00:00",
-  "source_file": "08-BestPractices/README.md",
-  "language_code": "en"
-}
--->
 # MCP Development Best Practices
 
-[![MCP Development Best Practices](../../../translated_images/09.d0f6d86c9d72134ccf5a8d8c8650a0557e519936661fc894cad72d73522227cb.en.png)](https://youtu.be/W56H9W7x-ao)
+[![MCP Development Best Practices](../../../translated_images/en/09.d0f6d86c9d72134c.webp)](https://youtu.be/W56H9W7x-ao)
 
-_(Click the image above to view the video for this lesson)_
+_(Click the image above to view video of this lesson)_
 
 ## Overview
 
-This lesson covers advanced best practices for developing, testing, and deploying MCP servers and features in production environments. As MCP ecosystems become more complex and critical, adhering to established patterns ensures reliability, maintainability, and interoperability. This lesson compiles practical insights from real-world MCP implementations to help you build robust, efficient servers with effective resources, prompts, and tools.
+This lesson focuses on advanced best practices for developing, testing, and deploying MCP servers and features in production environments. As MCP ecosystems grow in complexity and importance, following established patterns ensures reliability, maintainability, and interoperability. This lesson consolidates practical wisdom gained from real-world MCP implementations to guide you in creating robust, efficient servers with effective resources, prompts, and tools.
 
 ## Learning Objectives
 
 By the end of this lesson, you will be able to:
 
 - Apply industry best practices in MCP server and feature design
-- Develop comprehensive testing strategies for MCP servers
+- Create comprehensive testing strategies for MCP servers
 - Design efficient, reusable workflow patterns for complex MCP applications
 - Implement proper error handling, logging, and observability in MCP servers
 - Optimize MCP implementations for performance, security, and maintainability
 
 ## MCP Core Principles
 
-Before diving into specific implementation practices, it’s essential to understand the core principles that underpin effective MCP development:
+Before diving into specific implementation practices, it's important to understand the core principles that guide effective MCP development:
 
-1. **Standardized Communication**: MCP is built on JSON-RPC 2.0, ensuring a consistent format for requests, responses, and error handling across all implementations.
+1. **Standardized Communication**: MCP uses JSON-RPC 2.0 as its foundation, providing a consistent format for requests, responses, and error handling across all implementations.
 
 2. **User-Centric Design**: Always prioritize user consent, control, and transparency in your MCP implementations.
 
-3. **Security First**: Implement strong security measures, including authentication, authorization, validation, and rate limiting.
+3. **Security First**: Implement robust security measures including authentication, authorization, validation, and rate limiting.
 
-4. **Modular Architecture**: Design MCP servers with a modular approach, where each tool and resource has a clear, focused purpose.
+4. **Modular Architecture**: Design your MCP servers with a modular approach, where each tool and resource has a clear, focused purpose.
 
-5. **Stateful Connections**: Take advantage of MCP’s ability to maintain state across multiple requests for more coherent and context-aware interactions.
+5. **Stateful Connections**: Leverage MCP's ability to maintain state across multiple requests for more coherent and context-aware interactions.
 
 ## Official MCP Best Practices
 
@@ -49,13 +40,13 @@ The following best practices are derived from the official Model Context Protoco
 
 1. **User Consent and Control**: Always require explicit user consent before accessing data or performing operations. Provide clear control over what data is shared and which actions are authorized.
 
-2. **Data Privacy**: Only expose user data with explicit consent and protect it with appropriate access controls. Prevent unauthorized data transmission.
+2. **Data Privacy**: Only expose user data with explicit consent and protect it with appropriate access controls. Safeguard against unauthorized data transmission.
 
-3. **Tool Safety**: Require explicit user consent before invoking any tool. Ensure users understand each tool’s functionality and enforce strong security boundaries.
+3. **Tool Safety**: Require explicit user consent before invoking any tool. Ensure users understand each tool's functionality and enforce robust security boundaries.
 
-4. **Tool Permission Control**: Configure which tools a model can use during a session, ensuring only explicitly authorized tools are accessible.
+4. **Tool Permission Control**: Configure which tools a model is allowed to use during a session, ensuring only explicitly authorized tools are accessible.
 
-5. **Authentication**: Require proper authentication before granting access to tools, resources, or sensitive operations using API keys, OAuth tokens, or other secure methods.
+5. **Authentication**: Require proper authentication before granting access to tools, resources, or sensitive operations using API keys, OAuth tokens, or other secure authentication methods.
 
 6. **Parameter Validation**: Enforce validation for all tool invocations to prevent malformed or malicious input from reaching tool implementations.
 
@@ -65,7 +56,7 @@ The following best practices are derived from the official Model Context Protoco
 
 1. **Capability Negotiation**: During connection setup, exchange information about supported features, protocol versions, available tools, and resources.
 
-2. **Tool Design**: Create focused tools that excel at specific tasks rather than monolithic tools that handle multiple concerns.
+2. **Tool Design**: Create focused tools that do one thing well, rather than monolithic tools that handle multiple concerns.
 
 3. **Error Handling**: Implement standardized error messages and codes to help diagnose issues, handle failures gracefully, and provide actionable feedback.
 
@@ -80,9 +71,11 @@ The following best practices are derived from the official Model Context Protoco
 For the most up-to-date information on MCP best practices, refer to:
 
 - [MCP Documentation](https://modelcontextprotocol.io/)
-- [MCP Specification](https://spec.modelcontextprotocol.io/)
+- [MCP Specification (2025-11-25)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
 - [Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
+- [OWASP MCP Top 10](https://microsoft.github.io/mcp-azure-security-guide/mcp/) - Security risks and mitigations
+- [MCP Security Summit Workshop (Sherpa)](https://azure-samples.github.io/sherpa/) - Hands-on security training
 
 ## Practical Implementation Examples
 
@@ -90,7 +83,7 @@ For the most up-to-date information on MCP best practices, refer to:
 
 #### 1. Single Responsibility Principle
 
-Each MCP tool should have a clear, focused purpose. Instead of creating monolithic tools that handle multiple concerns, develop specialized tools that excel at specific tasks.
+Each MCP tool should have a clear, focused purpose. Rather than creating monolithic tools that attempt to handle multiple concerns, develop specialized tools that excel at specific tasks.
 
 ```csharp
 // A focused tool that does one thing well
@@ -1120,10 +1113,10 @@ Implement proper authorization checks:
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
-    // Get user context from request
+    // Get user context from the request
     UserContext user = request.getContext().getUserContext();
     
-    // Check if user has required permissions
+    // Check if the user has the required permissions
     if (!authorizationService.hasPermission(user, "documents:read")) {
         throw new ToolExecutionException("User does not have permission to access documents");
     }
@@ -1134,7 +1127,7 @@ public ToolResponse execute(ToolRequest request) {
         throw new ToolExecutionException("Access denied to the requested document");
     }
     
-    // Proceed with tool execution
+    // Proceed with executing the tool
     // ...
 }
 ```
@@ -1198,7 +1191,7 @@ Comprehensive testing ensures that MCP tools function correctly, handle edge cas
 
 #### 1. Test Each Tool in Isolation
 
-Create focused tests for each tool’s functionality:
+Create focused tests for each tool's functionality:
 
 ```csharp
 [Fact]
@@ -1671,7 +1664,7 @@ Well-designed MCP workflows improve efficiency, reliability, and maintainability
 
 ### 1. Chain of Tools Pattern
 
-Connect multiple tools in a sequence where each tool’s output becomes the input for the next:
+Connect multiple tools in a sequence where each tool's output becomes the input for the next:
 
 ```python
 # Python Chain of Tools implementation
@@ -1989,7 +1982,7 @@ Unit tests verify individual components of your MCP server in isolation.
 
 #### What to Test
 
-1. **Resource Handlers**: Test each resource handler’s logic independently
+1. **Resource Handlers**: Test each resource handler's logic independently
 2. **Tool Implementations**: Verify tool behavior with various inputs
 3. **Prompt Templates**: Ensure prompt templates render correctly
 4. **Schema Validation**: Test parameter validation logic
@@ -2238,13 +2231,12 @@ export default function () {
 Automating your tests ensures consistent quality and faster feedback loops.
 
 ### CI/CD Integration
+1. **Run Unit Tests on Pull Requests**: Ensure code changes don't break existing functionality  
+2. **Integration Tests in Staging**: Run integration tests in pre-production environments  
+3. **Performance Baselines**: Maintain performance benchmarks to catch regressions  
+4. **Security Scans**: Automate security testing as part of the pipeline  
 
-1. **Run Unit Tests on Pull Requests**: Ensure code changes don’t break existing functionality
-2. **Integration Tests in Staging**: Run integration tests in pre-production environments
-3. **Performance Baselines**: Establish benchmarks to detect performance regressions.
-4. **Security Scans**: Integrate automated security testing into the pipeline.
-
-### Example CI Pipeline (GitHub Actions)
+### Example CI Pipeline (GitHub Actions)  
 
 ```yaml
 name: MCP Server Tests
@@ -2282,20 +2274,20 @@ jobs:
     - name: Performance Tests
       run: dotnet run --project tests/PerformanceTests/PerformanceTests.csproj
 ```
+  
+## Testing for Compliance with MCP Specification  
 
-## Testing for Compliance with MCP Specification
+Verify your server correctly implements the MCP specification.  
 
-Ensure your server adheres to the MCP specification.
+### Key Compliance Areas  
 
-### Key Compliance Areas
+1. **API Endpoints**: Test required endpoints (/resources, /tools, etc.)  
+2. **Request/Response Format**: Validate schema compliance  
+3. **Error Codes**: Verify correct status codes for various scenarios  
+4. **Content Types**: Test handling of different content types  
+5. **Authentication Flow**: Verify spec-compliant auth mechanisms  
 
-1. **API Endpoints**: Test mandatory endpoints (/resources, /tools, etc.).
-2. **Request/Response Format**: Validate adherence to the schema.
-3. **Error Codes**: Confirm correct status codes for various scenarios.
-4. **Content Types**: Test handling of different content types.
-5. **Authentication Flow**: Verify authentication mechanisms comply with the specification.
-
-### Compliance Test Suite
+### Compliance Test Suite  
 
 ```csharp
 [Fact]
@@ -2321,63 +2313,70 @@ public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
     });
 }
 ```
+  
+## Top 10 Tips for Effective MCP Server Testing  
 
-## Top 10 Tips for Effective MCP Server Testing
+1. **Test Tool Definitions Separately**: Verify schema definitions independently from tool logic  
+2. **Use Parameterized Tests**: Test tools with a variety of inputs, including edge cases  
+3. **Check Error Responses**: Verify proper error handling for all possible error conditions  
+4. **Test Authorization Logic**: Ensure proper access control for different user roles  
+5. **Monitor Test Coverage**: Aim for high coverage of critical path code  
+6. **Test Streaming Responses**: Verify proper handling of streaming content  
+7. **Simulate Network Issues**: Test behavior under poor network conditions  
+8. **Test Resource Limits**: Verify behavior when reaching quotas or rate limits  
+9. **Automate Regression Tests**: Build a suite that runs on every code change  
+10. **Document Test Cases**: Maintain clear documentation of test scenarios  
 
-1. **Test Tool Definitions Separately**: Validate schema definitions independently from tool logic.
-2. **Use Parameterized Tests**: Test tools with diverse inputs, including edge cases.
-3. **Check Error Responses**: Ensure proper error handling for all potential error conditions.
-4. **Test Authorization Logic**: Verify access control for different user roles.
-5. **Monitor Test Coverage**: Strive for high coverage of critical path code.
-6. **Test Streaming Responses**: Confirm correct handling of streaming content.
-7. **Simulate Network Issues**: Test behavior under poor network conditions.
-8. **Test Resource Limits**: Validate behavior when quotas or rate limits are reached.
-9. **Automate Regression Tests**: Develop a suite that runs with every code change.
-10. **Document Test Cases**: Keep clear documentation of test scenarios.
+## Common Testing Pitfalls  
 
-## Common Testing Pitfalls
+- **Over-reliance on happy path testing**: Make sure to test error cases thoroughly  
+- **Ignoring performance testing**: Identify bottlenecks before they affect production  
+- **Testing in isolation only**: Combine unit, integration, and E2E tests  
+- **Incomplete API coverage**: Ensure all endpoints and features are tested  
+- **Inconsistent test environments**: Use containers to ensure consistent test environments  
 
-- **Over-reliance on happy path testing**: Ensure thorough testing of error cases.
-- **Ignoring performance testing**: Identify bottlenecks before they impact production.
-- **Testing in isolation only**: Combine unit, integration, and end-to-end tests.
-- **Incomplete API coverage**: Test all endpoints and features comprehensively.
-- **Inconsistent test environments**: Use containers to maintain consistent environments.
+## Conclusion  
 
-## Conclusion
+A comprehensive testing strategy is essential for developing reliable, high-quality MCP servers. By implementing the best practices and tips outlined in this guide, you can ensure your MCP implementations meet the highest standards of quality, reliability, and performance.  
 
-A robust testing strategy is crucial for building reliable, high-quality MCP servers. By following the best practices and tips in this guide, you can ensure your MCP implementations meet the highest standards of quality, reliability, and performance.
 
-## Key Takeaways
+## Key Takeaways  
 
-1. **Tool Design**: Adhere to the single responsibility principle, use dependency injection, and design for composability.
-2. **Schema Design**: Develop clear, well-documented schemas with appropriate validation constraints.
-3. **Error Handling**: Implement graceful error handling, structured error responses, and retry logic.
-4. **Performance**: Utilize caching, asynchronous processing, and resource throttling.
-5. **Security**: Apply rigorous input validation, authorization checks, and sensitive data handling.
-6. **Testing**: Build comprehensive unit, integration, and end-to-end tests.
-7. **Workflow Patterns**: Use established patterns like chains, dispatchers, and parallel processing.
+1. **Tool Design**: Follow single responsibility principle, use dependency injection, and design for composability  
+2. **Schema Design**: Create clear, well-documented schemas with proper validation constraints  
+3. **Error Handling**: Implement graceful error handling, structured error responses, and retry logic  
+4. **Performance**: Use caching, asynchronous processing, and resource throttling  
+5. **Security**: Apply thorough input validation, authorization checks, and sensitive data handling  
+6. **Testing**: Create comprehensive unit, integration, and end-to-end tests  
+7. **Workflow Patterns**: Apply established patterns like chains, dispatchers, and parallel processing  
 
-## Exercise
+## Exercise  
 
-Design an MCP tool and workflow for a document processing system that:
+Design an MCP tool and workflow for a document processing system that:  
 
-1. Accepts documents in multiple formats (PDF, DOCX, TXT).
-2. Extracts text and key information from the documents.
-3. Classifies documents by type and content.
-4. Generates a summary of each document.
+1. Accepts documents in multiple formats (PDF, DOCX, TXT)  
+2. Extracts text and key information from the documents  
+3. Classifies documents by type and content  
+4. Generates a summary of each document  
 
-Develop the tool schemas, error handling, and a workflow pattern suitable for this scenario. Consider how you would test this implementation.
+Implement the tool schemas, error handling, and a workflow pattern that best suits this scenario. Consider how you would test this implementation.  
 
-## Resources 
+## Resources  
 
-1. Join the MCP community on the [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) to stay informed about the latest updates.
-2. Contribute to open-source [MCP projects](https://github.com/modelcontextprotocol).
-3. Apply MCP principles in your organization’s AI initiatives.
-4. Explore specialized MCP implementations tailored to your industry.
-5. Consider advanced courses on specific MCP topics, such as multi-modal integration or enterprise application integration.
-6. Experiment with building MCP tools and workflows using the principles covered in the [Hands-on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md).
+1. Join the MCP community on the [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) to stay updated on the latest developments  
+2. Contribute to open-source [MCP projects](https://github.com/modelcontextprotocol)  
+3. Apply MCP principles in your own organization's AI initiatives  
+4. Explore specialized MCP implementations for your industry.  
+5. Consider taking advanced courses on specific MCP topics, such as multi-modal integration or enterprise application integration.  
+6. Experiment with building your own MCP tools and workflows using the principles learned through the [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)  
 
-Next: Best Practices [case studies](../09-CaseStudy/README.md)
+## What's Next  
 
+Next: [Case Studies](../09-CaseStudy/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Disclaimer**:  
-This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we aim for accuracy, please note that automated translations may include errors or inaccuracies. The original document in its native language should be regarded as the authoritative source. For critical information, professional human translation is advised. We are not responsible for any misunderstandings or misinterpretations resulting from the use of this translation.
+This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

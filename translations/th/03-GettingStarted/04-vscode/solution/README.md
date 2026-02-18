@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5ef8f5821c1a04f7b1fc4f15098ecab8",
-  "translation_date": "2025-07-13T19:42:58+00:00",
-  "source_file": "03-GettingStarted/04-vscode/solution/README.md",
-  "language_code": "th"
-}
--->
 ซึ่งสอดคล้องกับการรันคำสั่งแบบนี้: `node build/index.js`
 
 - เปลี่ยน entry ของเซิร์ฟเวอร์นี้ให้ตรงกับตำแหน่งไฟล์เซิร์ฟเวอร์ของคุณ หรือให้เหมาะสมกับคำสั่งที่ต้องใช้ในการเริ่มต้นเซิร์ฟเวอร์ ขึ้นอยู่กับ runtime และตำแหน่งเซิร์ฟเวอร์ที่คุณเลือก
@@ -23,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     คุณจะเห็นเครื่องมือแสดงขึ้นเหนือกล่องข้อความแชท เพื่อให้คุณเลือกใช้งานเครื่องมือนั้นตามภาพนี้:
 
-    ![VS Code indicating it wanting to run a tool](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.th.png)
+    ![VS Code indicating it wanting to run a tool](../../../../../translated_images/th/vscode-agent.d5a0e0b897331060.webp)
 
     การเลือกเครื่องมือจะได้ผลลัพธ์เป็นตัวเลขแสดงว่า "23" หากคำสั่งของคุณเหมือนตัวอย่างที่กล่าวมา
 

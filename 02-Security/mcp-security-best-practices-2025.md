@@ -1,6 +1,12 @@
-# MCP Security Best Practices - August 2025 Update
+# MCP Security Best Practices - February 2026 Update
 
-> **Important**: This document reflects the latest [MCP Specification 2025-06-18](https://spec.modelcontextprotocol.io/specification/2025-06-18/) security requirements and official [MCP Security Best Practices](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices). Always refer to the current specification for the most up-to-date guidance.
+> **Important**: This document reflects the latest [MCP Specification 2025-11-25](https://spec.modelcontextprotocol.io/specification/2025-11-25/) security requirements and official [MCP Security Best Practices](https://modelcontextprotocol.io/specification/2025-11-25/basic/security_best_practices). Always refer to the current specification for the most up-to-date guidance.
+
+## 🏔️ Hands-On Security Training
+
+For practical implementation experience, we recommend the **[MCP Security Summit Workshop (Sherpa)](https://azure-samples.github.io/sherpa/)** - a comprehensive guided expedition to securing MCP servers in Azure. The workshop covers all OWASP MCP Top 10 risks through a "vulnerable → exploit → fix → validate" methodology.
+
+All practices in this document align with the **[OWASP MCP Azure Security Guide](https://microsoft.github.io/mcp-azure-security-guide/)** for Azure-specific implementation guidance.
 
 ## Essential Security Practices for MCP Implementations
 
@@ -175,9 +181,14 @@ The Model Context Protocol introduces unique security challenges that extend bey
 ## **Critical Security Resources**
 
 ### **Official MCP Documentation**
-- [MCP Specification (2025-06-18)](https://spec.modelcontextprotocol.io/specification/2025-06-18/)
-- [MCP Security Best Practices](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices)
-- [MCP Authorization Specification](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization)
+- [MCP Specification (2025-11-25)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
+- [MCP Security Best Practices](https://modelcontextprotocol.io/specification/2025-11-25/basic/security_best_practices)
+- [MCP Authorization Specification](https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization)
+
+### **OWASP MCP Security Resources**
+- [OWASP MCP Azure Security Guide](https://microsoft.github.io/mcp-azure-security-guide/) - Comprehensive OWASP MCP Top 10 with Azure implementation
+- [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/) - Official OWASP MCP security risks
+- [MCP Security Summit Workshop (Sherpa)](https://azure-samples.github.io/sherpa/) - Hands-on security training for MCP on Azure
 
 ### **Microsoft Security Solutions**
 - [Microsoft Prompt Shields](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection)
@@ -196,4 +207,10 @@ The Model Context Protocol introduces unique security challenges that extend bey
 
 ---
 
-> **Security Notice**: MCP security practices evolve rapidly. Always verify against the current [MCP specification](https://spec.modelcontextprotocol.io/) and [official security documentation](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices) before implementation.
+> **Security Notice**: MCP security practices evolve rapidly. Always verify against the current [MCP specification](https://spec.modelcontextprotocol.io/) and [official security documentation](https://modelcontextprotocol.io/specification/2025-11-25/basic/security_best_practices) before implementation.
+
+## What's Next
+
+- Read: [MCP Security Controls 2025](./mcp-security-controls-2025.md)
+- Return to: [Security Module Overview](./README.md)
+- Continue to: [Module 3: Getting Started](../03-GettingStarted/README.md)

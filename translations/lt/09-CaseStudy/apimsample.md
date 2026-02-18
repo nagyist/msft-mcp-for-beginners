@@ -1,76 +1,67 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2228721599c0c8673de83496b4d7d7a9",
-  "translation_date": "2025-08-26T18:34:40+00:00",
-  "source_file": "09-CaseStudy/apimsample.md",
-  "language_code": "lt"
-}
--->
-# Atvejo analizė: REST API eksponavimas API Management kaip MCP serveris
+# Atvejo analizė: REST API pateikimas API valdyme kaip MCP serveris
 
-Azure API Management yra paslauga, kuri suteikia vartus jūsų API galiniams taškams. Ji veikia kaip tarpininkas prieš jūsų API ir gali nuspręsti, ką daryti su gaunamais užklausomis.
+Azure API Management yra paslauga, kuri suteikia vartus virš jūsų API galinių taškų. Azure API Management veikia kaip tarpinis serveris jūsų API priekyje ir gali nuspręsti, ką daryti su gaunamais užklausimais.
 
-Naudodami ją, galite pridėti daugybę funkcijų, tokių kaip:
+Naudodami šią paslaugą, gaunate daug funkcijų, tokių kaip:
 
-- **Saugumas** – galite naudoti viską nuo API raktų, JWT iki valdomos tapatybės.
-- **Užklausų ribojimas** – puiki funkcija, leidžianti nustatyti, kiek užklausų gali būti apdorota per tam tikrą laiko vienetą. Tai padeda užtikrinti, kad visi naudotojai turėtų puikią patirtį ir kad jūsų paslauga nebūtų perkrauta užklausomis.
-- **Mastelio keitimas ir apkrovos balansavimas** – galite nustatyti kelis galinius taškus apkrovos balansavimui ir nuspręsti, kaip „balansuoti apkrovą“.
-- **Dirbtinio intelekto funkcijos, tokios kaip semantinis talpyklavimas**, užklausų limitas, užklausų stebėjimas ir kt. Tai puikios funkcijos, kurios pagerina atsako greitį ir padeda stebėti jūsų užklausų išlaidas. [Plačiau skaitykite čia](https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities).
+- **Saugumas**, galite naudoti viską nuo API raktų, JWT iki valdomos tapatybės.
+- **Ribojimas pagal užklausų dažnį**, puiki funkcija, leidžianti nuspręsti, kiek užklausų praleidžiama per tam tikrą laikotarpį. Tai padeda užtikrinti, kad visi vartotojai turėtų puikią patirtį ir kad jūsų paslauga nebūtų perkrauta užklausomis.
+- **Mastelio keitimas ir apkrovos balansavimas**. Galite nustatyti kelis galinius taškus apkrovos balansavimui ir taip pat pasirinkti, kaip vykdyti apkrovos balansavimą.
+- **Dirbtinio intelekto funkcijos, tokios kaip semantinė talpykla, žetonų limitas ir stebėjimas** bei daugiau. Tai puikios funkcijos, kurios pagerina reakcijos greitį ir padeda valdyti savo žetonų išlaidų kontrolę. [Skaitykite daugiau čia](https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities).
 
 ## Kodėl MCP + Azure API Management?
 
-Model Context Protocol (MCP) greitai tampa standartu agentinėms AI programoms ir kaip nuosekliai eksponuoti įrankius bei duomenis. Azure API Management yra natūralus pasirinkimas, kai reikia „valdyti“ API. MCP serveriai dažnai integruojasi su kitais API, kad galėtų apdoroti užklausas įrankiams, pavyzdžiui. Todėl Azure API Management ir MCP derinys yra logiškas sprendimas.
+Modelio konteksto protokolas (Model Context Protocol) greitai tampa standartu agentinėms DI programoms ir būdu nuosekliai pateikti įrankius bei duomenis. Azure API Management yra natūralus pasirinkimas, kai reikia „valdyti“ API. MCP serveriai dažnai susijungia su kitais API siekiant spręsti užklausas įrankiams, pavyzdžiui. Todėl Azure API Management ir MCP derinys yra visiškai prasmingas.
 
 ## Apžvalga
 
-Šiame konkrečiame naudojimo atvejyje išmoksime eksponuoti API galinius taškus kaip MCP serverį. Tai leis lengvai įtraukti šiuos galinius taškus į agentinę programą, tuo pačiu pasinaudojant Azure API Management funkcijomis.
+Šiame konkrečiame atvejyje sužinosime, kaip pateikti API galinius taškus kaip MCP serverį. Tai leis patogiai įtraukti šiuos galinius taškus į agentinę programą, tuo pačiu pasinaudojant Azure API Management funkcijomis.
 
 ## Pagrindinės funkcijos
 
-- Galite pasirinkti galinių taškų metodus, kuriuos norite eksponuoti kaip įrankius.
-- Papildomos funkcijos priklauso nuo to, ką konfigūruojate savo API politikos skyriuje. Čia parodysime, kaip pridėti užklausų ribojimą.
+- Pasirenkate galinių taškų metodus, kuriuos norite pateikti kaip įrankius.
+- Papildomos funkcijos priklauso nuo to, ką sukonfigūruosite politikos skiltyje savo API. Čia parodysime, kaip pridėti užklausų dažnio ribojimą.
 
-## Prieš pradedant: API importavimas
+## Paruošiamasis žingsnis: importuoti API
 
-Jei jau turite API Azure API Management, puiku – galite praleisti šį žingsnį. Jei ne, peržiūrėkite šią nuorodą: [API importavimas į Azure API Management](https://learn.microsoft.com/en-us/azure/api-management/import-and-publish#import-and-publish-a-backend-api).
+Jei jau turite API Azure API Management, puiku, galite praleisti šį žingsnį. Jei ne, patikrinkite šią nuorodą, [importuoti API į Azure API Management](https://learn.microsoft.com/en-us/azure/api-management/import-and-publish#import-and-publish-a-backend-api).
 
-## API eksponavimas kaip MCP serveris
+## API pateikimas kaip MCP serverio
 
-Norėdami eksponuoti API galinius taškus, atlikite šiuos veiksmus:
+Pateikdami API galinius taškus, laikykitės šių žingsnių:
 
-1. Eikite į Azure Portal adresu <https://portal.azure.com/?Microsoft_Azure_ApiManagement=mcp>. 
-   Pasirinkite savo API Management instanciją.
+1. Eikite į Azure portalą adresu <https://portal.azure.com/?Microsoft_Azure_ApiManagement=mcp>  
+   Pasirinkite savo API valdymo instanciją.
 
-1. Kairiajame meniu pasirinkite **APIs > MCP Servers > + Create new MCP Server**.
+1. Kairiajame meniu pasirinkite APIs > MCP Servers > + Create new MCP Server.
 
-1. API skyriuje pasirinkite REST API, kurį norite eksponuoti kaip MCP serverį.
+1. API skiltyje pasirinkite REST API, kurį norite pateikti kaip MCP serverį.
 
-1. Pasirinkite vieną ar daugiau API operacijų, kurias norite eksponuoti kaip įrankius. Galite pasirinkti visas operacijas arba tik konkrečias.
+1. Pasirinkite vieną ar daugiau API operacijų, kurias norite pateikti kaip įrankius. Galite pasirinkti visas operacijas arba tik konkrečias.
 
-    ![Pasirinkite metodus eksponavimui](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/create-mcp-server-small.png)
+    ![Pasirinkite metodus pateikimui](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/create-mcp-server-small.png)
 
-1. Pasirinkite **Create**.
+1. Paspauskite **Create**.
 
-1. Eikite į meniu parinktį **APIs** ir **MCP Servers**, turėtumėte matyti šį vaizdą:
+1. Meniu pasirinkite **APIs** ir **MCP Servers**, turėtumėte matyti štai ką:
 
     ![MCP serveris pagrindiniame lange](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-list.png)
 
-    MCP serveris sukurtas, o API operacijos eksponuojamos kaip įrankiai. MCP serveris rodomas MCP Servers lange. Stulpelyje URL pateikiamas MCP serverio galinio taško adresas, kurį galite naudoti testavimui arba klientinėje programoje.
+    MCP serveris sukurtas, o API operacijos pateiktos kaip įrankiai. MCP serveris rodomas MCP Servers skiltyje. URL stulpelis rodo MCP serverio galinį tašką, kurį galite naudoti testavimui arba kliento aplikacijoje.
 
 ## Pasirinktinai: Politikų konfigūravimas
 
-Azure API Management turi pagrindinę politikų koncepciją, kur galite nustatyti įvairias taisykles savo galiniams taškams, pavyzdžiui, užklausų ribojimą ar semantinį talpyklavimą. Šios politikos rašomos XML formatu.
+Azure API Management turi pagrindinę sąvoką – politikas, kuriose nustatote įvairias taisykles savo galiniams taškams, pavyzdžiui, užklausų ribojimą ar semantinę talpyklą. Šios politikos rašomos XML kalba.
 
-Štai kaip galite nustatyti politiką, ribojančią užklausų skaičių MCP serveriui:
+Štai kaip galite nustatyti politiką, ribojančią užklausas į MCP serverį:
 
-1. Portale, skiltyje **APIs**, pasirinkite **MCP Servers**.
+1. Portale, po APIs, pasirinkite **MCP Servers**.
 
 1. Pasirinkite sukurtą MCP serverį.
 
-1. Kairiajame meniu, skiltyje MCP, pasirinkite **Policies**.
+1. Kairiajame meniu, po MCP, pasirinkite **Policies**.
 
-1. Politikų redaktoriuje pridėkite arba redaguokite politiką, kurią norite taikyti MCP serverio įrankiams. Politikos apibrėžiamos XML formatu. Pavyzdžiui, galite pridėti politiką, ribojančią užklausų skaičių MCP serverio įrankiams (šiuo atveju 5 užklausos per 30 sekundžių vienam kliento IP adresui). Štai XML, kuris nustatys užklausų ribojimą:
+1. Politikų redaktoriuje pridėkite arba redaguokite norimas taikyti politikos MCP serverio įrankiams. Politikos aprašytos XML formatu. Pavyzdžiui, galite pridėti politiką, kuri riboja MCP serverio įrankių užklausų skaičių (šiame pavyzdyje – 5 užklausos per 30 sekundžių kiekvienam kliento IP adresui). Štai XML, kuris taikys užklausų ribojimą:
 
     ```xml
      <rate-limit-by-key calls="5" 
@@ -79,30 +70,30 @@ Azure API Management turi pagrindinę politikų koncepciją, kur galite nustatyt
        remaining-calls-variable-name="remainingCallsPerIP" 
     />
     ```
+  
+    Štai politikos redaktoriaus vaizdas:
 
-    Štai politikų redaktoriaus vaizdas:
-
-    ![Politikų redaktorius](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-policies-small.png)
-
+    ![Politikos redaktorius](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-policies-small.png)
+ 
 ## Išbandykite
 
-Įsitikinkime, kad mūsų MCP serveris veikia kaip numatyta.
+Įsitikinkime, kad mūsų MCP serveris veikia tinkamai.
 
-Tam naudosime Visual Studio Code ir GitHub Copilot su jo Agent režimu. Pridėsime MCP serverį į *mcp.json* failą. Tai leis Visual Studio Code veikti kaip klientui su agentinėmis galimybėmis, o galutiniai naudotojai galės įvesti užklausą ir sąveikauti su serveriu.
+Tam naudosime Visual Studio Code ir GitHub Copilot agento režimą. Į *mcp.json* pridėsime MCP serverį. Taip Visual Studio Code veiks kaip klientas su agentinėmis galimybėmis, o galutiniai vartotojai galės įrašyti užklausą ir bendrauti su serveriu.
 
 Štai kaip pridėti MCP serverį Visual Studio Code:
 
-1. Naudokite MCP: **Add Server komandą iš Command Palette**.
+1. Naudokite komandą MCP: **Add Server** iš komandos paletės.
 
-1. Kai paprašoma, pasirinkite serverio tipą: **HTTP (HTTP arba Server Sent Events)**.
+1. Kai bus prašoma, pasirinkite serverio tipą: **HTTP (HTTP arba Server Sent Events)**.
 
-1. Įveskite MCP serverio URL API Management. Pavyzdys: **https://<apim-service-name>.azure-api.net/<api-name>-mcp/sse** (SSE galiniam taškui) arba **https://<apim-service-name>.azure-api.net/<api-name>-mcp/mcp** (MCP galiniam taškui), atkreipkite dėmesį į skirtumą tarp transportų `/sse` arba `/mcp`.
+1. Įveskite MCP serverio URL Azure API Management. Pavyzdžiui: **https://<apim-service-name>.azure-api.net/<api-name>-mcp/sse** (SSE galiniam taškui) arba **https://<apim-service-name>.azure-api.net/<api-name>-mcp/mcp** (MCP galiniam taškui), atkreipkite dėmesį į skirtingus transporto tipus: `/sse` arba `/mcp`.
 
-1. Įveskite serverio ID savo pasirinkimu. Tai nėra svarbi vertė, bet padės prisiminti, kas yra šis serverio instancija.
+1. Įveskite serverio ID pagal savo pasirinkimą. Tai nėra svarbi reikšmė, bet padės prisiminti, kas tai per serverio instancija.
 
-1. Pasirinkite, ar išsaugoti konfigūraciją darbo aplinkos nustatymuose, ar naudotojo nustatymuose.
+1. Pasirinkite, ar išsaugoti konfigūraciją savo darbo erdvės nustatymuose, ar vartotojo nustatymuose.
 
-  - **Darbo aplinkos nustatymai** – serverio konfigūracija išsaugoma .vscode/mcp.json faile, kuris pasiekiamas tik dabartinėje darbo aplinkoje.
+  - **Darbo erdvės nustatymai** – serverio konfigūracija išsaugoma .vscode/mcp.json faile, kuris galioja tik dabartinėje darbo erdvėje.
 
     *mcp.json*
 
@@ -114,8 +105,8 @@ Tam naudosime Visual Studio Code ir GitHub Copilot su jo Agent režimu. Pridėsi
         }
     }
     ```
-
-    arba jei pasirinkote srautinį HTTP kaip transportą, tai atrodytų šiek tiek kitaip:
+  
+    arba, jei pasirinksite srautinį HTTP transportą, tai atrodys šiek tiek kitaip:
 
     ```json
     "servers": {
@@ -125,18 +116,18 @@ Tam naudosime Visual Studio Code ir GitHub Copilot su jo Agent režimu. Pridėsi
         }
     }
     ```
+  
+  - **Vartotojo nustatymai** – serverio konfigūracija pridedama prie globalaus *settings.json* failo ir galioja visose darbo erdvėse. Konfigūracija atrodo maždaug taip:
 
-  - **Naudotojo nustatymai** – serverio konfigūracija pridedama prie jūsų globalaus *settings.json* failo ir pasiekiama visose darbo aplinkose. Konfigūracija atrodo panašiai kaip ši:
+    ![Vartotojo nustatymai](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-servers-visual-studio-code.png)
 
-    ![Naudotojo nustatymas](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-servers-visual-studio-code.png)
+1. Taip pat reikės pridėti konfigūraciją – antraštę, užtikrinančią tinkamą autentifikavimą prieš Azure API Management. Naudojama antraštė **Ocp-Apim-Subscription-Key**.
 
-1. Taip pat reikia pridėti konfigūraciją – antraštę, kad būtų užtikrintas tinkamas autentifikavimas Azure API Management. Ji naudoja antraštę **Ocp-Apim-Subscription-Key**.
+    - Štai kaip ją pridėti į nustatymus:
 
-    - Štai kaip galite ją pridėti prie nustatymų:
+    ![Antraštės pridėjimas autentifikavimui](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-with-header-visual-studio-code.png), tai sukels užklausą nurodyti API rakto reikšmę, kurią rasite Azure portale savo API Management instancijoje.
 
-    ![Antraštės pridėjimas autentifikavimui](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-with-header-visual-studio-code.png), tai sukels raginimą įvesti API rakto vertę, kurią galite rasti Azure Portal savo Azure API Management instancijoje.
-
-   - Norėdami pridėti ją prie *mcp.json*, galite tai padaryti taip:
+   - Norėdami pridėti į *mcp.json*, galite pridėti taip:
 
     ```json
     "inputs": [
@@ -158,46 +149,53 @@ Tam naudosime Visual Studio Code ir GitHub Copilot su jo Agent režimu. Pridėsi
     }
     ```
 
-### Naudokite Agent režimą
+### Naudojimas agento režimu
 
 Dabar viskas paruošta tiek nustatymuose, tiek *.vscode/mcp.json*. Išbandykime.
 
-Turėtų būti įrankių piktograma, kurioje rodomi eksponuoti įrankiai iš jūsų serverio:
+Turėtų būti Įrankių piktograma, kurioje pateikti jūsų serverio išeksportuoti įrankiai:
 
-![Įrankiai iš serverio](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/tools-button-visual-studio-code.png)
+![Serverio įrankiai](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/tools-button-visual-studio-code.png)
 
-1. Spustelėkite įrankių piktogramą ir turėtumėte matyti įrankių sąrašą:
+1. Spustelėkite įrankių piktogramą, turėtumėte matyti įrankių sąrašą:
 
     ![Įrankiai](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/select-tools-visual-studio-code.png)
 
-1. Įveskite užklausą pokalbyje, kad iškviestumėte įrankį. Pavyzdžiui, jei pasirinkote įrankį gauti informaciją apie užsakymą, galite paprašyti agento informacijos apie užsakymą. Štai pavyzdinė užklausa:
+1. Įveskite užklausą pokalbiui, kad iškvietumėte įrankį. Pavyzdžiui, jei pasirinktą įrankį, kuris pateikia informaciją apie užsakymą, galite paklausti agento apie konkretų užsakymą. Štai pavyzdinė užklausa:
 
     ```text
     get information from order 2
     ```
+  
+    Jums bus parodyta įrankių piktograma, klausianti toliau tęsti įrankio kvietimą. Pasirinkite tęsti, turėtumėte matyti tokį atsakymą:
 
-    Dabar jums bus pateikta įrankių piktograma, prašanti tęsti įrankio vykdymą. Pasirinkite tęsti įrankio vykdymą, ir turėtumėte matyti rezultatą, panašų į šį:
+    ![Atsakymas iš užklausos](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/chat-results-visual-studio-code.png)
 
-    ![Rezultatas iš užklausos](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/chat-results-visual-studio-code.png)
-
-    **Tai, ką matote aukščiau, priklauso nuo to, kokius įrankius nustatėte, tačiau idėja yra gauti tekstinį atsakymą, kaip parodyta aukščiau.**
+    **tai, ką matote aukščiau, priklauso nuo nustatytų įrankių, bet esmė, kad gaunate tekstinį atsakymą, kaip parodyta**
 
 ## Nuorodos
 
 Štai kur galite sužinoti daugiau:
 
 - [Pamoka apie Azure API Management ir MCP](https://learn.microsoft.com/en-us/azure/api-management/export-rest-mcp-server)
-- [Python pavyzdys: Saugus nuotolinis MCP serverių naudojimas su Azure API Management (eksperimentinis)](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)
+- [Python pavyzdys: saugūs nuotoliniai MCP serveriai naudojant Azure API Management (eksperimentinis)](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)
 
-- [MCP klientų autorizacijos laboratorija](https://github.com/Azure-Samples/AI-Gateway/tree/main/labs/mcp-client-authorization)
+- [MCP kliento autorizacijos laboratorija](https://github.com/Azure-Samples/AI-Gateway/tree/main/labs/mcp-client-authorization)
 
 - [Naudokite Azure API Management plėtinį VS Code, kad importuotumėte ir valdytumėte API](https://learn.microsoft.com/en-us/azure/api-management/visual-studio-code-tutorial)
 
-- [Nuotolinių MCP serverių registravimas ir atradimas Azure API Center](https://learn.microsoft.com/en-us/azure/api-center/register-discover-mcp-server)
-- [AI Gateway](https://github.com/Azure-Samples/AI-Gateway) Puikus repo, rodantis daugybę AI galimybių su Azure API Management
-- [AI Gateway dirbtuvės](https://azure-samples.github.io/AI-Gateway/) Apima dirbtuves naudojant Azure Portal – puikus būdas pradėti vertinti AI galimybes.
+- [Registruokite ir raskite nuotolinius MCP serverius Azure API Centre](https://learn.microsoft.com/en-us/azure/api-center/register-discover-mcp-server)
+- [AI Gateway](https://github.com/Azure-Samples/AI-Gateway) Puikus repozitorijus, kuris demonstruoja daugelį DI galimybių su Azure API Management
+- [AI Gateway dirbtuvės](https://azure-samples.github.io/AI-Gateway/) Apima dirbtuves naudojant Azure portalą, puikus būdas pradėti vertinti DI galimybes.
+
+## Kas toliau
+
+- Grįžti į: [Atvejo analizės apžvalga](./README.md)
+- Toliau: [Azure DI kelionių agentai](./travelagentsample.md)
 
 ---
 
-**Atsakomybės apribojimas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama naudoti profesionalų žmogaus vertimą. Mes neprisiimame atsakomybės už nesusipratimus ar klaidingus interpretavimus, atsiradusius dėl šio vertimo naudojimo.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Atsakomybės apribojimas**:
+Šis dokumentas buvo išverstas naudojant dirbtinio intelekto vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors stengiamės užtikrinti tikslumą, prašome atkreipti dėmesį, kad automatizuoti vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Svarbiai informacijai rekomenduojamas profesionalus žmogaus atliktas vertimas. Mes neatsakome už jokius nesusipratimus ar neteisingus interpretavimus, atsiradusius dėl šio vertimo naudojimo.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

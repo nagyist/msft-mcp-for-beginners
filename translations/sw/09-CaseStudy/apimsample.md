@@ -1,76 +1,67 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2228721599c0c8673de83496b4d7d7a9",
-  "translation_date": "2025-08-19T14:24:19+00:00",
-  "source_file": "09-CaseStudy/apimsample.md",
-  "language_code": "sw"
-}
--->
-# Uchunguzi wa Kesi: Kufichua REST API katika API Management kama seva ya MCP
+# Uchunguzi wa Kesi: Weka wazi REST API ndani ya Usimamizi wa API kama seva ya MCP
 
-Azure API Management ni huduma inayotoa lango juu ya sehemu za mwisho za API yako. Inavyofanya kazi ni kwamba Azure API Management hufanya kama wakala mbele ya API zako na inaweza kuamua nini cha kufanya na maombi yanayoingia.
+Azure API Management, ni huduma inayotoa Mlangoni juu ya Miisho yako ya API. Jinsi inavyofanya kazi ni kwamba Azure API Management hutenda kama proksi mbele ya APIs zako na inaweza kuamua nini cha kufanya na maombi yanayoingia.
 
-Kwa kuitumia, unaongeza vipengele vingi kama:
+Kwa kuitumia, unaongeza huduma nyingi kama:
 
-- **Usalama**, unaweza kutumia kila kitu kutoka kwa funguo za API, JWT hadi utambulisho unaosimamiwa.
-- **Kuweka kikomo cha kiwango**, kipengele kizuri ni uwezo wa kuamua ni simu ngapi zinapita kwa muda fulani. Hii husaidia kuhakikisha watumiaji wote wanapata uzoefu mzuri na pia huduma yako haizidiwi na maombi.
-- **Kuweka mizani na usawa wa mzigo**. Unaweza kusanidi idadi ya sehemu za mwisho ili kusawazisha mzigo na pia unaweza kuamua jinsi ya "kusawazisha mzigo".
-- **Vipengele vya AI kama akiba ya semantiki**, kikomo cha tokeni na ufuatiliaji wa tokeni na zaidi. Hivi ni vipengele bora vinavyoboresha mwitikio na pia vinakusaidia kufuatilia matumizi ya tokeni zako. [Soma zaidi hapa](https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities).
+- **Usalama**, unaweza kutumia kila kitu kuanzia funguo za API, JWT hadi utambulisho ulioendeshwa.
+- **Kudhibiti mzunguko wa maombi**, kipengele kizuri ni uwezo wa kuamua ni simu ngapi zinapokelewa kwa wakati fulani. Hii husaidia kuhakikisha watumiaji wote wana uzoefu mzuri na pia kwamba huduma yako haisababishwi na maombi mengi.
+- **Kupandisha kiwango & Kusawazisha mzigo**. Unaweza kuweka idadi ya miisho ili kusawazisha mzigo na pia unaweza kuamua jinsi ya "kusawazisha mzigo".
+- **Vipengele vya AI kama uhifadhi wa maana**, kikomo cha tokeni na ufuatiliaji wa tokeni na zaidi. Hivi ni vipengele bora vinavyoboresha majibu pamoja na kusaidia kufuatilia matumizi yako ya tokeni. [Soma zaidi hapa](https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities).
 
 ## Kwa nini MCP + Azure API Management?
 
-Model Context Protocol inakuwa haraka kiwango cha programu za AI zenye mawakala na jinsi ya kufichua zana na data kwa njia thabiti. Azure API Management ni chaguo la asili unapohitaji "kusimamia" API. Seva za MCP mara nyingi huunganishwa na API nyingine kutatua maombi kwa zana kwa mfano. Kwa hivyo, kuchanganya Azure API Management na MCP kuna mantiki sana.
+Model Context Protocol kwa haraka inakuwa kiwango cha kawaida kwa programu za AI za kiwakala na jinsi ya kuonyesha zana na data kwa njia inayoeleweka. Azure API Management ni chaguo la asili unapo hitaji "kusimamia" APIs. Seva za MCP mara nyingi huingiliana na APIs nyingine kutatua maombi kwa zana kwa mfano. Kwa hiyo kuunganisha Azure API Management na MCP kuna maana kubwa.
 
 ## Muhtasari
 
-Katika kesi hii maalum, tutajifunza jinsi ya kufichua sehemu za mwisho za API kama seva ya MCP. Kwa kufanya hivyo, tunaweza kwa urahisi kufanya sehemu hizi za mwisho kuwa sehemu ya programu yenye mawakala huku tukitumia vipengele vya Azure API Management.
+Katika kesi hii maalum tutajifunza jinsi ya kuweka wazi miisho ya API kama Seva ya MCP. Kwa kufanya hivi, tunaweza kwa urahisi kufanya miisho hii sehemu ya programu ya kiwakala pamoja na kutumia vipengele vya Azure API Management.
 
 ## Vipengele Muhimu
 
-- Unachagua mbinu za sehemu za mwisho unazotaka kufichua kama zana.
-- Vipengele vya ziada unavyopata vinategemea kile unachosanidi katika sehemu ya sera kwa API yako. Lakini hapa tutaonyesha jinsi unavyoweza kuongeza kikomo cha kiwango.
+- Unaweka njia za endpoint unazotaka kuonyeshwa kama zana.
+- Vipengele vya ziada unavyopata hutegemea kile unachobainisha katika sehemu ya sera kwa API yako. Lakini hapa tutaonyesha jinsi ya kuongeza udhibiti wa mzunguko wa maombi.
 
-## Hatua ya awali: kuingiza API
+## Hatua ya awali: ingiza API
 
-Ikiwa tayari una API katika Azure API Management ni vizuri, basi unaweza kuruka hatua hii. Ikiwa sivyo, angalia kiungo hiki, [kuingiza API katika Azure API Management](https://learn.microsoft.com/en-us/azure/api-management/import-and-publish#import-and-publish-a-backend-api).
+Kama tayari una API katika Azure API Management ni nzuri, basi unaweza kukwepa hatua hii. Ikiwa huna, angalia kiungo hiki, [kuingiza API katika Azure API Management](https://learn.microsoft.com/en-us/azure/api-management/import-and-publish#import-and-publish-a-backend-api).
 
-## Kufichua API kama Seva ya MCP
+## Weka wazi API kama Seva ya MCP
 
-Ili kufichua sehemu za mwisho za API, fuata hatua hizi:
+Ili kutoa miisho ya API ya wazi, fuata hatua hizi:
 
-1. Tembelea Azure Portal kwa anwani ifuatayo <https://portal.azure.com/?Microsoft_Azure_ApiManagement=mcp> 
-Tembelea mfano wako wa API Management.
+1. Nenda kwenye Portal ya Azure na anwani ifuatayo <https://portal.azure.com/?Microsoft_Azure_ApiManagement=mcp>  
+Nenda kwenye mfano wako wa Usimamizi wa API.
 
-1. Katika menyu ya kushoto, chagua APIs > MCP Servers > + Unda seva mpya ya MCP.
+1. Kwenye menyu ya kushoto, chagua APIs > MCP Servers > + Unda seva mpya ya MCP.
 
-1. Katika API, chagua REST API kufichua kama seva ya MCP.
+1. Katika API, chagua REST API kuonyeshwa kama seva ya MCP.
 
-1. Chagua moja au zaidi ya Operesheni za API kufichua kama zana. Unaweza kuchagua operesheni zote au operesheni maalum tu.
+1. Chagua moja au zaidi ya Uendeshaji wa API kuonyeshwa kama zana. Unaweza kuchagua uendeshaji wote au uendeshaji maalum tu.
 
-    ![Chagua mbinu za kufichua](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/create-mcp-server-small.png)
+    ![Chagua njia za kuonyesha](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/create-mcp-server-small.png)
 
-1. Chagua **Unda**.
+1. Chagua **Create**.
 
-1. Tembelea chaguo la menyu **APIs** na **MCP Servers**, unapaswa kuona yafuatayo:
+1. Nenda kwenye chaguo la menyu **APIs** na **MCP Servers**, unapaswa kuona yafuatayo:
 
-    ![Tazama seva ya MCP katika paneli kuu](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-list.png)
+    ![Tazama seva ya MCP katika dirisha kuu](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-list.png)
 
-    Seva ya MCP imeundwa na operesheni za API zimefichuliwa kama zana. Seva ya MCP imeorodheshwa katika paneli ya MCP Servers. Safu ya URL inaonyesha sehemu ya mwisho ya seva ya MCP ambayo unaweza kupiga kwa majaribio au ndani ya programu ya mteja.
+    Seva ya MCP imetengenezwa na uendeshaji wa API zimeonyeshwa kama zana. Seva ya MCP imeorodheshwa katika dirisha la MCP Servers. Sehemu ya URL inaonyesha endpoint ya seva ya MCP ambayo unaweza kuitumia kwa majaribio au ndani ya programu ya mteja.
 
 ## Hiari: Sanidi sera
 
-Azure API Management ina dhana kuu ya sera ambapo unaseti sheria tofauti kwa sehemu zako za mwisho kama kwa mfano kuweka kikomo cha kiwango au akiba ya semantiki. Sera hizi zinaandikwa kwa XML.
+Azure API Management ina dhana kuu ya sera ambapo unaweka sheria tofauti kwa miisho yako kama kwa mfano kudhibiti mzunguko wa maombi au uhifadhi wa maana. Sera hizi zinaandikwa kwa XML.
 
-Hivi ndivyo unavyoweza kusanidi sera ya kuweka kikomo cha kiwango kwa seva yako ya MCP:
+Hili ni jinsi unavyoweza kuweka sera ya kudhibiti mzunguko wa maombi kwa seva yako ya MCP:
 
-1. Katika portal, chini ya APIs, chagua **MCP Servers**.
+1. Kwenye portal, chini ya APIs, chagua **MCP Servers**.
 
-1. Chagua seva ya MCP uliyounda.
+1. Chagua seva ya MCP uliyoitengeneza.
 
-1. Katika menyu ya kushoto, chini ya MCP, chagua **Policies**.
+1. Kwenye menyu ya kushoto, chini ya MCP, chagua **Policies**.
 
-1. Katika mhariri wa sera, ongeza au hariri sera unazotaka kutumia kwa zana za seva ya MCP. Sera zinafafanuliwa kwa muundo wa XML. Kwa mfano, unaweza kuongeza sera ya kuweka kikomo cha simu kwa zana za seva ya MCP (katika mfano huu, simu 5 kwa sekunde 30 kwa kila anwani ya IP ya mteja). Hapa kuna XML itakayosababisha kuweka kikomo cha kiwango:
+1. Katika mhariri wa sera, ongeza au hariri sera unazotaka zitatumike kwa zana za seva ya MCP. Sera hizi zimetafsiriwa kwa XML. Kwa mfano, unaweza kuongeza sera ya kuzuia simu nyingi kwa zana za seva ya MCP (mfano huu, simu 5 kwa kila sekunde 30 kwa anwani ya IP ya mteja). Hii ni XML itakayosababisha kudhibiti kiasi cha simu:
 
     ```xml
      <rate-limit-by-key calls="5" 
@@ -80,29 +71,29 @@ Hivi ndivyo unavyoweza kusanidi sera ya kuweka kikomo cha kiwango kwa seva yako 
     />
     ```
 
-    Hapa kuna picha ya mhariri wa sera:
+    Hii ni picha ya mhariri wa sera:
 
     ![Mhariri wa sera](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-policies-small.png)
 
 ## Jaribu
 
-Tuhakikishe seva yetu ya MCP inafanya kazi kama ilivyokusudiwa.
+Tuhakikishe seva ya MCP inafanya kazi kama inavyotakiwa.
 
-Kwa hili, tutatumia Visual Studio Code na GitHub Copilot na hali yake ya Mawakala. Tutaongeza seva ya MCP kwenye faili ya *mcp.json*. Kwa kufanya hivyo, Visual Studio Code itafanya kazi kama mteja mwenye uwezo wa mawakala na watumiaji wa mwisho wataweza kuandika maelekezo na kuingiliana na seva hiyo.
+Kwa hili, tutatumia Visual Studio Code na GitHub Copilot na hali yake ya Wakili. Tutaongeza seva ya MCP kwenye faili *mcp.json*. Kwa kufanya hivyo, Visual Studio Code itatenda kama mteja mwenye uwezo wa kiwakala na watumiaji wa mwisho wataweza kuandika agizo na kuingiliana na seva hiyo.
 
-Hivi ndivyo, kuongeza seva ya MCP katika Visual Studio Code:
+Tazama jinsi ya kuongeza seva ya MCP katika Visual Studio Code:
 
-1. Tumia MCP: **Amri ya Ongeza Seva kutoka kwa Command Palette**.
+1. Tumika amri ya MCP: **Add Server kutoka kwenye Command Palette**.
 
-1. Unapoulizwa, chagua aina ya seva: **HTTP (HTTP au Server Sent Events)**.
+1. Ukishonyanyua, chagua aina ya seva: **HTTP (HTTP au Server Sent Events)**.
 
-1. Ingiza URL ya seva ya MCP katika API Management. Mfano: **https://<apim-service-name>.azure-api.net/<api-name>-mcp/sse** (kwa sehemu ya mwisho ya SSE) au **https://<apim-service-name>.azure-api.net/<api-name>-mcp/mcp** (kwa sehemu ya mwisho ya MCP), angalia jinsi tofauti kati ya usafirishaji ni `/sse` au `/mcp`.
+1. Weka URL ya seva ya MCP katika Usimamizi wa API. Mfano: **https://<apim-service-name>.azure-api.net/<api-name>-mcp/sse** (kwa endpoint ya SSE) au **https://<apim-service-name>.azure-api.net/<api-name>-mcp/mcp** (kwa endpoint ya MCP), angalia tofauti kati ya usafirishaji ni `/sse` au `/mcp`.
 
-1. Ingiza ID ya seva ya chaguo lako. Hii si thamani muhimu lakini itakusaidia kukumbuka seva hii ni nini.
+1. Ingiza kitambulisho cha seva kama unavyotaka. Hii si thamani muhimu lakini itakusaidia kukumbuka ni seva gani hii.
 
-1. Chagua ikiwa kuhifadhi usanidi kwenye mipangilio ya workspace yako au mipangilio ya mtumiaji.
+1. Chagua kama unataka kuhifadhi usanidi kwenye mipangilio ya eneo la kazi au mipangilio ya mtumiaji.
 
-  - **Mipangilio ya workspace** - Usanidi wa seva umehifadhiwa kwenye faili ya .vscode/mcp.json inayopatikana tu katika workspace ya sasa.
+  - **Mipangilio ya eneo la kazi** - Usaidizi wa seva huhifadhiwa kwenye faili .vscode/mcp.json inayopatikana tu katika eneo la kazi la sasa.
 
     *mcp.json*
 
@@ -115,7 +106,7 @@ Hivi ndivyo, kuongeza seva ya MCP katika Visual Studio Code:
     }
     ```
 
-    au ikiwa unachagua HTTP ya kusambaza kama usafirishaji itakuwa tofauti kidogo:
+    au kama utachagua usafirishaji wa HTTP kuendelea lazima iwe tofauti kidogo:
 
     ```json
     "servers": {
@@ -126,17 +117,17 @@ Hivi ndivyo, kuongeza seva ya MCP katika Visual Studio Code:
     }
     ```
 
-  - **Mipangilio ya mtumiaji** - Usanidi wa seva umeongezwa kwenye faili yako ya *settings.json* ya kimataifa na inapatikana katika workspace zote. Usanidi unaonekana kama ifuatavyo:
+  - **Mipangilio ya mtumiaji** - Usaidizi wa seva unaongezwa kwenye faili lako la *settings.json* la ulimwengu na unapatikana katika maeneo yote ya kazi. Usaidizi umefananishwa kama ifuatavyo:
 
     ![Mipangilio ya mtumiaji](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-servers-visual-studio-code.png)
 
-1. Unahitaji pia kuongeza usanidi, kichwa ili kuhakikisha inathibitisha vizuri kuelekea Azure API Management. Inatumia kichwa kinachoitwa **Ocp-Apim-Subscription-Key**.
+1. Pia unahitaji kuongeza usanidi, kichwa cha maombi ili kuhakikisha unathibitishwa vyema kuelekea Azure API Management. Inatumia kichwa kinachoitwa **Ocp-Apim-Subscription-Key**.
 
-    - Hivi ndivyo unavyoweza kuongeza kwenye mipangilio:
+    - Hapa ni jinsi ya kuiongeza kwenye mipangilio:
 
-    ![Kuongeza kichwa kwa uthibitisho](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-with-header-visual-studio-code.png), hii itasababisha maelekezo kuonyeshwa kukuuliza thamani ya funguo ya API ambayo unaweza kupata katika Azure Portal kwa mfano wako wa Azure API Management.
+    ![Kuongeza kichwa kwa uthibitisho](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-with-header-visual-studio-code.png), hii itasababisha kuonyeshwa kwa agizo kuomba thamani ya funguo ya API ambayo unaweza kuipata kwenye Portal ya Azure kwa mfano wako wa Azure API Management.
 
-   - Ili kuongeza kwenye *mcp.json* badala yake, unaweza kuongeza kama ifuatavyo:
+   - Ili kuongeza kwenye *mcp.json* badala yake, unaweza kuiongeza hivi:
 
     ```json
     "inputs": [
@@ -158,44 +149,53 @@ Hivi ndivyo, kuongeza seva ya MCP katika Visual Studio Code:
     }
     ```
 
-### Tumia hali ya Mawakala
+### Tumia hali ya Wakili
 
-Sasa tumesanidi katika mipangilio au katika *.vscode/mcp.json*. Hebu tujaribu.
+Sasa tumejipanga vyote iwe kwenye mipangilio au katika *.vscode/mcp.json*. Tujaribu sasa.
 
-Kunapaswa kuwa na ikoni ya Zana kama ifuatavyo, ambapo zana zilizofichuliwa kutoka kwa seva yako zimeorodheshwa:
+Kuna ishara ya Zana kama hizi, ambapo zana zilizowekwa wazi kutoka seva zako zinaorodheshwa:
 
-![Zana kutoka kwa seva](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/tools-button-visual-studio-code.png)
+![Zana kutoka kwenye seva](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/tools-button-visual-studio-code.png)
 
-1. Bonyeza ikoni ya zana na unapaswa kuona orodha ya zana kama ifuatavyo:
+1. Bonyeza ishara ya zana na unapaswa kuona orodha ya zana kama ifuatavyo:
 
     ![Zana](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/select-tools-visual-studio-code.png)
 
-1. Ingiza maelekezo katika mazungumzo ili kuamsha zana. Kwa mfano, ikiwa umechagua zana ya kupata taarifa kuhusu agizo, unaweza kuuliza wakala kuhusu agizo. Hapa kuna mfano wa maelekezo:
+1. Ingiza agizo kwenye mazungumzo kuitisha zana. Kwa mfano, kama umechagua zana ya kupata taarifa kuhusu oda, unaweza kumuuliza wakili kuhusu oda. Hii mfano wa agizo:
 
     ```text
     get information from order 2
     ```
 
-    Sasa utaonyeshwa na ikoni ya zana inayokuuliza kuendelea kuita zana. Chagua kuendelea kuendesha zana, unapaswa sasa kuona matokeo kama ifuatavyo:
+    Sasa utaonyeshwa na ishara ya zana ikikuuliza kuendelea kuitisha zana. Chagua kuendelea kuendesha zana, sasa unapaswa kuona matokeo kama ifuatavyo:
 
-    ![Matokeo kutoka kwa maelekezo](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/chat-results-visual-studio-code.png)
+    ![Matokeo kutoka kwa agizo](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/chat-results-visual-studio-code.png)
 
-    **kile unachokiona hapo juu kinategemea zana ulizosanidi, lakini wazo ni kwamba unapata majibu ya maandishi kama hapo juu**
+    ** kile unachokiona juu hutegemea zana ulizoweka, lakini wazo ni kwamba unapata jibu la maandishi kama lilivyo juu **
 
 ## Marejeleo
 
-Hivi ndivyo unavyoweza kujifunza zaidi:
+Hapa ni jinsi unavyoweza kujifunza zaidi:
 
-- [Mafunzo kuhusu Azure API Management na MCP](https://learn.microsoft.com/en-us/azure/api-management/export-rest-mcp-server)
-- [Mfano wa Python: Linda seva za MCP za mbali kwa kutumia Azure API Management (majaribio)](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)
+- [Kozi ya Azure API Management na MCP](https://learn.microsoft.com/en-us/azure/api-management/export-rest-mcp-server)
+- [Mfano wa Python: Seva za MCP za mbali zilizo salama kwa kutumia Azure API Management (jaribio)](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)
 
-- [Maabara ya idhini ya mteja wa MCP](https://github.com/Azure-Samples/AI-Gateway/tree/main/labs/mcp-client-authorization)
+- [Maabara ya mamlaka za mteja wa MCP](https://github.com/Azure-Samples/AI-Gateway/tree/main/labs/mcp-client-authorization)
 
-- [Tumia kiendelezi cha Azure API Management kwa VS Code kuingiza na kusimamia API](https://learn.microsoft.com/en-us/azure/api-management/visual-studio-code-tutorial)
+- [Tumia nyongeza ya Azure API Management kwa VS Code kuingiza na kusimamia APIs](https://learn.microsoft.com/en-us/azure/api-management/visual-studio-code-tutorial)
 
-- [Sajili na gundua seva za MCP za mbali katika Azure API Center](https://learn.microsoft.com/en-us/azure/api-center/register-discover-mcp-server)
-- [AI Gateway](https://github.com/Azure-Samples/AI-Gateway) Hifadhi nzuri inayoonyesha uwezo mwingi wa AI na Azure API Management
-- [Warsha za AI Gateway](https://azure-samples.github.io/AI-Gateway/) Inayo warsha zinazotumia Azure Portal, ambayo ni njia nzuri ya kuanza kutathmini uwezo wa AI.
+- [Jisajili na gundua seva za MCP za mbali katika Azure API Center](https://learn.microsoft.com/en-us/azure/api-center/register-discover-mcp-server)
+- [Mlango wa AI](https://github.com/Azure-Samples/AI-Gateway) Hifadhi nzuri inayonyesha uwezo mkubwa wa AI na Azure API Management
+- [Warsha za Mlango wa AI](https://azure-samples.github.io/AI-Gateway/) Ina warsha zinazotumia Portal ya Azure, njia nzuri ya kuanza kutathmini uwezo wa AI.
 
-**Kanusho**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au kutokuwa sahihi. Hati ya asili katika lugha yake ya awali inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, inashauriwa kutumia huduma ya tafsiri ya kitaalamu ya binadamu. Hatutawajibika kwa maelewano mabaya au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+## Nini Kifuatavyo
+
+- Rudi kwa: [Muhtasari wa Uchunguzi wa Kesi](./README.md)
+- Ifuatayo: [Wakala wa Safari wa Azure AI](./travelagentsample.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Tangazo la Kutolewa Mbali**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati asili katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatujawajibiki kwa kutoelewana au ufafanuzi mbaya unaotokana na matumizi ya tafsiri hii.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,34 +1,51 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0a7083e660ca0d85fd6a947514c61993",
-  "translation_date": "2025-07-14T00:39:36+00:00",
-  "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
-  "language_code": "de"
-}
--->
 # MCP OAuth2 Demo
+
+## Einführung
+
+OAuth2 ist das branchenübliche Protokoll für Autorisierung, das den sicheren Zugriff auf Ressourcen ermöglicht, ohne Anmeldedaten weiterzugeben. In MCP (Model Context Protocol)-Implementierungen bietet OAuth2 eine robuste Möglichkeit, Clients (wie KI-Agenten) zu authentifizieren und zu autorisieren, um auf MCP-Server und deren Tools zuzugreifen.
+
+Diese Lektion zeigt, wie man OAuth2-Authentifizierung für MCP-Server mit Spring Boot implementiert, ein gängiges Muster für Unternehmens- und Produktionsumgebungen.
+
+## Lernziele
+
+Am Ende dieser Lektion werden Sie:
+- Verstehen, wie OAuth2 in MCP-Server integriert wird
+- Einen Spring Authorization Server zur Token-Ausgabe implementieren
+- MCP-Endpunkte mit JWT-basierter Authentifizierung schützen
+- Den Client-Credentials-Flow für Maschinen-zu-Maschinen-Kommunikation konfigurieren
+
+## Voraussetzungen
+
+- Grundkenntnisse in Java und Spring Boot
+- Vertrautheit mit MCP-Konzepten aus früheren Modulen
+- Maven oder Gradle installiert
+
+---
+
+## Projektübersicht
 
 Dieses Projekt ist eine **minimalistische Spring Boot-Anwendung**, die sowohl als:
 
-* **Spring Authorization Server** (stellt JWT-Zugriffstoken über den `client_credentials`-Flow aus), als auch  
-* **Resource Server** (schützt den eigenen `/hello` Endpunkt).
+* ein **Spring Authorization Server** (der JWT-Zugriffstokens über den `client_credentials`-Flow ausgibt), als auch  
+* ein **Resource Server** (der seinen eigenen `/hello`-Endpunkt schützt),
 
-Es spiegelt die im [Spring Blogbeitrag (2. Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) gezeigte Konfiguration wider.
+fungiert.
+
+Es spiegelt die im [Spring-Blogbeitrag (2. Apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) gezeigte Konfiguration wider.
 
 ---
 
 ## Schnellstart (lokal)
 
 ```bash
-# build & run
+# bauen & ausführen
 ./mvnw spring-boot:run
 
-# obtain a token
+# ein Token erhalten
 curl -u mcp-client:secret -d grant_type=client_credentials \
      http://localhost:8081/oauth2/token | jq -r .access_token > token.txt
 
-# call the protected endpoint
+# den geschützten Endpunkt aufrufen
 curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 ```
 
@@ -36,25 +53,25 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 ## Testen der OAuth2-Konfiguration
 
-Du kannst die OAuth2-Sicherheitskonfiguration mit den folgenden Schritten testen:
+Sie können die OAuth2-Sicherheitskonfiguration mit folgenden Schritten testen:
 
-### 1. Überprüfe, ob der Server läuft und gesichert ist
+### 1. Überprüfen, ob der Server läuft und gesichert ist
 
 ```bash
-# This should return 401 Unauthorized, confirming OAuth2 security is active
+# Dies sollte 401 Unauthorized zurückgeben und bestätigen, dass die OAuth2-Sicherheit aktiv ist
 curl -v http://localhost:8081/
 ```
 
-### 2. Hole ein Zugriffstoken mit Client-Credentials
+### 2. Ein Zugriffstoken mit Client Credentials abrufen
 
 ```bash
-# Get and extract the full token response
+# Holen und extrahieren Sie die vollständige Token-Antwort
 curl -v -X POST http://localhost:8081/oauth2/token \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -H "Authorization: Basic bWNwLWNsaWVudDpzZWNyZXQ=" \
   -d "grant_type=client_credentials&scope=mcp.access"
 
-# Or to extract just the token (requires jq)
+# Oder extrahieren Sie nur das Token (erfordert jq)
 curl -s -X POST http://localhost:8081/oauth2/token \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -H "Authorization: Basic bWNwLWNsaWVudDpzZWNyZXQ=" \
@@ -63,13 +80,13 @@ curl -s -X POST http://localhost:8081/oauth2/token \
 
 Hinweis: Der Basic-Authentication-Header (`bWNwLWNsaWVudDpzZWNyZXQ=`) ist die Base64-Codierung von `mcp-client:secret`.
 
-### 3. Greife mit dem Token auf den geschützten Endpunkt zu
+### 3. Auf den geschützten Endpunkt mit dem Token zugreifen
 
 ```bash
-# Using the saved token
+# Verwendung des gespeicherten Tokens
 curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
-# Or directly with the token value
+# Oder direkt mit dem Token-Wert
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
@@ -77,7 +94,7 @@ Eine erfolgreiche Antwort mit "Hello from MCP OAuth2 Demo!" bestätigt, dass die
 
 ---
 
-## Container-Build
+## Container-Erstellung
 
 ```bash
 docker build -t mcp-oauth2-demo .
@@ -86,7 +103,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Deployment zu **Azure Container Apps**
+## Bereitstellung auf **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -95,14 +112,14 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-Der Ingress-FQDN wird zu deinem **Issuer** (`https://<fqdn>`).  
+Der Ingress-FQDN wird zu Ihrem **Issuer** (`https://<fqdn>`).  
 Azure stellt automatisch ein vertrauenswürdiges TLS-Zertifikat für `*.azurecontainerapps.io` bereit.
 
 ---
 
-## Integration in **Azure API Management**
+## Anbindung an **Azure API Management**
 
-Füge diese Inbound-Policy zu deiner API hinzu:
+Fügen Sie diese eingehende Richtlinie zu Ihrer API hinzu:
 
 ```xml
 <inbound>
@@ -116,7 +133,7 @@ Füge diese Inbound-Policy zu deiner API hinzu:
 </inbound>
 ```
 
-APIM ruft das JWKS ab und validiert jede Anfrage.
+APIM holt die JWKS ab und validiert jede Anfrage.
 
 ---
 
@@ -124,5 +141,9 @@ APIM ruft das JWKS ab und validiert jede Anfrage.
 
 - [5.4 Root-Kontexte](../mcp-root-contexts/README.md)
 
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mithilfe des KI-Übersetzungsdienstes [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir um Genauigkeit bemüht sind, kann es bei automatischen Übersetzungen zu Fehlern oder Ungenauigkeiten kommen. Das Originaldokument in seiner Herkunftssprache ist als maßgebliche Quelle anzusehen. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die durch die Nutzung dieser Übersetzung entstehen.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

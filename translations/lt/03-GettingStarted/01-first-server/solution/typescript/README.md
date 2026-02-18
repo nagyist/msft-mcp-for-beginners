@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ac67652abc453e2a7e2c75cd7a8897ae",
-  "translation_date": "2025-08-26T19:10:48+00:00",
-  "source_file": "03-GettingStarted/01-first-server/solution/typescript/README.md",
-  "language_code": "lt"
-}
--->
 # Paleisti šį pavyzdį
 
 Rekomenduojama įdiegti `uv`, tačiau tai nėra būtina, žr. [instrukcijas](https://docs.astral.sh/uv/#highlights)
@@ -31,24 +22,24 @@ Kai serveris veikia viename terminale, atidarykite kitą terminalą ir paleiskit
 npm run inspector
 ```
 
-Tai turėtų paleisti žiniatinklio serverį su vizualine sąsaja, leidžiančia išbandyti pavyzdį.
+Tai turėtų paleisti interneto serverį su vizualine sąsaja, leidžiančia išbandyti pavyzdį.
 
-Kai serveris prisijungęs:
+Kai serveris prisijungia:
 
-- pabandykite išvardyti įrankius ir paleisti `add` su argumentais 2 ir 4, turėtumėte matyti rezultatą 6.
-- eikite į išteklius ir išteklių šabloną, iškvieskite „greeting“, įveskite vardą ir turėtumėte matyti pasveikinimą su jūsų pateiktu vardu.
+- pabandykite išvardyti įrankius ir paleisti `add`, su argumentais 2 ir 4, turėtumėte matyti rezultatą 6.
+- eikite į išteklius ir išteklių šabloną, iškvieskite „greeting“, įveskite vardą ir turėtumėte matyti pasisveikinimą su jūsų pateiktu vardu.
 
 ### Testavimas CLI režimu
 
 Inspektorius, kurį paleidote, iš tikrųjų yra Node.js programa, o `mcp dev` yra jos apvalkalas.
 
-Galite paleisti jį tiesiogiai CLI režimu, vykdydami šią komandą:
+Jį galite paleisti tiesiogiai CLI režimu, vykdydami šią komandą:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli node ./build/index.js --method tools/list
 ```
 
-Tai išvardins visus serveryje esančius įrankius. Turėtumėte matyti šį rezultatą:
+Tai išvardins visus įrankius, esančius serveryje. Turėtumėte matyti tokį rezultatą:
 
 ```text
 {
@@ -85,7 +76,7 @@ Norėdami iškviesti įrankį, įveskite:
 nnpx @modelcontextprotocol/inspector --cli node ./build/index.js --method tools/call --tool-name add --tool-arg a=1 --tool-arg b=2
 ```
 
-Turėtumėte matyti šį rezultatą:
+Turėtumėte matyti tokį rezultatą:
 
 ```text
 {
@@ -99,11 +90,11 @@ Turėtumėte matyti šį rezultatą:
 }
 ```
 
-> ![!TIP]
+> [!TIP]
 > Paprastai inspektorių paleisti CLI režimu yra daug greičiau nei naršyklėje.
-> Plačiau apie inspektorių skaitykite [čia](https://github.com/modelcontextprotocol/inspector).
+> Daugiau apie inspektorių skaitykite [čia](https://github.com/modelcontextprotocol/inspector).
 
 ---
 
 **Atsakomybės apribojimas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama naudoti profesionalų žmogaus vertimą. Mes neprisiimame atsakomybės už nesusipratimus ar klaidingus aiškinimus, atsiradusius dėl šio vertimo naudojimo.
+Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama naudoti profesionalų žmogaus vertimą. Mes neprisiimame atsakomybės už nesusipratimus ar klaidingus interpretavimus, atsiradusius dėl šio vertimo naudojimo.

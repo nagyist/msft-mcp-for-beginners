@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "dd8da3f75addcef453fe11f02a270217",
-  "translation_date": "2025-07-14T08:11:33+00:00",
-  "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/README.md",
-  "language_code": "ne"
-}
--->
 # 🔧 मोड्युल ३: AI Toolkit सँग उन्नत MCP विकास
 
 ![Duration](https://img.shields.io/badge/Duration-20_minutes-blue?style=flat-square)
@@ -64,7 +55,7 @@ Model Context Protocol Python SDK ले कस्टम MCP सर्भरह�
 2. तलको कन्फिगरेसनसहित **नयाँ एजेन्ट सिर्जना गर्नुहोस्:**  
    - एजेन्ट नाम: `WeatherAgent`
 
-![Agent Creation](../../../../translated_images/Agent.c9c33f6a412b4cdedfb973fe5448bdb33de3f400055603111b875610e9b917ab.ne.png)
+![Agent Creation](../../../../translated_images/ne/Agent.c9c33f6a412b4cde.webp)
 
 ### चरण २: MCP Server प्रोजेक्ट सुरु गर्नुहोस्
 
@@ -74,7 +65,7 @@ Model Context Protocol Python SDK ले कस्टम MCP सर्भरह�
 4. `python-weather` टेम्प्लेट चयन गर्नुहोस्  
 5. सर्भरको नाम राख्नुहोस्: `weather_mcp`
 
-![Python Template Selection](../../../../translated_images/Pythontemplate.9d0a2913c6491500bd673430f024dc44676af2808a27b5da9dcc0eb7063adc28.ne.png)
+![Python Template Selection](../../../../translated_images/ne/Pythontemplate.9d0a2913c6491500.webp)
 
 ### चरण ३: प्रोजेक्ट खोल्नुहोस् र जाँच गर्नुहोस्
 
@@ -338,7 +329,7 @@ USER_PROMPT
 How's the weather like in Seattle
 ```
 
-![Agent Builder Debug Result](../../../../translated_images/Result.6ac570f7d2b1d5389c561ab0566970fe0f13e75bdd976b6a7f0270bc715d07f8.ne.png)
+![Agent Builder Debug Result](../../../../translated_images/ne/Result.6ac570f7d2b1d538.webp)
 
 ### चरण ८: MCP Inspector सँग डिबग गर्नुहोस्
 
@@ -350,7 +341,7 @@ How's the weather like in Seattle
    - नेटवर्क अनुरोधहरू अनुगमन गर्नुहोस्  
    - सर्भर प्रतिक्रियाहरू डिबग गर्नुहोस्
 
-![MCP Inspector Interface](../../../../translated_images/Inspector.5672415cd02fe8731774586cc0a1083e3275d2f8491602aecc8ac4d61f2c0d57.ne.png)
+![MCP Inspector Interface](../../../../translated_images/ne/Inspector.5672415cd02fe873.webp)
 
 ---
 

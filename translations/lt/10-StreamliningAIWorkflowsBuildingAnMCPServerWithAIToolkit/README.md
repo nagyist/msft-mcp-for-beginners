@@ -1,219 +1,227 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1b000fd6e1b04c047578bfc5d07d54eb",
-  "translation_date": "2025-08-26T20:47:22+00:00",
-  "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md",
-  "language_code": "lt"
-}
--->
-# AI darbo eigų optimizavimas: MCP serverio kūrimas su AI Toolkit
+# Supaprastinant DI darbo eigas: kaip sukurti MCP serverį naudojant AI rinkinį
+
+[![MCP Spec](https://img.shields.io/badge/MCP%20Spec-2025--11--25-blue.svg)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
+[![Python](https://img.shields.io/badge/Python-3.10+-green.svg)](https://python.org)
+[![VS Code](https://img.shields.io/badge/VS%20Code-Latest-orange.svg)](https://code.visualstudio.com/)
+
+![logo](../../../translated_images/lt/logo.ec93918ec338dadd.webp)
 
 ## 🎯 Apžvalga
 
-Sveiki atvykę į **Model Context Protocol (MCP) dirbtuves**! Šios išsamios praktinės dirbtuvės sujungia dvi pažangiausias technologijas, kurios pakeis AI programų kūrimą:
+[![Build AI Agents in VS Code: 4 Hands-On Labs with MCP and AI Toolkit](../../../translated_images/lt/11.0f6db6a0fb606885.webp)](https://youtu.be/r34Csn3rkeQ)
 
-- **🔗 Model Context Protocol (MCP)**: Atviras standartas, skirtas sklandžiai integruoti AI įrankius
-- **🛠️ AI Toolkit for Visual Studio Code (AITK)**: Galingas Microsoft AI kūrimo plėtinys
+_(Spustelėkite aukščiau esantį vaizdą norėdami peržiūrėti šios pamokos vaizdo įrašą)_
 
-### 🎓 Ko išmoksite
+Sveiki atvykę į **Model Context Protocol (MCP) dirbtuves**! Šios išsamios praktinės dirbtuvės apjungia dvi pažangias technologijas, revoliucionizuojančias DI programų kūrimą:
 
-Baigę šias dirbtuves, įgysite įgūdžių kurti pažangias programas, kurios sujungia AI modelius su realaus pasaulio įrankiais ir paslaugomis. Nuo automatizuoto testavimo iki individualizuotų API integracijų – įgysite praktinių įgūdžių spręsti sudėtingus verslo iššūkius.
+- **🔗 Model Context Protocol (MCP)**: atviro standarto sprendimas sklandžiam DI įrankių sujungimui
+- **🛠️ AI Toolkit for Visual Studio Code (AITK)**: Microsoft galingas DI kūrimo priedas
 
-## 🏗️ Technologijų rinkinys
+### 🎓 Ko Išmoksite
+
+Šių dirbtuvių pabaigoje įvaldysite intelektualių programų kūrimą, kurios sujungia DI modelius su realaus pasaulio įrankiais ir paslaugomis. Nuo automatizuotų testų iki individualių API integracijų - įgisite praktinių įgūdžių spręsti sudėtingas verslo užduotis.
+
+## 🏗️ Technologijų Rinkinys
 
 ### 🔌 Model Context Protocol (MCP)
 
-MCP yra **"USB-C AI pasauliui"** – universalus standartas, jungiantis AI modelius su išoriniais įrankiais ir duomenų šaltiniais.
+MCP yra **„USB-C DI“** – universalus standartas, jungiantis DI modelius su išoriniais įrankiais ir duomenų šaltiniais.
 
-**✨ Pagrindinės savybės:**
+**✨ Pagrindinės Savybės:**
 
-- 🔄 **Standartizuota integracija**: Universalus sąsajos sprendimas AI įrankių jungimui
-- 🏛️ **Lanksti architektūra**: Vietiniai ir nuotoliniai serveriai per stdio/SSE transportą
-- 🧰 **Turtinga ekosistema**: Įrankiai, užklausos ir resursai viename protokole
-- 🔒 **Paruošta verslui**: Integruotas saugumas ir patikimumas
+- 🔄 **Standartizuotas sujungimas**: universalus DI įrankių prijungimo sąsajos protokolas
+- 🏛️ **Lanksti architektūra**: vietiniai ir nuotoliniai serveriai per stdio/SSE transportą
+- 🧰 **Turtinga ekosistema**: įrankiai, užklausos ir resursai viename protokole
+- 🔒 **Verslui paruoštas**: integruotas saugumas ir patikimumas
 
 **🎯 Kodėl MCP svarbus:**
-Kaip USB-C pašalino kabelių chaosą, MCP pašalina AI integracijų sudėtingumą. Vienas protokolas, begalė galimybių.
+Kaip USB-C panaikino laidų chaosą, taip MCP supaprastina DI integracijas. Vienas protokolas – begalinės galimybės.
 
 ### 🤖 AI Toolkit for Visual Studio Code (AITK)
 
-Microsoft AI kūrimo plėtinys, kuris paverčia VS Code į AI kūrimo centrą.
+Microsoft vėliavinė DI kūrimo plėtinys, paverčiantis VS Code į DI galiūną.
 
-**🚀 Pagrindinės galimybės:**
+**🚀 Pagrindinės Galimybės:**
 
-- 📦 **Modelių katalogas**: Prieiga prie modelių iš Azure AI, GitHub, Hugging Face, Ollama
+- 📦 **Modelių katalogas**: prieiga prie modelių iš Azure AI, GitHub, Hugging Face, Ollama
 - ⚡ **Vietinė inferencija**: ONNX optimizuotas CPU/GPU/NPU vykdymas
-- 🏗️ **Agentų kūrėjas**: Vizualinis AI agentų kūrimas su MCP integracija
-- 🎭 **Daugiarūšis palaikymas**: Tekstas, vaizdai ir struktūruotas išvestis
+- 🏗️ **Agentų kūrėjas**: vizualus DI agentų kūrimas su MCP integracija
+- 🎭 **Daugiamodalis palaikymas**: tekstas, vaizdas ir struktūruotas išvestis
 
 **💡 Kūrimo privalumai:**
 
 - Modelių diegimas be konfigūracijos
-- Vizualinis užklausų kūrimas
-- Realiojo laiko testavimo aplinka
-- Sklandi MCP serverio integracija
+- Vizualinė užklausų inžinerija
+- Realaus laiko testavimo aikštelė
+- Sklandi MCP serverių integracija
 
-## 📚 Mokymosi kelionė
+## 📚 Mokymosi kelias
 
 ### [🚀 Modulis 1: AI Toolkit pagrindai](./lab1/README.md)
 
 **Trukmė**: 15 minučių
 
-- 🛠️ Įdiegti ir sukonfigūruoti AI Toolkit for VS Code
-- 🗂️ Ištyrinėti modelių katalogą (100+ modelių iš GitHub, ONNX, OpenAI, Anthropic, Google)
-- 🎮 Įvaldyti interaktyvią testavimo aplinką
-- 🤖 Sukurti pirmąjį AI agentą su Agent Builder
-- 📊 Įvertinti modelio našumą naudojant integruotus metrikos įrankius (F1, aktualumas, panašumas, nuoseklumas)
-- ⚡ Išmokti paketinio apdorojimo ir daugiarūšio palaikymo galimybes
+- 🛠️ Įdiegti ir sukonfigūruoti AI Toolkit VS Code aplinkoje
+- 🗂️ Ištirti Modelių katalogą (100+ modelių iš GitHub, ONNX, OpenAI, Anthropic, Google)
+- 🎮 Įvaldyti Interaktyvią aikštelę modelių testavimui realiu laiku
+- 🤖 Sukurti pirmąjį DI agentą su Agentų kūrėju
+- 📊 Įvertinti modelių veikimą su įtaisytomis metrikomis (F1, aktualumas, panašumas, nuoseklumas)
+- ⚡ Išmokti masinio apdorojimo ir daugiamodalio palaikymo galimybes
 
-**🎯 Mokymosi rezultatas**: Sukurti funkcionalų AI agentą ir įgyti išsamų supratimą apie AITK galimybes
+**🎯 Mokymosi rezultatas**: Sukurti funkcinį DI agentą su išsamia AITK galimybių supratimu
 
-### [🌐 Modulis 2: MCP su AI Toolkit pagrindai](./lab2/README.md)
+### [🌐 Modulis 2: MCP ir AI Toolkit pagrindai](./lab2/README.md)
 
 **Trukmė**: 20 minučių
 
-- 🧠 Įvaldyti Model Context Protocol (MCP) architektūrą ir koncepcijas
-- 🌐 Ištyrinėti Microsoft MCP serverių ekosistemą
+- 🧠 Įsisavinti Model Context Protocol (MCP) architektūrą ir koncepcijas
+- 🌐 Ištirti Microsoft MCP serverių ekosistemą
 - 🤖 Sukurti naršyklės automatizavimo agentą naudojant Playwright MCP serverį
-- 🔧 Integruoti MCP serverius su AI Toolkit Agent Builder
+- 🔧 Integruoti MCP serverius su AI Toolkit Agentų kūrėju
 - 📊 Konfigūruoti ir testuoti MCP įrankius savo agentuose
-- 🚀 Eksportuoti ir diegti MCP pagrindu veikiančius agentus gamybai
+- 🚀 Eksportuoti ir diegti MCP palaikomus agentus gamybinėje aplinkoje
 
-**🎯 Mokymosi rezultatas**: Diegti AI agentą, praturtintą išoriniais įrankiais per MCP
+**🎯 Mokymosi rezultatas**: Diegti DI agentą, įkrautą išoriniais įrankiais per MCP
 
-### [🔧 Modulis 3: Pažangus MCP kūrimas su AI Toolkit](./lab3/README.md)
+### [🔧 Modulis 3: Pažangus MCP vystymas su AI Toolkit](./lab3/README.md)
 
 **Trukmė**: 20 minučių
 
-- 💻 Sukurti individualius MCP serverius naudojant AI Toolkit
+- 💻 Kurti pasirinktinius MCP serverius naudojant AI Toolkit
 - 🐍 Konfigūruoti ir naudoti naujausią MCP Python SDK (v1.9.3)
-- 🔍 Nustatyti ir naudoti MCP Inspector debuggingui
-- 🛠️ Sukurti orų MCP serverį su profesionaliais debugging darbo eigomis
-- 🧪 Debug MCP serverius Agent Builder ir Inspector aplinkose
+- 🔍 Paruošti ir naudoti MCP Inspector derinimui
+- 🛠️ Sukurti Oro sąlygų MCP serverį su profesionaliomis derinimo darbo eigomis
+- 🧪 Derinti MCP serverius tiek Agentų kūrėjo, tiek Inspector aplinkose
 
-**🎯 Mokymosi rezultatas**: Kurti ir debug individualius MCP serverius naudojant modernius įrankius
+**🎯 Mokymosi rezultatas**: Vystyti ir derinti pasirinktinius MCP serverius su moderniais įrankiais
 
-### [🐙 Modulis 4: Praktinis MCP kūrimas - individualus GitHub Clone serveris](./lab4/README.md)
+### [🐙 Modulis 4: Praktinis MCP vystymas – pasirinktinis GitHub klonavimo serveris](./lab4/README.md)
 
 **Trukmė**: 30 minučių
 
-- 🏗️ Sukurti realaus pasaulio GitHub Clone MCP serverį kūrimo darbo eigoms
-- 🔄 Įgyvendinti išmanųjį repozitorijų klonavimą su validacija ir klaidų tvarkymu
-- 📁 Sukurti išmanųjį katalogų valdymą ir VS Code integraciją
-- 🤖 Naudoti GitHub Copilot Agent Mode su individualiais MCP įrankiais
-- 🛡️ Taikyti gamybai paruoštą patikimumą ir suderinamumą tarp platformų
+- 🏗️ Kurti realaus pasaulio GitHub klonavimo MCP serverį vystymo darbams
+- 🔄 Įgyvendinti išmanų repositorijų klonavimą su patikra ir klaidų valdymu
+- 📁 Sukurti išmanų katalogų valdymą ir VS Code integraciją
+- 🤖 Naudoti GitHub Copilot agento režimą su pasirinktinais MCP įrankiais
+- 🛡️ Taikyti gamybos pasiruošimo patikimumą ir tarpplatforminį suderinamumą
 
-**🎯 Mokymosi rezultatas**: Diegti gamybai paruoštą MCP serverį, kuris optimizuoja realias kūrimo darbo eigas
+**🎯 Mokymosi rezultatas**: Diegti gamybinio lygio MCP serverį, supaprastinantį tikras vystymo darbo eigas
 
-## 💡 Realūs pritaikymai ir poveikis
+## 💡 Realūs Panaudojimo Atvejai ir Įtaka
 
-### 🏢 Verslo panaudojimo atvejai
+### 🏢 Verslo Naudojimo Scenarijai
 
-#### 🔄 DevOps automatizavimas
+#### 🔄 DevOps Automatizavimas
 
-Transformuokite savo kūrimo darbo eigą su išmaniąja automatizacija:
+Transformuokite savo vystymo procesą intelektualia automatizacija:
 
-- **Išmanus repozitorijų valdymas**: AI pagrindu veikianti kodo peržiūra ir susijungimo sprendimai
-- **Išmanus CI/CD**: Automatinis pipeline optimizavimas pagal kodo pakeitimus
-- **Problemos sprendimas**: Automatinė klaidų klasifikacija ir priskyrimas
+- **Išmanusis repozitorijų valdymas**: DI pagrįsta kodo peržiūra ir sprendimai dėl sujungimų
+- **Išmanusis CI/CD**: automatizuotas vamzdyno optimizavimas pagal kodo pakeitimus
+- **Klaidų klasifikavimas**: automatinis klaidų identifikavimas ir priskyrimas
 
 #### 🧪 Kokybės užtikrinimo revoliucija
 
-Pakelkite testavimą į naują lygį su AI automatizacija:
+Pakelkite testavimą DI varomomis automatizuotomis sistemomis:
 
-- **Išmanus testų generavimas**: Automatiškai sukurkite išsamius testų rinkinius
-- **Vizualinis regresijos testavimas**: AI pagrindu veikiantis UI pokyčių aptikimas
-- **Našumo stebėjimas**: Proaktyvus problemų identifikavimas ir sprendimas
+- **Išmanus testų generavimas**: automatiškai kuriamos išsamios testavimo rinkinio versijos
+- **Vizualinis regresinis testavimas**: DI pagrįstas UI pokyčių aptikimas
+- **Veikimo stebėsena**: proaktyvus problemų nustatymas ir sprendimas
 
-#### 📊 Duomenų srautų intelektas
+#### 📊 Duomenų srauto intelektas
 
-Kurti išmanesnius duomenų apdorojimo darbo eigas:
+Kurkite išmanesnes duomenų apdorojimo darbo eigas:
 
-- **Adaptuojami ETL procesai**: Savarankiškai optimizuojami duomenų transformavimai
-- **Anomalijų aptikimas**: Realiojo laiko duomenų kokybės stebėjimas
-- **Išmanus maršrutizavimas**: Išmanus duomenų srautų valdymas
+- **Adaptuojami ETL procesai**: automatiškai optimizuojami duomenų transformavimai
+- **Anomalijų aptikimas**: realaus laiko duomenų kokybės stebėsena
+- **Išmanus maršrutavimas**: protingas duomenų srauto valdymas
 
 #### 🎧 Klientų patirties gerinimas
 
-Sukurti išskirtines klientų sąveikas:
+Sukurkite išskirtinę klientų sąveiką:
 
-- **Konteksto suvokimas**: AI agentai su prieiga prie klientų istorijos
-- **Proaktyvus problemų sprendimas**: Prognozuojama klientų aptarnavimo sistema
-- **Daugiakanalė integracija**: Vieninga AI patirtis visose platformose
+- **Konteksto suvokiantis palaikymas**: DI agentai su prieiga prie kliento istorijos
+- **Proaktyvus problemų sprendimas**: prognozuojamas klientų aptarnavimas
+- **Daugiakanalė integracija**: vieninga DI patirtis per įvairias platformas
 
-## 🛠️ Reikalavimai ir nustatymai
+## 🛠️ Reikalavimai ir Paruošimas
 
-### 💻 Sistemos reikalavimai
+### 💻 Sistemos Reikalavimai
 
 | Komponentas | Reikalavimas | Pastabos |
-|-------------|-------------|---------|
-| **Operacinė sistema** | Windows 10+, macOS 10.15+, Linux | Bet kuri moderni OS |
-| **Visual Studio Code** | Naujausia stabili versija | Reikalinga AITK |
-| **Node.js** | v18.0+ ir npm | MCP serverio kūrimui |
+|-----------|-------------|-------|
+| **Operacinė sistema** | Windows 10+, macOS 10.15+, Linux | Bet kuri šiuolaikinė OS |
+| **Visual Studio Code** | Naujausia stabili versija | Būtina AITK |
+| **Node.js** | v18.0+ ir npm | MCP serverių vystymui |
 | **Python** | 3.10+ | Pasirinktinai Python MCP serveriams |
-| **Atmintis** | Min. 8GB RAM | Rekomenduojama 16GB vietiniams modeliams |
+| **Atmintis** | minimaliai 8GB RAM | Rekomenduojama 16GB lokaliniams modeliams |
 
-### 🔧 Kūrimo aplinka
+### 🔧 Vystymo Aplinka
 
 #### Rekomenduojami VS Code plėtiniai
 
 - **AI Toolkit** (ms-windows-ai-studio.windows-ai-studio)
 - **Python** (ms-python.python)
 - **Python Debugger** (ms-python.debugpy)
-- **GitHub Copilot** (GitHub.copilot) - Pasirinktinai, bet naudinga
+- **GitHub Copilot** (GitHub.copilot) – pasirinktinai, bet naudinga
 
 #### Pasirinktiniai įrankiai
 
-- **uv**: Modernus Python paketų tvarkytuvas
-- **MCP Inspector**: Vizualinis debugging įrankis MCP serveriams
-- **Playwright**: Naršyklės automatizavimo pavyzdžiams
+- **uv**: modernus Python paketų tvarkyklė
+- **MCP Inspector**: vizualinis MCP serverių derinimo įrankis
+- **Playwright**: interneto automatizavimo pavyzdžiams
 
-## 🎖️ Mokymosi rezultatai ir sertifikavimo kelias
+## 🎖️ Mokymosi Rezultatai ir Sertifikavimo Kelias
 
-### 🏆 Įgūdžių įvaldymo kontrolinis sąrašas
+### 🏆 Įgūdžių Pokomplektas
 
-Baigę šias dirbtuves, pasieksite įgūdžių įvaldymą:
+Užbaigus šias dirbtuves įvaldysite:
 
-#### 🎯 Pagrindinės kompetencijos
+#### 🎯 Pagrindines Kompetencijas
 
-- [ ] **MCP protokolo įvaldymas**: Gilus architektūros ir įgyvendinimo modelių supratimas
-- [ ] **AITK įgūdžiai**: Ekspertinis AI Toolkit naudojimas greitam kūrimui
-- [ ] **Individualių serverių kūrimas**: Kurti, diegti ir palaikyti gamybinius MCP serverius
-- [ ] **Įrankių integracijos meistriškumas**: Sklandžiai sujungti AI su esamomis darbo eigomis
-- [ ] **Problemos sprendimo taikymas**: Taikyti įgytus įgūdžius realiems verslo iššūkiams
+- [ ] **MCP protokolo įvaldymas**: gilus architektūros ir įgyvendinimo modelių supratimas
+- [ ] **AITK meistriškumas**: ekspertinis DI rinkinio naudojimas greitam kūrimui
+- [ ] **Pasirinktinių serverių kūrimas**: MCP serverių statyba, diegimas ir palaikymas gamyboje
+- [ ] **Įrankių integracijos meistriškumas**: sklandi DI sujungimas su esamomis vystymo eigomis
+- [ ] **Probleminių sprendimų taikymas**: išmoktas įgūdžių pritaikymas realioms verslo užduotims
 
-#### 🔧 Techniniai įgūdžiai
+#### 🔧 Techniniai Įgūdžiai
 
-- [ ] Nustatyti ir sukonfigūruoti AI Toolkit VS Code
-- [ ] Projektuoti ir įgyvendinti individualius MCP serverius
-- [ ] Integruoti GitHub modelius su MCP architektūra
-- [ ] Kurti automatizuoto testavimo darbo eigas su Playwright
-- [ ] Diegti AI agentus gamybai
-- [ ] Debug ir optimizuoti MCP serverio našumą
+- [ ] AI Toolkit konfigūracija VS Code
+- [ ] Pasirinktinių MCP serverių kūrimas ir įdiegimas
+- [ ] GitHub modelių integracija su MCP architektūra
+- [ ] Automatizuotų testavimo darbo eigų kūrimas su Playwright
+- [ ] DI agentų diegimas gamyboje
+- [ ] MCP serverių derinimas ir optimizavimas
 
-#### 🚀 Pažangios galimybės
+#### 🚀 Pažangios Galimybės
 
-- [ ] Projektuoti verslo masto AI integracijas
-- [ ] Įgyvendinti saugumo geriausias praktikas AI programoms
-- [ ] Projektuoti mastelio MCP serverių architektūras
-- [ ] Kurti individualias įrankių grandines specifinėms sritims
-- [ ] Mentoruoti kitus AI kūrimo srityje
+- [ ] Įmonių masto DI integracijų projektavimas
+- [ ] Aukščiausių saugumo praktikų taikymas DI programose
+- [ ] Skalės MCP serverių architektūrų kūrimas
+- [ ] Pasirinktinių įrankių grandinių kūrimas specifinėms sritims
+- [ ] Kitų mokymas DI natūraliojo vystymo srityje
 
-## 📖 Papildomi resursai
+## 📖 Papildomi Ištekliai
 
-- [MCP specifikacija](https://modelcontextprotocol.io/docs)
-- [AI Toolkit GitHub repozitorija](https://github.com/microsoft/vscode-ai-toolkit)
+- [MCP specifikacija (2025-11-25)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
+- [AI Toolkit GitHub saugykla](https://github.com/microsoft/vscode-ai-toolkit)
 - [MCP serverių pavyzdžių kolekcija](https://github.com/modelcontextprotocol/servers)
-- [Geriausių praktikų vadovas](https://modelcontextprotocol.io/docs/best-practices)
+- [Geriausios praktikos gidas](https://modelcontextprotocol.io/docs/best-practices)
+- [OWASP MCP Top 10](https://microsoft.github.io/mcp-azure-security-guide/mcp/) – saugumo gerosios praktikos
 
 ---
 
-**🚀 Pasiruošę pakeisti savo AI kūrimo darbo eigą?**
+**🚀 Pasiruošę revoliucionizuoti savo DI kūrimo procesą?**
 
-Kurkime pažangių programų ateitį kartu su MCP ir AI Toolkit!
+Sukurkime protingų programų ateitį kartu su MCP ir AI Toolkit!
+
+## Kas toliau
+
+Tęskite: [Modulis 11: MCP serverio praktinės dirbtuvės](../11-MCPServerHandsOnLabs/README.md)
 
 ---
 
-**Atsakomybės apribojimas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama profesionali žmogaus vertimo paslauga. Mes neprisiimame atsakomybės už nesusipratimus ar klaidingus interpretavimus, atsiradusius naudojant šį vertimą.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Atsakomybės apribojimas**:
+Šis dokumentas buvo išverstas naudojant dirbtinio intelekto vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, atkreipkite dėmesį, kad automatiniai vertimai gali turėti klaidų arba netikslumų. Originalus dokumentas gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Esant svarbiai informacijai, rekomenduojamas profesionalus žmogiškas vertimas. Mes neatsakome už bet kokius nesusipratimus ar klaidingą interpretavimą, kylančius dėl šio vertimo naudojimo.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

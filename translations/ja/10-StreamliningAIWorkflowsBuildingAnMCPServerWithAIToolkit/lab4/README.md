@@ -1,13 +1,4 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f83bc722dc758efffd68667d6a1db470",
-  "translation_date": "2025-07-14T08:38:17+00:00",
-  "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/README.md",
-  "language_code": "ja"
-}
--->
-# 🐙 モジュール4: 実践的MCP開発 - カスタムGitHubクローンサーバー
+# 🐙 モジュール 4: 実践的なMCP開発 - カスタムGitHubクローンサーバー
 
 ![Duration](https://img.shields.io/badge/Duration-30_minutes-blue?style=flat-square)
 ![Difficulty](https://img.shields.io/badge/Difficulty-Intermediate-orange?style=flat-square)
@@ -15,76 +6,76 @@ CO_OP_TRANSLATOR_METADATA:
 ![VS Code](https://img.shields.io/badge/VS%20Code-Integration-blue?style=flat-square&logo=visualstudiocode)
 ![GitHub Copilot](https://img.shields.io/badge/GitHub%20Copilot-Agent%20Mode-green?style=flat-square&logo=github)
 
-> **⚡ クイックスタート:** たった30分で、GitHubリポジトリのクローン作成とVS Code連携を自動化する本番対応のMCPサーバーを構築しましょう！
+> **⚡ クイックスタート:** たった30分でGitHubリポジトリのクローンとVS Code連携を自動化する、本番対応のMCPサーバーを構築しましょう！
 
 ## 🎯 学習目標
 
 このラボを終える頃には、以下ができるようになります：
 
-- ✅ 実際の開発ワークフローに対応したカスタムMCPサーバーの作成
-- ✅ MCPを通じたGitHubリポジトリのクローン機能の実装
+- ✅ 実践的な開発ワークフロー向けのカスタムMCPサーバーの作成
+- ✅ MCP経由でGitHubリポジトリのクローン機能を実装
 - ✅ カスタムMCPサーバーとVS CodeおよびAgent Builderの統合
-- ✅ GitHub Copilot Agent ModeをカスタムMCPツールで活用
-- ✅ 本番環境でのカスタムMCPサーバーのテストとデプロイ
+- ✅ カスタムMCPツールでGitHub Copilot Agent Modeを活用
+- ✅ 実運用環境でのカスタムMCPサーバーのテストとデプロイ
 
 ## 📋 前提条件
 
-- ラボ1〜3（MCPの基礎と高度な開発）の完了
-- GitHub Copilotのサブスクリプション（[無料登録可能](https://github.com/github-copilot/signup)）
-- AI ToolkitおよびGitHub Copilot拡張機能が入ったVS Code
-- Git CLIのインストールと設定済み
+- ラボ1〜3の完了（MCPの基本と高度な開発）
+- GitHub Copilotのサブスクリプション（[無料サインアップはこちら](https://github.com/github-copilot/signup)）
+- AI ToolkitとGitHub Copilot拡張機能を導入済みのVS Code
+- Git CLIがインストール・設定済みであること
 
 ## 🏗️ プロジェクト概要
 
-### **実践的な開発課題**
-開発者として、GitHubからリポジトリをクローンし、VS CodeやVS Code Insidersで開く作業は頻繁に行います。この手動の流れは以下の通りです：
-1. ターミナルやコマンドプロンプトを開く
-2. 目的のディレクトリに移動する
-3. `git clone` コマンドを実行する
-4. クローンしたディレクトリでVS Codeを開く
+### **実践的開発課題**
+開発者はGitHubからリポジトリをクローンしてVS CodeやVS Code Insidersで開く機会が多いです。この手動プロセスは以下の通りです：
+1. ターミナル／コマンドプロンプトを開く
+2. 対象ディレクトリに移動する
+3. `git clone`コマンドを実行
+4. クローンしたディレクトリでVS Codeを起動
 
-**このMCPソリューションは、これらを一つの賢いコマンドにまとめます！**
+**このMCPソリューションは、これを1つの賢いコマンドにまとめます！**
 
 ### **作成するもの**
-**GitHub Clone MCPサーバー** (`git_mcp_server`) は以下を提供します：
+GitHubリポジトリのクローン機能を提供する**GitHub Clone MCPサーバー** (`git_mcp_server`) です：
 
 | 機能 | 説明 | 利点 |
 |---------|-------------|---------|
 | 🔄 **スマートなリポジトリクローン** | GitHubリポジトリを検証付きでクローン | 自動エラーチェック |
-| 📁 **インテリジェントなディレクトリ管理** | ディレクトリの存在確認と安全な作成 | 上書き防止 |
-| 🚀 **クロスプラットフォームのVS Code連携** | VS Code/Insidersでプロジェクトを開く | スムーズなワークフロー移行 |
-| 🛡️ **堅牢なエラーハンドリング** | ネットワーク、権限、パスの問題を処理 | 本番環境対応の信頼性 |
+| 📁 **インテリジェントなディレクトリ管理** | ディレクトリの安全な検証・生成 | 上書き防止 |
+| 🚀 **クロスプラットフォーム対応のVS Code連携** | VS Code/Insidersでプロジェクトを起動 | シームレスな作業移行 |
+| 🛡️ **堅牢なエラーハンドリング** | ネットワーク・権限・パスの問題を処理 | 本番環境対応の信頼性 |
 
 ---
 
 ## 📖 ステップバイステップ実装
 
-### ステップ1: Agent BuilderでGitHubエージェントを作成
+### ステップ 1: Agent BuilderでGitHubエージェントを作成
 
-1. AI Toolkit拡張機能から**Agent Builderを起動**
+1. AI Toolkit拡張から**Agent Builderを起動**
 2. 以下の設定で**新しいエージェントを作成**：
    ```
    Agent Name: GitHubAgent
    ```
 
-3. **カスタムMCPサーバーを初期化：**
-   - **Tools** → **Add Tool** → **MCP Server**へ移動
-   - **「Create A new MCP Server」**を選択
-   - 最大限の柔軟性のため**Pythonテンプレート**を選択
+3. **カスタムMCPサーバーの初期化：**
+   - **Tools（ツール）** → **Add Tool（ツール追加）** → **MCP Server（MCPサーバー）** に進む
+   - **「Create A new MCP Server」** を選択
+   - 最大の柔軟性のために **Pythonテンプレート** を選択
    - **サーバー名:** `git_mcp_server`
 
-### ステップ2: GitHub Copilot Agent Modeの設定
+### ステップ 2: GitHub Copilot Agent Modeの設定
 
 1. VS CodeでGitHub Copilotを開く（Ctrl/Cmd + Shift + P → 「GitHub Copilot: Open」）
-2. Copilotインターフェースで**Agent Modelを選択**
-3. 高度な推論能力のため**Claude 3.7モデルを選択**
-4. ツールアクセスのため**MCP連携を有効化**
+2. Copilotインターフェースで**エージェントモデルを選択**
+3. **Claude 3.7モデル**を選択し、推論能力を強化
+4. **MCP統合を有効化**してツールアクセスを許可
 
-> **💡 プロのヒント:** Claude 3.7は開発ワークフローやエラーハンドリングパターンの理解に優れています。
+> **💡 プロのコツ：** Claude 3.7は開発ワークフローやエラーハンドリングの理解に優れています。
 
-### ステップ3: MCPサーバーのコア機能を実装
+### ステップ 3: コアMCPサーバー機能の実装
 
-**GitHub Copilot Agent Modeで以下の詳細プロンプトを使用：**
+**GitHub Copilot Agent Modeで以下の詳細プロンプトを使用してください：**
 
 ```
 Create two MCP tools with the following comprehensive requirements:
@@ -117,7 +108,7 @@ Additional Requirements:
 - Include comprehensive error handling
 ```
 
-### ステップ4: MCPサーバーのテスト
+### ステップ 4: MCPサーバーのテスト
 
 #### 4a. Agent Builderでのテスト
 
@@ -129,7 +120,7 @@ SYSTEM_PROMPT:
 You are my intelligent coding repository assistant. You help developers efficiently clone GitHub repositories and set up their development environment. Always provide clear feedback about operations and handle errors gracefully.
 ```
 
-3. 実際のユーザーシナリオでテスト：
+3. 現実的なユーザーシナリオでテスト：
 
 ```
 USER_PROMPT EXAMPLES:
@@ -139,70 +130,81 @@ Scenario : Basic Clone and Open
  } and save to {The global path you specify}, then open it with VS Code Insiders"
 ```
 
-![Agent Builder Testing](../../../../translated_images/DebugAgent.81d152370c503241b3b39a251b8966f7f739286df19dd57f9147f6402214a012.ja.png)
+![Agent Builder Testing](../../../../translated_images/ja/DebugAgent.81d152370c503241.webp)
 
 **期待される結果：**
-- ✅ パス確認付きで正常にクローンできる
-- ✅ 自動的にVS Codeが起動する
-- ✅ 無効なケースで明確なエラーメッセージが表示される
-- ✅ エッジケースも適切に処理される
+- ✅ クローン成功とパス確認
+- ✅ 自動的にVS Codeが起動
+- ✅ 不正なケースでの明確なエラーメッセージ
+- ✅ エッジケースの適切な処理
 
 #### 4b. MCP Inspectorでのテスト
 
-![MCP Inspector Testing](../../../../translated_images/DebugInspector.eb5c95f94c69a8ba36944941b9a3588309a3a2fae101ace470ee09bde41d1667.ja.png)
+![MCP Inspector Testing](../../../../translated_images/ja/DebugInspector.eb5c95f94c69a8ba.webp)
 
 ---
 
-**🎉 おめでとうございます！** 実践的で本番対応可能なMCPサーバーを無事に作成できました。あなたのカスタムGitHubクローンサーバーは、開発者の生産性を自動化・向上させるMCPの力を示しています。
+**🎉 おめでとうございます！** 実践的で本番対応が可能なMCPサーバーを作成し、現実的な開発ワークフローの課題を解決しました。カスタムGitHubクローンサーバーは、開発者の生産性を自動化・向上させるMCPの力を示しています。
 
-### 🏆 達成したこと：
+### 🏆 獲得した実績：
 - ✅ **MCP開発者** - カスタムMCPサーバーを作成
 - ✅ **ワークフロー自動化者** - 開発プロセスを効率化  
 - ✅ **統合エキスパート** - 複数の開発ツールを連携
-- ✅ **本番対応** - デプロイ可能なソリューションを構築
+- ✅ **本番対応者** - デプロイ可能なソリューションを構築
 
 ---
 
-## 🎓 ワークショップ完了：Model Context Protocolとの旅
+## 🎓 ワークショップ修了：Model Context Protocolの旅
 
-**ワークショップ参加者の皆さまへ、**
+**ワークショップ参加者の皆様へ、**
 
-Model Context Protocolワークショップの4つのモジュールをすべて修了おめでとうございます！AI Toolkitの基本から始まり、実際の開発課題を解決する本番対応のMCPサーバー構築まで、長い道のりを歩んできました。
+Model Context Protocolワークショップ全4モジュールの修了、おめでとうございます！AI Toolkitの基本理解から、本番利用可能なMCPサーバー構築まで大きく成長されました。
 
-### 🚀 学習の振り返り：
+### 🚀 学習の歩みまとめ：
 
-**[モジュール1](../lab1/README.md)**：AI Toolkitの基礎、モデルテスト、最初のAIエージェント作成を学習。
+**[モジュール 1](../lab1/README.md)**: AI Toolkitの基礎、モデルテスト、最初のAIエージェント作成を学習
 
-**[モジュール2](../lab2/README.md)**：MCPアーキテクチャを理解し、Playwright MCPを統合、初のブラウザ自動化エージェントを構築。
+**[モジュール 2](../lab2/README.md)**: MCPアーキテクチャを理解し、Playwright MCPを統合し初のブラウザオートメーションエージェントを構築
 
-**[モジュール3](../lab3/README.md)**：カスタムMCPサーバー開発に進み、Weather MCPサーバーとデバッグツールを習得。
+**[モジュール 3](../lab3/README.md)**: Weather MCPサーバーでカスタムMCPサーバー開発を深め、デバッグツールも習得
 
-**[モジュール4](../lab4/README.md)**：実践的なGitHubリポジトリワークフロー自動化ツールを作成。
+**[モジュール 4](../lab4/README.md)**: 実践的なGitHubリポジトリワークフロー自動化ツールを完成
 
-### 🌟 習得したスキル：
+### 🌟 習得したこと：
 
 - ✅ **AI Toolkitエコシステム**：モデル、エージェント、統合パターン
-- ✅ **MCPアーキテクチャ**：クライアント・サーバ設計、通信プロトコル、セキュリティ
-- ✅ **開発ツール**：Playground、Inspectorから本番デプロイまで
-- ✅ **カスタム開発**：MCPサーバーの構築、テスト、デプロイ
-- ✅ **実践的応用**：AIを活用した実際のワークフロー課題の解決
+- ✅ **MCPアーキテクチャ**：クライアント・サーバー設計、トランスポートプロトコル、セキュリティ
+- ✅ **開発ツール**：Playground、Inspector、実運用デプロイ
+- ✅ **カスタム開発**：独自MCPサーバーの構築・テスト・デプロイ
+- ✅ **実践アプリケーション**：AIで実際のワークフロー課題を解決
 
 ### 🔮 次のステップ：
 
-1. **自分だけのMCPサーバーを構築**：独自のワークフロー自動化に挑戦
-2. **MCPコミュニティに参加**：作品を共有し、他者から学ぶ
-3. **高度な統合を探求**：MCPサーバーを企業システムに接続
-4. **オープンソースに貢献**：MCPツールやドキュメントの改善に協力
+1. **独自のMCPサーバーを作成**: あなたのワークフローを自動化
+2. **MCPコミュニティに参加**: シェアし学び合う場へ
+3. **高度な統合を探求**: エンタープライズシステム連携
+4. **オープンソースに貢献**: MCPツールやドキュメントの改善
 
-このワークショップはあくまで始まりです。Model Context Protocolのエコシステムは急速に進化しており、あなたはAI駆動の開発ツールの最前線に立つ準備ができています。
+このワークショップはスタートです。Model Context Protocolのエコシステムは急速に進化中。AI駆動の開発ツールの最前線に立つ準備ができました。
 
-**ご参加と学習への熱意に感謝します！**
+**参加と学習への情熱に感謝します！**
 
-このワークショップが、あなたの開発におけるAIツールの活用方法を変えるきっかけとなることを願っています。
+このワークショップが、あなたの開発旅を変えるアイデアのきっかけとなれば幸いです。
 
 **楽しいコーディングを！**
 
 ---
 
+## 次のステップ
+
+モジュール10の全ラボを完了しました。おめでとうございます！
+
+- 戻る：[モジュール10概要](../README.md)
+- 続ける：[モジュール11: MCPサーバーハンズオンラボ](../../11-MCPServerHandsOnLabs/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **免責事項**：  
-本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。
+本ドキュメントはAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されました。正確性の確保に努めておりますが、自動翻訳には誤りや不正確な部分が含まれる場合があります。原文の言語でのオリジナル文書を権威ある情報源としてご参照ください。重要な情報については、専門の人間翻訳者による翻訳を推奨します。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

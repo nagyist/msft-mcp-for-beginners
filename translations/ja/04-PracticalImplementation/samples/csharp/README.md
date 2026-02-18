@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0bc7bd48f55f1565f1d95ccb2c16f728",
-  "translation_date": "2025-07-13T23:04:53+00:00",
-  "source_file": "04-PracticalImplementation/samples/csharp/README.md",
-  "language_code": "ja"
-}
--->
 # サンプル
 
 前の例では、`stdio` タイプを使ったローカルの .NET プロジェクトの使い方と、コンテナ内でサーバーをローカルに起動する方法を示しました。これは多くの状況で良い解決策です。しかし、サーバーをクラウド環境のようなリモートで動かすことも有用な場合があります。そこで登場するのが `http` タイプです。
@@ -26,7 +17,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Webブラウザで .NET Aspire ダッシュボードが開いたら、`http` のURLを確認してください。`http://localhost:5058/` のようなURLのはずです。
 
-   ![.NET Aspire Dashboard](../../../../../translated_images/dotnet-aspire-dashboard.0a7095710e9301e90df2efd867e1b675b3b9bc2ccd7feb1ebddc0751522bc37c.ja.png)
+   ![.NET Aspire Dashboard](../../../../../translated_images/ja/dotnet-aspire-dashboard.0a7095710e9301e9.webp)
 
 ## MCP Inspector で Streamable HTTP をテストする
 
@@ -38,7 +29,7 @@ Node.js 22.7.5 以降をお持ちの場合、MCP Inspector を使ってサーバ
 npx @modelcontextprotocol/inspector http://localhost:5058
 ```
 
-![MCP Inspector](../../../../../translated_images/mcp-inspector.c223422b9b494fb4a518a3b3911b3e708e6a5715069470f9163ee2ee8d5f1ba9.ja.png)
+![MCP Inspector](../../../../../translated_images/ja/mcp-inspector.c223422b9b494fb4.webp)
 
 - Transport タイプとして `Streamable HTTP` を選択します。
 - Url フィールドに先ほど確認したサーバーのURLを入力し、末尾に `/mcp` を追加します。`http`（`https` ではなく）で、`http://localhost:5058/mcp` のようになります。
@@ -83,7 +74,7 @@ azd up
 
 デプロイが完了すると、次のようなメッセージが表示されるはずです。
 
-![Azd deployment success](../../../../../translated_images/azd-deployment-success.bd42940493f1b834a5ce6251a6f88966546009b350df59d0cc4a8caabe94a4f1.ja.png)
+![Azd deployment success](../../../../../translated_images/ja/azd-deployment-success.bd42940493f1b834.webp)
 
 URLを控えて、MCP Inspector や GitHub Copilot Chat で使いましょう。
 

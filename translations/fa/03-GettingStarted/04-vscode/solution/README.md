@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5ef8f5821c1a04f7b1fc4f15098ecab8",
-  "translation_date": "2025-07-13T19:39:12+00:00",
-  "source_file": "03-GettingStarted/04-vscode/solution/README.md",
-  "language_code": "fa"
-}
--->
 این معادل اجرای دستوری مانند این است: `node build/index.js`.
 
 - این ورودی سرور را تغییر دهید تا متناسب با محل فایل سرور شما باشد یا با آنچه برای راه‌اندازی سرور شما بسته به زمان اجرای انتخابی و محل سرور لازم است، مطابقت داشته باشد.
@@ -23,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     باید ابزاری را بالای کادر متن چت ببینید که به شما نشان می‌دهد برای اجرای ابزار باید آن را انتخاب کنید، مانند تصویر زیر:
 
-    ![VS Code indicating it wanting to run a tool](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.fa.png)
+    ![VS Code indicating it wanting to run a tool](../../../../../translated_images/fa/vscode-agent.d5a0e0b897331060.webp)
 
     انتخاب ابزار باید نتیجه عددی "23" را نشان دهد اگر متن شما مانند مثالی که قبلاً گفتیم باشد.
 

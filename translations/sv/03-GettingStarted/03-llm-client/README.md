@@ -1,59 +1,50 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "57f7b15640bb96ef2f6f09003eec935e",
-  "translation_date": "2025-08-18T14:56:44+00:00",
-  "source_file": "03-GettingStarted/03-llm-client/README.md",
-  "language_code": "sv"
-}
--->
 # Skapa en klient med LLM
 
-Hittills har du sett hur man skapar en server och en klient. Klienten har kunnat anropa servern explicit för att lista dess verktyg, resurser och uppmaningar. Men det är inte en särskilt praktisk metod. Din användare lever i den agentiska eran och förväntar sig att använda uppmaningar och kommunicera med en LLM för att göra detta. För användaren spelar det ingen roll om du använder MCP för att lagra dina funktioner, men de förväntar sig att kunna interagera med naturligt språk. Så hur löser vi detta? Lösningen handlar om att lägga till en LLM till klienten.
+Hittills har du sett hur man skapar en server och en klient. Klienten har kunnat anropa servern explicit för att lista dess verktyg, resurser och prompts. Men det är inte en särskilt praktisk metod. Din användare lever i den agentiska eran och förväntar sig att använda prompts och kommunicera med en LLM för att göra detta. För din användare spelar det ingen roll om du använder MCP eller inte för att lagra dina kapabiliteter, men de förväntar sig att använda naturligt språk för att interagera. Så hur löser vi detta? Lösningen handlar om att lägga till en LLM till klienten.
 
 ## Översikt
 
-I denna lektion fokuserar vi på att lägga till en LLM till din klient och visar hur detta ger en mycket bättre upplevelse för din användare.
+I denna lektion fokuserar vi på att lägga till en LLM i din klient och visar hur detta ger en mycket bättre upplevelse för din användare.
 
-## Lärandemål
+## Läromål
 
-I slutet av denna lektion kommer du att kunna:
+I slutet av denna lektion kommer du kunna att:
 
 - Skapa en klient med en LLM.
 - Sömlöst interagera med en MCP-server med hjälp av en LLM.
-- Ge en bättre användarupplevelse på klientsidan.
+- Erbjuda en bättre slutanvändarupplevelse på klientsidan.
 
 ## Tillvägagångssätt
 
-Låt oss försöka förstå tillvägagångssättet vi behöver ta. Att lägga till en LLM låter enkelt, men hur gör vi det egentligen?
+Låt oss försöka förstå vilket tillvägagångssätt vi behöver ta. Att lägga till en LLM låter enkelt, men kommer vi verkligen att göra detta?
 
 Så här kommer klienten att interagera med servern:
 
-1. Etablera anslutning till servern.
+1. Upprätta anslutning till servern.
 
-1. Lista funktioner, uppmaningar, resurser och verktyg, och spara deras schema.
+1. Lista kapabiliteter, prompts, resurser och verktyg, och spara deras schema.
 
-1. Lägg till en LLM och skicka de sparade funktionerna och deras schema i ett format som LLM förstår.
+1. Lägg till en LLM och skicka de sparade kapabiliteterna och deras schema i ett format som LLM förstår.
 
-1. Hantera en användaruppmaning genom att skicka den till LLM tillsammans med de verktyg som klienten har listat.
+1. Hantera en användarprompt genom att skicka den till LLM tillsammans med de verktyg som listats av klienten.
 
-Bra, nu förstår vi hur vi kan göra detta på hög nivå, låt oss prova detta i övningen nedan.
+Bra, nu när vi förstår hur vi kan göra detta på hög nivå, låt oss prova detta i nedanstående övning.
 
 ## Övning: Skapa en klient med en LLM
 
-I denna övning kommer vi att lära oss att lägga till en LLM till vår klient.
+I denna övning kommer vi lära oss att lägga till en LLM till vår klient.
 
 ### Autentisering med GitHub Personal Access Token
 
 Att skapa en GitHub-token är en enkel process. Så här gör du:
 
-- Gå till GitHub-inställningar – Klicka på din profilbild längst upp till höger och välj Inställningar.
-- Navigera till Utvecklarinställningar – Scrolla ner och klicka på Utvecklarinställningar.
-- Välj Personliga åtkomsttoken – Klicka på Personliga åtkomsttoken och sedan Generera ny token.
-- Konfigurera din token – Lägg till en anteckning för referens, ställ in ett utgångsdatum och välj de nödvändiga åtkomstområdena (behörigheter).
-- Generera och kopiera token – Klicka på Generera token och se till att kopiera den direkt, eftersom du inte kommer att kunna se den igen.
+- Gå till GitHub inställningar – Klicka på din profilbild uppe till höger och välj Inställningar.
+- Navigera till Developer Settings – Scrolla ner och klicka på Developer Settings.
+- Välj Personal Access Tokens – Klicka på Fine-grained tokens och sedan på Generate new token.
+- Konfigurera din token – Lägg till en notering för referens, sätt ett utgångsdatum och välj nödvändiga behörigheter (scopes). I detta fall, se till att lägga till Models-åtkomst.
+- Generera och kopiera token – Klicka på Generate token och se till att kopiera den omedelbart eftersom du inte kan se den igen.
 
-### -1- Anslut till servern
+### -1- Anslut till server
 
 Låt oss först skapa vår klient:
 
@@ -64,7 +55,7 @@ import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
 import { Transport } from "@modelcontextprotocol/sdk/shared/transport.js";
 import OpenAI from "openai";
-import { z } from "zod"; // Import zod for schema validation
+import { z } from "zod"; // Importera zod för schema validering
 
 class MCPClient {
     private openai: OpenAI;
@@ -92,11 +83,11 @@ class MCPClient {
 }
 ```
 
-I den föregående koden har vi:
+I koden ovan har vi:
 
-- Importerat de nödvändiga biblioteken.
-- Skapat en klass med två medlemmar, `client` och `openai`, som hjälper oss att hantera en klient och interagera med en LLM.
-- Konfigurerat vår LLM-instans för att använda GitHub-modeller genom att ställa in `baseUrl` till att peka på inferens-API:et.
+- Importerat nödvändiga bibliotek
+- Skapat en klass med två medlemmar, `client` och `openai` som hjälper oss att hantera en klient och interagera med en LLM respektive.
+- Konfigurerat vår LLM-instans att använda GitHub Models genom att sätta `baseUrl` till inferens-API:et.
 
 #### Python
 
@@ -104,11 +95,11 @@ I den föregående koden har vi:
 from mcp import ClientSession, StdioServerParameters, types
 from mcp.client.stdio import stdio_client
 
-# Create server parameters for stdio connection
+# Skapa serverparametrar för stdio-anslutning
 server_params = StdioServerParameters(
-    command="mcp",  # Executable
-    args=["run", "server.py"],  # Optional command line arguments
-    env=None,  # Optional environment variables
+    command="mcp",  # Körbar fil
+    args=["run", "server.py"],  # Valfria kommandoradsargument
+    env=None,  # Valfria miljövariabler
 )
 
 
@@ -117,7 +108,7 @@ async def run():
         async with ClientSession(
             read, write
         ) as session:
-            # Initialize the connection
+            # Initiera anslutningen
             await session.initialize()
 
 
@@ -128,10 +119,10 @@ if __name__ == "__main__":
 
 ```
 
-I den föregående koden har vi:
+I koden ovan har vi:
 
-- Importerat de nödvändiga biblioteken för MCP.
-- Skapat en klient.
+- Importerat nödvändiga bibliotek för MCP
+- Skapat en klient
 
 #### .NET
 
@@ -156,7 +147,7 @@ await using var mcpClient = await McpClientFactory.CreateAsync(clientTransport);
 
 #### Java
 
-Först behöver du lägga till LangChain4j-beroenden i din `pom.xml`-fil. Lägg till dessa beroenden för att möjliggöra MCP-integrering och stöd för GitHub-modeller:
+Först behöver du lägga till LangChain4j-beroenden i din `pom.xml`-fil. Lägg till dessa beroenden för att möjliggöra MCP-integration och stöd för GitHub Models:
 
 ```xml
 <properties>
@@ -211,7 +202,7 @@ import java.util.List;
 
 public class LangChain4jClient {
     
-    public static void main(String[] args) throws Exception {        // Configure the LLM to use GitHub Models
+    public static void main(String[] args) throws Exception {        // Konfigurera LLM för att använda GitHub-modeller
         ChatLanguageModel model = OpenAiOfficialChatModel.builder()
                 .isGitHubModels(true)
                 .apiKey(System.getenv("GITHUB_TOKEN"))
@@ -219,7 +210,7 @@ public class LangChain4jClient {
                 .modelName("gpt-4.1-nano")
                 .build();
 
-        // Create MCP transport for connecting to server
+        // Skapa MCP-transport för att ansluta till servern
         McpTransport transport = new HttpMcpTransport.Builder()
                 .sseUrl("http://localhost:8080/sse")
                 .timeout(Duration.ofSeconds(60))
@@ -227,7 +218,7 @@ public class LangChain4jClient {
                 .logResponses(true)
                 .build();
 
-        // Create MCP client
+        // Skapa MCP-klient
         McpClient mcpClient = new DefaultMcpClient.Builder()
                 .transport(transport)
                 .build();
@@ -235,18 +226,18 @@ public class LangChain4jClient {
 }
 ```
 
-I den föregående koden har vi:
+I koden ovan har vi:
 
-- **Lagt till LangChain4j-beroenden**: Krävs för MCP-integrering, OpenAI:s officiella klient och stöd för GitHub-modeller.
-- **Importerat LangChain4j-biblioteken**: För MCP-integrering och OpenAI:s chattmodellsfunktionalitet.
-- **Skapat en `ChatLanguageModel`**: Konfigurerad för att använda GitHub-modeller med din GitHub-token.
-- **Ställt in HTTP-transport**: Använder Server-Sent Events (SSE) för att ansluta till MCP-servern.
-- **Skapat en MCP-klient**: Som hanterar kommunikationen med servern.
-- **Använt LangChain4j:s inbyggda MCP-stöd**: Vilket förenklar integreringen mellan LLM:er och MCP-servrar.
+- **Lagt till LangChain4j-beroenden**: Krävda för MCP-integration, OpenAI officiell klient och stöd för GitHub Models
+- **Importerat LangChain4j-biblioteken**: För MCP-integration och OpenAI chattmodell funktionalitet
+- **Skapat en `ChatLanguageModel`**: Konfigurerad att använda GitHub Models med din GitHub-token
+- **Satt upp HTTP-transport**: Använder Server-Sent Events (SSE) för att ansluta till MCP-servern
+- **Skapat en MCP-klient**: Som kommer hantera kommunikationen med servern
+- **Använt LangChain4js inbyggda MCP-stöd**: Vilket förenklar integrationen mellan LLMs och MCP-servrar
 
 #### Rust
 
-Detta exempel förutsätter att du har en Rust-baserad MCP-server igång. Om du inte har en, gå tillbaka till lektionen [01-first-server](../01-first-server/README.md) för att skapa servern.
+Detta exempel förutsätter att du har en Rust-baserad MCP-server igång. Om du inte har en, gå tillbaka till [01-first-server](../01-first-server/README.md) lektionen för att skapa servern.
 
 När du har din Rust MCP-server, öppna en terminal och navigera till samma katalog som servern. Kör sedan följande kommando för att skapa ett nytt LLM-klientprojekt:
 
@@ -267,7 +258,7 @@ tokio = { version = "1.46.1", features = ["rt-multi-thread"] }
 ```
 
 > [!NOTE]
-> Det finns inget officiellt Rust-bibliotek för OpenAI, men `async-openai` är ett [community-underhållet bibliotek](https://platform.openai.com/docs/libraries/rust#rust) som ofta används.
+> Det finns inget officiellt Rust-bibliotek för OpenAI, men `async-openai` crate är ett [community-underhållet bibliotek](https://platform.openai.com/docs/libraries/rust#rust) som ofta används.
 
 Öppna filen `src/main.rs` och ersätt dess innehåll med följande kod:
 
@@ -285,10 +276,10 @@ use tokio::process::Command;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
-    // Initial message
+    // Initieringsmeddelande
     let mut messages = vec![json!({"role": "user", "content": "What is the sum of 3 and 2?"})];
 
-    // Setup OpenAI client
+    // Ställ in OpenAI-klient
     let api_key = std::env::var("OPENAI_API_KEY")?;
     let openai_client = Client::with_config(
         OpenAIConfig::new()
@@ -296,7 +287,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
             .with_api_key(api_key),
     );
 
-    // Setup MCP client
+    // Ställ in MCP-klient
     let server_dir = std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
         .parent()
         .unwrap()
@@ -311,28 +302,28 @@ async fn main() -> Result<(), Box<dyn Error>> {
         )
         .await?;
 
-    // TODO: Get MCP tool listing 
+    // TODO: Hämta MCP-verktygslista
 
-    // TODO: LLM conversation with tool calls
+    // TODO: LLM-konversation med verktygsanrop
 
     Ok(())
 }
 ```
 
-Denna kod ställer in en grundläggande Rust-applikation som ansluter till en MCP-server och GitHub-modeller för LLM-interaktioner.
+Den här koden sätter upp en grundläggande Rust-applikation som kommer ansluta till en MCP-server och GitHub Models för LLM-interaktioner.
 
 > [!IMPORTANT]
-> Se till att ställa in miljövariabeln `OPENAI_API_KEY` med din GitHub-token innan du kör applikationen.
+> Se till att sätta miljövariabeln `OPENAI_API_KEY` med din GitHub-token innan du kör applikationen.
 
-Bra, för vårt nästa steg, låt oss lista funktionerna på servern.
+Bra, för nästa steg, låt oss lista kapabiliteterna på servern.
 
-### -2- Lista serverfunktioner
+### -2- Lista serverkapabiliteter
 
-Nu ska vi ansluta till servern och fråga efter dess funktioner:
+Nu ska vi ansluta till servern och fråga efter dess kapabiliteter:
 
-#### TypeScript
+#### Typescript
 
-I samma klass, lägg till följande metoder:
+I samma klass lägg till följande metoder:
 
 ```typescript
 async connectToServer(transport: Transport) {
@@ -344,26 +335,26 @@ async connectToServer(transport: Transport) {
 async run() {
     console.log("Asking server for available tools");
 
-    // listing tools
+    // lista verktyg
     const toolsResult = await this.client.listTools();
 }
 ```
 
-I den föregående koden har vi:
+I koden ovan har vi:
 
-- Lagt till kod för att ansluta till servern, `connectToServer`.
-- Skapat en `run`-metod som ansvarar för att hantera vårt appflöde. Hittills listar den bara verktygen, men vi kommer att lägga till mer snart.
+- Lagt till kod för att ansluta till servern med `connectToServer`.
+- Skapat en `run`-metod som ansvarar för att hantera app-flödet. Hittills listar den bara verktygen men vi kommer snart lägga till mer.
 
 #### Python
 
 ```python
-# List available resources
+# Lista tillgängliga resurser
 resources = await session.list_resources()
 print("LISTING RESOURCES")
 for resource in resources:
     print("Resource: ", resource)
 
-# List available tools
+# Lista tillgängliga verktyg
 tools = await session.list_tools()
 print("LISTING TOOLS")
 for tool in tools.tools:
@@ -371,9 +362,9 @@ for tool in tools.tools:
     print("Tool", tool.inputSchema["properties"])
 ```
 
-Här är vad vi har lagt till:
+Här är vad vi lade till:
 
-- Listar resurser och verktyg och skriver ut dem. För verktyg listar vi också `inputSchema`, som vi använder senare.
+- Listade resurser och verktyg och skrev ut dem. För verktyg listar vi också `inputSchema` som vi använder senare.
 
 #### .NET
 
@@ -398,47 +389,47 @@ async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
 }
 ```
 
-I den föregående koden har vi:
+I koden ovan har vi:
 
-- Listat de verktyg som finns tillgängliga på MCP-servern.
-- För varje verktyg listat namn, beskrivning och dess schema. Det senare är något vi kommer att använda för att anropa verktygen snart.
+- Listat verktyg tillgängliga på MCP-servern
+- För varje verktyg listat namn, beskrivning och dess schema. Det senare kommer vi använda för att anropa verktygen snart.
 
 #### Java
 
 ```java
-// Create a tool provider that automatically discovers MCP tools
+// Skapa en verktygsleverantör som automatiskt upptäcker MCP-verktyg
 ToolProvider toolProvider = McpToolProvider.builder()
         .mcpClients(List.of(mcpClient))
         .build();
 
-// The MCP tool provider automatically handles:
-// - Listing available tools from the MCP server
-// - Converting MCP tool schemas to LangChain4j format
-// - Managing tool execution and responses
+// MCP-verktygsleverantören hanterar automatiskt:
+// - Listar tillgängliga verktyg från MCP-servern
+// - Konverterar MCP-verktygsscheman till LangChain4j-format
+// - Hanterar verktygsexekvering och svar
 ```
 
-I den föregående koden har vi:
+I koden ovan har vi:
 
-- Skapat en `McpToolProvider` som automatiskt upptäcker och registrerar alla verktyg från MCP-servern.
-- Verktygsleverantören hanterar konverteringen mellan MCP-verktygsscheman och LangChain4j:s verktygsformat internt.
-- Detta tillvägagångssätt abstraherar bort den manuella processen för att lista och konvertera verktyg.
+- Skapat en `McpToolProvider` som automatiskt upptäcker och registrerar alla verktyg från MCP-servern
+- Tool providern hanterar konverteringen mellan MCP verktygsscheman och LangChain4j:s verktygsformat internt
+- Detta angreppssätt abstrakterar bort den manuella listningen och konverteringen av verktyg
 
 #### Rust
 
-Att hämta verktyg från MCP-servern görs med metoden `list_tools`. I din `main`-funktion, efter att ha ställt in MCP-klienten, lägg till följande kod:
+Att hämta verktyg från MCP-servern görs med `list_tools`-metoden. I din `main`-funktion, efter att du skapat MCP-klienten, lägg till följande kod:
 
 ```rust
-// Get MCP tool listing 
+// Hämta MCP-verktygslista
 let tools = mcp_client.list_tools(Default::default()).await?;
 ```
 
-### -3- Konvertera serverfunktioner till LLM-verktyg
+### -3- Konvertera serverkapabiliteter till LLM-verktyg
 
-Nästa steg efter att ha listat serverfunktioner är att konvertera dem till ett format som LLM förstår. När vi har gjort det kan vi tillhandahålla dessa funktioner som verktyg till vår LLM.
+Nästa steg efter att listat serverkapabiliteter är att konvertera dem till ett format som LLM förstår. När vi gör det kan vi tillhandahålla dessa kapabiliteter som verktyg till vår LLM.
 
 #### TypeScript
 
-1. Lägg till följande kod för att konvertera svar från MCP-servern till ett verktygsformat som LLM kan använda:
+1. Lägg till följande kod för att konvertera svaret från MCP-servern till ett verktygsformat som LLM kan använda:
 
     ```typescript
     openAiToolAdapter(tool: {
@@ -446,11 +437,11 @@ Nästa steg efter att ha listat serverfunktioner är att konvertera dem till ett
         description?: string;
         input_schema: any;
         }) {
-        // Create a zod schema based on the input_schema
+        // Skapa ett zod-schema baserat på input_schema
         const schema = z.object(tool.input_schema);
     
         return {
-            type: "function" as const, // Explicitly set type to "function"
+            type: "function" as const, // Sätt typen uttryckligen till "function"
             function: {
             name: tool.name,
             description: tool.description,
@@ -465,9 +456,9 @@ Nästa steg efter att ha listat serverfunktioner är att konvertera dem till ett
 
     ```
 
-    Koden ovan tar ett svar från MCP-servern och konverterar det till ett verktygsdefinitionsformat som LLM kan förstå.
+    Koden ovan tar emot svar från MCP-servern och konverterar det till ett verktygsdefinitionsformat som LLM kan förstå.
 
-1. Uppdatera sedan `run`-metoden för att lista serverfunktioner:
+1. Låt oss uppdatera `run`-metoden nu för att lista serverkapabiliteter:
 
     ```typescript
     async run() {
@@ -483,11 +474,11 @@ Nästa steg efter att ha listat serverfunktioner är att konvertera dem till ett
     }
     ```
 
-    I den föregående koden har vi uppdaterat `run`-metoden för att mappa genom resultatet och för varje post anropa `openAiToolAdapter`.
+    I koden ovan har vi uppdaterat `run`-metoden för att mappa igenom resultatet och för varje post anropa `openAiToolAdapter`.
 
 #### Python
 
-1. Först, skapa följande konverteringsfunktion:
+1. Först, låt oss skapa följande konverteringsfunktion
 
     ```python
     def convert_to_llm_tool(tool):
@@ -507,22 +498,23 @@ Nästa steg efter att ha listat serverfunktioner är att konvertera dem till ett
         return tool_schema
     ```
 
-    I funktionen ovan, `convert_to_llm_tools`, tar vi ett MCP-verktygssvar och konverterar det till ett format som LLM kan förstå.
+    I funktionen ovan `convert_to_llm_tools` tar vi ett MCP verktygs-svar och konverterar det till ett format som LLM kan förstå.
 
-1. Uppdatera sedan vår klientkod för att använda denna funktion så här:
+1. Nästa steg, låt oss uppdatera vår klientkod för att använda denna funktion så här:
 
     ```python
+    functions = []
     for tool in tools.tools:
         print("Tool: ", tool.name)
         print("Tool", tool.inputSchema["properties"])
         functions.append(convert_to_llm_tool(tool))
     ```
 
-    Här lägger vi till ett anrop till `convert_to_llm_tool` för att konvertera MCP-verktygssvaret till något vi kan mata in i LLM senare.
+    Här lägger vi till ett anrop till `convert_to_llm_tool` för att konvertera MCP verktygs-svaret till något vi kan mata till LLM senare.
 
 #### .NET
 
-1. Lägg till kod för att konvertera MCP-verktygssvaret till något LLM kan förstå:
+1. Låt oss lägga till kod för att konvertera MCP-verktygs-svaret till något LLM kan förstå
 
 ```csharp
 ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonElement jsonElement)
@@ -545,12 +537,12 @@ ChatCompletionsToolDefinition ConvertFrom(string name, string description, JsonE
 }
 ```
 
-I den föregående koden har vi:
+I koden ovan har vi:
 
-- Skapat en funktion `ConvertFrom` som tar namn, beskrivning och inmatningsschema.
-- Definierat funktionalitet som skapar en FunctionDefinition som skickas till en ChatCompletionsDefinition. Den senare är något som LLM kan förstå.
+- Skapat en funktion `ConvertFrom` som tar namn, beskrivning och input-schema.
+- Definierat funktionalitet som skapar en FunctionDefinition som skickas vidare till en ChatCompletionsDefinition. Det senare är något LLM kan förstå.
 
-1. Uppdatera sedan befintlig kod för att dra nytta av denna funktion ovan:
+1. Låt oss se hur vi kan uppdatera existerande kod för att använda funktionen ovan:
 
     ```csharp
     async Task<List<ChatCompletionsToolDefinition>> GetMcpTools()
@@ -578,11 +570,9 @@ I den föregående koden har vi:
 
         return toolDefinitions;
     }
-    ```
+    ```    In the preceding code, we've:
 
-    I den föregående koden har vi:
-
-    - Uppdaterat funktionen för att konvertera MCP-verktygssvaret till ett LLM-verktyg. Låt oss lyfta fram den kod vi lade till:
+    - Update the function to convert the MCP tool response to an LLm tool. Let's highlight the code we added:
 
         ```csharp
         JsonElement propertiesElement;
@@ -593,33 +583,33 @@ I den föregående koden har vi:
         toolDefinitions.Add(def);
         ```
 
-        Inmatningsschemat är en del av verktygssvaret men på attributet "properties", så vi behöver extrahera det. Dessutom anropar vi nu `ConvertFrom` med verktygsdetaljerna. Nu har vi gjort det tunga arbetet, låt oss se hur allt kommer samman när vi hanterar en användaruppmaning nästa gång.
+        The input schema is part of the tool response but on the "properties" attribute, so we need to extract. Furthermore, we now call `ConvertFrom` with the tool details. Now we've done the heavy lifting, let's see how it call comes together as we handle a user prompt next.
 
 #### Java
 
 ```java
-// Create a Bot interface for natural language interaction
+// Skapa ett Bot-gränssnitt för naturlig språkintegration
 public interface Bot {
     String chat(String prompt);
 }
 
-// Configure the AI service with LLM and MCP tools
+// Konfigurera AI-tjänsten med LLM och MCP-verktyg
 Bot bot = AiServices.builder(Bot.class)
         .chatLanguageModel(model)
         .toolProvider(toolProvider)
         .build();
 ```
 
-I den föregående koden har vi:
+I koden ovan har vi:
 
-- Definierat ett enkelt `Bot`-gränssnitt för interaktion med naturligt språk.
-- Använt LangChain4j:s `AiServices` för att automatiskt binda LLM med MCP-verktygsleverantören.
-- Ramverket hanterar automatiskt verktygsschemakonvertering och funktionsanrop bakom kulisserna.
-- Detta tillvägagångssätt eliminerar manuell verktygskonvertering - LangChain4j hanterar all komplexitet med att konvertera MCP-verktyg till LLM-kompatibelt format.
+- Definierat ett enkelt `Bot`-interface för naturligt språk-interaktioner
+- Använt LangChain4js `AiServices` för att automatiskt binda LLM med MCP verktygsprovider
+- Frameworket hanterar automatiskt verktygsschema-konvertering och funktionsanrop bakom kulisserna
+- Detta tillvägagångssätt eliminerar manuell verktygskonvertering – LangChain4j tar hand om all komplexitet med att konvertera MCP-verktyg till LLM-kompatibelt format
 
 #### Rust
 
-För att konvertera MCP-verktygssvaret till ett format som LLM kan förstå, lägger vi till en hjälpfunktion som formaterar verktygslistan. Lägg till följande kod i din `main.rs`-fil under `main`-funktionen. Detta kommer att anropas vid förfrågningar till LLM:
+För att konvertera MCP verktygs-svar till ett format som LLM kan förstå kommer vi att lägga till en hjälpfunktion som formaterar verktygslistan. Lägg till följande kod i din `main.rs`-fil nedanför `main`-funktionen. Detta kommer att anropas när du gör förfrågningar till LLM:
 
 ```rust
 async fn format_tools(tools: &ListToolsResult) -> Result<Vec<Value>, Box<dyn Error>> {
@@ -654,15 +644,15 @@ async fn format_tools(tools: &ListToolsResult) -> Result<Vec<Value>, Box<dyn Err
 }
 ```
 
-Bra, vi är nu redo att hantera användarförfrågningar, så låt oss ta itu med det nästa gång.
+Bra, vi är nu redo att hantera användarförfrågningar, låt oss ta itu med det nästa.
 
-### -4- Hantera användaruppmaning
+### -4- Hantera användarprompt
 
-I denna del av koden kommer vi att hantera användarförfrågningar.
+I denna del av koden kommer vi hantera användarförfrågningar.
 
 #### TypeScript
 
-1. Lägg till en metod som kommer att användas för att anropa vår LLM:
+1. Lägg till en metod som ska användas för att anropa vår LLM:
 
     ```typescript
     async callTools(
@@ -676,7 +666,7 @@ I denna del av koden kommer vi att hantera användarförfrågningar.
         console.log(`Calling tool ${toolName} with args ${JSON.stringify(args)}`);
 
 
-        // 2. Call the server's tool 
+        // 2. Anropa serverns verktyg
         const toolResult = await this.client.callTool({
             name: toolName,
             arguments: JSON.parse(args),
@@ -684,17 +674,17 @@ I denna del av koden kommer vi att hantera användarförfrågningar.
 
         console.log("Tool result: ", toolResult);
 
-        // 3. Do something with the result
-        // TODO  
+        // 3. Gör något med resultatet
+        // ATT GÖRA
 
         }
     }
     ```
 
-    I den föregående koden har vi:
+    I koden ovan:
 
-    - Lagt till en metod `callTools`.
-    - Metoden tar ett LLM-svar och kontrollerar vilka verktyg som har anropats, om några:
+    - Lade vi till en metod `callTools`.
+    - Metoden tar emot ett LLM-svar och kontrollerar vilka verktyg som anropats, om några:
 
         ```typescript
         for (const tool_call of tool_calls) {
@@ -703,14 +693,14 @@ I denna del av koden kommer vi att hantera användarförfrågningar.
 
         console.log(`Calling tool ${toolName} with args ${JSON.stringify(args)}`);
 
-        // call tool
+        // ring verktyg
         }
         ```
 
     - Anropar ett verktyg, om LLM indikerar att det ska anropas:
 
         ```typescript
-        // 2. Call the server's tool 
+        // 2. Anropa serverns verktyg
         const toolResult = await this.client.callTool({
             name: toolName,
             arguments: JSON.parse(args),
@@ -718,15 +708,15 @@ I denna del av koden kommer vi att hantera användarförfrågningar.
 
         console.log("Tool result: ", toolResult);
 
-        // 3. Do something with the result
-        // TODO  
+        // 3. Gör något med resultatet
+        // ATT GÖRA
         ```
 
-1. Uppdatera `run`-metoden för att inkludera anrop till LLM och anrop till `callTools`:
+1. Uppdatera `run`-metoden för att inkludera anrop till LLM och anrop av `callTools`:
 
     ```typescript
 
-    // 1. Create messages that's input for the LLM
+    // 1. Skapa meddelanden som är input för LLM
     const prompt = "What is the sum of 2 and 3?"
 
     const messages: OpenAI.Chat.Completions.ChatCompletionMessageParam[] = [
@@ -738,9 +728,9 @@ I denna del av koden kommer vi att hantera användarförfrågningar.
 
     console.log("Querying LLM: ", messages[0].content);
 
-    // 2. Calling the LLM
+    // 2. Anropar LLM
     let response = this.openai.chat.completions.create({
-        model: "gpt-4o-mini",
+        model: "gpt-4.1-mini",
         max_tokens: 1000,
         messages,
         tools: tools,
@@ -748,7 +738,7 @@ I denna del av koden kommer vi att hantera användarförfrågningar.
 
     let results: any[] = [];
 
-    // 3. Go through the LLM response,for each choice, check if it has tool calls 
+    // 3. Gå igenom LLM-svaret, för varje val, kontrollera om det innehåller verktygsanrop
     (await response).choices.map(async (choice: { message: any; }) => {
         const message = choice.message;
         if (message.tool_calls) {
@@ -758,21 +748,21 @@ I denna del av koden kommer vi att hantera användarförfrågningar.
     });
     ```
 
-Bra, låt oss lista koden i sin helhet:
+Bra, låt oss lista hela koden:
 
 ```typescript
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
 import { Transport } from "@modelcontextprotocol/sdk/shared/transport.js";
 import OpenAI from "openai";
-import { z } from "zod"; // Import zod for schema validation
+import { z } from "zod"; // Importera zod för schemasvalidering
 
 class MyClient {
     private openai: OpenAI;
     private client: Client;
     constructor(){
         this.openai = new OpenAI({
-            baseURL: "https://models.inference.ai.azure.com", // might need to change to this url in the future: https://models.github.ai/inference
+            baseURL: "https://models.inference.ai.azure.com", // kan behöva ändras till denna url i framtiden: https://models.github.ai/inference
             apiKey: process.env.GITHUB_TOKEN,
         });
 
@@ -802,11 +792,11 @@ class MyClient {
         description?: string;
         input_schema: any;
           }) {
-          // Create a zod schema based on the input_schema
+          // Skapa ett zod-schema baserat på input_schema
           const schema = z.object(tool.input_schema);
       
           return {
-            type: "function" as const, // Explicitly set type to "function"
+            type: "function" as const, // Sätt uttryckligen typen till "function"
             function: {
               name: tool.name,
               description: tool.description,
@@ -830,7 +820,7 @@ class MyClient {
           console.log(`Calling tool ${toolName} with args ${JSON.stringify(args)}`);
     
     
-          // 2. Call the server's tool 
+          // 2. Anropa serverns verktyg
           const toolResult = await this.client.callTool({
             name: toolName,
             arguments: JSON.parse(args),
@@ -838,8 +828,8 @@ class MyClient {
     
           console.log("Tool result: ", toolResult);
     
-          // 3. Do something with the result
-          // TODO  
+          // 3. Gör något med resultatet
+          // ATTGÖRA
     
          }
     }
@@ -866,7 +856,7 @@ class MyClient {
 
         console.log("Querying LLM: ", messages[0].content);
         let response = this.openai.chat.completions.create({
-            model: "gpt-4o-mini",
+            model: "gpt-4.1-mini",
             max_tokens: 1000,
             messages,
             tools: tools,
@@ -874,7 +864,7 @@ class MyClient {
 
         let results: any[] = [];
     
-        // 1. Go through the LLM response,for each choice, check if it has tool calls 
+        // 1. Gå igenom LLM-svaret, för varje val, kontrollera om det finns verktygsanrop
         (await response).choices.map(async (choice: { message: any; }) => {
           const message = choice.message;
           if (message.tool_calls) {
@@ -897,7 +887,7 @@ client.connectToServer(transport);
 
 #### Python
 
-1. Lägg till några importer som behövs för att anropa en LLM:
+1. Låt oss lägga till några imports som behövs för att anropa en LLM
 
     ```python
     # llm
@@ -908,7 +898,7 @@ client.connectToServer(transport);
     import json
     ```
 
-1. Lägg sedan till funktionen som kommer att anropa LLM:
+1. Nästa steg, lägg till funktionen som anropar LLM:
 
     ```python
     # llm
@@ -938,7 +928,7 @@ client.connectToServer(transport);
             ],
             model=model_name,
             tools = functions,
-            # Optional parameters
+            # Valfria parametrar
             temperature=1.,
             max_tokens=1000,
             top_p=1.    
@@ -958,35 +948,35 @@ client.connectToServer(transport);
         return functions_to_call
     ```
 
-    I den föregående koden har vi:
+    I koden ovan har vi:
 
-    - Skickat våra funktioner, som vi hittade på MCP-servern och konverterade, till LLM.
-    - Därefter anropat LLM med dessa funktioner.
-    - Inspekterat resultatet för att se vilka funktioner vi ska anropa, om några.
-    - Slutligen skickat en array med funktioner att anropa.
+    - Skickat våra funktioner, som vi hittat på MCP-servern och konverterat, till LLM.
+    - Anropat LLM med dessa funktioner.
+    - Kontrollerat resultatet för att se vilka funktioner vi ska anropa, om några.
+    - Slutligen skickat en lista över funktioner att anropa.
 
-1. Sista steget, uppdatera vår huvudkod:
+1. Sista steget, låt oss uppdatera vår huvudkod:
 
     ```python
     prompt = "Add 2 to 20"
 
-    # ask LLM what tools to all, if any
+    # fråga LLM vilka verktyg som ska användas, om några
     functions_to_call = call_llm(prompt, functions)
 
-    # call suggested functions
+    # anropa föreslagna funktioner
     for f in functions_to_call:
         result = await session.call_tool(f["name"], arguments=f["args"])
         print("TOOLS result: ", result.content)
     ```
 
-    Där, det var sista steget, i koden ovan:
+    Där, det var sista steget. I koden ovan gör vi:
 
-    - Anropar vi ett MCP-verktyg via `call_tool` med en funktion som LLM trodde vi skulle anropa baserat på vår uppmaning.
+    - Anropar ett MCP-verktyg via `call_tool` med en funktion som LLM ansåg vi borde anropa baserat på vår prompt.
     - Skriver ut resultatet av verktygsanropet till MCP-servern.
 
 #### .NET
 
-1. Visa lite kod för att göra en LLM-uppmaningsförfrågan:
+1. Låt oss visa lite kod för att göra en LLM-promptförfrågan:
 
     ```csharp
     var tools = await GetMcpTools();
@@ -1009,7 +999,7 @@ client.connectToServer(transport);
     // 2. Define options, including the tools
     var options = new ChatCompletionsOptions(chatHistory)
     {
-        Model = "gpt-4o-mini",
+        Model = "gpt-4.1-mini",
         Tools = { tools[0] }
     };
 
@@ -1020,14 +1010,14 @@ client.connectToServer(transport);
 
     ```
 
-    I den föregående koden har vi:
+    I koden ovan har vi:
 
     - Hämtat verktyg från MCP-servern, `var tools = await GetMcpTools()`.
-    - Definierat en användaruppmaning `userMessage`.
-    - Konstruerat ett alternativsobjekt som specificerar modell och verktyg.
+    - Definierat en användarprompt `userMessage`.
+    - Konstrukterat ett options-objekt som specificerar modell och verktyg.
     - Gjort en förfrågan mot LLM.
 
-1. Ett sista steg, se om LLM tycker att vi ska anropa en funktion:
+1. Ett sista steg, låt oss se om LLM tycker vi ska anropa en funktion:
 
     ```csharp
     // 4. Check if the response contains a function call
@@ -1050,10 +1040,10 @@ client.connectToServer(transport);
     }
     ```
 
-    I den föregående koden har vi:
+    I koden ovan har vi:
 
-    - Loopat genom en lista med funktionsanrop.
-    - För varje verktygsanrop, extraherat namn och argument och anropat verktyget på MCP-servern med MCP-klienten. Slutligen skriver vi ut resultaten.
+    - Loopat igenom en lista av funktionsanrop.
+    - För varje verktygsanrop, parses namn och argument och verktyget anropas på MCP-servern med MCP-klienten. Slutligen skriver vi ut resultaten.
 
 Här är koden i sin helhet:
 
@@ -1150,7 +1140,7 @@ chatHistory.Add(new ChatRequestUserMessage(userMessage));
 // 3. Define options, including the tools
 var options = new ChatCompletionsOptions(chatHistory)
 {
-    Model = "gpt-4o-mini",
+    Model = "gpt-4.1-mini",
     Tools = { tools[0] }
 };
 
@@ -1186,7 +1176,7 @@ Console.WriteLine($"Assistant response: {content}");
 
 ```java
 try {
-    // Execute natural language requests that automatically use MCP tools
+    // Kör förfrågningar på naturligt språk som automatiskt använder MCP-verktyg
     String response = bot.chat("Calculate the sum of 24.5 and 17.3 using the calculator service");
     System.out.println(response);
 
@@ -1200,17 +1190,17 @@ try {
 }
 ```
 
-I den föregående koden har vi:
+I koden ovan har vi:
 
-- Använt enkla naturliga språkförfrågningar för att interagera med MCP-serverns verktyg.
+- Använt enkla naturliga språkprompter för att interagera med MCP-serverns verktyg
 - LangChain4j-ramverket hanterar automatiskt:
-  - Konvertering av användaruppmaningar till verktygsanrop när det behövs.
-  - Anrop av lämpliga MCP-verktyg baserat på LLM:s beslut.
-  - Hantering av konversationsflödet mellan LLM och MCP-servern.
-- Metoden `bot.chat()` returnerar naturliga språkssvar som kan inkludera resultat från MCP-verktygsanrop.
-- Detta tillvägagångssätt ger en sömlös användarupplevelse där användarna inte behöver veta om den underliggande MCP-implementeringen.
+  - Att konvertera användarprompter till verktygsanrop vid behov
+  - Att anropa rätt MCP-verktyg baserat på LLM:s beslut
+  - Att hantera konversationsflödet mellan LLM och MCP-servern
+- `bot.chat()`-metoden returnerar naturligt språk-svar som kan inkludera resultat från MCP verktygsexekveringar
+- Detta tillvägagångssätt ger en sömlös användarupplevelse där användarna inte behöver känna till den underliggande MCP-implementeringen
 
-Komplett kodexempel:
+Fullständigt kodexempel:
 
 ```java
 public class LangChain4jClient {
@@ -1261,7 +1251,8 @@ public class LangChain4jClient {
 
 #### Rust
 
-Här sker det mesta av arbetet. Vi kommer att anropa LLM med den initiala användaruppmaningen, sedan bearbeta svaret för att se om några verktyg behöver anropas. Om så är fallet kommer vi att anropa dessa verktyg och fortsätta konversationen med LLM tills inga fler verktygsanrop behövs och vi har ett slutgiltigt svar.
+Här händer det mesta. Vi kommer att anropa LLM med den initiala användarprompten, bearbeta svaret för att se om några verktyg behöver anropas. Om så är fallet anropar vi dessa verktyg och fortsätter konversationen med LLM tills inga fler verktygsanrop behövs och vi har ett slutgiltigt svar.
+
 Vi kommer att göra flera anrop till LLM, så låt oss definiera en funktion som hanterar LLM-anropet. Lägg till följande funktion i din `main.rs`-fil:
 
 ```rust
@@ -1282,9 +1273,8 @@ async fn call_llm(
 }
 ```
 
-Den här funktionen tar LLM-klienten, en lista med meddelanden (inklusive användarens prompt), verktyg från MCP-servern och skickar en begäran till LLM, som returnerar svaret.
-
-Svaret från LLM kommer att innehålla en array av `choices`. Vi behöver bearbeta resultatet för att se om några `tool_calls` finns. Detta låter oss veta att LLM begär att ett specifikt verktyg ska anropas med argument. Lägg till följande kod längst ner i din `main.rs`-fil för att definiera en funktion som hanterar LLM-svaret:
+Denna funktion tar emot LLM-klienten, en lista med meddelanden (inklusive användarprompten), verktyg från MCP-servern, och skickar en förfrågan till LLM och returnerar svaret.
+Responsen från LLM kommer att innehålla en array av `choices`. Vi behöver bearbeta resultatet för att se om några `tool_calls` finns. Detta låter oss veta att LLM begär att ett specifikt verktyg ska anropas med argument. Lägg till följande kod längst ner i din `main.rs`-fil för att definiera en funktion som hanterar LLM-responsen:
 
 ```rust
 async fn process_llm_response(
@@ -1303,16 +1293,16 @@ async fn process_llm_response(
         return Ok(());
     };
 
-    // Print content if available
+    // Skriv ut innehåll om tillgängligt
     if let Some(content) = message.get("content").and_then(|c| c.as_str()) {
         println!("🤖 {}", content);
     }
 
-    // Handle tool calls
+    // Hantera verktygsanrop
     if let Some(tool_calls) = message.get("tool_calls").and_then(|tc| tc.as_array()) {
-        messages.push(message.clone()); // Add assistant message
+        messages.push(message.clone()); // Lägg till assistentmeddelande
 
-        // Execute each tool call
+        // Utför varje verktygsanrop
         for tool_call in tool_calls {
             let (tool_id, name, args) = extract_tool_call_info(tool_call)?;
             println!("⚡ Calling tool: {}", name);
@@ -1324,7 +1314,7 @@ async fn process_llm_response(
                 })
                 .await?;
 
-            // Add tool result to messages
+            // Lägg till verktygsresultat i meddelanden
             messages.push(json!({
                 "role": "tool",
                 "tool_call_id": tool_id,
@@ -1332,7 +1322,7 @@ async fn process_llm_response(
             }));
         }
 
-        // Continue conversation with tool results
+        // Fortsätt konversation med verktygsresultat
         let response = call_llm(openai_client, messages, mcp_tools).await?;
         Box::pin(process_llm_response(
             &response,
@@ -1347,9 +1337,9 @@ async fn process_llm_response(
 }
 ```
 
-Om `tool_calls` finns, extraherar den verktygsinformationen, anropar MCP-servern med verktygsbegäran och lägger till resultaten i konversationsmeddelandena. Den fortsätter sedan konversationen med LLM och meddelandena uppdateras med assistentens svar och verktygsanropsresultat.
+Om `tool_calls` finns, extraherar den verktygsinformationen, anropar MCP-servern med verktygsförfrågan och lägger till resultaten i konversationsmeddelandena. Den fortsätter sedan konversationen med LLM och meddelandena uppdateras med assistentens svar och resultat från verktygsanropet.
 
-För att extrahera verktygsanropsinformation som LLM returnerar för MCP-anrop, kommer vi att lägga till en hjälpfunktion för att extrahera allt som behövs för att göra anropet. Lägg till följande kod längst ner i din `main.rs`-fil:
+För att extrahera verktygsanropsinformation som LLM returnerar för MCP-anrop, kommer vi att lägga till en hjälpfunktion till för att ta ut allt som behövs för att göra anropet. Lägg till följande kod längst ner i din `main.rs`-fil:
 
 ```rust
 fn extract_tool_call_info(tool_call: &Value) -> Result<(String, String, String), Box<dyn Error>> {
@@ -1373,10 +1363,10 @@ fn extract_tool_call_info(tool_call: &Value) -> Result<(String, String, String),
 }
 ```
 
-Med alla delar på plats kan vi nu hantera den initiala användarprompten och anropa LLM. Uppdatera din `main`-funktion för att inkludera följande kod:
+Med alla delar på plats kan vi nu hantera den initiala användarfrågan och anropa LLM. Uppdatera din `main`-funktion för att inkludera följande kod:
 
 ```rust
-// LLM conversation with tool calls
+// LLM-konversation med verktygsanrop
 let response = call_llm(&openai_client, &messages, &tools).await?;
 process_llm_response(
     &response,
@@ -1388,31 +1378,31 @@ process_llm_response(
 .await?;
 ```
 
-Detta kommer att fråga LLM med den initiala användarprompten som ber om summan av två tal, och det kommer att bearbeta svaret för att dynamiskt hantera verktygsanrop.
+Detta kommer att fråga LLM med den initiala användarfrågan som ber om summan av två nummer, och den kommer att bearbeta svaret för att dynamiskt hantera verktygsanrop.
 
 Bra jobbat, du klarade det!
 
 ## Uppgift
 
-Ta koden från övningen och bygg ut servern med några fler verktyg. Skapa sedan en klient med en LLM, som i övningen, och testa den med olika prompts för att säkerställa att alla dina serververktyg anropas dynamiskt. Detta sätt att bygga en klient innebär att slutanvändaren får en fantastisk användarupplevelse eftersom de kan använda prompts istället för exakta klientkommandon och vara omedvetna om att någon MCP-server anropas.
+Ta koden från övningen och bygg ut servern med några fler verktyg. Skapa sedan en klient med en LLM, som i övningen, och testa den med olika frågor för att säkerställa att alla dina serververktyg anropas dynamiskt. Detta sätt att bygga en klient innebär att slutanvändaren får en bättre användarupplevelse då de kan använda frågor istället för exakta klientkommandon och vara omedvetna om eventuella MCP-servrar som anropas.
 
 ## Lösning
 
-[Solution](/03-GettingStarted/03-llm-client/solution/README.md)
+[Lösning](/03-GettingStarted/03-llm-client/solution/README.md)
 
-## Viktiga lärdomar
+## Viktiga punkter
 
-- Att lägga till en LLM till din klient ger ett bättre sätt för användare att interagera med MCP-servrar.
-- Du behöver konvertera MCP-serverns svar till något som LLM kan förstå.
+- Att lägga till en LLM i din klient ger ett bättre sätt för användare att interagera med MCP-servrar.
+- Du behöver konvertera MCP-serverns respons till något som LLM kan förstå.
 
 ## Exempel
 
-- [Java Calculator](../samples/java/calculator/README.md)
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
-- [JavaScript Calculator](../samples/javascript/README.md)
-- [TypeScript Calculator](../samples/typescript/README.md)
-- [Python Calculator](../../../../03-GettingStarted/samples/python)
-- [Rust Calculator](../../../../03-GettingStarted/samples/rust)
+- [Java-kalkylator](../samples/java/calculator/README.md)
+- [.Net-kalkylator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript-kalkylator](../samples/javascript/README.md)
+- [TypeScript-kalkylator](../samples/typescript/README.md)
+- [Python-kalkylator](../../../../03-GettingStarted/samples/python)
+- [Rust-kalkylator](../../../../03-GettingStarted/samples/rust)
 
 ## Ytterligare resurser
 
@@ -1420,5 +1410,9 @@ Ta koden från övningen och bygg ut servern med några fler verktyg. Skapa seda
 
 - Nästa: [Använda en server med Visual Studio Code](../04-vscode/README.md)
 
-**Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör du vara medveten om att automatiska översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess originalspråk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Ansvarsfriskrivning**:
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, var vänlig observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För viktig information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

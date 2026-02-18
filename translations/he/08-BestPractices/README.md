@@ -1,81 +1,89 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b62150e27d4b7b5797ee41146d176e6b",
-  "translation_date": "2025-08-18T16:47:15+00:00",
-  "source_file": "08-BestPractices/README.md",
-  "language_code": "he"
-}
--->
-# עקרונות פיתוח MCP: שיטות עבודה מומלצות
+# שיטות עבודה מומלצות לפיתוח MCP
 
-[![שיטות עבודה מומלצות לפיתוח MCP](../../../translated_images/09.d0f6d86c9d72134ccf5a8d8c8650a0557e519936661fc894cad72d73522227cb.he.png)](https://youtu.be/W56H9W7x-ao)
+[![שיטות עבודה מומלצות לפיתוח MCP](../../../translated_images/he/09.d0f6d86c9d72134c.webp)](https://youtu.be/W56H9W7x-ao)
 
-_(לחצו על התמונה למעלה לצפייה בסרטון של השיעור)_
+_(לחץ על התמונה למעלה כדי לצפות בסרטון של השיעור הזה)_
 
 ## סקירה כללית
 
-שיעור זה מתמקד בשיטות עבודה מתקדמות לפיתוח, בדיקה ופריסה של שרתי MCP ותכונות בסביבות ייצור. ככל שמערכות MCP הופכות למורכבות וחשובות יותר, הקפדה על דפוסים מבוססים מבטיחה אמינות, תחזוקה ושילוביות. שיעור זה מאגד תובנות מעשיות שנצברו מיישומי MCP בעולם האמיתי כדי להנחות אתכם ביצירת שרתים חזקים ויעילים עם משאבים, הנחיות וכלים אפקטיביים.
+השיעור הזה מתמקד בשיטות עבודה מומלצות מתקדמות לפיתוח, בדיקה, והפצת שרתי MCP ותכונות בסביבות ייצור. ככל שמערכות MCP מתפתחות ומורכבות יותר, עקיבה אחר דפוסים מבוססים מבטיחה אמינות, תחזוקה היטבית, ואינטראופרביליות. שיעור זה מאחד חוכמה מעשית שהושגה מתוך מימושי MCP אמיתיים כדי להנחות אותך ביצירת שרתים חזקים, יעילים עם משאבים, הנחיות, וכלים אפקטיביים.
 
-## מטרות למידה
+## יעדי למידה
 
-בסיום השיעור, תוכלו:
+בסיום שיעור זה תוכל:
 
-- ליישם שיטות עבודה מומלצות בתעשייה בעיצוב שרתי MCP ותכונותיהם
+- ליישם שיטות עבודה מומלצות בתעשייה בעיצוב שרתי MCP ותכונות
 - ליצור אסטרטגיות בדיקה מקיפות לשרתי MCP
-- לעצב דפוסי עבודה יעילים וניתנים לשימוש חוזר עבור יישומי MCP מורכבים
-- ליישם טיפול נכון בשגיאות, רישום ומעקב בשרתי MCP
-- לבצע אופטימיזציה ליישומי MCP לביצועים, אבטחה ותחזוקה
+- לעצב דפוסי זרימת עבודה יעילים, לשימוש חוזר, עבור יישומי MCP מורכבים
+- ליישם טיפול שגיאות מתאים, רישום ומעקב בשרתי MCP
+- לייעל מימושי MCP לביצועים, אבטחה ותחזוקה
 
-## עקרונות ליבה של MCP
+## עקרונות יסודיים של MCP
 
-לפני שנצלול לשיטות יישום ספציפיות, חשוב להבין את עקרונות הליבה שמנחים פיתוח MCP אפקטיבי:
+לפני שנצלול לשיטות המימוש הספציפיות, חשוב להבין את העקרונות הבסיסיים שמנחים פיתוח MCP יעיל:
 
-1. **תקשורת סטנדרטית**: MCP מבוסס על JSON-RPC 2.0, המספק פורמט עקבי לבקשות, תגובות וטיפול בשגיאות בכל היישומים.
-2. **עיצוב ממוקד משתמש**: תמיד תעדיפו הסכמה, שליטה ושקיפות של המשתמש ביישומי MCP שלכם.
-3. **אבטחה תחילה**: יישמו אמצעי אבטחה חזקים, כולל אימות, הרשאות, ולידציה והגבלת קצב.
-4. **ארכיטקטורה מודולרית**: עיצוב שרתי MCP בגישה מודולרית, שבה לכל כלי ומשאב יש מטרה ברורה וממוקדת.
-5. **חיבורים עם מצב**: נצלו את היכולת של MCP לשמור על מצב בין בקשות מרובות לצורך אינטראקציות קוהרנטיות ומודעות להקשר.
+1. **תקשורת סטנדרטית**: MCP משתמש בפרוטוקול JSON-RPC 2.0 כבסיסו, המספק פורמט עקבי לבקשות, תגובות וטיפול בשגיאות בכל המימושים.
 
-## שיטות עבודה מומלצות רשמיות של MCP
+2. **עיצוב ממוקד משתמש**: תמיד תעדף הסכמה, שליטה, ושקיפות למשתמשים במימושי MCP שלך.
 
-שיטות העבודה המומלצות הבאות נגזרות מתיעוד ה-Model Context Protocol הרשמי:
+3. **אבטחה בראש ובראשונה**: יישם אמצעי אבטחה חזקים הכוללים אימות, הרשאה, אימות תקינות, והגבלת קצב.
+
+4. **ארכיטקטורה מודולרית**: עצב את שרתי MCP שלך בגישה מודולרית, שבה לכל כלי ומשאב יש מטרה ברורה וממוקדת.
+
+5. **חיבורים בעלי מצב**: נצל את יכולת MCP לשמור מצב על פני בקשות מרובות, לאינטראקציות קוהרנטיות ומבוססות הקשר.
+
+## שיטות עבודה מומלצות רשמיות ל-MCP
+
+שיטות העבודה המומלצות הבאות נגזרות מתיעוד פרוטוקול מודל-קונטקסט הרשמי:
 
 ### שיטות עבודה מומלצות לאבטחה
 
-1. **הסכמה ושליטה של משתמש**: תמיד דרשו הסכמה מפורשת מהמשתמש לפני גישה לנתונים או ביצוע פעולות. ספקו שליטה ברורה על אילו נתונים משותפים ואילו פעולות מאושרות.
-2. **פרטיות נתונים**: חשפו נתוני משתמש רק עם הסכמה מפורשת והגנו עליהם באמצעות בקרות גישה מתאימות. מנעו העברת נתונים לא מורשית.
-3. **בטיחות כלים**: דרשו הסכמה מפורשת מהמשתמש לפני הפעלת כל כלי. ודאו שהמשתמשים מבינים את הפונקציונליות של כל כלי ואכפו גבולות אבטחה חזקים.
-4. **בקרת הרשאות כלים**: הגדירו אילו כלים מודל יכול להשתמש בהם במהלך סשן, כך שרק כלים שאושרו במפורש יהיו נגישים.
-5. **אימות**: דרשו אימות מתאים לפני מתן גישה לכלים, משאבים או פעולות רגישות באמצעות מפתחות API, אסימוני OAuth או שיטות אימות מאובטחות אחרות.
-6. **ולידציה של פרמטרים**: אכפו ולידציה לכל הפעלות הכלים כדי למנוע קלט פגום או זדוני מלהגיע ליישומי הכלים.
-7. **הגבלת קצב**: יישמו הגבלת קצב כדי למנוע ניצול לרעה ולהבטיח שימוש הוגן במשאבי השרת.
+1. **הסכמה ושליטה של המשתמש**: דרוש תמיד הסכמה מפורשת מהמשתמש לפני גישה לנתונים או ביצוע פעולות. ספק שליטה ברורה על אילו נתונים משותפים ואילו פעולות מורשות.
 
-### שיטות עבודה מומלצות ליישום
+2. **פרטיות נתונים**: חשוף נתוני משתמש רק עם הסכמה מפורשת והגן עליהם עם בקרות גישה מתאימות. מגן מפני העברת נתונים בלתי מורשית.
 
-1. **משא ומתן על יכולות**: במהלך הגדרת החיבור, החליפו מידע על תכונות נתמכות, גרסאות פרוטוקול, כלים ומשאבים זמינים.
-2. **עיצוב כלים**: צרו כלים ממוקדים שעושים דבר אחד היטב, במקום כלים מונוליתיים שמטפלים במספר תחומים.
-3. **טיפול בשגיאות**: יישמו הודעות שגיאה וקודים סטנדרטיים כדי לעזור באבחון בעיות, לטפל בכשלים בצורה חלקה ולספק משוב מעשי.
-4. **רישום**: הגדירו לוגים מובנים לצורך ביקורת, ניפוי באגים ומעקב אחר אינטראקציות פרוטוקול.
-5. **מעקב אחר התקדמות**: עבור פעולות ארוכות טווח, דווחו על עדכוני התקדמות כדי לאפשר ממשקי משתמש מגיבים.
-6. **ביטול בקשות**: אפשרו ללקוחות לבטל בקשות בתהליך שאינן נחוצות עוד או שלוקחות זמן רב מדי.
+3. **בטיחות כלים**: דרוש הסכמה מפורשת מהמשתמש לפני קריאת כלי כלשהו. ודא שהמשתמשים מבינים את פונקציונליות הכלי ואכוף גבולות אבטחה חזקים.
+
+4. **בקרת הרשאות לכלים**: קבע אילו כלים מותר למודל להשתמש בהם במהלך מושב, תוך הבטחה שרק כלים מורשים במפורש יהיו נגישים.
+
+5. **אימות**: דרוש אימות נאות לפני הענקת גישה לכלים, משאבים, או פעולות רגישות באמצעות מפתחות API, אסימוני OAuth, או שיטות אימות מאובטחות אחרות.
+
+6. **בדיקת תקינות פרמטרים**: האכף בדיקת תקינות לכל קריאות הכלים למניעת קלט פגום או זדוני המגיע למימושי הכלי.
+
+7. **הגבלת קצב**: יישם הגבלת קצב למניעת ניצול לרעה והבטחת שימוש הוגן במשאבי השרת.
+
+### שיטות עבודה מומלצות למימוש
+
+1. **מיקוח יכולות**: במהלך הקמת החיבור, החלף מידע על תכונות נתמכות, גרסאות פרוטוקול, כלים ומשאבים זמינים.
+
+2. **עיצוב כלים**: צור כלים ממוקדים שעושים דבר אחד טוב, במקום כלים מונוליתיים שמטפלים במספר תחומים.
+
+3. **טיפול בשגיאות**: יישם הודעות שגיאה וקטעים סטנדרטיים לסיוע באבחון בעיות, טיפול בכישלונות בחן, ומתן משוב שניתן לפעול לפיו.
+
+4. **רישום**: קבע רישום מובנה לצרכי ביקורת, איתור באגים, ומעקב אחר אינטראקציות הפרוטוקול.
+
+5. **מעקב התקדמות**: עבור פעולות ארוכות טווח, דווח על עדכוני התקדמות לאפשר ממשקי משתמש מגיבים.
+
+6. **ביטול בקשות**: אפשר ללקוחות לבטל בקשות בתנועה שאינן נדרשות יותר או שלוקחות זמן רב מדי.
 
 ## מקורות נוספים
 
-למידע העדכני ביותר על שיטות עבודה מומלצות של MCP, עיינו ב:
+לעדכונים השוטפים על שיטות עבודה מומלצות ל-MCP, עיין ב:
 
 - [תיעוד MCP](https://modelcontextprotocol.io/)
-- [מפרט MCP](https://spec.modelcontextprotocol.io/)
+- [מפרט MCP (2025-11-25)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
 - [מאגר GitHub](https://github.com/modelcontextprotocol)
 - [שיטות עבודה מומלצות לאבטחה](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
+- [OWASP MCP עשרת הגדולים](https://microsoft.github.io/mcp-azure-security-guide/mcp/) - סיכוני אבטחה ופתרונות
+- [סמינר אבטחת MCP (Sherpa)](https://azure-samples.github.io/sherpa/) - אימון אבטחה מעשי
 
-## דוגמאות יישום מעשיות
+## דוגמאות מימוש מעשיות
 
 ### שיטות עבודה מומלצות לעיצוב כלים
 
-#### 1. עקרון האחריות היחידה
+#### 1. עיקרון האחריות היחידה
 
-כל כלי MCP צריך להיות בעל מטרה ברורה וממוקדת. במקום ליצור כלים מונוליתיים שמנסים לטפל במספר תחומים, פתחו כלים מתמחים שמצטיינים במשימות ספציפיות.
+לכל כלי MCP צריך להיות מטרה ברורה וממוקדת. במקום ליצור כלים מונוליתיים המנסים לטפל בכמה נושאים, פתח כלים מיוחדים המצטיינים במשימות ספציפיות.
 
 ```csharp
 // A focused tool that does one thing well
@@ -135,12 +143,12 @@ public class WeatherForecastTool : ITool
 }
 ```
 
-#### 2. טיפול עקבי בשגיאות
+#### 2. טיפול שגיאות עקבי
 
-יישמו טיפול חזק בשגיאות עם הודעות שגיאה אינפורמטיביות ומנגנוני התאוששות מתאימים.
+יישם טיפול שגיאות חזק עם הודעות שגיאה אינפורמטיביות ומנגנוני התאוששות מתאימים.
 
 ```python
-# Python example with comprehensive error handling
+# דוגמה בפייתון עם טיפול שגיאות מקיף
 class DataQueryTool:
     def get_name(self):
         return "dataQuery"
@@ -150,19 +158,19 @@ class DataQueryTool:
     
     async def execute(self, parameters):
         try:
-            # Parameter validation
+            # אימות פרמטרים
             if "query" not in parameters:
                 raise ToolParameterError("Missing required parameter: query")
                 
             query = parameters["query"]
             
-            # Security validation
+            # אימות אבטחה
             if self._contains_unsafe_sql(query):
                 raise ToolSecurityError("Query contains potentially unsafe SQL")
             
             try:
-                # Database operation with timeout
-                async with timeout(10):  # 10 second timeout
+                # פעולה במסד נתונים עם גבול זמן
+                async with timeout(10):  # גבול זמן של 10 שניות
                     result = await self._database.execute_query(query)
                     
                 return ToolResponse(
@@ -171,37 +179,37 @@ class DataQueryTool:
             except asyncio.TimeoutError:
                 raise ToolExecutionError("Database query timed out after 10 seconds")
             except DatabaseConnectionError as e:
-                # Connection errors might be transient
+                # שגיאות חיבור עשויות להיות זמניות
                 self._log_error("Database connection error", e)
                 raise ToolExecutionError(f"Database connection error: {str(e)}")
             except DatabaseQueryError as e:
-                # Query errors are likely client errors
+                # שגיאות שאילתה הן ככל הנראה שגיאות לקוח
                 self._log_error("Database query error", e)
                 raise ToolExecutionError(f"Invalid query: {str(e)}")
                 
         except ToolError:
-            # Let tool-specific errors pass through
+            # אפשר לשגיאות ספציפיות לכלי לעבור
             raise
         except Exception as e:
-            # Catch-all for unexpected errors
+            # תפיסה כוללת של שגיאות לא צפויות
             self._log_error("Unexpected error in DataQueryTool", e)
             raise ToolExecutionError(f"An unexpected error occurred: {str(e)}")
     
     def _contains_unsafe_sql(self, query):
-        # Implementation of SQL injection detection
+        # יישום של גילוי הזרקת SQL
         pass
         
     def _log_error(self, message, error):
-        # Implementation of error logging
+        # יישום של רישום שגיאות
         pass
 ```
 
-#### 3. ולידציה של פרמטרים
+#### 3. בדיקת תקינות פרמטרים
 
-תמיד בצעו ולידציה של פרמטרים באופן יסודי כדי למנוע קלט פגום או זדוני.
+תמיד אמת פרמטרים ביסודיות כדי למנוע קלט פגום או זדוני.
 
 ```javascript
-// JavaScript/TypeScript example with detailed parameter validation
+// דוגמת JavaScript/TypeScript עם אימות פרמטרים מפורט
 class FileOperationTool {
   getName() {
     return "fileOperation";
@@ -236,7 +244,7 @@ class FileOperationTool {
   }
   
   async execute(parameters) {
-    // 1. Validate parameter presence
+    // 1. אימות נוכחות הפרמטר
     if (!parameters.operation) {
       throw new ToolError("Missing required parameter: operation");
     }
@@ -245,7 +253,7 @@ class FileOperationTool {
       throw new ToolError("Missing required parameter: path");
     }
     
-    // 2. Validate parameter types
+    // 2. אימות סוגי הפרמטרים
     if (typeof parameters.operation !== "string") {
       throw new ToolError("Parameter 'operation' must be a string");
     }
@@ -254,45 +262,45 @@ class FileOperationTool {
       throw new ToolError("Parameter 'path' must be a string");
     }
     
-    // 3. Validate parameter values
+    // 3. אימות ערכי הפרמטרים
     const validOperations = ["read", "write", "delete"];
     if (!validOperations.includes(parameters.operation)) {
       throw new ToolError(`Invalid operation. Must be one of: ${validOperations.join(", ")}`);
     }
     
-    // 4. Validate content presence for write operation
+    // 4. אימות נוכחות תוכן עבור פעולת כתיבה
     if (parameters.operation === "write" && !parameters.content) {
       throw new ToolError("Content parameter is required for write operation");
     }
     
-    // 5. Path safety validation
+    // 5. אימות בטיחות הנתיב
     if (!this.isPathWithinAllowedDirectories(parameters.path)) {
       throw new ToolError("Access denied: path is outside of allowed directories");
     }
     
-    // Implementation based on validated parameters
+    // יישום מבוסס על פרמטרים מאומתים
     // ...
   }
   
   isPathWithinAllowedDirectories(path) {
-    // Implementation of path safety check
+    // יישום בדיקת בטיחות הנתיב
     // ...
   }
 }
 ```
 
-### דוגמאות ליישום אבטחה
+### דוגמאות מימוש אבטחה
 
 #### 1. אימות והרשאה
 
 ```java
-// Java example with authentication and authorization
+// דוגמת Java עם אימות והרשאה
 public class SecureDataAccessTool implements Tool {
     private final AuthenticationService authService;
     private final AuthorizationService authzService;
     private final DataService dataService;
     
-    // Dependency injection
+    // הזרקת תלויות
     public SecureDataAccessTool(
             AuthenticationService authService,
             AuthorizationService authzService,
@@ -309,10 +317,10 @@ public class SecureDataAccessTool implements Tool {
     
     @Override
     public ToolResponse execute(ToolRequest request) {
-        // 1. Extract authentication context
+        // 1. חילוץ הקשר האימות
         String authToken = request.getContext().getAuthToken();
         
-        // 2. Authenticate user
+        // 2. אימות משתמש
         UserIdentity user;
         try {
             user = authService.validateToken(authToken);
@@ -320,7 +328,7 @@ public class SecureDataAccessTool implements Tool {
             return ToolResponse.error("Authentication failed: " + e.getMessage());
         }
         
-        // 3. Check authorization for the specific operation
+        // 3. בדיקת הרשאה לפעולה ספציפית
         String dataId = request.getParameters().get("dataId").getAsString();
         String operation = request.getParameters().get("operation").getAsString();
         
@@ -329,7 +337,7 @@ public class SecureDataAccessTool implements Tool {
             return ToolResponse.error("Access denied: Insufficient permissions for this operation");
         }
         
-        // 4. Proceed with authorized operation
+        // 4. המשך עם הפעולה המורשית
         try {
             switch (operation) {
                 case "read":
@@ -429,26 +437,26 @@ public class RateLimitingMiddleware
 
 ### 1. בדיקות יחידה לכלי MCP
 
-תמיד בדקו את הכלים שלכם בנפרד, תוך הדמיית תלות חיצונית:
+תמיד בדוק את הכלים שלך בבידוד, תוך הדמיית תלות חיצונית:
 
 ```typescript
-// TypeScript example of a tool unit test
+// דוגמת בדיקת יחידה לכלי ב-TypeScript
 describe('WeatherForecastTool', () => {
   let tool: WeatherForecastTool;
   let mockWeatherService: jest.Mocked<IWeatherService>;
   
   beforeEach(() => {
-    // Create a mock weather service
+    // צור שירות מזג אוויר מדומה
     mockWeatherService = {
       getForecasts: jest.fn()
     } as any;
     
-    // Create the tool with the mock dependency
+    // צור את הכלי עם התלות המדומה
     tool = new WeatherForecastTool(mockWeatherService);
   });
   
   it('should return weather forecast for a location', async () => {
-    // Arrange
+    // הסדר
     const mockForecast = {
       location: 'Seattle',
       forecasts: [
@@ -460,23 +468,23 @@ describe('WeatherForecastTool', () => {
     
     mockWeatherService.getForecasts.mockResolvedValue(mockForecast);
     
-    // Act
+    // פעולה
     const response = await tool.execute({
       location: 'Seattle',
       days: 3
     });
     
-    // Assert
+    // אימות
     expect(mockWeatherService.getForecasts).toHaveBeenCalledWith('Seattle', 3);
     expect(response.content[0].text).toContain('Seattle');
     expect(response.content[0].text).toContain('Sunny');
   });
   
   it('should handle errors from the weather service', async () => {
-    // Arrange
+    // הסדר
     mockWeatherService.getForecasts.mockRejectedValue(new Error('Service unavailable'));
     
-    // Act & Assert
+    // פעולה ואימות
     await expect(tool.execute({
       location: 'Seattle',
       days: 3
@@ -487,46 +495,46 @@ describe('WeatherForecastTool', () => {
 
 ### 2. בדיקות אינטגרציה
 
-בדקו את הזרימה המלאה מבקשות לקוח ועד תגובות שרת:
+בדוק את הזרימה המלאה מבקשות הלקוח ועד תגובות השרת:
 
 ```python
-# Python integration test example
+# דוגמת בדיקת אינטגרציה בפייתון
 @pytest.mark.asyncio
 async def test_mcp_server_integration():
-    # Start a test server
+    # הפעל שרת בדיקות
     server = McpServer()
     server.register_tool(WeatherForecastTool(MockWeatherService()))
     await server.start(port=5000)
     
     try:
-        # Create a client
+        # צור לקוח
         client = McpClient("http://localhost:5000")
         
-        # Test tool discovery
+        # בדוק גילוי כלי
         tools = await client.discover_tools()
         assert "weatherForecast" in [t.name for t in tools]
         
-        # Test tool execution
+        # בדוק ביצוע כלי
         response = await client.execute_tool("weatherForecast", {
             "location": "Seattle",
             "days": 3
         })
         
-        # Verify response
+        # אמת תגובה
         assert response.status_code == 200
         assert "Seattle" in response.content[0].text
         assert len(json.loads(response.content[0].text)["forecasts"]) == 3
         
     finally:
-        # Clean up
+        # נקה משאבים
         await server.stop()
 ```
 
-## אופטימיזציית ביצועים
+## אופטימיזציה לביצועים
 
-### 1. אסטרטגיות קאשינג
+### 1. אסטרטגיות מטמון
 
-יישמו קאשינג מתאים כדי להפחית השהיה ושימוש במשאבים:
+יישם מטמון מתאים להפחתת השהיה ושימוש במשאבים:
 
 ```csharp
 // C# example with caching
@@ -595,18 +603,18 @@ public class CachedWeatherTool : ITool
 }
 ```
 
-#### 2. הזרקת תלות ובדיקתיות
+#### 2. הזרקת תלות ויכולת בדיקה
 
-עצבו כלים כך שיקבלו את התלויות שלהם דרך הזרקת בנאי, מה שהופך אותם לבדיקים וניתנים להגדרה:
+עצב כלים שיקבלו את התלויות שלהם דרך הזרקת קונסטרקטור, מה שיהפוך אותם לניתנים לבדיקה ולהגדרה:
 
 ```java
-// Java example with dependency injection
+// דוגמת Java עם הזרקת תלות
 public class CurrencyConversionTool implements Tool {
     private final ExchangeRateService exchangeService;
     private final CacheService cacheService;
     private final Logger logger;
     
-    // Dependencies injected through constructor
+    // התלויות מוזרקות דרך הבנאי
     public CurrencyConversionTool(
             ExchangeRateService exchangeService,
             CacheService cacheService,
@@ -616,51 +624,51 @@ public class CurrencyConversionTool implements Tool {
         this.logger = logger;
     }
     
-    // Tool implementation
+    // מימוש הכלי
     // ...
 }
 ```
 
-#### 3. כלים ניתנים להרכבה
+#### 3. כלים קומפוזביליים
 
-עצבו כלים שניתן להרכיב יחד כדי ליצור זרימות עבודה מורכבות יותר:
+עצב כלים שניתן להרכיב יחדיו ליצירת זרימות עבודה מורכבות יותר:
 
 ```python
-# Python example showing composable tools
+# דוגמה בפייתון המציגה כלים שניתן להרכיב
 class DataFetchTool(Tool):
     def get_name(self):
         return "dataFetch"
     
-    # Implementation...
+    # מימוש...
 
 class DataAnalysisTool(Tool):
     def get_name(self):
         return "dataAnalysis"
     
-    # This tool can use results from the dataFetch tool
+    # כלי זה יכול להשתמש בתוצאות של כלי dataFetch
     async def execute_async(self, request):
-        # Implementation...
+        # מימוש...
         pass
 
 class DataVisualizationTool(Tool):
     def get_name(self):
         return "dataVisualize"
     
-    # This tool can use results from the dataAnalysis tool
+    # כלי זה יכול להשתמש בתוצאות של כלי dataAnalysis
     async def execute_async(self, request):
-        # Implementation...
+        # מימוש...
         pass
 
-# These tools can be used independently or as part of a workflow
+# ניתן להשתמש בכלים אלו באופן עצמאי או כחלק מתהליך עבודה
 ```
 
 ### שיטות עבודה מומלצות לעיצוב סכמות
 
-הסכמה היא החוזה בין המודל לכלי שלכם. סכמות מעוצבות היטב מובילות לשימושיות טובה יותר של הכלים.
+הסכמה היא החוזה בין המודל לכלי. סכמות מתוכננות היטב מובילות לשימושיות טובה יותר של הכלי.
 
 #### 1. תיאורי פרמטרים ברורים
 
-תמיד כללו מידע תיאורי עבור כל פרמטר:
+תמיד כלול מידע תיאורי לכל פרמטר:
 
 ```csharp
 public object GetSchema()
@@ -697,9 +705,9 @@ public object GetSchema()
 }
 ```
 
-#### 2. אילוצי ולידציה
+#### 2. מגבלות אימות
 
-כללו אילוצי ולידציה כדי למנוע קלטים לא חוקיים:
+כלול מגבלות אימות למניעת קלטים לא חוקיים:
 
 ```java
 Map<String, Object> getSchema() {
@@ -708,20 +716,20 @@ Map<String, Object> getSchema() {
     
     Map<String, Object> properties = new HashMap<>();
     
-    // Email property with format validation
+    // מאפיין דוא"ל עם אימות פורמט
     Map<String, Object> email = new HashMap<>();
     email.put("type", "string");
     email.put("format", "email");
     email.put("description", "User email address");
     
-    // Age property with numeric constraints
+    // מאפיין גיל עם מגבלות מספריות
     Map<String, Object> age = new HashMap<>();
     age.put("type", "integer");
     age.put("minimum", 13);
     age.put("maximum", 120);
     age.put("description", "User age in years");
     
-    // Enumerated property
+    // מאפיין ממוספר
     Map<String, Object> subscription = new HashMap<>();
     subscription.put("type", "string");
     subscription.put("enum", Arrays.asList("free", "basic", "premium"));
@@ -739,17 +747,17 @@ Map<String, Object> getSchema() {
 }
 ```
 
-#### 3. מבני תגובה עקביים
+#### 3. מבני החזרה עקביים
 
-שמרו על עקביות במבני התגובה שלכם כדי להקל על המודלים לפרש תוצאות:
+שמור על עקביות במבני התגובה שלך כדי להקל על מודלים לפרש תוצאות:
 
 ```python
 async def execute_async(self, request):
     try:
-        # Process request
+        # לעבד בקשה
         results = await self._search_database(request.parameters["query"])
         
-        # Always return a consistent structure
+        # תמיד להחזיר מבנה עקבי
         return ToolResponse(
             result={
                 "matches": [self._format_item(item) for item in results],
@@ -782,11 +790,11 @@ def _format_item(self, item):
 
 ### טיפול בשגיאות
 
-טיפול חזק בשגיאות הוא קריטי לכלי MCP כדי לשמור על אמינות.
+טיפול שגיאות חזק הוא קריטי לכלי MCP לשמירת אמינות.
 
-#### 1. טיפול חינני בשגיאות
+#### 1. טיפול שגיאות באופן אופרטיבי
 
-טפלו בשגיאות ברמות המתאימות וספקו הודעות אינפורמטיביות:
+טפל בשגיאות ברמות מתאימות וספק הודעות אינפורמטיביות:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -830,13 +838,13 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 
 #### 2. תגובות שגיאה מובנות
 
-החזירו מידע שגיאה מובנה כאשר ניתן:
+החזר מידע שגיאה מובנה כשאפשרי:
 
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
     try {
-        // Implementation
+        // יישום
     } catch (Exception ex) {
         Map<String, Object> errorResult = new HashMap<>();
         
@@ -854,45 +862,45 @@ public ToolResponse execute(ToolRequest request) {
                 .build();
         }
         
-        // Re-throw other exceptions as ToolExecutionException
+        // להשליך מחדש חריגות אחרות כ-ToolExecutionException
         throw new ToolExecutionException("Tool execution failed: " + ex.getMessage(), ex);
     }
 }
 ```
 
-#### 3. לוגיקת נסיונות חוזרים
+#### 3. לוגיקת ניסיון חוזר
 
-יישמו לוגיקת נסיונות חוזרים מתאימה עבור כשלים חולפים:
+יישם לוגיקת ניסיון חוזר מתאימה לכישלונות זמניים:
 
 ```python
 async def execute_async(self, request):
     max_retries = 3
     retry_count = 0
-    base_delay = 1  # seconds
+    base_delay = 1  # שניות
     
     while retry_count < max_retries:
         try:
-            # Call external API
+            # קריאה ל-API חיצוני
             return await self._call_api(request.parameters)
         except TransientError as e:
             retry_count += 1
             if retry_count >= max_retries:
                 raise ToolExecutionException(f"Operation failed after {max_retries} attempts: {str(e)}")
                 
-            # Exponential backoff
+            # נסיגה מעריכית
             delay = base_delay * (2 ** (retry_count - 1))
             logging.warning(f"Transient error, retrying in {delay}s: {str(e)}")
             await asyncio.sleep(delay)
         except Exception as e:
-            # Non-transient error, don't retry
+            # שגיאה שאינה זמנית, לא לנסות שוב
             raise ToolExecutionException(f"Operation failed: {str(e)}")
 ```
 
-### אופטימיזציית ביצועים
+### אופטימיזציה לביצועים
 
-#### 1. קאשינג
+#### 1. מטמון
 
-יישמו קאשינג עבור פעולות יקרות:
+יישם מטמון עבור פעולות יקרות:
 
 ```csharp
 public class CachedDataTool : IMcpTool
@@ -940,7 +948,7 @@ public class CachedDataTool : IMcpTool
 
 #### 2. עיבוד אסינכרוני
 
-השתמשו בדפוסי תכנות אסינכרוניים עבור פעולות תלויות I/O:
+השתמש בדפוסי תכנות אסינכרוניים עבור פעולות I/O:
 
 ```java
 public class AsyncDocumentProcessingTool implements Tool {
@@ -951,23 +959,23 @@ public class AsyncDocumentProcessingTool implements Tool {
     public ToolResponse execute(ToolRequest request) {
         String documentId = request.getParameters().get("documentId").asText();
         
-        // For long-running operations, return a processing ID immediately
+        // עבור פעולות שמתמשכות זמן רב, החזר מיד מזהה עיבוד
         String processId = UUID.randomUUID().toString();
         
-        // Start async processing
+        // התחל עיבוד אסינכרוני
         CompletableFuture.runAsync(() -> {
             try {
-                // Perform long-running operation
+                // בצע פעולה שמתמשכת זמן רב
                 documentService.processDocument(documentId);
                 
-                // Update status (would typically be stored in a database)
+                // עדכן סטטוס (בדרך כלל יישמר במסד נתונים)
                 processStatusRepository.updateStatus(processId, "completed");
             } catch (Exception ex) {
                 processStatusRepository.updateStatus(processId, "failed", ex.getMessage());
             }
         }, executorService);
         
-        // Return immediate response with process ID
+        // החזר תגובה מיידית עם מזהה התהליך
         Map<String, Object> result = new HashMap<>();
         result.put("processId", processId);
         result.put("status", "processing");
@@ -976,7 +984,7 @@ public class AsyncDocumentProcessingTool implements Tool {
         return new ToolResponse.Builder().setResult(result).build();
     }
     
-    // Companion status check tool
+    // כלי בדיקת סטטוס משלים
     public class ProcessStatusTool implements Tool {
         @Override
         public ToolResponse execute(ToolRequest request) {
@@ -989,35 +997,35 @@ public class AsyncDocumentProcessingTool implements Tool {
 }
 ```
 
-#### 3. ויסות משאבים
+#### 3. הגבלת משאבים
 
-יישמו ויסות משאבים כדי למנוע עומס יתר:
+יישם הגבלת משאבים למניעת עומסים:
 
 ```python
 class ThrottledApiTool(Tool):
     def __init__(self):
         self.rate_limiter = TokenBucketRateLimiter(
-            tokens_per_second=5,  # Allow 5 requests per second
-            bucket_size=10        # Allow bursts up to 10 requests
+            tokens_per_second=5,  # אפשר 5 בקשות לשנייה
+            bucket_size=10        # אפשר זינוקים של עד 10 בקשות
         )
     
     async def execute_async(self, request):
-        # Check if we can proceed or need to wait
+        # בדוק אם אפשר להמשיך או צריך לחכות
         delay = self.rate_limiter.get_delay_time()
         
         if delay > 0:
-            if delay > 2.0:  # If wait is too long
+            if delay > 2.0:  # אם זמן ההמתנה ארוך מדי
                 raise ToolExecutionException(
                     f"Rate limit exceeded. Please try again in {delay:.1f} seconds."
                 )
             else:
-                # Wait for the appropriate delay time
+                # המתן במשך הזמן המתאים
                 await asyncio.sleep(delay)
         
-        # Consume a token and proceed with the request
+        # צרוך אסימון והמשך עם הבקשה
         self.rate_limiter.consume()
         
-        # Call API
+        # קריאה ל-API
         result = await self._call_api(request.parameters)
         return ToolResponse(result=result)
 
@@ -1035,7 +1043,7 @@ class TokenBucketRateLimiter:
             if self.tokens >= 1:
                 return 0
             
-            # Calculate time until next token available
+            # חשב את הזמן עד שהאסימון הבא זמין
             return (1 - self.tokens) / self.tokens_per_second
     
     async def consume(self):
@@ -1047,7 +1055,7 @@ class TokenBucketRateLimiter:
         now = time.time()
         elapsed = now - self.last_refill
         
-        # Add new tokens based on elapsed time
+        # הוסף אסימונים חדשים על בסיס הזמן שחלף
         new_tokens = elapsed * self.tokens_per_second
         self.tokens = min(self.bucket_size, self.tokens + new_tokens)
         self.last_refill = now
@@ -1055,9 +1063,9 @@ class TokenBucketRateLimiter:
 
 ### שיטות עבודה מומלצות לאבטחה
 
-#### 1. ולידציה של קלט
+#### 1. אימות קלט
 
-תמיד בצעו ולידציה יסודית של פרמטרי קלט:
+תמיד אמת פרמטרי קלט ביסודיות:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -1100,33 +1108,33 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 
 #### 2. בדיקות הרשאה
 
-יישמו בדיקות הרשאה מתאימות:
+יישם בדיקות הרשאה מתאימות:
 
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
-    // Get user context from request
+    // קבלת הקשר המשתמש מבקשה
     UserContext user = request.getContext().getUserContext();
     
-    // Check if user has required permissions
+    // בדוק אם למשתמש יש הרשאות נדרשות
     if (!authorizationService.hasPermission(user, "documents:read")) {
         throw new ToolExecutionException("User does not have permission to access documents");
     }
     
-    // For specific resources, check access to that resource
+    // עבור משאבים ספציפיים, בדוק גישה למשאב זה
     String documentId = request.getParameters().get("documentId").asText();
     if (!documentService.canUserAccess(user.getId(), documentId)) {
         throw new ToolExecutionException("Access denied to the requested document");
     }
     
-    // Proceed with tool execution
+    // המשך בביצוע הכלי
     // ...
 }
 ```
 
-#### 3. טיפול בנתונים רגישים
+#### 3. טיפול במידע רגיש
 
-טפלו בנתונים רגישים בזהירות:
+טפל במידע רגיש בזהירות:
 
 ```python
 class SecureDataTool(Tool):
@@ -1144,46 +1152,46 @@ class SecureDataTool(Tool):
         user_id = request.parameters["userId"]
         include_sensitive = request.parameters.get("includeSensitiveData", False)
         
-        # Get user data
+        # קבל נתוני משתמש
         user_data = await self.user_service.get_user_data(user_id)
         
-        # Filter sensitive fields unless explicitly requested AND authorized
+        # סנן שדות רגישים אלא אם כן נדרש במפורש ואושר
         if not include_sensitive or not self._is_authorized_for_sensitive_data(request):
             user_data = self._redact_sensitive_fields(user_data)
         
         return ToolResponse(result=user_data)
     
     def _is_authorized_for_sensitive_data(self, request):
-        # Check authorization level in request context
+        # בדוק את רמת ההרשאה בהקשר הבקשה
         auth_level = request.context.get("authorizationLevel")
         return auth_level == "admin"
     
     def _redact_sensitive_fields(self, user_data):
-        # Create a copy to avoid modifying the original
+        # צור עותק כדי להימנע משינוי המקור
         redacted = user_data.copy()
         
-        # Redact specific sensitive fields
+        # הסר מידע רגיש ספציפי
         sensitive_fields = ["ssn", "creditCardNumber", "password"]
         for field in sensitive_fields:
             if field in redacted:
                 redacted[field] = "REDACTED"
         
-        # Redact nested sensitive data
+        # הסר נתונים רגישים מקוננים
         if "financialInfo" in redacted:
             redacted["financialInfo"] = {"available": True, "accessRestricted": True}
         
         return redacted
 ```
 
-## שיטות עבודה מומלצות לבדיקות כלים של MCP
+## שיטות עבודה מומלצות לבדיקות כלי MCP
 
-בדיקות מקיפות מבטיחות שכלי MCP פועלים כראוי, מטפלים במקרי קצה ומשתלבים כראוי עם שאר המערכת.
+בדיקה מקיפה מוודאת שכלי MCP פועלים כהלכה, מטפלים במקרי קצה, ומשתלבים היטב עם שאר המערכת.
 
 ### בדיקות יחידה
 
-#### 1. בדקו כל כלי בנפרד
+#### 1. בדוק כל כלי בבידוד
 
-צרו בדיקות ממוקדות לפונקציונליות של כל כלי:
+צור בדיקות ממוקדות לפונקציונליות של כל כלי:
 
 ```csharp
 [Fact]
@@ -1243,27 +1251,27 @@ public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
 }
 ```
 
-#### 2. בדיקות ולידציה של סכמות
+#### 2. בדיקת תקינות הסכמה
 
-בדקו שסכמות תקינות ואוכפות אילוצים כראוי:
+בדוק שהסכמות תקפות ומאכפות מגבלות כראוי:
 
 ```java
 @Test
 public void testSchemaValidation() {
-    // Create tool instance
+    // צור מופע של הכלי
     SearchTool searchTool = new SearchTool();
     
-    // Get schema
+    // קבל סכימה
     Object schema = searchTool.getSchema();
     
-    // Convert schema to JSON for validation
+    // המר סכימה ל-JSON לצורך אימות
     String schemaJson = objectMapper.writeValueAsString(schema);
     
-    // Validate schema is valid JSONSchema
+    // אמת שהסכימה היא JSONSchema תקפה
     JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
     JsonSchema jsonSchema = factory.getJsonSchema(schemaJson);
     
-    // Test valid parameters
+    // בדוק פרמטרים תקפים
     JsonNode validParams = objectMapper.createObjectNode()
         .put("query", "test query")
         .put("limit", 5);
@@ -1271,14 +1279,14 @@ public void testSchemaValidation() {
     ProcessingReport validReport = jsonSchema.validate(validParams);
     assertTrue(validReport.isSuccess());
     
-    // Test missing required parameter
+    // בדוק פרמטר דרוש חסר
     JsonNode missingRequired = objectMapper.createObjectNode()
         .put("limit", 5);
         
     ProcessingReport missingReport = jsonSchema.validate(missingRequired);
     assertFalse(missingReport.isSuccess());
     
-    // Test invalid parameter type
+    // בדוק סוג פרמטר לא תקין
     JsonNode invalidType = objectMapper.createObjectNode()
         .put("query", "test")
         .put("limit", "not-a-number");
@@ -1288,21 +1296,21 @@ public void testSchemaValidation() {
 }
 ```
 
-#### 3. בדיקות טיפול בשגיאות
+#### 3. בדיקות טיפול שגיאות
 
-צרו בדיקות ספציפיות לתנאי שגיאה:
+צור בדיקות ספציפיות למקרי שגיאה:
 
 ```python
 @pytest.mark.asyncio
 async def test_api_tool_handles_timeout():
-    # Arrange
-    tool = ApiTool(timeout=0.1)  # Very short timeout
+    # לסדר
+    tool = ApiTool(timeout=0.1)  # זמן קצוב קצר מאוד
     
-    # Mock a request that will time out
+    # לזייף בקשה שתיגמר בזמן
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
-            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # Longer than timeout
+            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # ארוך יותר מהזמן הקצוב
         )
         
         request = ToolRequest(
@@ -1310,19 +1318,19 @@ async def test_api_tool_handles_timeout():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Act & Assert
+        # לבצע ולהבטיח
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Verify exception message
+        # לאמת את הודעת החריגה
         assert "timed out" in str(exc_info.value).lower()
 
 @pytest.mark.asyncio
 async def test_api_tool_handles_rate_limiting():
-    # Arrange
+    # לסדר
     tool = ApiTool()
     
-    # Mock a rate-limited response
+    # לזייף תגובה עם הגבלת קצב
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
@@ -1336,11 +1344,11 @@ async def test_api_tool_handles_rate_limiting():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Act & Assert
+        # לבצע ולהבטיח
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Verify exception contains rate limit information
+        # לאמת שהחריגה מכילה מידע על הגבלת קצב
         error_msg = str(exc_info.value).lower()
         assert "rate limit" in error_msg
         assert "try again" in error_msg
@@ -1348,9 +1356,9 @@ async def test_api_tool_handles_rate_limiting():
 
 ### בדיקות אינטגרציה
 
-#### 1. בדיקות שרשרת כלים
+#### 1. בדיקת שרשרת כלים
 
-בדקו כלים שעובדים יחד בשילובים צפויים:
+בדוק כלים העובדים יחד בשילובים צפויים:
 
 ```csharp
 [Fact]
@@ -1391,7 +1399,7 @@ public async Task DataProcessingWorkflow_CompletesSuccessfully()
 
 #### 2. בדיקות שרת MCP
 
-בדקו את שרת ה-MCP עם רישום מלא של כלים וביצוע:
+בדוק את שרת MCP עם הרשמת כלים מלאה וביצוע:
 
 ```java
 @SpringBootTest
@@ -1406,7 +1414,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolDiscovery() throws Exception {
-        // Test the discovery endpoint
+        // בדוק את נקודת הקצה של הגילוי
         mockMvc.perform(get("/mcp/tools"))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.tools").isArray())
@@ -1417,7 +1425,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolExecution() throws Exception {
-        // Create tool request
+        // צור בקשת כלי
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
@@ -1427,7 +1435,7 @@ public class McpServerIntegrationTest {
         parameters.put("b", 7);
         request.put("parameters", parameters);
         
-        // Send request and verify response
+        // שלח בקשה ואמת את התגובה
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -1437,17 +1445,17 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolValidation() throws Exception {
-        // Create invalid tool request
+        // צור בקשת כלי לא חוקית
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("operation", "divide");
         parameters.put("a", 10);
-        // Missing parameter "b"
+        // חסר פרמטר "b"
         request.put("parameters", parameters);
         
-        // Send request and verify error response
+        // שלח בקשה ואמת את תגובת השגיאה
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -1459,15 +1467,15 @@ public class McpServerIntegrationTest {
 
 #### 3. בדיקות מקצה לקצה
 
-בדקו זרימות עבודה שלמות מהנחיית מודל ועד ביצוע כלי:
+בדוק זרימות עבודה שלמות מהנחיית המודל ועד ביצוע הכלי:
 
 ```python
 @pytest.mark.asyncio
 async def test_model_interaction_with_tool():
-    # Arrange - Set up MCP client and mock model
+    # סידור - הקמת לקוח MCP ודגם מדומה
     mcp_client = McpClient(server_url="http://localhost:5000")
     
-    # Mock model responses
+    # תגובות דגם מדומה
     mock_model = MockLanguageModel([
         MockResponse(
             "What's the weather in Seattle?",
@@ -1482,7 +1490,7 @@ async def test_model_interaction_with_tool():
         )
     ])
     
-    # Mock weather tool response
+    # תגובת כלי מזג אוויר מדומה
     with aioresponses() as mocked:
         mocked.post(
             "http://localhost:5000/mcp/execute",
@@ -1498,14 +1506,14 @@ async def test_model_interaction_with_tool():
             }
         )
         
-        # Act
+        # ביצוע
         response = await mcp_client.send_prompt(
             "What's the weather in Seattle?",
             model=mock_model,
             allowed_tools=["weatherForecast"]
         )
         
-        # Assert
+        # אימות
         assert "Seattle" in response.generated_text
         assert "65" in response.generated_text
         assert "Sunny" in response.generated_text
@@ -1518,7 +1526,7 @@ async def test_model_interaction_with_tool():
 
 #### 1. בדיקות עומס
 
-בדקו כמה בקשות מקבילות שרת ה-MCP שלכם יכול לטפל:
+בדוק כמה בקשות סימולטניות שרת MCP יכול לטפל:
 
 ```csharp
 [Fact]
@@ -1551,9 +1559,9 @@ public async Task McpServer_HandlesHighConcurrency()
 }
 ```
 
-#### 2. בדיקות מאמץ
+#### 2. בדיקות עומס קיצוני
 
-בדקו את המערכת תחת עומס קיצוני:
+בדוק את המערכת תחת עומס קיצוני:
 
 ```java
 @Test
@@ -1562,13 +1570,13 @@ public void testServerUnderStress() {
     int rampUpTimeSeconds = 60;
     int testDurationSeconds = 300;
     
-    // Set up JMeter for stress testing
+    // להגדיר את JMeter לבדיקה תחת עומס
     StandardJMeterEngine jmeter = new StandardJMeterEngine();
     
-    // Configure JMeter test plan
+    // להגדיר תכנית בדיקה ב-JMeter
     HashTree testPlanTree = new HashTree();
     
-    // Create test plan, thread group, samplers, etc.
+    // ליצור תכנית בדיקה, קבוצת נושאים, דגימות ועוד
     TestPlan testPlan = new TestPlan("MCP Server Stress Test");
     testPlanTree.add(testPlan);
     
@@ -1580,7 +1588,7 @@ public void testServerUnderStress() {
     
     testPlanTree.add(threadGroup);
     
-    // Add HTTP sampler for tool execution
+    // להוסיף דגם HTTP להרצת הכלי
     HTTPSampler toolExecutionSampler = new HTTPSampler();
     toolExecutionSampler.setDomain("localhost");
     toolExecutionSampler.setPort(5000);
@@ -1591,29 +1599,29 @@ public void testServerUnderStress() {
     
     threadGroup.add(toolExecutionSampler);
     
-    // Add listeners
+    // להוסיף מאזינים
     SummaryReport summaryReport = new SummaryReport();
     threadGroup.add(summaryReport);
     
-    // Run test
+    // להריץ את הבדיקה
     jmeter.configure(testPlanTree);
     jmeter.run();
     
-    // Validate results
+    // לאמת את התוצאות
     assertEquals(0, summaryReport.getErrorCount());
-    assertTrue(summaryReport.getAverage() < 200); // Average response time < 200ms
-    assertTrue(summaryReport.getPercentile(90.0) < 500); // 90th percentile < 500ms
+    assertTrue(summaryReport.getAverage() < 200); // זמן תגובה ממוצע < 200ms
+    assertTrue(summaryReport.getPercentile(90.0) < 500); // האחוזון ה-90 < 500ms
 }
 ```
 
 #### 3. ניטור ופרופילינג
 
-הגדירו ניטור לניתוח ביצועים ארוך טווח:
+הגדר ניטור לניתוח ביצועים ארוך טווח:
 
 ```python
-# Configure monitoring for an MCP server
+# הגדרת ניטור עבור שרת MCP
 def configure_monitoring(server):
-    # Set up Prometheus metrics
+    # קביעת מדדי Prometheus
     prometheus_metrics = {
         "request_count": Counter("mcp_requests_total", "Total MCP requests"),
         "request_latency": Histogram(
@@ -1639,10 +1647,10 @@ def configure_monitoring(server):
         )
     }
     
-    # Add middleware for timing and recording metrics
+    # הוספת שכבת ביניים למדידת זמן והקלטת מדדים
     server.add_middleware(PrometheusMiddleware(prometheus_metrics))
     
-    # Expose metrics endpoint
+    # לחשוף נקודת קצה של מדדים
     @server.router.get("/metrics")
     async def metrics():
         return generate_latest()
@@ -1650,29 +1658,29 @@ def configure_monitoring(server):
     return server
 ```
 
-## דפוסי עיצוב זרימות עבודה של MCP
+## דפוסי עיצוב של זרימות עבודה ב-MCP
 
-זרימות עבודה מעוצבות היטב של MCP משפרות יעילות, אמינות ותחזוקה. הנה דפוסים מרכזיים שיש לעקוב אחריהם:
+זרימות עבודה מתוכננות היטב משפרות יעילות, אמינות ותחזוקה. הנה דפוסים מרכזיים שיש לעקוב אחריהם:
 
 ### 1. דפוס שרשרת כלים
 
-חברו מספר כלים ברצף שבו הפלט של כל כלי הופך לקלט של הכלי הבא:
+מחבר כלים מרובים ברצף שבו הפלט של כל כלי הופך לקלט של הבא:
 
 ```python
-# Python Chain of Tools implementation
+# יישום שרשרת כלים בפייתון
 class ChainWorkflow:
     def __init__(self, tools_chain):
-        self.tools_chain = tools_chain  # List of tool names to execute in sequence
+        self.tools_chain = tools_chain  # רשימת שמות כלים לביצוע ברצף
     
     async def execute(self, mcp_client, initial_input):
         current_result = initial_input
         all_results = {"input": initial_input}
         
         for tool_name in self.tools_chain:
-            # Execute each tool in the chain, passing previous result
+            # הפעל כל כלי בשרשרת, תוך העברת התוצאה הקודמת
             response = await mcp_client.execute_tool(tool_name, current_result)
             
-            # Store result and use as input for next tool
+            # שמור את התוצאה והשתמש בה כקלט לכלי הבא
             all_results[tool_name] = response.result
             current_result = response.result
         
@@ -1681,7 +1689,7 @@ class ChainWorkflow:
             "all_results": all_results
         }
 
-# Example usage
+# דוגמה לשימוש
 data_processing_chain = ChainWorkflow([
     "dataFetch",
     "dataCleaner",
@@ -1695,9 +1703,9 @@ result = await data_processing_chain.execute(
 )
 ```
 
-### 2. דפוס מפעיל
+### 2. דפוס Dispatcher
 
-השתמשו בכלי מרכזי שמפנה לכלים מתמחים על בסיס קלט:
+השתמש בכלי מרכזי שמפנה לכלים מיוחדים בהתבסס על קלט:
 
 ```csharp
 public class ContentDispatcherTool : IMcpTool
@@ -1779,7 +1787,7 @@ public class ContentDispatcherTool : IMcpTool
 
 ### 3. דפוס עיבוד מקבילי
 
-בצעו מספר כלים בו-זמנית לצורך יעילות:
+הרץ כלים מרובים במקביל ליעילות:
 
 ```java
 public class ParallelDataProcessingWorkflow {
@@ -1790,11 +1798,11 @@ public class ParallelDataProcessingWorkflow {
     }
     
     public WorkflowResult execute(String datasetId) {
-        // Step 1: Fetch dataset metadata (synchronous)
+        // שלב 1: שלוף את מטא-נתוני קבוצת הנתונים (סינכרוני)
         ToolResponse metadataResponse = mcpClient.executeTool("datasetMetadata", 
             Map.of("datasetId", datasetId));
         
-        // Step 2: Launch multiple analyses in parallel
+        // שלב 2: הפעל ניתוחים מרובים במקביל
         CompletableFuture<ToolResponse> statisticalAnalysis = CompletableFuture.supplyAsync(() ->
             mcpClient.executeTool("statisticalAnalysis", Map.of(
                 "datasetId", datasetId,
@@ -1816,25 +1824,25 @@ public class ParallelDataProcessingWorkflow {
             ))
         );
         
-        // Wait for all parallel tasks to complete
+        // המתן להשלמת כל המשימות במקביל
         CompletableFuture<Void> allAnalyses = CompletableFuture.allOf(
             statisticalAnalysis, correlationAnalysis, outlierDetection
         );
         
-        allAnalyses.join();  // Wait for completion
+        allAnalyses.join();  // המתן להשלמה
         
-        // Step 3: Combine results
+        // שלב 3: שלב תוצאות
         Map<String, Object> combinedResults = new HashMap<>();
         combinedResults.put("metadata", metadataResponse.getResult());
         combinedResults.put("statistics", statisticalAnalysis.join().getResult());
         combinedResults.put("correlations", correlationAnalysis.join().getResult());
         combinedResults.put("outliers", outlierDetection.join().getResult());
         
-        // Step 4: Generate summary report
+        // שלב 4: הפק דוח סיכום
         ToolResponse summaryResponse = mcpClient.executeTool("reportGenerator", 
             Map.of("analysisResults", combinedResults));
         
-        // Return complete workflow result
+        // החזר את תוצאת זרימת העבודה המלאה
         WorkflowResult result = new WorkflowResult();
         result.setDatasetId(datasetId);
         result.setAnalysisResults(combinedResults);
@@ -1845,9 +1853,9 @@ public class ParallelDataProcessingWorkflow {
 }
 ```
 
-### 4. דפוס התאוששות משגיאות
+### 4. דפוס התמודדות עם שגיאות
 
-יישמו מנגנוני גיבוי חינניים לכשלים של כלים:
+יישם התדרדרויות עדינות לכישלונות כלים:
 
 ```python
 class ResilientWorkflow:
@@ -1856,7 +1864,7 @@ class ResilientWorkflow:
     
     async def execute_with_fallback(self, primary_tool, fallback_tool, parameters):
         try:
-            # Try primary tool first
+            # נסה תחילה את הכלי הראשי
             response = await self.client.execute_tool(primary_tool, parameters)
             return {
                 "result": response.result,
@@ -1864,12 +1872,12 @@ class ResilientWorkflow:
                 "tool": primary_tool
             }
         except ToolExecutionException as e:
-            # Log the failure
+            # רישום הכישלון
             logging.warning(f"Primary tool '{primary_tool}' failed: {str(e)}")
             
-            # Fall back to secondary tool
+            # חזור לכלי המשני
             try:
-                # Might need to transform parameters for fallback tool
+                # ייתכן שיהיה צורך לשנות את הפרמטרים לכלי המשני
                 fallback_params = self._adapt_parameters(parameters, primary_tool, fallback_tool)
                 
                 response = await self.client.execute_tool(fallback_tool, fallback_params)
@@ -1880,7 +1888,7 @@ class ResilientWorkflow:
                     "primaryError": str(e)
                 }
             except ToolExecutionException as fallback_error:
-                # Both tools failed
+                # שני הכלים נכשלו
                 logging.error(f"Both primary and fallback tools failed. Fallback error: {str(fallback_error)}")
                 raise WorkflowExecutionException(
                     f"Workflow failed: primary error: {str(e)}; fallback error: {str(fallback_error)}"
@@ -1888,22 +1896,22 @@ class ResilientWorkflow:
     
     def _adapt_parameters(self, params, from_tool, to_tool):
         """Adapt parameters between different tools if needed"""
-        # This implementation would depend on the specific tools
-        # For this example, we'll just return the original parameters
+        # יישום זה תלוי בכלים הספציפיים
+        # בדוגמה זו נחזיר רק את הפרמטרים המקוריים
         return params
 
-# Example usage
+# שימוש לדוגמה
 async def get_weather(workflow, location):
     return await workflow.execute_with_fallback(
-        "premiumWeatherService",  # Primary (paid) weather API
-        "basicWeatherService",    # Fallback (free) weather API
+        "premiumWeatherService",  # API מזג אוויר ראשי (בתשלום)
+        "basicWeatherService",    # API מזג אוויר משני (חינמי)
         {"location": location}
     )
 ```
 
-### 5. דפוס הרכבת זרימות עבודה
+### 5. דפוס קומפוזיציית זרימות עבודה
 
-בנו זרימות עבודה מורכבות על ידי הרכבת זרימות פשוטות יותר:
+בנה זרימות מורכבות באמצעות הרכבת זורמות פשוטות יותר:
 
 ```csharp
 public class CompositeWorkflow : IWorkflow
@@ -1950,37 +1958,37 @@ var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
 });
 ```
 
-# בדיקות שרתי MCP: שיטות עבודה מומלצות וטיפים מובילים
+# בדיקת שרתי MCP: שיטות עבודה מומלצות ועצות מובילות
 
 ## סקירה כללית
 
-בדיקות הן היבט קריטי בפיתוח שרתי MCP אמינים ואיכותיים. מדריך זה מספק שיטות עבודה מומלצות וטיפים לבדיקת שרתי MCP לאורך כל מחזור הפיתוח, מבדיקות יחידה ועד בדיקות אינטגרציה ואימות מקצה לקצה.
+בדיקה היא היבט קריטי בפיתוח שרתי MCP אמינים ואיכותיים. מדריך זה מספק שיטות עבודה וייעוץ מקיף לבדיקת שרתי MCP לאורך מחזור החיים של הפיתוח, מבדיקות יחידה ועד בדיקות אינטגרציה ואימות מקצה לקצה.
 
-## מדוע בדיקות חשובות לשרתי MCP
+## מדוע בדיקה חשובה עבור שרתי MCP
 
-שרתי MCP משמשים כמתווכים קריטיים בין מודלים של AI ליישומי לקוח. בדיקות יסודיות מבטיחות:
+שרתי MCP משמשים כסביבה אמצעית חיונית בין דגמי AI ליישומי לקוח. בדיקה יסודית מבטיחה:
 
 - אמינות בסביבות ייצור
 - טיפול מדויק בבקשות ותגובות
 - יישום נכון של מפרטי MCP
-- עמידות בפני כשלים ומקרי קצה
-- ביצועים עקביים תחת עומסים שונים
+- עמידות בפני כישלונות ומקרי קצה
+- ביצועים עקביים תחת עומסים משתנים
 
-## בדיקות יחידה לשרתי MCP
+## בדיקות יחידה לשרתים ב-MCP
 
 ### בדיקות יחידה (בסיס)
 
-בדיקות יחידה מאמתות רכיבים בודדים של שרת ה-MCP שלכם בנפרד.
+בדיקות יחידה מאמתות רכיבים בודדים של שרת MCP בבידוד.
 
 #### מה לבדוק
 
-1. **מטפלי משאבים**: בדקו את הלוגיקה של כל מטפל משאבים בנפרד
-2. **מימושי כלים**: אימתו את התנהגות הכלים עם קלטים שונים
-3. **תבניות הנחיה**: ודאו שתבניות הנחיה מוצגות כראוי
-4. **ולידציה של סכמות**: בדקו את לוגיקת ולידציית הפרמטרים
-5. **טיפול בשגיאות**: אימתו תגובות שגיאה עבור קלטים לא חוקיים
+1. **מטפלי משאבים**: בדוק את הלוגיקה של כל מטפל משאבים בנפרד  
+2. **מימושי כלים**: אמת התנהגות כלים עם קלטים שונים  
+3. **תבניות הנחיות**: וודא שתבניות ההנחיה מתפקדות נכון  
+4. **בדיקת תקינות סכמות**: בדוק לוגיקת אימות פרמטרים  
+5. **טיפול שגיאות**: אמת תגובות שגיאה עבור קלטים לא חוקיים  
 
-#### שיטות עבודה מומלצות לבדיקות יחידה
+#### שיטות עבודה מומלצות לבדיקה יחידה
 
 ```csharp
 // Example unit test for a calculator tool in C#
@@ -2006,9 +2014,9 @@ public async Task CalculatorTool_Add_ReturnsCorrectSum()
 ```
 
 ```python
-# Example unit test for a calculator tool in Python
+# דוגמת מבחן יחידה לכלי מחשבון בפייתון
 def test_calculator_tool_add():
-    # Arrange
+    # סידור
     calculator = CalculatorTool()
     parameters = {
         "operation": "add",
@@ -2016,27 +2024,27 @@ def test_calculator_tool_add():
         "b": 7
     }
     
-    # Act
+    # ביצוע
     response = calculator.execute(parameters)
     result = json.loads(response.content[0].text)
     
-    # Assert
+    # אימות
     assert result["value"] == 12
 ```
 
 ### בדיקות אינטגרציה (שכבה אמצעית)
 
-בדיקות אינטגרציה מאמתות אינטראקציות בין רכיבים של שרת ה-MCP שלכם.
+בדיקות אינטגרציה מאמתות אינטראקציות בין רכיבי שרת MCP.
 
 #### מה לבדוק
 
-1. **אתחול שרת**: בדקו אתחול שרת עם תצורות שונות
-2. **רישום מסלולים**: אימתו שכל נקודות הקצה נרשמו כראוי
-3. **עיבוד בקשות**: בדקו את מחזור הבקשה-תגובה המלא
-4. **העברת שגיאות**: ודאו ששגיאות מטופלות כראוי בין רכיבים
-5. **אימות והרשאה**: בדקו מנגנוני אבטחה
+1. **אתחול השרת**: בדוק אתחול השרת עם קונפיגורציות שונות  
+2. **רישום נתיבים**: אמת שכל נקודות הסיום רשומות כהלכה  
+3. **עיבוד בקשות**: בדוק את זרימת הבקשה-תגובה המלאה  
+4. **הפצת שגיאות**: ודא שטיפול בשגיאות מתבצע כראוי בין רכיבים  
+5. **אימות והרשאה**: בדוק מנגנוני אבטחה  
 
-#### שיטות עבודה מומלצות לבדיקות אינטגרציה
+#### שיטות עבודה מומלצות לבדיקה אינטגרציה
 
 ```csharp
 // Example integration test for MCP server in C#
@@ -2072,27 +2080,27 @@ public async Task Server_ProcessToolRequest_ReturnsValidResponse()
 }
 ```
 
-### בדיקות מקצה לקצה (שכבה עליונה)
+### בדיקות מקצה לקצה (שכבת עליונה)
 
 בדיקות מקצה לקצה מאמתות את התנהגות המערכת המלאה מלקוח לשרת.
 
 #### מה לבדוק
 
-1. **תקשורת לקוח-שרת**: בדקו מחזורי בקשה-תגובה שלמים
-2. **SDKs של לקוחות אמיתיים**: בדקו עם מימושי לקוח אמיתיים
-3. **ביצועים תחת עומס**: אימתו התנהגות עם מספר בקשות מקבילות
-4. **התאוששות משגיאות**: בדקו התאוששות מערכת מכשלים
-5. **פעולות ארוכות טווח**: אימתו טיפול בזרימה ובפעולות ארוכות
+1. **תקשורת לקוח-שרת**: בדוק מחזורי בקשה-תגובה שלמים  
+2. **SDK לקוח אמיתי**: בדוק עם מימושים אמיתיים של לקוח  
+3. **ביצועים תחת עומס**: אמת התנהגות עם בקשות סימולטניות מרובות  
+4. **התאוששות משגיאות**: בדוק התאוששות המערכת מכישלונות  
+5. **פעולות ארוכות טווח**: אמת טיפול בזרימה ארוכה ופעולות ממושכות  
 
-#### שיטות עבודה מומלצות לבדיקות מקצה לקצה
+#### שיטות עבודה מומלצות לבדיקה מקצה לקצה
 
 ```typescript
-// Example E2E test with a client in TypeScript
+// דוגמת מבחן E2E עם לקוח ב-TypeScript
 describe('MCP Server E2E Tests', () => {
   let client: McpClient;
   
   beforeAll(async () => {
-    // Start server in test environment
+    // הפעל שרת בסביבת מבחן
     await startTestServer();
     client = new McpClient('http://localhost:5000');
   });
@@ -2102,30 +2110,30 @@ describe('MCP Server E2E Tests', () => {
   });
   
   test('Client can invoke calculator tool and get correct result', async () => {
-    // Act
+    // פעולה
     const response = await client.invokeToolAsync('calculator', {
       operation: 'divide',
       a: 20,
       b: 4
     });
     
-    // Assert
+    // אימות
     expect(response.statusCode).toBe(200);
     expect(response.content[0].text).toContain('5');
   });
 });
 ```
 
-## אסטרטגיות הדמיה לבדיקות MCP
+## אסטרטגיות הדמייה לבדיקות MCP
 
-הדמיה חיונית לבידוד רכיבים במהלך בדיקות.
+הדמיה חיונית לבידוד רכיבים במהלך הבדיקה.
 
-### רכיבים להדמיה
+### רכיבים שיש להדמות
 
-1. **מודלים חיצוניים של AI**: הדמיית תגובות מודל לצורך בדיקות צפויות
-2. **שירותים חיצוניים**: הדמיית תלות ב-APIs (מסדי נתונים, שירותי צד שלישי)
-3. **שירותי אימות**: הדמיית ספקי זהות
-4. **ספקי משאבים**: הדמיית מטפלי משאבים יקרים
+1. **דגמי AI חיצוניים**: הדם תגובות מודל לצורך בדיקה צפויה  
+2. **שירותים חיצוניים**: הדם תלות API (בסיסי מידע, שירותים צד שלישי)  
+3. **שירותי אימות**: הדם ספקי זהות  
+4. **ספקי משאבים**: הדם מטפלי משאבים יקרים  
 
 ### דוגמה: הדמיית תגובת מודל AI
 
@@ -2145,48 +2153,48 @@ var server = new McpServer(modelClient: mockModel.Object);
 ```
 
 ```python
-# Python example with unittest.mock
+# דוגמת פייתון עם unittest.mock
 @patch('mcp_server.models.OpenAIModel')
 def test_with_mock_model(mock_model):
-    # Configure mock
+    # הגדר מוקה
     mock_model.return_value.generate_response.return_value = {
         "text": "Mocked model response",
         "finish_reason": "completed"
     }
     
-    # Use mock in test
+    # השתמש במוקה בבדיקה
     server = McpServer(model_client=mock_model)
-    # Continue with test
+    # המשך עם הבדיקה
 ```
 
 ## בדיקות ביצועים
 
-בדיקות ביצועים קריטיות לשרתי MCP בייצור.
+בדיקות ביצועים חשובות לשרתי MCP בסביבת ייצור.
 
 ### מה למדוד
 
-1. **השהיה**: זמן תגובה לבקשות
-2. **תפוקה**: בקשות שטופלו לשנייה
-3. **שימוש במשאבים**: שימוש ב-CPU, זיכרון ורשת
-4. **טיפול במקביליות**: התנהגות תחת בקשות מקבילות
-5. **מאפייני סקיילינג**: ביצועים ככל שהעומס גדל
+1. **שהיה**: זמן תגובה לבקשות  
+2. **קצב העברה**: בקשות מטופלות לשנייה  
+3. **שימוש במשאבים**: מעבד, זיכרון, שימוש ברשת  
+4. **ניהול קונקרנציה**: התנהגות תחת בקשות במקביל  
+5. **מאפייני סקיילינג**: ביצועים עם עליית עומס  
 
 ### כלים לבדיקות ביצועים
 
-- **k6**: כלי בדיקות עומס בקוד פתוח
-- **JMeter**: כלי בדיקות ביצועים מקיף
-- **Locust**: כלי בדיקות עומס מבוסס Python
-- **Azure Load Testing**: בדיקות ביצועים מבוססות ענן
+- **k6**: כלי קוד פתוח לבדיקת עומס  
+- **JMeter**: בדיקות ביצועים מקיפות  
+- **Locust**: בדיקות עומס מבוססות Python  
+- **Azure Load Testing**: בדיקות ביצועים מבוססות ענן  
 
 ### דוגמה: בדיקת עומס בסיסית עם k6
 
 ```javascript
-// k6 script for load testing MCP server
+// סקריפט k6 לבדיקת עומס על שרת MCP
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
 export const options = {
-  vus: 10,  // 10 virtual users
+  vus: 10,  // 10 משתמשים וירטואליים
   duration: '30s',
 };
 
@@ -2218,11 +2226,15 @@ export default function () {
 }
 ```
 
-## אוטומציית בדיקות לשרתי MCP
+## אוטומציה של בדיקות לשרתי MCP
 
-אוטומציית הבדיקות מבטיחה איכות עקבית
-3. **בסיסי ביצועים**: שמרו על מדדי ביצועים כדי לזהות נסיגות  
-4. **סריקות אבטחה**: בצעו בדיקות אבטחה אוטומטיות כחלק מהצינור  
+אוטומציה של הבדיקות מבטיחה איכות עקבית ומשובים מהירים.
+
+### אינטגרציה ב-CI/CD
+1. **הרצת בדיקות יחידה בביקורות משיכה**: ודא ששינויים בקוד אינם שוברים פונקציונליות קיימת  
+2. **בדיקות אינטגרציה בסביבות סטייג'ינג**: הרץ בדיקות אינטגרציה בסביבות טרום-הפקה  
+3. **בסיסי ביצועים**: שמור על קווי בסיס של ביצועים כדי לתפוס נסיגות  
+4. **סריקות אבטחה**: הפעל בדיקות אבטחה אוטומטיות כחלק מצינור הפיתוח  
 
 ### דוגמה לצינור CI (GitHub Actions)
 
@@ -2263,19 +2275,19 @@ jobs:
       run: dotnet run --project tests/PerformanceTests/PerformanceTests.csproj
 ```
 
-## בדיקות תאימות למפרט MCP
+## בדיקה להתאמה למפרט MCP
 
-וודאו שהשרת שלכם מיישם את מפרט MCP בצורה נכונה.
+וודא שהשרת שלך מממש נכון את מפרט ה-MCP.
 
-### תחומי תאימות מרכזיים
+### תחומי התאמה מרכזיים
 
-1. **נקודות קצה API**: בדקו נקודות קצה נדרשות (/resources, /tools וכו')  
-2. **פורמט בקשה/תגובה**: וודאו תאימות לסכמות  
-3. **קודי שגיאה**: בדקו קודי סטטוס נכונים עבור תרחישים שונים  
-4. **סוגי תוכן**: בדקו טיפול בסוגי תוכן שונים  
-5. **תהליך אימות**: וודאו מנגנוני אימות התואמים למפרט  
+1. **נקודות קצה של API**: בדוק נקודות סוף נדרשות (/resources, /tools, וכו')
+2. **פורמט בקשות/תגובות**: אמת עמידה בסכמת הנתונים  
+3. **קודי שגיאה**: בדוק שהסטטוס קוד נכון במצבים שונים  
+4. **סוגי תוכן**: בדוק טיפול בסוגי תוכן שונים  
+5. **זרימת אימות**: אמת מנגנוני אימות התואמים למפרט  
 
-### חבילת בדיקות תאימות
+### חבילת בדיקות התאמה
 
 ```csharp
 [Fact]
@@ -2302,62 +2314,68 @@ public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
 }
 ```
 
-## 10 טיפים מובילים לבדיקת שרת MCP יעילה
+## 10 טיפים מובילים לבדיקה יעילה של שרת MCP
 
-1. **בדקו הגדרות כלים בנפרד**: וודאו תאימות סכמות באופן עצמאי מהלוגיקה של הכלים  
-2. **השתמשו בבדיקות פרמטריות**: בדקו כלים עם מגוון קלטים, כולל מקרים קיצוניים  
-3. **בדקו תגובות שגיאה**: וודאו טיפול נכון בכל תנאי שגיאה אפשריים  
-4. **בדקו לוגיקת הרשאות**: וודאו בקרת גישה נכונה עבור תפקידים שונים של משתמשים  
-5. **עקבו אחר כיסוי בדיקות**: שאפו לכיסוי גבוה של קוד במסלול קריטי  
-6. **בדקו תגובות סטרימינג**: וודאו טיפול נכון בתוכן סטרימינג  
-7. **סימולציה של בעיות רשת**: בדקו התנהגות בתנאי רשת גרועים  
-8. **בדקו מגבלות משאבים**: וודאו התנהגות כאשר מגיעים למכסות או מגבלות קצב  
-9. **אוטומציה של בדיקות נסיגה**: בנו חבילת בדיקות שרצה עם כל שינוי בקוד  
-10. **תעדו מקרי בדיקה**: שמרו על תיעוד ברור של תרחישי בדיקה  
+1. **בדוק הגדרות כלים בנפרד**: אמת הגדרות סכמת הנתונים בנפרד מלוגיקת הכלי  
+2. **השתמש בבדיקות פרמטריות**: בדוק כלים עם מגוון קלטים, כולל מקרים קיצוניים  
+3. **בדוק תגובות שגיאה**: אמת טיפול נכון בשגיאות בכל המצבים האפשריים  
+4. **בדוק לוגיקת הרשאות**: ודא שליטה נכונה בגישה לתפקידי משתמש שונים  
+5. **עקוב אחרי כיסוי הבדיקות**: שאף לכיסוי גבוה של קוד בסלול קריטי  
+6. **בדוק תגובות סטרימינג**: אמת טיפול נכון בתוכן זורם  
+7. **סמלץ בעיות ברשת**: בדוק התנהגות בתנאי רשת לקויים  
+8. **בדוק מגבלות משאבים**: אמת התנהגות כשמגיעים למכסות או מגבלות קצב  
+9. **הפעל בדיקות רגרסיה אוטומטית**: בנה חבילה שרצה על כל שינוי בקוד  
+10. **תעד מקרי בדיקה**: שמור תיעוד ברור של תרחישי בדיקה  
 
-## מלכודות נפוצות בבדיקות
+## כשלים נפוצים בבדיקות
 
-- **הסתמכות יתר על בדיקות "מסלול שמח"**: וודאו בדיקות יסודיות של מקרי שגיאה  
-- **התעלמות מבדיקות ביצועים**: זיהוי צווארי בקבוק לפני שהם משפיעים על הסביבה  
-- **בדיקות בבידוד בלבד**: שלבו בדיקות יחידה, אינטגרציה ובדיקות מקצה לקצה  
-- **כיסוי API לא מלא**: וודאו שכל נקודות הקצה והתכונות נבדקות  
-- **סביבות בדיקה לא עקביות**: השתמשו בקונטיינרים כדי להבטיח סביבות בדיקה עקביות  
+- **תלות יתר בבדיקות שבילים שמחים**: ודא לבדוק מקרים של שגיאות באופן יסודי  
+- **התעלמות מבדיקות ביצועים**: זיהוי צווארי בקבוק לפני שהם משפיעים על הייצור  
+- **בדיקות בבידוד בלבד**: שלב בדיקות יחידה, אינטגרציה ו-End-to-End  
+- **כיסוי API לא מלא**: ודא שכל נקודות הקצה והתכונות נבדקות  
+- **סביבות בדיקה לא עקביות**: השתמש במכולות כדי להבטיח סביבות בדיקה אחידות  
 
 ## סיכום
 
-אסטרטגיית בדיקות מקיפה חיונית לפיתוח שרתי MCP אמינים ואיכותיים. על ידי יישום השיטות המומלצות והטיפים המפורטים במדריך זה, תוכלו להבטיח שהיישומים שלכם עומדים בסטנדרטים הגבוהים ביותר של איכות, אמינות וביצועים.
+אסטרטגיית בדיקה מקיפה חיונית לפיתוח שרתי MCP אמינים ואיכותיים. באמצעות יישום שיטות העבודה המומלצות והטיפים במדריך זה, תוכל להבטיח שממשקי MCP שלך יעמדו בסטנדרטים הגבוהים ביותר של איכות, אמינות וביצועים.  
 
 ## נקודות מפתח
 
-1. **עיצוב כלים**: פעלו לפי עקרון האחריות היחידה, השתמשו בהזרקת תלות ועצבו להרכבה  
-2. **עיצוב סכמות**: צרו סכמות ברורות ומתועדות היטב עם מגבלות אימות מתאימות  
-3. **טיפול בשגיאות**: יישמו טיפול שגיאות אלגנטי, תגובות שגיאה מובנות ולוגיקת ניסיונות חוזרים  
-4. **ביצועים**: השתמשו במטמון, עיבוד אסינכרוני והגבלת משאבים  
-5. **אבטחה**: בצעו אימות קלט יסודי, בדיקות הרשאה וטיפול בנתונים רגישים  
-6. **בדיקות**: צרו בדיקות יחידה, אינטגרציה ובדיקות מקצה לקצה מקיפות  
-7. **תבניות עבודה**: יישמו תבניות מבוססות כמו שרשראות, מפיצים ועיבוד מקבילי  
+1. **עיצוב כלים**: פעל לפי עקרון האחריות היחידה, השתמש בהזרקת תלויות, ועצב למרכיבים קומפוזיציוניים  
+2. **עיצוב סכמות**: צור סכמות ברורות ומתועדות עם אילוצי אימות מתאימים  
+3. **טיפול בשגיאות**: יישם טיפול שגיאות עדין, תגובות שגיאה מובנות ולוגיקת ניסיונות חוזרים  
+4. **ביצועים**: השתמש במטמון, עיבוד אסינכרוני, והגבלת משאבים  
+5. **אבטחה**: החל אימות קלט יסודי, בדיקות הרשאה, וטיפול בנתונים רגישים  
+6. **בדיקות**: צור בדיקות יחידה, אינטגרציה ו-End-to-End מקיפות  
+7. **תבניות זרימה**: יישם תבניות מוכרות כמו שרשרות, מפעילים ועיבוד מקבילי  
 
 ## תרגיל
 
-עצבו כלי MCP ותהליך עבודה עבור מערכת עיבוד מסמכים שמבצעת את הפעולות הבאות:
+עצב כלי MCP וזרימת עבודה למערכת עיבוד מסמכים ש:
 
-1. מקבלת מסמכים בפורמטים שונים (PDF, DOCX, TXT)  
-2. מחלצת טקסט ומידע מרכזי מהמסמכים  
-3. מסווגת מסמכים לפי סוג ותוכן  
-4. יוצרת תקציר של כל מסמך  
+1. מקבלת מסמכים בפורמטים מרובים (PDF, DOCX, TXT)  
+2. מחלץ טקסט ומידע מפתח מהמסמכים  
+3. מסווג מסמכים לפי סוג ותוכן  
+4. מייצר תקציר לכל מסמך  
 
-יישמו את סכמות הכלים, טיפול בשגיאות ותבנית תהליך עבודה המתאימה ביותר לתרחיש זה. שקלו כיצד תבדקו את היישום הזה.
+ממש סכמות כלי, טיפול בשגיאות, ותבנית זרימת עבודה המתאימה ביותר לתרחיש זה. שקול כיצד תבדוק את המימוש הזה.  
 
 ## משאבים
 
-1. הצטרפו לקהילת MCP ב-[Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) כדי להתעדכן בהתפתחויות האחרונות  
-2. תרמו לפרויקטים [MCP בקוד פתוח](https://github.com/modelcontextprotocol)  
-3. יישמו עקרונות MCP ביוזמות AI בארגון שלכם  
-4. חקרו יישומי MCP מיוחדים לתעשייה שלכם  
-5. שקלו לקחת קורסים מתקדמים בנושאי MCP ספציפיים, כמו אינטגרציה מולטי-מודלית או אינטגרציה של יישומים ארגוניים  
-6. נסו לבנות כלים ותהליכי עבודה MCP משלכם באמצעות העקרונות שנלמדו דרך [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)  
+1. הצטרף לקהילת MCP ב-[Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) כדי להתעדכן בהתפתחויות האחרונות  
+2. תרום לפרויקטי [MCP קוד פתוח](https://github.com/modelcontextprotocol)  
+3. החל עקרונות MCP ביוזמות AI בארגון שלך  
+4. חקור מימושים ייעודיים ל-MCP עבור התעשייה שלך.  
+5. שקול לקחת קורסים מתקדמים בנושא MCP ספציפי, כגון אינטגרציה מולטימודלית או אינטגרציה של אפליקציות ארגוניות.  
+6. התנסה בבניית כלים וזרימות עבודה משלך עם העקרונות שלמדת באמצעות [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)  
 
-הבא: שיטות מומלצות [מחקרי מקרה](../09-CaseStudy/README.md)  
+## מה הלאה
 
-**כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש להיות מודעים לכך שתרגומים אוטומטיים עשויים להכיל שגיאות או אי דיוקים. המסמך המקורי בשפתו המקורית צריך להיחשב כמקור סמכותי. עבור מידע קריטי, מומלץ להשתמש בתרגום מקצועי על ידי אדם. איננו נושאים באחריות לאי הבנות או לפרשנויות שגויות הנובעות משימוש בתרגום זה.
+הבא: [Case Studies](../09-CaseStudy/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**כתב ויתור**:
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש להיות מודעים לכך שתרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפתו המקורית נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי אדם. אנו לא נושאים באחריות לכל אי-הבנות או פירושים שגויים הנובעים משימוש בתרגום זה.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

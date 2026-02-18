@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ed9cab32cc67c12d8969b407aa47100a",
-  "translation_date": "2025-07-13T17:55:59+00:00",
-  "source_file": "03-GettingStarted/01-first-server/solution/java/README.md",
-  "language_code": "sw"
-}
--->
 # Huduma ya Calculator Msingi MCP
 
 Huduma hii hutoa shughuli za msingi za calculator kupitia Model Context Protocol (MCP) kwa kutumia Spring Boot na usafirishaji wa WebFlux. Imetengenezwa kama mfano rahisi kwa wanaoanza kujifunza kuhusu utekelezaji wa MCP.
@@ -73,7 +64,7 @@ MCP Inspector ni chombo cha msaada kwa kuingiliana na huduma za MCP. Ili kuitumi
    - Bonyeza "List Tools" kuona shughuli za calculator zinazopatikana
    - Chagua zana na bonyeza "Run Tool" kuendesha shughuli
 
-![MCP Inspector Screenshot](../../../../../../translated_images/tool.40e180a7b0d0fe2067cf96435532b01f63f7f8619d6b0132355a04b426b669ac.sw.png)
+![MCP Inspector Screenshot](../../../../../../translated_images/sw/tool.40e180a7b0d0fe20.webp)
 
 **Kiarifu cha Kutotegemea**:  
 Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

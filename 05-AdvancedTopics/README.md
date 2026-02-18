@@ -38,13 +38,19 @@ By the end of this lesson, you will be able to:
 | [5.12  Entra ID Authentication for Model Context Protocol Servers](./mcp-security-entra/README.md) | Entra ID Authentication | Microsoft Entra ID provides a robust cloud-based identity and access management solution, helping ensure that only authorized users and applications can interact with your MCP server.|
 | [5.13 Azure AI Foundry Agent Integration](./mcp-foundry-agent-integration/README.md) | Azure AI Foundry Integration | Learn how to integrate Model Context Protocol servers with Azure AI Foundry agents, enabling powerful tool orchestration and enterprise AI capabilities with standardized external data source connections.|
 | [5.14 Context Engineering](./mcp-contextengineering/README.md) | Context Engineering | The future opportunity of context engineering techniques for MCP servers, including context optimization, dynamic context management, and strategies for effective prompt engineering within MCP frameworks.|
+| [5.15 MCP Custom Transport](./mcp-transport/README.md) | Custom Transport | Learn how to implement custom transport mechanisms for specialized MCP communication scenarios.|
+| [5.16 Protocol Features Deep Dive](./mcp-protocol-features/README.md) | Protocol Features | Master advanced protocol features including progress notifications, request cancellation, resource templates, and error handling patterns.|
+
+> **New in MCP Specification 2025-11-25**: The specification now includes experimental support for **Tasks** (long-running operations with progress tracking), **Tool Annotations** (metadata about tool behavior for safety), **URL Mode Elicitation** (requesting specific URL content from clients), and enhanced **Roots** (for workspace context management). See the [MCP Specification changelog](https://spec.modelcontextprotocol.io/) for full details.
 
 ## Additional References
 
 For the most up-to-date information on advanced MCP topics, refer to:
 - [MCP Documentation](https://modelcontextprotocol.io/)
-- [MCP Specification](https://spec.modelcontextprotocol.io/)
+- [MCP Specification (2025-11-25)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
+- [OWASP MCP Top 10](https://microsoft.github.io/mcp-azure-security-guide/mcp/) - Security risks and mitigations
+- [MCP Security Summit Workshop (Sherpa)](https://azure-samples.github.io/sherpa/) - Hands-on security training
 
 ## Key Takeaways
 
@@ -73,4 +79,6 @@ Design an enterprise-grade MCP implementation for a specific use case:
 
 ## What's next
 
-- [5.1 MCP Integration](./mcp-integration/README.md)
+Explore the lessons in this module starting with: [5.1 MCP Integration](./mcp-integration/README.md)
+
+Once you've completed this module, continue to: [Module 6: Community Contributions](../06-CommunityContributions/README.md)

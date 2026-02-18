@@ -71,9 +71,11 @@ The following best practices are derived from the official Model Context Protoco
 For the most up-to-date information on MCP best practices, refer to:
 
 - [MCP Documentation](https://modelcontextprotocol.io/)
-- [MCP Specification](https://spec.modelcontextprotocol.io/)
+- [MCP Specification (2025-11-25)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
 - [Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
+- [OWASP MCP Top 10](https://microsoft.github.io/mcp-azure-security-guide/mcp/) - Security risks and mitigations
+- [MCP Security Summit Workshop (Sherpa)](https://azure-samples.github.io/sherpa/) - Hands-on security training
 
 ## Practical Implementation Examples
 
@@ -2369,6 +2371,8 @@ Implement the tool schemas, error handling, and a workflow pattern that best sui
 5. Consider taking advanced courses on specific MCP topics, such as multi-modal integration or enterprise application integration.
 6. Experiment with building your own MCP tools and workflows using the principles learned through the [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)  
 
-Next: Best Practices [case studies](../09-CaseStudy/README.md)
+## What's Next
+
+Next: [Case Studies](../09-CaseStudy/README.md)
 
 

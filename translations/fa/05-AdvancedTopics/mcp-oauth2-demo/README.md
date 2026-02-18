@@ -1,34 +1,49 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0a7083e660ca0d85fd6a947514c61993",
-  "translation_date": "2025-07-14T00:39:55+00:00",
-  "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
-  "language_code": "fa"
-}
--->
-# MCP OAuth2 Demo
+# نمایش OAuth2 در MCP
 
-این پروژه یک **برنامه حداقلی Spring Boot** است که هم به عنوان:
+## مقدمه
 
-* یک **سرور احراز هویت Spring** (صدور توکن‌های دسترسی JWT از طریق جریان `client_credentials`)، و  
-* یک **سرور منابع** (محافظت از نقطه پایانی `/hello` خود) عمل می‌کند.
+OAuth2 پروتکل استاندارد صنعتی برای مجوزدهی است که دسترسی امن به منابع را بدون به اشتراک‌گذاری اطلاعات ورود فراهم می‌کند. در پیاده‌سازی‌های MCP (پروتکل زمینه مدل)، OAuth2 روشی قوی برای احراز هویت و مجوزدهی به کلاینت‌ها (مانند عوامل هوش مصنوعی) برای دسترسی به سرورهای MCP و ابزارهای آنها ارائه می‌دهد.
 
-این پروژه مشابه تنظیمات نشان داده شده در [پست وبلاگ Spring (2 آوریل 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) است.
+این درس نشان می‌دهد چگونه احراز هویت OAuth2 را برای سرورهای MCP با استفاده از Spring Boot، یک الگوی رایج برای استقرارهای سازمانی و تولیدی، پیاده‌سازی کنیم.
+
+## اهداف یادگیری
+
+تا پایان این درس، شما خواهید توانست:  
+- درک کنید چگونه OAuth2 با سرورهای MCP ادغام می‌شود  
+- یک سرور مجوز Spring برای صدور توکن پیاده کنید  
+- نقطه‌های پایانی MCP را با احراز هویت مبتنی بر JWT محافظت کنید  
+- جریان مجوز کلاینت برای ارتباط ماشین با ماشین را پیکربندی کنید  
+
+## پیش‌نیازها
+
+- فهم پایه‌ای از جاوا و Spring Boot  
+- آشنایی با مفاهیم MCP از ماژول‌های قبلی  
+- نصب Maven یا Gradle  
+
+---
+
+## نمای کلی پروژه
+
+این پروژه یک **برنامه حداقلی Spring Boot** است که به عنوان هر دو مورد عمل می‌کند:
+
+* یک **سرور مجوز Spring** (صدور توکن‌های دسترسی JWT از طریق جریان `client_credentials`)، و  
+* یک **سرور منبع** (محافظت از نقطه پایانی `/hello` خودش).
+
+این شبیه‌سازی پیکربندی نشان داده شده در [پست وبلاگ Spring (۲ آوریل ۲۰۲۵)](https://spring.io/blog/2025/04/02/mcp-server-oauth2) است.
 
 ---
 
 ## شروع سریع (محلی)
 
 ```bash
-# build & run
+# ساخت و اجرا
 ./mvnw spring-boot:run
 
-# obtain a token
+# دریافت توکن
 curl -u mcp-client:secret -d grant_type=client_credentials \
      http://localhost:8081/oauth2/token | jq -r .access_token > token.txt
 
-# call the protected endpoint
+# فراخوانی نقطه پایانی محافظت شده
 curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 ```
 
@@ -38,42 +53,42 @@ curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
 می‌توانید پیکربندی امنیتی OAuth2 را با مراحل زیر آزمایش کنید:
 
-### 1. اطمینان از اجرای سرور و ایمن بودن آن
+### ۱. اطمینان از اجرای سرور و امن بودن آن
 
 ```bash
-# This should return 401 Unauthorized, confirming OAuth2 security is active
+# این باید ۴۰۱ غیرمجاز را برگرداند و تأیید کند که امنیت OAuth2 فعال است
 curl -v http://localhost:8081/
 ```
 
-### 2. دریافت توکن دسترسی با استفاده از اعتبارنامه‌های کلاینت
+### ۲. دریافت توکن دسترسی با استفاده از اعتبارنامه کلاینت
 
 ```bash
-# Get and extract the full token response
+# دریافت و استخراج پاسخ کامل توکن
 curl -v -X POST http://localhost:8081/oauth2/token \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -H "Authorization: Basic bWNwLWNsaWVudDpzZWNyZXQ=" \
   -d "grant_type=client_credentials&scope=mcp.access"
 
-# Or to extract just the token (requires jq)
+# یا استخراج فقط توکن (نیازمند jq)
 curl -s -X POST http://localhost:8081/oauth2/token \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -H "Authorization: Basic bWNwLWNsaWVudDpzZWNyZXQ=" \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-توجه: هدر Basic Authentication (`bWNwLWNsaWVudDpzZWNyZXQ=`) کدگذاری Base64 رشته `mcp-client:secret` است.
+توجه: هدر احراز هویت پایه (`bWNwLWNsaWVudDpzZWNyZXQ=`) کدگذاری Base64 رشته `mcp-client:secret` است.
 
-### 3. دسترسی به نقطه پایانی محافظت شده با استفاده از توکن
+### ۳. دسترسی به نقطه پایانی محافظت‌شده با استفاده از توکن
 
 ```bash
-# Using the saved token
+# استفاده از توکن ذخیره شده
 curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
-# Or directly with the token value
+# یا مستقیماً با مقدار توکن
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
-پاسخ موفق با پیام "Hello from MCP OAuth2 Demo!" تأیید می‌کند که پیکربندی OAuth2 به درستی کار می‌کند.
+پاسخ موفق با پیام "Hello from MCP OAuth2 Demo!" تایید می‌کند که پیکربندی OAuth2 به درستی کار می‌کند.
 
 ---
 
@@ -95,8 +110,8 @@ az containerapp up -n mcp-oauth2 \
   --ingress external --target-port 8081
 ```
 
-نام دامنه کامل ورودی (ingress FQDN) به عنوان **issuer** شما خواهد بود (`https://<fqdn>`).  
-Azure به طور خودکار یک گواهی TLS معتبر برای `*.azurecontainerapps.io` فراهم می‌کند.
+نام کامل دامنه ورودی (FQDN) به عنوان **صادرکننده** شما (`https://<fqdn>`) عمل می‌کند.  
+Azure به طور خودکار گواهی TLS معتبری برای `*.azurecontainerapps.io` ارائه می‌دهد.
 
 ---
 
@@ -116,13 +131,17 @@ Azure به طور خودکار یک گواهی TLS معتبر برای `*.azurec
 </inbound>
 ```
 
-APIM کلیدهای JWKS را دریافت کرده و هر درخواست را اعتبارسنجی می‌کند.
+APIM کلیدهای JWKS را واکشی کرده و هر درخواست را اعتبارسنجی می‌کند.
 
 ---
 
-## مرحله بعد
+## گام بعدی
 
-- [5.4 Root contexts](../mcp-root-contexts/README.md)
+- [۵.۴ زمینه‌های ریشه](../mcp-root-contexts/README.md)
 
-**سلب مسئولیت**:  
-این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما در تلاش برای دقت هستیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است حاوی خطاها یا نواقصی باشند. سند اصلی به زبان بومی خود باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ گونه سوءتفاهم یا تفسیر نادرستی که از استفاده این ترجمه ناشی شود، نیستیم.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**سلب مسئولیت**:
+این سند با استفاده از سرویس ترجمه‌ی هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما تلاش می‌کنیم دقت را حفظ کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است حاوی خطاها یا نواقصی باشند. سند اصلی به زبان مادری آن باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، استفاده از ترجمه‌ی حرفه‌ای انسانی توصیه می‌شود. ما در قبال هرگونه سوء تفاهم یا تفسیر نادرستی که از استفاده از این ترجمه حاصل شود، مسئولیتی نداریم.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

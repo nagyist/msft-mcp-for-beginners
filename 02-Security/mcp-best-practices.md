@@ -1,6 +1,6 @@
 # MCP Security Best Practices 2025
 
-This comprehensive guide outlines essential security best practices for implementing Model Context Protocol (MCP) systems based on the latest **MCP Specification 2025-06-18** and current industry standards. These practices address both traditional security concerns and AI-specific threats unique to MCP deployments.
+This comprehensive guide outlines essential security best practices for implementing Model Context Protocol (MCP) systems based on the latest **MCP Specification 2025-11-25** and current industry standards. These practices address both traditional security concerns and AI-specific threats unique to MCP deployments.
 
 ## Critical Security Requirements
 
@@ -29,7 +29,7 @@ This comprehensive guide outlines essential security best practices for implemen
 - **Transport Layer Security**: Use HTTPS/TLS 1.3 for all MCP communications with proper certificate validation
 - **End-to-End Encryption**: Implement additional encryption layers for highly sensitive data in transit and at rest
 - **Certificate Management**: Maintain proper certificate lifecycle management with automated renewal processes
-- **Protocol Version Enforcement**: Use current MCP protocol version (2025-06-18) with proper version negotiation
+- **Protocol Version Enforcement**: Use the current MCP protocol version (2025-11-25) with proper version negotiation.
 
 ### 4. Advanced Rate Limiting & Resource Protection
 - **Multi-layer Rate Limiting**: Implement rate limiting at user, session, tool, and resource levels to prevent abuse
@@ -107,11 +107,15 @@ This comprehensive guide outlines essential security best practices for implemen
 
 ## Implementation Resources & Standards
 
+### 🏔️ Hands-On Security Training
+- **[MCP Security Summit Workshop (Sherpa)](https://azure-samples.github.io/sherpa/)** - Comprehensive hands-on workshop for securing MCP servers in Azure
+- **[OWASP MCP Azure Security Guide](https://microsoft.github.io/mcp-azure-security-guide/)** - Reference architecture and OWASP MCP Top 10 implementation guidance
+
 ### Official MCP Documentation
-- [MCP Specification 2025-06-18](https://spec.modelcontextprotocol.io/specification/2025-06-18/) - Current MCP protocol specification
-- [MCP Security Best Practices](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices) - Official security guidance
-- [MCP Authorization Specification](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization) - Authentication and authorization patterns
-- [MCP Transport Security](https://modelcontextprotocol.io/specification/2025-06-18/transports/) - Transport layer security requirements
+- [MCP Specification 2025-11-25](https://spec.modelcontextprotocol.io/specification/2025-11-25/) - Current MCP protocol specification
+- [MCP Security Best Practices](https://modelcontextprotocol.io/specification/2025-11-25/basic/security_best_practices) - Official security guidance
+- [MCP Authorization Specification](https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization) - Authentication and authorization patterns
+- [MCP Transport Security](https://modelcontextprotocol.io/specification/2025-11-25/transports/) - Transport layer security requirements
 
 ### Microsoft Security Solutions
 - [Microsoft Prompt Shields](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection) - Advanced prompt injection protection
@@ -173,4 +177,10 @@ This comprehensive guide outlines essential security best practices for implemen
 
 ---
 
-*This document reflects MCP security best practices as of August 18, 2025, based on MCP Specification 2025-06-18. Security practices should be regularly reviewed and updated as the protocol and threat landscape evolve.*
+*This document reflects MCP security best practices as of December 18, 2025, based on MCP Specification 2025-11-25. Security practices should be regularly reviewed and updated as the protocol and threat landscape evolve.*
+
+## What's Next
+
+- Read: [MCP Security Best Practices 2025](./mcp-security-best-practices-2025.md)
+- Return to: [Security Module Overview](./README.md)
+- Continue to: [Module 3: Getting Started](../03-GettingStarted/README.md)

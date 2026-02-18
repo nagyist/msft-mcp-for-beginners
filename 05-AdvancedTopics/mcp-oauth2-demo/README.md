@@ -1,5 +1,29 @@
 # MCP OAuth2 Demo
 
+## Introduction
+
+OAuth2 is the industry-standard protocol for authorization, enabling secure access to resources without sharing credentials. In MCP (Model Context Protocol) implementations, OAuth2 provides a robust way to authenticate and authorize clients (such as AI agents) to access MCP servers and their tools.
+
+This lesson demonstrates how to implement OAuth2 authentication for MCP servers using Spring Boot, a common pattern for enterprise and production deployments.
+
+## Learning Objectives
+
+By the end of this lesson, you will:
+- Understand how OAuth2 integrates with MCP servers
+- Implement a Spring Authorization Server for token issuance
+- Protect MCP endpoints with JWT-based authentication
+- Configure client credentials flow for machine-to-machine communication
+
+## Prerequisites
+
+- Basic understanding of Java and Spring Boot
+- Familiarity with MCP concepts from earlier modules
+- Maven or Gradle installed
+
+---
+
+## Project Overview
+
 This project is a **minimal Spring Boot application** that acts as both:
 
 * a **Spring Authorization Server** (issuing JWT access tokens via the `client_credentials` flow), and  

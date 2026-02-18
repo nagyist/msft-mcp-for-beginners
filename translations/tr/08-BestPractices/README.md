@@ -1,96 +1,89 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b62150e27d4b7b5797ee41146d176e6b",
-  "translation_date": "2025-08-18T17:49:23+00:00",
-  "source_file": "08-BestPractices/README.md",
-  "language_code": "tr"
-}
--->
 # MCP Geliştirme En İyi Uygulamaları
 
-[![MCP Geliştirme En İyi Uygulamaları](../../../translated_images/09.d0f6d86c9d72134ccf5a8d8c8650a0557e519936661fc894cad72d73522227cb.tr.png)](https://youtu.be/W56H9W7x-ao)
+[![MCP Development Best Practices](../../../translated_images/tr/09.d0f6d86c9d72134c.webp)](https://youtu.be/W56H9W7x-ao)
 
-_(Bu dersin videosunu izlemek için yukarıdaki görsele tıklayın)_
+_(Bu dersin videosunu izlemek için yukarıdaki resme tıklayın)_
 
 ## Genel Bakış
 
-Bu ders, üretim ortamlarında MCP sunucuları ve özelliklerini geliştirme, test etme ve dağıtma için ileri düzey en iyi uygulamalara odaklanır. MCP ekosistemleri karmaşıklık ve önem açısından büyüdükçe, belirlenmiş kalıpları takip etmek güvenilirlik, sürdürülebilirlik ve birlikte çalışabilirlik sağlar. Bu ders, sağlam, verimli sunucular oluşturmanız için gerçek dünya MCP uygulamalarından elde edilen pratik bilgileri bir araya getirir.
+Bu ders, üretim ortamlarında MCP sunucularını ve özelliklerini geliştirme, test etme ve dağıtma konusundaki ileri düzey en iyi uygulamalara odaklanmaktadır. MCP ekosistemleri karmaşıklık ve önem açısından büyürken, belirlenmiş desenleri takip etmek güvenilirlik, sürdürülebilirlik ve birlikte çalışabilirlik sağlar. Bu ders, gerçek dünya MCP uygulamalarından kazanılan pratik bilgileri bir araya getirerek güçlü, verimli sunucular oluşturmanız için etkili kaynaklar, istemler ve araçlarla rehberlik eder.
 
 ## Öğrenme Hedefleri
 
-Bu dersin sonunda şunları yapabileceksiniz:
+Bu dersin sonunda şunları yapabilirsiniz:
 
 - MCP sunucu ve özellik tasarımında sektörün en iyi uygulamalarını uygulamak
 - MCP sunucuları için kapsamlı test stratejileri oluşturmak
-- Karmaşık MCP uygulamaları için verimli, yeniden kullanılabilir iş akışı kalıpları tasarlamak
-- MCP sunucularında uygun hata yönetimi, günlük kaydı ve gözlemlenebilirlik uygulamak
+- Karmaşık MCP uygulamaları için verimli, yeniden kullanılabilir iş akışı desenleri tasarlamak
+- MCP sunucularında uygun hata yönetimi, günlükleme ve gözlemlenebilirlik uygulamak
 - MCP uygulamalarını performans, güvenlik ve sürdürülebilirlik açısından optimize etmek
 
 ## MCP Temel İlkeleri
 
-Belirli uygulama pratiklerine dalmadan önce, etkili MCP geliştirmeyi yönlendiren temel ilkeleri anlamak önemlidir:
+Spesifik uygulama uygulamalarına geçmeden önce, etkili MCP geliştirmeyi yönlendiren temel ilkeleri anlamak önemlidir:
 
-1. **Standartlaştırılmış İletişim**: MCP, tüm uygulamalarda istekler, yanıtlar ve hata yönetimi için tutarlı bir format sağlayan JSON-RPC 2.0'ı temel alır.
+1. **Standardize Edilmiş İletişim**: MCP, tüm uygulamalarda tutarlı bir istek, yanıt ve hata yönetimi biçimi sağlayan JSON-RPC 2.0’ı temel alır.
 
-2. **Kullanıcı Merkezli Tasarım**: MCP uygulamalarınızda her zaman kullanıcı onayını, kontrolünü ve şeffaflığı önceliklendirin.
+2. **Kullanıcı Odaklı Tasarım**: MCP uygulamalarınızda her zaman kullanıcı onayını, kontrolünü ve şeffaflığı önceliklendirin.
 
-3. **Güvenlik Öncelikli**: Kimlik doğrulama, yetkilendirme, doğrulama ve hız sınırlama gibi sağlam güvenlik önlemleri uygulayın.
+3. **Öncelikle Güvenlik**: Kimlik doğrulama, yetkilendirme, doğrulama ve oran sınırlandırma dahil olmak üzere sağlam güvenlik önlemleri uygulayın.
 
-4. **Modüler Mimari**: MCP sunucularınızı, her araç ve kaynağın net ve odaklanmış bir amacı olduğu modüler bir yaklaşımla tasarlayın.
+4. **Modüler Mimari**: MCP sunucularınızı her araç ve kaynağın açık ve odaklanmış bir amaca sahip olduğu modüler bir yaklaşımla tasarlayın.
 
-5. **Durumlu Bağlantılar**: Daha tutarlı ve bağlam farkındalığına sahip etkileşimler için MCP'nin birden fazla istek arasında durumu koruma yeteneğinden yararlanın.
+5. **Durumlu Bağlantılar**: Daha tutarlı ve bağlama duyarlı etkileşimler için MCP’nin birden çok istek boyunca durumu koruma yeteneğinden yararlanın.
 
 ## Resmi MCP En İyi Uygulamaları
 
-Aşağıdaki en iyi uygulamalar, resmi Model Context Protocol belgelerinden türetilmiştir:
+Aşağıdaki en iyi uygulamalar resmi Model Context Protocol belgelerinden türetilmiştir:
 
 ### Güvenlik En İyi Uygulamaları
 
-1. **Kullanıcı Onayı ve Kontrolü**: Verilere erişmeden veya işlemleri gerçekleştirmeden önce her zaman açık kullanıcı onayı gerektirir. Hangi verilerin paylaşıldığı ve hangi işlemlerin yetkilendirildiği konusunda net kontrol sağlayın.
+1. **Kullanıcı Onayı ve Kontrolü**: Veri erişimi veya işlem yapmadan önce her zaman açık kullanıcı onayı isteyin. Paylaşılan veriler ve yetkilendirilen işlemler üzerinde net kontrol sağlayın.
 
-2. **Veri Gizliliği**: Kullanıcı verilerini yalnızca açık onayla açığa çıkarın ve uygun erişim kontrolleriyle koruyun. Yetkisiz veri iletimine karşı önlem alın.
+2. **Veri Gizliliği**: Yalnızca açık onayla kullanıcı verilerini açın ve uygun erişim kontrolleriyle koruyun. Yetkisiz veri iletimine karşı önlem alın.
 
-3. **Araç Güvenliği**: Herhangi bir aracı çağırmadan önce açık kullanıcı onayı gerektirir. Kullanıcıların her aracın işlevselliğini anlamasını sağlayın ve sağlam güvenlik sınırlarını uygulayın.
+3. **Araç Güvenliği**: Herhangi bir aracı çağırmadan önce açık kullanıcı onayı isteyin. Kullanıcıların her aracın işlevselliğini anlamasını sağlayın ve sağlam güvenlik sınırları uygulayın.
 
-4. **Araç İzin Kontrolü**: Bir oturum sırasında bir modelin hangi araçları kullanmasına izin verileceğini yapılandırın ve yalnızca açıkça yetkilendirilmiş araçların erişilebilir olmasını sağlayın.
+4. **Araç İzin Kontrolü**: Bir oturum sırasında modelin kullanabileceği araçları yapılandırarak yalnızca açıkça yetkilendirilmiş araçların erişilebilir olmasını sağlayın.
 
-5. **Kimlik Doğrulama**: API anahtarları, OAuth belirteçleri veya diğer güvenli kimlik doğrulama yöntemlerini kullanarak araçlara, kaynaklara veya hassas işlemlere erişim sağlamadan önce uygun kimlik doğrulama gerektirir.
+5. **Kimlik Doğrulama**: API anahtarları, OAuth tokenleri veya diğer güvenli kimlik doğrulama yöntemleri kullanarak araçlara, kaynaklara veya hassas işlemlere erişmeden önce uygun kimlik doğrulamasını zorunlu kılın.
 
-6. **Parametre Doğrulama**: Araç uygulamalarına hatalı veya kötü niyetli girişlerin ulaşmasını önlemek için tüm araç çağrıları için doğrulama uygulayın.
+6. **Parametre Doğrulama**: Araç çağrıları için kötü biçimlendirilmiş veya kötü niyetli girdi girişlerinin araç uygulamalarına ulaşmasını önlemek için doğrulama zorunlu kılın.
 
-7. **Hız Sınırlama**: Kötüye kullanımı önlemek ve sunucu kaynaklarının adil kullanımını sağlamak için hız sınırlama uygulayın.
+7. **Oran Sınırlandırma**: Kötüye kullanımı önlemek ve sunucu kaynaklarının adil kullanımını sağlamak için oran sınırlandırma uygulayın.
 
 ### Uygulama En İyi Uygulamaları
 
-1. **Yetenek Müzakeresi**: Bağlantı kurulumu sırasında desteklenen özellikler, protokol sürümleri, mevcut araçlar ve kaynaklar hakkında bilgi alışverişi yapın.
+1. **Yetkinlik Müzakeresi**: Bağlantı kurulumu sırasında desteklenen özellikler, protokol sürümleri, mevcut araçlar ve kaynaklar hakkında bilgi alışverişinde bulunun.
 
-2. **Araç Tasarımı**: Birden fazla konuyu ele alan monolitik araçlar yerine, bir şeyi iyi yapan odaklanmış araçlar oluşturun.
+2. **Araç Tasarımı**: Birden çok konuyu ele almaya çalışan monolitik araçlar yerine, tek işi iyi yapan odaklanmış araçlar oluşturun.
 
-3. **Hata Yönetimi**: Sorunları teşhis etmeye, hataları zarif bir şekilde ele almaya ve uygulanabilir geri bildirim sağlamaya yardımcı olmak için standartlaştırılmış hata mesajları ve kodları uygulayın.
+3. **Hata Yönetimi**: Sorunların teşhisi, hataların düzgün yönetimi ve uygulanabilir geri bildirim sağlamak için standartlaştırılmış hata mesajları ve kodları uygulayın.
 
-4. **Günlük Kaydı**: Protokol etkileşimlerini denetlemek, hata ayıklamak ve izlemek için yapılandırılmış günlükler yapılandırın.
+4. **Günlükleme**: Protokol etkileşimlerini denetim, hata ayıklama ve izleme için yapılandırılmış günlükler yapılandırın.
 
-5. **İlerleme Takibi**: Uzun süren işlemler için, duyarlı kullanıcı arayüzlerini etkinleştirmek için ilerleme güncellemeleri raporlayın.
+5. **İlerleme Takibi**: Uzun süren işlemler için kullanıcı arayüzlerinin tepki verebilmesi adına ilerleme güncellemeleri raporlayın.
 
-6. **İstek İptali**: Artık gerekli olmayan veya çok uzun süren uçuş halindeki isteklerin iptal edilmesine izin verin.
+6. **İstek İptali**: İstemcilerin artık ihtiyaç duyulmayan veya çok uzun süren mevcut istekleri iptal etmesine izin verin.
 
 ## Ek Referanslar
 
-MCP en iyi uygulamaları hakkında en güncel bilgiler için şu kaynaklara başvurun:
+MCP en iyi uygulamaları hakkında en güncel bilgiler için bkz.:
 
-- [MCP Belgeleri](https://modelcontextprotocol.io/)
-- [MCP Spesifikasyonu](https://spec.modelcontextprotocol.io/)
-- [GitHub Deposu](https://github.com/modelcontextprotocol)
-- [Güvenlik En İyi Uygulamaları](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
+- [MCP Documentation](https://modelcontextprotocol.io/)
+- [MCP Specification (2025-11-25)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
+- [GitHub Repository](https://github.com/modelcontextprotocol)
+- [Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
+- [OWASP MCP Top 10](https://microsoft.github.io/mcp-azure-security-guide/mcp/) - Güvenlik riskleri ve önlemler
+- [MCP Security Summit Workshop (Sherpa)](https://azure-samples.github.io/sherpa/) - Uygulamalı güvenlik eğitimi
 
 ## Pratik Uygulama Örnekleri
 
 ### Araç Tasarımı En İyi Uygulamaları
 
-#### 1. Tek Sorumluluk İlkesi
+#### 1. Tek Sorumluluk Prensibi
 
-Her MCP aracı net ve odaklanmış bir amaca sahip olmalıdır. Birden fazla konuyu ele almaya çalışan monolitik araçlar oluşturmak yerine, belirli görevlerde mükemmel olan uzmanlaşmış araçlar geliştirin.
+Her MCP aracı açık ve odaklanmış bir amaca sahip olmalıdır. Birden fazla konuyu ele almaya çalışan monolitik araçlar yerine, belirli görevlerde üstünleşen özel araçlar geliştirin.
 
 ```csharp
 // A focused tool that does one thing well
@@ -152,10 +145,10 @@ public class WeatherForecastTool : ITool
 
 #### 2. Tutarlı Hata Yönetimi
 
-Bilgilendirici hata mesajları ve uygun kurtarma mekanizmaları ile sağlam hata yönetimi uygulayın.
+Bilgilendirici hata mesajları ve uygun kurtarma mekanizmalarıyla sağlam hata yönetimi uygulayın.
 
 ```python
-# Python example with comprehensive error handling
+# Kapsamlı hata yönetimi ile Python örneği
 class DataQueryTool:
     def get_name(self):
         return "dataQuery"
@@ -165,19 +158,19 @@ class DataQueryTool:
     
     async def execute(self, parameters):
         try:
-            # Parameter validation
+            # Parametre doğrulama
             if "query" not in parameters:
                 raise ToolParameterError("Missing required parameter: query")
                 
             query = parameters["query"]
             
-            # Security validation
+            # Güvenlik doğrulaması
             if self._contains_unsafe_sql(query):
                 raise ToolSecurityError("Query contains potentially unsafe SQL")
             
             try:
-                # Database operation with timeout
-                async with timeout(10):  # 10 second timeout
+                # Zaman aşımı ile veritabanı işlemi
+                async with timeout(10):  # 10 saniye zaman aşımı
                     result = await self._database.execute_query(query)
                     
                 return ToolResponse(
@@ -186,37 +179,37 @@ class DataQueryTool:
             except asyncio.TimeoutError:
                 raise ToolExecutionError("Database query timed out after 10 seconds")
             except DatabaseConnectionError as e:
-                # Connection errors might be transient
+                # Bağlantı hataları geçici olabilir
                 self._log_error("Database connection error", e)
                 raise ToolExecutionError(f"Database connection error: {str(e)}")
             except DatabaseQueryError as e:
-                # Query errors are likely client errors
+                # Sorgu hataları muhtemelen istemci hatalarıdır
                 self._log_error("Database query error", e)
                 raise ToolExecutionError(f"Invalid query: {str(e)}")
                 
         except ToolError:
-            # Let tool-specific errors pass through
+            # Araçlara özgü hataların geçmesine izin ver
             raise
         except Exception as e:
-            # Catch-all for unexpected errors
+            # Beklenmeyen hatalar için genel yakalama
             self._log_error("Unexpected error in DataQueryTool", e)
             raise ToolExecutionError(f"An unexpected error occurred: {str(e)}")
     
     def _contains_unsafe_sql(self, query):
-        # Implementation of SQL injection detection
+        # SQL enjeksiyonu tespiti uygulaması
         pass
         
     def _log_error(self, message, error):
-        # Implementation of error logging
+        # Hata kaydı uygulaması
         pass
 ```
 
 #### 3. Parametre Doğrulama
 
-Hatalı veya kötü niyetli girişleri önlemek için parametreleri her zaman dikkatlice doğrulayın.
+Kötü biçimlendirilmiş veya kötü niyetli girdi girişlerini önlemek için parametreleri her zaman kapsamlı şekilde doğrulayın.
 
 ```javascript
-// JavaScript/TypeScript example with detailed parameter validation
+// JavaScript/TypeScript örneği detaylı parametre doğrulaması ile
 class FileOperationTool {
   getName() {
     return "fileOperation";
@@ -251,7 +244,7 @@ class FileOperationTool {
   }
   
   async execute(parameters) {
-    // 1. Validate parameter presence
+    // 1. Parametre varlığını doğrula
     if (!parameters.operation) {
       throw new ToolError("Missing required parameter: operation");
     }
@@ -260,7 +253,7 @@ class FileOperationTool {
       throw new ToolError("Missing required parameter: path");
     }
     
-    // 2. Validate parameter types
+    // 2. Parametre tiplerini doğrula
     if (typeof parameters.operation !== "string") {
       throw new ToolError("Parameter 'operation' must be a string");
     }
@@ -269,28 +262,28 @@ class FileOperationTool {
       throw new ToolError("Parameter 'path' must be a string");
     }
     
-    // 3. Validate parameter values
+    // 3. Parametre değerlerini doğrula
     const validOperations = ["read", "write", "delete"];
     if (!validOperations.includes(parameters.operation)) {
       throw new ToolError(`Invalid operation. Must be one of: ${validOperations.join(", ")}`);
     }
     
-    // 4. Validate content presence for write operation
+    // 4. Yazma işlemi için içerik varlığını doğrula
     if (parameters.operation === "write" && !parameters.content) {
       throw new ToolError("Content parameter is required for write operation");
     }
     
-    // 5. Path safety validation
+    // 5. Yol güvenliği doğrulaması
     if (!this.isPathWithinAllowedDirectories(parameters.path)) {
       throw new ToolError("Access denied: path is outside of allowed directories");
     }
     
-    // Implementation based on validated parameters
+    // Doğrulanmış parametrelere dayalı uygulama
     // ...
   }
   
   isPathWithinAllowedDirectories(path) {
-    // Implementation of path safety check
+    // Yol güvenliği kontrolünün uygulanması
     // ...
   }
 }
@@ -301,13 +294,13 @@ class FileOperationTool {
 #### 1. Kimlik Doğrulama ve Yetkilendirme
 
 ```java
-// Java example with authentication and authorization
+// Kimlik doğrulama ve yetkilendirmeyle Java örneği
 public class SecureDataAccessTool implements Tool {
     private final AuthenticationService authService;
     private final AuthorizationService authzService;
     private final DataService dataService;
     
-    // Dependency injection
+    // Bağımlılık enjeksiyonu
     public SecureDataAccessTool(
             AuthenticationService authService,
             AuthorizationService authzService,
@@ -324,10 +317,10 @@ public class SecureDataAccessTool implements Tool {
     
     @Override
     public ToolResponse execute(ToolRequest request) {
-        // 1. Extract authentication context
+        // 1. Kimlik doğrulama bağlamını çıkar
         String authToken = request.getContext().getAuthToken();
         
-        // 2. Authenticate user
+        // 2. Kullanıcıyı doğrula
         UserIdentity user;
         try {
             user = authService.validateToken(authToken);
@@ -335,7 +328,7 @@ public class SecureDataAccessTool implements Tool {
             return ToolResponse.error("Authentication failed: " + e.getMessage());
         }
         
-        // 3. Check authorization for the specific operation
+        // 3. Belirli işlem için yetkilendirmeyi kontrol et
         String dataId = request.getParameters().get("dataId").getAsString();
         String operation = request.getParameters().get("operation").getAsString();
         
@@ -344,7 +337,7 @@ public class SecureDataAccessTool implements Tool {
             return ToolResponse.error("Access denied: Insufficient permissions for this operation");
         }
         
-        // 4. Proceed with authorized operation
+        // 4. Yetkilendirilmiş işlemle devam et
         try {
             switch (operation) {
                 case "read":
@@ -364,7 +357,7 @@ public class SecureDataAccessTool implements Tool {
 }
 ```
 
-#### 2. Hız Sınırlama
+#### 2. Oran Sınırlandırma
 
 ```csharp
 // C# rate limiting implementation
@@ -442,28 +435,28 @@ public class RateLimitingMiddleware
 
 ## Test En İyi Uygulamaları
 
-### 1. MCP Araçlarının Birim Testi
+### 1. MCP Araçları için Birim Testi
 
-Araçlarınızı dış bağımlılıkları taklit ederek izole bir şekilde test edin:
+Araçlarınızı her zaman izole olarak, dış bağımlılıkları taklit ederek test edin:
 
 ```typescript
-// TypeScript example of a tool unit test
+// Bir araç birim testi için TypeScript örneği
 describe('WeatherForecastTool', () => {
   let tool: WeatherForecastTool;
   let mockWeatherService: jest.Mocked<IWeatherService>;
   
   beforeEach(() => {
-    // Create a mock weather service
+    // Sahte bir hava durumu servisi oluşturun
     mockWeatherService = {
       getForecasts: jest.fn()
     } as any;
     
-    // Create the tool with the mock dependency
+    // Sahte bağımlılık ile aracı oluşturun
     tool = new WeatherForecastTool(mockWeatherService);
   });
   
   it('should return weather forecast for a location', async () => {
-    // Arrange
+    // Düzenle
     const mockForecast = {
       location: 'Seattle',
       forecasts: [
@@ -475,23 +468,23 @@ describe('WeatherForecastTool', () => {
     
     mockWeatherService.getForecasts.mockResolvedValue(mockForecast);
     
-    // Act
+    // İşlemi gerçekleştir
     const response = await tool.execute({
       location: 'Seattle',
       days: 3
     });
     
-    // Assert
+    // Doğrula
     expect(mockWeatherService.getForecasts).toHaveBeenCalledWith('Seattle', 3);
     expect(response.content[0].text).toContain('Seattle');
     expect(response.content[0].text).toContain('Sunny');
   });
   
   it('should handle errors from the weather service', async () => {
-    // Arrange
+    // Düzenle
     mockWeatherService.getForecasts.mockRejectedValue(new Error('Service unavailable'));
     
-    // Act & Assert
+    // İşle ve doğrula
     await expect(tool.execute({
       location: 'Seattle',
       days: 3
@@ -505,35 +498,35 @@ describe('WeatherForecastTool', () => {
 İstemci isteklerinden sunucu yanıtlarına kadar tam akışı test edin:
 
 ```python
-# Python integration test example
+# Python entegrasyon testi örneği
 @pytest.mark.asyncio
 async def test_mcp_server_integration():
-    # Start a test server
+    # Bir test sunucusu başlat
     server = McpServer()
     server.register_tool(WeatherForecastTool(MockWeatherService()))
     await server.start(port=5000)
     
     try:
-        # Create a client
+        # Bir istemci oluştur
         client = McpClient("http://localhost:5000")
         
-        # Test tool discovery
+        # Araç keşfini test et
         tools = await client.discover_tools()
         assert "weatherForecast" in [t.name for t in tools]
         
-        # Test tool execution
+        # Araç çalıştırmayı test et
         response = await client.execute_tool("weatherForecast", {
             "location": "Seattle",
             "days": 3
         })
         
-        # Verify response
+        # Yanıtı doğrula
         assert response.status_code == 200
         assert "Seattle" in response.content[0].text
         assert len(json.loads(response.content[0].text)["forecasts"]) == 3
         
     finally:
-        # Clean up
+        # Temizle
         await server.stop()
 ```
 
@@ -612,16 +605,16 @@ public class CachedWeatherTool : ITool
 
 #### 2. Bağımlılık Enjeksiyonu ve Test Edilebilirlik
 
-Araçların bağımlılıklarını yapılandırıcı enjeksiyonu yoluyla almasını sağlayarak test edilebilir ve yapılandırılabilir hale getirin:
+Araçların bağımlılıklarını kurucu enjeksiyonu yoluyla alacak şekilde tasarlayın, böylece test edilebilir ve yapılandırılabilir hale gelirler:
 
 ```java
-// Java example with dependency injection
+// Java bağımlılık enjeksiyonu ile örnek
 public class CurrencyConversionTool implements Tool {
     private final ExchangeRateService exchangeService;
     private final CacheService cacheService;
     private final Logger logger;
     
-    // Dependencies injected through constructor
+    // Bağımlılıklar yapıcı metod ile enjekte edildi
     public CurrencyConversionTool(
             ExchangeRateService exchangeService,
             CacheService cacheService,
@@ -631,51 +624,51 @@ public class CurrencyConversionTool implements Tool {
         this.logger = logger;
     }
     
-    // Tool implementation
+    // Araç uygulaması
     // ...
 }
 ```
 
-#### 3. Birleştirilebilir Araçlar
+#### 3. Birleşebilir Araçlar
 
-Daha karmaşık iş akışları oluşturmak için birleştirilebilir araçlar tasarlayın:
+Daha karmaşık iş akışları oluşturmak için bir araya getirilebilen araçlar tasarlayın:
 
 ```python
-# Python example showing composable tools
+# Birleşebilir araçları gösteren Python örneği
 class DataFetchTool(Tool):
     def get_name(self):
         return "dataFetch"
     
-    # Implementation...
+    # Uygulama...
 
 class DataAnalysisTool(Tool):
     def get_name(self):
         return "dataAnalysis"
     
-    # This tool can use results from the dataFetch tool
+    # Bu araç, dataFetch aracının sonuçlarını kullanabilir
     async def execute_async(self, request):
-        # Implementation...
+        # Uygulama...
         pass
 
 class DataVisualizationTool(Tool):
     def get_name(self):
         return "dataVisualize"
     
-    # This tool can use results from the dataAnalysis tool
+    # Bu araç, dataAnalysis aracının sonuçlarını kullanabilir
     async def execute_async(self, request):
-        # Implementation...
+        # Uygulama...
         pass
 
-# These tools can be used independently or as part of a workflow
+# Bu araçlar bağımsız olarak veya bir iş akışının parçası olarak kullanılabilir
 ```
 
 ### Şema Tasarımı En İyi Uygulamaları
 
-Şema, model ve aracınız arasındaki sözleşmedir. İyi tasarlanmış şemalar, araç kullanılabilirliğini artırır.
+Şema, model ve aracınız arasındaki sözleşmedir. İyi tasarlanmış şemalar araç kullanılabilirliğini artırır.
 
-#### 1. Net Parametre Açıklamaları
+#### 1. Açık Parametre Açıklamaları
 
-Her parametre için açıklayıcı bilgiler ekleyin:
+Her parametre için açıklayıcı bilgi ekleyin:
 
 ```csharp
 public object GetSchema()
@@ -714,7 +707,7 @@ public object GetSchema()
 
 #### 2. Doğrulama Kısıtlamaları
 
-Geçersiz girişleri önlemek için doğrulama kısıtlamaları ekleyin:
+Geçersiz girdileri önlemek için doğrulama kısıtlamaları ekleyin:
 
 ```java
 Map<String, Object> getSchema() {
@@ -723,20 +716,20 @@ Map<String, Object> getSchema() {
     
     Map<String, Object> properties = new HashMap<>();
     
-    // Email property with format validation
+    // Format doğrulamalı e-posta özelliği
     Map<String, Object> email = new HashMap<>();
     email.put("type", "string");
     email.put("format", "email");
     email.put("description", "User email address");
     
-    // Age property with numeric constraints
+    // Sayısal kısıtlamalı yaş özelliği
     Map<String, Object> age = new HashMap<>();
     age.put("type", "integer");
     age.put("minimum", 13);
     age.put("maximum", 120);
     age.put("description", "User age in years");
     
-    // Enumerated property
+    // Numaralandırılmış özellik
     Map<String, Object> subscription = new HashMap<>();
     subscription.put("type", "string");
     subscription.put("enum", Arrays.asList("free", "basic", "premium"));
@@ -754,17 +747,17 @@ Map<String, Object> getSchema() {
 }
 ```
 
-#### 3. Tutarlı Dönüş Yapıları
+#### 3. Tutarlı Yanıt Yapıları
 
-Sonuçların modeller tarafından daha kolay yorumlanmasını sağlamak için yanıt yapılarında tutarlılık sağlayın:
+Sonuçların modeller tarafından yorumlanmasını kolaylaştırmak için yanıt yapılarında tutarlılık sağlayın:
 
 ```python
 async def execute_async(self, request):
     try:
-        # Process request
+        # İsteği işle
         results = await self._search_database(request.parameters["query"])
         
-        # Always return a consistent structure
+        # Her zaman tutarlı bir yapı döndür
         return ToolResponse(
             result={
                 "matches": [self._format_item(item) for item in results],
@@ -797,11 +790,11 @@ def _format_item(self, item):
 
 ### Hata Yönetimi
 
-MCP araçlarının güvenilirliğini koruması için sağlam hata yönetimi çok önemlidir.
+Güvenilirlik için MCP araçlarında sağlam hata yönetimi çok önemlidir.
 
 #### 1. Zarif Hata Yönetimi
 
-Hataları uygun seviyelerde ele alın ve bilgilendirici mesajlar sağlayın:
+Hataları uygun seviyede yönetip bilgilendirici mesajlar sağlayın:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -845,13 +838,13 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 
 #### 2. Yapılandırılmış Hata Yanıtları
 
-Mümkün olduğunda yapılandırılmış hata bilgileri döndürün:
+Mümkün olduğunda yapılandırılmış hata bilgisi döndürün:
 
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
     try {
-        // Implementation
+        // Uygulama
     } catch (Exception ex) {
         Map<String, Object> errorResult = new HashMap<>();
         
@@ -869,37 +862,37 @@ public ToolResponse execute(ToolRequest request) {
                 .build();
         }
         
-        // Re-throw other exceptions as ToolExecutionException
+        // Diğer istisnaları ToolExecutionException olarak yeniden fırlat
         throw new ToolExecutionException("Tool execution failed: " + ex.getMessage(), ex);
     }
 }
 ```
 
-#### 3. Tekrar Deneme Mantığı
+#### 3. Yeniden Deneme Mantığı
 
-Geçici hatalar için uygun tekrar deneme mantığı uygulayın:
+Geçici hatalar için uygun yeniden deneme mantığını uygulayın:
 
 ```python
 async def execute_async(self, request):
     max_retries = 3
     retry_count = 0
-    base_delay = 1  # seconds
+    base_delay = 1  # saniyeler
     
     while retry_count < max_retries:
         try:
-            # Call external API
+            # Harici API çağrısı yap
             return await self._call_api(request.parameters)
         except TransientError as e:
             retry_count += 1
             if retry_count >= max_retries:
                 raise ToolExecutionException(f"Operation failed after {max_retries} attempts: {str(e)}")
                 
-            # Exponential backoff
+            # Üssel geri çekilme
             delay = base_delay * (2 ** (retry_count - 1))
             logging.warning(f"Transient error, retrying in {delay}s: {str(e)}")
             await asyncio.sleep(delay)
         except Exception as e:
-            # Non-transient error, don't retry
+            # Geçici olmayan hata, yeniden deneme yapma
             raise ToolExecutionException(f"Operation failed: {str(e)}")
 ```
 
@@ -907,7 +900,7 @@ async def execute_async(self, request):
 
 #### 1. Önbellekleme
 
-Maliyetli işlemler için önbellekleme uygulayın:
+Pahalı işlemler için önbellekleme uygulayın:
 
 ```csharp
 public class CachedDataTool : IMcpTool
@@ -955,7 +948,7 @@ public class CachedDataTool : IMcpTool
 
 #### 2. Asenkron İşleme
 
-G/Ç tabanlı işlemler için asenkron programlama desenlerini kullanın:
+G/Ç ağırlıklı işlemler için asenkron programlama desenlerini kullanın:
 
 ```java
 public class AsyncDocumentProcessingTool implements Tool {
@@ -966,23 +959,23 @@ public class AsyncDocumentProcessingTool implements Tool {
     public ToolResponse execute(ToolRequest request) {
         String documentId = request.getParameters().get("documentId").asText();
         
-        // For long-running operations, return a processing ID immediately
+        // Uzun süren işlemler için, hemen bir işlem kimliği döndürün
         String processId = UUID.randomUUID().toString();
         
-        // Start async processing
+        // Asenkron işlemi başlat
         CompletableFuture.runAsync(() -> {
             try {
-                // Perform long-running operation
+                // Uzun süren işlemi gerçekleştir
                 documentService.processDocument(documentId);
                 
-                // Update status (would typically be stored in a database)
+                // Durumu güncelle (genellikle bir veritabanında saklanır)
                 processStatusRepository.updateStatus(processId, "completed");
             } catch (Exception ex) {
                 processStatusRepository.updateStatus(processId, "failed", ex.getMessage());
             }
         }, executorService);
         
-        // Return immediate response with process ID
+        // İşlem kimliği ile derhal yanıt döndür
         Map<String, Object> result = new HashMap<>();
         result.put("processId", processId);
         result.put("status", "processing");
@@ -991,7 +984,7 @@ public class AsyncDocumentProcessingTool implements Tool {
         return new ToolResponse.Builder().setResult(result).build();
     }
     
-    // Companion status check tool
+    // Yardımcı durum kontrol aracı
     public class ProcessStatusTool implements Tool {
         @Override
         public ToolResponse execute(ToolRequest request) {
@@ -1004,35 +997,35 @@ public class AsyncDocumentProcessingTool implements Tool {
 }
 ```
 
-#### 3. Kaynak Kısıtlaması
+#### 3. Kaynak Kısıtlama
 
-Aşırı yüklenmeyi önlemek için kaynak kısıtlaması uygulayın:
+Aşırı yüklemeyi önlemek için kaynak kısıtlama uygulayın:
 
 ```python
 class ThrottledApiTool(Tool):
     def __init__(self):
         self.rate_limiter = TokenBucketRateLimiter(
-            tokens_per_second=5,  # Allow 5 requests per second
-            bucket_size=10        # Allow bursts up to 10 requests
+            tokens_per_second=5,  # Saniyede 5 isteğe izin ver
+            bucket_size=10        # 10 isteğe kadar patlamalara izin ver
         )
     
     async def execute_async(self, request):
-        # Check if we can proceed or need to wait
+        # Devam edip edemeyeceğimizi ya da beklememiz gerekip gerekmediğini kontrol et
         delay = self.rate_limiter.get_delay_time()
         
         if delay > 0:
-            if delay > 2.0:  # If wait is too long
+            if delay > 2.0:  # Eğer bekleme süresi çok uzunsa
                 raise ToolExecutionException(
                     f"Rate limit exceeded. Please try again in {delay:.1f} seconds."
                 )
             else:
-                # Wait for the appropriate delay time
+                # Uygun gecikme süresi için bekle
                 await asyncio.sleep(delay)
         
-        # Consume a token and proceed with the request
+        # Bir token tüket ve isteğe devam et
         self.rate_limiter.consume()
         
-        # Call API
+        # API'yi çağır
         result = await self._call_api(request.parameters)
         return ToolResponse(result=result)
 
@@ -1050,7 +1043,7 @@ class TokenBucketRateLimiter:
             if self.tokens >= 1:
                 return 0
             
-            # Calculate time until next token available
+            # Sonraki tokenın ne zaman kullanılabilir olacağını hesapla
             return (1 - self.tokens) / self.tokens_per_second
     
     async def consume(self):
@@ -1062,7 +1055,7 @@ class TokenBucketRateLimiter:
         now = time.time()
         elapsed = now - self.last_refill
         
-        # Add new tokens based on elapsed time
+        # Geçen zamana göre yeni tokenler ekle
         new_tokens = elapsed * self.tokens_per_second
         self.tokens = min(self.bucket_size, self.tokens + new_tokens)
         self.last_refill = now
@@ -1070,9 +1063,9 @@ class TokenBucketRateLimiter:
 
 ### Güvenlik En İyi Uygulamaları
 
-#### 1. Giriş Doğrulama
+#### 1. Girdi Doğrulama
 
-Giriş parametrelerini her zaman dikkatlice doğrulayın:
+Girdi parametrelerini her zaman kapsamlı şekilde doğrulayın:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -1115,33 +1108,33 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 
 #### 2. Yetkilendirme Kontrolleri
 
-Uygun yetkilendirme kontrolleri uygulayın:
+Uygun yetkilendirme kontrollerini uygulayın:
 
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
-    // Get user context from request
+    // İstekten kullanıcı bağlamını al
     UserContext user = request.getContext().getUserContext();
     
-    // Check if user has required permissions
+    // Kullanıcının gerekli izinlere sahip olup olmadığını kontrol et
     if (!authorizationService.hasPermission(user, "documents:read")) {
         throw new ToolExecutionException("User does not have permission to access documents");
     }
     
-    // For specific resources, check access to that resource
+    // Belirli kaynaklar için, o kaynağa erişimi kontrol et
     String documentId = request.getParameters().get("documentId").asText();
     if (!documentService.canUserAccess(user.getId(), documentId)) {
         throw new ToolExecutionException("Access denied to the requested document");
     }
     
-    // Proceed with tool execution
+    // Araç yürütmesine devam et
     // ...
 }
 ```
 
-#### 3. Hassas Veri Yönetimi
+#### 3. Hassas Veri İşleme
 
-Hassas verileri dikkatlice yönetin:
+Hassas verileri dikkatli şekilde işleyin:
 
 ```python
 class SecureDataTool(Tool):
@@ -1159,44 +1152,44 @@ class SecureDataTool(Tool):
         user_id = request.parameters["userId"]
         include_sensitive = request.parameters.get("includeSensitiveData", False)
         
-        # Get user data
+        # Kullanıcı verisini al
         user_data = await self.user_service.get_user_data(user_id)
         
-        # Filter sensitive fields unless explicitly requested AND authorized
+        # Duyarlı alanları açıkça talep edilmedikçe VE yetkilendirilmedikçe filtrele
         if not include_sensitive or not self._is_authorized_for_sensitive_data(request):
             user_data = self._redact_sensitive_fields(user_data)
         
         return ToolResponse(result=user_data)
     
     def _is_authorized_for_sensitive_data(self, request):
-        # Check authorization level in request context
+        # İstek bağlamında yetki seviyesini kontrol et
         auth_level = request.context.get("authorizationLevel")
         return auth_level == "admin"
     
     def _redact_sensitive_fields(self, user_data):
-        # Create a copy to avoid modifying the original
+        # Orijinali değiştirmemek için bir kopya oluştur
         redacted = user_data.copy()
         
-        # Redact specific sensitive fields
+        # Belirli duyarlı alanları düzenle
         sensitive_fields = ["ssn", "creditCardNumber", "password"]
         for field in sensitive_fields:
             if field in redacted:
                 redacted[field] = "REDACTED"
         
-        # Redact nested sensitive data
+        # İç içe geçmiş duyarlı verileri düzenle
         if "financialInfo" in redacted:
             redacted["financialInfo"] = {"available": True, "accessRestricted": True}
         
         return redacted
 ```
 
-## MCP Araçları için Test En İyi Uygulamaları
+## MCP Araçları İçin Test En İyi Uygulamaları
 
-Kapsamlı testler, MCP araçlarının doğru çalışmasını, uç durumları ele almasını ve sistemin geri kalanıyla düzgün bir şekilde entegre olmasını sağlar.
+Kapsamlı test, MCP araçlarının doğru çalışmasını, uç durumları ele almasını ve sistemle düzgün entegrasyonunu sağlar.
 
-### Birim Testi
+### Birim Testleri
 
-#### 1. Her Aracı İzole Olarak Test Edin
+#### 1. Her Aracı İzole Test Et
 
 Her aracın işlevselliği için odaklanmış testler oluşturun:
 
@@ -1258,27 +1251,27 @@ public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
 }
 ```
 
-#### 2. Şema Doğrulama Testi
+#### 2. Şema Doğrulama Testleri
 
-Şemaların geçerli olduğunu ve kısıtlamaları doğru bir şekilde uyguladığını test edin:
+Şemaların geçerli ve kısıtlamaları doğru uyguladığını test edin:
 
 ```java
 @Test
 public void testSchemaValidation() {
-    // Create tool instance
+    // Araç örneği oluştur
     SearchTool searchTool = new SearchTool();
     
-    // Get schema
+    // Şemayı al
     Object schema = searchTool.getSchema();
     
-    // Convert schema to JSON for validation
+    // Doğrulama için şemayı JSON'a dönüştür
     String schemaJson = objectMapper.writeValueAsString(schema);
     
-    // Validate schema is valid JSONSchema
+    // Şemanın geçerli bir JSONSchema olduğunu doğrula
     JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
     JsonSchema jsonSchema = factory.getJsonSchema(schemaJson);
     
-    // Test valid parameters
+    // Geçerli parametreleri test et
     JsonNode validParams = objectMapper.createObjectNode()
         .put("query", "test query")
         .put("limit", 5);
@@ -1286,14 +1279,14 @@ public void testSchemaValidation() {
     ProcessingReport validReport = jsonSchema.validate(validParams);
     assertTrue(validReport.isSuccess());
     
-    // Test missing required parameter
+    // Eksik zorunlu parametreyi test et
     JsonNode missingRequired = objectMapper.createObjectNode()
         .put("limit", 5);
         
     ProcessingReport missingReport = jsonSchema.validate(missingRequired);
     assertFalse(missingReport.isSuccess());
     
-    // Test invalid parameter type
+    // Geçersiz parametre türünü test et
     JsonNode invalidType = objectMapper.createObjectNode()
         .put("query", "test")
         .put("limit", "not-a-number");
@@ -1310,14 +1303,14 @@ Hata koşulları için özel testler oluşturun:
 ```python
 @pytest.mark.asyncio
 async def test_api_tool_handles_timeout():
-    # Arrange
-    tool = ApiTool(timeout=0.1)  # Very short timeout
+    # Düzenle
+    tool = ApiTool(timeout=0.1)  # Çok kısa zaman aşımı
     
-    # Mock a request that will time out
+    # Zaman aşımına uğrayacak bir isteği taklit et
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
-            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # Longer than timeout
+            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # Zaman aşımından daha uzun
         )
         
         request = ToolRequest(
@@ -1325,19 +1318,19 @@ async def test_api_tool_handles_timeout():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Act & Assert
+        # İşle ve Doğrula
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Verify exception message
+        # İstisna mesajını doğrula
         assert "timed out" in str(exc_info.value).lower()
 
 @pytest.mark.asyncio
 async def test_api_tool_handles_rate_limiting():
-    # Arrange
+    # Düzenle
     tool = ApiTool()
     
-    # Mock a rate-limited response
+    # Oran sınırlı bir yanıtı taklit et
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
@@ -1351,11 +1344,11 @@ async def test_api_tool_handles_rate_limiting():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Act & Assert
+        # İşle ve Doğrula
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Verify exception contains rate limit information
+        # İstisnanın oran sınırı bilgisi içerdiğini doğrula
         error_msg = str(exc_info.value).lower()
         assert "rate limit" in error_msg
         assert "try again" in error_msg
@@ -1406,7 +1399,7 @@ public async Task DataProcessingWorkflow_CompletesSuccessfully()
 
 #### 2. MCP Sunucu Testi
 
-Tam araç kaydı ve yürütme ile MCP sunucusunu test edin:
+Tam araç kaydı ve yürütmesi ile MCP sunucusunu test edin:
 
 ```java
 @SpringBootTest
@@ -1421,7 +1414,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolDiscovery() throws Exception {
-        // Test the discovery endpoint
+        // Keşif uç noktasını test et
         mockMvc.perform(get("/mcp/tools"))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.tools").isArray())
@@ -1432,7 +1425,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolExecution() throws Exception {
-        // Create tool request
+        // Araç isteği oluştur
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
@@ -1442,7 +1435,7 @@ public class McpServerIntegrationTest {
         parameters.put("b", 7);
         request.put("parameters", parameters);
         
-        // Send request and verify response
+        // İsteği gönder ve yanıtı doğrula
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -1452,17 +1445,17 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolValidation() throws Exception {
-        // Create invalid tool request
+        // Geçersiz araç isteği oluştur
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("operation", "divide");
         parameters.put("a", 10);
-        // Missing parameter "b"
+        // "b" parametresi eksik
         request.put("parameters", parameters);
         
-        // Send request and verify error response
+        // İsteği gönder ve hata yanıtını doğrula
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -1474,15 +1467,15 @@ public class McpServerIntegrationTest {
 
 #### 3. Uçtan Uca Test
 
-Model isteminden araç yürütmesine kadar tam iş akışlarını test edin:
+Model isteminden araç yürütmesine kadar eksiksiz iş akışlarını test edin:
 
 ```python
 @pytest.mark.asyncio
 async def test_model_interaction_with_tool():
-    # Arrange - Set up MCP client and mock model
+    # Düzenle - MCP istemcisini ve sahte modeli kur
     mcp_client = McpClient(server_url="http://localhost:5000")
     
-    # Mock model responses
+    # Sahte model yanıtları
     mock_model = MockLanguageModel([
         MockResponse(
             "What's the weather in Seattle?",
@@ -1497,7 +1490,7 @@ async def test_model_interaction_with_tool():
         )
     ])
     
-    # Mock weather tool response
+    # Sahte hava aracı yanıtı
     with aioresponses() as mocked:
         mocked.post(
             "http://localhost:5000/mcp/execute",
@@ -1513,14 +1506,14 @@ async def test_model_interaction_with_tool():
             }
         )
         
-        # Act
+        # İşlem yap
         response = await mcp_client.send_prompt(
             "What's the weather in Seattle?",
             model=mock_model,
             allowed_tools=["weatherForecast"]
         )
         
-        # Assert
+        # Doğrula
         assert "Seattle" in response.generated_text
         assert "65" in response.generated_text
         assert "Sunny" in response.generated_text
@@ -1533,7 +1526,7 @@ async def test_model_interaction_with_tool():
 
 #### 1. Yük Testi
 
-MCP sunucunuzun kaç eşzamanlı isteği işleyebileceğini test edin:
+MCP sunucunuzun kaç eşzamanlı isteği karşılayabileceğini test edin:
 
 ```csharp
 [Fact]
@@ -1568,7 +1561,7 @@ public async Task McpServer_HandlesHighConcurrency()
 
 #### 2. Stres Testi
 
-Sistemi aşırı yük altında test edin:
+Sistemi aşırı yüke tabi tutun:
 
 ```java
 @Test
@@ -1577,13 +1570,13 @@ public void testServerUnderStress() {
     int rampUpTimeSeconds = 60;
     int testDurationSeconds = 300;
     
-    // Set up JMeter for stress testing
+    // Stres testi için JMeter kurun
     StandardJMeterEngine jmeter = new StandardJMeterEngine();
     
-    // Configure JMeter test plan
+    // JMeter test planını yapılandırın
     HashTree testPlanTree = new HashTree();
     
-    // Create test plan, thread group, samplers, etc.
+    // Test planı, thread grubu, örnekleyiciler vb. oluşturun
     TestPlan testPlan = new TestPlan("MCP Server Stress Test");
     testPlanTree.add(testPlan);
     
@@ -1595,7 +1588,7 @@ public void testServerUnderStress() {
     
     testPlanTree.add(threadGroup);
     
-    // Add HTTP sampler for tool execution
+    // Araç çalıştırma için HTTP örnekleyici ekleyin
     HTTPSampler toolExecutionSampler = new HTTPSampler();
     toolExecutionSampler.setDomain("localhost");
     toolExecutionSampler.setPort(5000);
@@ -1606,29 +1599,29 @@ public void testServerUnderStress() {
     
     threadGroup.add(toolExecutionSampler);
     
-    // Add listeners
+    // Dinleyiciler ekleyin
     SummaryReport summaryReport = new SummaryReport();
     threadGroup.add(summaryReport);
     
-    // Run test
+    // Testi çalıştırın
     jmeter.configure(testPlanTree);
     jmeter.run();
     
-    // Validate results
+    // Sonuçları doğrulayın
     assertEquals(0, summaryReport.getErrorCount());
-    assertTrue(summaryReport.getAverage() < 200); // Average response time < 200ms
-    assertTrue(summaryReport.getPercentile(90.0) < 500); // 90th percentile < 500ms
+    assertTrue(summaryReport.getAverage() < 200); // Ortalama yanıt süresi < 200ms
+    assertTrue(summaryReport.getPercentile(90.0) < 500); // 90. yüzdelik < 500ms
 }
 ```
 
-#### 3. İzleme ve Profil Oluşturma
+#### 3. İzleme ve Profiling
 
 Uzun vadeli performans analizi için izleme kurun:
 
 ```python
-# Configure monitoring for an MCP server
+# Bir MCP sunucusu için izlemeyi yapılandırın
 def configure_monitoring(server):
-    # Set up Prometheus metrics
+    # Prometheus metriklerini kurun
     prometheus_metrics = {
         "request_count": Counter("mcp_requests_total", "Total MCP requests"),
         "request_latency": Histogram(
@@ -1654,10 +1647,10 @@ def configure_monitoring(server):
         )
     }
     
-    # Add middleware for timing and recording metrics
+    # Zamanlama ve metrik kaydı için ara katman ekleyin
     server.add_middleware(PrometheusMiddleware(prometheus_metrics))
     
-    # Expose metrics endpoint
+    # Metrik uç noktasını açığa çıkarın
     @server.router.get("/metrics")
     async def metrics():
         return generate_latest()
@@ -1665,29 +1658,29 @@ def configure_monitoring(server):
     return server
 ```
 
-## MCP İş Akışı Tasarım Kalıpları
+## MCP İş Akışı Tasarım Desenleri
 
-İyi tasarlanmış MCP iş akışları, verimliliği, güvenilirliği ve sürdürülebilirliği artırır. İşte takip edilmesi gereken temel kalıplar:
+İyi tasarlanmış MCP iş akışları verimliliği, güvenilirliği ve sürdürülebilirliği artırır. İzlenecek temel desenler:
 
-### 1. Araç Zinciri Kalıbı
+### 1. Araç Zinciri Deseni
 
-Her aracın çıktısının bir sonraki aracın girdisi olduğu bir dizi araç bağlayın:
+Her aracın çıktısının bir sonraki aracın girdisi olduğu bir dizide birden fazla aracı bağlayın:
 
 ```python
-# Python Chain of Tools implementation
+# Python Araç Zinciri uygulaması
 class ChainWorkflow:
     def __init__(self, tools_chain):
-        self.tools_chain = tools_chain  # List of tool names to execute in sequence
+        self.tools_chain = tools_chain  # Sırayla yürütülecek araç isimleri listesi
     
     async def execute(self, mcp_client, initial_input):
         current_result = initial_input
         all_results = {"input": initial_input}
         
         for tool_name in self.tools_chain:
-            # Execute each tool in the chain, passing previous result
+            # Zincirdeki her aracı çalıştır, önceki sonucu geçir
             response = await mcp_client.execute_tool(tool_name, current_result)
             
-            # Store result and use as input for next tool
+            # Sonucu sakla ve sonraki araç için girdi olarak kullan
             all_results[tool_name] = response.result
             current_result = response.result
         
@@ -1696,7 +1689,7 @@ class ChainWorkflow:
             "all_results": all_results
         }
 
-# Example usage
+# Örnek kullanım
 data_processing_chain = ChainWorkflow([
     "dataFetch",
     "dataCleaner",
@@ -1710,9 +1703,9 @@ result = await data_processing_chain.execute(
 )
 ```
 
-### 2. Yönlendirici Kalıbı
+### 2. Dağıtıcı (Dispatcher) Deseni
 
-Girdiye bağlı olarak uzmanlaşmış araçlara yönlendiren merkezi bir araç kullanın:
+Girdiye göre uzmanlaşmış araçlara yönlendiren merkezi bir araç kullanın:
 
 ```csharp
 public class ContentDispatcherTool : IMcpTool
@@ -1792,9 +1785,9 @@ public class ContentDispatcherTool : IMcpTool
 }
 ```
 
-### 3. Paralel İşleme Kalıbı
+### 3. Paralel İşleme Deseni
 
-Verimlilik için birden fazla aracı aynı anda çalıştırın:
+Verimlilik için birden çok aracı eşzamanlı çalıştırın:
 
 ```java
 public class ParallelDataProcessingWorkflow {
@@ -1805,11 +1798,11 @@ public class ParallelDataProcessingWorkflow {
     }
     
     public WorkflowResult execute(String datasetId) {
-        // Step 1: Fetch dataset metadata (synchronous)
+        // Adım 1: Veri kümesi meta verilerini al (eşzamanlı)
         ToolResponse metadataResponse = mcpClient.executeTool("datasetMetadata", 
             Map.of("datasetId", datasetId));
         
-        // Step 2: Launch multiple analyses in parallel
+        // Adım 2: Birden fazla analizi paralel olarak başlat
         CompletableFuture<ToolResponse> statisticalAnalysis = CompletableFuture.supplyAsync(() ->
             mcpClient.executeTool("statisticalAnalysis", Map.of(
                 "datasetId", datasetId,
@@ -1831,25 +1824,25 @@ public class ParallelDataProcessingWorkflow {
             ))
         );
         
-        // Wait for all parallel tasks to complete
+        // Tüm paralel görevlerin tamamlanmasını bekle
         CompletableFuture<Void> allAnalyses = CompletableFuture.allOf(
             statisticalAnalysis, correlationAnalysis, outlierDetection
         );
         
-        allAnalyses.join();  // Wait for completion
+        allAnalyses.join();  // Tamamlanmayı bekle
         
-        // Step 3: Combine results
+        // Adım 3: Sonuçları birleştir
         Map<String, Object> combinedResults = new HashMap<>();
         combinedResults.put("metadata", metadataResponse.getResult());
         combinedResults.put("statistics", statisticalAnalysis.join().getResult());
         combinedResults.put("correlations", correlationAnalysis.join().getResult());
         combinedResults.put("outliers", outlierDetection.join().getResult());
         
-        // Step 4: Generate summary report
+        // Adım 4: Özet rapor oluştur
         ToolResponse summaryResponse = mcpClient.executeTool("reportGenerator", 
             Map.of("analysisResults", combinedResults));
         
-        // Return complete workflow result
+        // Tam iş akışı sonucunu döndür
         WorkflowResult result = new WorkflowResult();
         result.setDatasetId(datasetId);
         result.setAnalysisResults(combinedResults);
@@ -1860,7 +1853,7 @@ public class ParallelDataProcessingWorkflow {
 }
 ```
 
-### 4. Hata Kurtarma Kalıbı
+### 4. Hata Kurtarma Deseni
 
 Araç hataları için zarif geri dönüşler uygulayın:
 
@@ -1871,7 +1864,7 @@ class ResilientWorkflow:
     
     async def execute_with_fallback(self, primary_tool, fallback_tool, parameters):
         try:
-            # Try primary tool first
+            # Öncelikle birincil aracı dene
             response = await self.client.execute_tool(primary_tool, parameters)
             return {
                 "result": response.result,
@@ -1879,12 +1872,12 @@ class ResilientWorkflow:
                 "tool": primary_tool
             }
         except ToolExecutionException as e:
-            # Log the failure
+            # Hata kaydını tut
             logging.warning(f"Primary tool '{primary_tool}' failed: {str(e)}")
             
-            # Fall back to secondary tool
+            # İkincil araca geç
             try:
-                # Might need to transform parameters for fallback tool
+                # Yedek araç için parametreleri dönüştürmek gerekebilir
                 fallback_params = self._adapt_parameters(parameters, primary_tool, fallback_tool)
                 
                 response = await self.client.execute_tool(fallback_tool, fallback_params)
@@ -1895,7 +1888,7 @@ class ResilientWorkflow:
                     "primaryError": str(e)
                 }
             except ToolExecutionException as fallback_error:
-                # Both tools failed
+                # Her iki araç da başarısız oldu
                 logging.error(f"Both primary and fallback tools failed. Fallback error: {str(fallback_error)}")
                 raise WorkflowExecutionException(
                     f"Workflow failed: primary error: {str(e)}; fallback error: {str(fallback_error)}"
@@ -1903,22 +1896,22 @@ class ResilientWorkflow:
     
     def _adapt_parameters(self, params, from_tool, to_tool):
         """Adapt parameters between different tools if needed"""
-        # This implementation would depend on the specific tools
-        # For this example, we'll just return the original parameters
+        # Bu uygulama spesifik araçlara bağlı olacaktır
+        # Bu örnek için orijinal parametreleri geri döndüreceğiz
         return params
 
-# Example usage
+# Örnek kullanım
 async def get_weather(workflow, location):
     return await workflow.execute_with_fallback(
-        "premiumWeatherService",  # Primary (paid) weather API
-        "basicWeatherService",    # Fallback (free) weather API
+        "premiumWeatherService",  # Birincil (ücretli) hava durumu API'si
+        "basicWeatherService",    # Yedek (ücretsiz) hava durumu API'si
         {"location": location}
     )
 ```
 
-### 5. İş Akışı Bileşimi Kalıbı
+### 5. İş Akışı Bileşimi Deseni
 
-Daha karmaşık iş akışları oluşturmak için daha basit olanları birleştirin:
+Daha basit iş akışlarını birleştirerek karmaşık iş akışları oluşturun:
 
 ```csharp
 public class CompositeWorkflow : IWorkflow
@@ -1965,37 +1958,37 @@ var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
 });
 ```
 
-# MCP Sunucularını Test Etme: En İyi Uygulamalar ve İpuçları
+# MCP Sunucularını Test Etme: En İyi Uygulamalar ve Önemli İpuçları
 
 ## Genel Bakış
 
-Test, güvenilir, yüksek kaliteli MCP sunucuları geliştirmede kritik bir unsurdur. Bu kılavuz, birim testlerden entegrasyon testlerine ve uçtan uca doğrulamaya kadar geliştirme yaşam döngüsü boyunca MCP sunucularınızı test etmek için kapsamlı en iyi uygulamalar ve ipuçları sağlar.
+Test etme, güvenilir ve yüksek kaliteli MCP sunucuları geliştirme sürecinin kritik bir parçasıdır. Bu rehber, birim testlerden entegrasyon testlerine ve uçtan uca doğrulamaya kadar MCP sunucularınızı geliştirme yaşam döngüsü boyunca test etmeniz için kapsamlı en iyi uygulamalar ve ipuçları sağlar.
 
-## MCP Sunucuları için Testin Önemi
+## MCP Sunucuları İçin Test Neden Önemlidir
 
-MCP sunucuları, AI modelleri ve istemci uygulamaları arasında kritik bir ara katman görevi görür. Kapsamlı testler şunları sağlar:
+MCP sunucuları, yapay zeka modelleri ile istemci uygulamalar arasında kritik bir ara katman görevi görür. Titiz testler şunları sağlar:
 
 - Üretim ortamlarında güvenilirlik
-- İsteklerin ve yanıtların doğru şekilde işlenmesi
+- İstek ve yanıtların doğru işlenmesi
 - MCP spesifikasyonlarının doğru uygulanması
 - Hatalara ve uç durumlara karşı dayanıklılık
 - Çeşitli yükler altında tutarlı performans
 
-## MCP Sunucuları için Birim Testi
+## MCP Sunucuları İçin Birim Testi
 
 ### Birim Testi (Temel)
 
-Birim testleri, MCP sunucunuzun bireysel bileşenlerini izole bir şekilde doğrular.
+Birim testleri, MCP sunucunuzun bireysel bileşenlerini izole olarak doğrular.
 
 #### Test Edilecekler
 
-1. **Kaynak İşleyiciler**: Her kaynak işleyicinin mantığını bağımsız olarak test edin
-2. **Araç Uygulamaları**: Araç davranışını çeşitli girdilerle doğrulayın
-3. **İstem Şablonları**: İstem şablonlarının doğru şekilde oluşturulduğundan emin olun
-4. **Şema Doğrulama**: Parametre doğrulama mantığını test edin
+1. **Kaynak İşleyiciler**: Her kaynak işleyicinin mantığını bağımsız test edin
+2. **Araç Uygulamaları**: Farklı girdilerle araç davranışını doğrulayın
+3. **İstem Şablonları**: İstem şablonlarının doğru render edildiğinden emin olun
+4. **Şema Doğrulaması**: Parametre doğrulama mantığını test edin
 5. **Hata Yönetimi**: Geçersiz girdiler için hata yanıtlarını doğrulayın
 
-#### Birim Testi için En İyi Uygulamalar
+#### Birim Testi En İyi Uygulamaları
 
 ```csharp
 // Example unit test for a calculator tool in C#
@@ -2021,9 +2014,9 @@ public async Task CalculatorTool_Add_ReturnsCorrectSum()
 ```
 
 ```python
-# Example unit test for a calculator tool in Python
+# Python'da bir hesap makinesi aracı için örnek bir birim testi
 def test_calculator_tool_add():
-    # Arrange
+    # Düzenle
     calculator = CalculatorTool()
     parameters = {
         "operation": "add",
@@ -2031,11 +2024,11 @@ def test_calculator_tool_add():
         "b": 7
     }
     
-    # Act
+    # Uygula
     response = calculator.execute(parameters)
     result = json.loads(response.content[0].text)
     
-    # Assert
+    # Doğrula
     assert result["value"] == 12
 ```
 
@@ -2046,12 +2039,12 @@ Entegrasyon testleri, MCP sunucunuzun bileşenleri arasındaki etkileşimleri do
 #### Test Edilecekler
 
 1. **Sunucu Başlatma**: Çeşitli yapılandırmalarla sunucu başlatmayı test edin
-2. **Yol Kaydı**: Tüm uç noktaların doğru şekilde kaydedildiğini doğrulayın
+2. **Yol Kaydı**: Tüm uç noktaların doğru kaydedildiğini doğrulayın
 3. **İstek İşleme**: Tam istek-yanıt döngüsünü test edin
-4. **Hata Yayılımı**: Hataların bileşenler arasında düzgün bir şekilde ele alındığından emin olun
-5. **Kimlik Doğrulama ve Yetkilendirme**: Güvenlik mekanizmalarını test edin
+4. **Hata Yayılımı**: Hataların bileşenler arasında düzgün yönetildiğini sağlayın
+5. **Kimlik Doğrulama & Yetkilendirme**: Güvenlik mekanizmalarını test edin
 
-#### Entegrasyon Testi için En İyi Uygulamalar
+#### Entegrasyon Testi En İyi Uygulamaları
 
 ```csharp
 // Example integration test for MCP server in C#
@@ -2089,25 +2082,25 @@ public async Task Server_ProcessToolRequest_ReturnsValidResponse()
 
 ### Uçtan Uca Test (Üst Katman)
 
-Uçtan uca testler, istemciden sunucuya kadar tüm sistem davranışını doğrular.
+Uçtan uca testler, istemciden sunucuya tam sistem davranışını doğrular.
 
 #### Test Edilecekler
 
 1. **İstemci-Sunucu İletişimi**: Tam istek-yanıt döngülerini test edin
-2. **Gerçek İstemci SDK'ları**: Gerçek istemci uygulamalarıyla test yapın
-3. **Yük Altında Performans**: Birden fazla eşzamanlı istekle davranışı doğrulayın
+2. **Gerçek İstemci SDK’ları**: Gerçek istemci uygulamalarıyla test edin
+3. **Yük Altında Performans**: Çoklu eşzamanlı isteklerle davranışı doğrulayın
 4. **Hata Kurtarma**: Sistem hatalardan kurtulma yeteneğini test edin
-5. **Uzun Süreli İşlemler**: Akış ve uzun işlemlerin yönetimini doğrulayın
+5. **Uzun Süren İşlemler**: Akış ve uzun işlemlerin yönetimini doğrulayın
 
-#### Uçtan Uca Test için En İyi Uygulamalar
+#### Uçtan Uca Test En İyi Uygulamaları
 
 ```typescript
-// Example E2E test with a client in TypeScript
+// TypeScript'te bir istemci ile örnek E2E testi
 describe('MCP Server E2E Tests', () => {
   let client: McpClient;
   
   beforeAll(async () => {
-    // Start server in test environment
+    // Test ortamında sunucuyu başlat
     await startTestServer();
     client = new McpClient('http://localhost:5000');
   });
@@ -2117,32 +2110,32 @@ describe('MCP Server E2E Tests', () => {
   });
   
   test('Client can invoke calculator tool and get correct result', async () => {
-    // Act
+    // İşlem yap
     const response = await client.invokeToolAsync('calculator', {
       operation: 'divide',
       a: 20,
       b: 4
     });
     
-    // Assert
+    // Doğrula
     expect(response.statusCode).toBe(200);
     expect(response.content[0].text).toContain('5');
   });
 });
 ```
 
-## MCP Testi için Taklit Stratejileri
+## MCP Testi İçin Mocklama Stratejileri
 
-Taklit, test sırasında bileşenleri izole etmek için gereklidir.
+Mocklama, test sırasında bileşenleri izole etmek için gereklidir.
 
-### Taklit Edilecek Bileşenler
+### Mocklanacak Bileşenler
 
-1. **Harici AI Modelleri**: Öngörülebilir testler için model yanıtlarını taklit edin
-2. **Harici Hizmetler**: API bağımlılıklarını (veritabanları, üçüncü taraf hizmetler) taklit edin
-3. **Kimlik Doğrulama Hizmetleri**: Kimlik sağlayıcılarını taklit edin
-4. **Kaynak Sağlayıcılar**: Maliyetli kaynak işleyicileri taklit edin
+1. **Dış AI Modelleri**: Öngörülebilir testler için model yanıtlarını mocklayın
+2. **Dış Servisler**: API bağımlılıklarını (veritabanları, üçüncü taraf servisler) mocklayın
+3. **Kimlik Doğrulama Servisleri**: Kimlik sağlayıcılarını mocklayın
+4. **Kaynak Sağlayıcılar**: Pahalı kaynak işleyicileri mocklayın
 
-### Örnek: Bir AI Model Yanıtını Taklit Etme
+### Örnek: AI Model Yanıtı Mocklama
 
 ```csharp
 // C# example with Moq
@@ -2160,27 +2153,27 @@ var server = new McpServer(modelClient: mockModel.Object);
 ```
 
 ```python
-# Python example with unittest.mock
+# unittest.mock ile Python örneği
 @patch('mcp_server.models.OpenAIModel')
 def test_with_mock_model(mock_model):
-    # Configure mock
+    # Mock'u yapılandır
     mock_model.return_value.generate_response.return_value = {
         "text": "Mocked model response",
         "finish_reason": "completed"
     }
     
-    # Use mock in test
+    # Testte mock kullan
     server = McpServer(model_client=mock_model)
-    # Continue with test
+    # Teste devam et
 ```
 
 ## Performans Testi
 
-Performans testi, üretim MCP sunucuları için kritik öneme sahiptir.
+Performans testi, üretim MCP sunucuları için kritik önemdedir.
 
 ### Ölçülecekler
 
-1. **Gecikme**: İstekler için yanıt süresi
+1. **Gecikme**: İsteklerin yanıt süresi
 2. **Verim**: Saniyede işlenen istek sayısı
 3. **Kaynak Kullanımı**: CPU, bellek, ağ kullanımı
 4. **Eşzamanlılık Yönetimi**: Paralel istekler altındaki davranış
@@ -2188,14 +2181,61 @@ Performans testi, üretim MCP sunucuları için kritik öneme sahiptir.
 
 ### Performans Testi Araçları
 
-- **k6**: Açık kaynaklı yük testi aracı
+- **k6**: Açık kaynak yük testi aracı
 - **JMeter**: Kapsamlı performans testi
 - **Locust**: Python tabanlı yük testi
 - **Azure Load Testing**: Bulut tabanlı performans testi
 
-### Örnek: k6 ile Temel Yük
-3. **Performans Temel Değerleri**: Geriye dönük performans düşüşlerini tespit etmek için performans ölçütlerini koruyun  
-4. **Güvenlik Taramaları**: Güvenlik testlerini otomatikleştirerek pipeline'ın bir parçası haline getirin  
+### Örnek: k6 ile Temel Yük Testi
+
+```javascript
+// MCP sunucusunu yük testi için k6 betiği
+import http from 'k6/http';
+import { check, sleep } from 'k6';
+
+export const options = {
+  vus: 10,  // 10 sanal kullanıcı
+  duration: '30s',
+};
+
+export default function () {
+  const payload = JSON.stringify({
+    tool: 'calculator',
+    parameters: {
+      operation: 'add',
+      a: Math.floor(Math.random() * 100),
+      b: Math.floor(Math.random() * 100)
+    }
+  });
+
+  const params = {
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer test-token'
+    },
+  };
+
+  const res = http.post('http://localhost:5000/api/tools/invoke', payload, params);
+  
+  check(res, {
+    'status is 200': (r) => r.status === 200,
+    'response time < 500ms': (r) => r.timings.duration < 500,
+  });
+  
+  sleep(1);
+}
+```
+
+## MCP Sunucuları İçin Test Otomasyonu
+
+Testlerinizi otomatikleştirmek, tutarlı kalite ve daha hızlı geri bildirim sağlar.
+
+### CI/CD Entegrasyonu
+
+1. **Pull Request’lerde Birim Testleri Çalıştırın**: Kod değişikliklerinin mevcut işlevselliği bozmadığından emin olun  
+2. **Staging Ortamında Entegrasyon Testleri**: Üretim öncesi ortamlarda entegrasyon testlerini çalıştırın  
+3. **Performans Temelleri**: Gerilemeleri yakalamak için performans kıyaslamalarını koruyun  
+4. **Güvenlik Taramaları**: Pipeline'ın bir parçası olarak güvenlik testlerini otomatikleştirin  
 
 ### Örnek CI Pipeline (GitHub Actions)
 
@@ -2235,20 +2275,20 @@ jobs:
     - name: Performance Tests
       run: dotnet run --project tests/PerformanceTests/PerformanceTests.csproj
 ```
+  
+## MCP Spesifikasyonuna Uygunluk Testi  
 
-## MCP Spesifikasyonuna Uyum Testi  
+Sunucunuzun MCP spesifikasyonunu doğru şekilde uyguladığını doğrulayın.  
 
-Sunucunuzun MCP spesifikasyonunu doğru bir şekilde uyguladığını doğrulayın.  
-
-### Temel Uyum Alanları  
+### Ana Uygunluk Alanları  
 
 1. **API Uç Noktaları**: Gerekli uç noktaları test edin (/resources, /tools, vb.)  
 2. **İstek/Cevap Formatı**: Şema uyumluluğunu doğrulayın  
-3. **Hata Kodları**: Farklı senaryolar için doğru durum kodlarını kontrol edin  
+3. **Hata Kodları**: Çeşitli senaryolar için doğru durum kodlarını kontrol edin  
 4. **İçerik Türleri**: Farklı içerik türlerinin işlenmesini test edin  
 5. **Kimlik Doğrulama Akışı**: Spesifikasyona uygun kimlik doğrulama mekanizmalarını doğrulayın  
 
-### Uyum Test Paketi  
+### Uygunluk Test Paketi  
 
 ```csharp
 [Fact]
@@ -2273,64 +2313,70 @@ public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
         // Additional schema validation
     });
 }
-```  
+```
+  
+## Etkili MCP Sunucu Testi İçin En İyi 10 İpucu  
 
-## Etkili MCP Sunucu Testi için En İyi 10 İpucu  
-
-1. **Araç Tanımlarını Ayrı Test Edin**: Şema tanımlarını araç mantığından bağımsız olarak doğrulayın  
-2. **Parametreli Testler Kullanın**: Araçları çeşitli girdilerle, özellikle uç durumlarla test edin  
-3. **Hata Yanıtlarını Kontrol Edin**: Tüm olası hata durumları için doğru hata işleme mekanizmalarını doğrulayın  
-4. **Yetkilendirme Mantığını Test Edin**: Farklı kullanıcı rolleri için doğru erişim kontrolünü sağlayın  
-5. **Test Kapsamını İzleyin**: Kritik yol kodunun yüksek kapsama oranına ulaşmayı hedefleyin  
-6. **Akış Yanıtlarını Test Edin**: Akış içeriğinin doğru şekilde işlendiğini doğrulayın  
-7. **Ağ Sorunlarını Simüle Edin**: Zayıf ağ koşullarında davranışı test edin  
-8. **Kaynak Sınırlarını Test Edin**: Kota veya hız sınırlarına ulaşıldığında davranışı doğrulayın  
+1. **Araç Tanımlarını Ayrı Test Edin**: Araç mantığından bağımsız olarak şema tanımlarını doğrulayın  
+2. **Parametreli Testler Kullanın**: Kenar durumlar dahil çeşitli girdilerle araçları test edin  
+3. **Hata Yanıtlarını Kontrol Edin**: Tüm olası hata durumları için doğru hata yönetimini doğrulayın  
+4. **Yetkilendirme Mantığını Test Edin**: Farklı kullanıcı rolleri için uygun erişim kontrolünü sağlayın  
+5. **Test Kapsamını İzleyin**: Kritik yol kodunun yüksek kapsama hedefleyin  
+6. **Akış Yanıtlarını Test Edin**: Akış içeriklerinin doğru şekilde işlenmesini doğrulayın  
+7. **Ağ Problemlerini Simüle Edin**: Kötü ağ koşullarında davranışı test edin  
+8. **Kaynak Sınırlarını Test Edin**: Kota veya hız sınırına ulaşıldığında davranışı doğrulayın  
 9. **Regresyon Testlerini Otomatikleştirin**: Her kod değişikliğinde çalışan bir test paketi oluşturun  
-10. **Test Senaryolarını Belgeleyin**: Test senaryolarının net bir şekilde belgelenmesini sağlayın  
+10. **Test Senaryolarını Belgelendirin**: Test durumlarının net dokümantasyonunu tutun  
 
 ## Yaygın Test Hataları  
 
-- **Sadece olumlu senaryolara odaklanmak**: Hata durumlarını kapsamlı bir şekilde test ettiğinizden emin olun  
-- **Performans testlerini göz ardı etmek**: Üretimi etkilemeden önce darboğazları belirleyin  
-- **Sadece izole testler yapmak**: Birim, entegrasyon ve uçtan uca testleri birleştirin  
+- **Sadece mutlu yol testine aşırı güvenmek**: Hata durumlarını da kapsamlı şekilde test edin  
+- **Performans testlerini ihmal etmek**: Üretimi etkileyen darboğazları önceden tespit edin  
+- **Yalnızca izole test yapmak**: Birim, entegrasyon ve uçtan uca testleri birleştirin  
 - **Eksik API kapsamı**: Tüm uç noktaların ve özelliklerin test edildiğinden emin olun  
-- **Tutarsız test ortamları**: Tutarlı test ortamları sağlamak için konteynerler kullanın  
+- **Tutarsız test ortamları**: Tutarlı test ortamları sağlamak için konteyner kullanın  
 
 ## Sonuç  
 
-Kapsamlı bir test stratejisi, güvenilir ve yüksek kaliteli MCP sunucuları geliştirmek için gereklidir. Bu kılavuzda belirtilen en iyi uygulamaları ve ipuçlarını uygulayarak, MCP uygulamalarınızın en yüksek kalite, güvenilirlik ve performans standartlarını karşıladığından emin olabilirsiniz.  
+Kapsamlı bir test stratejisi, güvenilir ve yüksek kaliteli MCP sunucuları geliştirmek için esastır. Bu rehberde belirtilen en iyi uygulamaları ve ipuçlarını uygulayarak, MCP uygulamalarınızın en yüksek kalite, güvenilirlik ve performans standartlarını karşılamasını sağlayabilirsiniz.  
 
 ## Önemli Noktalar  
 
-1. **Araç Tasarımı**: Tek sorumluluk prensibini izleyin, bağımlılık enjeksiyonu kullanın ve birleştirilebilirlik için tasarlayın  
-2. **Şema Tasarımı**: Açık, iyi belgelenmiş ve doğru doğrulama kısıtlamalarına sahip şemalar oluşturun  
+1. **Araç Tasarımı**: Tek sorumluluk prensibini uygulayın, bağımlılık enjeksiyonu kullanın ve bileşenlere uygun tasarım yapın  
+2. **Şema Tasarımı**: Açık, iyi belgelenmiş şemalar oluşturun ve doğru doğrulama kısıtlamaları uygulayın  
 3. **Hata Yönetimi**: Zarif hata yönetimi, yapılandırılmış hata yanıtları ve yeniden deneme mantığı uygulayın  
-4. **Performans**: Önbellekleme, asenkron işlem ve kaynak sınırlama kullanın  
-5. **Güvenlik**: Kapsamlı giriş doğrulama, yetkilendirme kontrolleri ve hassas veri işleme uygulayın  
+4. **Performans**: Önbellekleme, asenkron işleme ve kaynak sınırlamasını kullanın  
+5. **Güvenlik**: Kapsamlı giriş doğrulaması, yetkilendirme kontrolleri ve hassas veri işleme uygulayın  
 6. **Test**: Kapsamlı birim, entegrasyon ve uçtan uca testler oluşturun  
-7. **İş Akışı Modelleri**: Zincirler, dağıtıcılar ve paralel işlem gibi yerleşik modelleri uygulayın  
+7. **İş Akışı Modelleri**: Zincirler, dağıtıcılalar ve paralel işleme gibi yerleşik modelleri uygulayın  
 
-## Egzersiz  
+## Alıştırma  
 
-Bir belge işleme sistemi için bir MCP aracı ve iş akışı tasarlayın:  
+Aşağıdaki özelliklere sahip bir belgeler işleme sistemi için bir MCP aracı ve iş akışı tasarlayın:  
 
-1. Birden fazla formatta belge kabul eder (PDF, DOCX, TXT)  
+1. Birden çok formatta belgeleri kabul eder (PDF, DOCX, TXT)  
 2. Belgelerden metin ve anahtar bilgileri çıkarır  
-3. Belgeleri türüne ve içeriğine göre sınıflandırır  
-4. Her belgenin bir özetini oluşturur  
+3. Belgeleri tür ve içeriğe göre sınıflandırır  
+4. Her belgenin özetini oluşturur  
 
-Bu senaryo için araç şemalarını, hata yönetimini ve en uygun iş akışı modelini uygulayın. Bu uygulamayı nasıl test edeceğinizi düşünün.  
+Bu senaryoya en uygun araç şemalarını, hata yönetimini ve iş akışı modelini uygulayın. Bu uygulamayı nasıl test edeceğinizi düşünün.  
 
 ## Kaynaklar  
 
-1. MCP topluluğuna katılın: [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) üzerinden en son gelişmelerden haberdar olun  
+1. En son gelişmeleri takip etmek için MCP topluluğuna [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) üzerinden katılın  
 2. Açık kaynak [MCP projelerine](https://github.com/modelcontextprotocol) katkıda bulunun  
-3. MCP ilkelerini kendi organizasyonunuzun yapay zeka girişimlerinde uygulayın  
-4. Sektörünüze özel MCP uygulamalarını keşfedin  
-5. Çok modlu entegrasyon veya kurumsal uygulama entegrasyonu gibi belirli MCP konularında ileri düzey kurslar almayı düşünün  
-6. [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) aracılığıyla öğrendiğiniz ilkeleri kullanarak kendi MCP araçlarınızı ve iş akışlarınızı oluşturmayı deneyin  
+3. Kendi kuruluşunuzun yapay zeka girişimlerinde MCP ilkelerini uygulayın  
+4. Sektörünüz için özel MCP uygulamalarını keşfedin  
+5. Çok modlu entegrasyon veya kurumsal uygulama entegrasyonu gibi belirli MCP konularında ileri seviye kurslar almayı değerlendirin  
+6. [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) aracılığıyla öğrenilen ilkelerle kendi MCP araçlarınızı ve iş akışlarınızı oluşturmayı deneyin  
 
-Sonraki: En İyi Uygulamalar [vaka çalışmaları](../09-CaseStudy/README.md)  
+## Sırada Ne Var  
 
-**Feragatname**:  
-Bu belge, [Co-op Translator](https://github.com/Azure/co-op-translator) adlı yapay zeka çeviri hizmeti kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belgenin kendi dilindeki hali, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel bir insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalar için sorumluluk kabul etmiyoruz.
+Sonraki: [Vaka Çalışmaları](../09-CaseStudy/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Feragatname**:
+Bu belge, yapay zeka çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstermemize rağmen, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi ana dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yanlış yorumlamalar nedeniyle sorumluluk kabul etmiyoruz.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

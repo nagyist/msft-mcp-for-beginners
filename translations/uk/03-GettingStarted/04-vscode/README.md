@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d940b5e0af75e3a3a4d1c3179120d1d9",
-  "translation_date": "2025-08-26T18:30:18+00:00",
-  "source_file": "03-GettingStarted/04-vscode/README.md",
-  "language_code": "uk"
-}
--->
 # Використання сервера в режимі агента GitHub Copilot
 
 Visual Studio Code та GitHub Copilot можуть працювати як клієнт і використовувати MCP Server. Чому це може бути корисно? Це означає, що всі функції MCP Server тепер доступні безпосередньо у вашому IDE. Уявіть, що ви додаєте, наприклад, MCP сервер GitHub — це дозволить керувати GitHub за допомогою підказок замість введення конкретних команд у терміналі. Або уявіть будь-що, що може покращити ваш досвід розробки, кероване природною мовою. Тепер ви бачите переваги, чи не так?
@@ -38,9 +29,9 @@ Visual Studio Code та GitHub Copilot можуть працювати як кл
 
 ### Знімки екрана
 
-![Керована конфігурація MCP сервера у Visual Studio Code](../../../../translated_images/chat-mode-agent.729a22473f822216dd1e723aaee1f7d4a2ede571ee0948037a2d9357a63b9d0b.uk.png)
-![Вибір інструментів для кожної сесії агента](../../../../translated_images/agent-mode-select-tools.522c7ba5df0848f8f0d1e439c2e96159431bc620cb39ccf3f5dc611412fd0006.uk.png)
-![Легке налагодження помилок під час розробки MCP](../../../../translated_images/mcp-list-servers.fce89eefe3f30032bed8952e110ab9d82fadf043fcfa071f7d40cf93fb1ea9e9.uk.png)
+![Керована конфігурація MCP сервера у Visual Studio Code](../../../../translated_images/uk/chat-mode-agent.729a22473f822216.webp)
+![Вибір інструментів для кожної сесії агента](../../../../translated_images/uk/agent-mode-select-tools.522c7ba5df0848f8.webp)
+![Легке налагодження помилок під час розробки MCP](../../../../translated_images/uk/mcp-list-servers.fce89eefe3f30032.webp)
 
 Давайте детальніше розглянемо, як використовувати візуальний інтерфейс у наступних розділах.
 
@@ -103,15 +94,15 @@ Visual Studio Code та GitHub Copilot можуть працювати як кл
 
 1. Знайдіть ваш запис у *mcp.json* і переконайтеся, що ви бачите значок "play":
 
-  ![Запуск сервера у Visual Studio Code](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.uk.png)  
+  ![Запуск сервера у Visual Studio Code](../../../../translated_images/uk/vscode-start-server.8e3c986612e3555d.webp)  
 
 1. Натисніть значок "play". Ви повинні побачити, що кількість доступних інструментів у значку інструментів GitHub Copilot Chat збільшилася. Якщо ви натиснете цей значок, ви побачите список зареєстрованих інструментів. Ви можете позначати/знімати позначки з кожного інструменту залежно від того, чи хочете ви, щоб GitHub Copilot використовував їх як контекст:
 
-  ![Запуск сервера у Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.uk.png)
+  ![Запуск сервера у Visual Studio Code](../../../../translated_images/uk/vscode-tool.0b3bbea2fb7d8c26.webp)
 
 1. Щоб запустити інструмент, введіть підказку, яка відповідає опису одного з ваших інструментів, наприклад, таку підказку: "додати 22 до 1":
 
-  ![Запуск інструменту через GitHub Copilot](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.uk.png)
+  ![Запуск інструменту через GitHub Copilot](../../../../translated_images/uk/vscode-agent.d5a0e0b897331060.webp)
 
   Ви повинні побачити відповідь "23".
 

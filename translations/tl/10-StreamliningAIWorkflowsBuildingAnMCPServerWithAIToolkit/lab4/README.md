@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f83bc722dc758efffd68667d6a1db470",
-  "translation_date": "2025-07-14T08:45:42+00:00",
-  "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/README.md",
-  "language_code": "tl"
-}
--->
 # 🐙 Module 4: Praktikal na Pag-develop ng MCP - Custom GitHub Clone Server
 
 ![Duration](https://img.shields.io/badge/Duration-30_minutes-blue?style=flat-square)
@@ -15,21 +6,21 @@ CO_OP_TRANSLATOR_METADATA:
 ![VS Code](https://img.shields.io/badge/VS%20Code-Integration-blue?style=flat-square&logo=visualstudiocode)
 ![GitHub Copilot](https://img.shields.io/badge/GitHub%20Copilot-Agent%20Mode-green?style=flat-square&logo=github)
 
-> **⚡ Mabilisang Simula:** Gumawa ng production-ready MCP server na awtomatikong nagko-clone ng GitHub repository at nag-iintegrate sa VS Code sa loob lamang ng 30 minuto!
+> **⚡ Mabilisang Simula:** Bumuo ng isang production-ready MCP server na nag-aautomat ng pag-clone ng GitHub repository at integrasyon ng VS Code sa loob lamang ng 30 minuto!
 
 ## 🎯 Mga Layunin sa Pagkatuto
 
 Sa pagtatapos ng lab na ito, magagawa mong:
 
 - ✅ Gumawa ng custom MCP server para sa mga totoong workflow sa pag-develop
-- ✅ Ipatupad ang pag-clone ng GitHub repository gamit ang MCP
-- ✅ I-integrate ang custom MCP servers sa VS Code at Agent Builder
-- ✅ Gamitin ang GitHub Copilot Agent Mode kasama ang custom MCP tools
-- ✅ Subukan at i-deploy ang custom MCP servers sa production environment
+- ✅ Ipatupad ang functionality ng pag-clone ng GitHub repository gamit ang MCP
+- ✅ I-integrate ang mga custom MCP server sa VS Code at Agent Builder
+- ✅ Gamitin ang GitHub Copilot Agent Mode kasama ang mga custom MCP tools
+- ✅ Subukan at i-deploy ang mga custom MCP server sa mga production environment
 
 ## 📋 Mga Kinakailangan
 
-- Natapos ang Labs 1-3 (mga pundasyon at advanced na pag-develop ng MCP)
+- Nakumpleto ang Labs 1-3 (mga pundasyon ng MCP at advanced na pag-develop)
 - Subscription sa GitHub Copilot ([may libreng signup](https://github.com/github-copilot/signup))
 - VS Code na may AI Toolkit at GitHub Copilot extensions
 - Nakainstall at naka-configure ang Git CLI
@@ -37,23 +28,23 @@ Sa pagtatapos ng lab na ito, magagawa mong:
 ## 🏗️ Pangkalahatang-ideya ng Proyekto
 
 ### **Tunay na Hamon sa Pag-develop**
-Bilang mga developer, madalas nating ginagamit ang GitHub para mag-clone ng mga repository at buksan ito sa VS Code o VS Code Insiders. Ang manu-manong prosesong ito ay kinabibilangan ng:
+Bilang mga developer, madalas nating ginagamit ang GitHub para mag-clone ng repositories at buksan ito sa VS Code o VS Code Insiders. Ang prosesong manu-mano ay kinabibilangan ng:
 1. Pagbukas ng terminal/command prompt
 2. Pagpunta sa nais na direktoryo
-3. Pagpatakbo ng `git clone` na utos
-4. Pagbukas ng VS Code sa na-clone na direktoryo
+3. Pagpapatakbo ng `git clone` na utos
+4. Pagbukas ng VS Code sa cloned na direktoryo
 
-**Pinapadali ng aming MCP solusyon ang prosesong ito sa isang matalinong utos lang!**
+**Ang solusyon ng aming MCP ay pinadadali itong maging isang matalinong utos lang!**
 
-### **Ang Iyong Gagawa**
+### **Ano ang Iyong Bubuuin**
 Isang **GitHub Clone MCP Server** (`git_mcp_server`) na nagbibigay ng:
 
-| Tampok | Paglalarawan | Benepisyo |
+| Tampok | Deskripsyon | Benepisyo |
 |---------|-------------|---------|
-| 🔄 **Matalinong Pag-clone ng Repository** | Mag-clone ng GitHub repos na may validation | Awtomatikong pag-check ng error |
-| 📁 **Matalinong Pamamahala ng Direktoryo** | Suriin at lumikha ng mga direktoryo nang ligtas | Naiiwasan ang pagsulat sa dati nang files |
-| 🚀 **Cross-Platform na Integrasyon sa VS Code** | Buksan ang mga proyekto sa VS Code/Insiders | Tuloy-tuloy na workflow |
-| 🛡️ **Matibay na Pag-handle ng Error** | Harapin ang mga isyu sa network, permiso, at path | Maaasahang gamit sa production |
+| 🔄 **Smart Repository Cloning** | Mag-clone ng GitHub repos na may validation | Awtomatikong error checking |
+| 📁 **Matalinong Pamamahala ng Direktoryo** | Suriin at lumikha ng mga direktoryo nang ligtas | Naiiwasan ang pag-overwrite |
+| 🚀 **Cross-Platform VS Code Integration** | Buksan ang mga proyekto sa VS Code/Insiders | Tuloy-tuloy na workflow |
+| 🛡️ **Matibay na Paghawak ng Error** | Asikasuhin ang mga network, permiso, at path na isyu | Production-ready na pagiging maaasahan |
 
 ---
 
@@ -70,17 +61,17 @@ Isang **GitHub Clone MCP Server** (`git_mcp_server`) na nagbibigay ng:
 3. **I-initialize ang custom MCP server:**
    - Pumunta sa **Tools** → **Add Tool** → **MCP Server**
    - Piliin ang **"Create A new MCP Server"**
-   - Pumili ng **Python template** para sa pinakamalawak na kakayahan
+   - Pumili ng **Python template** para sa pinakamataas na flexible na paggamit
    - **Pangalan ng Server:** `git_mcp_server`
 
 ### Hakbang 2: I-configure ang GitHub Copilot Agent Mode
 
 1. **Buksan ang GitHub Copilot** sa VS Code (Ctrl/Cmd + Shift + P → "GitHub Copilot: Open")
 2. **Piliin ang Agent Model** sa Copilot interface
-3. **Pumili ng Claude 3.7 model** para sa mas mahusay na pag-unawa
-4. **I-enable ang MCP integration** para sa access sa mga tool
+3. **Piliin ang Claude 3.7 model** para sa mas mahusay na reasoning capabilities
+4. **I-enable ang MCP integration** para sa access ng tool
 
-> **💡 Tip mula sa Pro:** Ang Claude 3.7 ay nagbibigay ng mas malalim na pag-unawa sa mga workflow sa pag-develop at mga pattern ng pag-handle ng error.
+> **💡 Tip ng Propesyonal:** Nagbibigay ang Claude 3.7 ng mas mataas na pag-unawa sa mga development workflow at mga pattern ng error handling.
 
 ### Hakbang 3: Ipatupad ang Pangunahing Functionality ng MCP Server
 
@@ -121,7 +112,7 @@ Additional Requirements:
 
 #### 4a. Subukan sa Agent Builder
 
-1. **Patakbuhin ang debug configuration** para sa Agent Builder
+1. **Ilunsad ang debug configuration** para sa Agent Builder
 2. **I-configure ang iyong agent gamit ang system prompt na ito:**
 
 ```
@@ -129,7 +120,7 @@ SYSTEM_PROMPT:
 You are my intelligent coding repository assistant. You help developers efficiently clone GitHub repositories and set up their development environment. Always provide clear feedback about operations and handle errors gracefully.
 ```
 
-3. **Subukan gamit ang makatotohanang mga senaryo ng user:**
+3. **Subukan gamit ang makatotohanang scenarios ng user:**
 
 ```
 USER_PROMPT EXAMPLES:
@@ -139,70 +130,84 @@ Scenario : Basic Clone and Open
  } and save to {The global path you specify}, then open it with VS Code Insiders"
 ```
 
-![Agent Builder Testing](../../../../translated_images/DebugAgent.81d152370c503241b3b39a251b8966f7f739286df19dd57f9147f6402214a012.tl.png)
+![Agent Builder Testing](../../../../translated_images/tl/DebugAgent.81d152370c503241.webp)
 
 **Inaasahang Resulta:**
-- ✅ Matagumpay na pag-clone na may kumpirmasyon ng path
-- ✅ Awtomatikong pagbukas ng VS Code
-- ✅ Malinaw na mga mensahe ng error para sa mga invalid na sitwasyon
-- ✅ Tamang pag-handle ng mga edge case
+- ✅ Matagumpay na pag-clone kasama ang kumpirmasyon ng path
+- ✅ Awtomatikong paglulunsad ng VS Code
+- ✅ Malinaw na mga mensahe ng error para sa mga invalid na scenarios
+- ✅ Maayos na paghawak sa mga edge cases
 
 #### 4b. Subukan sa MCP Inspector
 
-![MCP Inspector Testing](../../../../translated_images/DebugInspector.eb5c95f94c69a8ba36944941b9a3588309a3a2fae101ace470ee09bde41d1667.tl.png)
+
+![MCP Inspector Testing](../../../../translated_images/tl/DebugInspector.eb5c95f94c69a8ba.webp)
 
 ---
 
-**🎉 Binabati kita!** Matagumpay mong nagawa ang isang praktikal at production-ready na MCP server na sumosolusyon sa mga totoong hamon sa workflow ng pag-develop. Ipinapakita ng iyong custom GitHub clone server ang kapangyarihan ng MCP sa pag-automate at pagpapahusay ng produktibidad ng developer.
 
-### 🏆 Mga Natamong Gawad:
+
+**🎉 Maligayang Pagbati!** Matagumpay mong nagawa ang isang praktikal at production-ready na MCP server na lumulutas sa mga tunay na hamon sa workflow ng pag-develop. Ipinapakita ng iyong custom GitHub clone server ang kapangyarihan ng MCP sa pag-aautomat at pagpapahusay ng produktibidad ng mga developer.
+
+### 🏆 Mga Nakamit:
 - ✅ **MCP Developer** - Nakagawa ng custom MCP server
-- ✅ **Workflow Automator** - Pinadali ang mga proseso sa pag-develop  
-- ✅ **Integration Expert** - Nakapag-ugnay ng iba't ibang development tools
-- ✅ **Production Ready** - Nakagawa ng mga solusyong handa nang i-deploy
+- ✅ **Workflow Automator** - Pinadali ang mga proseso ng pag-develop  
+- ✅ **Integration Expert** - Naka-konekta ng maraming development tools
+- ✅ **Production Ready** - Nakabuo ng mga deployable na solusyon
 
 ---
 
 ## 🎓 Pagtatapos ng Workshop: Ang Iyong Paglalakbay sa Model Context Protocol
 
-**Mahal na Kalahok ng Workshop,**
+**Mahal na Kalahok sa Workshop,**
 
-Binabati ka namin sa pagtatapos ng apat na modules ng Model Context Protocol workshop! Malayo na ang iyong narating mula sa pag-unawa sa mga pundasyon ng AI Toolkit hanggang sa paggawa ng production-ready MCP servers na sumosolusyon sa mga totoong hamon sa pag-develop.
+Maligayang pagdating sa pagtatapos ng apat na module ng Model Context Protocol workshop! Malayo na ang narating mo mula sa pag-unawa ng mga pangunahing konsepto ng AI Toolkit hanggang sa pagbuo ng production-ready MCP servers na lumulutas sa mga totoong hamon sa pag-develop.
 
-### 🚀 Balik-tanaw sa Iyong Landas ng Pagkatuto:
+### 🚀 Buod ng Iyong Daan sa Pagkatuto:
 
-**[Module 1](../lab1/README.md)**: Nagsimula ka sa pag-explore ng mga pundasyon ng AI Toolkit, pagsubok ng mga modelo, at paggawa ng iyong unang AI agent.
+**[Module 1](../lab1/README.md)**: Nagsimula ka sa paggalugad ng pundasyon ng AI Toolkit, pagsubok ng mga modelo, at paggawa ng iyong unang AI agent.
 
-**[Module 2](../lab2/README.md)**: Natutunan mo ang arkitektura ng MCP, pag-integrate ng Playwright MCP, at paggawa ng unang browser automation agent.
+**[Module 2](../lab2/README.md)**: Natutunan mo ang arkitektura ng MCP, nag-integrate ng Playwright MCP, at bumuo ng iyong unang browser automation agent.
 
-**[Module 3](../lab3/README.md)**: Umangat ka sa pag-develop ng custom MCP server gamit ang Weather MCP server at na-master ang mga debugging tools.
+**[Module 3](../lab3/README.md)**: Umangat ka sa pag-develop ng custom MCP servers gamit ang Weather MCP server at pinahusay ang paggamit ng mga debugging tools.
 
-**[Module 4](../lab4/README.md)**: Ngayon ay naipamalas mo na ang lahat sa paggawa ng praktikal na automation tool para sa GitHub repository workflow.
+**[Module 4](../lab4/README.md)**: Inilapat mo na ngayon ang lahat upang bumuo ng isang praktikal na tool para sa pag-automate ng workflow ng GitHub repository.
 
-### 🌟 Mga Natutunan Mo:
+### 🌟 Mga Na-master Mo:
 
 - ✅ **AI Toolkit Ecosystem**: Mga modelo, agent, at mga pattern ng integrasyon
-- ✅ **MCP Architecture**: Disenyo ng client-server, transport protocols, at seguridad
-- ✅ **Developer Tools**: Mula Playground hanggang Inspector hanggang production deployment
-- ✅ **Custom Development**: Paggawa, pagsubok, at pag-deploy ng sariling MCP servers
-- ✅ **Praktikal na Aplikasyon**: Pagsosolusyon sa mga totoong workflow gamit ang AI
+- ✅ **MCP Architecture**: Disenyo ng client-server, mga protocol sa transport, at seguridad
+- ✅ **Mga Developer Tool**: Mula Playground hanggang Inspector hanggang sa production deployment
+- ✅ **Custom Development**: Paggawa, pagsubok, at pag-deploy ng sarili mong MCP servers
+- ✅ **Praktikal na Aplikasyon**: Paglutas sa mga totoong workflow challenges gamit ang AI
 
-### 🔮 Mga Susunod Mong Hakbang:
+### 🔮 Ang Iyong Mga Susunod na Hakbang:
 
-1. **Gumawa ng Sariling MCP Server**: I-apply ang mga natutunan para i-automate ang iyong mga natatanging workflow
-2. **Sumali sa MCP Community**: Ibahagi ang iyong mga gawa at matuto mula sa iba
-3. **Suriin ang Advanced Integration**: I-connect ang MCP servers sa mga enterprise system
-4. **Mag-ambag sa Open Source**: Tumulong sa pagpapabuti ng MCP tooling at dokumentasyon
+1. **Bumuo ng Sariling MCP Server**: I-apply ang mga kasanayang ito para i-automate ang iyong mga natatanging workflow  
+2. **Sumali sa MCP Community**: Ibahagi ang iyong mga likha at matuto mula sa iba  
+3. **Pag-aralan ang Advanced Integration**: Ikonekta ang MCP servers sa mga enterprise system  
+4. **Mag-ambag sa Open Source**: Tumulong upang paunlarin ang MCP tooling at dokumentasyon
 
-Tandaan, ito ay simula pa lamang. Ang Model Context Protocol ecosystem ay mabilis na umuunlad, at handa ka nang maging nangunguna sa mga AI-powered development tools.
+Tandaan, ang workshop na ito ay simula pa lamang. Ang ecosystem ng Model Context Protocol ay mabilis na umuunlad, at ngayon ay handa ka nang maging nangunguna sa mga AI-powered na development tools.
 
-**Maraming salamat sa iyong pakikilahok at dedikasyon sa pagkatuto!**
+**Salamat sa iyong partisipasyon at dedikasyon sa pagkatuto!**
 
-Nawa’y nagbigay inspirasyon ang workshop na ito upang baguhin ang paraan ng iyong paggawa at pakikipag-ugnayan sa mga AI tool sa iyong paglalakbay sa pag-develop.
+Umaasa kami na ang workshop na ito ay nagbigay inspirasyon ng mga ideya na magbabago sa paraan ng iyong pagbuo at pakikipag-ugnayan sa mga AI tool sa iyong paglalakbay sa pag-develop.
 
 **Maligayang pag-coding!**
 
 ---
 
-**Paalala**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+## Ano ang Susunod
+
+Maligayang pagbati sa pagtatapos ng lahat ng labs sa Module 10!
+
+- Balik sa: [Module 10 Overview](../README.md)
+- Magpatuloy sa: [Module 11: MCP Server Hands-On Labs](../../11-MCPServerHandsOnLabs/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Pagsisiwalat**:  
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakitandaan na ang awtomatikong pagsasalin ay maaaring may mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa kanyang orihinal na wika ang dapat ituring na pinagmulan ng katotohanan. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na nagmula sa paggamit ng pagsasaling ito.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

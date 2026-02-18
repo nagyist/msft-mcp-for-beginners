@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d940b5e0af75e3a3a4d1c3179120d1d9",
-  "translation_date": "2025-08-26T17:24:34+00:00",
-  "source_file": "03-GettingStarted/04-vscode/README.md",
-  "language_code": "ko"
-}
--->
 # GitHub Copilot 에이전트 모드에서 서버 사용하기
 
 Visual Studio Code와 GitHub Copilot은 클라이언트 역할을 하며 MCP 서버를 사용할 수 있습니다. 왜 이런 기능이 필요할까요? MCP 서버의 모든 기능을 IDE 내에서 사용할 수 있다는 뜻입니다. 예를 들어 GitHub의 MCP 서버를 추가하면 터미널에서 특정 명령어를 입력하는 대신 프롬프트를 통해 GitHub을 제어할 수 있습니다. 또는 개발자 경험을 개선할 수 있는 모든 것을 자연어로 제어할 수 있다고 상상해 보세요. 이제 이 기능의 장점을 이해할 수 있겠죠?
@@ -38,9 +29,9 @@ MCP 서버를 제어하는 방법은 두 가지가 있습니다:
 
 ### 스크린샷
 
-![Visual Studio Code에서 MCP 서버 설정 안내](../../../../translated_images/chat-mode-agent.729a22473f822216dd1e723aaee1f7d4a2ede571ee0948037a2d9357a63b9d0b.ko.png)
-![에이전트 세션별 도구 선택](../../../../translated_images/agent-mode-select-tools.522c7ba5df0848f8f0d1e439c2e96159431bc620cb39ccf3f5dc611412fd0006.ko.png)
-![MCP 개발 중 오류를 쉽게 디버깅](../../../../translated_images/mcp-list-servers.fce89eefe3f30032bed8952e110ab9d82fadf043fcfa071f7d40cf93fb1ea9e9.ko.png)
+![Visual Studio Code에서 MCP 서버 설정 안내](../../../../translated_images/ko/chat-mode-agent.729a22473f822216.webp)
+![에이전트 세션별 도구 선택](../../../../translated_images/ko/agent-mode-select-tools.522c7ba5df0848f8.webp)
+![MCP 개발 중 오류를 쉽게 디버깅](../../../../translated_images/ko/mcp-list-servers.fce89eefe3f30032.webp)
 
 다음 섹션에서 시각적 인터페이스를 사용하는 방법에 대해 더 알아보겠습니다.
 
@@ -103,15 +94,15 @@ MCP 서버 검색을 활성화해야 할 수도 있습니다.
 
 1. *mcp.json*에서 항목을 찾아 "재생" 아이콘을 확인하세요:
 
-  ![Visual Studio Code에서 서버 시작](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.ko.png)  
+  ![Visual Studio Code에서 서버 시작](../../../../translated_images/ko/vscode-start-server.8e3c986612e3555d.webp)  
 
 1. "재생" 아이콘을 클릭하면 GitHub Copilot 채팅의 도구 아이콘에 사용 가능한 도구 수가 증가하는 것을 볼 수 있습니다. 해당 도구 아이콘을 클릭하면 등록된 도구 목록이 표시됩니다. 각 도구를 체크하거나 체크 해제하여 GitHub Copilot이 이를 컨텍스트로 사용할지 여부를 결정할 수 있습니다:
 
-  ![Visual Studio Code에서 도구 시작](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.ko.png)
+  ![Visual Studio Code에서 도구 시작](../../../../translated_images/ko/vscode-tool.0b3bbea2fb7d8c26.webp)
 
 1. 도구를 실행하려면 도구 설명과 일치하는 프롬프트를 입력하세요. 예를 들어 "22에 1을 더해줘"와 같은 프롬프트를 입력합니다:
 
-  ![GitHub Copilot에서 도구 실행](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.ko.png)
+  ![GitHub Copilot에서 도구 실행](../../../../translated_images/ko/vscode-agent.d5a0e0b897331060.webp)
 
   응답으로 23이 표시될 것입니다.
 

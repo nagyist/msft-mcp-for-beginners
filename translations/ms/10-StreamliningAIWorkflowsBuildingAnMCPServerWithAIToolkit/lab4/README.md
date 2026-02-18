@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f83bc722dc758efffd68667d6a1db470",
-  "translation_date": "2025-07-14T08:45:24+00:00",
-  "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/README.md",
-  "language_code": "ms"
-}
--->
 # 🐙 Modul 4: Pembangunan MCP Praktikal - Pelayan Klon GitHub Tersuai
 
 ![Duration](https://img.shields.io/badge/Duration-30_minutes-blue?style=flat-square)
@@ -15,76 +6,76 @@ CO_OP_TRANSLATOR_METADATA:
 ![VS Code](https://img.shields.io/badge/VS%20Code-Integration-blue?style=flat-square&logo=visualstudiocode)
 ![GitHub Copilot](https://img.shields.io/badge/GitHub%20Copilot-Agent%20Mode-green?style=flat-square&logo=github)
 
-> **⚡ Mula Cepat:** Bina pelayan MCP yang sedia untuk produksi yang mengautomasikan klon repositori GitHub dan integrasi VS Code dalam hanya 30 minit!
+> **⚡ Mula Pantas:** Bina pelayan MCP sedia produksi yang mengautomasikan pengklonan repositori GitHub dan integrasi VS Code dalam masa 30 minit sahaja!
 
 ## 🎯 Objektif Pembelajaran
 
-Menjelang akhir makmal ini, anda akan dapat:
+Menjelang akhir makmal ini, anda akan mampu:
 
-- ✅ Mewujudkan pelayan MCP tersuai untuk aliran kerja pembangunan dunia sebenar
-- ✅ Melaksanakan fungsi klon repositori GitHub melalui MCP
-- ✅ Mengintegrasikan pelayan MCP tersuai dengan VS Code dan Agent Builder
-- ✅ Menggunakan GitHub Copilot Agent Mode dengan alat MCP tersuai
-- ✅ Menguji dan melancarkan pelayan MCP tersuai dalam persekitaran produksi
+- ✅ Membuat pelayan MCP tersuai untuk aliran kerja pembangunan dunia sebenar
+- ✅ Melaksanakan fungsi pengklonan repositori GitHub melalui MCP
+- ✅ Mengintegrasi pelayan MCP tersuai dengan VS Code dan Pembina Agen
+- ✅ Menggunakan Mod Agen GitHub Copilot dengan alat MCP tersuai
+- ✅ Menguji dan melancarkan pelayan MCP tersuai dalam persekitaran pengeluaran
 
 ## 📋 Prasyarat
 
-- Menyelesaikan Makmal 1-3 (asas MCP dan pembangunan lanjutan)
+- Penyelesaian Makmal 1-3 (asas MCP dan pembangunan lanjutan)
 - Langganan GitHub Copilot ([pendaftaran percuma tersedia](https://github.com/github-copilot/signup))
-- VS Code dengan sambungan AI Toolkit dan GitHub Copilot
+- VS Code dengan set alat AI dan sambungan GitHub Copilot
 - Git CLI dipasang dan dikonfigurasi
 
 ## 🏗️ Gambaran Projek
 
 ### **Cabaran Pembangunan Dunia Sebenar**
-Sebagai pembangun, kita sering menggunakan GitHub untuk mengklon repositori dan membukanya dalam VS Code atau VS Code Insiders. Proses manual ini melibatkan:
+Sebagai pembangun, kami kerap menggunakan GitHub untuk mengklon repositori dan membukanya dalam VS Code atau VS Code Insiders. Proses manual ini melibatkan:
 1. Membuka terminal/command prompt
-2. Menavigasi ke direktori yang dikehendaki
+2. Menavigasi ke direktori yang diingini
 3. Menjalankan arahan `git clone`
 4. Membuka VS Code dalam direktori yang diklon
 
-**Penyelesaian MCP kami memudahkan ini menjadi satu arahan pintar sahaja!**
+**Penyelesaian MCP kami menyederhanakan ini menjadi satu arahan pintar sahaja!**
 
 ### **Apa yang Akan Anda Bina**
-Sebuah **Pelayan Klon GitHub MCP** (`git_mcp_server`) yang menyediakan:
+Sebuah **Pelayan MCP Klon GitHub** (`git_mcp_server`) yang menyediakan:
 
 | Ciri | Penerangan | Manfaat |
 |---------|-------------|---------|
-| 🔄 **Klon Repositori Pintar** | Klon repositori GitHub dengan pengesahan | Semakan ralat automatik |
-| 📁 **Pengurusan Direktori Pintar** | Semak dan cipta direktori dengan selamat | Mengelakkan penimpaan |
-| 🚀 **Integrasi VS Code Merentas Platform** | Buka projek dalam VS Code/Insiders | Peralihan aliran kerja lancar |
-| 🛡️ **Pengendalian Ralat Kukuh** | Tangani isu rangkaian, kebenaran, dan laluan | Kebolehpercayaan sedia produksi |
+| 🔄 **Pengklonan Repositori Pintar** | Mengklon repositori GitHub dengan pengesahan | Semakan ralat automatik |
+| 📁 **Pengurusan Direktori Pintar** | Memeriksa dan membuat direktori dengan selamat | Mencegah penimpaan |
+| 🚀 **Integrasi VS Code Rentas Platform** | Membuka projek dalam VS Code/Insiders | Peralihan aliran kerja lancar |
+| 🛡️ **Pengendalian Ralat Mantap** | Mengendalikan isu rangkaian, kebenaran, dan laluan | Kebolehpercayaan sedia produksi |
 
 ---
 
-## 📖 Pelaksanaan Langkah demi Langkah
+## 📖 Pelaksanaan Langkah Demi Langkah
 
-### Langkah 1: Cipta Agen GitHub dalam Agent Builder
+### Langkah 1: Buat Agen GitHub dalam Pembina Agen
 
-1. **Lancarkan Agent Builder** melalui sambungan AI Toolkit
-2. **Cipta agen baru** dengan konfigurasi berikut:
+1. **Lancarkan Pembina Agen** melalui sambungan AI Toolkit
+2. **Buat agen baru** dengan konfigurasi berikut:
    ```
    Agent Name: GitHubAgent
    ```
 
 3. **Mulakan pelayan MCP tersuai:**
-   - Pergi ke **Tools** → **Add Tool** → **MCP Server**
-   - Pilih **"Create A new MCP Server"**
+   - Navigasi ke **Alat** → **Tambah Alat** → **Pelayan MCP**
+   - Pilih **"Buat Pelayan MCP baru"**
    - Pilih **templat Python** untuk fleksibiliti maksimum
    - **Nama Pelayan:** `git_mcp_server`
 
-### Langkah 2: Konfigurasikan GitHub Copilot Agent Mode
+### Langkah 2: Konfigurasikan Mod Agen GitHub Copilot
 
 1. **Buka GitHub Copilot** dalam VS Code (Ctrl/Cmd + Shift + P → "GitHub Copilot: Open")
 2. **Pilih Model Agen** dalam antara muka Copilot
 3. **Pilih model Claude 3.7** untuk keupayaan penaakulan yang dipertingkatkan
-4. **Aktifkan integrasi MCP** untuk akses alat
+4. **Dayakan integrasi MCP** untuk akses alat
 
-> **💡 Petua Pro:** Claude 3.7 memberikan kefahaman yang lebih baik tentang aliran kerja pembangunan dan corak pengendalian ralat.
+> **💡 Tip Pro:** Claude 3.7 menawarkan kefahaman unggul tentang aliran kerja pembangunan dan corak pengendalian ralat.
 
 ### Langkah 3: Laksanakan Fungsi Teras Pelayan MCP
 
-**Gunakan arahan terperinci berikut dengan GitHub Copilot Agent Mode:**
+**Gunakan arahan terperinci berikut dengan Mod Agen GitHub Copilot:**
 
 ```
 Create two MCP tools with the following comprehensive requirements:
@@ -119,9 +110,9 @@ Additional Requirements:
 
 ### Langkah 4: Uji Pelayan MCP Anda
 
-#### 4a. Uji dalam Agent Builder
+#### 4a. Uji dalam Pembina Agen
 
-1. **Lancarkan konfigurasi debug** untuk Agent Builder
+1. **Lancarkan konfigurasi nyahpepijat** untuk Pembina Agen
 2. **Konfigurasikan agen anda dengan arahan sistem ini:**
 
 ```
@@ -129,7 +120,7 @@ SYSTEM_PROMPT:
 You are my intelligent coding repository assistant. You help developers efficiently clone GitHub repositories and set up their development environment. Always provide clear feedback about operations and handle errors gracefully.
 ```
 
-3. **Uji dengan senario pengguna yang realistik:**
+3. **Uji dengan senario pengguna nyata:**
 
 ```
 USER_PROMPT EXAMPLES:
@@ -139,73 +130,81 @@ Scenario : Basic Clone and Open
  } and save to {The global path you specify}, then open it with VS Code Insiders"
 ```
 
-![Agent Builder Testing](../../../../translated_images/DebugAgent.81d152370c503241b3b39a251b8966f7f739286df19dd57f9147f6402214a012.ms.png)
+![Agent Builder Testing](../../../../translated_images/ms/DebugAgent.81d152370c503241.webp)
 
-**Hasil Dijangka:**
-- ✅ Klon berjaya dengan pengesahan laluan
+**Keputusan Dijangka:**
+- ✅ Pengklonan berjaya dengan pengesahan laluan
 - ✅ Pelancaran VS Code automatik
 - ✅ Mesej ralat jelas untuk senario tidak sah
-- ✅ Pengendalian kes tepi yang betul
+- ✅ Pengendalian kes sempadan secara betul
 
-#### 4b. Uji dalam MCP Inspector
+#### 4b. Uji dalam Pemeriksa MCP
 
-
-![MCP Inspector Testing](../../../../translated_images/DebugInspector.eb5c95f94c69a8ba36944941b9a3588309a3a2fae101ace470ee09bde41d1667.ms.png)
+![MCP Inspector Testing](../../../../translated_images/ms/DebugInspector.eb5c95f94c69a8ba.webp)
 
 ---
 
-
-
-**🎉 Tahniah!** Anda telah berjaya mencipta pelayan MCP praktikal yang sedia untuk produksi dan menyelesaikan cabaran aliran kerja pembangunan sebenar. Pelayan klon GitHub tersuai anda menunjukkan kuasa MCP untuk mengautomasikan dan meningkatkan produktiviti pembangun.
+**🎉 Tahniah!** Anda telah berjaya membina pelayan MCP praktikal dan sedia produksi yang menyelesaikan cabaran aliran kerja pembangunan sebenar. Pelayan klon GitHub tersuai anda menunjukkan kuasa MCP untuk mengautomasikan dan meningkatkan produktiviti pembangun.
 
 ### 🏆 Pencapaian Dibuka:
-- ✅ **Pembangun MCP** - Mencipta pelayan MCP tersuai
-- ✅ **Automator Aliran Kerja** - Memperkemas proses pembangunan  
+- ✅ **Pembangun MCP** - Membina pelayan MCP tersuai
+- ✅ **Pengautomatan Aliran Kerja** - Memudahkan proses pembangunan  
 - ✅ **Pakar Integrasi** - Menghubungkan pelbagai alat pembangunan
-- ✅ **Sedia Produksi** - Membangun penyelesaian yang boleh dilancarkan
+- ✅ **Sedia Produksi** - Membangun penyelesaian untuk dikerahkan
 
 ---
 
-## 🎓 Penyelesaian Bengkel: Perjalanan Anda dengan Model Context Protocol
+## 🎓 Penyelesaian Bengkel: Perjalanan Anda dengan Protokol Konteks Model
 
-**Peserta Bengkel yang Dihormati,**
+**Peserta Bengkel yang Dihargai,**
 
-Tahniah kerana telah menyelesaikan keempat-empat modul bengkel Model Context Protocol! Anda telah melalui perjalanan panjang dari memahami konsep asas AI Toolkit hingga membina pelayan MCP sedia produksi yang menyelesaikan cabaran pembangunan dunia sebenar.
+Tahniah kerana menyiapkan semua empat modul bengkel Protokol Konteks Model! Anda telah melalui banyak perkara dari memahami konsep asas AI Toolkit kepada membina pelayan MCP sedia produksi yang menyelesaikan cabaran pembangunan dunia sebenar.
 
-### 🚀 Ulasan Laluan Pembelajaran Anda:
+### 🚀 Ulang Kaji Laluan Pembelajaran Anda:
 
-**[Modul 1](../lab1/README.md)**: Anda bermula dengan meneroka asas AI Toolkit, ujian model, dan mencipta agen AI pertama anda.
+**[Modul 1](../lab1/README.md)**: Anda bermula dengan meneroka asas AI Toolkit, ujian model, dan membuat agen AI pertama anda.
 
-**[Modul 2](../lab2/README.md)**: Anda mempelajari seni bina MCP, mengintegrasikan Playwright MCP, dan membina agen automasi pelayar pertama anda.
+**[Modul 2](../lab2/README.md)**: Anda belajar seni bina MCP, mengintegrasikan Playwright MCP, dan membina agen automasi pelayar pertama anda.
 
-**[Modul 3](../lab3/README.md)**: Anda maju ke pembangunan pelayan MCP tersuai dengan pelayan Weather MCP dan menguasai alat debug.
+**[Modul 3](../lab3/README.md)**: Anda maju ke pembangunan pelayan MCP tersuai dengan pelayan MCP Cuaca dan menguasai alat nyahpepijat.
 
-**[Modul 4](../lab4/README.md)**: Kini anda telah menggunakan semua ilmu untuk mencipta alat automasi aliran kerja repositori GitHub yang praktikal.
+**[Modul 4](../lab4/README.md)**: Kini anda telah menerapkan semuanya untuk mencipta alat automasi aliran kerja repositori GitHub yang praktikal.
 
 ### 🌟 Apa yang Anda Kuasai:
 
-- ✅ **Ekosistem AI Toolkit**: Model, agen, dan corak integrasi
+- ✅ **Eko Sistem AI Toolkit**: Model, agen, dan corak integrasi
 - ✅ **Seni Bina MCP**: Reka bentuk klien-pelayan, protokol pengangkutan, dan keselamatan
-- ✅ **Alat Pembangun**: Dari Playground ke Inspector hingga pelancaran produksi
-- ✅ **Pembangunan Tersuai**: Membina, menguji, dan melancarkan pelayan MCP sendiri
+- ✅ **Alat Pembangun**: Dari Playground ke Inspector ke penghantaran produksi
+- ✅ **Pembangunan Tersuai**: Membina, menguji, dan melancarkan pelayan MCP anda sendiri
 - ✅ **Aplikasi Praktikal**: Menyelesaikan cabaran aliran kerja dunia sebenar dengan AI
 
 ### 🔮 Langkah Seterusnya Anda:
 
 1. **Bina Pelayan MCP Anda Sendiri**: Gunakan kemahiran ini untuk mengautomasikan aliran kerja unik anda
-2. **Sertai Komuniti MCP**: Kongsi ciptaan anda dan belajar daripada orang lain
-3. **Terokai Integrasi Lanjutan**: Sambungkan pelayan MCP ke sistem perusahaan
-4. **Sumbang kepada Open Source**: Bantu memperbaiki alat dan dokumentasi MCP
+2. **Sertai Komuniti MCP**: Kongsi ciptaan anda dan belajar dari orang lain
+3. **Terokai Integrasi Lanjutan**: Hubungkan pelayan MCP ke sistem perusahaan
+4. **Sumbang kepada Sumber Terbuka**: Bantu memperbaiki alat dan dokumentasi MCP
 
-Ingat, bengkel ini hanyalah permulaan. Ekosistem Model Context Protocol berkembang pesat, dan anda kini bersedia untuk berada di barisan hadapan alat pembangunan berkuasa AI.
+Ingat, bengkel ini hanyalah permulaan. Eko sistem Protokol Konteks Model berkembang pesat, dan anda kini bersedia berada di barisan hadapan alat pembangunan berkuasa AI.
 
 **Terima kasih atas penyertaan dan dedikasi anda untuk belajar!**
 
-Kami berharap bengkel ini telah mencetuskan idea yang akan mengubah cara anda membina dan berinteraksi dengan alat AI dalam perjalanan pembangunan anda.
+Kami harap bengkel ini telah mencetuskan idea yang akan mengubah cara anda membina dan berinteraksi dengan alat AI dalam perjalanan pembangunan anda.
 
 **Selamat mengod!**
 
 ---
 
-**Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+## Apa Seterusnya
+
+Tahniah kerana telah menyelesaikan semua makmal dalam Modul 10!
+
+- Kembali ke: [Ikhtisar Modul 10](../README.md)
+- Teruskan ke: [Modul 11: Makmal Hands-On Pelayan MCP](../../11-MCPServerHandsOnLabs/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Penafian**:
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya hendaklah dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab terhadap sebarang salah faham atau tafsiran yang salah yang timbul daripada penggunaan terjemahan ini.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

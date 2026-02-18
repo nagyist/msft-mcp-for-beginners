@@ -1,261 +1,289 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e2c6ed897fa98fa08e0146101776c7ff",
-  "translation_date": "2025-07-18T10:15:32+00:00",
-  "source_file": "study_guide.md",
-  "language_code": "sw"
-}
--->
-# Itifaki ya Muktadha wa Mfano (MCP) kwa Waanzilishi - Mwongozo wa Kusoma
+# Itifaki ya Muktadha wa Mfano (MCP) kwa Waanzishaji - Mwongozo wa Kujifunza
 
-Mwongozo huu wa kusoma unatoa muhtasari wa muundo na yaliyomo kwenye hifadhidata ya "Model Context Protocol (MCP) for Beginners". Tumia mwongozo huu kuvinjari hifadhidata kwa ufanisi na kufaidika zaidi na rasilimali zilizopo.
+Mwongozo huu wa kujifunza unatoa muhtasari wa muundo na yaliyomo kwenye hazina ya "Model Context Protocol (MCP) for Beginners". Tumia mwongozo huu kuvinjari hazina kwa ufanisi na kufaidika zaidi na rasilimali zilizopo.
 
-## Muhtasari wa Hifadhidata
+## Muhtasari wa Hazina
 
-Model Context Protocol (MCP) ni mfumo uliopangwa kwa ajili ya mwingiliano kati ya mifano ya AI na programu za wateja. Awali ulianzishwa na Anthropic, MCP sasa unadumishwa na jamii pana ya MCP kupitia shirika rasmi la GitHub. Hifadhidata hii inatoa mtaala kamili wenye mifano ya vitendo ya msimbo katika C#, Java, JavaScript, Python, na TypeScript, iliyoundwa kwa waendelezaji wa AI, wahandisi wa mifumo, na wahandisi wa programu.
+Model Context Protocol (MCP) ni mfumo uliosanifiwa kwa maingiliano kati ya mifano ya AI na programu za wateja. Asili ilizaliwa na Anthropic, MCP sasa inasimamiwa na jamii pana ya MCP kupitia shirika rasmi la GitHub. Hazina hii hutoa mtaala mpana wenye mifano ya vitendo ya nambari katika C#, Java, JavaScript, Python, na TypeScript, iliyoundwa kwa waendelezaji wa AI, wahandisi wa mifumo, na wahandisi wa programu.
 
-## Ramani ya Mtaala ya Kuona
+## Ramani ya Mtaala wa Kuonyesha
 
 ```mermaid
 mindmap
-  root((MCP for Beginners))
-    00. Introduction
+  root((MCP kwa Waanzilishi))
+    00. Utangulizi
       ::icon(fa fa-book)
-      (Protocol Overview)
-      (Standardization Benefits)
-      (Real-world Use Cases)
-      (AI Integration Fundamentals)
-    01. Core Concepts
+      (Muhtasari wa Itifaki)
+      (Manufaa ya Kuanzisha Viwango)
+      (Matumizi halisi duniani)
+      (Misingi ya Uingizaji AI)
+    01. Misingi Mikuu
       ::icon(fa fa-puzzle-piece)
-      (Client-Server Architecture)
-      (Protocol Components)
-      (Messaging Patterns)
-      (Transport Mechanisms)
-    02. Security
+      (Miundo ya Mteja-Mtumiaji)
+      (Vipengele vya Itifaki)
+      (Mifumo ya Ujumbe)
+      (Vifaa vya Usafirishaji)
+      (Majukumu - Jaribio)
+      (Maelezo ya Zana)
+    02. Usalama
       ::icon(fa fa-shield)
-      (AI-Specific Threats)
-      (Best Practices 2025)
-      (Azure Content Safety)
-      (Auth & Authorization)
-      (Microsoft Prompt Shields)
-    03. Getting Started
+      (Vitisho vya AI Maalum)
+      (Mbinu Bora za 2025)
+      (Usalama wa Maudhui wa Azure)
+      (Uthibitishaji & Ruhusa)
+      (Taarifa za Ulinzi za Microsoft)
+      (OWASP MCP Top 10)
+      (Warsha ya Usalama Sherpa)
+    03. Kuanzia
       ::icon(fa fa-rocket)
-      (First Server Implementation)
-      (Client Development)
-      (LLM Client Integration)
-      (VS Code Extensions)
-      (SSE Server Setup)
-      (HTTP Streaming)
-      (AI Toolkit Integration)
-      (Testing Frameworks)
-      (Deployment Strategies)
-    04. Practical Implementation
+      (Utekelezaji wa Kwanza wa Server)
+      (Maendeleo ya Mteja)
+      (Uingizaji wa Mteja LLM)
+      (Virutubisho vya VS Code)
+      (Usanidi wa Server SSE)
+      (Utiririshaji wa HTTP)
+      (Uingizaji wa Zana za AI)
+      (Mifumo ya Upimaji)
+      (Matumizi ya Juu ya Server)
+      (Uthibitishaji Rahisi)
+      (Mikakati ya Uenezi)
+      (Usanidi wa MCP Hosts)
+      (Mkaguzi wa MCP)
+    04. Utekelezaji wa Vitendo
       ::icon(fa fa-code)
-      (Multi-Language SDKs)
-      (Testing & Debugging)
-      (Prompt Templates)
-      (Sample Projects)
-      (Production Patterns)
-    05. Advanced Topics
+      (SDK nyingi za Lugha)
+      (Upimaji & Urekebishaji)
+      (Mifano ya Prompt)
+      (Miradi ya Mfano)
+      (Mifumo ya Uzalishaji)
+      (Mikakati ya Kurasa)
+    05. Mada za Juu
       ::icon(fa fa-graduation-cap)
-      (Context Engineering)
-      (Foundry Agent Integration)
-      (Multi-modal AI Workflows)
-      (OAuth2 Authentication)
-      (Real-time Search)
-      (Streaming Protocols)
-      (Root Contexts)
-      (Routing Strategies)
-      (Sampling Techniques)
-      (Scaling Solutions)
-      (Security Hardening)
-      (Entra ID Integration)
-      (Web Search MCP)
+      (Uhandisi wa Muktadha)
+      (Uingizaji wa Wakala wa Foundry)
+      (Mifumo ya AI yenye Modal nyingi)
+      (Uthibitishaji wa OAuth2)
+      (Utafutaji wa Muda Halisi)
+      (Itifaki za Utiririshaji)
+      (Muktadha wa Mizizi)
+      (Mikakati ya Routing)
+      (Mbinu za Kumasanya Sampuli)
+      (Suluhisho za Kupanua)
+      (Kukaza Usalama)
+      (Uingizaji wa Entra ID)
+      (Utafutaji wa Wavuti MCP)
+      (Uchambuzi wa Kipengele cha Itifaki)
       
-    06. Community
+    06. Jamii
       ::icon(fa fa-users)
-      (Code Contributions)
-      (Documentation)
-      (MCP Client Ecosystem)
-      (MCP Server Registry)
-      (Image Generation Tools)
-      (GitHub Collaboration)
-    07. Early Adoption
+      (Michango ya Msimbo)
+      (Nyaraka)
+      (Ecosystem ya Mteja MCP)
+      (Rejista ya Server MCP)
+      (Zana za Kizazi cha Picha)
+      (Mshikamano wa GitHub)
+    07. Matumizi ya Mapema
       ::icon(fa fa-lightbulb)
-      (Production Deployments)
-      (Microsoft MCP Servers)
-      (Azure MCP Service)
-      (Enterprise Case Studies)
-      (Future Roadmap)
-    08. Best Practices
+      (Uenezi wa Uzalishaji)
+      (Server za Microsoft MCP)
+      (Huduma ya Azure MCP)
+      (Somo za Kesi za Biashara)
+      (Ramani ya Mitaa ya Baadaye)
+    08. Mbinu Bora
       ::icon(fa fa-check)
-      (Performance Optimization)
-      (Fault Tolerance)
-      (System Resilience)
-      (Monitoring & Observability)
-    09. Case Studies
+      (Uboreshaji wa Utendaji)
+      (Uvumilivu wa Hitilafu)
+      (Kustahimili Mfumo)
+      (Ufuatiliaji & Uwekaji wa Macho)
+    09. Masomo ya Kesi
       ::icon(fa fa-file-text)
-      (Azure API Management)
-      (AI Travel Agent)
-      (Azure DevOps Integration)
-      (Documentation MCP)
-      (Real-world Implementations)
-    10. Hands-on Workshop
+      (Usimamizi wa API ya Azure)
+      (Mwakilishi wa Kusafiri wa AI)
+      (Uingizaji wa Azure DevOps)
+      (Nyaraka MCP)
+      (Rejista ya MCP GitHub)
+      (Uingizaji wa VS Code)
+      (Utekelezaji halisi duniani)
+    10. Warsha ya Vitendo
       ::icon(fa fa-laptop)
-      (MCP Server Fundamentals)
-      (Advanced Development)
-      (AI Toolkit Integration)
-      (Production Deployment)
-      (4-Lab Structure)
+      (Misingi ya Server MCP)
+      (Maendeleo ya Juu)
+      (Uingizaji wa Zana za AI)
+      (Uenezi wa Uzalishaji)
+      (Muundo wa Maabara 4)
+    11. Maabara ya Uingizaji wa Hifadhidata
+      ::icon(fa fa-database)
+      (Uingizaji wa PostgreSQL)
+      (Matumizi ya Uchanganuzi wa Rejareja)
+      (Usalama wa Kiwango cha Safu)
+      (Utafutaji wa Semantiki)
+      (Uenezi wa Uzalishaji)
+      (Muundo wa Maabara 13)
+      (Mafunzo ya Vitendo)
 ```
+## Muundo wa Hazina
 
-## Muundo wa Hifadhidata
-
-Hifadhidata imepangwa katika sehemu kumi kuu, kila moja ikilenga nyanja tofauti za MCP:
+Hazina imepangwa katika sehemu kumi na moja kuu, kila moja ikilenga nyanja tofauti za MCP:
 
 1. **Utangulizi (00-Introduction/)**
    - Muhtasari wa Itifaki ya Muktadha wa Mfano
-   - Kwa nini kuweka viwango ni muhimu katika mizunguko ya AI
-   - Matumizi halisi na faida zake
+   - Kwa nini kusanifisha ni muhimu katika nyaya za AI
+   - Matumizi halisi na manufaa
 
-2. **Madhumuni Muhimu (01-CoreConcepts/)**
-   - Muundo wa mteja-mtumiaji
+2. **Madharia Muhimu (01-CoreConcepts/)**
+   - Miundo ya mteja-seva
    - Vipengele muhimu vya itifaki
-   - Mifumo ya ujumbe katika MCP
+   - Mifumo ya ujumbe ndani ya MCP
 
 3. **Usalama (02-Security/)**
-   - Vitisho vya usalama katika mifumo inayotumia MCP
-   - Mbinu bora za kuhakikisha usalama wa utekelezaji
-   - Mikakati ya uthibitishaji na idhini
+   - Vitisho vya usalama katika mifumo ya MCP
+   - Mazoezi bora ya usalama katika utekelezaji
+   - Mikakati ya uthibitishaji na ruhusa
    - **Nyaraka Kamili za Usalama**:
-     - Mbinu Bora za Usalama za MCP 2025
+     - Mazoezi Bora ya Usalama ya MCP 2025
      - Mwongozo wa Utekelezaji wa Usalama wa Azure Content
      - Udhibiti na Mbinu za Usalama za MCP
-     - Marejeleo ya Mbinu Bora za MCP
+     - Marejeleo ya Haraka ya Mazoezi Bora ya MCP
    - **Mada Muhimu za Usalama**:
-     - Mashambulizi ya sindano ya maelekezo na sumu ya zana
-     - Uvunjaji wa kikao na matatizo ya mwakilishi aliyepotoshwa
-     - Udhaifu wa kupitisha tokeni
-     - Ruhusa kupita kiasi na udhibiti wa upatikanaji
-     - Usalama wa mnyororo wa ugavi kwa vipengele vya AI
-     - Uunganisho wa Microsoft Prompt Shields
+     - Mashambulizi ya sindano za maelekezo na sumu za zana
+     - Uvujaji wa vikao na matatizo ya mbunifu aliyochanganyikiwa
+     - Udhaifu wa ufikiaji wa tokeni
+     - Uruhusa kupita kiasi na udhibiti wa upatikanaji
+     - Usalama wa mnyororo wa usambazaji wa vipengele vya AI
+     - Uunganishaji wa Microsoft Prompt Shields
 
-4. **Kuanzia (03-GettingStarted/)**
-   - Kuandaa na kusanidi mazingira
+4. **Anza Kutumia (03-GettingStarted/)**
+   - Usanidi wa mazingira na mipangilio
    - Kuunda seva na wateja wa MCP wa msingi
    - Uunganisho na programu zilizopo
    - Inajumuisha sehemu za:
      - Utekelezaji wa seva ya kwanza
-     - Uendelezaji wa mteja
+     - Maendeleo ya mteja
      - Uunganisho wa mteja wa LLM
      - Uunganisho wa VS Code
-     - Seva ya Matukio Yanayotumwa (SSE)
-     - Upelekaji wa data kwa HTTP
+     - Seva ya Matukio ya Server-Sent (SSE)
+     - Matumizi ya seva ya juu
+     - Upeperushaji wa HTTP
      - Uunganisho wa AI Toolkit
-     - Mikakati ya upimaji
-     - Miongozo ya usambazaji
+     - Mikakati ya majaribio
+     - Mwongozo wa usambazaji
 
-5. **Utekelezaji wa Vitendo (04-PracticalImplementation/)**
-   - Kutumia SDK katika lugha mbalimbali za programu
-   - Mbinu za kutatua matatizo, upimaji, na uthibitishaji
-   - Kuunda templeti za maelekezo zinazoweza kutumika tena na michakato
-   - Miradi ya mfano yenye mifano ya utekelezaji
+5. **Utekelezaji wa Kivitendo (04-PracticalImplementation/)**
+   - Kutumia SDK katika lugha tofauti za programu
+   - Mbinu za kubaini hitilafu, kufanya majaribio, na kuthibitisha
+   - Kutengeneza templeti na mtiririko wa kazi unaoweza kutumika tena
+   - Miradi ya mfano na mifano ya utekelezaji
 
 6. **Mada za Juu (05-AdvancedTopics/)**
    - Mbinu za uhandisi wa muktadha
-   - Uunganisho wa wakala wa Foundry
-   - Michakato ya AI yenye njia nyingi
-   - Maonyesho ya uthibitishaji wa OAuth2
-   - Uwezo wa utafutaji wa wakati halisi
-   - Upelekaji wa data wa wakati halisi
-   - Utekelezaji wa muktadha wa mizizi
-   - Mikakati ya upitishaji
+   - Uunganisho wa wakala Foundry
+   - Mtiririko wa kazi wa AI wa aina nyingi
+   - Demo za uthibitishaji OAuth2
+   - Uwezo wa utafutaji wa papo hapo
+   - Upeperushaji wa papo hapo
+   - Utekelezaji wa muktadha mzizi
+   - Mikakati ya utumaji data
    - Mbinu za sampuli
-   - Mbinu za kupanua
-   - Masuala ya usalama
+   - Mbinu za upanaji
+   - Mambo ya usalama
    - Uunganisho wa usalama wa Entra ID
    - Uunganisho wa utafutaji wa wavuti
 
-7. **Michango ya Jamii (06-CommunityContributions/)**
-   - Jinsi ya kuchangia msimbo na nyaraka
-   - Kushirikiana kupitia GitHub
+7. **Michango ya Jumuiya (06-CommunityContributions/)**
+   - Jinsi ya kuchangia nambari na nyaraka
+   - Ushirikiano kupitia GitHub
    - Maboresho na maoni yanayotokana na jamii
    - Kutumia wateja mbalimbali wa MCP (Claude Desktop, Cline, VSCode)
-   - Kufanya kazi na seva maarufu za MCP ikijumuisha uzalishaji wa picha
+   - Kufanya kazi na seva maarufu za MCP zikiwemo za usindikaji picha
 
-8. **Mafunzo Kutoka kwa Watumiaji wa Awali (07-LessonsfromEarlyAdoption/)**
-   - Utekelezaji halisi na hadithi za mafanikio
+8. **Mafunzo kutoka kwa Matumizi ya Mapema (07-LessonsfromEarlyAdoption/)**
+   - Utekelezaji wa ulimwengu halisi na hadithi za mafanikio
    - Kujenga na kusambaza suluhisho za MCP
    - Mwelekeo na ramani ya mustakabali
-   - **Mwongozo wa Seva za Microsoft MCP**: Mwongozo kamili wa seva 10 za Microsoft MCP zinazotumika uzalishaji ikijumuisha:
-     - Microsoft Learn Docs MCP Server
-     - Azure MCP Server (viunganishi maalum 15+)
-     - GitHub MCP Server
-     - Azure DevOps MCP Server
-     - MarkItDown MCP Server
-     - SQL Server MCP Server
-     - Playwright MCP Server
-     - Dev Box MCP Server
-     - Azure AI Foundry MCP Server
-     - Microsoft 365 Agents Toolkit MCP Server
+   - **Mwongozo wa Seva za Microsoft MCP**: Mwongozo kamili wa seva 10 za MCP za Microsoft tayari kutoa huduma, zikiwemo:
+     - Seva ya Microsoft Learn Docs MCP
+     - Seva ya Azure MCP (viunganishi maalum 15+)
+     - Seva ya GitHub MCP
+     - Seva ya Azure DevOps MCP
+     - Seva ya MarkItDown MCP
+     - Seva ya SQL Server MCP
+     - Seva ya Playwright MCP
+     - Seva ya Dev Box MCP
+     - Seva ya Azure AI Foundry MCP
+     - Seva ya Microsoft 365 Agents Toolkit MCP
 
-9. **Mbinu Bora (08-BestPractices/)**
-   - Uboreshaji wa utendaji na ufanisi
-   - Kubuni mifumo ya MCP inayostahimili hitilafu
-   - Mikakati ya upimaji na ustahimilivu
+9. **Mazoezi Bora (08-BestPractices/)**
+   - Kusahihisha utendaji na kuboresha
+   - Kubuni mifumo ya MCP isiyovunjika
+   - Mikakati ya kujaribu na uimara
 
-10. **Mifano ya Kesi (09-CaseStudy/)**
-    - Mfano wa uunganisho wa Azure API Management
-    - Mfano wa utekelezaji wa wakala wa usafiri
-    - Uunganisho wa Azure DevOps na masasisho ya YouTube
-    - Mifano ya utekelezaji wa MCP yenye nyaraka za kina
-    - Mifano ya utekelezaji yenye maelezo ya kina
+10. **Somo za Kesi (09-CaseStudy/)**
+    - **Somo saba za kesi kamili** zinazoonyesha utofauti wa MCP katika hali tofauti:
+    - **Wakala wa Usafiri wa Azure AI**: Usimamizi wa nguvu nyingi na Azure OpenAI na AI Search
+    - **Uunganisho wa Azure DevOps**: Kuendesha taratibu za mitiririko kazi kwa sasisho za data ya YouTube
+    - **Uchapaji Hati wa Wakati Halisi**: Mteja wa Python wa console na upeperushaji wa HTTP
+    - **Kizalishaji cha Mpango wa Masomo wa Mshirikiano**: Programu ya wavuti ya Chainlit yenye AI ya mazungumzo
+    - **Nyaraka Zaidi ya Mhariri**: Uunganisho wa VS Code na mitiririko ya kazi ya GitHub Copilot
+    - **Usimamizi wa Azure API**: Uunganisho wa API ya kampuni na uundaji seva ya MCP
+    - **Sajili ya MCP ya GitHub**: Maendeleo ya mazingira na jukwaa la uunganisho la wakala
+    - Mifano ya utekelezaji inayoanzia uunganisho wa kampuni, tija ya waendelezaji, na maendeleo ya mazingira
 
 11. **Warsha ya Vitendo (10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/)**
-    - Warsha kamili ya vitendo inayochanganya MCP na AI Toolkit
-    - Kujenga programu za akili zinazounganisha mifano ya AI na zana halisi
-    - Moduli za vitendo zinazojumuisha misingi, uendelezaji wa seva maalum, na mikakati ya usambazaji uzalishaji
-    - **Muundo wa Maabara**:
-      - Maabara 1: Misingi ya Seva ya MCP
-      - Maabara 2: Uendelezaji wa Seva ya MCP wa Juu
-      - Maabara 3: Uunganisho wa AI Toolkit
-      - Maabara 4: Usambazaji wa Uzalishaji na Upanuzi
-    - Mbinu ya kujifunza kwa maabara yenye maelekezo hatua kwa hatua
+    - Warsha ya vitendo pana inayochanganya MCP na AI Toolkit
+    - Kujenga programu za akili zinazounganisha mifano ya AI na zana za dunia halisi
+    - Moduli za vitendo zinazojumuisha misingi, maendeleo ya seva maalum, na mikakati ya usambazaji wa uzalishaji
+    - **Muundo wa Kiwanda**:
+      - Kiwanda 1: Misingi ya Seva ya MCP
+      - Kiwanda 2: Maendeleo ya Sevabuya ya MCP
+      - Kiwanda 3: Uunganisho wa AI Toolkit
+      - Kiwanda 4: Usambazaji wa Uzalishaji na Upanuzi
+    - Njia ya kujifunza kwa vitendo yenye maelekezo hatua kwa hatua
+
+12. **Maabara za Uunganisho wa Hifadhidata za Seva ya MCP (11-MCPServerHandsOnLabs/)**
+    - **Njia ya kujifunza ya maabara 13 kamili** ya kujenga seva za MCP tayari kuzalisha uzalishaji na uunganisho wa PostgreSQL
+    - **Utekelezaji halisi wa uchambuzi wa rejareja** kwa kutumia kesi ya matumizi ya Zava Retail
+    - **Mifumo ya kiwango cha kampuni** ikiwa ni pamoja na Usalama wa Kiwango cha Safu (RLS), utafutaji wa maana, na upatikanaji wa data wa wapangaji wengi
+    - **Muundo Kamili wa Maabara**:
+      - **Maabara 00-03: Msingi** - Utangulizi, Mimarisho, Usalama, Usanidi wa Mazingira
+      - **Maabara 04-06: Ujenzi wa Seva ya MCP** - Ubuni wa Hifadhidata, Utekelezaji wa Seva ya MCP, Uendelezaji wa Zana
+      - **Maabara 07-09: Vipengele vya Juu** - Utafutaji wa Maana, Majaribio & Uwagiliaji Hitilafu, Uunganisho wa VS Code
+      - **Maabara 10-12: Uzalishaji & Mazoezi Bora** - Usambazaji, Ufuatiliaji, Uboreshaji
+    - **Teknolojia Zinazoshughulikiwa**: Mfumo wa FastMCP, PostgreSQL, Azure OpenAI, Azure Container Apps, Application Insights
+    - **Matokeo ya Kujifunza**: seva za MCP tayari uzalishaji, mifumo ya uunganisho wa hifadhidata, uchambuzi unaoendeshwa na AI, usalama wa kampuni
 
 ## Rasilimali Zaidi
 
-Hifadhidata ina rasilimali za ziada:
+Hazina ina rasilimali za kusaidia:
 
-- **Folda ya Picha**: Ina michoro na maelezo yanayotumika katika mtaala mzima
-- **Tafsiri**: Msaada wa lugha nyingi kwa tafsiri za moja kwa moja za nyaraka
+- **Folda ya Picha**: Inajumuisha michoro na maelezo yanayotumika katika mtaala mzima
+- **Tafsiri**: Usaidizi wa lugha nyingi na tafsiri za moja kwa moja za nyaraka
 - **Rasilimali Rasmi za MCP**:
-  - [MCP Documentation](https://modelcontextprotocol.io/)
-  - [MCP Specification](https://spec.modelcontextprotocol.io/)
-  - [MCP GitHub Repository](https://github.com/modelcontextprotocol)
+  - [Nyaraka za MCP](https://modelcontextprotocol.io/)
+  - [Maelekezo ya MCP](https://spec.modelcontextprotocol.io/)
+  - [Hazina ya MCP GitHub](https://github.com/modelcontextprotocol)
 
-## Jinsi ya Kutumia Hifadhidata Hii
+## Jinsi ya Kutumia Hazina Hii
 
-1. **Kujifunza kwa Mfuatano**: Fuata sura kwa mpangilio (00 hadi 10) kwa uzoefu wa kujifunza uliopangwa.
-2. **Kuzingatia Lugha Mahususi**: Ikiwa unavutiwa na lugha fulani ya programu, chunguza folda za mifano kwa utekelezaji katika lugha unayopendelea.
-3. **Utekelezaji wa Vitendo**: Anza na sehemu ya "Kuanzia" kuandaa mazingira yako na kuunda seva na mteja wako wa MCP wa kwanza.
-4. **Uchunguzi wa Juu**: Ukijua misingi, chunguza mada za juu ili kupanua maarifa yako.
-5. **Ushirikiano wa Jamii**: Jiunge na jamii ya MCP kupitia mijadala ya GitHub na chaneli za Discord kuungana na wataalamu na waendelezaji wenzako.
+1. **Kujifunza kwa Mfuatano**: Fuata sura kwa mpangilio (00 hadi 11) kwa uzoefu wa kujifunza uliopangwa.
+2. **Kuzingatia Lugha Fulani**: Kama unavutiwa na lugha fulani ya programu, chunguza folda za mifano kwa utekelezaji katika lugha unayopendelea.
+3. **Utekelezaji wa Kivitendo**: Anza na sehemu ya "Getting Started" kusanidi mazingira yako na kuunda seva na mteja wako wa MCP wa kwanza.
+4. **Uchunguzi wa Juu**: Ukipata uelewa wa misingi, ingia katika mada za juu ili kupanua maarifa yako.
+5. **Ushirikiano wa Jamii**: Jiunge na jamii ya MCP kupitia majadiliano ya GitHub na channels za Discord kuungana na wataalamu na waendelezaji wenzako.
 
 ## Wateja na Zana za MCP
 
 Mtaala unahusisha wateja na zana mbalimbali za MCP:
 
 1. **Wateja Rasmi**:
-   - Visual Studio Code
+   - Visual Studio Code 
    - MCP katika Visual Studio Code
    - Claude Desktop
-   - Claude katika VSCode
+   - Claude katika VSCode 
    - Claude API
 
 2. **Wateja wa Jamii**:
-   - Cline (inayotumia terminal)
-   - Cursor (mhariri wa msimbo)
+   - Cline (kielekezi cha terminal)
+   - Cursor (mhariri wa nambari)
    - ChatMCP
    - Windsurf
 
@@ -267,19 +295,19 @@ Mtaala unahusisha wateja na zana mbalimbali za MCP:
 
 ## Seva Maarufu za MCP
 
-Hifadhidata inatambulisha seva mbalimbali za MCP, zikiwemo:
+Hazina inaanzisha seva mbalimbali za MCP, zikiwemo:
 
 1. **Seva Rasmi za Microsoft MCP**:
-   - Microsoft Learn Docs MCP Server
-   - Azure MCP Server (viunganishi maalum 15+)
-   - GitHub MCP Server
-   - Azure DevOps MCP Server
-   - MarkItDown MCP Server
-   - SQL Server MCP Server
-   - Playwright MCP Server
-   - Dev Box MCP Server
-   - Azure AI Foundry MCP Server
-   - Microsoft 365 Agents Toolkit MCP Server
+   - Seva ya Microsoft Learn Docs MCP
+   - Seva ya Azure MCP (viunganishi maalum 15+)
+   - Seva ya GitHub MCP
+   - Seva ya Azure DevOps MCP
+   - Seva ya MarkItDown MCP
+   - Seva ya SQL Server MCP
+   - Seva ya Playwright MCP
+   - Seva ya Dev Box MCP
+   - Seva ya Azure AI Foundry MCP
+   - Seva ya Microsoft 365 Agents Toolkit MCP
 
 2. **Seva za Marejeleo Rasmi**:
    - Filesystem
@@ -287,7 +315,7 @@ Hifadhidata inatambulisha seva mbalimbali za MCP, zikiwemo:
    - Memory
    - Sequential Thinking
 
-3. **Uzalishaji wa Picha**:
+3. **Uundaji Picha**:
    - Azure OpenAI DALL-E 3
    - Stable Diffusion WebUI
    - Replicate
@@ -304,19 +332,15 @@ Hifadhidata inatambulisha seva mbalimbali za MCP, zikiwemo:
 
 ## Kuchangia
 
-Hifadhidata hii inakaribisha michango kutoka kwa jamii. Angalia sehemu ya Michango ya Jamii kwa mwongozo wa jinsi ya kuchangia kwa ufanisi katika mfumo wa MCP.
+Hazina hii inakaribisha michango kutoka kwa jamii. Angalia sehemu ya Michango ya Jamii kwa mwongozo wa jinsi ya kuchangia kwa ufanisi katika mazingira ya MCP.
 
-## Mabadiliko
+----
 
-| Tarehe | Mabadiliko |
-|--------|-----------|
-| Julai 18, 2025 | - Imesasisha muundo wa hifadhidata kuhusiana na Mwongozo wa Seva za Microsoft MCP<br>- Imeongeza orodha kamili ya seva 10 za Microsoft MCP zinazotumika uzalishaji<br>- Imeboresha sehemu ya Seva Maarufu za MCP kwa Seva Rasmi za Microsoft MCP<br>- Imesasisha sehemu ya Mifano ya Kesi na mifano halisi ya faili<br>- Imeongeza maelezo ya Muundo wa Maabara kwa Warsha ya Vitendo |
-| Julai 16, 2025 | - Imesasisha muundo wa hifadhidata kuonyesha yaliyomo ya sasa<br>- Imeongeza sehemu ya Wateja na Zana za MCP<br>- Imeongeza sehemu ya Seva Maarufu za MCP<br>- Imesasisha Ramani ya Mtaala ya Kuona na mada zote za sasa<br>- Imeboresha sehemu ya Mada za Juu na maeneo yote maalum<br>- Imesasisha Mifano ya Kesi kuonyesha mifano halisi<br>- Imefafanua asili ya MCP kama iliyoanzishwa na Anthropic |
-| Juni 11, 2025 | - Uundaji wa mwongozo wa kusoma<br>- Imeongeza Ramani ya Mtaala ya Kuona<br>- Imeeleza muundo wa hifadhidata<br>- Imejumuisha miradi ya mfano na rasilimali za ziada |
+*Mwongozo huu wa kujifunza ulisasishwa mwisho tarehe 5 Februari 2026, ukiakisi Maelekezo ya MCP ya hivi karibuni 2025-11-25 na kutoa muhtasari wa hazina hadi tarehe hiyo. Yaliyomo katika hazina yanaweza kusasishwa baada ya tarehe hii.*
 
 ---
 
-*Mwongozo huu wa kusoma ulisasishwa tarehe Julai 18, 2025, na unatoa muhtasari wa hifadhidata hadi tarehe hiyo. Yaliyomo katika hifadhidata yanaweza kusasishwa baada ya tarehe hii.*
-
-**Kiarifu cha Kutotegemea**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Taarifa ya Kutolewa Hukumu**:
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kuwa tafsiri za moja kwa moja zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake halisi inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatubebei jukumu kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,39 +1,38 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1197b6dbde36773e04a5ae826557fdb9",
-  "translation_date": "2025-08-26T16:59:55+00:00",
-  "source_file": "03-GettingStarted/README.md",
-  "language_code": "en"
-}
--->
 ## Getting Started  
 
-[![Build Your First MCP Server](../../../translated_images/04.0ea920069efd979a0b2dad51e72c1df7ead9c57b3305796068a6cee1f0dd6674.en.png)](https://youtu.be/sNDZO9N4m9Y)
+[![Build Your First MCP Server](../../../translated_images/en/04.0ea920069efd979a.webp)](https://youtu.be/sNDZO9N4m9Y)
 
-_(Click the image above to watch the video for this lesson)_
+_(Click the image above to view video of this lesson)_
 
-This section includes several lessons:
+This section consists of several lessons:
 
-- **1 Your first server**: In this first lesson, you’ll learn how to create your first server and use the inspector tool to test and debug it. [Go to the lesson](01-first-server/README.md)
+- **1 Your first server**, in this first lesson, you will learn how to create your first server and inspect it with the inspector tool, a valuable way to test and debug your server, [to the lesson](01-first-server/README.md)
 
-- **2 Client**: In this lesson, you’ll learn how to write a client that connects to your server. [Go to the lesson](02-client/README.md)
+- **2 Client**, in this lesson, you will learn how to write a client that can connect to your server, [to the lesson](02-client/README.md)
 
-- **3 Client with LLM**: A more advanced way to write a client is by integrating an LLM, enabling it to "negotiate" with your server. [Go to the lesson](03-llm-client/README.md)
+- **3 Client with LLM**, an even better way of writing a client is by adding an LLM to it so it can "negotiate" with your server on what to do, [to the lesson](03-llm-client/README.md)
 
-- **4 Consuming a server in GitHub Copilot Agent mode with Visual Studio Code**: Learn how to run your MCP Server directly within Visual Studio Code. [Go to the lesson](04-vscode/README.md)
+- **4 Consuming a server GitHub Copilot Agent mode in Visual Studio Code**. Here, we're looking at running our MCP Server from within Visual Studio Code, [to the lesson](04-vscode/README.md)
 
-- **5 stdio Transport Server**: The stdio transport is the recommended standard for MCP server-to-client communication, offering secure subprocess-based communication. [Go to the lesson](05-stdio-server/README.md)
+- **5 stdio Transport Server** stdio transport is the recommended standard for local MCP server-to-client communication, providing secure subprocess-based communication with built-in process isolation [to the lesson](05-stdio-server/README.md)
 
-- **6 HTTP Streaming with MCP (Streamable HTTP)**: Discover modern HTTP streaming, progress notifications, and how to build scalable, real-time MCP servers and clients using Streamable HTTP. [Go to the lesson](06-http-streaming/README.md)
+- **6 HTTP Streaming with MCP (Streamable HTTP)**. Learn about modern HTTP streaming transport (the recommended approach for remote MCP servers per [MCP Specification 2025-11-25](https://spec.modelcontextprotocol.io/specification/2025-11-25/basic/transports/#streamable-http)), progress notifications, and how to implement scalable, real-time MCP servers and clients using Streamable HTTP. [to the lesson](06-http-streaming/README.md)
 
-- **7 Utilizing the AI Toolkit for VSCode**: Learn how to use the AI Toolkit to test and consume your MCP Clients and Servers. [Go to the lesson](07-aitk/README.md)
+- **7 Utilising AI Toolkit for VSCode** to consume and test your MCP Clients and Servers [to the lesson](07-aitk/README.md)
 
-- **8 Testing**: This lesson focuses on various ways to test your server and client. [Go to the lesson](08-testing/README.md)
+- **8 Testing**. Here we will focus especially how we can test out our server and client in different ways, [to the lesson](08-testing/README.md)
 
-- **9 Deployment**: Explore different methods for deploying your MCP solutions. [Go to the lesson](09-deployment/README.md)
+- **9 Deployment**. This chapter will look at different ways of deploying your MCP solutions, [to the lesson](09-deployment/README.md)
 
-The Model Context Protocol (MCP) is an open protocol that standardizes how applications provide context to LLMs. Think of MCP as the "USB-C port" for AI applications—it offers a standardized way to connect AI models to various data sources and tools.
+- **10 Advanced server usage**. This chapter covers advanced server usage, [to the lesson](./10-advanced/README.md)
+
+- **11 Auth**. This chapter covers how to add simple auth, from Basic Auth to using JWT and RBAC. You're encouraged to start here and then look at Advanced Topics in Chapter 5 and perform additional security hardening via recommendations in Chapter 2, [to the lesson](./11-simple-auth/README.md)
+
+- **12 MCP Hosts**. Configure and use popular MCP host clients including Claude Desktop, Cursor, Cline, and Windsurf. Learn transport types and troubleshooting, [to the lesson](./12-mcp-hosts/README.md)
+
+- **13 MCP Inspector**. Debug and test your MCP servers interactively using the MCP Inspector tool. Learn to troubleshoot tools, resources, and protocol messages, [to the lesson](./13-mcp-inspector/README.md)
+
+The Model Context Protocol (MCP) is an open protocol that standardizes how applications provide context to LLMs. Think of MCP like a USB-C port for AI applications - it provides a standardized way to connect AI models to different data sources and tools.
 
 ## Learning Objectives
 
@@ -43,46 +42,48 @@ By the end of this lesson, you will be able to:
 - Build and deploy basic MCP servers with custom features (resources, prompts, and tools)
 - Create host applications that connect to MCP servers
 - Test and debug MCP implementations
-- Address common setup challenges and their solutions
+- Understand common setup challenges and their solutions
 - Connect your MCP implementations to popular LLM services
 
 ## Setting Up Your MCP Environment
 
-Before starting with MCP, it’s important to prepare your development environment and understand the basic workflow. This section will guide you through the initial setup to ensure a smooth start.
+Before you begin working with MCP, it's important to prepare your development environment and understand the basic workflow. This section will guide you through the initial setup steps to ensure a smooth start with MCP.
 
 ### Prerequisites
 
-Before diving into MCP development, make sure you have:
+Before diving into MCP development, ensure you have:
 
 - **Development Environment**: For your chosen language (C#, Java, Python, TypeScript, or JavaScript)
 - **IDE/Editor**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm, or any modern code editor
 - **Package Managers**: NuGet, Maven/Gradle, pip, or npm/yarn
 - **API Keys**: For any AI services you plan to use in your host applications
 
+
 ### Official SDKs
 
-In the upcoming chapters, you’ll see solutions built using Python, TypeScript, Java, and .NET. Below are the officially supported SDKs.
+In the upcoming chapters you will see solutions built using Python, TypeScript, Java and .NET. Here are all the officially supported SDKs.
 
-MCP provides official SDKs for multiple languages:
+MCP provides official SDKs for multiple languages (aligned with [MCP Specification 2025-11-25](https://spec.modelcontextprotocol.io/specification/2025-11-25/)):
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Maintained in collaboration with Microsoft
 - [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Maintained in collaboration with Spring AI
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - The official TypeScript implementation
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - The official Python implementation
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - The official Python implementation (FastMCP)
 - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - The official Kotlin implementation
 - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Maintained in collaboration with Loopwork AI
 - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - The official Rust implementation
+- [Go SDK](https://github.com/modelcontextprotocol/go-sdk) - The official Go implementation
 
 ## Key Takeaways
 
 - Setting up an MCP development environment is straightforward with language-specific SDKs
 - Building MCP servers involves creating and registering tools with clear schemas
 - MCP clients connect to servers and models to leverage extended capabilities
-- Testing and debugging are critical for reliable MCP implementations
+- Testing and debugging are essential for reliable MCP implementations
 - Deployment options range from local development to cloud-based solutions
 
 ## Practicing
 
-We provide a set of sample projects to complement the exercises in each chapter. Additionally, each chapter includes its own exercises and assignments.
+We have a set of samples that complements the exercises you will see in all chapters in this section. Additionally each chapter also has their own exercises and assignments
 
 - [Java Calculator](./samples/java/calculator/README.md)
 - [.Net Calculator](../../../03-GettingStarted/samples/csharp)
@@ -98,9 +99,13 @@ We provide a set of sample projects to complement the exercises in each chapter.
 
 ## What's next
 
-Next: [Creating your first MCP Server](01-first-server/README.md)
+Start with the first lesson: [Creating your first MCP Server](01-first-server/README.md)
+
+Once you've completed this module, continue to: [Module 4: Practical Implementation](../04-PracticalImplementation/README.md)
 
 ---
 
-**Disclaimer**:  
-This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we aim for accuracy, please note that automated translations may include errors or inaccuracies. The original document in its native language should be regarded as the authoritative source. For critical information, professional human translation is advised. We are not responsible for any misunderstandings or misinterpretations resulting from the use of this translation.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Disclaimer**:
+This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

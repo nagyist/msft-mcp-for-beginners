@@ -1,64 +1,55 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fcf1e12b62102bf7d16b78deb2b163b7",
-  "translation_date": "2025-08-18T18:06:12+00:00",
-  "source_file": "06-CommunityContributions/README.md",
-  "language_code": "tr"
-}
--->
 # Topluluk ve Katkılar
 
-[![MCP'ye Nasıl Katkıda Bulunulur: Araçlar, Belgeler, Kod ve Daha Fazlası](../../../translated_images/07.1179f6de46ff196eb3cc13c3510e01c37807a13f3bb9be3c779105ce26737c67.tr.png)](https://youtu.be/v1pvCYAWpRE)
+[![MCP'ye Nasıl Katkıda Bulunulur: Araçlar, Belgeler, Kod ve Daha Fazlası](../../../translated_images/tr/07.1179f6de46ff196e.webp)](https://youtu.be/v1pvCYAWpRE)
 
-_(Bu dersin videosunu izlemek için yukarıdaki görsele tıklayın)_
+_(Bu dersin videosunu izlemek için yukarıdaki resme tıklayın)_
 
 ## Genel Bakış
 
-Bu ders, MCP topluluğuna nasıl dahil olunacağını, MCP ekosistemine nasıl katkıda bulunulacağını ve iş birliğine dayalı geliştirme için en iyi uygulamaların nasıl takip edileceğini ele alır. Açık kaynaklı MCP projelerine katılmayı öğrenmek, bu teknolojinin geleceğini şekillendirmek isteyenler için önemlidir.
+Bu ders, MCP topluluğuyla nasıl etkileşimde bulunulacağını, MCP ekosistemine nasıl katkı sağlanacağını ve birlikte geliştirme için en iyi uygulamaların nasıl takip edileceğini ele almaktadır. Açık kaynaklı MCP projelerine nasıl katılacağını anlamak, bu teknolojinin geleceğini şekillendirmek isteyenler için önemlidir.
 
 ## Öğrenme Hedefleri
 
 Bu dersin sonunda şunları yapabileceksiniz:
 
 - MCP topluluğu ve ekosisteminin yapısını anlamak
-- MCP topluluk forumlarına ve tartışmalarına etkili bir şekilde katılmak
-- MCP açık kaynak depolarına katkıda bulunmak
+- MCP topluluk forumları ve tartışmalarında etkili şekilde yer almak
+- MCP açık kaynak depolarına katkı sağlamak
 - Özel MCP araçları ve sunucuları oluşturmak ve paylaşmak
 - MCP geliştirme ve iş birliği için en iyi uygulamaları takip etmek
-- MCP geliştirme için topluluk kaynaklarını ve çerçevelerini keşfetmek
+- MCP geliştirme için topluluk kaynakları ve çerçevelerini keşfetmek
 
 ## MCP Topluluk Ekosistemi
 
-MCP ekosistemi, protokolü geliştirmek için birlikte çalışan çeşitli bileşenlerden ve katılımcılardan oluşur.
+MCP ekosistemi, protokolü geliştirmek için birlikte çalışan çeşitli bileşenler ve katılımcılardan oluşur.
 
 ### Temel Topluluk Bileşenleri
 
-1. **Çekirdek Protokol Bakıcıları**: Resmi [Model Context Protocol GitHub organizasyonu](https://github.com/modelcontextprotocol), MCP spesifikasyonlarını ve referans uygulamalarını yönetir.
-2. **Araç Geliştiriciler**: MCP araçları ve sunucuları oluşturan bireyler ve ekipler.
-3. **Entegrasyon Sağlayıcıları**: MCP'yi ürün ve hizmetlerine entegre eden şirketler.
-4. **Son Kullanıcılar**: MCP'yi uygulamalarında kullanan geliştiriciler ve organizasyonlar.
-5. **Katkıda Bulunanlar**: Kod, belge veya diğer kaynaklarla topluluğa katkıda bulunan üyeler.
+1. **Ana Protokol Bakımcıları**: Resmi [Model Context Protocol GitHub organizasyonu](https://github.com/modelcontextprotocol), MCP'nin temel spesifikasyonlarını ve referans uygulamalarını sürdürür
+2. **Araç Geliştiricileri**: MCP araçları ve sunucuları oluşturan bireyler ve ekipler
+3. **Entegrasyon Sağlayıcıları**: MCP'yi ürün ve hizmetlerine entegre eden şirketler
+4. **Son Kullanıcılar**: Uygulamalarında MCP kullanan geliştiriciler ve organizasyonlar
+5. **Katkıda Bulunanlar**: Kod, dokümantasyon veya diğer kaynaklara katkı sağlayan topluluk üyeleri
 
 ### Topluluk Kaynakları
 
 #### Resmi Kanallar
 
 - [MCP GitHub Organizasyonu](https://github.com/modelcontextprotocol)
-- [MCP Belgeleri](https://modelcontextprotocol.io/)
-- [MCP Spesifikasyonu](https://modelcontextprotocol.io/docs/specification)
+- [MCP Dokümantasyonu](https://modelcontextprotocol.io/)
+- [MCP Spesifikasyonu](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
 - [GitHub Tartışmaları](https://github.com/orgs/modelcontextprotocol/discussions)
 - [MCP Örnekleri ve Sunucular Deposu](https://github.com/modelcontextprotocol/servers)
 
-#### Topluluk Tarafından Oluşturulan Kaynaklar
+#### Topluluk Tabanlı Kaynaklar
 
-- [MCP İstemcileri](https://modelcontextprotocol.io/clients) - MCP entegrasyonlarını destekleyen istemcilerin listesi.
-- [Topluluk MCP Sunucuları](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - Topluluk tarafından geliştirilen MCP sunucularının büyüyen listesi.
-- [Harika MCP Sunucuları](https://github.com/wong2/awesome-mcp-servers) - MCP sunucularının küratörlüğünü yapılmış listesi.
-- [PulseMCP](https://www.pulsemcp.com/) - MCP kaynaklarını keşfetmek için topluluk merkezi ve bülten.
-- [Discord Sunucusu](https://discord.gg/jHEGxQu2a5) - MCP geliştiricileriyle bağlantı kurun.
-- Dil spesifik SDK uygulamaları.
-- Blog yazıları ve eğitimler.
+- [MCP İstemcileri](https://modelcontextprotocol.io/clients) - MCP entegrasyonlarını destekleyen istemcilerin listesi
+- [Topluluk MCP Sunucuları](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - Topluluk tarafından geliştirilen MCP sunucularının büyüyen listesi
+- [Harika MCP Sunucuları](https://github.com/wong2/awesome-mcp-servers) - Seçkin MCP sunucuları listesi
+- [PulseMCP](https://www.pulsemcp.com/) - MCP kaynaklarını keşfetmek için topluluk merkezi ve bülten
+- [Discord Sunucusu](https://discord.gg/jHEGxQu2a5) - MCP geliştiricileriyle bağlantı kurun
+- Dil bazlı SDK uygulamaları
+- Blog yazıları ve eğitimler
 
 ## MCP'ye Katkıda Bulunmak
 
@@ -67,82 +58,82 @@ MCP ekosistemi, protokolü geliştirmek için birlikte çalışan çeşitli bile
 MCP ekosistemi çeşitli katkı türlerini memnuniyetle karşılar:
 
 1. **Kod Katkıları**:
-   - Çekirdek protokol geliştirmeleri
+   - Ana protokol geliştirmeleri
    - Hata düzeltmeleri
    - Araç ve sunucu uygulamaları
    - Farklı dillerde istemci/sunucu kütüphaneleri
 
-2. **Belgeler**:
-   - Mevcut belgeleri iyileştirme
-   - Eğitimler ve rehberler oluşturma
-   - Belgeleri çevirme
-   - Örnekler ve örnek uygulamalar oluşturma
+2. **Dokümantasyon**:
+   - Mevcut dokümantasyonun iyileştirilmesi
+   - Eğitimler ve rehberler oluşturulması
+   - Dokümantasyon çevirileri
+   - Örnekler ve örnek uygulamalar oluşturulması
 
 3. **Topluluk Desteği**:
-   - Forumlarda ve tartışmalarda soruları yanıtlamak
-   - Hataları test etmek ve bildirmek
+   - Forumlar ve tartışmalarda soruları yanıtlamak
+   - Test etmek ve sorunları bildirmek
    - Topluluk etkinlikleri düzenlemek
-   - Yeni katkıda bulunanlara mentorluk yapmak
+   - Yeni katılımcılara mentorluk yapmak
 
-### Katkı Süreci: Çekirdek Protokol
+### Katkı Süreci: Ana Protokol
 
-Çekirdek MCP protokolüne veya resmi uygulamalara katkıda bulunmak için [resmi katkı yönergeleri](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md) tarafından belirlenen şu ilkeleri takip edin:
+MCP'nin ana protokolüne veya resmi uygulamalarına katkıda bulunmak için, [resmi katkı kılavuzundaki](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md) ilkeleri izleyin:
 
-1. **Basitlik ve Minimalizm**: MCP spesifikasyonu, yeni kavramlar eklemek için yüksek bir standart belirler. Bir spesifikasyona bir şey eklemek, onu çıkarmaktan daha kolaydır.
+1. **Basitlik ve Minimalizm**: MCP spesifikasyonu, yeni kavramlar eklemek için yüksek standartlar uygular. Bir şeye eklemek, onu çıkarmaktan daha kolaydır.
 
-2. **Somut Yaklaşım**: Spesifikasyon değişiklikleri, spekülatif fikirlerden ziyade belirli uygulama zorluklarına dayanmalıdır.
+2. **Somut Yaklaşım**: Spesifikasyon değişiklikleri spekülatif fikirler yerine, belirli uygulama zorluklarına dayanmalıdır.
 
 3. **Bir Önerinin Aşamaları**:
-   - Tanımlama: Sorun alanını keşfedin, diğer MCP kullanıcılarının benzer bir sorunla karşılaştığını doğrulayın.
-   - Prototip: Örnek bir çözüm oluşturun ve pratik uygulamasını gösterin.
-   - Yazma: Prototipe dayanarak bir spesifikasyon önerisi yazın.
+   - Tanımla: Sorun alanını keşfet, diğer MCP kullanıcılarının benzer sorunlar yaşadığını doğrula
+   - Prototip: Örnek bir çözüm oluştur ve pratik uygulamasını göster
+   - Yaz: Prototipe dayanarak spesifikasyon önerisi yaz
 
 ### Geliştirme Ortamı Kurulumu
 
 ```bash
-# Fork the repository
+# Depoyu çatalla
 git clone https://github.com/YOUR-USERNAME/modelcontextprotocol.git
 cd modelcontextprotocol
 
-# Install dependencies
+# Bağımlılıkları yükle
 npm install
 
-# For schema changes, validate and generate schema.json:
+# Şema değişiklikleri için, doğrula ve schema.json oluştur:
 npm run check:schema:ts
 npm run generate:schema
 
-# For documentation changes
+# Belge değişiklikleri için
 npm run check:docs
 npm run format
 
-# Preview documentation locally (optional):
+# Belgeleri yerel olarak önizle (isteğe bağlı):
 npm run serve:docs
 ```
 
 ### Örnek: Bir Hata Düzeltmesi Katkısı
 
 ```javascript
-// Original code with bug in the typescript-sdk
+// typescript-sdk içindeki hatalı orijinal kod
 export function validateResource(resource: unknown): resource is MCPResource {
   if (!resource || typeof resource !== 'object') {
     return false;
   }
   
-  // Bug: Missing property validation
-  // Current implementation:
+  // Hata: Eksik özellik doğrulaması
+  // Mevcut uygulama:
   const hasName = 'name' in resource;
   const hasSchema = 'schema' in resource;
   
   return hasName && hasSchema;
 }
 
-// Fixed implementation in a contribution
+// Bir katkıda düzeltilmiş uygulama
 export function validateResource(resource: unknown): resource is MCPResource {
   if (!resource || typeof resource !== 'object') {
     return false;
   }
   
-  // Improved validation
+  // Geliştirilmiş doğrulama
   const hasName = 'name' in resource && typeof (resource as MCPResource).name === 'string';
   const hasSchema = 'schema' in resource && typeof (resource as MCPResource).schema === 'object';
   const hasDescription = !('description' in resource) || typeof (resource as MCPResource).description === 'string';
@@ -154,7 +145,7 @@ export function validateResource(resource: unknown): resource is MCPResource {
 ### Örnek: Standart Kütüphaneye Yeni Bir Araç Katkısı
 
 ```python
-# Example contribution: A CSV data processing tool for the MCP standard library
+# Örnek katkı: MCP standart kütüphanesi için bir CSV veri işleme aracı
 
 from mcp_tools import Tool, ToolRequest, ToolResponse, ToolExecutionException
 import pandas as pd
@@ -216,14 +207,14 @@ class CsvProcessingTool(Tool):
     
     async def execute_async(self, request: ToolRequest) -> ToolResponse:
         try:
-            # Extract parameters
+            # Parametreleri çıkar
             operation = request.parameters.get("operation")
             output_format = request.parameters.get("outputFormat", "json")
             
-            # Get CSV data from either direct data or URL
+            # CSV verisini doğrudan veriden veya URL'den al
             df = await self._get_dataframe(request)
             
-            # Process based on requested operation
+            # İstenen işleme göre işle
             result = {}
             
             if operation == "summary":
@@ -284,7 +275,7 @@ class CsvProcessingTool(Tool):
     
     def _transform_data(self, df: pd.DataFrame, params: Dict[str, Any]) -> Dict[str, Any]:
         """Transforms the data based on parameters"""
-        # Implementation would include various transformations
+        # Uygulama çeşitli dönüştürmeleri içerecektir
         return {
             "status": "success",
             "message": "Transformation applied"
@@ -311,41 +302,41 @@ class CsvProcessingTool(Tool):
             raise ToolExecutionException(f"Unsupported output format: {format}")
 ```
 
-### Katkı Yönergeleri
+### Katkı Kılavuzu
 
-MCP projelerine başarılı bir katkıda bulunmak için:
+MCP projelerine başarılı katkı sağlamak için:
 
-1. **Küçük Başlayın**: Belgeler, hata düzeltmeleri veya küçük iyileştirmelerle başlayın.
-2. **Stil Rehberini Takip Edin**: Projenin kodlama stiline ve kurallarına uyun.
-3. **Testler Yazın**: Kod katkılarınız için birim testleri ekleyin.
-4. **Çalışmanızı Belgeleyin**: Yeni özellikler veya değişiklikler için açık belgeler ekleyin.
-5. **Hedeflenmiş PR'lar Gönderin**: Çekme isteklerini tek bir sorun veya özellik üzerinde odaklanmış tutun.
-6. **Geri Bildirimle Etkileşim Kurun**: Katkılarınızla ilgili geri bildirimlere yanıt verin.
+1. **Küçük Başlayın**: Dokümantasyon, hata düzeltmeleri veya küçük geliştirmelerle başlayın
+2. **Stil Rehberini Takip Edin**: Projenin kodlama tarzı ve kurallarına uyun
+3. **Test Yazın**: Kod katkılarınız için birim testleri ekleyin
+4. **Çalışmanızı Belgeleyin**: Yeni özellikler veya değişiklikler için net dokümantasyon sağlayın
+5. **Hedeflenmiş PR Gönderin**: Pull request'leri tek bir konu veya özellik üzerine odaklayın
+6. **Geri Bildirimlere Katılın**: Katkılarınızla ilgili geri bildirimlere duyarlı olun
 
 ### Örnek Katkı İş Akışı
 
 ```bash
-# Clone the repository
+# Depoyu klonlayın
 git clone https://github.com/modelcontextprotocol/typescript-sdk.git
 cd typescript-sdk
 
-# Create a new branch for your contribution
+# Katkınız için yeni bir dal oluşturun
 git checkout -b feature/my-contribution
 
-# Make your changes
+# Değişikliklerinizi yapın
 # ...
 
-# Run tests to ensure your changes don't break existing functionality
+# Değişikliklerinizin mevcut işlevselliği bozmadığından emin olmak için testleri çalıştırın
 npm test
 
-# Commit your changes with a descriptive message
+# Değişikliklerinizi açıklayıcı bir mesajla commit edin
 git commit -am "Fix validation in resource handler"
 
-# Push your branch to your fork
+# Dallanızı kendi forkunuza gönderin
 git push origin feature/my-contribution
 
-# Create a pull request from your branch to the main repository
-# Then engage with feedback and iterate on your PR as needed
+# Dallanızdan ana depoya bir pull request oluşturun
+# Daha sonra geri bildirimlerle etkileşimde bulunun ve gerekirse PR'nız üzerinde iterasyon yapın
 ```
 
 ## MCP Sunucuları Oluşturmak ve Paylaşmak
@@ -354,25 +345,27 @@ MCP ekosistemine katkıda bulunmanın en değerli yollarından biri, özel MCP s
 
 ### MCP Sunucu Geliştirme Çerçeveleri
 
-MCP sunucu geliştirmeyi kolaylaştırmak için çeşitli çerçeveler mevcuttur:
+MCP sunucu geliştirmeyi kolaylaştıran çeşitli çerçeveler mevcuttur:
 
-1. **Resmi SDK'lar**:
+1. **Resmi SDK'lar** ([MCP Spesifikasyon 2025-11-25](https://spec.modelcontextprotocol.io/specification/2025-11-25/) ile uyumlu):
    - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
    - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
    - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
    - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
    - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
    - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
+   - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk)
+   - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk)
 
 2. **Topluluk Çerçeveleri**:
-   - [MCP-Framework](https://mcp-framework.com/) - TypeScript ile MCP sunucuları oluşturun.
-   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - Java ile açıklama odaklı MCP sunucuları.
-   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - MCP sunucuları için Java çerçevesi.
-   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - MCP sunucuları için başlangıç Next.js projesi.
+   - [MCP-Framework](https://mcp-framework.com/) - TypeScript ile zarif ve hızlı MCP sunucuları oluşturun
+   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - Java ile açıklama tabanlı MCP sunucuları
+   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - MCP sunucuları için Java çerçevesi
+   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - MCP sunucuları için başlangıç Next.js projesi
 
-### Paylaşılabilir Araçlar Geliştirme
+### Paylaşılabilir Araçlar Geliştirmek
 
-#### .NET Örneği: Paylaşılabilir Bir Araç Paketi Oluşturma
+#### .NET Örneği: Paylaşılabilir Bir Araç Paketi Oluşturmak
 
 ```csharp
 // Create a new .NET library project
@@ -478,10 +471,10 @@ namespace McpFinanceTools
 // dotnet nuget push bin/Release/McpFinanceTools.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k YOUR_API_KEY
 ```
 
-#### Java Örneği: Araçlar için Maven Paketi Oluşturma
+#### Java Örneği: Araçlar için Maven Paketi Oluşturmak
 
 ```java
-// pom.xml configuration for a shareable MCP tool package
+// Paylaşılabilir bir MCP araç paketi için pom.xml yapılandırması
 <!-- 
 <project>
     <groupId>com.example</groupId>
@@ -500,7 +493,7 @@ namespace McpFinanceTools
         <repository>
             <id>github</id>
             <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/username/mcp-weather-tools</url>
+            <url>https://maven.pkg.github.com/kullaniciadi/mcp-weather-tools</url>
         </repository>
     </distributionManagement>
 </project>
@@ -542,7 +535,7 @@ public class WeatherForecastTool implements Tool {
     @Override
     public Object getSchema() {
         Map<String, Object> schema = new HashMap<>();
-        // Schema definition...
+        // Şema tanımı...
         return schema;
     }
     
@@ -553,10 +546,10 @@ public class WeatherForecastTool implements Tool {
             int days = request.getParameters().has("days") ? 
                 request.getParameters().get("days").asInt() : 3;
             
-            // Call weather API
+            // Hava durumu API'sini çağır
             Map<String, Object> forecast = getForecast(location, days);
             
-            // Build response
+            // Yanıtı oluştur
             return new ToolResponse.Builder()
                 .setResult(forecast)
                 .build();
@@ -566,23 +559,23 @@ public class WeatherForecastTool implements Tool {
     }
     
     private Map<String, Object> getForecast(String location, int days) {
-        // Implementation would call weather API
-        // Simplified example
+        // Uygulama hava durumu API'sini çağırır
+        // Basitleştirilmiş örnek
         Map<String, Object> result = new HashMap<>();
-        // Add forecast data...
+        // Tahmin verilerini ekle...
         return result;
     }
 }
 
-// Build and publish using Maven
+// Maven kullanarak derle ve yayınla
 // mvn clean package
 // mvn deploy
 ```
 
-#### Python Örneği: PyPI Paketi Yayınlama
+#### Python Örneği: PyPI Paketi Yayınlamak
 
 ```python
-# Directory structure for a PyPI package:
+# Bir PyPI paketi için dizin yapısı:
 # mcp_nlp_tools/
 # ├── LICENSE
 # ├── README.md
@@ -592,7 +585,7 @@ public class WeatherForecastTool implements Tool {
 # │   ├── sentiment_tool.py
 # │   └── translation_tool.py
 
-# Example setup.py
+# Örnek setup.py
 """
 from setuptools import setup, find_packages
 
@@ -620,7 +613,7 @@ setup(
 )
 """
 
-# Example NLP tool implementation (sentiment_tool.py)
+# Örnek NLP aracı uygulaması (sentiment_tool.py)
 from mcp_tools import Tool, ToolRequest, ToolResponse, ToolExecutionException
 from transformers import pipeline
 import torch
@@ -629,7 +622,7 @@ class SentimentAnalysisTool(Tool):
     """MCP tool for sentiment analysis of text"""
     
     def __init__(self, model_name="distilbert-base-uncased-finetuned-sst-2-english"):
-        # Load the sentiment analysis model
+        # Duygu analizi modelini yükle
         self.sentiment_analyzer = pipeline("sentiment-analysis", model=model_name)
     
     def get_name(self):
@@ -657,14 +650,14 @@ class SentimentAnalysisTool(Tool):
     
     async def execute_async(self, request: ToolRequest) -> ToolResponse:
         try:
-            # Extract parameters
+            # Parametreleri çıkar
             text = request.parameters.get("text")
             include_score = request.parameters.get("includeScore", True)
             
-            # Analyze sentiment
+            # Duyguyu analiz et
             sentiment_result = self.sentiment_analyzer(text)[0]
             
-            # Format result
+            # Sonucu biçimlendir
             result = {
                 "sentiment": sentiment_result["label"],
                 "text": text
@@ -673,53 +666,53 @@ class SentimentAnalysisTool(Tool):
             if include_score:
                 result["score"] = sentiment_result["score"]
             
-            # Return result
+            # Sonucu döndür
             return ToolResponse(result=result)
             
         except Exception as e:
             raise ToolExecutionException(f"Sentiment analysis failed: {str(e)}")
 
-# To publish:
+# Yayınlamak için:
 # python setup.py sdist bdist_wheel
 # python -m twine upload dist/*
 ```
 
-### En İyi Uygulamaları Paylaşma
+### En İyi Uygulamaları Paylaşmak
 
 MCP araçlarını toplulukla paylaşırken:
 
-1. **Tam Belgeler**:
-   - Amaç, kullanım ve örnekleri belgeleyin.
-   - Parametreleri ve dönüş değerlerini açıklayın.
-   - Harici bağımlılıkları belgeleyin.
+1. **Eksiksiz Dokümantasyon**:
+   - Amacı, kullanımı ve örnekleri belgeleyin
+   - Parametreleri ve dönüş değerlerini açıklayın
+   - Herhangi bir dış bağımlılığı dokümante edin
 
 2. **Hata Yönetimi**:
-   - Güçlü hata yönetimi uygulayın.
-   - Faydalı hata mesajları sağlayın.
-   - Kenar durumları zarif bir şekilde ele alın.
+   - Sağlam hata işleme uygulayın
+   - Yararlı hata mesajları sağlayın
+   - Uç durumları nazikçe yönetin
 
-3. **Performans Düşünceleri**:
-   - Hem hız hem de kaynak kullanımı için optimize edin.
-   - Uygun olduğunda önbellekleme uygulayın.
-   - Ölçeklenebilirliği göz önünde bulundurun.
+3. **Performans Dikkatleri**:
+   - Hem hız hem kaynak kullanımı için optimize edin
+   - Uygun olduğunda önbellekleme uygulayın
+   - Ölçeklenebilirliği göz önünde bulundurun
 
 4. **Güvenlik**:
-   - Güvenli API anahtarları ve kimlik doğrulama kullanın.
-   - Girdileri doğrulayın ve temizleyin.
-   - Harici API çağrıları için hız sınırlaması uygulayın.
+   - Güvenli API anahtarları ve kimlik doğrulama kullanın
+   - Girdileri doğrulayın ve temizleyin
+   - Dış API çağrıları için oran sınırlaması uygulayın
 
-5. **Testler**:
-   - Kapsamlı test kapsamı ekleyin.
-   - Farklı giriş türleri ve kenar durumlarıyla test yapın.
-   - Test prosedürlerini belgeleyin.
+5. **Test**:
+   - Kapsamlı test kapsamı sağlayın
+   - Farklı giriş türleri ve uç durumlarla test edin
+   - Test prosedürlerini dokümante edin
 
 ## Topluluk İş Birliği ve En İyi Uygulamalar
 
-Etkili iş birliği, gelişen bir MCP ekosistemi için anahtardır.
+Etkili iş birliği, başarılı bir MCP ekosisteminin anahtarıdır.
 
 ### İletişim Kanalları
 
-- GitHub Sorunlar ve Tartışmalar
+- GitHub Issues ve Tartışmalar
 - Microsoft Tech Community
 - Discord ve Slack kanalları
 - Stack Overflow (etiket: `model-context-protocol` veya `mcp`)
@@ -728,27 +721,27 @@ Etkili iş birliği, gelişen bir MCP ekosistemi için anahtardır.
 
 MCP katkılarını incelerken:
 
-1. **Açıklık**: Kod açık ve iyi belgelenmiş mi?
+1. **Anlaşılırlık**: Kod açık ve iyi belgelenmiş mi?
 2. **Doğruluk**: Beklendiği gibi çalışıyor mu?
 3. **Tutarlılık**: Proje kurallarına uyuyor mu?
-4. **Tamlık**: Testler ve belgeler dahil edilmiş mi?
-5. **Güvenlik**: Güvenlik endişeleri var mı?
+4. **Tamlık**: Testler ve dokümantasyon dahil mi?
+5. **Güvenlik**: Herhangi bir güvenlik sorunu var mı?
 
 ### Sürüm Uyumluluğu
 
-MCP için geliştirme yaparken:
+MCP için geliştirirken:
 
-1. **Protokol Sürümleme**: Aracınızın desteklediği MCP protokol sürümüne uyun.
-2. **İstemci Uyumluluğu**: Geriye dönük uyumluluğu göz önünde bulundurun.
-3. **Sunucu Uyumluluğu**: Sunucu uygulama yönergelerini takip edin.
-4. **Kırıcı Değişiklikler**: Kırıcı değişiklikleri açıkça belgeleyin.
+1. **Protokol Versiyonlama**: Aracınızın desteklediği MCP protokol sürümüne uyun
+2. **İstemci Uyumluluğu**: Gerçekleştirilmiş geri uyumluluğu göz önünde bulundurun
+3. **Sunucu Uyumluluğu**: Sunucu uygulama kılavuzlarına uyun
+4. **Kırıcı Değişiklikler**: Herhangi bir kırıcı değişikliği açıkça belgeleyin
 
 ## Örnek Topluluk Projesi: MCP Araç Kaydı
 
-Topluluk için önemli bir katkı, MCP araçları için halka açık bir kayıt geliştirmek olabilir.
+Önemli bir topluluk katkısı, MCP araçları için halka açık bir kayıt geliştirmek olabilir.
 
 ```python
-# Example schema for a community tool registry API
+# Bir topluluk araç kayıt defteri API'si için örnek şema
 
 from fastapi import FastAPI, HTTPException, Depends
 from pydantic import BaseModel, Field, HttpUrl
@@ -756,7 +749,7 @@ from typing import List, Optional
 import datetime
 import uuid
 
-# Models for the tool registry
+# Araç kayıt defteri için modeller
 class ToolSchema(BaseModel):
     """JSON Schema for a tool"""
     type: str
@@ -785,10 +778,10 @@ class Tool(ToolRegistration):
     rating: float = Field(default=0.0)
     ratings_count: int = Field(default=0)
 
-# FastAPI application for the registry
+# Kayıt defteri için FastAPI uygulaması
 app = FastAPI(title="MCP Tool Registry")
 
-# In-memory database for this example
+# Bu örnek için bellekte veri tabanı
 tools_db = {}
 
 @app.post("/tools", response_model=Tool)
@@ -824,21 +817,21 @@ async def delete_tool(tool_name: str):
     return {"message": f"Tool '{tool_name}' deleted"}
 ```
 
-## Önemli Çıkarımlar
+## Önemli Noktalar
 
-- MCP topluluğu çeşitlidir ve çeşitli katkı türlerini memnuniyetle karşılar.
-- MCP'ye katkıda bulunmak, çekirdek protokol geliştirmelerinden özel araçlara kadar değişebilir.
-- Katkı yönergelerini takip etmek, PR'nizin kabul edilme şansını artırır.
-- MCP araçları oluşturmak ve paylaşmak, ekosistemi geliştirmek için değerli bir yoldur.
-- Topluluk iş birliği, MCP'nin büyümesi ve iyileştirilmesi için gereklidir.
+- MCP topluluğu çeşitlidir ve çeşitli katkı türlerini memnuniyetle karşılar
+- MCP'ye katkı, ana protokol geliştirmelerinden özel araçlara kadar çeşitlilik gösterir
+- Katkı kurallarını takip etmek, PR'nizin kabul edilme şansını artırır
+- MCP araçları oluşturmak ve paylaşmak, ekosistemi geliştirmek için değerli bir yoldur
+- Topluluk iş birliği, MCP'nin büyümesi ve gelişmesi için esastır
 
 ## Egzersiz
 
-1. Yeteneklerinize ve ilgi alanlarınıza göre MCP ekosisteminde katkıda bulunabileceğiniz bir alan belirleyin.
-2. MCP deposunu çatallayın ve yerel bir geliştirme ortamı kurun.
-3. Topluluğa fayda sağlayacak küçük bir iyileştirme, hata düzeltmesi veya araç oluşturun.
-4. Katkınızı uygun testler ve belgelerle belgeleyin.
-5. İlgili depoya bir çekme isteği gönderin.
+1. MCP ekosisteminde yetenekleriniz ve ilgi alanlarınıza göre katkı yapabileceğiniz bir alan belirleyin
+2. MCP deposunu çatallayın ve yerel bir geliştirme ortamı kurun
+3. Topluluğa fayda sağlayacak küçük bir geliştirme, hata düzeltmesi veya araç oluşturun
+4. Katkınızı uygun test ve dokümantasyonla belgeleyin
+5. Uygun depoya pull request gönderin
 
 ## Ek Kaynaklar
 
@@ -846,7 +839,13 @@ async def delete_tool(tool_name: str):
 
 ---
 
+## Sırada Ne Var
+
 Sonraki: [Erken Benimsemeden Alınan Dersler](../07-LessonsfromEarlyAdoption/README.md)
 
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belgenin kendi dilindeki hali yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi diliyle yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımıyla ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu tutulamayız.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

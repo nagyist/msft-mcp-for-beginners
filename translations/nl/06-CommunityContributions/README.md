@@ -1,21 +1,12 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fcf1e12b62102bf7d16b78deb2b163b7",
-  "translation_date": "2025-08-18T16:40:47+00:00",
-  "source_file": "06-CommunityContributions/README.md",
-  "language_code": "nl"
-}
--->
 # Community en Bijdragen
 
-[![Hoe bij te dragen aan MCP: Tools, Documentatie, Code en Meer](../../../translated_images/07.1179f6de46ff196eb3cc13c3510e01c37807a13f3bb9be3c779105ce26737c67.nl.png)](https://youtu.be/v1pvCYAWpRE)
+[![How to Contribute to MCP: Tools, Docs, Code and More](../../../translated_images/nl/07.1179f6de46ff196e.webp)](https://youtu.be/v1pvCYAWpRE)
 
 _(Klik op de afbeelding hierboven om de video van deze les te bekijken)_
 
 ## Overzicht
 
-Deze les richt zich op hoe je kunt deelnemen aan de MCP-community, bijdragen aan het MCP-ecosysteem en de beste praktijken voor samenwerking kunt volgen. Begrijpen hoe je kunt deelnemen aan open-source MCP-projecten is essentieel voor iedereen die de toekomst van deze technologie wil vormgeven.
+Deze les richt zich op hoe je betrokken kunt raken bij de MCP-community, kunt bijdragen aan het MCP-ecosysteem en best practices voor gezamenlijke ontwikkeling kunt volgen. Begrijpen hoe je kunt deelnemen aan open-source MCP-projecten is essentieel voor degenen die de toekomst van deze technologie willen vormgeven.
 
 ## Leerdoelen
 
@@ -23,22 +14,22 @@ Aan het einde van deze les kun je:
 
 - De structuur van de MCP-community en het ecosysteem begrijpen
 - Effectief deelnemen aan MCP-communityforums en discussies
-- Bijdragen aan open-source MCP-repositories
+- Bijdragen aan MCP open-source repositories
 - Eigen MCP-tools en servers maken en delen
-- Beste praktijken voor MCP-ontwikkeling en samenwerking volgen
+- Best practices voor MCP-ontwikkeling en samenwerking volgen
 - Communitybronnen en frameworks voor MCP-ontwikkeling ontdekken
 
 ## Het MCP Community Ecosysteem
 
-Het MCP-ecosysteem bestaat uit verschillende componenten en deelnemers die samenwerken om het protocol te verbeteren.
+Het MCP-ecosysteem bestaat uit verschillende componenten en deelnemers die samenwerken om het protocol vooruit te helpen.
 
 ### Belangrijke Communitycomponenten
 
-1. **Core Protocol Beheerders**: De officiële [Model Context Protocol GitHub-organisatie](https://github.com/modelcontextprotocol) onderhoudt de kernspecificaties en referentie-implementaties van MCP.
-2. **Toolontwikkelaars**: Individuen en teams die MCP-tools en servers maken.
-3. **Integratieaanbieders**: Bedrijven die MCP integreren in hun producten en diensten.
-4. **Eindgebruikers**: Ontwikkelaars en organisaties die MCP in hun applicaties gebruiken.
-5. **Bijdragers**: Communityleden die code, documentatie of andere middelen bijdragen.
+1. **Core Protocol Onderhouders**: De officiële [Model Context Protocol GitHub-organisatie](https://github.com/modelcontextprotocol) onderhoudt de kern MCP-specificaties en referentie-implementaties
+2. **Toolontwikkelaars**: Individuen en teams die MCP-tools en servers creëren
+3. **Integratieaanbieders**: Bedrijven die MCP integreren in hun producten en diensten
+4. **Eindgebruikers**: Ontwikkelaars en organisaties die MCP gebruiken in hun applicaties
+5. **Bijdragers**: Communityleden die code, documentatie of andere bronnen bijdragen
 
 ### Communitybronnen
 
@@ -46,17 +37,17 @@ Het MCP-ecosysteem bestaat uit verschillende componenten en deelnemers die samen
 
 - [MCP GitHub-organisatie](https://github.com/modelcontextprotocol)
 - [MCP Documentatie](https://modelcontextprotocol.io/)
-- [MCP Specificatie](https://modelcontextprotocol.io/docs/specification)
+- [MCP Specificatie](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
 - [GitHub Discussies](https://github.com/orgs/modelcontextprotocol/discussions)
 - [MCP Voorbeelden & Servers Repository](https://github.com/modelcontextprotocol/servers)
 
-#### Door de Community Gedreven Bronnen
+#### Community-gedreven Bronnen
 
 - [MCP Clients](https://modelcontextprotocol.io/clients) - Lijst van clients die MCP-integraties ondersteunen
 - [Community MCP Servers](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - Groeiende lijst van door de community ontwikkelde MCP-servers
 - [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) - Geselecteerde lijst van MCP-servers
 - [PulseMCP](https://www.pulsemcp.com/) - Communityhub & nieuwsbrief voor het ontdekken van MCP-bronnen
-- [Discord Server](https://discord.gg/jHEGxQu2a5) - Verbinden met MCP-ontwikkelaars
+- [Discord Server](https://discord.gg/jHEGxQu2a5) - Maak verbinding met MCP-ontwikkelaars
 - Taal-specifieke SDK-implementaties
 - Blogposts en tutorials
 
@@ -67,82 +58,82 @@ Het MCP-ecosysteem bestaat uit verschillende componenten en deelnemers die samen
 Het MCP-ecosysteem verwelkomt verschillende soorten bijdragen:
 
 1. **Codebijdragen**:
-   - Verbeteringen aan het kernprotocol
+   - Verbeteringen van het kernprotocol
    - Bugfixes
    - Implementaties van tools en servers
-   - Client/serverbibliotheken in verschillende talen
+   - Client/server bibliotheken in verschillende talen
 
 2. **Documentatie**:
-   - Verbeteren van bestaande documentatie
-   - Maken van tutorials en handleidingen
-   - Vertalen van documentatie
-   - Voorbeelden en voorbeeldapplicaties maken
+   - Het verbeteren van bestaande documentatie
+   - Het creëren van tutorials en handleidingen
+   - Het vertalen van documentatie
+   - Het maken van voorbeelden en voorbeeldapplicaties
 
 3. **Communityondersteuning**:
-   - Vragen beantwoorden op forums en in discussies
-   - Testen en rapporteren van problemen
+   - Vragen beantwoorden op forums en discussies
+   - Testen en issues rapporteren
    - Organiseren van community-evenementen
-   - Nieuwe bijdragers begeleiden
+   - Mentorschap voor nieuwe bijdragers
 
 ### Bijdrageproces: Kernprotocol
 
-Om bij te dragen aan het kernprotocol van MCP of officiële implementaties, volg je deze principes uit de [officiële richtlijnen voor bijdragen](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
+Om bij te dragen aan het kern MCP-protocol of officiële implementaties, volg deze principes uit de [officiële bijdragerichtlijnen](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
 
-1. **Eenvoud en Minimalisme**: De MCP-specificatie hanteert een hoge standaard voor het toevoegen van nieuwe concepten. Het is makkelijker om iets toe te voegen aan een specificatie dan om het te verwijderen.
+1. **Eenvoud en Minimalisme**: De MCP-specificatie hanteert een hoge standaard voor het toevoegen van nieuwe concepten. Het is makkelijker om dingen aan een specificatie toe te voegen dan ze te verwijderen.
 
 2. **Concrete Aanpak**: Wijzigingen in de specificatie moeten gebaseerd zijn op specifieke implementatie-uitdagingen, niet op speculatieve ideeën.
 
 3. **Fasen van een Voorstel**:
-   - Definiëren: Onderzoek het probleemgebied en valideer dat andere MCP-gebruikers met een soortgelijk probleem te maken hebben.
-   - Prototypen: Bouw een voorbeeldoplossing en demonstreer de praktische toepassing ervan.
-   - Schrijven: Op basis van het prototype schrijf je een specificatievoorstel.
+   - Definieer: Verken het probleemgebied, bevestig dat andere MCP-gebruikers een vergelijkbaar probleem ervaren
+   - Prototype: Bouw een voorbeeldoplossing en toon het praktische gebruik aan
+   - Schrijf: Gebaseerd op het prototype, schrijf een voorstel voor de specificatie
 
 ### Ontwikkelomgeving Instellen
 
 ```bash
-# Fork the repository
+# Fork de repository
 git clone https://github.com/YOUR-USERNAME/modelcontextprotocol.git
 cd modelcontextprotocol
 
-# Install dependencies
+# Installeer afhankelijkheden
 npm install
 
-# For schema changes, validate and generate schema.json:
+# Voor schemawijzigingen, valideer en genereer schema.json:
 npm run check:schema:ts
 npm run generate:schema
 
-# For documentation changes
+# Voor documentatiewijzigingen
 npm run check:docs
 npm run format
 
-# Preview documentation locally (optional):
+# Bekijk documentatie lokaal (optioneel):
 npm run serve:docs
 ```
 
-### Voorbeeld: Een Bugfix Bijdragen
+### Voorbeeld: Bijdragen van een Bugfix
 
 ```javascript
-// Original code with bug in the typescript-sdk
+// Originele code met bug in de typescript-sdk
 export function validateResource(resource: unknown): resource is MCPResource {
   if (!resource || typeof resource !== 'object') {
     return false;
   }
   
-  // Bug: Missing property validation
-  // Current implementation:
+  // Bug: Ontbrekende eigenschapsvalidatie
+  // Huidige implementatie:
   const hasName = 'name' in resource;
   const hasSchema = 'schema' in resource;
   
   return hasName && hasSchema;
 }
 
-// Fixed implementation in a contribution
+// Gefixeerde implementatie in een bijdrage
 export function validateResource(resource: unknown): resource is MCPResource {
   if (!resource || typeof resource !== 'object') {
     return false;
   }
   
-  // Improved validation
+  // Verbeterde validatie
   const hasName = 'name' in resource && typeof (resource as MCPResource).name === 'string';
   const hasSchema = 'schema' in resource && typeof (resource as MCPResource).schema === 'object';
   const hasDescription = !('description' in resource) || typeof (resource as MCPResource).description === 'string';
@@ -154,7 +145,7 @@ export function validateResource(resource: unknown): resource is MCPResource {
 ### Voorbeeld: Een Nieuwe Tool Bijdragen aan de Standaardbibliotheek
 
 ```python
-# Example contribution: A CSV data processing tool for the MCP standard library
+# Voorbeeldbijdrage: Een CSV-gegevensverwerkingstool voor de MCP-standaardbibliotheek
 
 from mcp_tools import Tool, ToolRequest, ToolResponse, ToolExecutionException
 import pandas as pd
@@ -216,14 +207,14 @@ class CsvProcessingTool(Tool):
     
     async def execute_async(self, request: ToolRequest) -> ToolResponse:
         try:
-            # Extract parameters
+            # Parameters extraheren
             operation = request.parameters.get("operation")
             output_format = request.parameters.get("outputFormat", "json")
             
-            # Get CSV data from either direct data or URL
+            # Verkrijg CSV-gegevens van directe data of URL
             df = await self._get_dataframe(request)
             
-            # Process based on requested operation
+            # Verwerken op basis van de gevraagde bewerking
             result = {}
             
             if operation == "summary":
@@ -284,7 +275,7 @@ class CsvProcessingTool(Tool):
     
     def _transform_data(self, df: pd.DataFrame, params: Dict[str, Any]) -> Dict[str, Any]:
         """Transforms the data based on parameters"""
-        # Implementation would include various transformations
+        # Implementatie zou verschillende transformaties omvatten
         return {
             "status": "success",
             "message": "Transformation applied"
@@ -311,68 +302,70 @@ class CsvProcessingTool(Tool):
             raise ToolExecutionException(f"Unsupported output format: {format}")
 ```
 
-### Richtlijnen voor Bijdragen
+### Bijdrageregelgeving
 
-Om succesvol bij te dragen aan MCP-projecten:
+Om een succesvolle bijdrage te leveren aan MCP-projecten:
 
-1. **Begin Klein**: Start met documentatie, bugfixes of kleine verbeteringen.
-2. **Volg de Stijlgids**: Houd je aan de codeerstijl en conventies van het project.
-3. **Schrijf Tests**: Voeg unittests toe voor je codebijdragen.
-4. **Documenteer Je Werk**: Voeg duidelijke documentatie toe voor nieuwe functies of wijzigingen.
-5. **Dien Gerichte PR's In**: Houd pull requests gericht op één enkel probleem of functie.
-6. **Ga in op Feedback**: Reageer op feedback over je bijdragen.
+1. **Begin Klein**: Begin met documentatie, bugfixes of kleine verbeteringen
+2. **Volg de Stijlrichtlijnen**: Houd je aan de codeerstijl en conventies van het project
+3. **Schrijf Tests**: Voeg unittests toe voor je codebijdragen
+4. **Documenteer Je Werk**: Voeg duidelijke documentatie toe voor nieuwe functies of wijzigingen
+5. **Dien Gericht PR’s in**: Houd pull requests gericht op één probleem of functie
+6. **Ga om met Feedback**: Reageer adequaat op feedback over je bijdragen
 
-### Voorbeeld Bijdrageworkflow
+### Voorbeeld Workflow voor Bijdragen
 
 ```bash
-# Clone the repository
+# Clone de repository
 git clone https://github.com/modelcontextprotocol/typescript-sdk.git
 cd typescript-sdk
 
-# Create a new branch for your contribution
+# Maak een nieuwe branch aan voor je bijdrage
 git checkout -b feature/my-contribution
 
-# Make your changes
+# Breng je wijzigingen aan
 # ...
 
-# Run tests to ensure your changes don't break existing functionality
+# Voer tests uit om te zorgen dat je wijzigingen de bestaande functionaliteit niet breken
 npm test
 
-# Commit your changes with a descriptive message
+# Commit je wijzigingen met een beschrijvende boodschap
 git commit -am "Fix validation in resource handler"
 
-# Push your branch to your fork
+# Push je branch naar je fork
 git push origin feature/my-contribution
 
-# Create a pull request from your branch to the main repository
-# Then engage with feedback and iterate on your PR as needed
+# Maak een pull request aan van je branch naar de hoofdrepository
+# Ga vervolgens in op feedback en werk je PR bij indien nodig
 ```
 
-## MCP-Servers Maken en Delen
+## MCP Servers Maken en Delen
 
-Een van de meest waardevolle manieren om bij te dragen aan het MCP-ecosysteem is door het maken en delen van aangepaste MCP-servers. De community heeft al honderden servers ontwikkeld voor verschillende diensten en toepassingen.
+Een van de meest waardevolle manieren om bij te dragen aan het MCP-ecosysteem is het maken en delen van aangepaste MCP-servers. De community heeft al honderden servers ontwikkeld voor diverse diensten en gebruikssituaties.
 
-### Frameworks voor MCP-Serverontwikkeling
+### MCP Server Ontwikkelframeworks
 
-Er zijn verschillende frameworks beschikbaar om de ontwikkeling van MCP-servers te vereenvoudigen:
+Verschillende frameworks zijn beschikbaar om de ontwikkeling van MCP-servers te vereenvoudigen:
 
-1. **Officiële SDK's**:
+1. **Officiële SDK’s** (gealigneerd met [MCP Specificatie 2025-11-25](https://spec.modelcontextprotocol.io/specification/2025-11-25/)):
    - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
    - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
    - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
    - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
    - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
    - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
+   - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk)
+   - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk)
 
 2. **Community Frameworks**:
    - [MCP-Framework](https://mcp-framework.com/) - Bouw MCP-servers met elegantie en snelheid in TypeScript
-   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - Annotatiegestuurde MCP-servers met Java
+   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - Annotation-gestuurde MCP-servers met Java
    - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - Java-framework voor MCP-servers
-   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - Starterproject voor MCP-servers in Next.js
+   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - Starter Next.js-project voor MCP-servers
 
 ### Ontwikkelen van Deelbare Tools
 
-#### .NET Voorbeeld: Een Deelbaar Toolpakket Maken
+#### .NET Voorbeeld: Maken van een Deelbaar Toolpakket
 
 ```csharp
 // Create a new .NET library project
@@ -478,10 +471,10 @@ namespace McpFinanceTools
 // dotnet nuget push bin/Release/McpFinanceTools.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k YOUR_API_KEY
 ```
 
-#### Java Voorbeeld: Een Mavenpakket voor Tools Maken
+#### Java Voorbeeld: Maken van een Maven-pakket voor Tools
 
 ```java
-// pom.xml configuration for a shareable MCP tool package
+// pom.xml-configuratie voor een deelbaar MCP-hulpprogrammapakket
 <!-- 
 <project>
     <groupId>com.example</groupId>
@@ -500,7 +493,7 @@ namespace McpFinanceTools
         <repository>
             <id>github</id>
             <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/username/mcp-weather-tools</url>
+            <url>https://maven.pkg.github.com/gebruikersnaam/mcp-weather-tools</url>
         </repository>
     </distributionManagement>
 </project>
@@ -542,7 +535,7 @@ public class WeatherForecastTool implements Tool {
     @Override
     public Object getSchema() {
         Map<String, Object> schema = new HashMap<>();
-        // Schema definition...
+        // Schema-definitie...
         return schema;
     }
     
@@ -553,10 +546,10 @@ public class WeatherForecastTool implements Tool {
             int days = request.getParameters().has("days") ? 
                 request.getParameters().get("days").asInt() : 3;
             
-            // Call weather API
+            // Roep weer-API aan
             Map<String, Object> forecast = getForecast(location, days);
             
-            // Build response
+            // Bouw antwoord op
             return new ToolResponse.Builder()
                 .setResult(forecast)
                 .build();
@@ -566,23 +559,23 @@ public class WeatherForecastTool implements Tool {
     }
     
     private Map<String, Object> getForecast(String location, int days) {
-        // Implementation would call weather API
-        // Simplified example
+        // Implementatie zou weer-API aanroepen
+        // Vereenvoudigd voorbeeld
         Map<String, Object> result = new HashMap<>();
-        // Add forecast data...
+        // Voeg voorspelde gegevens toe...
         return result;
     }
 }
 
-// Build and publish using Maven
+// Bouw en publiceer met Maven
 // mvn clean package
 // mvn deploy
 ```
 
-#### Python Voorbeeld: Een PyPI-pakket Publiceren
+#### Python Voorbeeld: Uitbrengen van een PyPI-pakket
 
 ```python
-# Directory structure for a PyPI package:
+# Mapstructuur voor een PyPI-pakket:
 # mcp_nlp_tools/
 # ├── LICENSE
 # ├── README.md
@@ -592,7 +585,7 @@ public class WeatherForecastTool implements Tool {
 # │   ├── sentiment_tool.py
 # │   └── translation_tool.py
 
-# Example setup.py
+# Voorbeeld setup.py
 """
 from setuptools import setup, find_packages
 
@@ -620,7 +613,7 @@ setup(
 )
 """
 
-# Example NLP tool implementation (sentiment_tool.py)
+# Voorbeeld implementatie van een NLP-tool (sentiment_tool.py)
 from mcp_tools import Tool, ToolRequest, ToolResponse, ToolExecutionException
 from transformers import pipeline
 import torch
@@ -629,7 +622,7 @@ class SentimentAnalysisTool(Tool):
     """MCP tool for sentiment analysis of text"""
     
     def __init__(self, model_name="distilbert-base-uncased-finetuned-sst-2-english"):
-        # Load the sentiment analysis model
+        # Laad het sentimentanalysemodel
         self.sentiment_analyzer = pipeline("sentiment-analysis", model=model_name)
     
     def get_name(self):
@@ -657,14 +650,14 @@ class SentimentAnalysisTool(Tool):
     
     async def execute_async(self, request: ToolRequest) -> ToolResponse:
         try:
-            # Extract parameters
+            # Haal parameters op
             text = request.parameters.get("text")
             include_score = request.parameters.get("includeScore", True)
             
-            # Analyze sentiment
+            # Analyseer sentiment
             sentiment_result = self.sentiment_analyzer(text)[0]
             
-            # Format result
+            # Formatteer resultaat
             result = {
                 "sentiment": sentiment_result["label"],
                 "text": text
@@ -673,18 +666,18 @@ class SentimentAnalysisTool(Tool):
             if include_score:
                 result["score"] = sentiment_result["score"]
             
-            # Return result
+            # Keer resultaat terug
             return ToolResponse(result=result)
             
         except Exception as e:
             raise ToolExecutionException(f"Sentiment analysis failed: {str(e)}")
 
-# To publish:
+# Om te publiceren:
 # python setup.py sdist bdist_wheel
 # python -m twine upload dist/*
 ```
 
-### Beste Praktijken Delen
+### Best Practices bij Delen
 
 Bij het delen van MCP-tools met de community:
 
@@ -695,25 +688,25 @@ Bij het delen van MCP-tools met de community:
 
 2. **Foutafhandeling**:
    - Implementeer robuuste foutafhandeling
-   - Geef nuttige foutmeldingen
-   - Behandel randgevallen zorgvuldig
+   - Bied nuttige foutmeldingen
+   - Handel randgevallen netjes af
 
-3. **Prestatieoverwegingen**:
-   - Optimaliseer voor zowel snelheid als hulpbrongebruik
-   - Implementeer caching waar nodig
+3. **Prestatie-overwegingen**:
+   - Optimaliseer voor snelheid en resourcegebruik
+   - Implementeer caching waar gepast
    - Houd rekening met schaalbaarheid
 
 4. **Beveiliging**:
    - Gebruik veilige API-sleutels en authenticatie
-   - Valideer en filter invoer
-   - Implementeer snelheidslimieten voor externe API-aanroepen
+   - Valideer en reinig invoer
+   - Implementeer rate limiting voor externe API-aanroepen
 
 5. **Testen**:
    - Zorg voor uitgebreide testdekking
    - Test met verschillende invoertypen en randgevallen
    - Documenteer testprocedures
 
-## Samenwerking en Beste Praktijken in de Community
+## Community Samenwerking en Best Practices
 
 Effectieve samenwerking is essentieel voor een bloeiend MCP-ecosysteem.
 
@@ -726,11 +719,11 @@ Effectieve samenwerking is essentieel voor een bloeiend MCP-ecosysteem.
 
 ### Code Reviews
 
-Bij het beoordelen van MCP-bijdragen:
+Bij het reviewen van MCP-bijdragen:
 
-1. **Duidelijkheid**: Is de code duidelijk en goed gedocumenteerd?
+1. **Duidelijkheid**: Is de code helder en goed gedocumenteerd?
 2. **Correctheid**: Werkt het zoals verwacht?
-3. **Consistentie**: Volgt het de conventies van het project?
+3. **Consistentie**: Volgt het de projectconventies?
 4. **Volledigheid**: Zijn tests en documentatie inbegrepen?
 5. **Beveiliging**: Zijn er beveiligingsproblemen?
 
@@ -738,17 +731,17 @@ Bij het beoordelen van MCP-bijdragen:
 
 Bij het ontwikkelen voor MCP:
 
-1. **Protocolversies**: Houd je aan de MCP-protocolversie die je tool ondersteunt.
-2. **Clientcompatibiliteit**: Houd rekening met achterwaartse compatibiliteit.
-3. **Servercompatibiliteit**: Volg de richtlijnen voor serverimplementatie.
-4. **Breaking Changes**: Documenteer duidelijk eventuele breaking changes.
+1. **Protocolversie**: Houd je aan de MCP-protocolversie die jouw tool ondersteunt
+2. **Clientcompatibiliteit**: Houd rekening met backward compatibility
+3. **Servercompatibiliteit**: Volg serverimplementatierichtlijnen
+4. **Breaking Changes**: Documenteer duidelijk breaking changes
 
 ## Voorbeeld Communityproject: MCP Tool Registry
 
-Een belangrijke bijdrage van de community kan het ontwikkelen van een openbare registry voor MCP-tools zijn.
+Een belangrijke communitybijdrage kan het ontwikkelen van een openbaar register voor MCP-tools zijn.
 
 ```python
-# Example schema for a community tool registry API
+# Voorbeeldschema voor een community toolregister API
 
 from fastapi import FastAPI, HTTPException, Depends
 from pydantic import BaseModel, Field, HttpUrl
@@ -756,7 +749,7 @@ from typing import List, Optional
 import datetime
 import uuid
 
-# Models for the tool registry
+# Modellen voor het toolregister
 class ToolSchema(BaseModel):
     """JSON Schema for a tool"""
     type: str
@@ -785,10 +778,10 @@ class Tool(ToolRegistration):
     rating: float = Field(default=0.0)
     ratings_count: int = Field(default=0)
 
-# FastAPI application for the registry
+# FastAPI-toepassing voor het register
 app = FastAPI(title="MCP Tool Registry")
 
-# In-memory database for this example
+# In-memory database voor dit voorbeeld
 tools_db = {}
 
 @app.post("/tools", response_model=Tool)
@@ -826,27 +819,33 @@ async def delete_tool(tool_name: str):
 
 ## Belangrijkste Inzichten
 
-- De MCP-community is divers en verwelkomt verschillende soorten bijdragen.
-- Bijdragen aan MCP kan variëren van verbeteringen aan het kernprotocol tot aangepaste tools.
-- Het volgen van richtlijnen voor bijdragen vergroot de kans dat je PR wordt geaccepteerd.
-- Het maken en delen van MCP-tools is een waardevolle manier om het ecosysteem te verbeteren.
-- Samenwerking binnen de community is essentieel voor de groei en verbetering van MCP.
+- De MCP-community is divers en verwelkomt verschillende soorten bijdragen
+- Bijdragen aan MCP kan variëren van kernprotocolverbeteringen tot aangepaste tools
+- Het volgen van bijdrage-richtlijnen vergroot de kans dat je PR wordt geaccepteerd
+- Het maken en delen van MCP-tools is een waardevolle manier om het ecosysteem te verbeteren
+- Community samenwerking is essentieel voor groei en verbetering van MCP
 
 ## Oefening
 
-1. Identificeer een gebied in het MCP-ecosysteem waar je een bijdrage kunt leveren op basis van je vaardigheden en interesses.
-2. Fork de MCP-repository en stel een lokale ontwikkelomgeving in.
-3. Maak een kleine verbetering, bugfix of tool die de community ten goede komt.
-4. Documenteer je bijdrage met de juiste tests en documentatie.
-5. Dien een pull request in naar de juiste repository.
+1. Identificeer een gebied in het MCP-ecosysteem waar jij een bijdrage zou kunnen leveren op basis van je vaardigheden en interesses
+2. Fork de MCP-repository en zet een lokale ontwikkelomgeving op
+3. Maak een kleine verbetering, bugfix of tool die de community zou helpen
+4. Documenteer je bijdrage met passende tests en documentatie
+5. Dien een pull request in bij de juiste repository
 
-## Aanvullende Bronnen
+## Extra Bronnen
 
-- [MCP Communityprojecten](https://github.com/topics/model-context-protocol)
+- [MCP Community Projecten](https://github.com/topics/model-context-protocol)
 
 ---
 
-Volgende: [Lessen uit Vroege Adoptie](../07-LessonsfromEarlyAdoption/README.md)
+## Wat Nu
 
-**Disclaimer (Vrijwaring)**:  
-Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Volgende: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Disclaimer**:  
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel wij streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal dient als de gezaghebbende bron te worden beschouwd. Voor kritieke informatie wordt een professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties voortvloeiend uit het gebruik van deze vertaling.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

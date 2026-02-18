@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0bc7bd48f55f1565f1d95ccb2c16f728",
-  "translation_date": "2025-07-13T23:09:55+00:00",
-  "source_file": "04-PracticalImplementation/samples/csharp/README.md",
-  "language_code": "bg"
-}
--->
 # Пример
 
 Предишният пример показва как да използвате локален .NET проект с тип `stdio`. И как да стартирате сървъра локално в контейнер. Това е добро решение в много ситуации. Въпреки това, може да е полезно сървърът да работи отдалечено, например в облачна среда. Тук идва типът `http`.
@@ -26,7 +17,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Когато уеб браузър отвори таблото на .NET Aspire, обърнете внимание на `http` URL адреса. Той трябва да е нещо като `http://localhost:5058/`.
 
-   ![.NET Aspire Dashboard](../../../../../translated_images/dotnet-aspire-dashboard.0a7095710e9301e90df2efd867e1b675b3b9bc2ccd7feb1ebddc0751522bc37c.bg.png)
+   ![.NET Aspire Dashboard](../../../../../translated_images/bg/dotnet-aspire-dashboard.0a7095710e9301e9.webp)
 
 ## Тествайте Streamable HTTP с MCP Inspector
 
@@ -38,7 +29,7 @@ CO_OP_TRANSLATOR_METADATA:
 npx @modelcontextprotocol/inspector http://localhost:5058
 ```
 
-![MCP Inspector](../../../../../translated_images/mcp-inspector.c223422b9b494fb4a518a3b3911b3e708e6a5715069470f9163ee2ee8d5f1ba9.bg.png)
+![MCP Inspector](../../../../../translated_images/bg/mcp-inspector.c223422b9b494fb4.webp)
 
 - Изберете `Streamable HTTP` като тип транспорт.
 - В полето Url въведете URL адреса на сървъра, който отбелязахте по-рано, и добавете `/mcp`. Трябва да е `http` (не `https`), нещо като `http://localhost:5058/mcp`.
@@ -83,7 +74,7 @@ azd up
 
 След като деплойването приключи, трябва да видите съобщение като това:
 
-![Azd deployment success](../../../../../translated_images/azd-deployment-success.bd42940493f1b834a5ce6251a6f88966546009b350df59d0cc4a8caabe94a4f1.bg.png)
+![Azd deployment success](../../../../../translated_images/bg/azd-deployment-success.bd42940493f1b834.webp)
 
 Вземете URL адреса и го използвайте в MCP Inspector и в GitHub Copilot Chat.
 

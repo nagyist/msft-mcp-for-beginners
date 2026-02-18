@@ -1,77 +1,74 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d204bc94ea6027d06a703b21b711ca57",
-  "translation_date": "2025-07-29T00:10:02+00:00",
-  "source_file": "05-AdvancedTopics/README.md",
-  "language_code": "ja"
-}
--->
 # MCPの高度なトピック
 
-[![高度なMCP: 安全性、スケーラビリティ、マルチモーダルAIエージェント](../../../translated_images/06.42259eaf91fccfc6d06ef1c126c9db04bbff9e5f60a87b782a2ec2616163142f.ja.png)](https://youtu.be/4yjmGvJzYdY)
+[![高度なMCP：安全でスケーラブル、マルチモーダルAIエージェント](../../../translated_images/ja/06.42259eaf91fccfc6.webp)](https://youtu.be/4yjmGvJzYdY)
 
-_(上の画像をクリックして、このレッスンのビデオをご覧ください)_
+_(上の画像をクリックすると、このレッスンのビデオが表示されます)_
 
-この章では、Model Context Protocol (MCP) の実装における高度なトピックを扱います。これには、マルチモーダル統合、スケーラビリティ、セキュリティのベストプラクティス、エンタープライズ統合が含まれます。これらのトピックは、現代のAIシステムの要求を満たす堅牢で本番環境対応のMCPアプリケーションを構築するために重要です。
+本章では、モデルコンテキストプロトコル（MCP）実装における一連の高度なトピックを扱います。マルチモーダル統合、スケーラビリティ、安全性のベストプラクティス、エンタープライズ統合が含まれます。これらのトピックは、現代のAIシステムの要求に応えられる堅牢で本番対応のMCPアプリケーションを構築するために非常に重要です。
 
 ## 概要
 
-このレッスンでは、Model Context Protocolの実装における高度な概念を探ります。特に、マルチモーダル統合、スケーラビリティ、セキュリティのベストプラクティス、エンタープライズ統合に焦点を当てます。これらのトピックは、複雑な要件を持つエンタープライズ環境での本番対応MCPアプリケーションを構築するために不可欠です。
+本レッスンでは、モデルコンテキストプロトコルの実装における高度な概念について探ります。マルチモーダル統合、スケーラビリティ、安全性のベストプラクティス、エンタープライズ統合に焦点を当てています。これらのトピックは、エンタープライズ環境での複雑な要件に対応できる本番グレードのMCPアプリケーションを構築するために不可欠です。
 
 ## 学習目標
 
-このレッスンを終えるまでに、以下ができるようになります：
+本レッスンの終了時には、以下ができるようになります：
 
-- MCPフレームワーク内でマルチモーダル機能を実装する
-- 高需要シナリオに対応するスケーラブルなMCPアーキテクチャを設計する
-- MCPのセキュリティ原則に沿ったセキュリティのベストプラクティスを適用する
-- MCPをエンタープライズAIシステムやフレームワークと統合する
-- 本番環境でのパフォーマンスと信頼性を最適化する
+- MCPフレームワーク内でのマルチモーダル機能の実装
+- 高負荷シナリオに対応するスケーラブルなMCPアーキテクチャの設計
+- MCPのセキュリティ原則に沿った安全性のベストプラクティスの適用
+- MCPとエンタープライズAIシステムおよびフレームワークとの統合
+- 本番環境でのパフォーマンスと信頼性の最適化
 
 ## レッスンとサンプルプロジェクト
 
-| リンク | タイトル | 説明 |
-|------|-------|-------------|
-| [5.1 Azureとの統合](./mcp-integration/README.md) | Azureとの統合 | MCPサーバーをAzureに統合する方法を学びます |
-| [5.2 マルチモーダルサンプル](./mcp-multi-modality/README.md) | MCPマルチモーダルサンプル | 音声、画像、マルチモーダル応答のサンプル |
-| [5.3 MCP OAuth2サンプル](../../../05-AdvancedTopics/mcp-oauth2-demo) | MCP OAuth2デモ | OAuth2を使用したMCPの最小限のSpring Bootアプリ。認可サーバーおよびリソースサーバーとしてのセキュアなトークン発行、保護されたエンドポイント、Azure Container Appsへのデプロイ、API管理の統合を示します。 |
-| [5.4 ルートコンテキスト](./mcp-root-contexts/README.md) | ルートコンテキスト | ルートコンテキストについて学び、それを実装する方法を学びます |
-| [5.5 ルーティング](./mcp-routing/README.md) | ルーティング | さまざまな種類のルーティングを学びます |
-| [5.6 サンプリング](./mcp-sampling/README.md) | サンプリング | サンプリングの操作方法を学びます |
-| [5.7 スケーリング](./mcp-scaling/README.md) | スケーリング | スケーリングについて学びます |
-| [5.8 セキュリティ](./mcp-security/README.md) | セキュリティ | MCPサーバーを保護します |
-| [5.9 ウェブ検索サンプル](./web-search-mcp/README.md) | ウェブ検索MCP | SerpAPIを統合したPython MCPサーバーとクライアント。リアルタイムのウェブ、ニュース、製品検索、Q&Aを実現。マルチツールのオーケストレーション、外部API統合、堅牢なエラーハンドリングを示します。 |
-| [5.10 リアルタイムストリーミング](./mcp-realtimestreaming/README.md) | ストリーミング | 今日のデータ駆動型の世界では、リアルタイムデータストリーミングが重要であり、即時の意思決定を可能にします。 |
-| [5.11 リアルタイムウェブ検索](./mcp-realtimesearch/README.md) | ウェブ検索 | MCPがリアルタイムウェブ検索をどのように変革するかを学びます。AIモデル、検索エンジン、アプリケーション間でのコンテキスト管理の標準化アプローチを提供します。 |
-| [5.12 Model Context ProtocolサーバーのEntra ID認証](./mcp-security-entra/README.md) | Entra ID認証 | Microsoft Entra IDは、クラウドベースの堅牢なIDおよびアクセス管理ソリューションを提供し、認可されたユーザーとアプリケーションのみがMCPサーバーとやり取りできるようにします。 |
-| [5.13 Azure AI Foundryエージェント統合](./mcp-foundry-agent-integration/README.md) | Azure AI Foundry統合 | Model Context ProtocolサーバーをAzure AI Foundryエージェントと統合する方法を学びます。これにより、強力なツールオーケストレーションと標準化された外部データソース接続を備えたエンタープライズAI機能が可能になります。 |
-| [5.14 コンテキストエンジニアリング](./mcp-contextengineering/README.md) | コンテキストエンジニアリング | MCPサーバーにおけるコンテキストエンジニアリング技術の未来の可能性を探ります。これには、コンテキストの最適化、動的コンテキスト管理、MCPフレームワーク内での効果的なプロンプトエンジニアリングの戦略が含まれます。 |
+| Link | タイトル | 説明 |
+|------|---------|------|
+| [5.1 Integration with Azure](./mcp-integration/README.md) | Azureとの統合 | Azure上でMCPサーバーを統合する方法を学びます |
+| [5.2 Multi modal sample](./mcp-multi-modality/README.md) | MCPマルチモーダルサンプル | 音声、画像、マルチモーダル応答のサンプル |
+| [5.3 MCP OAuth2 sample](../../../05-AdvancedTopics/mcp-oauth2-demo) | MCP OAuth2デモ | AuthorizationおよびResource ServerとしてのOAuth2を示す最小限のSpring Bootアプリ。セキュアなトークン発行、保護されたエンドポイント、Azure Container Appsのデプロイ、およびAPI管理統合を実演。 |
+| [5.4 Root Contexts](./mcp-root-contexts/README.md) | ルートコンテキスト | ルートコンテキストについて詳しく学び、その実装方法を理解する |
+| [5.5 Routing](./mcp-routing/README.md) | ルーティング | さまざまなルーティングの種類について学びます |
+| [5.6 Sampling](./mcp-sampling/README.md) | サンプリング | サンプリングの操作方法を学びます |
+| [5.7 Scaling](./mcp-scaling/README.md) | スケーリング | スケーリングについて学びます |
+| [5.8 Security](./mcp-security/README.md) | セキュリティ | MCPサーバーを安全に保護する方法 |
+| [5.9 Web Search sample](./web-search-mcp/README.md) | ウェブ検索MCP | SerpAPIと統合したPython MCPサーバーとクライアントで、リアルタイムのウェブ、ニュース、製品検索、Q&Aを実現。マルチツールオーケストレーション、外部API統合、および堅牢なエラーハンドリングを実演。 |
+| [5.10 Realtime Streaming](./mcp-realtimestreaming/README.md) | ストリーミング | データ駆動の現代において、企業やアプリケーションが即時の情報アクセスを必要とするリアルタイムのデータストリーミングの重要性を解説。 |
+| [5.11 Realtime Web Search](./mcp-realtimesearch/README.md) | ウェブ検索 | AIモデル、検索エンジン、アプリケーション間でのコンテキスト管理を標準化するアプローチを提供することで、リアルタイムウェブ検索を変革するMCPの仕組みを解説。 |
+| [5.12  Entra ID Authentication for Model Context Protocol Servers](./mcp-security-entra/README.md) | Entra ID認証 | Microsoft Entra IDは強力なクラウドベースのIDおよびアクセス管理ソリューションを提供し、認可されたユーザーおよびアプリだけがMCPサーバーと対話できるように支援。 |
+| [5.13 Azure AI Foundry Agent Integration](./mcp-foundry-agent-integration/README.md) | Azure AI Foundry統合 | MCPサーバーをAzure AI Foundryエージェントと統合し、パワフルなツールオーケストレーションとエンタープライズAI機能を標準化された外部データソース接続で実現する方法を学びます。 |
+| [5.14 Context Engineering](./mcp-contextengineering/README.md) | コンテキストエンジニアリング | MCPサーバーにおけるコンテキスト最適化、動的コンテキスト管理、効果的なプロンプトエンジニアリング戦略を含むコンテキストエンジニアリング技術の将来展望。 |
+| [5.15 MCP Custom Transport](./mcp-transport/README.md) | カスタムトランスポート | 専門的なMCP通信シナリオ向けにカスタムトランスポート機構を実装する方法を学びます。 |
+| [5.16 Protocol Features Deep Dive](./mcp-protocol-features/README.md) | プロトコル機能 | 進捗通知、リクエストキャンセル、リソーステンプレート、エラーハンドリングパターンなど、高度なプロトコル機能を習得します。 |
+
+> **MCP仕様 2025-11-25版の新機能**: 仕様は現在、**タスク**（進捗追跡付きの長時間実行操作）、**ツール注釈**（安全性のためのツールの動作に関するメタデータ）、**URLモードエリシテーション**（クライアントから特定のURLコンテンツを要求）、および強化された**ルート**（ワークスペースコンテキスト管理）を実験的にサポートしています。詳細は[MCP仕様の変更履歴](https://spec.modelcontextprotocol.io/)をご覧ください。
 
 ## 追加の参考資料
 
-最新のMCPの高度なトピックに関する情報は以下を参照してください：
+高度なMCPトピックの最新情報については、以下を参照してください：
 - [MCPドキュメント](https://modelcontextprotocol.io/)
-- [MCP仕様](https://spec.modelcontextprotocol.io/)
+- [MCP仕様書（2025-11-25）](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
 - [GitHubリポジトリ](https://github.com/modelcontextprotocol)
+- [OWASP MCPトップ10](https://microsoft.github.io/mcp-azure-security-guide/mcp/) - セキュリティリスクと対策
+- [MCPセキュリティサミットワークショップ（Sherpa）](https://azure-samples.github.io/sherpa/) - 実践的なセキュリティトレーニング
 
 ## 重要なポイント
 
-- マルチモーダルMCPの実装は、テキスト処理を超えたAIの能力を拡張します
-- スケーラビリティはエンタープライズ展開に不可欠であり、水平および垂直スケーリングによって対応できます
-- 包括的なセキュリティ対策はデータを保護し、適切なアクセス制御を確保します
-- Azure OpenAIやMicrosoft AI Foundryなどのプラットフォームとのエンタープライズ統合は、MCPの能力を向上させます
-- 高度なMCPの実装は、最適化されたアーキテクチャと慎重なリソース管理から恩恵を受けます
+- マルチモーダルMCP実装はテキスト処理を超えたAI機能を拡張
+- スケーラビリティはエンタープライズ展開に不可欠で、水平方向・垂直方向のスケールで対策可能
+- 包括的なセキュリティ対策がデータ保護と適切なアクセス制御を保証
+- Azure OpenAIやMicrosoft AI Foundryなどのプラットフォームとのエンタープライズ統合がMCP機能を強化
+- 高度なMCP実装は最適化されたアーキテクチャと慎重なリソース管理から恩恵を受ける
 
 ## 演習
 
-特定のユースケースに対してエンタープライズ対応のMCP実装を設計してください：
+特定のユースケースに対するエンタープライズグレードのMCP実装を設計してください：
 
 1. ユースケースに必要なマルチモーダル要件を特定する
-2. 機密データを保護するために必要なセキュリティコントロールを概説する
-3. 変動する負荷に対応できるスケーラブルなアーキテクチャを設計する
+2. 機密データを保護するためのセキュリティ制御を概説する
+3. 変動する負荷に対応可能なスケーラブルなアーキテクチャを設計する
 4. エンタープライズAIシステムとの統合ポイントを計画する
-5. 潜在的なパフォーマンスのボトルネックとその緩和戦略を文書化する
+5. 潜在的なパフォーマンスのボトルネックと軽減策を文書化する
 
 ## 追加リソース
 
@@ -80,9 +77,15 @@ _(上の画像をクリックして、このレッスンのビデオをご覧く
 
 ---
 
-## 次のステップ
+## 次に進むには
 
-- [5.1 MCP統合](./mcp-integration/README.md)
+このモジュールのレッスンを [5.1 MCP Integration](./mcp-integration/README.md) から始めましょう。
 
-**免責事項**:  
-この文書は、AI翻訳サービス [Co-op Translator](https://github.com/Azure/co-op-translator) を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。元の言語で記載された文書を正式な情報源としてお考えください。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や誤解釈について、当社は責任を負いません。
+モジュールを完了したら、次へ進みます: [モジュール6：コミュニティ貢献](../06-CommunityContributions/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**免責事項**：
+本書類はAI翻訳サービス「Co-op Translator」（https://github.com/Azure/co-op-translator）を使用して翻訳されています。正確性には努めておりますが、自動翻訳には誤りや不正確な点が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用によって生じる誤解や誤訳について当方は一切の責任を負いかねます。
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

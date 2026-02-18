@@ -1,133 +1,133 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0df1ee78a6dd8300f3a040ca5b411c2e",
-  "translation_date": "2025-08-12T07:47:21+00:00",
-  "source_file": "00-Introduction/README.md",
-  "language_code": "ja"
-}
--->
-# モデルコンテキストプロトコル (MCP) 入門：スケーラブルなAIアプリケーションのための重要性
+# モデルコンテキストプロトコル（MCP）入門：スケーラブルなAIアプリケーションにおける重要性
 
-[![モデルコンテキストプロトコル入門](../../../translated_images/01.a467036d886b5fb5b9cf7b39bac0e743b6ca0a4a18a492de90061daaf0cc55f0.ja.png)](https://youtu.be/agBbdiOPLQA)
+[![モデルコンテキストプロトコル入門](../../../translated_images/ja/01.a467036d886b5fb5.webp)](https://youtu.be/agBbdiOPLQA)
 
-_（上の画像をクリックすると、このレッスンの動画をご覧いただけます）_
+_(上の画像をクリックすると、このレッスンのビデオを視聴できます)_
 
-生成AIアプリケーションは、自然言語プロンプトを使用してアプリとやり取りできる点で大きな進歩を遂げています。しかし、これらのアプリに時間やリソースを投資するにつれて、機能やリソースを簡単に統合し、拡張可能で、複数のモデルを利用でき、さまざまなモデルの特性に対応できるようにする必要があります。つまり、生成AIアプリの構築は最初は簡単ですが、成長し複雑になるにつれて、アーキテクチャを定義し、アプリを一貫した方法で構築するための標準に頼る必要が出てきます。ここでMCPが登場し、整理と標準化を提供します。
+生成AIアプリケーションは、ユーザーが自然言語のプロンプトでアプリと対話できる点で大きな進歩です。しかし、このようなアプリにより多くの時間とリソースを投資するほど、機能やリソースを簡単に統合できるようにし、複数のモデルを扱えるようにし、さまざまなモデルの複雑さに対応できるようにすることが重要になります。要するに、生成AIアプリの構築は始めるのは簡単ですが、成長し複雑になるにつれてアーキテクチャを定義する必要が生じ、標準に依存して一貫した形でアプリを構築することが必要になります。ここでMCPが登場し、仕組みを整理し標準を提供します。
 
 ---
 
-## **🔍 モデルコンテキストプロトコル (MCP) とは？**
+## **🔍 モデルコンテキストプロトコル（MCP）とは？**
 
-**モデルコンテキストプロトコル (MCP)** は、**オープンで標準化されたインターフェース**であり、大規模言語モデル (LLM) が外部ツール、API、データソースとシームレスにやり取りできるようにします。これにより、トレーニングデータを超えたAIモデルの機能を強化し、よりスマートでスケーラブル、かつ応答性の高いAIシステムを実現します。
+**モデルコンテキストプロトコル（MCP）** は、大規模言語モデル（LLM）が外部ツール、API、データソースとシームレスに連携できるようにする **オープンで標準化されたインターフェース** です。AIモデルのトレーニングデータを超えた機能を強化するための一貫したアーキテクチャを提供し、よりスマートでスケーラブルかつ応答性の高いAIシステムを可能にします。
 
 ---
 
-## **🎯 AIにおける標準化の重要性**
+## **🎯 AIにおける標準化が重要な理由**
 
-生成AIアプリケーションが複雑化するにつれて、**スケーラビリティ、拡張性、保守性**を確保し、**ベンダーロックインを回避**するための標準を採用することが重要です。MCPは以下のニーズに対応します：
+生成AIアプリケーションがより複雑になるにつれ、**スケーラビリティ、拡張性、保守性、ベンダーロックインの回避** を確保するための標準を採用することが必須になります。MCPは以下の課題に取り組んでいます。
 
-- モデルとツールの統合を統一化  
-- 脆弱で一時的なカスタムソリューションを削減  
-- 複数のベンダーのモデルが1つのエコシステム内で共存可能  
+- モデルとツールの統合の一本化
+- もろく、一度きりのカスタムソリューションの削減
+- 複数ベンダーのモデルを1つのエコシステム内で共存させることの許可
 
-**Note:** MCPはオープンスタンダードを謳っていますが、IEEE、IETF、W3C、ISOなどの既存の標準化団体を通じて標準化する計画はありません。
+**注記:** MCPはオープン標準として自称していますが、IEEE、IETF、W3C、ISOなどの既存の標準化団体による標準化を計画しているわけではありません。
 
 ---
 
 ## **📚 学習目標**
 
-この記事を読み終えると、次のことができるようになります：
+この記事を読むことで、以下ができるようになります：
 
-- **モデルコンテキストプロトコル (MCP)** とそのユースケースを定義する  
-- MCPがモデルとツール間の通信をどのように標準化するかを理解する  
-- MCPアーキテクチャの主要コンポーネントを特定する  
-- 企業や開発の文脈でのMCPの実際の応用を探る  
-
----
-
-## **💡 モデルコンテキストプロトコル (MCP) がもたらす変革**
-
-### **🔗 MCPがAIの相互作用の断片化を解決**
-
-MCP以前は、モデルとツールを統合するには以下が必要でした：
-
-- ツールとモデルのペアごとにカスタムコードを作成  
-- 各ベンダーごとに非標準のAPIを使用  
-- アップデートによる頻繁な破損  
-- ツールが増えるにつれてスケーラビリティが低下  
-
-### **✅ MCP標準化の利点**
-
-| **利点**                  | **説明**                                                                 |
-|--------------------------|-------------------------------------------------------------------------|
-| 相互運用性              | LLMが異なるベンダーのツールとシームレスに連携                          |
-| 一貫性                  | プラットフォームやツール間での統一された動作                            |
-| 再利用性                | 一度構築したツールを複数のプロジェクトやシステムで利用可能              |
-| 開発の加速              | 標準化されたプラグアンドプレイインターフェースで開発時間を短縮          |
+- **モデルコンテキストプロトコル（MCP）** とそのユースケースを定義できる
+- MCPがモデルとツールの通信をどのように標準化するか理解する
+- MCPアーキテクチャのコアコンポーネントを識別する
+- エンタープライズや開発コンテキストでのMCPの実例を探求する
 
 ---
 
-## **🧱 MCPのハイレベルアーキテクチャ概要**
+## **💡 モデルコンテキストプロトコル（MCP）が変革をもたらす理由**
 
-MCPは**クライアント-サーバーモデル**に従います。このモデルでは：
+### **🔗 MCPはAIのインタラクションの断片化を解消する**
 
-- **MCPホスト**がAIモデルを実行  
-- **MCPクライアント**がリクエストを開始  
-- **MCPサーバー**がコンテキスト、ツール、機能を提供  
+MCP以前は、モデルとツールの統合に次のような課題がありました：
+
+- ツールごと、モデルごとにカスタムコードが必要
+- ベンダーごとに非標準APIが存在
+- 更新により頻繁に壊れることがある
+- ツールが増えるとスケーラビリティが悪化
+
+### **✅ MCP標準化のメリット**
+
+| **利点**                  | **説明**                                                                       |
+|---------------------------|--------------------------------------------------------------------------------|
+| インターオペラビリティ   | 異なるベンダー間でもLLMがツールとシームレスに連携                             |
+| 一貫性                   | プラットフォームとツール全体での均一な挙動                                   |
+| 再利用性                 | 一度構築したツールを複数のプロジェクトやシステムで利用可能                   |
+| 開発の高速化             | 標準化されたプラグアンドプレイのインターフェースによる開発時間の短縮          |
+
+---
+
+## **🧱 高レベルのMCPアーキテクチャ概要**
+
+MCPは**クライアント-サーバモデル**に従い、
+
+- **MCPホスト**がAIモデルを動かす
+- **MCPクライアント**がリクエストを発する
+- **MCPサーバ**がコンテキスト、ツール、機能を提供する
 
 ### **主要コンポーネント：**
 
-- **リソース** – モデル用の静的または動的データ  
-- **プロンプト** – ガイド付き生成のための事前定義されたワークフロー  
-- **ツール** – 検索や計算などの実行可能な機能  
-- **サンプリング** – 再帰的なやり取りを通じたエージェント的な振る舞い  
+- **リソース** – モデル向けの静的または動的データ  
+- **プロンプト** – ガイド付き生成のための事前定義ワークフロー  
+- **ツール** – 検索や計算などの実行可能関数  
+- **サンプリング** – 再帰的相互作用によるエージェント的振る舞い
+- **誘発** – サーバ側からのユーザー入力要求
+- **ルート** – サーバアクセス制御のためのファイルシステム境界
+
+### **プロトコルアーキテクチャ：**
+
+MCPは二層構造を持ちます：
+- **データ層**：JSON-RPC 2.0ベースの通信でライフサイクル管理とプリミティブを含む
+- **トランスポート層**：STDIO(ローカル)およびSSE対応のストリーミングHTTP(リモート)通信チャネル
 
 ---
 
-## MCPサーバーの動作
+## MCPサーバの動作
 
-MCPサーバーは以下のように動作します：
+MCPサーバは以下の方法で動作します：
 
 - **リクエストフロー**：
-    1. エンドユーザーまたはその代理として動作するソフトウェアがリクエストを開始します。  
-    2. **MCPクライアント**がリクエストを**MCPホスト**に送信し、AIモデルのランタイムを管理します。  
-    3. **AIモデル**がユーザープロンプトを受け取り、必要に応じて外部ツールやデータへのアクセスを要求します。  
-    4. **MCPホスト**がモデルではなく、標準化されたプロトコルを使用して適切な**MCPサーバー**と通信します。  
+    1. エンドユーザーまたはその代理のソフトウェアがリクエストを開始します。
+    2. **MCPクライアント**がリクエストをAIモデル実行を管理する**MCPホスト**に送信します。
+    3. **AIモデル**はユーザープロンプトを受け取り、必要に応じて1つ以上のツール呼び出しを介して外部ツールやデータへのアクセスを要求します。
+    4. **MCPホスト**がモデルに代わり、標準化されたプロトコルを使用して適切な**MCPサーバ**と通信します。
 - **MCPホストの機能**：
-    - **ツールレジストリ**：利用可能なツールとその機能のカタログを維持  
-    - **認証**：ツールアクセスの権限を確認  
-    - **リクエストハンドラー**：モデルからのツールリクエストを処理  
-    - **レスポンスフォーマッター**：ツールの出力をモデルが理解できる形式に構造化  
-- **MCPサーバーの実行**：
-    - **MCPホスト**がツール呼び出しを1つ以上の**MCPサーバー**にルーティングし、それぞれが特化した機能（例：検索、計算、データベースクエリ）を提供します。  
-    - **MCPサーバー**がそれぞれの操作を実行し、結果を**MCPホスト**に一貫した形式で返します。  
-    - **MCPホスト**がこれらの結果をフォーマットし、**AIモデル**に中継します。  
-- **レスポンスの完了**：
-    - **AIモデル**がツールの出力を最終的なレスポンスに組み込みます。  
-    - **MCPホスト**がこのレスポンスを**MCPクライアント**に送り返し、エンドユーザーまたは呼び出し元のソフトウェアに届けます。  
+    - **ツールレジストリ**：利用可能なツールとその機能のカタログを管理
+    - **認証**：ツールアクセスの権限検証
+    - **リクエストハンドラー**：モデルからのツールリクエストを処理
+    - **レスポンスフォーマッター**：モデルが理解できる形式でツール出力を構築
+- **MCPサーバの実行**：
+    - **MCPホスト**はツール呼び出しを1つまたは複数の**MCPサーバ**にルーティングし、各サーバが検索、計算、データベースクエリなどの専門機能を提供
+    - **MCPサーバ**は各自の処理を実行し、一貫した形式で結果を**MCPホスト**に返却
+    - **MCPホスト**はこれらの結果をフォーマットして**AIモデル**に中継
+- **レスポンス完了**：
+    - **AIモデル**はツール出力を最終レスポンスに組み込み
+    - **MCPホスト**がこのレスポンスを**MCPクライアント**に送り、エンドユーザーまたは呼出元ソフトに届ける
+    
 
 ```mermaid
 ---
-title: MCP Architecture and Component Interactions
-description: A diagram showing the flows of the components in MCP.
+title: MCP アーキテクチャとコンポーネント間の相互作用
+description: MCP のコンポーネント間のフローを示す図。
 ---
 graph TD
-    Client[MCP Client/Application] -->|Sends Request| H[MCP Host]
-    H -->|Invokes| A[AI Model]
-    A -->|Tool Call Request| H
-    H -->|MCP Protocol| T1[MCP Server Tool 01: Web Search]
-    H -->|MCP Protocol| T2[MCP Server Tool 02: Calculator tool]
-    H -->|MCP Protocol| T3[MCP Server Tool 03: Database Access tool]
-    H -->|MCP Protocol| T4[MCP Server Tool 04: File System tool]
-    H -->|Sends Response| Client
+    Client[MCP クライアント/アプリケーション] -->|リクエスト送信| H[MCP ホスト]
+    H -->|呼び出し| A[AI モデル]
+    A -->|ツール呼び出しリクエスト| H
+    H -->|MCP プロトコル| T1[MCP サーバーツール 01: Web 検索]
+    H -->|MCP プロトコル| T2[MCP サーバーツール 02: 計算機ツール]
+    H -->|MCP プロトコル| T3[MCP サーバーツール 03: データベースアクセスツール]
+    H -->|MCP プロトコル| T4[MCP サーバーツール 04: ファイルシステムツール]
+    H -->|レスポンス送信| Client
 
-    subgraph "MCP Host Components"
+    subgraph "MCP ホストコンポーネント"
         H
-        G[Tool Registry]
-        I[Authentication]
-        J[Request Handler]
-        K[Response Formatter]
+        G[ツールレジストリ]
+        I[認証]
+        J[リクエストハンドラー]
+        K[レスポンスフォーマッター]
     end
 
     H <--> G
@@ -147,182 +147,180 @@ graph TD
     style T3 fill:#c2f0c2,stroke:#333,stroke-width:1px
     style T4 fill:#c2f0c2,stroke:#333,stroke-width:1px
 ```
+## 👨‍💻 MCPサーバの作り方（例付き）
 
-## 👨‍💻 MCPサーバーの構築方法（例付き）
+MCPサーバはLLMの能力を拡張し、データや機能を提供します。
 
-MCPサーバーを使用すると、LLMの機能をデータや機能を提供することで拡張できます。
+試してみたいですか？ 以下は言語やスタック別に簡単なMCPサーバを作成するSDKと例です：
 
-試してみたいですか？以下は、異なる言語/スタックでシンプルなMCPサーバーを作成するためのSDKと例です：
+- **Python SDK**: https://github.com/modelcontextprotocol/python-sdk
 
-- **Python SDK**: https://github.com/modelcontextprotocol/python-sdk  
-- **TypeScript SDK**: https://github.com/modelcontextprotocol/typescript-sdk  
-- **Java SDK**: https://github.com/modelcontextprotocol/java-sdk  
-- **C#/.NET SDK**: https://github.com/modelcontextprotocol/csharp-sdk  
+- **TypeScript SDK**: https://github.com/modelcontextprotocol/typescript-sdk
 
----
+- **Java SDK**: https://github.com/modelcontextprotocol/java-sdk
 
-## 🌍 MCPの実際のユースケース
+- **C#/.NET SDK**: https://github.com/modelcontextprotocol/csharp-sdk
 
-MCPはAIの能力を拡張することで、幅広いアプリケーションを可能にします：
 
-| **アプリケーション**            | **説明**                                                                 |
-|------------------------------|-------------------------------------------------------------------------|
-| 企業データ統合              | LLMをデータベース、CRM、または内部ツールに接続                          |
-| エージェント型AIシステム      | ツールアクセスと意思決定ワークフローを備えた自律エージェントを実現      |
-| マルチモーダルアプリケーション | テキスト、画像、音声ツールを単一の統一されたAIアプリ内で組み合わせる    |
-| リアルタイムデータ統合        | AIとのやり取りにライブデータを取り入れ、より正確で最新の出力を提供      |
+## 🌍 MCPの実世界ユースケース
 
-### 🧠 MCP = AI相互作用のユニバーサルスタンダード
+MCPはAIの能力を拡張し、幅広いアプリケーションを実現します：
 
-モデルコンテキストプロトコル (MCP) は、AI相互作用のユニバーサルスタンダードとして機能します。これは、USB-Cがデバイスの物理的接続を標準化したのと同じようなものです。AIの世界では、MCPが一貫したインターフェースを提供し、モデル（クライアント）が外部ツールやデータプロバイダー（サーバー）とシームレスに統合できるようにします。これにより、各APIやデータソースごとに多様でカスタムなプロトコルを必要とする状況が解消されます。
+| **アプリケーション**       | **説明**                                                                       |
+|----------------------------|--------------------------------------------------------------------------------|
+| エンタープライズデータ統合 | LLMをデータベース、CRM、社内ツールに接続                                    |
+| エージェンティックAIシステム| ツールアクセスと意思決定ワークフローを備えた自律型エージェントを実現          |
+| マルチモーダルアプリ       | テキスト、画像、音声ツールを統合した単一の統合AIアプリ                       |
+| リアルタイムデータ統合      | 最新のデータをAI対話に取り込み、より正確で最新の出力を実現                   |
 
-MCPの下では、MCP互換ツール（MCPサーバーと呼ばれる）は統一された標準に従います。これらのサーバーは提供するツールやアクションをリストし、AIエージェントからのリクエストに応じてそれらを実行します。MCPをサポートするAIエージェントプラットフォームは、サーバーから利用可能なツールを発見し、この標準プロトコルを通じてそれらを呼び出すことができます。
 
-### 💡 知識へのアクセスを促進
+### 🧠 MCP ＝ AIインタラクションのためのユニバーサルスタンダード
 
-ツールの提供に加えて、MCPは知識へのアクセスも促進します。これにより、アプリケーションがさまざまなデータソースにリンクすることで、大規模言語モデル (LLM) にコンテキストを提供できます。たとえば、MCPサーバーは企業の文書リポジトリを表し、エージェントが必要に応じて関連情報を取得できるようにします。別のサーバーは、メール送信や記録の更新などの特定のアクションを処理することができます。エージェントの視点から見ると、これらは単に使用可能なツールであり、一部のツールはデータ（知識コンテキスト）を返し、他のツールはアクションを実行します。MCPはこれらの両方を効率的に管理します。
+モデルコンテキストプロトコル（MCP）は、USB-Cが物理接続機器を統一したように、AIインタラクションのためのユニバーサルスタンダードとして機能します。AIの世界では、MCPが一貫したインターフェースを提供し、モデル（クライアント）が外部ツールやデータプロバイダー（サーバ）とシームレスに統合できるようにします。これにより、多様でカスタムなプロトコルが不要になります。
 
-エージェントがMCPサーバーに接続すると、標準フォーマットを通じてサーバーの利用可能な機能やアクセス可能なデータを自動的に学習します。この標準化により、動的なツールの利用が可能になります。たとえば、新しいMCPサーバーをエージェントのシステムに追加すると、その機能が即座に利用可能になり、エージェントの指示をさらにカスタマイズする必要がなくなります。
+MCP準拠のツール（MCPサーバと呼ばれる）は統一標準に従います。これらのサーバは提供するツールやアクションをリストし、AIエージェントからの要請に応じてそれを実行できます。MCP対応エージェントプラットフォームは利用可能なツールをサーバから発見し、この標準プロトコル経由で呼び出せます。
 
-この統合は、以下の図に示されるように、サーバーがツールと知識の両方を提供し、システム間のシームレスなコラボレーションを確保する流れと一致します。
+### 💡 知識アクセスを促進
+
+ツールを提供するだけでなく、MCPは知識アクセスも促進します。アプリはLLMに文脈を提供するために多種多様なデータソースをリンクできます。例えば、MCPサーバは企業の文書リポジトリを表し、エージェントが必要に応じて関連情報を取得可能にします。別のサーバはメール送信やレコード更新のような特定アクションを処理します。エージェント視点では、これらは単なる「ツール」であり、一部はデータ（知識コンテキスト）を返し、他はアクションを実行します。MCPは両者を効率的に管理します。
+
+エージェントがMCPサーバに接続すると、サーバの利用可能な機能やアクセス可能なデータを標準フォーマットで自動的に学習します。この標準化によりツールの動的利用が可能です。例えば新たにMCPサーバを追加すると、その機能がすぐに使えるようになり、エージェントの指示を追加でカスタマイズする必要はありません。
+
+この効率的な統合は、以下の図のようにサーバがツールと知識の両面を提供し、システム間のスムーズな連携を保証します。
 
 ### 👉 例：スケーラブルなエージェントソリューション
 
 ```mermaid
 ---
-title: Scalable Agent Solution with MCP
-description: A diagram illustrating how a user interacts with an LLM that connects to multiple MCP servers, with each server providing both knowledge and tools, creating a scalable AI system architecture
+title: MCPによるスケーラブルエージェントソリューション
+description: ユーザーが複数のMCPサーバーに接続するLLMとどのようにやり取りするかを示す図。各サーバーは知識とツールの両方を提供し、スケーラブルなAIシステムアーキテクチャを形成する
 ---
 graph TD
-    User -->|Prompt| LLM
-    LLM -->|Response| User
+    User -->|入力| LLM
+    LLM -->|応答| User
     LLM -->|MCP| ServerA
     LLM -->|MCP| ServerB
-    ServerA -->|Universal connector| ServerB
+    ServerA -->|ユニバーサルコネクター| ServerB
     ServerA --> KnowledgeA
     ServerA --> ToolsA
     ServerB --> KnowledgeB
     ServerB --> ToolsB
 
     subgraph Server A
-        KnowledgeA[Knowledge]
-        ToolsA[Tools]
+        KnowledgeA[知識]
+        ToolsA[ツール]
     end
 
     subgraph Server B
-        KnowledgeB[Knowledge]
-        ToolsB[Tools]
+        KnowledgeB[知識]
+        ToolsB[ツール]
     end
-```
+```ユニバーサルコネクターにより、MCPサーバ同士が通信し機能を共有可能になり、ServerAがServerBにタスクを委譲したり、そのツールや知識へアクセスできます。これによりサーバ間でツールやデータが連邦化され、スケーラブルでモジュラーなエージェントアーキテクチャをサポートします。MCPはツール公開を標準化するため、エージェントはハードコードされた統合なしにサーバ間でツールを動的に発見・ルーティング可能です。
 
-### 🔄 クライアント側LLM統合を伴う高度なMCPシナリオ
+ツールと知識の連邦化：サーバ間でのツールとデータの共有により、よりスケーラブルでモジュラーなエージェンティックアーキテクチャを実現。
 
-基本的なMCPアーキテクチャを超えて、クライアントとサーバーの両方にLLMが含まれる高度なシナリオでは、より洗練された相互作用が可能になります。以下の図では、**クライアントアプリ**がIDEであり、ユーザーが利用可能な複数のMCPツールを備えている場合を示しています：
+### 🔄 クライアントサイドLLM統合による高度なMCPシナリオ
+
+基本的なMCPアーキテクチャを越え、クライアントとサーバ双方にLLMを組み込む高度なシナリオも存在し、より高度な相互作用が可能です。以下の図では、**クライアントアプリ**が複数のMCPツールを備えたIDEのように、LLMによる利用が可能な例を示しています：
 
 ```mermaid
 ---
-title: Advanced MCP Scenarios with Client-Server LLM Integration
-description: A sequence diagram showing the detailed interaction flow between user, client application, client LLM, multiple MCP servers, and server LLM, illustrating tool discovery, user interaction, direct tool calling, and feature negotiation phases
+title: クライアント・サーバーLLM統合を伴う高度なMCPシナリオ
+description: ユーザー、クライアントアプリ、クライアントLLM、複数のMCPサーバー、サーバーLLM間の詳細なインタラクションフローを示すシーケンス図。ツール検出、ユーザーインタラクション、直接ツール呼び出し、および機能交渉フェーズを説明
 ---
 sequenceDiagram
     autonumber
-    actor User as 👤 User
-    participant ClientApp as 🖥️ Client App
-    participant ClientLLM as 🧠 Client LLM
-    participant Server1 as 🔧 MCP Server 1
-    participant Server2 as 📚 MCP Server 2
-    participant ServerLLM as 🤖 Server LLM
+    actor User as 👤 ユーザー
+    participant ClientApp as 🖥️ クライアントアプリ
+    participant ClientLLM as 🧠 クライアントLLM
+    participant Server1 as 🔧 MCPサーバー1
+    participant Server2 as 📚 MCPサーバー2
+    participant ServerLLM as 🤖 サーバーLLM
     
     %% Discovery Phase
     rect rgb(220, 240, 255)
-        Note over ClientApp, Server2: TOOL DISCOVERY PHASE
-        ClientApp->>+Server1: Request available tools/resources
-        Server1-->>-ClientApp: Return tool list (JSON)
-        ClientApp->>+Server2: Request available tools/resources
-        Server2-->>-ClientApp: Return tool list (JSON)
-        Note right of ClientApp: Store combined tool<br/>catalog locally
+        Note over ClientApp, Server2: ツール検出フェーズ
+        ClientApp->>+Server1: 利用可能なツール/リソースをリクエスト
+        Server1-->>-ClientApp: ツールリストを返す（JSON）
+        ClientApp->>+Server2: 利用可能なツール/リソースをリクエスト
+        Server2-->>-ClientApp: ツールリストを返す（JSON）
+        Note right of ClientApp: 結合されたツール<br/>カタログをローカルに保存
     end
     
     %% User Interaction
     rect rgb(255, 240, 220)
-        Note over User, ClientLLM: USER INTERACTION PHASE
-        User->>+ClientApp: Enter natural language prompt
-        ClientApp->>+ClientLLM: Forward prompt + tool catalog
-        ClientLLM->>-ClientLLM: Analyze prompt & select tools
+        Note over User, ClientLLM: ユーザーインタラクションフェーズ
+        User->>+ClientApp: 自然言語プロンプトを入力
+        ClientApp->>+ClientLLM: プロンプト＋ツールカタログを転送
+        ClientLLM->>-ClientLLM: プロンプトを分析しツールを選択
     end
     
     %% Scenario A: Direct Tool Calling
-    alt Direct Tool Calling
+    alt 直接ツール呼び出し
         rect rgb(220, 255, 220)
-            Note over ClientApp, Server1: SCENARIO A: DIRECT TOOL CALLING
-            ClientLLM->>+ClientApp: Request tool execution
-            ClientApp->>+Server1: Execute specific tool
-            Server1-->>-ClientApp: Return results
-            ClientApp->>+ClientLLM: Process results
-            ClientLLM-->>-ClientApp: Generate response
-            ClientApp-->>-User: Display final answer
+            Note over ClientApp, Server1: シナリオA: 直接ツール呼び出し
+            ClientLLM->>+ClientApp: ツール実行をリクエスト
+            ClientApp->>+Server1: 特定のツールを実行
+            Server1-->>-ClientApp: 結果を返す
+            ClientApp->>+ClientLLM: 結果を処理
+            ClientLLM-->>-ClientApp: 応答を生成
+            ClientApp-->>-User: 最終回答を表示
         end
     
     %% Scenario B: Feature Negotiation (VS Code style)
-    else Feature Negotiation (VS Code style)
+    else 機能交渉（VS Codeスタイル）
         rect rgb(255, 220, 220)
-            Note over ClientApp, ServerLLM: SCENARIO B: FEATURE NEGOTIATION
-            ClientLLM->>+ClientApp: Identify needed capabilities
-            ClientApp->>+Server2: Negotiate features/capabilities
-            Server2->>+ServerLLM: Request additional context
-            ServerLLM-->>-Server2: Provide context
-            Server2-->>-ClientApp: Return available features
-            ClientApp->>+Server2: Call negotiated tools
-            Server2-->>-ClientApp: Return results
-            ClientApp->>+ClientLLM: Process results
-            ClientLLM-->>-ClientApp: Generate response
-            ClientApp-->>-User: Display final answer
+            Note over ClientApp, ServerLLM: シナリオB: 機能交渉
+            ClientLLM->>+ClientApp: 必要な機能を特定
+            ClientApp->>+Server2: 機能/能力を交渉
+            Server2->>+ServerLLM: 追加のコンテキストをリクエスト
+            ServerLLM-->>-Server2: コンテキストを提供
+            Server2-->>-ClientApp: 利用可能な機能を返す
+            ClientApp->>+Server2: 交渉済みのツールを呼び出し
+            Server2-->>-ClientApp: 結果を返す
+            ClientApp->>+ClientLLM: 結果を処理
+            ClientLLM-->>-ClientApp: 応答を生成
+            ClientApp-->>-User: 最終回答を表示
         end
     end
 ```
+## 🔐 MCPの実用的メリット
 
----
+MCP使用時の実用的な利点は次の通りです：
 
-## 🔐 MCPの実用的な利点
+- **新鮮さ**：モデルはトレーニングデータを超えた最新情報にアクセス可能
+- **能力拡張**：専門ツールを活用し、訓練外のタスクをこなせる
+- **幻覚の減少**：外部データソースに基づき事実に裏付けられた回答が可能
+- **プライバシー**：機密データはプロンプトに埋め込むことなく安全環境に保持
 
-MCPを使用することで得られる実用的な利点は次のとおりです：
+## 📌 重要ポイントまとめ
 
-- **最新性**：モデルがトレーニングデータを超えた最新情報にアクセス可能  
-- **機能拡張**：モデルがトレーニングされていないタスクに特化したツールを活用可能  
-- **幻覚の削減**：外部データソースが事実に基づいた根拠を提供  
-- **プライバシー**：機密データをプロンプトに埋め込むのではなく、安全な環境内に保持可能  
+MCP利用の重要ポイントは以下の通り：
 
----
-
-## 📌 重要なポイント
-
-MCPを使用する際の重要なポイントは次のとおりです：
-
-- **MCP**はAIモデルがツールやデータとやり取りする方法を標準化  
-- **拡張性、一貫性、相互運用性**を促進  
-- MCPは**開発時間を短縮し、信頼性を向上させ、モデルの機能を拡張**  
-- クライアント-サーバーアーキテクチャにより、**柔軟で拡張可能なAIアプリケーション**を実現  
-
----
+- **MCP**はAIモデルとツール・データの標準的連携方法を確立
+- **拡張性、一貫性、相互運用性**を促進
+- MCPは**開発時間削減、信頼性向上、モデル機能拡張**に寄与
+- クライアント-サーバアーキテクチャにより柔軟で拡張性あるAIアプリが可能
 
 ## 🧠 演習
 
-構築したいAIアプリケーションについて考えてみましょう。
+あなたが興味のあるAIアプリケーションについて考えてみましょう。
 
-- どのような**外部ツールやデータ**がその機能を強化できますか？  
-- MCPが統合を**より簡単で信頼性の高いもの**にする方法は？  
-
----
+- その能力を高めるためにどんな**外部ツールやデータ**が必要か？
+- MCPにより統合がどのように**簡単で信頼性高く**なるか？
 
 ## 追加リソース
 
 - [MCP GitHubリポジトリ](https://github.com/modelcontextprotocol)
 
+
+## 次に読む
+
+次へ：[第1章：コアコンセプト](../01-CoreConcepts/README.md)
+
 ---
 
-## 次のステップ
-
-次へ：[第1章：基本概念](../01-CoreConcepts/README.md)
-
-**免責事項**:  
-この文書は、AI翻訳サービス [Co-op Translator](https://github.com/Azure/co-op-translator) を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。元の言語で記載された原文が正式な情報源と見なされるべきです。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の利用に起因する誤解や誤訳について、当社は一切の責任を負いません。
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**免責事項**：
+本書類はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な箇所が含まれる可能性があります。原文の母国語版が正式な情報源とみなされます。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の使用により生じたいかなる誤解や誤訳についても、当方は責任を負いかねます。
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

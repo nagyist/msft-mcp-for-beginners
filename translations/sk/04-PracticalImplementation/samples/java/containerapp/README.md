@@ -1,17 +1,8 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e5ea5e7582f70008ea9bec3b3820f20a",
-  "translation_date": "2025-07-13T23:19:51+00:00",
-  "source_file": "04-PracticalImplementation/samples/java/containerapp/README.md",
-  "language_code": "sk"
-}
--->
 ## Architektúra systému
 
 Tento projekt demonštruje webovú aplikáciu, ktorá pred odoslaním používateľských požiadaviek do kalkulačnej služby cez Model Context Protocol (MCP) vykonáva kontrolu bezpečnosti obsahu.
 
-![Diagram architektúry systému](../../../../../../translated_images/plant.b079fed84e945b7c2978993a16163bb53f0517cfe3548d2e442ff40d619ba4b4.sk.png)
+![Diagram architektúry systému](../../../../../../translated_images/sk/plant.b079fed84e945b7c.webp)
 
 ### Ako to funguje
 

@@ -1,96 +1,89 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b62150e27d4b7b5797ee41146d176e6b",
-  "translation_date": "2025-08-18T14:18:34+00:00",
-  "source_file": "08-BestPractices/README.md",
-  "language_code": "th"
-}
--->
-# แนวทางปฏิบัติที่ดีที่สุดในการพัฒนา MCP
+# MCP Development Best Practices
 
-[![แนวทางปฏิบัติที่ดีที่สุดในการพัฒนา MCP](../../../translated_images/09.d0f6d86c9d72134ccf5a8d8c8650a0557e519936661fc894cad72d73522227cb.th.png)](https://youtu.be/W56H9W7x-ao)
+[![MCP Development Best Practices](../../../translated_images/th/09.d0f6d86c9d72134c.webp)](https://youtu.be/W56H9W7x-ao)
 
-_(คลิกที่ภาพด้านบนเพื่อดูวิดีโอของบทเรียนนี้)_
+_(คลิกที่ภาพด้านบนเพื่อดูวิดีโอบทเรียนนี้)_
 
-## ภาพรวม
+## Overview
 
-บทเรียนนี้มุ่งเน้นไปที่แนวทางปฏิบัติขั้นสูงสำหรับการพัฒนา ทดสอบ และปรับใช้เซิร์ฟเวอร์ MCP และฟีเจอร์ในสภาพแวดล้อมการผลิต เมื่อระบบนิเวศ MCP มีความซับซ้อนและมีความสำคัญมากขึ้น การปฏิบัติตามรูปแบบที่กำหนดไว้จะช่วยให้มั่นใจในความน่าเชื่อถือ การบำรุงรักษา และการทำงานร่วมกัน บทเรียนนี้รวบรวมความรู้เชิงปฏิบัติที่ได้จากการใช้งาน MCP ในโลกจริงเพื่อแนะนำคุณในการสร้างเซิร์ฟเวอร์ที่แข็งแกร่งและมีประสิทธิภาพ พร้อมด้วยทรัพยากร คำแนะนำ และเครื่องมือที่มีประสิทธิภาพ
+บทเรียนนี้เน้นไปที่แนวทางปฏิบัติที่ดีที่สุดระดับสูงสำหรับการพัฒนา ทดสอบ และปรับใช้เซิร์ฟเวอร์ MCP และฟีเจอร์ต่างๆ ในสภาพแวดล้อมการผลิต เมื่อระบบนิเวศ MCP มีความซับซ้อนและมีความสำคัญมากขึ้น การปฏิบัติตามรูปแบบที่กำหนดไว้จะช่วยให้มั่นใจได้ถึงความน่าเชื่อถือ ความง่ายในการบำรุงรักษา และความสามารถในการทำงานร่วมกัน บทเรียนนี้รวบรวมปัญญาที่ได้จากการใช้งานจริงของ MCP เพื่อแนะนำคุณในการสร้างเซิร์ฟเวอร์ที่แข็งแกร่ง มีประสิทธิภาพ พร้อมทรัพยากร คำถาม และเครื่องมือที่มีประสิทธิผล
 
-## วัตถุประสงค์การเรียนรู้
+## Learning Objectives
 
-เมื่อจบบทเรียนนี้ คุณจะสามารถ:
+เมื่อสิ้นสุดบทเรียนนี้ คุณจะสามารถ:
 
-- ใช้แนวทางปฏิบัติที่ดีที่สุดในอุตสาหกรรมในการออกแบบเซิร์ฟเวอร์และฟีเจอร์ MCP
-- สร้างกลยุทธ์การทดสอบที่ครอบคลุมสำหรับเซิร์ฟเวอร์ MCP
+- นำแนวทางปฏิบัติที่ดีที่สุดในอุตสาหกรรมไปใช้ในการออกแบบเซิร์ฟเวอร์และฟีเจอร์ MCP
+- สร้างกลยุทธ์การทดสอบอย่างครอบคลุมสำหรับเซิร์ฟเวอร์ MCP
 - ออกแบบรูปแบบการทำงานที่มีประสิทธิภาพและนำกลับมาใช้ใหม่ได้สำหรับแอปพลิเคชัน MCP ที่ซับซ้อน
-- ใช้การจัดการข้อผิดพลาด การบันทึก และการสังเกตการณ์ที่เหมาะสมในเซิร์ฟเวอร์ MCP
-- ปรับปรุงการใช้งาน MCP ให้เหมาะสมสำหรับประสิทธิภาพ ความปลอดภัย และการบำรุงรักษา
+- นำเทคนิคการจัดการข้อผิดพลาด การบันทึก และการสังเกตการณ์ที่เหมาะสมมาใช้กับเซิร์ฟเวอร์ MCP
+- ปรับแต่งการใช้งาน MCP ให้มีประสิทธิภาพ ความปลอดภัย และง่ายต่อการบำรุงรักษา
 
-## หลักการสำคัญของ MCP
+## MCP Core Principles
 
-ก่อนที่จะลงลึกในแนวทางปฏิบัติการใช้งานเฉพาะ สิ่งสำคัญคือต้องเข้าใจหลักการสำคัญที่เป็นแนวทางในการพัฒนา MCP อย่างมีประสิทธิภาพ:
+ก่อนเข้าสู่แนวทางปฏิบัติการใช้งานเฉพาะ ควรเข้าใจหลักการสำคัญที่เป็นแนวทางสำหรับการพัฒนา MCP อย่างมีประสิทธิผล:
 
-1. **การสื่อสารที่เป็นมาตรฐาน**: MCP ใช้ JSON-RPC 2.0 เป็นพื้นฐาน โดยให้รูปแบบที่สอดคล้องกันสำหรับคำขอ การตอบกลับ และการจัดการข้อผิดพลาดในทุกการใช้งาน
+1. **การสื่อสารที่มาตรฐาน**: MCP ใช้ JSON-RPC 2.0 เป็นพื้นฐาน ให้รูปแบบที่สม่ำเสมอสำหรับคำขอ การตอบกลับ และการจัดการข้อผิดพลาดในทุกการใช้งาน
 
-2. **การออกแบบที่เน้นผู้ใช้**: ให้ความสำคัญกับการยินยอม การควบคุม และความโปร่งใสของผู้ใช้ในทุกการใช้งาน MCP
+2. **การออกแบบโดยเน้นผู้ใช้เป็นศูนย์กลาง**: ให้ความสำคัญกับความยินยอมของผู้ใช้ การควบคุม และความโปร่งใสในการใช้งาน MCP ของคุณเสมอ
 
-3. **ความปลอดภัยเป็นอันดับแรก**: ใช้มาตรการรักษาความปลอดภัยที่แข็งแกร่ง รวมถึงการตรวจสอบสิทธิ์ การอนุญาต การตรวจสอบความถูกต้อง และการจำกัดอัตรา
+3. **ความปลอดภัยเป็นอันดับแรก**: นำมาตรการความปลอดภัยที่แข็งแกร่งมาใช้ รวมทั้งการพิสูจน์ตัวตน การอนุญาต การตรวจสอบความถูกต้อง และการจำกัดอัตราการใช้งาน
 
-4. **สถาปัตยกรรมแบบโมดูลาร์**: ออกแบบเซิร์ฟเวอร์ MCP ของคุณด้วยแนวทางแบบโมดูลาร์ โดยที่แต่ละเครื่องมือและทรัพยากรมีวัตถุประสงค์ที่ชัดเจนและมุ่งเน้น
+4. **สถาปัตยกรรมแบบโมดูลาร์**: ออกแบบเซิร์ฟเวอร์ MCP ให้มีโครงสร้างแบบโมดูลาร์ โดยที่แต่ละเครื่องมือและทรัพยากรมีวัตถุประสงค์ชัดเจน
 
-5. **การเชื่อมต่อแบบมีสถานะ**: ใช้ความสามารถของ MCP ในการรักษาสถานะระหว่างคำขอหลายรายการเพื่อการโต้ตอบที่สอดคล้องและคำนึงถึงบริบทมากขึ้น
+5. **การเชื่อมต่อที่เก็บสถานะได้**: ใช้ความสามารถของ MCP ในการรักษาสถานะระหว่างคำขอหลายครั้ง เพื่อให้เกิดการโต้ตอบที่ชัดเจนและรู้บริบทมากขึ้น
 
-## แนวทางปฏิบัติที่ดีที่สุดของ MCP อย่างเป็นทางการ
+## Official MCP Best Practices
 
-แนวทางปฏิบัติที่ดีที่สุดต่อไปนี้ได้มาจากเอกสาร Model Context Protocol อย่างเป็นทางการ:
+แนวทางปฏิบัติที่ดีที่สุดต่อไปนี้อ้างอิงจากเอกสารทางการของโปรโตคอล Model Context:
 
-### แนวทางปฏิบัติด้านความปลอดภัย
+### Security Best Practices
 
-1. **การยินยอมและการควบคุมของผู้ใช้**: ต้องการการยินยอมจากผู้ใช้อย่างชัดเจนก่อนเข้าถึงข้อมูลหรือดำเนินการ ให้การควบคุมที่ชัดเจนเกี่ยวกับข้อมูลที่แชร์และการดำเนินการที่ได้รับอนุญาต
+1. **ความยินยอมและการควบคุมของผู้ใช้**: ต้องได้รับความยินยอมอย่างชัดเจนจากผู้ใช้ก่อนเข้าถึงข้อมูลหรือดำเนินการใดๆ ให้ควบคุมอย่างโปร่งใสว่าข้อมูลใดถูกแชร์และการกระทำใดได้รับอนุญาต
 
-2. **ความเป็นส่วนตัวของข้อมูล**: เปิดเผยข้อมูลผู้ใช้เฉพาะเมื่อได้รับการยินยอมอย่างชัดเจนและปกป้องข้อมูลด้วยการควบคุมการเข้าถึงที่เหมาะสม ป้องกันการส่งข้อมูลโดยไม่ได้รับอนุญาต
+2. **ความเป็นส่วนตัวของข้อมูล**: เปิดเผยข้อมูลของผู้ใช้เฉพาะเมื่อได้รับความยินยอมชัดเจน และปกป้องข้อมูลด้วยการควบคุมการเข้าถึงที่เหมาะสม ป้องกันการส่งข้อมูลโดยไม่ได้รับอนุญาต
 
-3. **ความปลอดภัยของเครื่องมือ**: ต้องการการยินยอมจากผู้ใช้อย่างชัดเจนก่อนเรียกใช้เครื่องมือใด ๆ ตรวจสอบให้แน่ใจว่าผู้ใช้เข้าใจฟังก์ชันการทำงานของแต่ละเครื่องมือและบังคับใช้ขอบเขตความปลอดภัยที่แข็งแกร่ง
+3. **ความปลอดภัยของเครื่องมือ**: ต้องได้รับความยินยอมจากผู้ใช้ก่อนเรียกใช้เครื่องมือใดๆ ให้แน่ใจว่าผู้ใช้เข้าใจฟังก์ชันของแต่ละเครื่องมือและบังคับใช้ขอบเขตความปลอดภัยที่แข็งแกร่ง
 
-4. **การควบคุมสิทธิ์ของเครื่องมือ**: กำหนดค่าเครื่องมือที่โมเดลสามารถใช้ได้ในระหว่างเซสชัน เพื่อให้แน่ใจว่าเครื่องมือที่ได้รับอนุญาตอย่างชัดเจนเท่านั้นที่สามารถเข้าถึงได้
+4. **การควบคุมสิทธิ์การใช้เครื่องมือ**: กำหนดว่าเครื่องมือใดบ้างที่โมเดลสามารถใช้ในช่วงการใช้งาน เพื่อให้เข้าถึงเฉพาะเครื่องมือที่ได้รับอนุญาตเท่านั้น
 
-5. **การตรวจสอบสิทธิ์**: ต้องการการตรวจสอบสิทธิ์ที่เหมาะสมก่อนให้สิทธิ์เข้าถึงเครื่องมือ ทรัพยากร หรือการดำเนินการที่ละเอียดอ่อน โดยใช้ API keys, OAuth tokens หรือวิธีการตรวจสอบสิทธิ์ที่ปลอดภัยอื่น ๆ
+5. **การพิสูจน์ตัวตน**: ต้องมีการพิสูจน์ตัวตนที่เหมาะสมก่อนอนุญาตการเข้าถึงเครื่องมือ ทรัพยากร หรือการดำเนินการที่มีความละเอียดอ่อน เช่น API keys, OAuth tokens หรือวิธีอื่นที่ปลอดภัย
 
-6. **การตรวจสอบพารามิเตอร์**: บังคับใช้การตรวจสอบสำหรับการเรียกใช้เครื่องมือทั้งหมดเพื่อป้องกันข้อมูลที่ไม่ถูกต้องหรือเป็นอันตรายจากการเข้าถึงการใช้งานเครื่องมือ
+6. **การตรวจสอบพารามิเตอร์**: บังคับใช้การตรวจสอบตรวจวัดสำหรับการเรียกใช้เครื่องมือทั้งหมดเพื่อป้องกันการป้อนข้อมูลที่ผิดรูปหรือเป็นอันตรายเข้าสู่การใช้งานเครื่องมือ
 
-7. **การจำกัดอัตรา**: ใช้การจำกัดอัตราเพื่อป้องกันการใช้งานในทางที่ผิดและรับรองการใช้งานทรัพยากรเซิร์ฟเวอร์อย่างเป็นธรรม
+7. **การจำกัดอัตราการใช้งาน**: นำการจำกัดอัตรามาใช้เพื่อป้องกันการละเมิดและรับประกันการใช้ทรัพยากรเซิร์ฟเวอร์ที่เป็นธรรม
 
-### แนวทางปฏิบัติในการใช้งาน
+### Implementation Best Practices
 
-1. **การเจรจาความสามารถ**: ในระหว่างการตั้งค่าการเชื่อมต่อ ให้แลกเปลี่ยนข้อมูลเกี่ยวกับฟีเจอร์ที่รองรับ เวอร์ชันโปรโตคอล เครื่องมือที่มี และทรัพยากร
+1. **การเจรจาความสามารถ**: ในช่วงตั้งค่าการเชื่อมต่อ ให้แลกเปลี่ยนข้อมูลเกี่ยวกับฟีเจอร์ที่สนับสนุน รุ่นโปรโตคอล เครื่องมือ และทรัพยากรที่มี
 
-2. **การออกแบบเครื่องมือ**: สร้างเครื่องมือที่มุ่งเน้นซึ่งทำสิ่งหนึ่งได้ดี แทนที่จะสร้างเครื่องมือขนาดใหญ่ที่จัดการหลายข้อกังวล
+2. **การออกแบบเครื่องมือ**: สร้างเครื่องมือที่มุ่งเน้นไปที่งานเดียวอย่างดี แทนที่จะเป็นเครื่องมือขนาดใหญ่ที่ดูแลหลายเรื่องพร้อมกัน
 
-3. **การจัดการข้อผิดพลาด**: ใช้ข้อความและรหัสข้อผิดพลาดที่เป็นมาตรฐานเพื่อช่วยวินิจฉัยปัญหา จัดการความล้มเหลวอย่างสง่างาม และให้ข้อเสนอแนะที่นำไปปฏิบัติได้
+3. **การจัดการข้อผิดพลาด**: ใช้ข้อความและรหัสข้อผิดพลาดที่เป็นมาตรฐานเพื่อช่วยวินิจฉัยปัญหา จัดการความล้มเหลวอย่างเหมาะสม และให้ข้อมูลย้อนกลับเชิงปฏิบัติได้
 
-4. **การบันทึก**: กำหนดค่าการบันทึกแบบมีโครงสร้างสำหรับการตรวจสอบ การแก้ไขข้อบกพร่อง และการตรวจสอบการโต้ตอบของโปรโตคอล
+4. **การบันทึกข้อมูล**: ตั้งค่าการบันทึกแบบมีโครงสร้างเพื่อการตรวจสอบ การดีบัก และการเฝ้าดูแลการโต้ตอบของโปรโตคอล
 
-5. **การติดตามความคืบหน้า**: สำหรับการดำเนินการที่ใช้เวลานาน ให้รายงานการอัปเดตความคืบหน้าเพื่อเปิดใช้งานอินเทอร์เฟซผู้ใช้ที่ตอบสนอง
+5. **การติดตามความคืบหน้า**: สำหรับการดำเนินการที่ใช้เวลานาน ให้รายงานความคืบหน้าเพื่อสนับสนุนส่วนติดต่อผู้ใช้ที่ตอบสนองได้ดี
 
-6. **การยกเลิกคำขอ**: อนุญาตให้ลูกค้ายกเลิกคำขอที่กำลังดำเนินการซึ่งไม่จำเป็นอีกต่อไปหรือใช้เวลานานเกินไป
+6. **การยกเลิกคำขอ**: อนุญาตให้ไคลเอนต์ยกเลิกคำขอที่กำลังดำเนินการซึ่งไม่จำเป็นอีกต่อไปหรือใช้เวลานานเกินไป
 
-## แหล่งข้อมูลเพิ่มเติม
+## Additional References
 
 สำหรับข้อมูลล่าสุดเกี่ยวกับแนวทางปฏิบัติที่ดีที่สุดของ MCP โปรดดูที่:
 
-- [เอกสาร MCP](https://modelcontextprotocol.io/)
-- [สเปค MCP](https://spec.modelcontextprotocol.io/)
+- [MCP Documentation](https://modelcontextprotocol.io/)
+- [MCP Specification (2025-11-25)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
-- [แนวทางปฏิบัติด้านความปลอดภัย](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
+- [Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
+- [OWASP MCP Top 10](https://microsoft.github.io/mcp-azure-security-guide/mcp/) - ความเสี่ยงด้านความปลอดภัยและวิธีลดความเสี่ยง
+- [MCP Security Summit Workshop (Sherpa)](https://azure-samples.github.io/sherpa/) - การฝึกอบรมเชิงปฏิบัติด้านความปลอดภัย
 
-## ตัวอย่างการใช้งานจริง
+## Practical Implementation Examples
 
-### แนวทางปฏิบัติในการออกแบบเครื่องมือ
+### Tool Design Best Practices
 
-#### 1. หลักการความรับผิดชอบเดียว
+#### 1. Single Responsibility Principle
 
-เครื่องมือ MCP แต่ละตัวควรมีวัตถุประสงค์ที่ชัดเจนและมุ่งเน้น แทนที่จะสร้างเครื่องมือขนาดใหญ่ที่พยายามจัดการหลายข้อกังวล ให้พัฒนาเครื่องมือเฉพาะที่ยอดเยี่ยมในงานเฉพาะ
+เครื่องมือ MCP แต่ละชิ้นควรมีวัตถุประสงค์ที่ชัดเจนและเฉพาะเจาะจง แทนที่จะสร้างเครื่องมือขนาดใหญ่ที่พยายามจัดการหลายเรื่อง พัฒนาเครื่องมือเฉพาะด้านที่เก่งในงานเฉพาะ
 
 ```csharp
 // A focused tool that does one thing well
@@ -150,12 +143,12 @@ public class WeatherForecastTool : ITool
 }
 ```
 
-#### 2. การจัดการข้อผิดพลาดที่สอดคล้องกัน
+#### 2. Consistent Error Handling
 
 ใช้การจัดการข้อผิดพลาดที่แข็งแกร่งพร้อมข้อความข้อผิดพลาดที่ให้ข้อมูลและกลไกการกู้คืนที่เหมาะสม
 
 ```python
-# Python example with comprehensive error handling
+# ตัวอย่าง Python พร้อมการจัดการข้อผิดพลาดอย่างครอบคลุม
 class DataQueryTool:
     def get_name(self):
         return "dataQuery"
@@ -165,19 +158,19 @@ class DataQueryTool:
     
     async def execute(self, parameters):
         try:
-            # Parameter validation
+            # การตรวจสอบพารามิเตอร์
             if "query" not in parameters:
                 raise ToolParameterError("Missing required parameter: query")
                 
             query = parameters["query"]
             
-            # Security validation
+            # การตรวจสอบความปลอดภัย
             if self._contains_unsafe_sql(query):
                 raise ToolSecurityError("Query contains potentially unsafe SQL")
             
             try:
-                # Database operation with timeout
-                async with timeout(10):  # 10 second timeout
+                # การดำเนินการฐานข้อมูลพร้อมเวลาหมดอายุ
+                async with timeout(10):  # หมดเวลาภายใน 10 วินาที
                     result = await self._database.execute_query(query)
                     
                 return ToolResponse(
@@ -186,37 +179,37 @@ class DataQueryTool:
             except asyncio.TimeoutError:
                 raise ToolExecutionError("Database query timed out after 10 seconds")
             except DatabaseConnectionError as e:
-                # Connection errors might be transient
+                # ข้อผิดพลาดในการเชื่อมต่ออาจเป็นแบบชั่วคราว
                 self._log_error("Database connection error", e)
                 raise ToolExecutionError(f"Database connection error: {str(e)}")
             except DatabaseQueryError as e:
-                # Query errors are likely client errors
+                # ข้อผิดพลาดในการสืบค้นน่าจะเป็นข้อผิดพลาดของลูกค้า
                 self._log_error("Database query error", e)
                 raise ToolExecutionError(f"Invalid query: {str(e)}")
                 
         except ToolError:
-            # Let tool-specific errors pass through
+            # ปล่อยให้ข้อผิดพลาดเฉพาะเครื่องมือผ่านไป
             raise
         except Exception as e:
-            # Catch-all for unexpected errors
+            # จับข้อผิดพลาดที่ไม่คาดคิดทั้งหมด
             self._log_error("Unexpected error in DataQueryTool", e)
             raise ToolExecutionError(f"An unexpected error occurred: {str(e)}")
     
     def _contains_unsafe_sql(self, query):
-        # Implementation of SQL injection detection
+        # การใช้งานการตรวจจับการโจมตีแบบ SQL injection
         pass
         
     def _log_error(self, message, error):
-        # Implementation of error logging
+        # การใช้งานการบันทึกข้อผิดพลาด
         pass
 ```
 
-#### 3. การตรวจสอบพารามิเตอร์
+#### 3. Parameter Validation
 
-ตรวจสอบพารามิเตอร์อย่างละเอียดเสมอเพื่อป้องกันข้อมูลที่ไม่ถูกต้องหรือเป็นอันตราย
+ตรวจสอบพารามิเตอร์อย่างละเอียดเสมอเพื่อป้องกันข้อมูลที่ผิดรูปหรือเป็นอันตราย
 
 ```javascript
-// JavaScript/TypeScript example with detailed parameter validation
+// ตัวอย่าง JavaScript/TypeScript พร้อมการตรวจสอบพารามิเตอร์อย่างละเอียด
 class FileOperationTool {
   getName() {
     return "fileOperation";
@@ -251,7 +244,7 @@ class FileOperationTool {
   }
   
   async execute(parameters) {
-    // 1. Validate parameter presence
+    // 1. ตรวจสอบการมีอยู่ของพารามิเตอร์
     if (!parameters.operation) {
       throw new ToolError("Missing required parameter: operation");
     }
@@ -260,7 +253,7 @@ class FileOperationTool {
       throw new ToolError("Missing required parameter: path");
     }
     
-    // 2. Validate parameter types
+    // 2. ตรวจสอบชนิดของพารามิเตอร์
     if (typeof parameters.operation !== "string") {
       throw new ToolError("Parameter 'operation' must be a string");
     }
@@ -269,45 +262,45 @@ class FileOperationTool {
       throw new ToolError("Parameter 'path' must be a string");
     }
     
-    // 3. Validate parameter values
+    // 3. ตรวจสอบค่าของพารามิเตอร์
     const validOperations = ["read", "write", "delete"];
     if (!validOperations.includes(parameters.operation)) {
       throw new ToolError(`Invalid operation. Must be one of: ${validOperations.join(", ")}`);
     }
     
-    // 4. Validate content presence for write operation
+    // 4. ตรวจสอบการมีเนื้อหาสำหรับการเขียน
     if (parameters.operation === "write" && !parameters.content) {
       throw new ToolError("Content parameter is required for write operation");
     }
     
-    // 5. Path safety validation
+    // 5. ตรวจสอบความปลอดภัยของเส้นทาง
     if (!this.isPathWithinAllowedDirectories(parameters.path)) {
       throw new ToolError("Access denied: path is outside of allowed directories");
     }
     
-    // Implementation based on validated parameters
+    // การทำงานตามพารามิเตอร์ที่ผ่านการตรวจสอบ
     // ...
   }
   
   isPathWithinAllowedDirectories(path) {
-    // Implementation of path safety check
+    // การตรวจสอบความปลอดภัยของเส้นทาง
     // ...
   }
 }
 ```
 
-### ตัวอย่างการใช้งานด้านความปลอดภัย
+### Security Implementation Examples
 
-#### 1. การตรวจสอบสิทธิ์และการอนุญาต
+#### 1. Authentication and Authorization
 
 ```java
-// Java example with authentication and authorization
+// ตัวอย่าง Java พร้อมการตรวจสอบสิทธิ์และการอนุญาต
 public class SecureDataAccessTool implements Tool {
     private final AuthenticationService authService;
     private final AuthorizationService authzService;
     private final DataService dataService;
     
-    // Dependency injection
+    // การฉีดพึ่งพิง
     public SecureDataAccessTool(
             AuthenticationService authService,
             AuthorizationService authzService,
@@ -324,10 +317,10 @@ public class SecureDataAccessTool implements Tool {
     
     @Override
     public ToolResponse execute(ToolRequest request) {
-        // 1. Extract authentication context
+        // 1. ดึงข้อมูลบริบทการตรวจสอบสิทธิ์ออกมา
         String authToken = request.getContext().getAuthToken();
         
-        // 2. Authenticate user
+        // 2. ตรวจสอบสิทธิ์ผู้ใช้
         UserIdentity user;
         try {
             user = authService.validateToken(authToken);
@@ -335,7 +328,7 @@ public class SecureDataAccessTool implements Tool {
             return ToolResponse.error("Authentication failed: " + e.getMessage());
         }
         
-        // 3. Check authorization for the specific operation
+        // 3. ตรวจสอบสิทธิ์ในการทำงานเฉพาะ
         String dataId = request.getParameters().get("dataId").getAsString();
         String operation = request.getParameters().get("operation").getAsString();
         
@@ -344,7 +337,7 @@ public class SecureDataAccessTool implements Tool {
             return ToolResponse.error("Access denied: Insufficient permissions for this operation");
         }
         
-        // 4. Proceed with authorized operation
+        // 4. ดำเนินการกับงานที่ได้รับอนุญาต
         try {
             switch (operation) {
                 case "read":
@@ -364,7 +357,7 @@ public class SecureDataAccessTool implements Tool {
 }
 ```
 
-#### 2. การจำกัดอัตรา
+#### 2. Rate Limiting
 
 ```csharp
 // C# rate limiting implementation
@@ -440,30 +433,30 @@ public class RateLimitingMiddleware
 }
 ```
 
-## แนวทางปฏิบัติในการทดสอบ
+## Testing Best Practices
 
-### 1. การทดสอบหน่วยของเครื่องมือ MCP
+### 1. Unit Testing MCP Tools
 
-ทดสอบเครื่องมือของคุณในสภาพแวดล้อมที่แยกออกจากกัน โดยจำลองการพึ่งพาภายนอก:
+ทดสอบเครื่องมือแยกกันเสมอโดยจำลองการพึ่งพาภายนอก:
 
 ```typescript
-// TypeScript example of a tool unit test
+// ตัวอย่างการทดสอบหน่วยเครื่องมือด้วย TypeScript
 describe('WeatherForecastTool', () => {
   let tool: WeatherForecastTool;
   let mockWeatherService: jest.Mocked<IWeatherService>;
   
   beforeEach(() => {
-    // Create a mock weather service
+    // สร้างบริการสภาพอากาศจำลอง
     mockWeatherService = {
       getForecasts: jest.fn()
     } as any;
     
-    // Create the tool with the mock dependency
+    // สร้างเครื่องมือพร้อมความขึ้นต่อจำลอง
     tool = new WeatherForecastTool(mockWeatherService);
   });
   
   it('should return weather forecast for a location', async () => {
-    // Arrange
+    // จัดเตรียม
     const mockForecast = {
       location: 'Seattle',
       forecasts: [
@@ -475,23 +468,23 @@ describe('WeatherForecastTool', () => {
     
     mockWeatherService.getForecasts.mockResolvedValue(mockForecast);
     
-    // Act
+    // ดำเนินการ
     const response = await tool.execute({
       location: 'Seattle',
       days: 3
     });
     
-    // Assert
+    // ตรวจสอบ
     expect(mockWeatherService.getForecasts).toHaveBeenCalledWith('Seattle', 3);
     expect(response.content[0].text).toContain('Seattle');
     expect(response.content[0].text).toContain('Sunny');
   });
   
   it('should handle errors from the weather service', async () => {
-    // Arrange
+    // จัดเตรียม
     mockWeatherService.getForecasts.mockRejectedValue(new Error('Service unavailable'));
     
-    // Act & Assert
+    // ดำเนินการ & ตรวจสอบ
     await expect(tool.execute({
       location: 'Seattle',
       days: 3
@@ -500,48 +493,48 @@ describe('WeatherForecastTool', () => {
 });
 ```
 
-### 2. การทดสอบการรวมระบบ
+### 2. Integration Testing
 
-ทดสอบกระบวนการทั้งหมดตั้งแต่คำขอของลูกค้าไปจนถึงการตอบกลับของเซิร์ฟเวอร์:
+ทดสอบการไหลข้อมูลทั้งหมดตั้งแต่คำขอของไคลเอนต์ถึงการตอบกลับของเซิร์ฟเวอร์:
 
 ```python
-# Python integration test example
+# ตัวอย่างการทดสอบการผสานรวม Python
 @pytest.mark.asyncio
 async def test_mcp_server_integration():
-    # Start a test server
+    # เริ่มต้นเซิร์ฟเวอร์ทดสอบ
     server = McpServer()
     server.register_tool(WeatherForecastTool(MockWeatherService()))
     await server.start(port=5000)
     
     try:
-        # Create a client
+        # สร้างไคลเอนต์
         client = McpClient("http://localhost:5000")
         
-        # Test tool discovery
+        # ทดสอบการค้นหาเครื่องมือ
         tools = await client.discover_tools()
         assert "weatherForecast" in [t.name for t in tools]
         
-        # Test tool execution
+        # ทดสอบการใช้งานเครื่องมือ
         response = await client.execute_tool("weatherForecast", {
             "location": "Seattle",
             "days": 3
         })
         
-        # Verify response
+        # ตรวจสอบการตอบกลับ
         assert response.status_code == 200
         assert "Seattle" in response.content[0].text
         assert len(json.loads(response.content[0].text)["forecasts"]) == 3
         
     finally:
-        # Clean up
+        # ทำความสะอาด
         await server.stop()
 ```
 
-## การปรับปรุงประสิทธิภาพ
+## Performance Optimization
 
-### 1. กลยุทธ์การแคช
+### 1. Caching Strategies
 
-ใช้การแคชที่เหมาะสมเพื่อลดเวลาแฝงและการใช้งานทรัพยากร:
+ใช้การแคชที่เหมาะสมเพื่อลดความหน่วงและการใช้ทรัพยากร:
 
 ```csharp
 // C# example with caching
@@ -610,18 +603,18 @@ public class CachedWeatherTool : ITool
 }
 ```
 
-#### 2. การฉีดการพึ่งพาและการทดสอบได้
+#### 2. Dependency Injection and Testability
 
-ออกแบบเครื่องมือเพื่อรับการพึ่งพาผ่านการฉีดตัวสร้าง ทำให้สามารถทดสอบและกำหนดค่าได้:
+ออกแบบเครื่องมือให้รับการพึ่งพาผ่านคอนสตรัคเตอร์อินเจกชัน เพื่อให้ง่ายต่อการทดสอบและตั้งค่า:
 
 ```java
-// Java example with dependency injection
+// ตัวอย่าง Java พร้อมการฉีดพึ่งพา
 public class CurrencyConversionTool implements Tool {
     private final ExchangeRateService exchangeService;
     private final CacheService cacheService;
     private final Logger logger;
     
-    // Dependencies injected through constructor
+    // พึ่งพาถูกฉีดผ่านคอนสตรัคเตอร์
     public CurrencyConversionTool(
             ExchangeRateService exchangeService,
             CacheService cacheService,
@@ -631,51 +624,51 @@ public class CurrencyConversionTool implements Tool {
         this.logger = logger;
     }
     
-    // Tool implementation
+    // การใช้งานเครื่องมือ
     // ...
 }
 ```
 
-#### 3. เครื่องมือที่ประกอบได้
+#### 3. Composable Tools
 
-ออกแบบเครื่องมือที่สามารถประกอบเข้าด้วยกันเพื่อสร้างเวิร์กโฟลว์ที่ซับซ้อนมากขึ้น:
+ออกแบบเครื่องมือที่สามารถประกอบรวมกันเพื่อสร้างเวิร์กโฟลว์ที่ซับซ้อนมากขึ้น:
 
 ```python
-# Python example showing composable tools
+# ตัวอย่าง Python ที่แสดงเครื่องมือที่สามารถประกอบกันได้
 class DataFetchTool(Tool):
     def get_name(self):
         return "dataFetch"
     
-    # Implementation...
+    # การใช้งาน...
 
 class DataAnalysisTool(Tool):
     def get_name(self):
         return "dataAnalysis"
     
-    # This tool can use results from the dataFetch tool
+    # เครื่องมือนี้สามารถใช้ผลลัพธ์จากเครื่องมือดึงข้อมูล (dataFetch) ได้
     async def execute_async(self, request):
-        # Implementation...
+        # การใช้งาน...
         pass
 
 class DataVisualizationTool(Tool):
     def get_name(self):
         return "dataVisualize"
     
-    # This tool can use results from the dataAnalysis tool
+    # เครื่องมือนี้สามารถใช้ผลลัพธ์จากเครื่องมือวิเคราะห์ข้อมูล (dataAnalysis) ได้
     async def execute_async(self, request):
-        # Implementation...
+        # การใช้งาน...
         pass
 
-# These tools can be used independently or as part of a workflow
+# เครื่องมือเหล่านี้สามารถใช้แยกกันหรือเป็นส่วนหนึ่งของกระบวนการทำงานได้
 ```
 
-### แนวทางปฏิบัติในการออกแบบสคีมา
+### Schema Design Best Practices
 
-สคีมาคือสัญญาระหว่างโมเดลและเครื่องมือของคุณ สคีมาที่ออกแบบมาอย่างดีช่วยให้การใช้งานเครื่องมือดีขึ้น
+สคีมาเป็นสัญญาระหว่างโมเดลกับเครื่องมือของคุณ สคีมาที่ออกแบบดีช่วยให้เครื่องมือใช้งานง่ายขึ้น
 
-#### 1. คำอธิบายพารามิเตอร์ที่ชัดเจน
+#### 1. Clear Parameter Descriptions
 
-รวมข้อมูลคำอธิบายสำหรับแต่ละพารามิเตอร์เสมอ:
+รวมข้อมูลอธิบายสำหรับแต่ละพารามิเตอร์เสมอ:
 
 ```csharp
 public object GetSchema()
@@ -712,9 +705,9 @@ public object GetSchema()
 }
 ```
 
-#### 2. ข้อจำกัดการตรวจสอบ
+#### 2. Validation Constraints
 
-รวมข้อจำกัดการตรวจสอบเพื่อป้องกันข้อมูลที่ไม่ถูกต้อง:
+เพิ่มข้อจำกัดการตรวจสอบเพื่อป้องกันข้อมูลป้อนเข้าผิด:
 
 ```java
 Map<String, Object> getSchema() {
@@ -723,20 +716,20 @@ Map<String, Object> getSchema() {
     
     Map<String, Object> properties = new HashMap<>();
     
-    // Email property with format validation
+    // คุณสมบัติอีเมลพร้อมการตรวจสอบรูปแบบ
     Map<String, Object> email = new HashMap<>();
     email.put("type", "string");
     email.put("format", "email");
     email.put("description", "User email address");
     
-    // Age property with numeric constraints
+    // คุณสมบัติอายุพร้อมข้อจำกัดเชิงตัวเลข
     Map<String, Object> age = new HashMap<>();
     age.put("type", "integer");
     age.put("minimum", 13);
     age.put("maximum", 120);
     age.put("description", "User age in years");
     
-    // Enumerated property
+    // คุณสมบัติแบบระบุค่าจำกัด
     Map<String, Object> subscription = new HashMap<>();
     subscription.put("type", "string");
     subscription.put("enum", Arrays.asList("free", "basic", "premium"));
@@ -754,17 +747,17 @@ Map<String, Object> getSchema() {
 }
 ```
 
-#### 3. โครงสร้างการตอบกลับที่สอดคล้องกัน
+#### 3. Consistent Return Structures
 
-รักษาความสอดคล้องในโครงสร้างการตอบกลับของคุณเพื่อให้ง่ายต่อการตีความผลลัพธ์โดยโมเดล:
+รักษาความสม่ำเสมอในโครงสร้างการตอบกลับเพื่อให้ง่ายต่อการตีความผลลัพธ์ของโมเดล:
 
 ```python
 async def execute_async(self, request):
     try:
-        # Process request
+        # ประมวลผลคำขอ
         results = await self._search_database(request.parameters["query"])
         
-        # Always return a consistent structure
+        # ส่งคืนโครงสร้างที่สม่ำเสมอเสมอ
         return ToolResponse(
             result={
                 "matches": [self._format_item(item) for item in results],
@@ -795,13 +788,13 @@ def _format_item(self, item):
     }
 ```
 
-### การจัดการข้อผิดพลาด
+### Error Handling
 
-การจัดการข้อผิดพลาดที่แข็งแกร่งเป็นสิ่งสำคัญสำหรับเครื่องมือ MCP เพื่อรักษาความน่าเชื่อถือ
+การจัดการข้อผิดพลาดที่แข็งแกร่งมีความสำคัญต่อการรักษาความน่าเชื่อถือของเครื่องมือ MCP
 
-#### 1. การจัดการข้อผิดพลาดอย่างสง่างาม
+#### 1. Graceful Error Handling
 
-จัดการข้อผิดพลาดในระดับที่เหมาะสมและให้ข้อความที่ให้ข้อมูล:
+จัดการข้อผิดพลาดในระดับที่เหมาะสมและให้ข้อความข้อมูล:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -843,15 +836,15 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 }
 ```
 
-#### 2. การตอบกลับข้อผิดพลาดแบบมีโครงสร้าง
+#### 2. Structured Error Responses
 
-ส่งคืนข้อมูลข้อผิดพลาดแบบมีโครงสร้างเมื่อเป็นไปได้:
+ส่งคืนข้อมูลข้อผิดพลาดที่มีโครงสร้างเมื่อเป็นไปได้:
 
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
     try {
-        // Implementation
+        // การดำเนินการ
     } catch (Exception ex) {
         Map<String, Object> errorResult = new HashMap<>();
         
@@ -869,45 +862,45 @@ public ToolResponse execute(ToolRequest request) {
                 .build();
         }
         
-        // Re-throw other exceptions as ToolExecutionException
+        // โยนข้อยกเว้นอื่น ๆ ใหม่เป็น ToolExecutionException
         throw new ToolExecutionException("Tool execution failed: " + ex.getMessage(), ex);
     }
 }
 ```
 
-#### 3. ตรรกะการลองใหม่
+#### 3. Retry Logic
 
-ใช้ตรรกะการลองใหม่ที่เหมาะสมสำหรับความล้มเหลวชั่วคราว:
+ใช้ตรรกะการลองใหม่ที่เหมาะสมกับความล้มเหลวชั่วคราว:
 
 ```python
 async def execute_async(self, request):
     max_retries = 3
     retry_count = 0
-    base_delay = 1  # seconds
+    base_delay = 1  # วินาที
     
     while retry_count < max_retries:
         try:
-            # Call external API
+            # เรียกใช้ API ภายนอก
             return await self._call_api(request.parameters)
         except TransientError as e:
             retry_count += 1
             if retry_count >= max_retries:
                 raise ToolExecutionException(f"Operation failed after {max_retries} attempts: {str(e)}")
                 
-            # Exponential backoff
+            # การหน่วงเวลาย้อนกลับแบบทวีคูณ
             delay = base_delay * (2 ** (retry_count - 1))
             logging.warning(f"Transient error, retrying in {delay}s: {str(e)}")
             await asyncio.sleep(delay)
         except Exception as e:
-            # Non-transient error, don't retry
+            # ข้อผิดพลาดที่ไม่ชั่วคราว, อย่าลองใหม่
             raise ToolExecutionException(f"Operation failed: {str(e)}")
 ```
 
-### การปรับปรุงประสิทธิภาพ
+### Performance Optimization
 
-#### 1. การแคช
+#### 1. Caching
 
-ใช้การแคชสำหรับการดำเนินการที่มีค่าใช้จ่ายสูง:
+ใช้แคชสำหรับการดำเนินการที่มีค่าใช้จ่ายสูง:
 
 ```csharp
 public class CachedDataTool : IMcpTool
@@ -953,9 +946,9 @@ public class CachedDataTool : IMcpTool
 }
 ```
 
-#### 2. การประมวลผลแบบอะซิงโครนัส
+#### 2. Asynchronous Processing
 
-ใช้รูปแบบการเขียนโปรแกรมแบบอะซิงโครนัสสำหรับการดำเนินการที่มี I/O-bound:
+ใช้รูปแบบการเขียนโปรแกรมแบบอะซิงโครนัสสำหรับการดำเนินการที่เกี่ยวกับ I/O:
 
 ```java
 public class AsyncDocumentProcessingTool implements Tool {
@@ -966,23 +959,23 @@ public class AsyncDocumentProcessingTool implements Tool {
     public ToolResponse execute(ToolRequest request) {
         String documentId = request.getParameters().get("documentId").asText();
         
-        // For long-running operations, return a processing ID immediately
+        // สำหรับการดำเนินการที่ใช้เวลานาน ให้คืนค่า ID การประมวลผลทันที
         String processId = UUID.randomUUID().toString();
         
-        // Start async processing
+        // เริ่มการประมวลผลแบบอะซิงโครนัส
         CompletableFuture.runAsync(() -> {
             try {
-                // Perform long-running operation
+                // ดำเนินการที่ใช้เวลานาน
                 documentService.processDocument(documentId);
                 
-                // Update status (would typically be stored in a database)
+                // อัปเดตสถานะ (โดยปกติจะถูกจัดเก็บในฐานข้อมูล)
                 processStatusRepository.updateStatus(processId, "completed");
             } catch (Exception ex) {
                 processStatusRepository.updateStatus(processId, "failed", ex.getMessage());
             }
         }, executorService);
         
-        // Return immediate response with process ID
+        // คืนค่าตอบกลับทันทีพร้อมกับ ID กระบวนการ
         Map<String, Object> result = new HashMap<>();
         result.put("processId", processId);
         result.put("status", "processing");
@@ -991,7 +984,7 @@ public class AsyncDocumentProcessingTool implements Tool {
         return new ToolResponse.Builder().setResult(result).build();
     }
     
-    // Companion status check tool
+    // เครื่องมือตรวจสอบสถานะคู่มือ
     public class ProcessStatusTool implements Tool {
         @Override
         public ToolResponse execute(ToolRequest request) {
@@ -1004,35 +997,35 @@ public class AsyncDocumentProcessingTool implements Tool {
 }
 ```
 
-#### 3. การควบคุมทรัพยากร
+#### 3. Resource Throttling
 
-ใช้การควบคุมทรัพยากรเพื่อป้องกันการโอเวอร์โหลด:
+นำการจำกัดทรัพยากรมาป้องกันการใช้งานเกินขนาด:
 
 ```python
 class ThrottledApiTool(Tool):
     def __init__(self):
         self.rate_limiter = TokenBucketRateLimiter(
-            tokens_per_second=5,  # Allow 5 requests per second
-            bucket_size=10        # Allow bursts up to 10 requests
+            tokens_per_second=5,  # อนุญาตให้ส่งคำขอ 5 ครั้งต่อวินาที
+            bucket_size=10        # อนุญาตการระเบิดสูงสุด 10 คำขอ
         )
     
     async def execute_async(self, request):
-        # Check if we can proceed or need to wait
+        # ตรวจสอบว่าเราสามารถดำเนินการต่อได้หรือจำเป็นต้องรอ
         delay = self.rate_limiter.get_delay_time()
         
         if delay > 0:
-            if delay > 2.0:  # If wait is too long
+            if delay > 2.0:  # หากการรอนานเกินไป
                 raise ToolExecutionException(
                     f"Rate limit exceeded. Please try again in {delay:.1f} seconds."
                 )
             else:
-                # Wait for the appropriate delay time
+                # รอเวลาที่เหมาะสม
                 await asyncio.sleep(delay)
         
-        # Consume a token and proceed with the request
+        # ใช้โทเค็นหนึ่งตัวและดำเนินการคำขอ
         self.rate_limiter.consume()
         
-        # Call API
+        # เรียกใช้ API
         result = await self._call_api(request.parameters)
         return ToolResponse(result=result)
 
@@ -1050,7 +1043,7 @@ class TokenBucketRateLimiter:
             if self.tokens >= 1:
                 return 0
             
-            # Calculate time until next token available
+            # คำนวณเวลาจนกว่าโทเค็นถัดไปจะพร้อมใช้งาน
             return (1 - self.tokens) / self.tokens_per_second
     
     async def consume(self):
@@ -1062,17 +1055,17 @@ class TokenBucketRateLimiter:
         now = time.time()
         elapsed = now - self.last_refill
         
-        # Add new tokens based on elapsed time
+        # เพิ่มโทเค็นใหม่ตามเวลาที่ผ่านไป
         new_tokens = elapsed * self.tokens_per_second
         self.tokens = min(self.bucket_size, self.tokens + new_tokens)
         self.last_refill = now
 ```
 
-### แนวทางปฏิบัติด้านความปลอดภัย
+### Security Best Practices
 
-#### 1. การตรวจสอบข้อมูลนำเข้า
+#### 1. Input Validation
 
-ตรวจสอบพารามิเตอร์นำเข้าอย่างละเอียดเสมอ:
+ตรวจสอบพารามิเตอร์อินพุตอย่างละเอียดเสมอ:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -1113,35 +1106,35 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 }
 ```
 
-#### 2. การตรวจสอบสิทธิ์
+#### 2. Authorization Checks
 
 ใช้การตรวจสอบสิทธิ์ที่เหมาะสม:
 
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
-    // Get user context from request
+    // รับบริบทผู้ใช้จากคำขอ
     UserContext user = request.getContext().getUserContext();
     
-    // Check if user has required permissions
+    // ตรวจสอบว่าผู้ใช้มีสิทธิ์ที่จำเป็นหรือไม่
     if (!authorizationService.hasPermission(user, "documents:read")) {
         throw new ToolExecutionException("User does not have permission to access documents");
     }
     
-    // For specific resources, check access to that resource
+    // สำหรับทรัพยากรเฉพาะ, ตรวจสอบการเข้าถึงทรัพยากรนั้น
     String documentId = request.getParameters().get("documentId").asText();
     if (!documentService.canUserAccess(user.getId(), documentId)) {
         throw new ToolExecutionException("Access denied to the requested document");
     }
     
-    // Proceed with tool execution
+    // ดำเนินการต่อกับการทำงานของเครื่องมือ
     // ...
 }
 ```
 
-#### 3. การจัดการข้อมูลที่ละเอียดอ่อน
+#### 3. Sensitive Data Handling
 
-จัดการข้อมูลที่ละเอียดอ่อนอย่างระมัดระวัง:
+จัดการข้อมูลที่มีความละเอียดอ่อนอย่างระมัดระวัง:
 
 ```python
 class SecureDataTool(Tool):
@@ -1159,46 +1152,46 @@ class SecureDataTool(Tool):
         user_id = request.parameters["userId"]
         include_sensitive = request.parameters.get("includeSensitiveData", False)
         
-        # Get user data
+        # ดึงข้อมูลผู้ใช้
         user_data = await self.user_service.get_user_data(user_id)
         
-        # Filter sensitive fields unless explicitly requested AND authorized
+        # กรองฟิลด์ที่ละเอียดอ่อนเว้นแต่จะมีการร้องขอและได้รับอนุญาตอย่างชัดเจน
         if not include_sensitive or not self._is_authorized_for_sensitive_data(request):
             user_data = self._redact_sensitive_fields(user_data)
         
         return ToolResponse(result=user_data)
     
     def _is_authorized_for_sensitive_data(self, request):
-        # Check authorization level in request context
+        # ตรวจสอบระดับการอนุญาตในบริบทของคำขอ
         auth_level = request.context.get("authorizationLevel")
         return auth_level == "admin"
     
     def _redact_sensitive_fields(self, user_data):
-        # Create a copy to avoid modifying the original
+        # สร้างสำเนาเพื่อหลีกเลี่ยงการแก้ไขต้นฉบับ
         redacted = user_data.copy()
         
-        # Redact specific sensitive fields
+        # ลบข้อมูลในฟิลด์ที่ละเอียดอ่อนบางอย่าง
         sensitive_fields = ["ssn", "creditCardNumber", "password"]
         for field in sensitive_fields:
             if field in redacted:
                 redacted[field] = "REDACTED"
         
-        # Redact nested sensitive data
+        # ลบข้อมูลที่ละเอียดอ่อนที่ซ้อนอยู่
         if "financialInfo" in redacted:
             redacted["financialInfo"] = {"available": True, "accessRestricted": True}
         
         return redacted
 ```
 
-## แนวทางปฏิบัติในการทดสอบเครื่องมือ MCP
+## Testing Best Practices for MCP Tools
 
-การทดสอบที่ครอบคลุมช่วยให้มั่นใจว่าเครื่องมือ MCP ทำงานได้อย่างถูกต้อง จัดการกรณีขอบ และรวมเข้ากับระบบอื่นได้อย่างเหมาะสม
+การทดสอบที่ครอบคลุมช่วยให้มั่นใจว่าเครื่องมือ MCP ทำงานถูกต้อง จัดการกรณีขอบได้ และทำงานร่วมกับระบบอื่นได้อย่างเหมาะสม
 
-### การทดสอบหน่วย
+### Unit Testing
 
-#### 1. ทดสอบเครื่องมือแต่ละตัวในสภาพแวดล้อมที่แยกออกจากกัน
+#### 1. Test Each Tool in Isolation
 
-สร้างการทดสอบที่มุ่งเน้นสำหรับฟังก์ชันการทำงานของเครื่องมือแต่ละตัว:
+สร้างการทดสอบเฉพาะสำหรับฟังก์ชันของแต่ละเครื่องมือ:
 
 ```csharp
 [Fact]
@@ -1258,27 +1251,27 @@ public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
 }
 ```
 
-#### 2. การทดสอบการตรวจสอบสคีมา
+#### 2. Schema Validation Testing
 
-ทดสอบว่าสคีมาถูกต้องและบังคับใช้ข้อจำกัดอย่างเหมาะสม:
+ทดสอบว่าสคีมาใช้งานได้และบังคับใช้ข้อจำกัดได้อย่างถูกต้อง:
 
 ```java
 @Test
 public void testSchemaValidation() {
-    // Create tool instance
+    // สร้างอินสแตนซ์ของเครื่องมือ
     SearchTool searchTool = new SearchTool();
     
-    // Get schema
+    // รับสคีมา
     Object schema = searchTool.getSchema();
     
-    // Convert schema to JSON for validation
+    // แปลงสคีมาเป็น JSON เพื่อการตรวจสอบ
     String schemaJson = objectMapper.writeValueAsString(schema);
     
-    // Validate schema is valid JSONSchema
+    // ตรวจสอบว่าสคีมาเป็น JSONSchema ที่ถูกต้อง
     JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
     JsonSchema jsonSchema = factory.getJsonSchema(schemaJson);
     
-    // Test valid parameters
+    // ทดสอบพารามิเตอร์ที่ถูกต้อง
     JsonNode validParams = objectMapper.createObjectNode()
         .put("query", "test query")
         .put("limit", 5);
@@ -1286,14 +1279,14 @@ public void testSchemaValidation() {
     ProcessingReport validReport = jsonSchema.validate(validParams);
     assertTrue(validReport.isSuccess());
     
-    // Test missing required parameter
+    // ทดสอบพารามิเตอร์ที่จำเป็นหายไป
     JsonNode missingRequired = objectMapper.createObjectNode()
         .put("limit", 5);
         
     ProcessingReport missingReport = jsonSchema.validate(missingRequired);
     assertFalse(missingReport.isSuccess());
     
-    // Test invalid parameter type
+    // ทดสอบพารามิเตอร์ที่มีประเภทไม่ถูกต้อง
     JsonNode invalidType = objectMapper.createObjectNode()
         .put("query", "test")
         .put("limit", "not-a-number");
@@ -1303,21 +1296,21 @@ public void testSchemaValidation() {
 }
 ```
 
-#### 3. การทดสอบการจัดการข้อผิดพลาด
+#### 3. Error Handling Tests
 
 สร้างการทดสอบเฉพาะสำหรับเงื่อนไขข้อผิดพลาด:
 
 ```python
 @pytest.mark.asyncio
 async def test_api_tool_handles_timeout():
-    # Arrange
-    tool = ApiTool(timeout=0.1)  # Very short timeout
+    # จัดเรียง
+    tool = ApiTool(timeout=0.1)  # หมดเวลาอย่างรวดเร็ว
     
-    # Mock a request that will time out
+    # จำลองคำขอที่จะหมดเวลา
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
-            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # Longer than timeout
+            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # นานกว่าระยะเวลาที่กำหนด
         )
         
         request = ToolRequest(
@@ -1325,19 +1318,19 @@ async def test_api_tool_handles_timeout():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Act & Assert
+        # ดำเนินการ & ตรวจสอบ
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Verify exception message
+        # ตรวจสอบข้อความข้อผิดพลาด
         assert "timed out" in str(exc_info.value).lower()
 
 @pytest.mark.asyncio
 async def test_api_tool_handles_rate_limiting():
-    # Arrange
+    # จัดเรียง
     tool = ApiTool()
     
-    # Mock a rate-limited response
+    # จำลองการตอบกลับที่ถูกจำกัดอัตรา
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
@@ -1351,21 +1344,21 @@ async def test_api_tool_handles_rate_limiting():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Act & Assert
+        # ดำเนินการ & ตรวจสอบ
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Verify exception contains rate limit information
+        # ตรวจสอบว่าข้อผิดพลาดมีข้อมูลจำกัดอัตราไหม
         error_msg = str(exc_info.value).lower()
         assert "rate limit" in error_msg
         assert "try again" in error_msg
 ```
 
-### การทดสอบการรวมระบบ
+### Integration Testing
 
-#### 1. การทดสอบการทำงานร่วมกันของเครื่องมือ
+#### 1. Tool Chain Testing
 
-ทดสอบเครื่องมือที่ทำงานร่วมกันในชุดค่าผสมที่คาดหวัง:
+ทดสอบการทำงานของเครื่องมือร่วมกันในชุดคาดหวัง:
 
 ```csharp
 [Fact]
@@ -1404,9 +1397,9 @@ public async Task DataProcessingWorkflow_CompletesSuccessfully()
 }
 ```
 
-#### 2. การทดสอบเซิร์ฟเวอร์ MCP
+#### 2. MCP Server Testing
 
-ทดสอบเซิร์ฟเวอร์ MCP พร้อมการลงทะเบียนเครื่องมือและการดำเนินการเต็มรูปแบบ:
+ทดสอบเซิร์ฟเวอร์ MCP พร้อมการลงทะเบียนและการเรียกใช้งานเครื่องมือแบบครบถ้วน:
 
 ```java
 @SpringBootTest
@@ -1421,7 +1414,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolDiscovery() throws Exception {
-        // Test the discovery endpoint
+        // ทดสอบจุดค้นหา
         mockMvc.perform(get("/mcp/tools"))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.tools").isArray())
@@ -1432,7 +1425,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolExecution() throws Exception {
-        // Create tool request
+        // สร้างคำขอเครื่องมือ
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
@@ -1442,7 +1435,7 @@ public class McpServerIntegrationTest {
         parameters.put("b", 7);
         request.put("parameters", parameters);
         
-        // Send request and verify response
+        // ส่งคำขอและตรวจสอบการตอบกลับ
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -1452,17 +1445,17 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolValidation() throws Exception {
-        // Create invalid tool request
+        // สร้างคำขอเครื่องมือที่ไม่ถูกต้อง
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("operation", "divide");
         parameters.put("a", 10);
-        // Missing parameter "b"
+        // ขาดพารามิเตอร์ "b"
         request.put("parameters", parameters);
         
-        // Send request and verify error response
+        // ส่งคำขอและตรวจสอบการตอบกลับข้อผิดพลาด
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -1472,17 +1465,17 @@ public class McpServerIntegrationTest {
 }
 ```
 
-#### 3. การทดสอบแบบ End-to-End
+#### 3. End-to-End Testing
 
-ทดสอบเวิร์กโฟลว์ที่สมบูรณ์ตั้งแต่คำแนะนำของโมเดลไปจนถึงการดำเนินการเครื่องมือ:
+ทดสอบเวิร์กโฟลว์ทั้งหมดตั้งแต่คำถามโมเดลจนถึงการรันเครื่องมือ:
 
 ```python
 @pytest.mark.asyncio
 async def test_model_interaction_with_tool():
-    # Arrange - Set up MCP client and mock model
+    # จัดเตรียม - ตั้งค่าไคลเอ็นต์ MCP และโมเดลจำลอง
     mcp_client = McpClient(server_url="http://localhost:5000")
     
-    # Mock model responses
+    # ตอบกลับโมเดลจำลอง
     mock_model = MockLanguageModel([
         MockResponse(
             "What's the weather in Seattle?",
@@ -1497,7 +1490,7 @@ async def test_model_interaction_with_tool():
         )
     ])
     
-    # Mock weather tool response
+    # ตอบกลับเครื่องมือพยากรณ์อากาศจำลอง
     with aioresponses() as mocked:
         mocked.post(
             "http://localhost:5000/mcp/execute",
@@ -1513,14 +1506,14 @@ async def test_model_interaction_with_tool():
             }
         )
         
-        # Act
+        # ดำเนินการ
         response = await mcp_client.send_prompt(
             "What's the weather in Seattle?",
             model=mock_model,
             allowed_tools=["weatherForecast"]
         )
         
-        # Assert
+        # ยืนยันผล
         assert "Seattle" in response.generated_text
         assert "65" in response.generated_text
         assert "Sunny" in response.generated_text
@@ -1529,11 +1522,11 @@ async def test_model_interaction_with_tool():
         assert response.tool_calls[0].tool_name == "weatherForecast"
 ```
 
-### การทดสอบประสิทธิภาพ
+### Performance Testing
 
-#### 1. การทดสอบโหลด
+#### 1. Load Testing
 
-ทดสอบจำนวนคำขอพร้อมกันที่เซิร์ฟเวอร์ MCP ของคุณสามารถจัดการได้:
+ทดสอบจำนวนคำขอที่เซิร์ฟเวอร์ MCP ของคุณจัดการพร้อมกันได้:
 
 ```csharp
 [Fact]
@@ -1566,9 +1559,9 @@ public async Task McpServer_HandlesHighConcurrency()
 }
 ```
 
-#### 2. การทดสอบความเครียด
+#### 2. Stress Testing
 
-ทดสอบระบบภายใต้โหลดที่รุนแรง:
+ทดสอบระบบภายใต้ภาระมากจนเกินไป:
 
 ```java
 @Test
@@ -1577,13 +1570,13 @@ public void testServerUnderStress() {
     int rampUpTimeSeconds = 60;
     int testDurationSeconds = 300;
     
-    // Set up JMeter for stress testing
+    // ตั้งค่า JMeter สำหรับการทดสอบความเครียด
     StandardJMeterEngine jmeter = new StandardJMeterEngine();
     
-    // Configure JMeter test plan
+    // กำหนดแผนการทดสอบ JMeter
     HashTree testPlanTree = new HashTree();
     
-    // Create test plan, thread group, samplers, etc.
+    // สร้างแผนการทดสอบ กลุ่มเธรด ตัวอย่างการทดสอบ ฯลฯ
     TestPlan testPlan = new TestPlan("MCP Server Stress Test");
     testPlanTree.add(testPlan);
     
@@ -1595,7 +1588,7 @@ public void testServerUnderStress() {
     
     testPlanTree.add(threadGroup);
     
-    // Add HTTP sampler for tool execution
+    // เพิ่มตัวอย่าง HTTP สำหรับการดำเนินการเครื่องมือ
     HTTPSampler toolExecutionSampler = new HTTPSampler();
     toolExecutionSampler.setDomain("localhost");
     toolExecutionSampler.setPort(5000);
@@ -1606,29 +1599,29 @@ public void testServerUnderStress() {
     
     threadGroup.add(toolExecutionSampler);
     
-    // Add listeners
+    // เพิ่มตัวฟัง
     SummaryReport summaryReport = new SummaryReport();
     threadGroup.add(summaryReport);
     
-    // Run test
+    // รันการทดสอบ
     jmeter.configure(testPlanTree);
     jmeter.run();
     
-    // Validate results
+    // ตรวจสอบผลลัพธ์
     assertEquals(0, summaryReport.getErrorCount());
-    assertTrue(summaryReport.getAverage() < 200); // Average response time < 200ms
-    assertTrue(summaryReport.getPercentile(90.0) < 500); // 90th percentile < 500ms
+    assertTrue(summaryReport.getAverage() < 200); // เวลาในการตอบสนองเฉลี่ย < 200ms
+    assertTrue(summaryReport.getPercentile(90.0) < 500); // ค่าร้อยละ 90 < 500ms
 }
 ```
 
-#### 3. การตรวจสอบและการวิเคราะห์ประสิทธิภาพ
+#### 3. Monitoring and Profiling
 
-ตั้งค่าการตรวจสอบสำหรับการวิเคราะห์ประสิทธิภาพระยะยาว:
+ตั้งค่าการเฝ้าดูและวิเคราะห์ประสิทธิภาพระยะยาว:
 
 ```python
-# Configure monitoring for an MCP server
+# กำหนดค่าการตรวจสอบสำหรับเซิร์ฟเวอร์ MCP
 def configure_monitoring(server):
-    # Set up Prometheus metrics
+    # ตั้งค่าเมตริกของ Prometheus
     prometheus_metrics = {
         "request_count": Counter("mcp_requests_total", "Total MCP requests"),
         "request_latency": Histogram(
@@ -1654,10 +1647,10 @@ def configure_monitoring(server):
         )
     }
     
-    # Add middleware for timing and recording metrics
+    # เพิ่มมิดเดิลแวร์สำหรับการจับเวลาและบันทึกเมตริก
     server.add_middleware(PrometheusMiddleware(prometheus_metrics))
     
-    # Expose metrics endpoint
+    # แสดงจุดเชื่อมต่อเมตริก
     @server.router.get("/metrics")
     async def metrics():
         return generate_latest()
@@ -1665,29 +1658,29 @@ def configure_monitoring(server):
     return server
 ```
 
-## รูปแบบการออกแบบเวิร์กโฟลว์ MCP
+## MCP Workflow Design Patterns
 
-เวิร์กโฟลว์ MCP ที่ออกแบบมาอย่างดีช่วยเพิ่มประสิทธิภาพ ความน่าเชื่อถือ และการบำรุงรักษา นี่คือรูปแบบสำคัญที่ควรปฏิบัติตาม:
+เวิร์กโฟลว์ MCP ที่ออกแบบอย่างดีจะช่วยเพิ่มประสิทธิภาพ ความน่าเชื่อถือ และความง่ายในการบำรุงรักษา นี่คือรูปแบบสำคัญที่ควรปฏิบัติ:
 
-### 1. รูปแบบการเชื่อมโยงเครื่องมือ
+### 1. Chain of Tools Pattern
 
-เชื่อมต่อเครื่องมือหลายตัวในลำดับที่ผลลัพธ์ของแต่ละเครื่องมือกลายเป็นข้อมูลนำเข้าสำหรับเครื่องมือถัดไป:
+เชื่อมต่อเครื่องมือหลายตัวเป็นลำดับ โดยผลลัพธ์ของแต่ละเครื่องมือจะเป็นอินพุตของเครื่องมือต่อไป:
 
 ```python
-# Python Chain of Tools implementation
+# การใช้งานโซ่เครื่องมือใน Python
 class ChainWorkflow:
     def __init__(self, tools_chain):
-        self.tools_chain = tools_chain  # List of tool names to execute in sequence
+        self.tools_chain = tools_chain  # รายชื่อชื่อเครื่องมือที่จะดำเนินการตามลำดับ
     
     async def execute(self, mcp_client, initial_input):
         current_result = initial_input
         all_results = {"input": initial_input}
         
         for tool_name in self.tools_chain:
-            # Execute each tool in the chain, passing previous result
+            # ดำเนินการแต่ละเครื่องมือในโซ่ โดยส่งผลลัพธ์ก่อนหน้า
             response = await mcp_client.execute_tool(tool_name, current_result)
             
-            # Store result and use as input for next tool
+            # เก็บผลลัพธ์และใช้เป็นอินพุตสำหรับเครื่องมือต่อไป
             all_results[tool_name] = response.result
             current_result = response.result
         
@@ -1696,7 +1689,7 @@ class ChainWorkflow:
             "all_results": all_results
         }
 
-# Example usage
+# ตัวอย่างการใช้งาน
 data_processing_chain = ChainWorkflow([
     "dataFetch",
     "dataCleaner",
@@ -1710,9 +1703,9 @@ result = await data_processing_chain.execute(
 )
 ```
 
-### 2. รูปแบบ Dispatcher
+### 2. Dispatcher Pattern
 
-ใช้เครื่องมือกลางที่ส่งต่อไปยังเครื่องมือเฉพาะตามข้อมูลนำเข้า:
+ใช้เครื่องมือกลางที่แจกจ่ายไปยังเครื่องมือเฉพาะตามอินพุต:
 
 ```csharp
 public class ContentDispatcherTool : IMcpTool
@@ -1792,9 +1785,9 @@ public class ContentDispatcherTool : IMcpTool
 }
 ```
 
-### 3. รูปแบบการประมวลผลแบบขนาน
+### 3. Parallel Processing Pattern
 
-ดำเนินการเครื่องมือหลายตัวพร้อมกันเพื่อประสิทธิภาพ:
+รันเครื่องมือหลายตัวพร้อมกันเพื่อเพิ่มประสิทธิภาพ:
 
 ```java
 public class ParallelDataProcessingWorkflow {
@@ -1805,11 +1798,11 @@ public class ParallelDataProcessingWorkflow {
     }
     
     public WorkflowResult execute(String datasetId) {
-        // Step 1: Fetch dataset metadata (synchronous)
+        // ขั้นตอนที่ 1: ดึงข้อมูลเมตาของชุดข้อมูล (แบบซิงโครนัส)
         ToolResponse metadataResponse = mcpClient.executeTool("datasetMetadata", 
             Map.of("datasetId", datasetId));
         
-        // Step 2: Launch multiple analyses in parallel
+        // ขั้นตอนที่ 2: เริ่มการวิเคราะห์หลายรายการพร้อมกัน
         CompletableFuture<ToolResponse> statisticalAnalysis = CompletableFuture.supplyAsync(() ->
             mcpClient.executeTool("statisticalAnalysis", Map.of(
                 "datasetId", datasetId,
@@ -1831,25 +1824,25 @@ public class ParallelDataProcessingWorkflow {
             ))
         );
         
-        // Wait for all parallel tasks to complete
+        // รอให้ทุกงานขนานเสร็จสิ้น
         CompletableFuture<Void> allAnalyses = CompletableFuture.allOf(
             statisticalAnalysis, correlationAnalysis, outlierDetection
         );
         
-        allAnalyses.join();  // Wait for completion
+        allAnalyses.join();  // รอให้เสร็จสิ้น
         
-        // Step 3: Combine results
+        // ขั้นตอนที่ 3: รวมผลลัพธ์
         Map<String, Object> combinedResults = new HashMap<>();
         combinedResults.put("metadata", metadataResponse.getResult());
         combinedResults.put("statistics", statisticalAnalysis.join().getResult());
         combinedResults.put("correlations", correlationAnalysis.join().getResult());
         combinedResults.put("outliers", outlierDetection.join().getResult());
         
-        // Step 4: Generate summary report
+        // ขั้นตอนที่ 4: สร้างรายงานสรุป
         ToolResponse summaryResponse = mcpClient.executeTool("reportGenerator", 
             Map.of("analysisResults", combinedResults));
         
-        // Return complete workflow result
+        // คืนค่าผลลัพธ์การทำงานทั้งหมด
         WorkflowResult result = new WorkflowResult();
         result.setDatasetId(datasetId);
         result.setAnalysisResults(combinedResults);
@@ -1860,9 +1853,9 @@ public class ParallelDataProcessingWorkflow {
 }
 ```
 
-### 4. รูปแบบการกู้คืนข้อผิดพลาด
+### 4. Error Recovery Pattern
 
-ใช้การกู้คืนที่สง่างามสำหรับความล้มเหลวของเครื่องมือ:
+ใช้การสำรองที่นุ่มนวลเมื่อเครื่องมือเกิดข้อผิดพลาด:
 
 ```python
 class ResilientWorkflow:
@@ -1871,7 +1864,7 @@ class ResilientWorkflow:
     
     async def execute_with_fallback(self, primary_tool, fallback_tool, parameters):
         try:
-            # Try primary tool first
+            # ลองเครื่องมือหลักก่อน
             response = await self.client.execute_tool(primary_tool, parameters)
             return {
                 "result": response.result,
@@ -1879,12 +1872,12 @@ class ResilientWorkflow:
                 "tool": primary_tool
             }
         except ToolExecutionException as e:
-            # Log the failure
+            # บันทึกความล้มเหลว
             logging.warning(f"Primary tool '{primary_tool}' failed: {str(e)}")
             
-            # Fall back to secondary tool
+            # หันไปใช้เครื่องมือสำรอง
             try:
-                # Might need to transform parameters for fallback tool
+                # อาจต้องแปลงพารามิเตอร์สำหรับเครื่องมือสำรอง
                 fallback_params = self._adapt_parameters(parameters, primary_tool, fallback_tool)
                 
                 response = await self.client.execute_tool(fallback_tool, fallback_params)
@@ -1895,7 +1888,7 @@ class ResilientWorkflow:
                     "primaryError": str(e)
                 }
             except ToolExecutionException as fallback_error:
-                # Both tools failed
+                # เครื่องมือทั้งสองล้มเหลว
                 logging.error(f"Both primary and fallback tools failed. Fallback error: {str(fallback_error)}")
                 raise WorkflowExecutionException(
                     f"Workflow failed: primary error: {str(e)}; fallback error: {str(fallback_error)}"
@@ -1903,22 +1896,22 @@ class ResilientWorkflow:
     
     def _adapt_parameters(self, params, from_tool, to_tool):
         """Adapt parameters between different tools if needed"""
-        # This implementation would depend on the specific tools
-        # For this example, we'll just return the original parameters
+        # การใช้งานนี้จะขึ้นอยู่กับเครื่องมือแต่ละชนิด
+        # สำหรับตัวอย่างนี้ เราจะคืนค่าพารามิเตอร์เดิม
         return params
 
-# Example usage
+# ตัวอย่างการใช้งาน
 async def get_weather(workflow, location):
     return await workflow.execute_with_fallback(
-        "premiumWeatherService",  # Primary (paid) weather API
-        "basicWeatherService",    # Fallback (free) weather API
+        "premiumWeatherService",  # API สภาพอากาศหลัก (แบบชำระเงิน)
+        "basicWeatherService",    # API สภาพอากาศสำรอง (แบบฟรี)
         {"location": location}
     )
 ```
 
-### 5. รูปแบบการประกอบเวิร์กโฟลว์
+### 5. Workflow Composition Pattern
 
-สร้างเวิร์กโฟลว์ที่ซับซ้อนโดยการประกอบเวิร์กโฟลว์ที่ง่ายกว่า:
+สร้างเวิร์กโฟลว์ที่ซับซ้อนโดยประกอบเวิร์กโฟลว์ที่ง่ายกว่าเข้าด้วยกัน:
 
 ```csharp
 public class CompositeWorkflow : IWorkflow
@@ -1965,33 +1958,283 @@ var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
 });
 ```
 
-# การทดสอบเซิร์ฟเวอร์ MCP: แนวทางปฏิบัติที่ดีที่สุดและเคล็ดลับสำคัญ
+# Testing MCP Servers: Best Practices and Top Tips
 
-## ภาพรวม
+## Overview
 
-การทดสอบเป็นส่วนสำคัญของการพัฒนาเซิร์ฟเวอร์ MCP ที่เชื่อถือได้และมีคุณภาพสูง คู่มือนี้ให้แนวทางปฏิบัติที่ดีที่สุดและเคล็ดลับสำหรับการทดสอบเซิร์ฟเวอร์ MCP ของคุณตลอดวงจรการพัฒนา ตั้งแต่การทดสอบหน่วยไปจนถึงการทดสอบการรวมระบบและการตรวจสอบแบบ End-to-End
+การทดสอบเป็นส่วนสำคัญของการพัฒนาเซิร์ฟเวอร์ MCP ที่น่าเชื่อถือและมีคุณภาพสูง คู่มือนี้ให้แนวทางปฏิบัติและเคล็ดลับที่ครอบคลุมสำหรับการทดสอบเซิร์ฟเวอร์ MCP ของคุณตลอดวัฏจักรการพัฒนา ตั้งแต่การทดสอบหน่วยไปจนถึงการทดสอบแบบบูรณาการและการตรวจสอบแบบครบวงจร
 
-## ทำไมการทดสอบจึงสำคัญสำหรับเซิร์ฟเวอร์ MCP
+## Why Testing Matters for MCP Servers
 
-เซิร์ฟเวอร์ MCP ทำหน้าที่เป็นตัวกลางที่สำคัญระหว่างโมเดล AI และแอปพลิเคชันของลูกค้า การทดสอบอย่างละเอียดช่วยให้มั่นใจว่า:
+เซิร์ฟเวอร์ MCP ทำหน้าที่เป็นตัวกลางสำคัญระหว่างโมเดล AI กับแอปพลิเคชันลูกค้า การทดสอบอย่างละเอียดช่วยรับประกันว่า:
 
-- ความน่าเชื่อถือในสภาพแวดล้อมการผลิต
-- การจัดการคำขอและการตอบกลับอย่างถูกต้อง
-- การใช้งานข้อกำหนด MCP อย่างเหมาะสม
-- ความยืดหยุ่นต่อความล้มเหลวและกรณีขอบ
-- ประสิทธิภาพที่สม่ำเสมอภายใต้โหลดต่าง ๆ
+- มีความน่าเชื่อถือในสภาพแวดล้อมการผลิต
+- การจัดการคำขอและตอบกลับถูกต้องแม่นยำ
+- การใช้งานตามข้อกำหนด MCP เป็นไปอย่างถูกต้อง
+- มีความทนทานต่อข้อผิดพลาดและกรณีขอบ
+- ประสิทธิภาพสม่ำเสมอภายใต้ภาระการใช้งานที่หลากหลาย
 
-## การทดสอบหน่วยสำหรับเซิร์ฟเวอร์ MCP
+## Unit Testing for MCP Servers
 
-### การทดสอบหน่วย (พื้นฐาน)
+### Unit Testing (Foundation)
 
-การทดสอบหน่วยตรวจสอบส่วนประกอบแต่ละส่วนของเซิร์ฟเวอร์ MCP ของคุณในสภาพแวดล้อมที่แยกออกจากกัน
+การทดสอบหน่วยจะตรวจสอบส่วนประกอบต่างๆ ของเซิร์ฟเวอร์ MCP อย่างแยกกัน
 
-#### สิ่งที่ควรทดสอบ
+#### What to Test
 
-1. **ตัวจัดการทรัพ
-3. **เกณฑ์มาตรฐานด้านประสิทธิภาพ**: รักษาเกณฑ์มาตรฐานด้านประสิทธิภาพเพื่อป้องกันการถดถอย  
-4. **การสแกนความปลอดภัย**: ทำการทดสอบความปลอดภัยโดยอัตโนมัติในกระบวนการพัฒนา  
+1. **Resource Handlers**: ทดสอบตรรกะของตัวจัดการทรัพยากรแต่ละตัวอย่างเป็นอิสระ
+2. **Tool Implementations**: ตรวจสอบพฤติกรรมของเครื่องมือด้วยข้อมูลอินพุตหลากหลาย
+3. **Prompt Templates**: ตรวจสอบให้แน่ใจว่าแม่แบบข้อความแสดงผลถูกต้อง
+4. **Schema Validation**: ทดสอบตรรกะการตรวจสอบพารามิเตอร์
+5. **Error Handling**: ตรวจสอบการตอบกลับข้อผิดพลาดสำหรับข้อมูลป้อนเข้าไม่ถูกต้อง
+
+#### Best Practices for Unit Testing
+
+```csharp
+// Example unit test for a calculator tool in C#
+[Fact]
+public async Task CalculatorTool_Add_ReturnsCorrectSum()
+{
+    // Arrange
+    var calculator = new CalculatorTool();
+    var parameters = new Dictionary<string, object>
+    {
+        ["operation"] = "add",
+        ["a"] = 5,
+        ["b"] = 7
+    };
+    
+    // Act
+    var response = await calculator.ExecuteAsync(parameters);
+    var result = JsonSerializer.Deserialize<CalculationResult>(response.Content[0].ToString());
+    
+    // Assert
+    Assert.Equal(12, result.Value);
+}
+```
+
+```python
+# ตัวอย่างการทดสอบหน่วยสำหรับเครื่องมือเครื่องคิดเลขในภาษา Python
+def test_calculator_tool_add():
+    # จัดเตรียม
+    calculator = CalculatorTool()
+    parameters = {
+        "operation": "add",
+        "a": 5,
+        "b": 7
+    }
+    
+    # ดำเนินการ
+    response = calculator.execute(parameters)
+    result = json.loads(response.content[0].text)
+    
+    # ตรวจสอบผลลัพธ์
+    assert result["value"] == 12
+```
+
+### Integration Testing (Middle Layer)
+
+การทดสอบแบบบูรณาการจะตรวจสอบการโต้ตอบระหว่างส่วนประกอบต่างๆ ของเซิร์ฟเวอร์ MCP
+
+#### What to Test
+
+1. **Server Initialization**: ทดสอบการเริ่มต้นเซิร์ฟเวอร์ด้วยการตั้งค่าต่างๆ
+2. **Route Registration**: ตรวจสอบว่าเส้นทางทั้งหมดถูกลงทะเบียนอย่างถูกต้อง
+3. **Request Processing**: ทดสอบวัฏจักรคำขอและตอบกลับอย่างครบถ้วน
+4. **Error Propagation**: ตรวจสอบให้แน่ใจว่าข้อผิดพลาดถูกจัดการอย่างเหมาะสมในทุกส่วนประกอบ
+5. **Authentication & Authorization**: ทดสอบกลไกความปลอดภัย
+
+#### Best Practices for Integration Testing
+
+```csharp
+// Example integration test for MCP server in C#
+[Fact]
+public async Task Server_ProcessToolRequest_ReturnsValidResponse()
+{
+    // Arrange
+    var server = new McpServer();
+    server.RegisterTool(new CalculatorTool());
+    await server.StartAsync();
+    
+    var request = new McpRequest
+    {
+        Tool = "calculator",
+        Parameters = new Dictionary<string, object>
+        {
+            ["operation"] = "multiply",
+            ["a"] = 6,
+            ["b"] = 7
+        }
+    };
+    
+    // Act
+    var response = await server.ProcessRequestAsync(request);
+    
+    // Assert
+    Assert.NotNull(response);
+    Assert.Equal(McpStatusCodes.Success, response.StatusCode);
+    // Additional assertions for response content
+    
+    // Cleanup
+    await server.StopAsync();
+}
+```
+
+### End-to-End Testing (Top Layer)
+
+การทดสอบแบบครบวงจรจะตรวจสอบพฤติกรรมระบบทั้งหมดตั้งแต่ไคลเอนต์ถึงเซิร์ฟเวอร์
+
+#### What to Test
+
+1. **Client-Server Communication**: ทดสอบวัฏจักรคำขอ-ตอบครบถ้วน
+2. **Real Client SDKs**: ทดสอบด้วยการใช้งานไคลเอนต์จริง
+3. **Performance Under Load**: ตรวจสอบพฤติกรรมเมื่อมีคำขอพร้อมกันหลายรายการ
+4. **Error Recovery**: ทดสอบการฟื้นตัวของระบบจากความล้มเหลว
+5. **Long-Running Operations**: ตรวจสอบการจัดการการสตรีมและการดำเนินการระยะยาว
+
+#### Best Practices for E2E Testing
+
+```typescript
+// ตัวอย่างการทดสอบ E2E กับไคลเอนต์ใน TypeScript
+describe('MCP Server E2E Tests', () => {
+  let client: McpClient;
+  
+  beforeAll(async () => {
+    // เริ่มต้นเซิร์ฟเวอร์ในสภาพแวดล้อมทดสอบ
+    await startTestServer();
+    client = new McpClient('http://localhost:5000');
+  });
+  
+  afterAll(async () => {
+    await stopTestServer();
+  });
+  
+  test('Client can invoke calculator tool and get correct result', async () => {
+    // ทำการดำเนินการ
+    const response = await client.invokeToolAsync('calculator', {
+      operation: 'divide',
+      a: 20,
+      b: 4
+    });
+    
+    // ยืนยันผลลัพธ์
+    expect(response.statusCode).toBe(200);
+    expect(response.content[0].text).toContain('5');
+  });
+});
+```
+
+## Mocking Strategies for MCP Testing
+
+การใช้ม็อกช่วยแยกส่วนประกอบระหว่างการทดสอบ
+
+### Components to Mock
+
+1. **External AI Models**: ม็อกการตอบสนองของโมเดลเพื่อการทดสอบที่คาดเดาได้
+2. **External Services**: ม็อกการพึ่งพา API (ฐานข้อมูล บริการภายนอก)
+3. **Authentication Services**: ม็อกผู้ให้บริการพิสูจน์ตัวตน
+4. **Resource Providers**: ม็อกตัวจัดการทรัพยากรที่มีต้นทุนสูง
+
+### Example: Mocking an AI Model Response
+
+```csharp
+// C# example with Moq
+var mockModel = new Mock<ILanguageModel>();
+mockModel
+    .Setup(m => m.GenerateResponseAsync(
+        It.IsAny<string>(),
+        It.IsAny<McpRequestContext>()))
+    .ReturnsAsync(new ModelResponse { 
+        Text = "Mocked model response",
+        FinishReason = FinishReason.Completed
+    });
+
+var server = new McpServer(modelClient: mockModel.Object);
+```
+
+```python
+# ตัวอย่าง Python พร้อม unittest.mock
+@patch('mcp_server.models.OpenAIModel')
+def test_with_mock_model(mock_model):
+    # กำหนดค่า mock
+    mock_model.return_value.generate_response.return_value = {
+        "text": "Mocked model response",
+        "finish_reason": "completed"
+    }
+    
+    # ใช้ mock ในการทดสอบ
+    server = McpServer(model_client=mock_model)
+    # ดำเนินการต่อด้วยการทดสอบ
+```
+
+## Performance Testing
+
+การทดสอบประสิทธิภาพมีความสำคัญอย่างยิ่งสำหรับเซิร์ฟเวอร์ MCP ในการผลิต
+
+### What to Measure
+
+1. **Latency**: เวลาตอบสนองสำหรับคำขอ
+2. **Throughput**: จำนวนคำขอต่อวินาทีที่จัดการได้
+3. **Resource Utilization**: การใช้ CPU หน่วยความจำ และเครือข่าย
+4. **Concurrency Handling**: พฤติกรรมเมื่อรับคำขอพร้อมกันหลายรายการ
+5. **Scaling Characteristics**: ประสิทธิภาพตามภาระที่เพิ่มขึ้น
+
+### Tools for Performance Testing
+
+- **k6**: เครื่องมือทดสอบโหลดแบบโอเพ่นซอร์ส
+- **JMeter**: เครื่องมือทดสอบประสิทธิภาพแบบครอบคลุม
+- **Locust**: เครื่องมือทดสอบโหลดที่เขียนด้วย Python
+- **Azure Load Testing**: การทดสอบประสิทธิภาพบนคลาวด์
+
+### Example: Basic Load Test with k6
+
+```javascript
+// สคริปต์ k6 สำหรับทดสอบโหลดเซิร์ฟเวอร์ MCP
+import http from 'k6/http';
+import { check, sleep } from 'k6';
+
+export const options = {
+  vus: 10,  // ผู้ใช้เสมือน 10 คน
+  duration: '30s',
+};
+
+export default function () {
+  const payload = JSON.stringify({
+    tool: 'calculator',
+    parameters: {
+      operation: 'add',
+      a: Math.floor(Math.random() * 100),
+      b: Math.floor(Math.random() * 100)
+    }
+  });
+
+  const params = {
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer test-token'
+    },
+  };
+
+  const res = http.post('http://localhost:5000/api/tools/invoke', payload, params);
+  
+  check(res, {
+    'status is 200': (r) => r.status === 200,
+    'response time < 500ms': (r) => r.timings.duration < 500,
+  });
+  
+  sleep(1);
+}
+```
+
+## Test Automation for MCP Servers
+
+การทำให้การทดสอบเป็นอัตโนมัติช่วยรับประกันคุณภาพอย่างสม่ำเสมอและทำให้ได้รับผลตอบกลับเร็วขึ้น
+
+### CI/CD Integration
+1. **รัน Unit Tests บน Pull Requests**: ตรวจสอบให้แน่ใจว่าการเปลี่ยนแปลงโค้ดไม่ทำให้ฟังก์ชันการทำงานเดิมเสียหาย  
+2. **Integration Tests ใน Staging**: รัน integration tests ในสภาพแวดล้อมก่อนการผลิต  
+3. **Performance Baselines**: รักษาเกณฑ์ประสิทธิภาพเพื่อจับข้อถดถอย  
+4. **Security Scans**: ทำการทดสอบความปลอดภัยโดยอัตโนมัติเป็นส่วนหนึ่งของ pipeline  
 
 ### ตัวอย่าง CI Pipeline (GitHub Actions)
 
@@ -2031,20 +2274,20 @@ jobs:
     - name: Performance Tests
       run: dotnet run --project tests/PerformanceTests/PerformanceTests.csproj
 ```
+  
+## การทดสอบเพื่อความสอดคล้องกับข้อกำหนด MCP  
 
-## การทดสอบความสอดคล้องกับข้อกำหนด MCP
+ตรวจสอบให้แน่ใจว่าเซิร์ฟเวอร์ของคุณใช้งานข้อกำหนด MCP อย่างถูกต้อง  
 
-ตรวจสอบว่าเซิร์ฟเวอร์ของคุณดำเนินการตามข้อกำหนด MCP อย่างถูกต้อง  
-
-### พื้นที่สำคัญของความสอดคล้อง
+### พื้นที่สำคัญของความสอดคล้อง  
 
 1. **API Endpoints**: ทดสอบ endpoints ที่จำเป็น (/resources, /tools, ฯลฯ)  
 2. **รูปแบบคำขอ/คำตอบ**: ตรวจสอบความสอดคล้องของ schema  
 3. **รหัสข้อผิดพลาด**: ตรวจสอบรหัสสถานะที่ถูกต้องสำหรับสถานการณ์ต่างๆ  
-4. **ประเภทเนื้อหา**: ทดสอบการจัดการประเภทเนื้อหาที่แตกต่างกัน  
-5. **กระบวนการยืนยันตัวตน**: ตรวจสอบกลไกการยืนยันตัวตนที่สอดคล้องกับข้อกำหนด  
+4. **ประเภทเนื้อหา**: ทดสอบการจัดการประเภทเนื้อหาต่างๆ  
+5. **กระบวนการ Authentication**: ตรวจสอบกลไกการพิสูจน์ตัวตนที่สอดคล้องกับข้อกำหนด  
 
-### ชุดทดสอบความสอดคล้อง
+### ชุดทดสอบความสอดคล้อง  
 
 ```csharp
 [Fact]
@@ -2070,63 +2313,69 @@ public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
     });
 }
 ```
+  
+## 10 เคล็ดลับสำหรับการทดสอบเซิร์ฟเวอร์ MCP อย่างมีประสิทธิภาพ  
 
-## 10 เคล็ดลับสำหรับการทดสอบเซิร์ฟเวอร์ MCP อย่างมีประสิทธิภาพ
+1. **ทดสอบคำจำกัดความเครื่องมือแยกจากกัน**: ตรวจสอบคำจำกัดความ schema แยกจากตรรกะเครื่องมือ  
+2. **ใช้ Parameterized Tests**: ทดสอบเครื่องมือด้วยข้อมูลเข้าแบบหลากหลาย รวมถึงกรณีขอบ  
+3. **ตรวจสอบคำตอบข้อผิดพลาด**: ตรวจสอบการจัดการข้อผิดพลาดที่ถูกต้องสำหรับเงื่อนไขข้อผิดพลาดทั้งหมด  
+4. **ทดสอบตรรกะการอนุญาต**: ตรวจสอบการควบคุมการเข้าถึงสำหรับบทบาทผู้ใช้ต่างๆ  
+5. **ติดตามความครอบคลุมการทดสอบ**: ตั้งเป้าความครอบคลุมสูงของโค้ดเส้นทางสำคัญ  
+6. **ทดสอบการตอบสนองแบบสตรีม**: ตรวจสอบการจัดการเนื้อหาสตรีมที่ถูกต้อง  
+7. **จำลองปัญหาเครือข่าย**: ทดสอบพฤติกรรมภายใต้เงื่อนไขเครือข่ายที่ไม่ดี  
+8. **ทดสอบขีดจำกัดทรัพยากร**: ตรวจสอบพฤติกรรมเมื่อถึงโควตาหรือข้อจำกัดอัตรา  
+9. **ทำการทดสอบถดถอยโดยอัตโนมัติ**: สร้างชุดทดสอบที่รันทุกครั้งเมื่อมีการเปลี่ยนแปลงโค้ด  
+10. **จัดทำเอกสารกรณีทดสอบ**: รักษาเอกสารชัดเจนของสถานการณ์การทดสอบ  
 
-1. **ทดสอบการกำหนดเครื่องมือแยกกัน**: ตรวจสอบ schema definitions โดยไม่พึ่งพา logic ของเครื่องมือ  
-2. **ใช้การทดสอบแบบพารามิเตอร์**: ทดสอบเครื่องมือด้วยข้อมูลหลากหลาย รวมถึงกรณีขอบเขต  
-3. **ตรวจสอบการตอบสนองข้อผิดพลาด**: ตรวจสอบการจัดการข้อผิดพลาดที่เหมาะสมสำหรับทุกเงื่อนไขข้อผิดพลาด  
-4. **ทดสอบตรรกะการอนุญาต**: ตรวจสอบการควบคุมการเข้าถึงสำหรับบทบาทผู้ใช้ที่แตกต่างกัน  
-5. **ติดตามความครอบคลุมของการทดสอบ**: ตั้งเป้าหมายให้ครอบคลุมโค้ดในเส้นทางสำคัญ  
-6. **ทดสอบการตอบสนองแบบสตรีมมิ่ง**: ตรวจสอบการจัดการเนื้อหาแบบสตรีมมิ่งอย่างเหมาะสม  
-7. **จำลองปัญหาเครือข่าย**: ทดสอบพฤติกรรมในสภาพเครือข่ายที่ไม่ดี  
-8. **ทดสอบข้อจำกัดของทรัพยากร**: ตรวจสอบพฤติกรรมเมื่อถึงขีดจำกัดหรืออัตราการใช้งาน  
-9. **ทำการทดสอบการถดถอยโดยอัตโนมัติ**: สร้างชุดทดสอบที่ทำงานทุกครั้งที่มีการเปลี่ยนแปลงโค้ด  
-10. **จัดทำเอกสารกรณีทดสอบ**: รักษาเอกสารที่ชัดเจนของสถานการณ์การทดสอบ  
+## ข้อผิดพลาดในการทดสอบที่พบบ่อย  
 
-## ข้อผิดพลาดทั่วไปในการทดสอบ
+- **พึ่งพาการทดสอบเส้นทางที่ดีเกินไป**: ตรวจสอบให้แน่ใจว่าทดสอบกรณีข้อผิดพลาดอย่างละเอียด  
+- **ละเลยการทดสอบประสิทธิภาพ**: ระบุคอขวดก่อนที่จะส่งผลต่อการผลิต  
+- **ทดสอบแยกเดี่ยวเท่านั้น**: รวมการทดสอบหน่วย, การบูรณาการ, และการทดสอบแบบ End-to-End  
+- **ความครอบคลุม API ไม่สมบูรณ์**: ตรวจสอบให้แน่ใจว่าทดสอบ endpoints และฟีเจอร์ทั้งหมด  
+- **สภาพแวดล้อมทดสอบไม่สอดคล้องกัน**: ใช้คอนเทนเนอร์เพื่อให้แน่ใจว่าสภาพแวดล้อมทดสอบสอดคล้องกัน  
 
-- **พึ่งพาการทดสอบเส้นทางที่ราบรื่นมากเกินไป**: อย่าลืมทดสอบกรณีข้อผิดพลาดอย่างละเอียด  
-- **ละเลยการทดสอบประสิทธิภาพ**: ระบุคอขวดก่อนที่จะส่งผลกระทบต่อการใช้งานจริง  
-- **ทดสอบเฉพาะในสภาพแวดล้อมแยก**: รวมการทดสอบหน่วย, การทดสอบการรวม, และการทดสอบแบบ E2E  
-- **การครอบคลุม API ไม่ครบถ้วน**: ตรวจสอบให้แน่ใจว่า endpoints และฟีเจอร์ทั้งหมดได้รับการทดสอบ  
-- **สภาพแวดล้อมการทดสอบที่ไม่สม่ำเสมอ**: ใช้คอนเทนเนอร์เพื่อให้แน่ใจว่าสภาพแวดล้อมการทดสอบสม่ำเสมอ  
+## สรุป  
 
-## สรุป
+กลยุทธ์การทดสอบที่ครอบคลุมเป็นสิ่งจำเป็นสำหรับการพัฒนาเซิร์ฟเวอร์ MCP ที่เชื่อถือได้และคุณภาพสูง ด้วยการใช้แนวทางปฏิบัติที่ดีที่สุดและเคล็ดลับที่ระบุไว้ในคู่มือนี้ คุณสามารถมั่นใจได้ว่า MCP ที่คุณใช้งานจะได้มาตรฐานสูงสุดในด้านคุณภาพ ความน่าเชื่อถือ และประสิทธิภาพ  
 
-กลยุทธ์การทดสอบที่ครอบคลุมเป็นสิ่งสำคัญสำหรับการพัฒนาเซิร์ฟเวอร์ MCP ที่เชื่อถือได้และมีคุณภาพสูง ด้วยการนำแนวทางปฏิบัติที่ดีที่สุดและเคล็ดลับที่ระบุไว้ในคู่มือนี้ไปใช้ คุณสามารถมั่นใจได้ว่า MCP ของคุณจะมีคุณภาพ ความน่าเชื่อถือ และประสิทธิภาพในระดับสูงสุด  
+## สิ่งที่ควรจดจำ  
 
-## ประเด็นสำคัญ
+1. **การออกแบบเครื่องมือ**: ปฏิบัติตามหลักการความรับผิดชอบเดี่ยว, ใช้ dependency injection และออกแบบให้สามารถประกอบชิ้นส่วนได้  
+2. **การออกแบบ Schema**: สร้าง schema ที่ชัดเจน พร้อมเอกสาร และมีข้อจำกัดการตรวจสอบที่เหมาะสม  
+3. **การจัดการข้อผิดพลาด**: ใช้การจัดการข้อผิดพลาดอย่างมีมารยาท, การตอบสนองข้อผิดพลาดที่มีโครงสร้าง และตรรกะการลองใหม่  
+4. **ประสิทธิภาพ**: ใช้การแคช, การประมวลผลแบบไม่ซิงโครนัส และการจำกัดทรัพยากร  
+5. **ความปลอดภัย**: ใช้การตรวจสอบข้อมูลเข้าอย่างละเอียด, การตรวจสอบสิทธิ์เข้าถึง และการจัดการข้อมูลที่ละเอียดอ่อน  
+6. **การทดสอบ**: สร้างการทดสอบแบบหน่วย, การบูรณาการ และแบบ end-to-end ที่ครอบคลุม  
+7. **รูปแบบของ Workflow**: ใช้รูปแบบที่ได้รับการพิสูจน์ เช่น chains, dispatchers และการประมวลผลแบบขนาน  
 
-1. **การออกแบบเครื่องมือ**: ปฏิบัติตามหลักการความรับผิดชอบเดียว ใช้ dependency injection และออกแบบให้สามารถประกอบกันได้  
-2. **การออกแบบ Schema**: สร้าง schema ที่ชัดเจน มีเอกสารประกอบ และมีข้อจำกัดการตรวจสอบที่เหมาะสม  
-3. **การจัดการข้อผิดพลาด**: ใช้การจัดการข้อผิดพลาดที่ราบรื่น การตอบสนองข้อผิดพลาดที่มีโครงสร้าง และตรรกะการลองใหม่  
-4. **ประสิทธิภาพ**: ใช้ caching, การประมวลผลแบบอะซิงโครนัส และการควบคุมทรัพยากร  
-5. **ความปลอดภัย**: ใช้การตรวจสอบข้อมูลนำเข้า การตรวจสอบสิทธิ์ และการจัดการข้อมูลที่ละเอียดอ่อนอย่างละเอียด  
-6. **การทดสอบ**: สร้างการทดสอบหน่วย การทดสอบการรวม และการทดสอบแบบ end-to-end ที่ครอบคลุม  
-7. **รูปแบบการทำงาน**: ใช้รูปแบบที่เป็นที่ยอมรับ เช่น chains, dispatchers, และการประมวลผลแบบขนาน  
+## แบบฝึกหัด  
 
-## แบบฝึกหัด
-
-ออกแบบเครื่องมือ MCP และ workflow สำหรับระบบประมวลผลเอกสารที่:  
+ออกแบบเครื่องมือ MCP และ workflow สำหรับระบบประมวลเอกสารที่:  
 
 1. รับเอกสารในหลายรูปแบบ (PDF, DOCX, TXT)  
 2. ดึงข้อความและข้อมูลสำคัญจากเอกสาร  
 3. จัดประเภทเอกสารตามประเภทและเนื้อหา  
 4. สร้างสรุปของแต่ละเอกสาร  
 
-ดำเนินการ schema ของเครื่องมือ การจัดการข้อผิดพลาด และรูปแบบ workflow ที่เหมาะสมกับสถานการณ์นี้ พิจารณาว่าคุณจะทดสอบการดำเนินการนี้อย่างไร  
+ใช้งาน schema เครื่องมือ, การจัดการข้อผิดพลาด และรูปแบบ workflow ที่เหมาะสมที่สุดสำหรับสถานการณ์นี้ คิดว่าคุณจะทดสอบการใช้งานนี้อย่างไร  
 
-## แหล่งข้อมูล
+## แหล่งข้อมูล  
 
-1. เข้าร่วมชุมชน MCP บน [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) เพื่อรับข่าวสารล่าสุด  
-2. มีส่วนร่วมใน [โครงการ MCP แบบโอเพนซอร์ส](https://github.com/modelcontextprotocol)  
-3. นำหลักการ MCP ไปใช้ในโครงการ AI ขององค์กรของคุณ  
-4. สำรวจการใช้งาน MCP เฉพาะทางสำหรับอุตสาหกรรมของคุณ  
-5. พิจารณาเรียนหลักสูตรขั้นสูงในหัวข้อ MCP เฉพาะ เช่น การรวมหลายรูปแบบหรือการรวมแอปพลิเคชันระดับองค์กร  
-6. ทดลองสร้างเครื่องมือและ workflow MCP ของคุณเองโดยใช้หลักการที่ได้เรียนรู้ผ่าน [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)  
+1. เข้าร่วมชุมชน MCP ที่ [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) เพื่อรับข้อมูลอัปเดตล่าสุด  
+2. มีส่วนร่วมในโครงการ [MCP แบบโอเพนซอร์ส](https://github.com/modelcontextprotocol)  
+3. นำหลักการ MCP ไปใช้ในโครงการ AI ขององค์กรของคุณเอง  
+4. สำรวจการใช้งาน MCP เฉพาะสำหรับอุตสาหกรรมของคุณ  
+5. พิจารณาเรียนหลักสูตรขั้นสูงในหัวข้อ MCP เฉพาะ เช่น การผสมผสานข้อมูลหลายรูปแบบ หรือการผสานแอปพลิเคชันองค์กร  
+6. ทดลองสร้างเครื่องมือและ workflow MCP ของคุณเองโดยใช้หลักการที่เรียนรู้ผ่าน [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)  
 
-ถัดไป: แนวทางปฏิบัติที่ดีที่สุด [กรณีศึกษา](../09-CaseStudy/README.md)  
+## ต่อไป  
 
+ถัดไป: [Case Studies](../09-CaseStudy/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษา AI [Co-op Translator](https://github.com/Azure/co-op-translator) แม้ว่าเราจะพยายามให้การแปลมีความถูกต้อง แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่แม่นยำ เอกสารต้นฉบับในภาษาต้นทางควรถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ แนะนำให้ใช้บริการแปลภาษามนุษย์ที่เป็นมืออาชีพ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความที่ผิดพลาดซึ่งเกิดจากการใช้การแปลนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลด้วยปัญญาประดิษฐ์ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้ว่าเราจะพยายามให้ความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่น่าเชื่อถือที่สุด สำหรับข้อมูลสำคัญแนะนำให้ใช้บริการแปลโดยมนุษย์มืออาชีพ เราจะไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใด ๆ ที่เกิดขึ้นจากการใช้การแปลนี้
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

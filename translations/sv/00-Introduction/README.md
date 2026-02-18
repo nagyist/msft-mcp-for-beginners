@@ -1,87 +1,86 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0df1ee78a6dd8300f3a040ca5b411c2e",
-  "translation_date": "2025-08-18T15:01:59+00:00",
-  "source_file": "00-Introduction/README.md",
-  "language_code": "sv"
-}
--->
 # Introduktion till Model Context Protocol (MCP): Varför det är viktigt för skalbara AI-applikationer
 
-[![Introduktion till Model Context Protocol](../../../translated_images/01.a467036d886b5fb5b9cf7b39bac0e743b6ca0a4a18a492de90061daaf0cc55f0.sv.png)](https://youtu.be/agBbdiOPLQA)
+[![Introduction to Model Context Protocol](../../../translated_images/sv/01.a467036d886b5fb5.webp)](https://youtu.be/agBbdiOPLQA)
 
-_(Klicka på bilden ovan för att se videon till denna lektion)_
+_(Klicka på bilden ovan för att se videon av denna lektion)_
 
-Generativa AI-applikationer är ett stort framsteg eftersom de ofta låter användaren interagera med appen via naturliga språkkommandon. Men när mer tid och resurser investeras i sådana appar vill du säkerställa att du enkelt kan integrera funktioner och resurser på ett sätt som gör det enkelt att utöka, att din app kan hantera flera modeller och hantera olika modellkomplexiteter. Kort sagt, att bygga generativa AI-appar är enkelt att börja med, men när de växer och blir mer komplexa behöver du börja definiera en arkitektur och förmodligen förlita dig på en standard för att säkerställa att dina appar byggs på ett konsekvent sätt. Det är här MCP kommer in för att organisera saker och tillhandahålla en standard.
+Generativa AI-applikationer är ett stort framsteg eftersom de ofta låter användaren interagera med appen med hjälp av naturliga språk-promptar. Men när mer tid och resurser investeras i sådana appar vill du se till att du enkelt kan integrera funktioner och resurser på ett sätt som är lätt att utöka, att din app kan hantera mer än en modell som används och hantera olika modellkomplexiteter. Kort sagt, att bygga Gen AI-appar är lätt i början, men när de växer och blir mer komplexa behöver du börja definiera en arkitektur och kommer sannolikt behöva förlita dig på en standard för att säkerställa att dina appar byggs på ett konsekvent sätt. Här kommer MCP in för att organisera saker och ge en standard.
 
 ---
 
 ## **🔍 Vad är Model Context Protocol (MCP)?**
 
-**Model Context Protocol (MCP)** är ett **öppet, standardiserat gränssnitt** som gör det möjligt för stora språkmodeller (LLMs) att interagera smidigt med externa verktyg, API:er och datakällor. Det erbjuder en konsekvent arkitektur för att förbättra AI-modellens funktionalitet bortom dess träningsdata, vilket möjliggör smartare, skalbara och mer responsiva AI-system.
+**Model Context Protocol (MCP)** är ett **öppet, standardiserat gränssnitt** som tillåter stora språkmodeller (LLMs) att sömlöst interagera med externa verktyg, API:er och datakällor. Det tillhandahåller en konsekvent arkitektur för att förbättra AI-modellers funktionalitet bortom deras träningsdata, vilket möjliggör smartare, skalbara och mer responsiva AI-system.
 
 ---
 
 ## **🎯 Varför standardisering inom AI är viktigt**
 
-När generativa AI-applikationer blir mer komplexa är det avgörande att anta standarder som säkerställer **skalbarhet, utbyggbarhet, underhållbarhet** och **undvikande av leverantörslåsning**. MCP adresserar dessa behov genom att:
+När generativa AI-applikationer blir mer komplexa är det viktigt att anta standarder som säkerställer **skalbarhet, utbyggbarhet, underhållbarhet** och **undviker leverantörslåsning**. MCP tar itu med dessa behov genom att:
 
-- Enhetliggöra integrationer mellan modeller och verktyg
-- Minska sköra, skräddarsydda lösningar
-- Möjliggöra att flera modeller från olika leverantörer kan samexistera inom ett ekosystem
+- Enhetliggöra modell-verktygsintegrationer
+- Minska bräckliga, enstaka anpassade lösningar
+- Tillåta flera modeller från olika leverantörer att samexistera inom ett ekosystem
 
-**Notera:** Även om MCP marknadsför sig som en öppen standard finns det inga planer på att standardisera MCP genom befintliga standardiseringsorgan som IEEE, IETF, W3C, ISO eller andra.
+**Notera:** Även om MCP presenterar sig som en öppen standard finns det inga planer på att standardisera MCP genom några befintliga standardiseringsorgan som IEEE, IETF, W3C, ISO eller något annat standardorgan.
 
 ---
 
 ## **📚 Lärandemål**
 
-Efter att ha läst denna artikel kommer du att kunna:
+I slutet av denna artikel kommer du att kunna:
 
 - Definiera **Model Context Protocol (MCP)** och dess användningsområden
-- Förstå hur MCP standardiserar kommunikation mellan modeller och verktyg
-- Identifiera de centrala komponenterna i MCP-arkitekturen
+- Förstå hur MCP standardiserar kommunikation mellan modell och verktyg
+- Identifiera kärnkomponenterna i MCP-arkitekturen
 - Utforska verkliga tillämpningar av MCP inom företag och utvecklingssammanhang
 
 ---
 
 ## **💡 Varför Model Context Protocol (MCP) är en spelväxlare**
 
-### **🔗 MCP löser fragmentering i AI-interaktioner**
+### **🔗 MCP löser fragmenteringen i AI-interaktioner**
 
-Innan MCP krävde integrering av modeller med verktyg:
+Före MCP krävde integration av modeller med verktyg:
 
-- Skräddarsydd kod för varje verktyg-modellpar
+- Anpassad kod för varje verktygs-modellpar
 - Icke-standardiserade API:er för varje leverantör
 - Frekventa avbrott på grund av uppdateringar
 - Dålig skalbarhet med fler verktyg
 
 ### **✅ Fördelar med MCP-standardisering**
 
-| **Fördel**                | **Beskrivning**                                                                 |
-|---------------------------|---------------------------------------------------------------------------------|
-| Interoperabilitet         | LLMs fungerar smidigt med verktyg från olika leverantörer                       |
-| Konsekvens                | Enhetligt beteende över plattformar och verktyg                                 |
-| Återanvändbarhet          | Verktyg byggda en gång kan användas i flera projekt och system                 |
-| Snabbare utveckling       | Minska utvecklingstiden med standardiserade, plug-and-play-gränssnitt          |
+| **Fördel**              | **Beskrivning**                                                                |
+|--------------------------|--------------------------------------------------------------------------------|
+| Interoperabilitet        | LLM:er fungerar sömlöst med verktyg från olika leverantörer                   |
+| Konsekvens               | Enhetligt beteende över plattformar och verktyg                               |
+| Återanvändbarhet         | Verktyg som byggs en gång kan användas över projekt och system                |
+| Acceleration av utveckling | Minska utvecklingstid med standardiserade, plug-and-play-gränssnitt         |
 
 ---
 
-## **🧱 Översikt över MCP-arkitektur på hög nivå**
+## **🧱 Översikt över MCP:s hög-nivå arkitektur**
 
 MCP följer en **klient-server-modell**, där:
 
 - **MCP Hosts** kör AI-modellerna
 - **MCP Clients** initierar förfrågningar
-- **MCP Servers** tillhandahåller kontext, verktyg och funktioner
+- **MCP Servers** tillhandahåller kontext, verktyg och kapabiliteter
 
 ### **Nyckelkomponenter:**
 
 - **Resurser** – Statisk eller dynamisk data för modeller  
-- **Prompter** – Fördefinierade arbetsflöden för styrd generering  
+- **Promptar** – Fördefinierade arbetsflöden för guidad generering  
 - **Verktyg** – Exekverbara funktioner som sökning, beräkningar  
-- **Sampling** – Agentiskt beteende via rekursiva interaktioner
+- **Sampling** – Agentiskt beteende via rekursiva interaktioner  
+- **Elicitering** – Serverinitierade förfrågningar för användarinmatning  
+- **Roots** – Filssystemgränser för serveråtkomstkontroll
+
+### **Protokollarkitektur:**
+
+MCP använder en tvålagerarkitektur:
+- **Datalager**: Kommunikation baserad på JSON-RPC 2.0 med livscykelhantering och primitiva operationer
+- **Transportlager**: STDIO (lokalt) och strömningsbar HTTP med SSE (fjärran) kommunikationskanaler
 
 ---
 
@@ -90,44 +89,45 @@ MCP följer en **klient-server-modell**, där:
 MCP-servrar fungerar på följande sätt:
 
 - **Förfrågningsflöde**:
-    1. En förfrågan initieras av en slutanvändare eller mjukvara som agerar på deras vägnar.
-    2. **MCP Client** skickar förfrågan till en **MCP Host**, som hanterar AI-modellens runtime.
-    3. **AI-modellen** tar emot användarens prompt och kan begära åtkomst till externa verktyg eller data via en eller flera verktygsanrop.
-    4. **MCP Host**, inte modellen direkt, kommunicerar med lämpliga **MCP Server(s)** via det standardiserade protokollet.
-- **MCP Hosts funktionalitet**:
-    - **Verktygsregister**: Håller en katalog över tillgängliga verktyg och deras funktioner.
+    1. En förfrågan initieras av en slutanvändare eller mjukvara som agerar på dennes vägnar.
+    2. **MCP Client** skickar förfrågan till en **MCP Host**, som hanterar AI-modellens körning.
+    3. **AI-modellen** tar emot användarens prompt och kan begära tillgång till externa verktyg eller data genom en eller flera verktygsanrop.
+    4. **MCP Host**, inte modellen direkt, kommunicerar med lämpliga **MCP Server(s)** med hjälp av det standardiserade protokollet.
+- **MCP Host-funktionalitet**:
+    - **Verktygsregister**: Underhåller en katalog över tillgängliga verktyg och deras kapabiliteter.
     - **Autentisering**: Verifierar behörigheter för verktygsåtkomst.
     - **Förfrågningshanterare**: Bearbetar inkommande verktygsförfrågningar från modellen.
-    - **Svarformatterare**: Strukturerar verktygsutdata i ett format som modellen kan förstå.
+    - **Svarformatskapare**: Strukturerar verktygsutdata i ett format som modellen kan förstå.
 - **MCP Server-exekvering**:
-    - **MCP Host** dirigerar verktygsanrop till en eller flera **MCP Servers**, som exponerar specialiserade funktioner (t.ex. sökning, beräkningar, databasfrågor).
-    - **MCP Servers** utför sina respektive operationer och returnerar resultat till **MCP Host** i ett konsekvent format.
+    - **MCP Host** dirigerar verktygsanrop till en eller flera **MCP Servrar**, som var och en exponerar specialiserade funktioner (t.ex. sökning, beräkningar, databasfrågor).
+    - **MCP Servrar** utför sina respektive operationer och returnerar resultat till **MCP Host** i ett konsekvent format.
     - **MCP Host** formaterar och vidarebefordrar dessa resultat till **AI-modellen**.
 - **Slutförande av svar**:
-    - **AI-modellen** integrerar verktygsutdata i ett slutgiltigt svar.
-    - **MCP Host** skickar detta svar tillbaka till **MCP Client**, som levererar det till slutanvändaren eller den anropande mjukvaran.
+    - **AI-modellen** införlivar verktygsutdata i ett slutgiltigt svar.
+    - **MCP Host** skickar detta svar tillbaka till **MCP Client**, som levererar det till slutanvändaren eller anropande mjukvara.
+    
 
 ```mermaid
 ---
-title: MCP Architecture and Component Interactions
-description: A diagram showing the flows of the components in MCP.
+title: MCP Arkitektur och Komponentinteraktioner
+description: Ett diagram som visar flödena mellan komponenterna i MCP.
 ---
 graph TD
-    Client[MCP Client/Application] -->|Sends Request| H[MCP Host]
-    H -->|Invokes| A[AI Model]
-    A -->|Tool Call Request| H
-    H -->|MCP Protocol| T1[MCP Server Tool 01: Web Search]
-    H -->|MCP Protocol| T2[MCP Server Tool 02: Calculator tool]
-    H -->|MCP Protocol| T3[MCP Server Tool 03: Database Access tool]
-    H -->|MCP Protocol| T4[MCP Server Tool 04: File System tool]
-    H -->|Sends Response| Client
+    Client[MCP Klient/Applikation] -->|Skickar Förfrågan| H[MCP Värd]
+    H -->|Anropar| A[AI Modell]
+    A -->|Verktygsanropsförfrågan| H
+    H -->|MCP Protokoll| T1[MCP Server Verktyg 01: Webbsökning]
+    H -->|MCP Protokoll| T2[MCP Server Verktyg 02: Kalkylatorverktyg]
+    H -->|MCP Protokoll| T3[MCP Server Verktyg 03: Databasåtkomstverktyg]
+    H -->|MCP Protokoll| T4[MCP Server Verktyg 04: Filsystemverktyg]
+    H -->|Skickar Svar| Client
 
-    subgraph "MCP Host Components"
+    subgraph "MCP Värd Komponenter"
         H
-        G[Tool Registry]
-        I[Authentication]
-        J[Request Handler]
-        K[Response Formatter]
+        G[Verktygsregister]
+        I[Autentisering]
+        J[Förfrågningshanterare]
+        K[Svarformatterare]
     end
 
     H <--> G
@@ -147,10 +147,9 @@ graph TD
     style T3 fill:#c2f0c2,stroke:#333,stroke-width:1px
     style T4 fill:#c2f0c2,stroke:#333,stroke-width:1px
 ```
-
 ## 👨‍💻 Hur man bygger en MCP-server (med exempel)
 
-MCP-servrar gör det möjligt att utöka LLM-funktioner genom att tillhandahålla data och funktionalitet.
+MCP-servrar låter dig utöka LLM-kapaciteter genom att tillhandahålla data och funktionalitet. 
 
 Redo att prova? Här är språk- och/eller stack-specifika SDK:er med exempel på hur man skapar enkla MCP-servrar i olika språk/stacks:
 
@@ -162,146 +161,138 @@ Redo att prova? Här är språk- och/eller stack-specifika SDK:er med exempel p�
 
 - **C#/.NET SDK**: https://github.com/modelcontextprotocol/csharp-sdk
 
----
 
-## 🌍 Verkliga användningsområden för MCP
+## 🌍 Verkliga användningsfall för MCP
 
-MCP möjliggör en mängd olika applikationer genom att utöka AI-funktioner:
+MCP möjliggör ett brett utbud av applikationer genom att utöka AI:s kapacitet:
 
-| **Applikation**              | **Beskrivning**                                                                |
-|------------------------------|--------------------------------------------------------------------------------|
-| Företagsdataintegration      | Koppla LLMs till databaser, CRM-system eller interna verktyg                   |
-| Agentiska AI-system          | Möjliggör autonoma agenter med verktygsåtkomst och arbetsflöden för beslutsfattande |
-| Multimodala applikationer    | Kombinera text-, bild- och ljudverktyg inom en enda enhetlig AI-app            |
-| Realtidsdataintegration      | Ta in live-data i AI-interaktioner för mer exakta och aktuella resultat        |
+| **Användning**               | **Beskrivning**                                                            |
+|------------------------------|----------------------------------------------------------------------------|
+| Företagsdataintegration      | Koppla LLM:er till databaser, CRM:er eller interna verktyg                 |
+| Agentiska AI-system          | Möjliggör autonoma agenter med verktygsåtkomst och beslutsarbetsflöden    |
+| Multimodala applikationer    | Kombinera text-, bild- och ljudverktyg inom en enda enhetlig AI-app        |
+| Realtidsdataintegration      | Ta in levande data i AI-interaktioner för mer exakta, aktuella svar       |
 
----
 
 ### 🧠 MCP = Universell standard för AI-interaktioner
 
-Model Context Protocol (MCP) fungerar som en universell standard för AI-interaktioner, ungefär som USB-C standardiserade fysiska anslutningar för enheter. Inom AI-världen tillhandahåller MCP ett konsekvent gränssnitt som gör det möjligt för modeller (klienter) att integrera smidigt med externa verktyg och dataleverantörer (servrar). Detta eliminerar behovet av olika, skräddarsydda protokoll för varje API eller datakälla.
+Model Context Protocol (MCP) fungerar som en universell standard för AI-interaktioner, ungefär som USB-C standardiserade fysiska anslutningar för enheter. Inom AI-världen ger MCP ett konsekvent gränssnitt som tillåter modeller (klienter) att sömlöst integreras med externa verktyg och dataleverantörer (servrar). Detta eliminerar behovet av olika, anpassade protokoll för varje API eller datakälla.
 
-Under MCP följer ett MCP-kompatibelt verktyg (kallat MCP-server) en enhetlig standard. Dessa servrar kan lista de verktyg eller åtgärder de erbjuder och utföra dessa åtgärder när de begärs av en AI-agent. AI-agentplattformar som stöder MCP kan upptäcka tillgängliga verktyg från servrarna och anropa dem via detta standardprotokoll.
+Under MCP följer ett MCP-kompatibelt verktyg (kallat MCP-server) en enhetlig standard. Dessa servrar kan lista de verktyg eller åtgärder de erbjuder och utföra dessa åtgärder när de begärs av en AI-agent. AI-agentplattformar som stöder MCP kan upptäcka tillgängliga verktyg från servrarna och anropa dem genom detta standardiserade protokoll.
 
----
+### 💡 Underlättar tillgång till kunskap
 
-### 💡 Underlättar åtkomst till kunskap
+Utöver att erbjuda verktyg underlättar MCP även tillgång till kunskap. Det möjliggör att applikationer kan ge kontext till stora språkmodeller (LLMs) genom att koppla dem till olika datakällor. Till exempel kan en MCP-server representera ett företags dokumentarkiv, vilket gör det möjligt för agenter att på begäran hämta relevant information. En annan server kan hantera specifika åtgärder som att skicka e-post eller uppdatera register. Ur agentens perspektiv är dessa helt enkelt verktyg den kan använda — vissa verktyg returnerar data (kunskapskontext), medan andra utför åtgärder. MCP hanterar effektivt båda.
 
-Utöver att erbjuda verktyg underlättar MCP också åtkomst till kunskap. Det gör det möjligt för applikationer att ge kontext till stora språkmodeller (LLMs) genom att länka dem till olika datakällor. Till exempel kan en MCP-server representera ett företags dokumentarkiv, vilket gör det möjligt för agenter att hämta relevant information vid behov. En annan server kan hantera specifika åtgärder som att skicka e-post eller uppdatera register. Från agentens perspektiv är dessa helt enkelt verktyg den kan använda—vissa verktyg returnerar data (kunskapskontext), medan andra utför åtgärder. MCP hanterar båda effektivt.
+En agent som ansluter till en MCP-server lär sig automatiskt serverns tillgängliga kapabiliteter och tillgängliga data genom ett standardformat. Denna standardisering möjliggör dynamisk verktygstillgänglighet. Till exempel gör tillägg av en ny MCP-server till en agents system dess funktioner omedelbart användbara utan att kräva ytterligare anpassning av agentens instruktioner.
 
-En agent som ansluter till en MCP-server lär sig automatiskt serverns tillgängliga funktioner och åtkomlig data via ett standardformat. Denna standardisering möjliggör dynamisk verktygsåtkomst. Till exempel gör tillägget av en ny MCP-server till en agents system dess funktioner omedelbart användbara utan att kräva ytterligare anpassning av agentens instruktioner.
-
----
+Denna strömlinjeformade integration stämmer överens med flödet som visas i följande diagram, där servrar tillhandahåller både verktyg och kunskap, vilket säkerställer sömlöst samarbete mellan system. 
 
 ### 👉 Exempel: Skalbar agentlösning
 
 ```mermaid
 ---
-title: Scalable Agent Solution with MCP
-description: A diagram illustrating how a user interacts with an LLM that connects to multiple MCP servers, with each server providing both knowledge and tools, creating a scalable AI system architecture
+title: Skalbar agentlösning med MCP
+description: Ett diagram som illustrerar hur en användare interagerar med en LLM som ansluter till flera MCP-servrar, där varje server tillhandahåller både kunskap och verktyg, vilket skapar en skalbar AI-systemarkitektur
 ---
 graph TD
-    User -->|Prompt| LLM
-    LLM -->|Response| User
+    User -->|Fråga| LLM
+    LLM -->|Svar| User
     LLM -->|MCP| ServerA
     LLM -->|MCP| ServerB
-    ServerA -->|Universal connector| ServerB
-    ServerA --> KnowledgeA
-    ServerA --> ToolsA
-    ServerB --> KnowledgeB
-    ServerB --> ToolsB
+    ServerA -->|Universell koppling| ServerB
+    ServerA --> KunskapA
+    ServerA --> VerktygA
+    ServerB --> KunskapB
+    ServerB --> VerktygB
 
     subgraph Server A
-        KnowledgeA[Knowledge]
-        ToolsA[Tools]
+        KunskapA[Kunskap]
+        VerktygA[Verktyg]
     end
 
     subgraph Server B
-        KnowledgeB[Knowledge]
-        ToolsB[Tools]
+        KunskapB[Kunskap]
+        VerktygB[Verktyg]
     end
-```
+```Den universella kopplaren gör det möjligt för MCP-servrar att kommunicera och dela kapabiliteter med varandra, vilket tillåter ServerA att delegera uppgifter till ServerB eller få tillgång till dess verktyg och kunskap. Detta federerar verktyg och data över servrar, vilket stödjer skalbara och modulära agentarkitekturer. Eftersom MCP standardiserar exponering av verktyg kan agenter dynamiskt upptäcka och dirigera förfrågningar mellan servrar utan hårdkodade integrationer.
 
----
 
-### 🔄 Avancerade MCP-scenarier med klientbaserad LLM-integration
+Federering av verktyg och kunskap: Verktyg och data kan nås över servrar, vilket möjliggör mer skalbara och modulära agentiska arkitekturer.
 
-Utöver den grundläggande MCP-arkitekturen finns det avancerade scenarier där både klient och server innehåller LLMs, vilket möjliggör mer sofistikerade interaktioner. I följande diagram kan **Client App** vara en IDE med ett antal MCP-verktyg tillgängliga för användning av LLM:
+### 🔄 Avancerade MCP-scenarier med klientintegrerad LLM
+
+Utöver den grundläggande MCP-arkitekturen finns avancerade scenarier där både klient och server innehåller LLM:er, vilket möjliggör mer sofistikerade interaktioner. I följande diagram kan **Client App** vara en IDE med ett antal MCP-verktyg tillgängliga för användning av LLM:
 
 ```mermaid
 ---
-title: Advanced MCP Scenarios with Client-Server LLM Integration
-description: A sequence diagram showing the detailed interaction flow between user, client application, client LLM, multiple MCP servers, and server LLM, illustrating tool discovery, user interaction, direct tool calling, and feature negotiation phases
+title: Avancerade MCP-scenarier med klient-server LLM-integration
+description: Ett sekvensdiagram som visar den detaljerade interaktionsflödet mellan användare, klientapplikation, klient LLM, flera MCP-servrar och server LLM, som illustrerar verktygsupptäckt, användarinteraktion, direkt verktygsanrop och förhandlingsfaser för funktioner
 ---
 sequenceDiagram
     autonumber
-    actor User as 👤 User
-    participant ClientApp as 🖥️ Client App
-    participant ClientLLM as 🧠 Client LLM
-    participant Server1 as 🔧 MCP Server 1
-    participant Server2 as 📚 MCP Server 2
+    actor User as 👤 Användare
+    participant ClientApp as 🖥️ Klientapp
+    participant ClientLLM as 🧠 Klient LLM
+    participant Server1 as 🔧 MCP-server 1
+    participant Server2 as 📚 MCP-server 2
     participant ServerLLM as 🤖 Server LLM
     
     %% Discovery Phase
     rect rgb(220, 240, 255)
-        Note over ClientApp, Server2: TOOL DISCOVERY PHASE
-        ClientApp->>+Server1: Request available tools/resources
-        Server1-->>-ClientApp: Return tool list (JSON)
-        ClientApp->>+Server2: Request available tools/resources
-        Server2-->>-ClientApp: Return tool list (JSON)
-        Note right of ClientApp: Store combined tool<br/>catalog locally
+        Note over ClientApp, Server2: VERKTYGSUPPTÄCKTSFAS
+        ClientApp->>+Server1: Begär tillgängliga verktyg/resurser
+        Server1-->>-ClientApp: Returnera verktygslista (JSON)
+        ClientApp->>+Server2: Begär tillgängliga verktyg/resurser
+        Server2-->>-ClientApp: Returnera verktygslista (JSON)
+        Note right of ClientApp: Spara kombinerad verktygskatalog<br/>lokalt
     end
     
     %% User Interaction
     rect rgb(255, 240, 220)
-        Note over User, ClientLLM: USER INTERACTION PHASE
-        User->>+ClientApp: Enter natural language prompt
-        ClientApp->>+ClientLLM: Forward prompt + tool catalog
-        ClientLLM->>-ClientLLM: Analyze prompt & select tools
+        Note over User, ClientLLM: ANVÄNDARINTERAKTIONSFAS
+        User->>+ClientApp: Ange prompt på naturligt språk
+        ClientApp->>+ClientLLM: Vidarebefordra prompt + verktygskatalog
+        ClientLLM->>-ClientLLM: Analysera prompt & välj verktyg
     end
     
     %% Scenario A: Direct Tool Calling
-    alt Direct Tool Calling
+    alt Direkt verktygsanrop
         rect rgb(220, 255, 220)
-            Note over ClientApp, Server1: SCENARIO A: DIRECT TOOL CALLING
-            ClientLLM->>+ClientApp: Request tool execution
-            ClientApp->>+Server1: Execute specific tool
-            Server1-->>-ClientApp: Return results
-            ClientApp->>+ClientLLM: Process results
-            ClientLLM-->>-ClientApp: Generate response
-            ClientApp-->>-User: Display final answer
+            Note over ClientApp, Server1: SCENARIO A: DIREKT VERKTYGSANROP
+            ClientLLM->>+ClientApp: Begär verktygsexekvering
+            ClientApp->>+Server1: Kör specifikt verktyg
+            Server1-->>-ClientApp: Returnera resultat
+            ClientApp->>+ClientLLM: Bearbeta resultat
+            ClientLLM-->>-ClientApp: Generera svar
+            ClientApp-->>-User: Visa slutligt svar
         end
     
     %% Scenario B: Feature Negotiation (VS Code style)
-    else Feature Negotiation (VS Code style)
+    else Förhandling av funktioner (VS Code-stil)
         rect rgb(255, 220, 220)
-            Note over ClientApp, ServerLLM: SCENARIO B: FEATURE NEGOTIATION
-            ClientLLM->>+ClientApp: Identify needed capabilities
-            ClientApp->>+Server2: Negotiate features/capabilities
-            Server2->>+ServerLLM: Request additional context
-            ServerLLM-->>-Server2: Provide context
-            Server2-->>-ClientApp: Return available features
-            ClientApp->>+Server2: Call negotiated tools
-            Server2-->>-ClientApp: Return results
-            ClientApp->>+ClientLLM: Process results
-            ClientLLM-->>-ClientApp: Generate response
-            ClientApp-->>-User: Display final answer
+            Note over ClientApp, ServerLLM: SCENARIO B: FÖRHANDLING AV FUNKTIONER
+            ClientLLM->>+ClientApp: Identifiera behövda funktioner
+            ClientApp->>+Server2: Förhandla funktioner/möjligheter
+            Server2->>+ServerLLM: Begär ytterligare kontext
+            ServerLLM-->>-Server2: Ge kontext
+            Server2-->>-ClientApp: Returnera tillgängliga funktioner
+            ClientApp->>+Server2: Anropa förhandlade verktyg
+            Server2-->>-ClientApp: Returnera resultat
+            ClientApp->>+ClientLLM: Bearbeta resultat
+            ClientLLM-->>-ClientApp: Generera svar
+            ClientApp-->>-User: Visa slutligt svar
         end
     end
 ```
-
----
-
 ## 🔐 Praktiska fördelar med MCP
 
 Här är de praktiska fördelarna med att använda MCP:
 
-- **Aktualitet**: Modeller kan få tillgång till uppdaterad information bortom deras träningsdata
-- **Utökad funktionalitet**: Modeller kan använda specialiserade verktyg för uppgifter de inte tränats för
-- **Minskade hallucinationer**: Externa datakällor ger faktagrund
-- **Integritet**: Känslig data kan förbli inom säkra miljöer istället för att integreras i prompts
-
----
+- **Färskhet**: Modeller kan få tillgång till aktuell information bortom deras träningsdata
+- **Kapabilitetsutökning**: Modeller kan dra nytta av specialiserade verktyg för uppgifter de inte tränats för
+- **Minskade hallucinationer**: Externa datakällor ger faktabaserad grund
+- **Sekretess**: Känslig data kan stanna inom säkra miljöer istället för att bäddas in i promptar
 
 ## 📌 Viktiga insikter
 
@@ -309,29 +300,28 @@ Följande är viktiga insikter för att använda MCP:
 
 - **MCP** standardiserar hur AI-modeller interagerar med verktyg och data
 - Främjar **utbyggbarhet, konsekvens och interoperabilitet**
-- MCP hjälper till att **minska utvecklingstid, förbättra tillförlitlighet och utöka modellens funktioner**
+- MCP hjälper till att **minska utvecklingstid, förbättra tillförlitlighet och utöka modellers kapabiliteter**
 - Klient-server-arkitekturen **möjliggör flexibla, utbyggbara AI-applikationer**
-
----
 
 ## 🧠 Övning
 
 Tänk på en AI-applikation du är intresserad av att bygga.
 
-- Vilka **externa verktyg eller data** skulle kunna förbättra dess funktioner?
-- Hur kan MCP göra integrationen **enklare och mer tillförlitlig?**
-
----
+- Vilka **externa verktyg eller data** kan förbättra dess funktioner?
+- Hur kan MCP göra integrationen **enklare och mer pålitlig?**
 
 ## Ytterligare resurser
 
 - [MCP GitHub Repository](https://github.com/modelcontextprotocol)
 
----
 
 ## Vad händer härnäst
 
-Nästa: [Kapitel 1: Grundläggande koncept](../01-CoreConcepts/README.md)
+Nästa: [Kapitel 1: Kärnkoncept](../01-CoreConcepts/README.md)
 
-**Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör det noteras att automatiserade översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess originalspråk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Ansvarsfriskrivning**:
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen notera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess originalspråk ska betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

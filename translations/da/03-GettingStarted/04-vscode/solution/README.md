@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5ef8f5821c1a04f7b1fc4f15098ecab8",
-  "translation_date": "2025-07-13T19:43:21+00:00",
-  "source_file": "03-GettingStarted/04-vscode/solution/README.md",
-  "language_code": "da"
-}
--->
 Dette svarer til at køre en kommando som: `node build/index.js`.
 
 - Ændr denne serverpost, så den passer til, hvor din serverfil er placeret, eller hvad der er nødvendigt for at starte din server afhængigt af dit valgte runtime og serverplacering.
@@ -23,7 +14,7 @@ Dette svarer til at køre en kommando som: `node build/index.js`.
 
     Du skulle se et værktøj blive vist over chattekstboksen, som indikerer, at du kan vælge at køre værktøjet, som vist i denne illustration:
 
-    ![VS Code indikerer, at det vil køre et værktøj](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.da.png)
+    ![VS Code indikerer, at det vil køre et værktøj](../../../../../translated_images/da/vscode-agent.d5a0e0b897331060.webp)
 
     At vælge værktøjet skulle give et numerisk resultat, der siger "23", hvis din prompt var som nævnt tidligere.
 

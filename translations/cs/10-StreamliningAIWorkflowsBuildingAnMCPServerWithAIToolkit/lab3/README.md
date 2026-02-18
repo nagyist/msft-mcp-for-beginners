@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "dd8da3f75addcef453fe11f02a270217",
-  "translation_date": "2025-07-14T08:18:45+00:00",
-  "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab3/README.md",
-  "language_code": "cs"
-}
--->
 # 🔧 Modul 3: Pokročilý vývoj MCP s AI Toolkit
 
 ![Duration](https://img.shields.io/badge/Duration-20_minutes-blue?style=flat-square)
@@ -64,7 +55,7 @@ Výkonný nástroj pro ladění, který nabízí:
 2. **Vytvořte nového agenta** s následující konfigurací:
    - Název agenta: `WeatherAgent`
 
-![Agent Creation](../../../../translated_images/Agent.c9c33f6a412b4cdedfb973fe5448bdb33de3f400055603111b875610e9b917ab.cs.png)
+![Agent Creation](../../../../translated_images/cs/Agent.c9c33f6a412b4cde.webp)
 
 ### Krok 2: Inicializace projektu MCP serveru
 
@@ -74,7 +65,7 @@ Výkonný nástroj pro ladění, který nabízí:
 4. **Vyberte šablonu `python-weather`**
 5. **Pojmenujte server:** `weather_mcp`
 
-![Python Template Selection](../../../../translated_images/Pythontemplate.9d0a2913c6491500bd673430f024dc44676af2808a27b5da9dcc0eb7063adc28.cs.png)
+![Python Template Selection](../../../../translated_images/cs/Pythontemplate.9d0a2913c6491500.webp)
 
 ### Krok 3: Otevření a prozkoumání projektu
 
@@ -340,7 +331,7 @@ USER_PROMPT
 How's the weather like in Seattle
 ```
 
-![Agent Builder Debug Result](../../../../translated_images/Result.6ac570f7d2b1d5389c561ab0566970fe0f13e75bdd976b6a7f0270bc715d07f8.cs.png)
+![Agent Builder Debug Result](../../../../translated_images/cs/Result.6ac570f7d2b1d538.webp)
 
 ### Krok 8: Ladění s MCP Inspectorem
 
@@ -352,7 +343,7 @@ How's the weather like in Seattle
    - Sledujte síťové požadavky
    - Laděte odpovědi serveru
 
-![MCP Inspector Interface](../../../../translated_images/Inspector.5672415cd02fe8731774586cc0a1083e3275d2f8491602aecc8ac4d61f2c0d57.cs.png)
+![MCP Inspector Interface](../../../../translated_images/cs/Inspector.5672415cd02fe873.webp)
 
 ---
 

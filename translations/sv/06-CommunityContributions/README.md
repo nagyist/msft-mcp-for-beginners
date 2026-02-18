@@ -1,17 +1,8 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fcf1e12b62102bf7d16b78deb2b163b7",
-  "translation_date": "2025-08-18T15:03:05+00:00",
-  "source_file": "06-CommunityContributions/README.md",
-  "language_code": "sv"
-}
--->
 # Community och Bidrag
 
-[![Hur man bidrar till MCP: Verktyg, Dokumentation, Kod och Mer](../../../translated_images/07.1179f6de46ff196eb3cc13c3510e01c37807a13f3bb9be3c779105ce26737c67.sv.png)](https://youtu.be/v1pvCYAWpRE)
+[![How to Contribute to MCP: Tools, Docs, Code and More](../../../translated_images/sv/07.1179f6de46ff196e.webp)](https://youtu.be/v1pvCYAWpRE)
 
-_(Klicka på bilden ovan för att se videon för denna lektion)_
+_(Klicka på bilden ovan för att se videon av denna lektion)_
 
 ## Översikt
 
@@ -19,46 +10,46 @@ Denna lektion fokuserar på hur man engagerar sig i MCP-communityn, bidrar till 
 
 ## Lärandemål
 
-Efter denna lektion kommer du att kunna:
+I slutet av denna lektion kommer du att kunna:
 
 - Förstå strukturen i MCP-communityn och ekosystemet
-- Delta effektivt i MCP-forum och diskussioner
-- Bidra till MCP:s öppna källkodsprojekt
+- Delta effektivt i MCP-communityns forum och diskussioner
+- Bidra till MCP öppna källkodsförråd
 - Skapa och dela anpassade MCP-verktyg och servrar
-- Följa bästa praxis för MCP-utveckling och samarbete
-- Upptäcka resurser och ramverk för MCP-utveckling
+- Följ bästa praxis för MCP-utveckling och samarbete
+- Upptäcka communityresurser och ramverk för MCP-utveckling
 
 ## MCP-communityns ekosystem
 
-MCP-ekosystemet består av olika komponenter och deltagare som arbetar tillsammans för att utveckla protokollet.
+MCP-ekosystemet består av olika komponenter och deltagare som tillsammans arbetar för att främja protokollet.
 
-### Viktiga komponenter i communityn
+### Viktiga community-komponenter
 
-1. **Kärnprotokollförvaltare**: Den officiella [Model Context Protocol GitHub-organisationen](https://github.com/modelcontextprotocol) underhåller MCP-specifikationerna och referensimplementationerna
+1. **Core Protocol Maintainers**: Den officiella [Model Context Protocol GitHub-organisationen](https://github.com/modelcontextprotocol) underhåller de centrala MCP-specifikationerna och referensimplementationerna
 2. **Verktygsutvecklare**: Individer och team som skapar MCP-verktyg och servrar
 3. **Integrationsleverantörer**: Företag som integrerar MCP i sina produkter och tjänster
 4. **Slutanvändare**: Utvecklare och organisationer som använder MCP i sina applikationer
-5. **Bidragsgivare**: Medlemmar i communityn som bidrar med kod, dokumentation eller andra resurser
+5. **Bidragsgivare**: Communitymedlemmar som bidrar med kod, dokumentation eller andra resurser
 
-### Communityresurser
+### Community-resurser
 
 #### Officiella kanaler
 
 - [MCP GitHub-organisation](https://github.com/modelcontextprotocol)
-- [MCP-dokumentation](https://modelcontextprotocol.io/)
-- [MCP-specifikation](https://modelcontextprotocol.io/docs/specification)
-- [GitHub-diskussioner](https://github.com/orgs/modelcontextprotocol/discussions)
-- [MCP Examples & Servers Repository](https://github.com/modelcontextprotocol/servers)
+- [MCP Dokumentation](https://modelcontextprotocol.io/)
+- [MCP Specifikation](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
+- [GitHub Diskussioner](https://github.com/orgs/modelcontextprotocol/discussions)
+- [MCP Exempel & Servrar Repository](https://github.com/modelcontextprotocol/servers)
 
 #### Community-drivna resurser
 
-- [MCP-klienter](https://modelcontextprotocol.io/clients) - Lista över klienter som stöder MCP-integrationer
-- [Community MCP-servrar](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - Växande lista över community-utvecklade MCP-servrar
-- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) - Kuraterad lista över MCP-servrar
-- [PulseMCP](https://www.pulsemcp.com/) - Communitynav och nyhetsbrev för att upptäcka MCP-resurser
-- [Discord-server](https://discord.gg/jHEGxQu2a5) - Anslut med MCP-utvecklare
+- [MCP Clients](https://modelcontextprotocol.io/clients) - Lista över klienter som stödjer MCP-integrationer
+- [Community MCP Servrar](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - Växande lista över communityutvecklade MCP-servrar
+- [Awesome MCP Servrar](https://github.com/wong2/awesome-mcp-servers) - Kurerad lista över MCP-servrar
+- [PulseMCP](https://www.pulsemcp.com/) - Communitynav & nyhetsbrev för att upptäcka MCP-resurser
+- [Discord Server](https://discord.gg/jHEGxQu2a5) - Anslut med MCP-utvecklare
 - Språkspecifika SDK-implementationer
-- Blogginlägg och handledningar
+- Blogginlägg och tutorials
 
 ## Att bidra till MCP
 
@@ -69,80 +60,80 @@ MCP-ekosystemet välkomnar olika typer av bidrag:
 1. **Kodbidrag**:
    - Förbättringar av kärnprotokollet
    - Buggfixar
-   - Implementeringar av verktyg och servrar
-   - Klient-/serverbibliotek på olika språk
+   - Verktyg- och serverimplementationer
+   - Klient-/serverbibliotek i olika språk
 
 2. **Dokumentation**:
    - Förbättra befintlig dokumentation
-   - Skapa handledningar och guider
+   - Skapa tutorials och guider
    - Översätta dokumentation
    - Skapa exempel och exempelapplikationer
 
-3. **Communitysupport**:
-   - Svara på frågor i forum och diskussioner
+3. **Community-stöd**:
+   - Besvara frågor på forum och diskussioner
    - Testa och rapportera problem
-   - Organisera communityevenemang
+   - Organisera community-evenemang
    - Mentorskap för nya bidragsgivare
 
-### Bidragsprocess: Kärnprotokoll
+### Bidragsprocess: Core Protocol
 
-För att bidra till MCP:s kärnprotokoll eller officiella implementationer, följ dessa principer från de [officiella riktlinjerna för bidrag](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
+För att bidra till core MCP-protokollet eller officiella implementationer, följ dessa principer från [officiella bidragsriktlinjerna](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
 
 1. **Enkelhet och minimalism**: MCP-specifikationen håller en hög standard för att lägga till nya koncept. Det är lättare att lägga till saker i en specifikation än att ta bort dem.
 
-2. **Konkret tillvägagångssätt**: Specifikationsändringar bör baseras på specifika implementeringsutmaningar, inte spekulativa idéer.
+2. **Konkret tillvägagångssätt**: Specifikationsändringar bör baseras på konkreta implementeringsutmaningar, inte spekulativa idéer.
 
 3. **Steg i ett förslag**:
-   - Definiera: Utforska problemområdet, validera att andra MCP-användare står inför liknande problem
-   - Prototyp: Bygg en exempelösning och visa dess praktiska tillämpning
+   - Definiera: Utforska problemområdet, validera att andra MCP-användare har liknande problem
+   - Prototyp: Bygg en exempelösning och demonstrera dess praktiska användning
    - Skriv: Baserat på prototypen, skriv ett specifikationsförslag
 
-### Utvecklingsmiljöinställning
+### Setup av utvecklingsmiljö
 
 ```bash
-# Fork the repository
+# Forka förvaret
 git clone https://github.com/YOUR-USERNAME/modelcontextprotocol.git
 cd modelcontextprotocol
 
-# Install dependencies
+# Installera beroenden
 npm install
 
-# For schema changes, validate and generate schema.json:
+# För schemaändringar, validera och generera schema.json:
 npm run check:schema:ts
 npm run generate:schema
 
-# For documentation changes
+# För dokumentationsändringar
 npm run check:docs
 npm run format
 
-# Preview documentation locally (optional):
+# Förhandsgranska dokumentation lokalt (valfritt):
 npm run serve:docs
 ```
 
 ### Exempel: Bidra med en buggfix
 
 ```javascript
-// Original code with bug in the typescript-sdk
+// Originalkod med bugg i typescript-sdk
 export function validateResource(resource: unknown): resource is MCPResource {
   if (!resource || typeof resource !== 'object') {
     return false;
   }
   
-  // Bug: Missing property validation
-  // Current implementation:
+  // Bugg: Saknas egenskapsvalidering
+  // Nuvarande implementation:
   const hasName = 'name' in resource;
   const hasSchema = 'schema' in resource;
   
   return hasName && hasSchema;
 }
 
-// Fixed implementation in a contribution
+// Fixad implementation i ett bidrag
 export function validateResource(resource: unknown): resource is MCPResource {
   if (!resource || typeof resource !== 'object') {
     return false;
   }
   
-  // Improved validation
+  // Förbättrad validering
   const hasName = 'name' in resource && typeof (resource as MCPResource).name === 'string';
   const hasSchema = 'schema' in resource && typeof (resource as MCPResource).schema === 'object';
   const hasDescription = !('description' in resource) || typeof (resource as MCPResource).description === 'string';
@@ -154,7 +145,7 @@ export function validateResource(resource: unknown): resource is MCPResource {
 ### Exempel: Bidra med ett nytt verktyg till standardbiblioteket
 
 ```python
-# Example contribution: A CSV data processing tool for the MCP standard library
+# Exempelbidrag: Ett CSV-databehandlingsverktyg för MCP-standardbiblioteket
 
 from mcp_tools import Tool, ToolRequest, ToolResponse, ToolExecutionException
 import pandas as pd
@@ -216,14 +207,14 @@ class CsvProcessingTool(Tool):
     
     async def execute_async(self, request: ToolRequest) -> ToolResponse:
         try:
-            # Extract parameters
+            # Extrahera parametrar
             operation = request.parameters.get("operation")
             output_format = request.parameters.get("outputFormat", "json")
             
-            # Get CSV data from either direct data or URL
+            # Hämta CSV-data från antingen direktdata eller URL
             df = await self._get_dataframe(request)
             
-            # Process based on requested operation
+            # Bearbeta baserat på begärd operation
             result = {}
             
             if operation == "summary":
@@ -284,7 +275,7 @@ class CsvProcessingTool(Tool):
     
     def _transform_data(self, df: pd.DataFrame, params: Dict[str, Any]) -> Dict[str, Any]:
         """Transforms the data based on parameters"""
-        # Implementation would include various transformations
+        # Implementering skulle inkludera olika transformationer
         return {
             "status": "success",
             "message": "Transformation applied"
@@ -311,68 +302,70 @@ class CsvProcessingTool(Tool):
             raise ToolExecutionException(f"Unsupported output format: {format}")
 ```
 
-### Riktlinjer för bidrag
+### Bidragsriktlinjer
 
-För att göra ett framgångsrikt bidrag till MCP-projekt:
+För att göra ett lyckat bidrag till MCP-projekt:
 
 1. **Börja smått**: Börja med dokumentation, buggfixar eller små förbättringar
-2. **Följ stilguiden**: Följ projektets kodstil och konventioner
+2. **Följ stilguiden**: Följ kodningsstil och konventioner för projektet
 3. **Skriv tester**: Inkludera enhetstester för dina kodbidrag
-4. **Dokumentera ditt arbete**: Lägg till tydlig dokumentation för nya funktioner eller ändringar
-5. **Skicka fokuserade PRs**: Håll pull requests fokuserade på ett enda problem eller funktion
+4. **Dokumentera ditt arbete**: Lägg till tydlig dokumentation för nya funktioner eller förändringar
+5. **Skicka riktade pull requests**: Håll pull requests fokuserade på ett enda problem eller funktion
 6. **Engagera dig i feedback**: Var lyhörd för feedback på dina bidrag
 
-### Exempel på arbetsflöde för bidrag
+### Exempel på bidragsarbetsflöde
 
 ```bash
-# Clone the repository
+# Klona repot
 git clone https://github.com/modelcontextprotocol/typescript-sdk.git
 cd typescript-sdk
 
-# Create a new branch for your contribution
+# Skapa en ny gren för ditt bidrag
 git checkout -b feature/my-contribution
 
-# Make your changes
+# Gör dina ändringar
 # ...
 
-# Run tests to ensure your changes don't break existing functionality
+# Kör tester för att säkerställa att dina ändringar inte förstör befintlig funktionalitet
 npm test
 
-# Commit your changes with a descriptive message
+# Begå dina ändringar med ett beskrivande meddelande
 git commit -am "Fix validation in resource handler"
 
-# Push your branch to your fork
+# Skjut upp din gren till din fork
 git push origin feature/my-contribution
 
-# Create a pull request from your branch to the main repository
-# Then engage with feedback and iterate on your PR as needed
+# Skapa en pull-begäran från din gren till huvudrepoet
+# Engagera dig sedan i feedback och iterera på din PR efter behov
 ```
 
 ## Skapa och dela MCP-servrar
 
 Ett av de mest värdefulla sätten att bidra till MCP-ekosystemet är att skapa och dela anpassade MCP-servrar. Communityn har redan utvecklat hundratals servrar för olika tjänster och användningsområden.
 
-### MCP-serverutvecklingsramverk
+### MCP Server-utvecklingsramverk
 
-Flera ramverk finns tillgängliga för att förenkla utvecklingen av MCP-servrar:
+Flera ramverk finns tillgängliga för att förenkla MCP serverutveckling:
 
-1. **Officiella SDK:er**:
+1. **Officiella SDKs** (anpassade till [MCP Specifikation 2025-11-25](https://spec.modelcontextprotocol.io/specification/2025-11-25/)):
    - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
    - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
    - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
    - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
    - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
    - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
+   - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk)
+   - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk)
 
-2. **Communityramverk**:
+2. **Community-ramverk**:
    - [MCP-Framework](https://mcp-framework.com/) - Bygg MCP-servrar med elegans och hastighet i TypeScript
    - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - Annotationsdrivna MCP-servrar med Java
    - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - Java-ramverk för MCP-servrar
-   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - Startprojekt för MCP-servrar i Next.js
+   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - Startprojekt Next.js för MCP-servrar
 
 ### Utveckla delbara verktyg
 
-#### .NET-exempel: Skapa ett delbart verktygspaket
+#### .NET Exempel: Skapa ett delbart verktygspaket
 
 ```csharp
 // Create a new .NET library project
@@ -478,10 +471,10 @@ namespace McpFinanceTools
 // dotnet nuget push bin/Release/McpFinanceTools.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k YOUR_API_KEY
 ```
 
-#### Java-exempel: Skapa ett Maven-paket för verktyg
+#### Java Exempel: Skapa ett Maven-paket för verktyg
 
 ```java
-// pom.xml configuration for a shareable MCP tool package
+// pom.xml-konfiguration för ett delbart MCP-verktygspaket
 <!-- 
 <project>
     <groupId>com.example</groupId>
@@ -542,7 +535,7 @@ public class WeatherForecastTool implements Tool {
     @Override
     public Object getSchema() {
         Map<String, Object> schema = new HashMap<>();
-        // Schema definition...
+        // Schemadefinition...
         return schema;
     }
     
@@ -553,10 +546,10 @@ public class WeatherForecastTool implements Tool {
             int days = request.getParameters().has("days") ? 
                 request.getParameters().get("days").asInt() : 3;
             
-            // Call weather API
+            // Anropa väder-API
             Map<String, Object> forecast = getForecast(location, days);
             
-            // Build response
+            // Bygg svar
             return new ToolResponse.Builder()
                 .setResult(forecast)
                 .build();
@@ -566,23 +559,23 @@ public class WeatherForecastTool implements Tool {
     }
     
     private Map<String, Object> getForecast(String location, int days) {
-        // Implementation would call weather API
-        // Simplified example
+        // Implementeringen skulle anropa väder-API
+        // Förenklat exempel
         Map<String, Object> result = new HashMap<>();
-        // Add forecast data...
+        // Lägg till prognosdata...
         return result;
     }
 }
 
-// Build and publish using Maven
+// Bygg och publicera med Maven
 // mvn clean package
 // mvn deploy
 ```
 
-#### Python-exempel: Publicera ett PyPI-paket
+#### Python Exempel: Publicera ett PyPI-paket
 
 ```python
-# Directory structure for a PyPI package:
+# Katalogstruktur för ett PyPI-paket:
 # mcp_nlp_tools/
 # ├── LICENSE
 # ├── README.md
@@ -592,7 +585,7 @@ public class WeatherForecastTool implements Tool {
 # │   ├── sentiment_tool.py
 # │   └── translation_tool.py
 
-# Example setup.py
+# Exempel på setup.py
 """
 from setuptools import setup, find_packages
 
@@ -620,7 +613,7 @@ setup(
 )
 """
 
-# Example NLP tool implementation (sentiment_tool.py)
+# Exempel på NLP-verktygsimplementering (sentiment_tool.py)
 from mcp_tools import Tool, ToolRequest, ToolResponse, ToolExecutionException
 from transformers import pipeline
 import torch
@@ -629,7 +622,7 @@ class SentimentAnalysisTool(Tool):
     """MCP tool for sentiment analysis of text"""
     
     def __init__(self, model_name="distilbert-base-uncased-finetuned-sst-2-english"):
-        # Load the sentiment analysis model
+        # Ladda sentimentanalysmodellen
         self.sentiment_analyzer = pipeline("sentiment-analysis", model=model_name)
     
     def get_name(self):
@@ -657,14 +650,14 @@ class SentimentAnalysisTool(Tool):
     
     async def execute_async(self, request: ToolRequest) -> ToolResponse:
         try:
-            # Extract parameters
+            # Extrahera parametrar
             text = request.parameters.get("text")
             include_score = request.parameters.get("includeScore", True)
             
-            # Analyze sentiment
+            # Analysera sentiment
             sentiment_result = self.sentiment_analyzer(text)[0]
             
-            # Format result
+            # Formatera resultat
             result = {
                 "sentiment": sentiment_result["label"],
                 "text": text
@@ -673,13 +666,13 @@ class SentimentAnalysisTool(Tool):
             if include_score:
                 result["score"] = sentiment_result["score"]
             
-            # Return result
+            # Returnera resultat
             return ToolResponse(result=result)
             
         except Exception as e:
             raise ToolExecutionException(f"Sentiment analysis failed: {str(e)}")
 
-# To publish:
+# För att publicera:
 # python setup.py sdist bdist_wheel
 # python -m twine upload dist/*
 ```
@@ -693,10 +686,10 @@ När du delar MCP-verktyg med communityn:
    - Förklara parametrar och returvärden
    - Dokumentera eventuella externa beroenden
 
-2. **Felfunktionalitet**:
+2. **Felfångst**:
    - Implementera robust felhantering
    - Ge användbara felmeddelanden
-   - Hantera kantfall på ett smidigt sätt
+   - Hantera kantfall smidigt
 
 3. **Prestandaöverväganden**:
    - Optimera för både hastighet och resursanvändning
@@ -706,49 +699,49 @@ När du delar MCP-verktyg med communityn:
 4. **Säkerhet**:
    - Använd säkra API-nycklar och autentisering
    - Validera och sanera indata
-   - Implementera hastighetsbegränsning för externa API-anrop
+   - Implementera hastighetsbegränsning på externa API-anrop
 
 5. **Testning**:
    - Inkludera omfattande testtäckning
-   - Testa med olika indatatyper och kantfall
-   - Dokumentera testprocedurer
+   - Testa med olika indata och kantfall
+   - Dokumentera testförfaranden
 
-## Communitysamarbete och bästa praxis
+## Community-samarbete och bästa praxis
 
-Effektivt samarbete är nyckeln till ett blomstrande MCP-ekosystem.
+Effektivt samarbete är nyckeln till ett livskraftigt MCP-ekosystem.
 
 ### Kommunikationskanaler
 
-- GitHub Issues och diskussioner
+- GitHub Issues och Diskussioner
 - Microsoft Tech Community
 - Discord- och Slack-kanaler
 - Stack Overflow (tagg: `model-context-protocol` eller `mcp`)
 
-### Kodgranskningar
+### Kodgranskning
 
 När du granskar MCP-bidrag:
 
 1. **Tydlighet**: Är koden tydlig och väl dokumenterad?
-2. **Korrekthet**: Fungerar den som förväntat?
-3. **Konsekvens**: Följer den projektets konventioner?
-4. **Fullständighet**: Är tester och dokumentation inkluderade?
+2. **Korrekthet**: Fungerar det som förväntat?
+3. **Konsekvens**: Följer det projektets konventioner?
+4. **Fullständighet**: Ingår tester och dokumentation?
 5. **Säkerhet**: Finns det några säkerhetsproblem?
 
 ### Versionskompatibilitet
 
 När du utvecklar för MCP:
 
-1. **Protokollversionering**: Följ MCP-protokollversionen som ditt verktyg stöder
+1. **Protokollversionering**: Följ den MCP-protokollversion din verktyg stödjer
 2. **Klientkompatibilitet**: Tänk på bakåtkompatibilitet
-3. **Serverkompatibilitet**: Följ riktlinjerna för serverimplementation
-4. **Brytande ändringar**: Dokumentera tydligt eventuella brytande ändringar
+3. **Serverkompatibilitet**: Följ riktlinjer för serverimplementation
+4. **Brytande förändringar**: Dokumentera tydligt eventuella brytande förändringar
 
-## Exempel på communityprojekt: MCP Tool Registry
+## Exempel på community-projekt: MCP Tool Registry
 
-Ett viktigt communitybidrag kan vara att utveckla ett offentligt register för MCP-verktyg.
+Ett viktigt community-bidrag kan vara att utveckla ett offentligt register för MCP-verktyg.
 
 ```python
-# Example schema for a community tool registry API
+# Exempelschema för ett API för ett gemenskapsverktygsregister
 
 from fastapi import FastAPI, HTTPException, Depends
 from pydantic import BaseModel, Field, HttpUrl
@@ -756,7 +749,7 @@ from typing import List, Optional
 import datetime
 import uuid
 
-# Models for the tool registry
+# Modeller för verktygsregistret
 class ToolSchema(BaseModel):
     """JSON Schema for a tool"""
     type: str
@@ -785,10 +778,10 @@ class Tool(ToolRegistration):
     rating: float = Field(default=0.0)
     ratings_count: int = Field(default=0)
 
-# FastAPI application for the registry
+# FastAPI-applikation för registret
 app = FastAPI(title="MCP Tool Registry")
 
-# In-memory database for this example
+# Minnesdatabas för detta exempel
 tools_db = {}
 
 @app.post("/tools", response_model=Tool)
@@ -824,29 +817,35 @@ async def delete_tool(tool_name: str):
     return {"message": f"Tool '{tool_name}' deleted"}
 ```
 
-## Viktiga insikter
+## Viktiga slutsatser
 
-- MCP-communityn är mångsidig och välkomnar olika typer av bidrag
-- Att bidra till MCP kan sträcka sig från förbättringar av kärnprotokollet till anpassade verktyg
-- Att följa riktlinjer för bidrag ökar chanserna att din PR accepteras
+- MCP-communityn är mångfacetterad och välkomnar olika typer av bidrag
+- Att bidra till MCP kan sträcka sig från kärnprotokollförbättringar till anpassade verktyg
+- Att följa bidragsriktlinjer ökar chansen att din PR accepteras
 - Att skapa och dela MCP-verktyg är ett värdefullt sätt att förbättra ekosystemet
-- Communitysamarbete är avgörande för MCP:s tillväxt och förbättring
+- Community-samarbete är avgörande för MCP:s tillväxt och förbättring
 
 ## Övning
 
 1. Identifiera ett område i MCP-ekosystemet där du kan bidra baserat på dina färdigheter och intressen
-2. Forka MCP-repositoriet och ställ in en lokal utvecklingsmiljö
-3. Skapa en liten förbättring, buggfix eller ett verktyg som skulle gynna communityn
+2. Forka MCP-repositoriet och sätt upp en lokal utvecklingsmiljö
+3. Skapa en liten förbättring, buggfix eller verktyg som kan gynna communityn
 4. Dokumentera ditt bidrag med korrekta tester och dokumentation
-5. Skicka en pull request till rätt repository
+5. Skicka en pull request till lämpligt repository
 
 ## Ytterligare resurser
 
-- [MCP-communityprojekt](https://github.com/topics/model-context-protocol)
+- [MCP Community Projects](https://github.com/topics/model-context-protocol)
 
 ---
 
-Nästa: [Lektioner från tidig adoption](../07-LessonsfromEarlyAdoption/README.md)
+## Vad är nästa
 
-**Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen notera att automatiska översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess originalspråk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Nästa: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Ansvarsfriskrivning**:
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör du vara medveten om att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess ursprungliga språk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår genom användning av denna översättning.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

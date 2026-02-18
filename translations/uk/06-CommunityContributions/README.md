@@ -1,44 +1,35 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fcf1e12b62102bf7d16b78deb2b163b7",
-  "translation_date": "2025-08-19T19:30:50+00:00",
-  "source_file": "06-CommunityContributions/README.md",
-  "language_code": "uk"
-}
--->
 # Спільнота та внески
 
-[![Як зробити внесок у MCP: інструменти, документація, код та інше](../../../translated_images/07.1179f6de46ff196eb3cc13c3510e01c37807a13f3bb9be3c779105ce26737c67.uk.png)](https://youtu.be/v1pvCYAWpRE)
+[![Як зробити внесок у MCP: інструменти, документація, код та інше](../../../translated_images/uk/07.1179f6de46ff196e.webp)](https://youtu.be/v1pvCYAWpRE)
 
-_(Натисніть на зображення вище, щоб переглянути відео цього уроку)_
+_(Натисніть на зображення вище, щоб переглянути відеоурок)_
 
 ## Огляд
 
-Цей урок зосереджений на тому, як долучитися до спільноти MCP, зробити внесок в екосистему MCP та дотримуватися найкращих практик для спільної розробки. Розуміння того, як брати участь у проєктах з відкритим кодом MCP, є важливим для тих, хто хоче впливати на майбутнє цієї технології.
+Цей урок зосереджений на тому, як взаємодіяти зі спільнотою MCP, робити внески в екосистему MCP і дотримуватися найкращих практик спільної розробки. Розуміння того, як брати участь у проєктах MCP з відкритим кодом, є важливим для тих, хто хоче визначати майбутнє цієї технології.
 
-## Цілі навчання
+## Навчальні цілі
 
 До кінця цього уроку ви зможете:
 
-- Зрозуміти структуру спільноти та екосистеми MCP
-- Ефективно брати участь у форумах та обговореннях спільноти MCP
-- Робити внески в репозиторії з відкритим кодом MCP
-- Створювати та ділитися власними інструментами та серверами MCP
-- Дотримуватися найкращих практик розробки та співпраці MCP
-- Знаходити ресурси та фреймворки для розробки MCP
+- Розуміти структуру спільноти та екосистеми MCP
+- Ефективно брати участь у форумах і дискусіях спільноти MCP
+- Робити внески у репозиторії MCP з відкритим кодом
+- Створювати та поширювати кастомні інструменти та сервери MCP
+- Дотримуватися найкращих практик розробки MCP та співпраці
+- Знаходити ресурси спільноти та фреймворки для розробки MCP
 
 ## Екосистема спільноти MCP
 
-Екосистема MCP складається з різних компонентів і учасників, які працюють разом для розвитку протоколу.
+Екосистема MCP складається з різних компонентів і учасників, які спільно працюють над розвитком протоколу.
 
-### Основні компоненти спільноти
+### Ключові компоненти спільноти
 
-1. **Офіційні підтримувачі протоколу**: Офіційна [організація Model Context Protocol на GitHub](https://github.com/modelcontextprotocol) підтримує основні специфікації MCP та референсні реалізації.
-2. **Розробники інструментів**: Особи та команди, які створюють інструменти та сервери MCP.
-3. **Постачальники інтеграцій**: Компанії, які інтегрують MCP у свої продукти та сервіси.
-4. **Кінцеві користувачі**: Розробники та організації, які використовують MCP у своїх застосунках.
-5. **Учасники**: Члени спільноти, які роблять внески у вигляді коду, документації чи інших ресурсів.
+1. **Основні підтримувачі протоколу**: офіційна [GitHub організація Model Context Protocol](https://github.com/modelcontextprotocol) підтримує основні специфікації MCP і референсні реалізації
+2. **Розробники інструментів**: окремі особи та команди, які створюють інструменти і сервери MCP
+3. **Провайдери інтеграцій**: компанії, що інтегрують MCP у свої продукти та сервіси
+4. **Кінцеві користувачі**: розробники та організації, які використовують MCP у своїх додатках
+5. **Співавтори**: учасники спільноти, які роблять внески у вигляді коду, документації чи інших ресурсів
 
 ### Ресурси спільноти
 
@@ -46,103 +37,103 @@ _(Натисніть на зображення вище, щоб переглян
 
 - [Організація MCP на GitHub](https://github.com/modelcontextprotocol)
 - [Документація MCP](https://modelcontextprotocol.io/)
-- [Специфікація MCP](https://modelcontextprotocol.io/docs/specification)
-- [Обговорення на GitHub](https://github.com/orgs/modelcontextprotocol/discussions)
-- [Репозиторій прикладів та серверів MCP](https://github.com/modelcontextprotocol/servers)
+- [Специфікація MCP](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
+- [GitHub дискусії](https://github.com/orgs/modelcontextprotocol/discussions)
+- [Репозиторій прикладів і серверів MCP](https://github.com/modelcontextprotocol/servers)
 
 #### Ресурси, створені спільнотою
 
-- [Клієнти MCP](https://modelcontextprotocol.io/clients) - Список клієнтів, які підтримують інтеграції MCP.
-- [Сервери MCP від спільноти](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - Зростаючий список серверів MCP, створених спільнотою.
-- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) - Кураторський список серверів MCP.
-- [PulseMCP](https://www.pulsemcp.com/) - Центр спільноти та розсилка для пошуку ресурсів MCP.
-- [Сервер Discord](https://discord.gg/jHEGxQu2a5) - Спілкуйтеся з розробниками MCP.
-- SDK-реалізації для різних мов програмування.
-- Блог-пости та навчальні матеріали.
+- [Клієнти MCP](https://modelcontextprotocol.io/clients) — список клієнтів, які підтримують інтеграції MCP
+- [Сервери MCP спільноти](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) — зростаючий список серверів MCP, розроблених спільнотою
+- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) — курований список серверів MCP
+- [PulseMCP](https://www.pulsemcp.com/) — хаб спільноти та розсилка новин для пошуку ресурсів MCP
+- [Discord сервер](https://discord.gg/jHEGxQu2a5) — спілкуйтесь з розробниками MCP
+- SDK реалізації для різних мов
+- Блоги та навчальні матеріали
 
-## Як зробити внесок у MCP
+## Внесок у MCP
 
-### Типи внесків
+### Види внесків
 
-Екосистема MCP вітає різноманітні типи внесків:
+Екосистема MCP приймає різні види внесків:
 
-1. **Код**:
-   - Покращення основного протоколу.
-   - Виправлення помилок.
-   - Реалізація інструментів та серверів.
-   - Бібліотеки клієнтів/серверів для різних мов програмування.
+1. **Внески у код**:
+   - покращення основного протоколу
+   - виправлення помилок
+   - реалізація інструментів та серверів
+   - бібліотеки клієнта/сервера на різних мовах
 
 2. **Документація**:
-   - Покращення існуючої документації.
-   - Створення навчальних матеріалів та посібників.
-   - Переклад документації.
-   - Створення прикладів та демонстраційних застосунків.
+   - покращення існуючої документації
+   - створення посібників і керівництв
+   - переклад документації
+   - створення прикладів і демонстраційних додатків
 
 3. **Підтримка спільноти**:
-   - Відповіді на запитання на форумах та в обговореннях.
-   - Тестування та повідомлення про помилки.
-   - Організація заходів для спільноти.
-   - Наставництво для нових учасників.
+   - відповіді на питання на форумах і в дискусіях
+   - тестування та звітування про проблеми
+   - організація подій спільноти
+   - наставництво нових учасників
 
-### Процес внеску: Основний протокол
+### Процес внеску: основний протокол
 
-Щоб зробити внесок у основний протокол MCP або офіційні реалізації, дотримуйтесь принципів із [офіційних рекомендацій для внесків](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
+Щоб зробити внесок до основного протоколу MCP або офіційних реалізацій, дотримуйтеся принципів з [офіційних інструкцій щодо внесків](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
 
-1. **Простота та мінімалізм**: Специфікація MCP має високий поріг для додавання нових концепцій. Додати щось до специфікації легше, ніж видалити.
+1. **Простота і мінімалізм**: MCP специфікація встановлює високий стандарт для додавання нових концепцій. Легше додати щось до специфікації, ніж видалити.
 
-2. **Конкретний підхід**: Зміни у специфікації мають базуватися на конкретних викликах реалізації, а не на гіпотетичних ідеях.
+2. **Конкретний підхід**: Зміни до специфікації мають базуватися на конкретних проблемах реалізації, а не на припущеннях.
 
 3. **Етапи пропозиції**:
-   - Визначення: Дослідження проблеми, перевірка, чи стикаються інші користувачі MCP з подібною проблемою.
-   - Прототип: Створення прикладного рішення та демонстрація його практичного застосування.
-   - Написання: На основі прототипу написання пропозиції для специфікації.
+   - Визначення: дослідити проблему, підтвердити, що інші користувачі MCP мають подібну проблему
+   - Прототип: створити приклад рішення і продемонструвати його практичне застосування
+   - Написання: на основі прототипу написати пропозицію до специфікації
 
 ### Налаштування середовища розробки
 
 ```bash
-# Fork the repository
+# Форкнути репозиторій
 git clone https://github.com/YOUR-USERNAME/modelcontextprotocol.git
 cd modelcontextprotocol
 
-# Install dependencies
+# Встановити залежності
 npm install
 
-# For schema changes, validate and generate schema.json:
+# Для змін у схемі, перевірте та згенеруйте schema.json:
 npm run check:schema:ts
 npm run generate:schema
 
-# For documentation changes
+# Для змін у документації
 npm run check:docs
 npm run format
 
-# Preview documentation locally (optional):
+# Попередній перегляд документації локально (опційно):
 npm run serve:docs
 ```
 
-### Приклад: Внесення виправлення помилки
+### Приклад: внесок у виправлення помилки
 
 ```javascript
-// Original code with bug in the typescript-sdk
+// Оригінальний код з помилкою в typescript-sdk
 export function validateResource(resource: unknown): resource is MCPResource {
   if (!resource || typeof resource !== 'object') {
     return false;
   }
   
-  // Bug: Missing property validation
-  // Current implementation:
+  // Помилка: Відсутня перевірка властивості
+  // Поточна реалізація:
   const hasName = 'name' in resource;
   const hasSchema = 'schema' in resource;
   
   return hasName && hasSchema;
 }
 
-// Fixed implementation in a contribution
+// Виправлена реалізація у внеску
 export function validateResource(resource: unknown): resource is MCPResource {
   if (!resource || typeof resource !== 'object') {
     return false;
   }
   
-  // Improved validation
+  // Покращена перевірка
   const hasName = 'name' in resource && typeof (resource as MCPResource).name === 'string';
   const hasSchema = 'schema' in resource && typeof (resource as MCPResource).schema === 'object';
   const hasDescription = !('description' in resource) || typeof (resource as MCPResource).description === 'string';
@@ -151,10 +142,10 @@ export function validateResource(resource: unknown): resource is MCPResource {
 }
 ```
 
-### Приклад: Додавання нового інструменту до стандартної бібліотеки
+### Приклад: внесок нового інструменту до стандартної бібліотеки
 
 ```python
-# Example contribution: A CSV data processing tool for the MCP standard library
+# Приклад внеску: Інструмент обробки даних CSV для стандартної бібліотеки MCP
 
 from mcp_tools import Tool, ToolRequest, ToolResponse, ToolExecutionException
 import pandas as pd
@@ -216,14 +207,14 @@ class CsvProcessingTool(Tool):
     
     async def execute_async(self, request: ToolRequest) -> ToolResponse:
         try:
-            # Extract parameters
+            # Витягти параметри
             operation = request.parameters.get("operation")
             output_format = request.parameters.get("outputFormat", "json")
             
-            # Get CSV data from either direct data or URL
+            # Отримати дані CSV або з прямого введення, або з URL
             df = await self._get_dataframe(request)
             
-            # Process based on requested operation
+            # Обробити на основі запитаної операції
             result = {}
             
             if operation == "summary":
@@ -284,7 +275,7 @@ class CsvProcessingTool(Tool):
     
     def _transform_data(self, df: pd.DataFrame, params: Dict[str, Any]) -> Dict[str, Any]:
         """Transforms the data based on parameters"""
-        # Implementation would include various transformations
+        # Реалізація включатиме різні перетворення
         return {
             "status": "success",
             "message": "Transformation applied"
@@ -311,68 +302,70 @@ class CsvProcessingTool(Tool):
             raise ToolExecutionException(f"Unsupported output format: {format}")
 ```
 
-### Рекомендації для внесків
+### Інструкції щодо внеску
 
-Щоб ваш внесок у проєкти MCP був успішним:
+Щоб успішно зробити внесок у проєкти MCP:
 
-1. **Починайте з малого**: Почніть із документації, виправлення помилок або невеликих покращень.
-2. **Дотримуйтесь стилю**: Дотримуйтесь стилю коду та конвенцій проєкту.
-3. **Пишіть тести**: Додавайте модульні тести до своїх внесків.
-4. **Документуйте свою роботу**: Додавайте чітку документацію для нових функцій або змін.
-5. **Надсилайте цільові PR**: Зосереджуйте pull request на одній проблемі або функції.
-6. **Реагуйте на відгуки**: Будьте готові відповідати на коментарі до ваших внесків.
+1. **Почніть з малого**: починайте з документації, виправлень помилок або невеликих покращень
+2. **Дотримуйтесь стилю**: дотримуйтесь стилю кодування та конвенцій проєкту
+3. **Пишіть тести**: додавайте модульні тести для вашого коду
+4. **Документуйте свою роботу**: додавайте чітку документацію для нових функцій чи змін
+5. **Надсилайте таргетовані PR**: тримайте pull request сфокусованим на одній проблемі або функції
+6. **Взаємодійте з відгуками**: реагуйте на відгуки щодо ваших внесків
 
 ### Приклад робочого процесу внеску
 
 ```bash
-# Clone the repository
+# Клонувати репозиторій
 git clone https://github.com/modelcontextprotocol/typescript-sdk.git
 cd typescript-sdk
 
-# Create a new branch for your contribution
+# Створити нову гілку для свого внеску
 git checkout -b feature/my-contribution
 
-# Make your changes
+# Зробити свої зміни
 # ...
 
-# Run tests to ensure your changes don't break existing functionality
+# Запустити тести, щоб переконатися, що ваші зміни не порушують існуючу функціональність
 npm test
 
-# Commit your changes with a descriptive message
+# Зафіксувати зміни з описовим повідомленням
 git commit -am "Fix validation in resource handler"
 
-# Push your branch to your fork
+# Відправити свою гілку на форк
 git push origin feature/my-contribution
 
-# Create a pull request from your branch to the main repository
-# Then engage with feedback and iterate on your PR as needed
+# Створити пул реквест з вашої гілки в основний репозиторій
+# Потім взаємодіяти з відгуками та за потреби вносити зміни у ваш пул реквест
 ```
 
 ## Створення та поширення серверів MCP
 
-Одним із найцінніших способів зробити внесок в екосистему MCP є створення та поширення власних серверів MCP. Спільнота вже розробила сотні серверів для різних сервісів та випадків використання.
+Один із найцінніших способів зробити внесок у екосистему MCP — створювати та поширювати власні сервери MCP. Спільнота вже розробила сотні серверів для різних сервісів і сценаріїв використання.
 
 ### Фреймворки для розробки серверів MCP
 
-Декілька фреймворків спрощують розробку серверів MCP:
+Існує кілька фреймворків, які спрощують розробку серверів MCP:
 
-1. **Офіційні SDK**:
+1. **Офіційні SDK** (відповідно до [специфікації MCP 2025-11-25](https://spec.modelcontextprotocol.io/specification/2025-11-25/)):
    - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
    - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
    - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
    - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
    - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
    - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
+   - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk)
+   - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk)
 
-2. **Фреймворки від спільноти**:
-   - [MCP-Framework](https://mcp-framework.com/) - Створення серверів MCP на TypeScript швидко та елегантно.
-   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - Сервери MCP на основі анотацій у Java.
-   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - Java-фреймворк для серверів MCP.
-   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - Стартовий проєкт Next.js для серверів MCP.
+2. **Фреймворки спільноти**:
+   - [MCP-Framework](https://mcp-framework.com/) — створення серверів MCP з легкістю і швидкістю на TypeScript
+   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) — декларативні сервери MCP на Java з анотаціями
+   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) — Java фреймворк для серверів MCP
+   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) — стартовий проєкт Next.js для серверів MCP
 
-### Розробка інструментів для спільного використання
+### Розробка поширюваних інструментів
 
-#### Приклад для .NET: Створення пакета інструментів
+#### Приклад .NET: створення пакету інструментів для поширення
 
 ```csharp
 // Create a new .NET library project
@@ -478,10 +471,10 @@ namespace McpFinanceTools
 // dotnet nuget push bin/Release/McpFinanceTools.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k YOUR_API_KEY
 ```
 
-#### Приклад для Java: Створення пакета Maven для інструментів
+#### Приклад Java: створення Maven пакету для інструментів
 
 ```java
-// pom.xml configuration for a shareable MCP tool package
+// Конфігурація pom.xml для спільного пакету інструментів MCP
 <!-- 
 <project>
     <groupId>com.example</groupId>
@@ -542,7 +535,7 @@ public class WeatherForecastTool implements Tool {
     @Override
     public Object getSchema() {
         Map<String, Object> schema = new HashMap<>();
-        // Schema definition...
+        // Визначення схеми...
         return schema;
     }
     
@@ -553,10 +546,10 @@ public class WeatherForecastTool implements Tool {
             int days = request.getParameters().has("days") ? 
                 request.getParameters().get("days").asInt() : 3;
             
-            // Call weather API
+            // Виклик API погоди
             Map<String, Object> forecast = getForecast(location, days);
             
-            // Build response
+            // Створення відповіді
             return new ToolResponse.Builder()
                 .setResult(forecast)
                 .build();
@@ -566,25 +559,25 @@ public class WeatherForecastTool implements Tool {
     }
     
     private Map<String, Object> getForecast(String location, int days) {
-        // Implementation would call weather API
-        // Simplified example
+        // Реалізація викликала б API погоди
+        // Спрощений приклад
         Map<String, Object> result = new HashMap<>();
-        // Add forecast data...
+        // Додати дані прогнозу...
         return result;
     }
 }
 
-// Build and publish using Maven
+// Зібрати і опублікувати за допомогою Maven
 // mvn clean package
 // mvn deploy
 ```
 
-#### Приклад для Python: Публікація пакета на PyPI
+#### Приклад Python: публікація пакету на PyPI
 
 ```python
-# Directory structure for a PyPI package:
+# Структура директорії для пакету PyPI:
 # mcp_nlp_tools/
-# ├── LICENSE
+# ├── ЛІЦЕНЗІЯ
 # ├── README.md
 # ├── setup.py
 # ├── mcp_nlp_tools/
@@ -592,7 +585,7 @@ public class WeatherForecastTool implements Tool {
 # │   ├── sentiment_tool.py
 # │   └── translation_tool.py
 
-# Example setup.py
+# Приклад setup.py
 """
 from setuptools import setup, find_packages
 
@@ -620,7 +613,7 @@ setup(
 )
 """
 
-# Example NLP tool implementation (sentiment_tool.py)
+# Приклад реалізації інструменту NLP (sentiment_tool.py)
 from mcp_tools import Tool, ToolRequest, ToolResponse, ToolExecutionException
 from transformers import pipeline
 import torch
@@ -629,7 +622,7 @@ class SentimentAnalysisTool(Tool):
     """MCP tool for sentiment analysis of text"""
     
     def __init__(self, model_name="distilbert-base-uncased-finetuned-sst-2-english"):
-        # Load the sentiment analysis model
+        # Завантажити модель аналізу почуттів
         self.sentiment_analyzer = pipeline("sentiment-analysis", model=model_name)
     
     def get_name(self):
@@ -657,14 +650,14 @@ class SentimentAnalysisTool(Tool):
     
     async def execute_async(self, request: ToolRequest) -> ToolResponse:
         try:
-            # Extract parameters
+            # Витягти параметри
             text = request.parameters.get("text")
             include_score = request.parameters.get("includeScore", True)
             
-            # Analyze sentiment
+            # Проаналізувати почуття
             sentiment_result = self.sentiment_analyzer(text)[0]
             
-            # Format result
+            # Відформатувати результат
             result = {
                 "sentiment": sentiment_result["label"],
                 "text": text
@@ -673,82 +666,82 @@ class SentimentAnalysisTool(Tool):
             if include_score:
                 result["score"] = sentiment_result["score"]
             
-            # Return result
+            # Повернути результат
             return ToolResponse(result=result)
             
         except Exception as e:
             raise ToolExecutionException(f"Sentiment analysis failed: {str(e)}")
 
-# To publish:
+# Для публікації:
 # python setup.py sdist bdist_wheel
 # python -m twine upload dist/*
 ```
 
-### Найкращі практики для поширення
+### Рекомендації щодо поширення
 
-Коли ви ділитеся інструментами MCP зі спільнотою:
+Поширюючи інструменти MCP у спільноті:
 
 1. **Повна документація**:
-   - Описуйте мету, використання та приклади.
-   - Пояснюйте параметри та значення, що повертаються.
-   - Документуйте зовнішні залежності.
+   - Документуйте призначення, використання та приклади
+   - Пояснюйте параметри і значення, що повертаються
+   - Зазначайте зовнішні залежності
 
 2. **Обробка помилок**:
-   - Реалізуйте надійну обробку помилок.
-   - Надавайте корисні повідомлення про помилки.
-   - Обробляйте крайні випадки.
+   - Забезпечуйте стійку обробку помилок
+   - Надавайте корисні повідомлення про помилки
+   - Граціозно обробляйте крайні випадки
 
-3. **Продуктивність**:
-   - Оптимізуйте швидкість і використання ресурсів.
-   - Реалізуйте кешування, якщо це доречно.
-   - Враховуйте масштабованість.
+3. **Питання продуктивності**:
+   - Оптимізуйте як швидкість, так і використання ресурсів
+   - Реалізуйте кешування, де це доцільно
+   - Добре думайте про масштабованість
 
 4. **Безпека**:
-   - Використовуйте безпечні ключі API та автентифікацію.
-   - Перевіряйте та очищуйте вхідні дані.
-   - Реалізуйте обмеження швидкості для зовнішніх викликів API.
+   - Використовуйте безпечні API-ключі та аутентифікацію
+   - Перевіряйте і очищуйте введені дані
+   - Впроваджуйте обмеження частоти для зовнішніх API-запитів
 
 5. **Тестування**:
-   - Забезпечте повне покриття тестами.
-   - Тестуйте з різними типами вхідних даних і крайніми випадками.
-   - Документуйте процедури тестування.
+   - Забезпечуйте всебічне покриття тестами
+   - Тестуйте на різні типи введення та крайні випадки
+   - Документуйте процедури тестування
 
-## Співпраця в спільноті та найкращі практики
+## Спільна робота спільноти та найкращі практики
 
-Ефективна співпраця є ключем до процвітання екосистеми MCP.
+Ефективна співпраця — ключ до процвітання екосистеми MCP.
 
-### Канали комунікації
+### Канали зв’язку
 
-- Проблеми та обговорення на GitHub.
-- Microsoft Tech Community.
-- Канали Discord і Slack.
-- Stack Overflow (теги: `model-context-protocol` або `mcp`).
+- GitHub Issues та Discussions
+- Microsoft Tech Community
+- Discord та Slack канали
+- Stack Overflow (теги: `model-context-protocol` або `mcp`)
 
-### Рецензії коду
+### Огляд коду
 
-Під час рецензування внесків MCP:
+Під час перевірки внесків у MCP:
 
-1. **Зрозумілість**: Чи є код зрозумілим і добре задокументованим?
-2. **Коректність**: Чи працює він, як очікується?
-3. **Послідовність**: Чи відповідає він конвенціям проєкту?
-4. **Повнота**: Чи включені тести та документація?
-5. **Безпека**: Чи є якісь проблеми з безпекою?
+1. **Зрозумілість**: чи код зрозумілий і добре документований?
+2. **Коректність**: чи працює він, як очікується?
+3. **Послідовність**: чи дотримується кодування стандартів проєкту?
+4. **Повнота**: чи є тести та документація?
+5. **Безпека**: чи немає проблем з безпекою?
 
 ### Сумісність версій
 
 Під час розробки для MCP:
 
-1. **Версії протоколу**: Дотримуйтесь версії MCP, яку підтримує ваш інструмент.
-2. **Сумісність клієнтів**: Враховуйте зворотну сумісність.
-3. **Сумісність серверів**: Дотримуйтесь рекомендацій щодо реалізації серверів.
-4. **Критичні зміни**: Чітко документуйте будь-які критичні зміни.
+1. **Версії протоколу**: дотримуйтесь версії протоколу MCP, яку підтримує ваш інструмент
+2. **Сумісність клієнтів**: враховуйте сумісність зі старими версіями
+3. **Сумісність серверів**: дотримуйтесь рекомендацій щодо реалізації серверів
+4. **Сумнівні зміни**: ясно документуйте будь-які зміни, що порушують сумісність
 
 ## Приклад проєкту спільноти: Реєстр інструментів MCP
 
 Важливим внеском спільноти може бути розробка публічного реєстру інструментів MCP.
 
 ```python
-# Example schema for a community tool registry API
+# Приклад схеми для API реєстру спільнотних інструментів
 
 from fastapi import FastAPI, HTTPException, Depends
 from pydantic import BaseModel, Field, HttpUrl
@@ -756,7 +749,7 @@ from typing import List, Optional
 import datetime
 import uuid
 
-# Models for the tool registry
+# Моделі для реєстру інструментів
 class ToolSchema(BaseModel):
     """JSON Schema for a tool"""
     type: str
@@ -785,10 +778,10 @@ class Tool(ToolRegistration):
     rating: float = Field(default=0.0)
     ratings_count: int = Field(default=0)
 
-# FastAPI application for the registry
+# Застосунок FastAPI для реєстру
 app = FastAPI(title="MCP Tool Registry")
 
-# In-memory database for this example
+# База даних в пам'яті для цього прикладу
 tools_db = {}
 
 @app.post("/tools", response_model=Tool)
@@ -826,19 +819,19 @@ async def delete_tool(tool_name: str):
 
 ## Основні висновки
 
-- Спільнота MCP є різноманітною та вітає різні типи внесків.
-- Внески в MCP можуть варіюватися від покращення основного протоколу до створення власних інструментів.
-- Дотримання рекомендацій для внесків підвищує шанси на прийняття вашого PR.
-- Створення та поширення інструментів MCP є цінним способом покращення екосистеми.
-- Співпраця в спільноті є важливою для зростання та вдосконалення MCP.
+- Спільнота MCP різноманітна і відкриває двері для різних видів внесків
+- Внески в MCP можуть варіюватися від покращень основного протоколу до створення кастомних інструментів
+- Дотримання інструкцій по внесках підвищує шанси прийняття вашого PR
+- Створення та поширення інструментів MCP — цінний внесок у екосистему
+- Співпраця спільноти є необхідною для росту та удосконалення MCP
 
 ## Вправа
 
-1. Визначте область в екосистемі MCP, де ви могли б зробити внесок, виходячи зі своїх навичок та інтересів.
-2. Форкніть репозиторій MCP і налаштуйте локальне середовище розробки.
-3. Створіть невелике покращення, виправлення помилки або інструмент, який буде корисним для спільноти.
-4. Задокументуйте свій внесок із відповідними тестами та документацією.
-5. Надішліть pull request до відповідного репозиторію.
+1. Визначте область в екосистемі MCP, де ви могли б зробити внесок відповідно до ваших навичок та інтересів
+2. Форкніть репозиторій MCP і налаштуйте локальне середовище розробки
+3. Створіть невелике покращення, виправлення помилки або інструмент, який буде корисним для спільноти
+4. Документуйте свій внесок з відповідними тестами та документацією
+5. Подайте pull request у відповідний репозиторій
 
 ## Додаткові ресурси
 
@@ -846,7 +839,13 @@ async def delete_tool(tool_name: str):
 
 ---
 
+## Що далі
+
 Далі: [Уроки з раннього впровадження](../07-LessonsfromEarlyAdoption/README.md)
 
-**Відмова від відповідальності**:  
-Цей документ було перекладено за допомогою сервісу автоматичного перекладу [Co-op Translator](https://github.com/Azure/co-op-translator). Хоча ми прагнемо до точності, звертаємо вашу увагу, що автоматичні переклади можуть містити помилки або неточності. Оригінальний документ на його рідній мові слід вважати авторитетним джерелом. Для критично важливої інформації рекомендується професійний людський переклад. Ми не несемо відповідальності за будь-які непорозуміння або неправильні тлумачення, що виникли внаслідок використання цього перекладу.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Відмова від відповідальності**:
+Цей документ був перекладений за допомогою сервісу машинного перекладу [Co-op Translator](https://github.com/Azure/co-op-translator). Хоч ми і прагнемо до точності, будь ласка, майте на увазі, що автоматичні переклади можуть містити помилки або неточності. Оригінальний документ на його рідній мові слід вважати авторитетним джерелом. Для критично важливої інформації рекомендується звертатись до професійного людського перекладу. Ми не несемо відповідальності за будь-які непорозуміння чи неправильні тлумачення, що виникли внаслідок використання цього перекладу.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

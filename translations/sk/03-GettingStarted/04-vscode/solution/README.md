@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5ef8f5821c1a04f7b1fc4f15098ecab8",
-  "translation_date": "2025-07-13T19:45:44+00:00",
-  "source_file": "03-GettingStarted/04-vscode/solution/README.md",
-  "language_code": "sk"
-}
--->
 To zodpovedá spusteniu príkazu ako `node build/index.js`.
 
 - Zmeňte tento záznam servera tak, aby ukazoval na absolútnu cestu k vášmu serveru vrátane potrebného úplného príkazu na spustenie.
@@ -23,7 +14,7 @@ To zodpovedá spusteniu príkazu ako `node build/index.js`.
 
     Mali by ste vidieť, že sa nad textovým poľom chatu zobrazí nástroj, ktorý môžete vybrať na spustenie, ako je to znázornené na tomto obrázku:
 
-    ![VS Code naznačuje, že chce spustiť nástroj](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.sk.png)
+    ![VS Code naznačuje, že chce spustiť nástroj](../../../../../translated_images/sk/vscode-agent.d5a0e0b897331060.webp)
 
     Výber nástroja by mal vrátiť číselný výsledok "23", ak bol váš príkaz ako sme uviedli vyššie.
 

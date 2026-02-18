@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5ef8f5821c1a04f7b1fc4f15098ecab8",
-  "translation_date": "2025-07-13T19:44:08+00:00",
-  "source_file": "03-GettingStarted/04-vscode/solution/README.md",
-  "language_code": "he"
-}
--->
 זה מתאים להרצת פקודה כמו: `node build/index.js`.
 
 - שנה את הערך של השרת כך שיתאים למיקום הקובץ של השרת שלך או למה שנדרש כדי להפעיל את השרת בהתאם לסביבת הריצה והמיקום שבחרת.
@@ -23,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     תראה כלי שמוצג מעל תיבת הטקסט של הצ'אט שמבקש ממך לבחור להפעיל את הכלי, כפי שמוצג בתמונה:
 
-    ![VS Code indicating it wanting to run a tool](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.he.png)
+    ![VS Code indicating it wanting to run a tool](../../../../../translated_images/he/vscode-agent.d5a0e0b897331060.webp)
 
     בחירת הכלי אמורה להניב תוצאה מספרית שאומרת "23" אם הפקודה שהקלדת הייתה כפי שהזכרנו קודם.
 

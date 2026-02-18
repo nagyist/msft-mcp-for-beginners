@@ -73,6 +73,14 @@ MCP follows a **client-server model**, where:
 - **Prompts** – Predefined workflows for guided generation  
 - **Tools** – Executable functions like search, calculations  
 - **Sampling** – Agentic behavior via recursive interactions
+- **Elicitation** – Server-initiated requests for user input
+- **Roots** – Filesystem boundaries for server access control
+
+### **Protocol Architecture:**
+
+MCP uses a two-layer architecture:
+- **Data Layer**: JSON-RPC 2.0 based communication with lifecycle management and primitives
+- **Transport Layer**: STDIO (local) and Streamable HTTP with SSE (remote) communication channels
 
 ---
 
@@ -209,6 +217,10 @@ graph TD
         ToolsB[Tools]
     end
 ```
+The Universal Connector enables MCP servers to communicate and share capabilities with each other, allowing ServerA to delegate tasks to ServerB or access its tools and knowledge. This federates tools and data across servers, supporting scalable and modular agent architectures. Because MCP standardizes tool exposure, agents can dynamically discover and route requests between servers without hardcoded integrations.
+
+
+Tool and knowledge federation: Tools and data can be accessed across servers, enabling more scalable and modular agentic architectures.
 
 ### 🔄 Advanced MCP Scenarios with Client-Side LLM Integration
 

@@ -1,52 +1,43 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4319d291c9d124ecafea52b3d04bfa0e",
-  "translation_date": "2025-07-14T06:23:40+00:00",
-  "source_file": "09-CaseStudy/docs-mcp/README.md",
-  "language_code": "pl"
-}
--->
 # Studium przypadku: Łączenie się z serwerem Microsoft Learn Docs MCP z klienta
 
-Czy zdarzyło Ci się kiedyś żonglować między stronami dokumentacji, Stack Overflow i nieskończoną liczbą kart w przeglądarce, próbując rozwiązać problem w swoim kodzie? Może masz drugi monitor tylko do dokumentacji albo ciągle przełączasz się między IDE a przeglądarką. Czy nie byłoby lepiej, gdyby dokumentacja była dostępna bezpośrednio w Twoim środowisku pracy — zintegrowana z aplikacjami, IDE lub nawet własnymi narzędziami? W tym studium przypadku pokażemy, jak to zrobić, łącząc się bezpośrednio z serwerem Microsoft Learn Docs MCP z własnej aplikacji klienckiej.
+Czy zdarzyło Ci się kiedyś przełączać między stronami dokumentacji, Stack Overflow i niezliczonymi kartami w wyszukiwarce, próbując rozwiązać problem w swoim kodzie? Może masz drugi monitor tylko do dokumentacji lub ciągle przełączasz się między IDE a przeglądarką. Czy nie lepiej byłoby mieć dokumentację bezpośrednio w swoim przepływie pracy—zintegrowaną z aplikacjami, IDE lub własnymi narzędziami? W tym studium przypadku pokażemy, jak to zrobić, łącząc się bezpośrednio z serwerem Microsoft Learn Docs MCP z własnej aplikacji klienckiej.
 
 ## Przegląd
 
-Nowoczesne programowanie to nie tylko pisanie kodu — to także znajdowanie właściwych informacji we właściwym czasie. Dokumentacja jest wszędzie, ale rzadko tam, gdzie jest najbardziej potrzebna: w Twoich narzędziach i procesach pracy. Integrując pobieranie dokumentacji bezpośrednio z aplikacji, możesz zaoszczędzić czas, ograniczyć przełączanie kontekstu i zwiększyć produktywność. W tej sekcji pokażemy, jak połączyć klienta z serwerem Microsoft Learn Docs MCP, aby uzyskać dostęp do dokumentacji w czasie rzeczywistym, dostosowanej do kontekstu, bez opuszczania aplikacji.
+Nowoczesny rozwój to coś więcej niż tylko pisanie kodu—chodzi o znalezienie właściwej informacji we właściwym czasie. Dokumentacja jest wszędzie, ale rzadko tam, gdzie jest najbardziej potrzebna: wewnątrz Twoich narzędzi i przepływów pracy. Integrując pobieranie dokumentacji bezpośrednio w aplikacjach, możesz zaoszczędzić czas, zmniejszyć przełączanie kontekstu i zwiększyć produktywność. W tej sekcji pokażemy, jak połączyć klienta z serwerem Microsoft Learn Docs MCP, aby uzyskać dostęp do dokumentacji w czasie rzeczywistym, dostosowanej do kontekstu, bez opuszczania aplikacji.
 
-Przeprowadzimy Cię przez proces nawiązywania połączenia, wysyłania zapytania i efektywnego obsługiwania strumieniowych odpowiedzi. Takie podejście nie tylko usprawnia pracę, ale także otwiera drzwi do tworzenia inteligentniejszych, bardziej pomocnych narzędzi dla programistów.
+Przeprowadzimy Cię przez proces nawiązania połączenia, wysłania zapytania i efektywnego obsługiwania odpowiedzi strumieniowych. Takie podejście nie tylko usprawnia Twój przepływ pracy, ale również otwiera drzwi do budowania inteligentniejszych, bardziej pomocnych narzędzi dla programistów.
 
 ## Cele nauki
 
-Dlaczego to robimy? Bo najlepsze doświadczenia programistyczne to te, które eliminują przeszkody. Wyobraź sobie świat, w którym Twój edytor kodu, chatbot lub aplikacja webowa mogą natychmiast odpowiadać na pytania dotyczące dokumentacji, korzystając z najnowszych treści Microsoft Learn. Po zakończeniu tego rozdziału będziesz potrafił:
+Dlaczego to robimy? Ponieważ najlepsze doświadczenia programistyczne to te, które eliminują przeszkody. Wyobraź sobie świat, w którym Twój edytor kodu, chatbot lub aplikacja webowa może natychmiast odpowiadać na pytania dotyczące dokumentacji, korzystając z najnowszej zawartości Microsoft Learn. Po zakończeniu tego rozdziału będziesz potrafił:
 
 - Zrozumieć podstawy komunikacji klient-serwer MCP dla dokumentacji
 - Zaimplementować aplikację konsolową lub webową łączącą się z serwerem Microsoft Learn Docs MCP
-- Korzystać ze strumieniowych klientów HTTP do pobierania dokumentacji w czasie rzeczywistym
-- Logować i interpretować odpowiedzi dokumentacji w swojej aplikacji
+- Używać strumieniowych klientów HTTP do pobierania dokumentacji w czasie rzeczywistym
+- Rejestrować i interpretować odpowiedzi z dokumentacji w swojej aplikacji
 
-Zobaczysz, jak te umiejętności pomogą Ci tworzyć narzędzia, które są nie tylko reaktywne, ale naprawdę interaktywne i świadome kontekstu.
+Zobaczysz, jak te umiejętności mogą pomóc Ci tworzyć narzędzia, które nie tylko reagują, ale są naprawdę interaktywne i świadome kontekstu.
 
 ## Scenariusz 1 - Pobieranie dokumentacji w czasie rzeczywistym z MCP
 
-W tym scenariuszu pokażemy, jak połączyć klienta z serwerem Microsoft Learn Docs MCP, aby uzyskać dostęp do dokumentacji w czasie rzeczywistym, dostosowanej do kontekstu, bez opuszczania aplikacji.
+W tym scenariuszu pokażemy, jak połączyć klienta z serwerem Microsoft Learn Docs MCP, umożliwiając dostęp do dokumentacji w czasie rzeczywistym, dostosowanej do kontekstu, bez opuszczania aplikacji.
 
-Przejdźmy do praktyki. Twoim zadaniem jest napisanie aplikacji, która łączy się z serwerem Microsoft Learn Docs MCP, wywołuje narzędzie `microsoft_docs_search` i loguje strumieniową odpowiedź w konsoli.
+Przejdźmy do praktyki. Twoim zadaniem jest napisanie aplikacji, która łączy się z serwerem Microsoft Learn Docs MCP, wywołuje narzędzie `microsoft_docs_search` i rejestruje odpowiedź strumieniową w konsoli.
 
 ### Dlaczego takie podejście?
-Bo to podstawa do budowania bardziej zaawansowanych integracji — niezależnie od tego, czy chcesz zasilić chatbota, rozszerzenie IDE czy pulpit webowy.
+Bo to podstawa budowania bardziej zaawansowanych integracji—niezależnie czy chcesz zasilać chatbota, rozszerzenie IDE czy panel webowy.
 
-Kod i instrukcje do tego scenariusza znajdziesz w folderze [`solution`](./solution/README.md) w ramach tego studium przypadku. Kroki przeprowadzą Cię przez konfigurację połączenia:
-- Użyj oficjalnego SDK MCP i strumieniowego klienta HTTP do nawiązania połączenia
+Kod i instrukcje dla tego scenariusza znajdziesz w folderze [`solution`](./solution/README.md) w ramach tego studium przypadku. Kroki przeprowadzą Cię przez konfigurację połączenia:
+- Użyj oficjalnego SDK MCP i klienta HTTP obsługującego strumienie do połączenia
 - Wywołaj narzędzie `microsoft_docs_search` z parametrem zapytania, aby pobrać dokumentację
-- Zaimplementuj odpowiednie logowanie i obsługę błędów
-- Stwórz interaktywny interfejs konsolowy, który pozwoli użytkownikom wpisywać wiele zapytań
+- Zaimplementuj poprawne logowanie i obsługę błędów
+- Stwórz interaktywny interfejs konsoli umożliwiający użytkownikom wpisywanie wielu zapytań
 
-Ten scenariusz pokazuje, jak:
+Ten scenariusz pokazuje jak:
 - Połączyć się z serwerem Docs MCP
 - Wysłać zapytanie
-- Przetworzyć i wyświetlić wyniki
+- Sparsować i wyświetlić wyniki
 
 Tak może wyglądać uruchomienie rozwiązania:
 
@@ -55,7 +46,7 @@ Prompt> What is Azure Key Vault?
 Answer> Azure Key Vault is a cloud service for securely storing and accessing secrets. ...
 ```
 
-Poniżej znajduje się minimalny przykładowy kod. Pełny kod i szczegóły dostępne są w folderze rozwiązania.
+Poniżej znajduje się minimalny przykładowy kod rozwiązania. Pełny kod i szczegóły są dostępne w folderze rozwiązania.
 
 <details>
 <summary>Python</summary>
@@ -76,13 +67,14 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-- Pełną implementację i logowanie znajdziesz w pliku [`scenario1.py`](../../../../09-CaseStudy/docs-mcp/solution/python/scenario1.py).
-- Instrukcje instalacji i użytkowania znajdują się w pliku [`README.md`](./solution/python/README.md) w tym samym folderze.
+- Aby zobaczyć pełną implementację i logowanie, zajrzyj do [`scenario1.py`](../../../../09-CaseStudy/docs-mcp/solution/python/scenario1.py).
+- Instrukcje instalacji i użytkowania znajdziesz w pliku [`README.md`](./solution/python/README.md) w tym samym folderze.
 </details>
 
-## Scenariusz 2 - Interaktywna aplikacja webowa do generowania planu nauki z MCP
 
-W tym scenariuszu nauczysz się, jak zintegrować Docs MCP z projektem webowym. Celem jest umożliwienie użytkownikom wyszukiwania dokumentacji Microsoft Learn bezpośrednio z interfejsu webowego, dzięki czemu dokumentacja będzie natychmiast dostępna w Twojej aplikacji lub na stronie.
+## Scenariusz 2 - Interaktywna aplikacja webowa generatora planu nauki z MCP
+
+W tym scenariuszu nauczysz się, jak zintegrować Docs MCP w projekcie webowym. Celem jest umożliwienie użytkownikom wyszukiwania dokumentacji Microsoft Learn bezpośrednio z poziomu interfejsu webowego, co sprawia, że dokumentacja jest natychmiast dostępna w Twojej aplikacji lub witrynie.
 
 Zobaczysz, jak:
 - Skonfigurować aplikację webową
@@ -108,14 +100,14 @@ Assistant> Here’s a detailed 6-week roadmap to start your preparation for the 
 Let me know if you want module-specific recommendations or need more customized weekly tasks!
 ```
 
-Poniżej znajduje się minimalny przykładowy kod. Pełny kod i szczegóły dostępne są w folderze rozwiązania.
+Poniżej znajduje się minimalny przykładowy kod rozwiązania. Pełny kod i szczegóły są dostępne w folderze rozwiązania.
 
-![Przegląd scenariusza 2](../../../../translated_images/scenario2.0c92726d5cd81f68238e5ba65f839a0b300d5b74b8ca7db28bc8f900c3e7d037.pl.png)
+![Przegląd Scenariusza 2](../../../../translated_images/pl/scenario2.0c92726d5cd81f68.webp)
 
 <details>
 <summary>Python (Chainlit)</summary>
 
-Chainlit to framework do tworzenia konwersacyjnych aplikacji AI w sieci. Ułatwia tworzenie interaktywnych chatbotów i asystentów, którzy mogą wywoływać narzędzia MCP i wyświetlać wyniki w czasie rzeczywistym. Idealny do szybkiego prototypowania i przyjaznych interfejsów użytkownika.
+Chainlit to framework do tworzenia konwersacyjnych aplikacji webowych AI. Umożliwia łatwe tworzenie interaktywnych chatbotów i asystentów, którzy mogą wywoływać narzędzia MCP i wyświetlać wyniki w czasie rzeczywistym. Idealny do szybkiego prototypowania i przyjaznych interfejsów użytkownika.
 
 ```python
 import chainlit as cl
@@ -134,22 +126,23 @@ def handle_message(message):
         cl.Message(content="Error: " + response.text).send()
 ```
 
-- Pełną implementację znajdziesz w pliku [`scenario2.py`](../../../../09-CaseStudy/docs-mcp/solution/python/scenario2.py).
-- Instrukcje konfiguracji i uruchomienia znajdują się w pliku [`README.md`](./solution/python/README.md).
+- Aby zobaczyć pełną implementację, zajrzyj do [`scenario2.py`](../../../../09-CaseStudy/docs-mcp/solution/python/scenario2.py).
+- Instrukcje konfiguracji i uruchomienia znajdziesz w [`README.md`](./solution/python/README.md).
 </details>
+
 
 ## Scenariusz 3: Dokumentacja w edytorze z serwerem MCP w VS Code
 
-Jeśli chcesz mieć Microsoft Learn Docs bezpośrednio w VS Code (zamiast przełączać się między kartami przeglądarki), możesz użyć serwera MCP w swoim edytorze. Pozwala to na:
-- Wyszukiwanie i czytanie dokumentacji w VS Code bez opuszczania środowiska kodowania.
-- Odwoływanie się do dokumentacji i wstawianie linków bezpośrednio do plików README lub kursów.
-- Wykorzystanie GitHub Copilot i MCP razem dla płynnego, wspieranego AI przepływu pracy z dokumentacją.
+Jeśli chcesz mieć Microsoft Learn Docs bezpośrednio w VS Code (zamiast przełączać się na karty przeglądarki), możesz użyć serwera MCP w swoim edytorze. Pozwala to:
+- Przeszukiwać i czytać dokumentację w VS Code bez opuszczania środowiska kodowania.
+- Odwoływać się do dokumentacji i wstawiać linki bezpośrednio do plików README lub kursów.
+- Wykorzystać GitHub Copilot oraz MCP razem dla płynnego, wspieranego AI przepływu pracy z dokumentacją.
 
-**Zobaczysz, jak:**
-- Dodać poprawny plik `.vscode/mcp.json` do katalogu głównego projektu (przykład poniżej).
-- Otworzyć panel MCP lub użyć palety poleceń w VS Code, aby wyszukiwać i wstawiać dokumentację.
+**Dowiesz się, jak:**
+- Dodać ważny plik `.vscode/mcp.json` do katalogu głównego swojego workspace (przykład poniżej).
+- Otworzyć panel MCP lub użyć palety poleceń w VS Code, aby wyszukiwać i wstawiać dokumenty.
 - Odwoływać się do dokumentacji bezpośrednio w plikach markdown podczas pracy.
-- Połączyć ten sposób pracy z GitHub Copilot dla jeszcze większej produktywności.
+- Połączyć ten przepływ z GitHub Copilot dla jeszcze większej wydajności.
 
 Oto przykład konfiguracji serwera MCP w VS Code:
 
@@ -165,31 +158,40 @@ Oto przykład konfiguracji serwera MCP w VS Code:
 
 </details>
 
-> Aby uzyskać szczegółowy przewodnik ze zrzutami ekranu i krok po kroku, zobacz [`README.md`](./solution/scenario3/README.md).
+> Aby uzyskać szczegółowy przewodnik z zrzutami ekranu i krok po kroku, zobacz [`README.md`](./solution/scenario3/README.md).
 
-![Przegląd scenariusza 3](../../../../translated_images/step4-prompt-chat.12187bb001605efc5077992b621f0fcd1df12023c5dce0464f8eb8f3d595218f.pl.png)
+![Przegląd Scenariusza 3](../../../../translated_images/pl/step4-prompt-chat.12187bb001605efc.webp)
 
-To podejście jest idealne dla osób tworzących kursy techniczne, piszących dokumentację lub rozwijających kod z częstą potrzebą odwołań.
+To podejście jest idealne dla wszystkich, którzy tworzą kursy techniczne, piszą dokumentację lub rozwijają kod wymagający częstych odwołań.
 
-## Najważniejsze wnioski
+## Kluczowe wnioski
 
-Integracja dokumentacji bezpośrednio z narzędziami to nie tylko wygoda — to prawdziwa zmiana w produktywności. Łącząc się z serwerem Microsoft Learn Docs MCP z klienta, możesz:
+Integracja dokumentacji bezpośrednio w narzędziach to nie tylko wygoda—to zmieniacz gry w produktywności. Łącząc się z serwerem Microsoft Learn Docs MCP z klienta, możesz:
 
 - Wyeliminować przełączanie kontekstu między kodem a dokumentacją
-- Pobierać aktualną, dostosowaną do kontekstu dokumentację w czasie rzeczywistym
-- Tworzyć inteligentniejsze, bardziej interaktywne narzędzia dla programistów
+- Pobierać aktualne, dostosowane do kontekstu dokumenty w czasie rzeczywistym
+- Budować inteligentniejsze, bardziej interaktywne narzędzia dla programistów
 
-Te umiejętności pomogą Ci tworzyć rozwiązania, które są nie tylko efektywne, ale też przyjemne w użyciu.
+Te umiejętności pomogą Ci tworzyć rozwiązania nie tylko wydajne, lecz także przyjemne w użyciu.
 
 ## Dodatkowe zasoby
 
-Aby pogłębić wiedzę, zapoznaj się z tymi oficjalnymi materiałami:
+Aby pogłębić wiedzę, zapoznaj się z oficjalnymi źródłami:
 
 - [Microsoft Learn Docs MCP Server (GitHub)](https://github.com/MicrosoftDocs/mcp)
-- [Pierwsze kroki z Azure MCP Server (mcp-python)](https://learn.microsoft.com/en-us/azure/developer/azure-mcp-server/get-started#create-the-python-app)
+- [Rozpocznij pracę z Azure MCP Server (mcp-python)](https://learn.microsoft.com/en-us/azure/developer/azure-mcp-server/get-started#create-the-python-app)
 - [Czym jest Azure MCP Server?](https://learn.microsoft.com/en-us/azure/developer/azure-mcp-server/)
 - [Wprowadzenie do Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction)
 - [Dodawanie wtyczek z serwera MCP (Python)](https://learn.microsoft.com/en-us/semantic-kernel/concepts/plugins/adding-mcp-plugins)
 
+## Co dalej
+
+- Powrót do: [Przegląd studiów przypadków](../README.md)
+- Kontynuuj do: [Moduł 10: Usprawnianie przepływów pracy AI z AI Toolkit](../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji krytycznych zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy wszelkich starań, aby tłumaczenie było precyzyjne, prosimy pamiętać, że automatyczne przekłady mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym należy traktować jako źródło nadrzędne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

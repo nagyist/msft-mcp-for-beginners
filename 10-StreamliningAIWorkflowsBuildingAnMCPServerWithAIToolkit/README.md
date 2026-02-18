@@ -1,6 +1,6 @@
 # Streamlining AI Workflows: Building an MCP Server with AI Toolkit
 
-[![MCP Version](https://img.shields.io/badge/MCP-1.9.3-blue.svg)](https://modelcontextprotocol.io/)
+[![MCP Spec](https://img.shields.io/badge/MCP%20Spec-2025--11--25-blue.svg)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
 [![Python](https://img.shields.io/badge/Python-3.10+-green.svg)](https://python.org)
 [![VS Code](https://img.shields.io/badge/VS%20Code-Latest-orange.svg)](https://code.visualstudio.com/)
 
@@ -203,13 +203,18 @@ By completing this workshop, you will achieve mastery in:
 
 ## 📖 Additional Resources
 
-- [MCP Specification](https://modelcontextprotocol.io/docs)
+- [MCP Specification (2025-11-25)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
 - [AI Toolkit GitHub Repository](https://github.com/microsoft/vscode-ai-toolkit)
 - [Sample MCP Servers Collection](https://github.com/modelcontextprotocol/servers)
 - [Best Practices Guide](https://modelcontextprotocol.io/docs/best-practices)
+- [OWASP MCP Top 10](https://microsoft.github.io/mcp-azure-security-guide/mcp/) - Security best practices
 
 ---
 
 **🚀 Ready to revolutionize your AI development workflow?**
 
 Let's build the future of intelligent applications together with MCP and AI Toolkit!
+
+## What's Next
+
+Continue to: [Module 11: MCP Server Hands-On Labs](../11-MCPServerHandsOnLabs/README.md)

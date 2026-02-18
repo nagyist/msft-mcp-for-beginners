@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13231e9951b68efd9df8c56bd5cdb27e",
-  "translation_date": "2025-07-13T22:32:33+00:00",
-  "source_file": "03-GettingStarted/samples/java/calculator/README.md",
-  "language_code": "my"
-}
--->
 # Basic Calculator MCP Service
 
 ဤဝန်ဆောင်မှုသည် Model Context Protocol (MCP) ကို အသုံးပြု၍ Spring Boot နှင့် WebFlux သယ်ယူပို့ဆောင်မှုဖြင့် အခြေခံ ကိန်းဂဏန်းတွက်ချက်မှုများကို ပံ့ပိုးပေးသည်။ MCP အကောင်အထည်ဖော်မှုများကို သင်ယူနေသော စတင်သူများအတွက် ရိုးရှင်းသော ဥပမာအဖြစ် ဒီဇိုင်းရေးဆွဲထားသည်။
@@ -201,7 +192,7 @@ MCP Inspector သည် MCP ဝန်ဆောင်မှုများနှ�
    - "List Tools" ကို နှိပ်၍ ရနိုင်သော ကိရိယာများကို ကြည့်ရှုပါ
    - ကိရိယာတစ်ခုကို ရွေးပြီး "Run Tool" ကို နှိပ်၍ လုပ်ဆောင်ချက် တစ်ခုကို လုပ်ဆောင်ပါ
 
-![MCP Inspector Screenshot](../../../../../../translated_images/tool.c75a0b2380efcf1a47a8478f54380a36ddcca7943b98f56dabbac8b07e15c3bb.my.png)
+![MCP Inspector Screenshot](../../../../../../translated_images/my/tool.c75a0b2380efcf1a.webp)
 
 ### Docker အသုံးပြုခြင်း
 

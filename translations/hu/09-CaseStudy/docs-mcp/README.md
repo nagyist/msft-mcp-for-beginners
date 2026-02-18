@@ -1,61 +1,52 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4319d291c9d124ecafea52b3d04bfa0e",
-  "translation_date": "2025-07-14T06:28:20+00:00",
-  "source_file": "09-CaseStudy/docs-mcp/README.md",
-  "language_code": "hu"
-}
--->
-# Esettanulmány: Kapcsolódás a Microsoft Learn Docs MCP szerverhez kliensből
+# Esettanulmány: Kapcsolódás a Microsoft Learn Docs MCP szerverhez egy kliensből
 
-Előfordult már, hogy egyszerre kellett váltogatnod dokumentációs oldalak, a Stack Overflow és végtelen keresőfülek között, miközben egy kódproblémát próbáltál megoldani? Talán van egy második monitorod csak a dokumentációk számára, vagy folyamatosan alt-tabolsz az IDE-d és a böngésző között. Nem lenne jobb, ha a dokumentáció közvetlenül a munkafolyamatod része lenne—integrálva az alkalmazásaidba, az IDE-dbe vagy akár a saját egyedi eszközeidbe? Ebben az esettanulmányban megmutatjuk, hogyan lehet pontosan ezt megvalósítani azzal, hogy közvetlenül a Microsoft Learn Docs MCP szerverhez kapcsolódsz a saját kliensalkalmazásodból.
+Előfordult már, hogy dokumentációs oldalakat, a Stack Overflow-t és végtelen keresőfüleket kellett váltogatnod, miközben a kódodban próbáltál megoldani egy problémát? Talán van egy második monitorod kizárólag a dokumentációknak, vagy állandóan alt-tab-elsz az IDE-d és a böngésző között. Nem lenne jobb, ha a dokumentáció közvetlenül a munkafolyamatodba kerülne beépítve — az alkalmazásaidba, az IDE-dbe vagy akár a saját egyedi eszközeidbe? Ebben az esettanulmányban megmutatjuk, hogyan lehet ezt megtenni úgy, hogy közvetlenül a Microsoft Learn Docs MCP szerverhez csatlakozol a saját kliensalkalmazásodból.
 
 ## Áttekintés
 
-A modern fejlesztés nem csupán kódírásról szól—hanem arról, hogy a megfelelő információt a megfelelő időben megtaláld. A dokumentáció mindenhol ott van, de ritkán ott, ahol a leginkább szükséged van rá: az eszközeidben és a munkafolyamataidban. Ha a dokumentáció lekérését közvetlenül az alkalmazásaidba integrálod, időt takaríthatsz meg, csökkentheted a kontextusváltást, és növelheted a hatékonyságot. Ebben a részben megmutatjuk, hogyan kapcsolódj egy klienssel a Microsoft Learn Docs MCP szerverhez, hogy valós idejű, kontextusérzékeny dokumentációhoz férj hozzá anélkül, hogy elhagynád az alkalmazásodat.
+A modern fejlesztés több, mint pusztán kódírás — a megfelelő információ megtalálása a megfelelő időben a kulcs. A dokumentáció mindenütt jelen van, de ritkán ott, ahol a leginkább szükséged van rá: az eszközeidben és munkafolyamataidban. Ha a dokumentáció lekérését közvetlenül az alkalmazásaidba integrálod, időt spórolhatsz, csökkentheted a kontextusváltásokat, és növelheted a termelékenységet. Ebben a részben megmutatjuk, hogyan csatlakoztathatsz egy klienst a Microsoft Learn Docs MCP szerverhez, hogy a valós idejű, kontextusérzékeny dokumentációt az alkalmazásodból érhesd el anélkül, hogy el kellene hagynod azt.
 
-Végigvezetünk a kapcsolat létrehozásának folyamatán, a kérés elküldésén és a streaming válaszok hatékony kezelésén. Ez a megközelítés nemcsak egyszerűsíti a munkafolyamatot, hanem megnyitja az utat okosabb, hasznosabb fejlesztői eszközök építése felé.
+Végigvezetünk a kapcsolat létrehozásának folyamatán, a kérés elküldésén és az áramló válaszok hatékony kezelésén. Ez a megközelítés nem csak egyszerűsíti a munkafolyamatot, hanem lehetőséget ad arra is, hogy okosabb, hasznosabb fejlesztői eszközöket építs.
 
 ## Tanulási célok
 
-Miért csináljuk ezt? Mert a legjobb fejlesztői élmények azok, amelyek eltávolítják az akadályokat. Képzelj el egy világot, ahol a kódszerkesztőd, chatbotod vagy webalkalmazásod azonnal válaszol a dokumentációs kérdéseidre, a Microsoft Learn legfrissebb tartalmait használva. A fejezet végére tudni fogod, hogyan:
+Miért csináljuk ezt? Mert a legjobb fejlesztői élmények azok, amelyek eltávolítják a súrlódásokat. Képzeld el azt a világot, ahol a kódszerkesztőd, chatbotod vagy webalkalmazásod azonnal válaszol a dokumentációs kérdéseidre, a Microsoft Learn legfrissebb tartalmait használva. A fejezet végére megtanulod:
 
-- Értsd meg az MCP szerver-kliens kommunikáció alapjait a dokumentációhoz
-- Valósíts meg konzol vagy webalkalmazást a Microsoft Learn Docs MCP szerverhez való kapcsolódáshoz
-- Használj streaming HTTP klienset valós idejű dokumentáció lekéréshez
-- Naplózd és értelmezd a dokumentációs válaszokat az alkalmazásodban
+- Megérteni az MCP szerver-kliens kommunikáció alapjait a dokumentációk esetén
+- Konzol vagy webalkalmazás megvalósítása a Microsoft Learn Docs MCP szerverhez való kapcsolódáshoz
+- Áramló HTTP kliensek használata valós idejű dokumentáció lekéréshez
+- A dokumentációs válaszok naplózása és értelmezése az alkalmazásodban
 
-Megmutatjuk, hogyan segíthetnek ezek a képességek olyan eszközök építésében, amelyek nem csak reagálnak, hanem valóban interaktívak és kontextusérzékenyek.
+Megtanulod, hogyan segíthetnek ezek a képességek olyan eszközök készítésében, amelyek nem csupán reaktívak, hanem valóban interaktívak és kontextusérzékenyek.
 
-## 1. Forgatókönyv – Valós idejű dokumentáció lekérése MCP-vel
+## 1. Forgatókönyv – Valós idejű dokumentáció lekérés MCP-vel
 
-Ebben a forgatókönyvben megmutatjuk, hogyan kapcsolódj egy klienssel a Microsoft Learn Docs MCP szerverhez, hogy valós idejű, kontextusérzékeny dokumentációhoz férj hozzá anélkül, hogy elhagynád az alkalmazásodat.
+Ebben a forgatókönyvben megmutatjuk, hogyan csatlakozz egy klienssel a Microsoft Learn Docs MCP szerverhez, hogy valós idejű, kontextusérzékeny dokumentációhoz férj hozzá anélkül, hogy el kellene hagynod az alkalmazásodat.
 
-Gyakorlatba ültetjük ezt. A feladatod egy olyan alkalmazás írása, amely kapcsolódik a Microsoft Learn Docs MCP szerverhez, meghívja a `microsoft_docs_search` eszközt, és a streaming választ naplózza a konzolra.
+Gyakorlatba ültetve: a feladatod egy olyan alkalmazás írása, amely csatlakozik a Microsoft Learn Docs MCP szerverhez, meghívja a `microsoft_docs_search` eszközt, és a streaming választ a konzolra naplózza.
 
 ### Miért ez a megközelítés?
-Mert ez az alapja a fejlettebb integrációknak—legyen szó chatbotról, IDE bővítményről vagy webes irányítópultról.
+Mert ez az alapja a fejlettebb integrációknak — legyen szó chatbot, IDE-bővítmény vagy webes irányítópult működtetéséről.
 
-A kódot és az utasításokat ehhez a forgatókönyvhöz a [`solution`](./solution/README.md) mappában találod ebben az esettanulmányban. A lépések végigvezetnek a kapcsolat beállításán:
-- Használd az hivatalos MCP SDK-t és a streamelhető HTTP klienst a kapcsolódáshoz
-- Hívd meg a `microsoft_docs_search` eszközt egy lekérdezési paraméterrel a dokumentáció lekéréséhez
-- Valósíts meg megfelelő naplózást és hibakezelést
-- Készíts interaktív konzol felületet, hogy a felhasználók több keresési lekérdezést is beírhassanak
+A kódot és az utasításokat erre a forgatókönyvre megtalálod a [`solution`](./solution/README.md) mappában. Az alábbi lépések segítségével létrehozod a kapcsolatot:
+- Használd a hivatalos MCP SDK-t és a streamelhető HTTP klienst a kapcsolódáshoz
+- Hívd meg a `microsoft_docs_search` eszközt egy lekérdezési paraméterrel a dokumentáció eléréséhez
+- Valósítsd meg a megfelelő naplózást és hibakezelést
+- Készíts interaktív konzol interfészt, hogy a felhasználók több keresési lekérdezést is be tudjanak adni
 
-Ez a forgatókönyv bemutatja, hogyan:
+Ez a forgatókönyv megmutatja, hogyan:
 - Kapcsolódj a Docs MCP szerverhez
-- Küldj lekérdezést
-- Elemezd és írd ki az eredményeket
+- Küldj le kérdést
+- Elemezd és írasd ki az eredményeket
 
-Így nézhet ki a megoldás futtatása:
+Íme, hogyan nézhet ki a megoldás futtatása:
 
 ```
 Prompt> What is Azure Key Vault?
 Answer> Azure Key Vault is a cloud service for securely storing and accessing secrets. ...
 ```
 
-Alább egy minimális mintamegoldás látható. A teljes kód és részletek a solution mappában érhetők el.
+Az alábbiakban egy minimális mintamegoldás található. A teljes kód és részletek a solution mappában elérhetők.
 
 <details>
 <summary>Python</summary>
@@ -76,20 +67,21 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-- A teljes megvalósításhoz és naplózáshoz lásd a [`scenario1.py`](../../../../09-CaseStudy/docs-mcp/solution/python/scenario1.py) fájlt.
-- A telepítési és használati útmutató a [`README.md`](./solution/python/README.md) fájlban található ugyanabban a mappában.
+- A teljes implementációért és naplózásért lásd a [`scenario1.py`](../../../../09-CaseStudy/docs-mcp/solution/python/scenario1.py) fájlt.
+- A telepítési és használati utasításokért lásd a [`README.md`](./solution/python/README.md) fájlt ugyanebben a mappában.
 </details>
 
-## 2. Forgatókönyv – Interaktív tanulási terv generáló webalkalmazás MCP-vel
 
-Ebben a forgatókönyvben megtanulod, hogyan integráld a Docs MCP-t egy webfejlesztési projektbe. A cél, hogy a felhasználók közvetlenül a webes felületről kereshessenek a Microsoft Learn dokumentációban, így az azonnal elérhetővé válik az alkalmazásodban vagy weboldaladon.
+## 2. Forgatókönyv – Interaktív tanulási terv generátor webalkalmazás MCP-vel
+
+Ebben a forgatókönyvben megtanulod, hogyan integráld a Docs MCP-t egy webfejlesztési projektbe. A cél az, hogy a felhasználók közvetlenül egy webes felületről keresni tudjanak a Microsoft Learn dokumentációjában, így az dokumentáció azonnal elérhető lesz az alkalmazásodban vagy webhelyeden.
 
 Megmutatjuk, hogyan:
 - Állíts be egy webalkalmazást
 - Kapcsolódj a Docs MCP szerverhez
-- Kezeld a felhasználói bemenetet és jelenítsd meg az eredményeket
+- Kezeld a felhasználói bevitelt és jelenítsd meg az eredményeket
 
-Így nézhet ki a megoldás futtatása:
+Íme, hogyan nézhet ki a megoldás futtatása:
 
 ```
 User> I want to learn about AI102 - so suggest the roadmap to get it started from learn for 6 weeks
@@ -108,14 +100,14 @@ Assistant> Here’s a detailed 6-week roadmap to start your preparation for the 
 Let me know if you want module-specific recommendations or need more customized weekly tasks!
 ```
 
-Alább egy minimális mintamegoldás látható. A teljes kód és részletek a solution mappában érhetők el.
+Az alábbiakban egy minimális mintamegoldás található. A teljes kód és részletek a solution mappában elérhetők.
 
-![2. forgatókönyv áttekintése](../../../../translated_images/scenario2.0c92726d5cd81f68238e5ba65f839a0b300d5b74b8ca7db28bc8f900c3e7d037.hu.png)
+![2. Forgatókönyv áttekintés](../../../../translated_images/hu/scenario2.0c92726d5cd81f68.webp)
 
 <details>
 <summary>Python (Chainlit)</summary>
 
-A Chainlit egy keretrendszer beszélgetés-alapú AI webalkalmazások építéséhez. Megkönnyíti interaktív chatbotok és asszisztensek létrehozását, amelyek képesek MCP eszközöket hívni és valós időben megjeleníteni az eredményeket. Ideális gyors prototípus készítéshez és felhasználóbarát felületekhez.
+A Chainlit egy keretrendszer beszélgetés-alapú AI webalkalmazásokhoz. Megkönnyíti az interaktív chatbotok és asszisztensek létrehozását, amelyek képesek MCP eszközöket hívni és valós időben megjeleníteni az eredményeket. Ideális gyors prototípus készítéshez és felhasználóbarát felületekhez.
 
 ```python
 import chainlit as cl
@@ -135,21 +127,22 @@ def handle_message(message):
 ```
 
 - A teljes megvalósításhoz lásd a [`scenario2.py`](../../../../09-CaseStudy/docs-mcp/solution/python/scenario2.py) fájlt.
-- A beállítási és futtatási útmutató a [`README.md`](./solution/python/README.md) fájlban található.
+- A beállítási és futtatási utasításokhoz lásd a [`README.md`](./solution/python/README.md) fájlt.
 </details>
 
-## 3. Forgatókönyv: Beépített dokumentáció MCP szerverrel VS Code-ban
 
-Ha szeretnéd a Microsoft Learn Docs-ot közvetlenül a VS Code-ban elérni (a böngészőfülek közti váltás helyett), használhatod az MCP szervert az editorodban. Ez lehetővé teszi, hogy:
-- Keresd és olvasd a dokumentációt a VS Code-ban anélkül, hogy elhagynád a fejlesztői környezetet.
-- Hivatkozz dokumentációra és illessz be linkeket közvetlenül a README vagy tananyag fájljaidba.
-- Használd együtt a GitHub Copilotot és az MCP-t egy zökkenőmentes, AI-alapú dokumentációs munkafolyamathoz.
+## 3. Forgatókönyv: Dokumentáció az editorban MCP szerverrel VS Code-ban
 
-**Megmutatjuk, hogyan:**
-- Adj hozzá egy érvényes `.vscode/mcp.json` fájlt a munkaterületed gyökeréhez (lásd az alábbi példát).
-- Nyisd meg az MCP panelt vagy használd a parancspalettát a VS Code-ban a dokumentáció kereséséhez és beszúrásához.
-- Hivatkozz dokumentációra közvetlenül a markdown fájljaidban munka közben.
-- Kombináld ezt a munkafolyamatot a GitHub Copilottal a még nagyobb hatékonyságért.
+Ha azt szeretnéd, hogy a Microsoft Learn Docs közvetlenül a VS Code-ban legyen elérhető (ahelyett, hogy a böngészőfüleket váltogatnád), használhatod az MCP szervert az editorodból. Ennek használatával:
+- Kereshetsz, olvashatsz dokumentációt a VS Code-on belül anélkül, hogy elhagynád a fejlesztői környezetedet.
+- Hivatkozhatsz dokumentációkra és linkeket illeszthetsz be közvetlenül a README vagy tananyag fájljaidba.
+- Együtt használhatod a GitHub Copilot-ot és az MCP-t a zökkenőmentes, MI-alapú dokumentációs munkafolyamathoz.
+
+**Megtanulod, hogy hogyan:**
+- Adj hozzá egy érvényes `.vscode/mcp.json` fájlt a munkaterületed gyökerébe (lásd az alábbi példát).
+- Nyisd meg az MCP panelt vagy használd a parancspalettát a VS Code-ban dokumentáció kereséséhez és beszúrásához.
+- Hivatkozz közvetlenül a felhasználás közben a markdown fájljaidban lévő dokumentációra.
+- Kombináld ezt a munkafolyamatot a GitHub Copilot-tal a még nagyobb termelékenység érdekében.
 
 Íme egy példa az MCP szerver beállítására VS Code-ban:
 
@@ -165,31 +158,40 @@ Ha szeretnéd a Microsoft Learn Docs-ot közvetlenül a VS Code-ban elérni (a b
 
 </details>
 
-> Részletes lépésről lépésre útmutató képernyőképekkel a [`README.md`](./solution/scenario3/README.md) fájlban található.
+> Részletes útmutató képernyőképekkel és lépésről lépésre elérhető a [`README.md`](./solution/scenario3/README.md) fájlban.
 
-![3. forgatókönyv áttekintése](../../../../translated_images/step4-prompt-chat.12187bb001605efc5077992b621f0fcd1df12023c5dce0464f8eb8f3d595218f.hu.png)
+![3. Forgatókönyv áttekintés](../../../../translated_images/hu/step4-prompt-chat.12187bb001605efc.webp)
 
-Ez a megközelítés ideális mindazoknak, akik technikai tanfolyamokat készítenek, dokumentációt írnak vagy olyan kódot fejlesztenek, amely gyakori hivatkozásokat igényel.
+Ez a megközelítés ideális mindazoknak, akik technikai tanfolyamokat építenek, dokumentációt írnak vagy olyan kódot fejlesztenek, amely gyakori hivatkozásokat igényel.
 
-## Főbb tanulságok
+## Fő tanulságok
 
-A dokumentáció közvetlen integrálása az eszközeidbe nem csupán kényelmi funkció—ez egy igazi áttörés a termelékenységben. Ha a Microsoft Learn Docs MCP szerverhez kapcsolódsz a kliensedből, akkor:
+A dokumentáció közvetlen integrálása az eszközeidbe nem csupán kényelmi funkció — ez a produktivitás forradalmasítása. Ha a Microsoft Learn Docs MCP szerverhez kapcsolódsz a kliensedből, akkor:
 
-- Megszünteted a kontextusváltást a kód és a dokumentáció között
-- Valós időben, naprakész és kontextusérzékeny dokumentációt kérhetsz le
+- Megszünteted a kontextusváltást a kódod és a dokumentáció között
+- Valós idejű, kontextusérzékeny, naprakész dokumentációt kérhetsz le
 - Okosabb, interaktívabb fejlesztői eszközöket építhetsz
 
-Ezek a képességek segítenek olyan megoldásokat létrehozni, amelyek nemcsak hatékonyak, hanem élvezetesek is a használat során.
+Ezek a készségek lehetővé teszik, hogy olyan megoldásokat alkoss, amelyek nemcsak hatékonyak, hanem élvezetesek is használni.
 
 ## További források
 
-A mélyebb megértés érdekében böngészd át ezeket a hivatalos forrásokat:
+A tudás mélyítéséhez böngészd át ezeket a hivatalos forrásokat:
 
 - [Microsoft Learn Docs MCP Server (GitHub)](https://github.com/MicrosoftDocs/mcp)
-- [Azure MCP Server használatának megkezdése (mcp-python)](https://learn.microsoft.com/en-us/azure/developer/azure-mcp-server/get-started#create-the-python-app)
+- [Azure MCP Server elkezdése (mcp-python)](https://learn.microsoft.com/en-us/azure/developer/azure-mcp-server/get-started#create-the-python-app)
 - [Mi az Azure MCP Server?](https://learn.microsoft.com/en-us/azure/developer/azure-mcp-server/)
-- [Model Context Protocol (MCP) bevezető](https://modelcontextprotocol.io/introduction)
+- [Model Context Protocol (MCP) Bevezetés](https://modelcontextprotocol.io/introduction)
 - [Pluginok hozzáadása MCP szerverről (Python)](https://learn.microsoft.com/en-us/semantic-kernel/concepts/plugins/adding-mcp-plugins)
 
+## Mi jön ezután
+
+- Vissza ide: [Esettanulmányok áttekintése](../README.md)
+- Folytatás: [10. Modul: AI munkafolyamatok egyszerűsítése AI Toolkit használatával](../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+Ez a dokumentum az AI fordítási szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások tartalmazhatnak hibákat vagy pontatlanságokat. Az eredeti, anyanyelvi dokumentum tekintendő hiteles forrásnak. Kritikus információk esetén javasolt szakmai, emberi fordítás igénybevétele. Nem vállalunk felelősséget az e fordítás használatából eredő félreértésekért vagy félreértelmezésekért.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

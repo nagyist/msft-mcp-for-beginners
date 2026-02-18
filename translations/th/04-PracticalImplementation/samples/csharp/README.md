@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0bc7bd48f55f1565f1d95ccb2c16f728",
-  "translation_date": "2025-07-13T23:07:11+00:00",
-  "source_file": "04-PracticalImplementation/samples/csharp/README.md",
-  "language_code": "th"
-}
--->
 # ตัวอย่าง
 
 ตัวอย่างก่อนหน้านี้แสดงให้เห็นวิธีการใช้โปรเจกต์ .NET แบบโลคอลที่มีประเภท `stdio` และวิธีการรันเซิร์ฟเวอร์ในเครื่องภายในคอนเทนเนอร์ นี่เป็นทางออกที่ดีในหลายสถานการณ์ อย่างไรก็ตาม การที่เซิร์ฟเวอร์รันอยู่ระยะไกล เช่น ในสภาพแวดล้อมคลาวด์ ก็อาจมีประโยชน์ นี่คือจุดที่ประเภท `http` เข้ามามีบทบาท
@@ -26,7 +17,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. เมื่อเว็บเบราว์เซอร์เปิดแดชบอร์ด .NET Aspire ให้จด URL `http` ไว้ ซึ่งควรจะเป็นประมาณ `http://localhost:5058/`
 
-   ![.NET Aspire Dashboard](../../../../../translated_images/dotnet-aspire-dashboard.0a7095710e9301e90df2efd867e1b675b3b9bc2ccd7feb1ebddc0751522bc37c.th.png)
+   ![.NET Aspire Dashboard](../../../../../translated_images/th/dotnet-aspire-dashboard.0a7095710e9301e9.webp)
 
 ## ทดสอบ Streamable HTTP ด้วย MCP Inspector
 
@@ -38,7 +29,7 @@ CO_OP_TRANSLATOR_METADATA:
 npx @modelcontextprotocol/inspector http://localhost:5058
 ```
 
-![MCP Inspector](../../../../../translated_images/mcp-inspector.c223422b9b494fb4a518a3b3911b3e708e6a5715069470f9163ee2ee8d5f1ba9.th.png)
+![MCP Inspector](../../../../../translated_images/th/mcp-inspector.c223422b9b494fb4.webp)
 
 - เลือก `Streamable HTTP` เป็นประเภท Transport
 - ในช่อง Url ให้ใส่ URL ของเซิร์ฟเวอร์ที่จดไว้ก่อนหน้า และต่อท้ายด้วย `/mcp` ควรเป็น `http` (ไม่ใช่ `https`) เช่น `http://localhost:5058/mcp`
@@ -83,7 +74,7 @@ azd up
 
 เมื่อการดีพลอยเสร็จสิ้น คุณจะเห็นข้อความแบบนี้:
 
-![Azd deployment success](../../../../../translated_images/azd-deployment-success.bd42940493f1b834a5ce6251a6f88966546009b350df59d0cc4a8caabe94a4f1.th.png)
+![Azd deployment success](../../../../../translated_images/th/azd-deployment-success.bd42940493f1b834.webp)
 
 คัดลอก URL ไปใช้ใน MCP Inspector และ GitHub Copilot Chat
 

@@ -1,157 +1,158 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1b000fd6e1b04c047578bfc5d07d54eb",
-  "translation_date": "2025-08-18T15:26:27+00:00",
-  "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md",
-  "language_code": "da"
-}
--->
-# Strømlining af AI-arbejdsgange: Opbygning af en MCP-server med AI Toolkit
+# Effektivisering af AI-arbejdsgange: Bygning af en MCP-server med AI Toolkit
+
+[![MCP Spec](https://img.shields.io/badge/MCP%20Spec-2025--11--25-blue.svg)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
+[![Python](https://img.shields.io/badge/Python-3.10+-green.svg)](https://python.org)
+[![VS Code](https://img.shields.io/badge/VS%20Code-Latest-orange.svg)](https://code.visualstudio.com/)
+
+![logo](../../../translated_images/da/logo.ec93918ec338dadd.webp)
 
 ## 🎯 Oversigt
 
-Velkommen til **Model Context Protocol (MCP) Workshop**! Denne omfattende workshop kombinerer to banebrydende teknologier for at revolutionere udviklingen af AI-applikationer:
+[![Build AI Agents in VS Code: 4 Hands-On Labs with MCP and AI Toolkit](../../../translated_images/da/11.0f6db6a0fb606885.webp)](https://youtu.be/r34Csn3rkeQ)
 
-- **🔗 Model Context Protocol (MCP)**: En åben standard for problemfri integration af AI-værktøjer
-- **🛠️ AI Toolkit for Visual Studio Code (AITK)**: Microsofts kraftfulde AI-udviklingsudvidelse
+_(Klik på billedet ovenfor for at se videoen til denne lektion)_
+
+Velkommen til **Model Context Protocol (MCP) Workshoppen**! Denne omfattende hands-on workshop kombinerer to banebrydende teknologier for at revolutionere AI-applikationsudvikling:
+
+- **🔗 Model Context Protocol (MCP)**: En åben standard til sømløs AI-værktøjsintegration
+- **🛠️ AI Toolkit til Visual Studio Code (AITK)**: Microsofts kraftfulde AI-udviklingsudvidelse
 
 ### 🎓 Hvad du vil lære
 
-Ved afslutningen af denne workshop vil du mestre kunsten at bygge intelligente applikationer, der forbinder AI-modeller med værktøjer og tjenester fra den virkelige verden. Fra automatiseret testning til skræddersyede API-integrationer vil du opnå praktiske færdigheder til at løse komplekse forretningsudfordringer.
+Ved slutningen af denne workshop vil du mestre kunsten at bygge intelligente applikationer, der forbinder AI-modeller med virkelige værktøjer og services. Fra automatiseret test til tilpassede API-integrationer får du praktiske færdigheder til at løse komplekse forretningsudfordringer.
 
 ## 🏗️ Teknologistak
 
 ### 🔌 Model Context Protocol (MCP)
 
-MCP er **"USB-C for AI"** - en universel standard, der forbinder AI-modeller med eksterne værktøjer og datakilder.
+MCP er **"USB-C for AI"** - en universel standard, der forbinder AI-modeller til eksterne værktøjer og datakilder.
 
 **✨ Nøglefunktioner:**
 
-- 🔄 **Standardiseret integration**: Universelt interface til AI-værktøjsforbindelser
-- 🏛️ **Fleksibel arkitektur**: Lokale og eksterne servere via stdio/SSE transport
-- 🧰 **Rigt økosystem**: Værktøjer, prompts og ressourcer samlet i én protokol
-- 🔒 **Enterprise-klar**: Indbygget sikkerhed og pålidelighed
+- 🔄 **Standardiseret Integration**: Universelt interface til AI-værktøjsforbindelser
+- 🏛️ **Fleksibel Arkitektur**: Lokale og fjernservere via stdio/SSE transport
+- 🧰 **Rigt Økosystem**: Værktøjer, prompts og ressourcer i ét protokol
+- 🔒 **Klar til Enterprise**: Indbygget sikkerhed og pålidelighed
 
-**🎯 Hvorfor MCP er vigtigt:**
-Ligesom USB-C eliminerede kabelkaos, eliminerer MCP kompleksiteten ved AI-integrationer. Én protokol, uendelige muligheder.
+**🎯 Hvorfor MCP betyder noget:**
+Ligesom USB-C eliminerede kabelkaos, fjerner MCP kompleksiteten ved AI-integrationer. Én protokol, uendelige muligheder.
 
-### 🤖 AI Toolkit for Visual Studio Code (AITK)
+### 🤖 AI Toolkit til Visual Studio Code (AITK)
 
-Microsofts flagskibsudvidelse til AI-udvikling, der forvandler VS Code til en AI-kraftcentral.
+Microsofts flagskibs AI-udviklingsudvidelse, der forvandler VS Code til en AI-kraftstation.
 
 **🚀 Kernefunktioner:**
 
 - 📦 **Modelkatalog**: Adgang til modeller fra Azure AI, GitHub, Hugging Face, Ollama
-- ⚡ **Lokal inferens**: ONNX-optimeret CPU/GPU/NPU-udførelse
-- 🏗️ **Agent Builder**: Visuel udvikling af AI-agenter med MCP-integration
-- 🎭 **Multi-modal**: Understøttelse af tekst, vision og struktureret output
+- ⚡ **Lokal Inferens**: ONNX-optimeret CPU/GPU/NPU eksekvering
+- 🏗️ **Agent Builder**: Visuel AI-agent udvikling med MCP-integration
+- 🎭 **Multi-Modal**: Tekst, vision og struktureret output support
 
 **💡 Udviklingsfordele:**
 
-- Modeludrulning uden konfiguration
-- Visuel prompt-engineering
+- Ingen konfiguration for modeludrulning
+- Visuel prompt-udformning
 - Real-time testmiljø
-- Problemfri MCP-serverintegration
+- Sømløs MCP-server integration
 
 ## 📚 Læringsrejse
 
-### [🚀 Modul 1: Grundlæggende om AI Toolkit](./lab1/README.md)
+### [🚀 Modul 1: AI Toolkit Grundlæggende](./lab1/README.md)
 
 **Varighed**: 15 minutter
 
-- 🛠️ Installer og konfigurer AI Toolkit for VS Code
+- 🛠️ Installer og konfigurer AI Toolkit til VS Code
 - 🗂️ Udforsk Modelkataloget (100+ modeller fra GitHub, ONNX, OpenAI, Anthropic, Google)
-- 🎮 Mestre det interaktive testmiljø for real-time modeltestning
+- 🎮 Mestr det Interaktive Testmiljø til real-time modeltest
 - 🤖 Byg din første AI-agent med Agent Builder
-- 📊 Evaluer modelpræstation med indbyggede metrikker (F1, relevans, lighed, sammenhæng)
-- ⚡ Lær batchbehandling og multi-modal understøttelse
+- 📊 Evaluer modelpræstation med indbyggede målinger (F1, relevans, lighed, sammenhæng)
+- ⚡ Lær batch-behandling og multi-modal support funktioner
 
-**🎯 Læringsresultat**: Opret en funktionel AI-agent med en omfattende forståelse af AITK-funktioner
+**🎯 Læringsmål**: Skab en funktionel AI-agent med omfattende forståelse af AITK-funktioner
 
 ### [🌐 Modul 2: MCP med AI Toolkit Grundlæggende](./lab2/README.md)
 
 **Varighed**: 20 minutter
 
-- 🧠 Mestre Model Context Protocol (MCP) arkitektur og begreber
-- 🌐 Udforsk Microsofts MCP-serverøkosystem
-- 🤖 Byg en browserautomationsagent ved hjælp af Playwright MCP-server
+- 🧠 Mestre Model Context Protocol (MCP) arkitektur og koncepter
+- 🌐 Udforsk Microsofts MCP server-økosystem
+- 🤖 Byg en browser-automatiseringsagent med Playwright MCP server
 - 🔧 Integrer MCP-servere med AI Toolkit Agent Builder
-- 📊 Konfigurer og test MCP-værktøjer inden for dine agenter
-- 🚀 Eksporter og udrul MCP-drevne agenter til produktion
+- 📊 Konfigurer og test MCP-værktøjer i dine agenter
+- 🚀 Eksportér og deployér MCP-drevne agenter til produktion
 
-**🎯 Læringsresultat**: Udrul en AI-agent, der er superladet med eksterne værktøjer via MCP
+**🎯 Læringsmål**: Udrul en AI-agent med eksterne værktøjer via MCP
 
 ### [🔧 Modul 3: Avanceret MCP-udvikling med AI Toolkit](./lab3/README.md)
 
 **Varighed**: 20 minutter
 
-- 💻 Opret brugerdefinerede MCP-servere ved hjælp af AI Toolkit
+- 💻 Opret tilpassede MCP-servere med AI Toolkit
 - 🐍 Konfigurer og brug den nyeste MCP Python SDK (v1.9.3)
-- 🔍 Opsæt og brug MCP Inspector til fejlfinding
-- 🛠️ Byg en Weather MCP Server med professionelle fejlfindingsarbejdsgange
-- 🧪 Fejlfind MCP-servere i både Agent Builder og Inspector-miljøer
+- 🔍 Opsæt og brug MCP Inspector til debugging
+- 🛠️ Byg en Weather MCP Server med professionelle debugging-arbejdsgange
+- 🧪 Debug MCP-servere i både Agent Builder og Inspector miljøer
 
-**🎯 Læringsresultat**: Udvikl og fejlfind brugerdefinerede MCP-servere med moderne værktøjer
+**🎯 Læringsmål**: Udvikl og fejlret tilpassede MCP-servere med moderne værktøjer
 
-### [🐙 Modul 4: Praktisk MCP-udvikling - Brugerdefineret GitHub Clone Server](./lab4/README.md)
+### [🐙 Modul 4: Praktisk MCP-udvikling - Tilpasset GitHub Clone Server](./lab4/README.md)
 
 **Varighed**: 30 minutter
 
-- 🏗️ Byg en GitHub Clone MCP Server til udviklingsarbejdsgange
-- 🔄 Implementer smart repository-kloning med validering og fejlhåndtering
-- 📁 Opret intelligent katalogstyring og VS Code-integration
-- 🤖 Brug GitHub Copilot Agent Mode med brugerdefinerede MCP-værktøjer
-- 🛡️ Anvend produktionsklar pålidelighed og tværplatformskompatibilitet
+- 🏗️ Byg en virkelighedsnær GitHub Clone MCP Server til udviklingsarbejdsgange
+- 🔄 Implementér smart repository-kloning med validering og fejlbehandling
+- 📁 Opret intelligent bibliotekshåndtering og VS Code integration
+- 🤖 Brug GitHub Copilot Agent Mode med tilpassede MCP-værktøjer
+- 🛡️ Anvend produktionsklar pålidelighed og tværplatform-kompatibilitet
 
-**🎯 Læringsresultat**: Udrul en produktionsklar MCP-server, der strømliner reelle udviklingsarbejdsgange
+**🎯 Læringsmål**: Udrul en produktionsklar MCP-server, der effektiviserer reelle udviklingsarbejdsgange
 
-## 💡 Virkelige anvendelser og indvirkning
+## 💡 Virkelige Anvendelser & Indvirkning
 
-### 🏢 Anvendelser i virksomheder
+### 🏢 Enterprise Use Cases
 
 #### 🔄 DevOps-automatisering
 
-Transformér din udviklingsarbejdsgang med intelligent automatisering:
+Transformer din udviklingsarbejdsgang med intelligent automation:
 
-- **Smart repository-styring**: AI-drevet kodegennemgang og beslutninger om sammensmeltning
-- **Intelligent CI/CD**: Automatiseret pipelineoptimering baseret på kodeændringer
-- **Problemtriage**: Automatisk klassificering og tildeling af fejl
+- **Smart Repository Management**: AI-drevet kodegennemgang og merge-beslutninger
+- **Intelligent CI/CD**: Automatiseret pipeline-optimering baseret på kodeændringer
+- **Issue Triage**: Automatisk klassificering og tildeling af fejl
 
-#### 🧪 Revolution inden for kvalitetssikring
+#### 🧪 Kvalitetssikringsrevolution
 
-Forbedr testning med AI-drevet automatisering:
+Hæv testningen med AI-drevet automation:
 
-- **Intelligent testgenerering**: Opret omfattende testsuiter automatisk
-- **Visuel regressionstestning**: AI-drevet detektion af UI-ændringer
-- **Præstationsovervågning**: Proaktiv identifikation og løsning af problemer
+- **Intelligent Testgenerering**: Automatisk opbygning af omfattende testsuiter
+- **Visuel Regressionstest**: AI-drevet UI-ændringsdetektion
+- **Performance Monitorering**: Proaktiv identifikation og løsning af problemer
 
-#### 📊 Intelligens i databehandlingsarbejdsgange
+#### 📊 Data Pipeline Intelligence
 
-Byg smartere databehandlingsprocesser:
+Byg smartere databehandlingsarbejdsgange:
 
-- **Adaptive ETL-processer**: Selvoptimerende datatransformationer
+- **Adaptive ETL-processer**: Selvovervågende data transformationer
 - **Anomalidetektion**: Real-time overvågning af datakvalitet
-- **Intelligent routing**: Smart styring af dataflow
+- **Intelligent Routing**: Smart styring af dataflow
 
-#### 🎧 Forbedring af kundeoplevelser
+#### 🎧 Forbedret kundeoplevelse
 
 Skab exceptionelle kundeinteraktioner:
 
-- **Kontekstbevidst support**: AI-agenter med adgang til kundehistorik
-- **Proaktiv problemløsning**: Forudsigende kundeservice
-- **Multi-kanal integration**: En samlet AI-oplevelse på tværs af platforme
+- **Kontekstbevidst Support**: AI-agenter med adgang til kundehistorik
+- **Proaktiv Problemløsning**: Forudsigende kundesupport
+- **Multi-Channel Integration**: Enhedlig AI-oplevelse på tværs af platforme
 
-## 🛠️ Forudsætninger og opsætning
+## 🛠️ Forudsætninger & Opsætning
 
 ### 💻 Systemkrav
 
-| Komponent | Krav | Noter |
-|-----------|------|-------|
-| **Operativsystem** | Windows 10+, macOS 10.15+, Linux | Ethvert moderne OS |
-| **Visual Studio Code** | Seneste stabile version | Påkrævet for AITK |
+| Komponent | Krav | Bemærkninger |
+|-----------|-------------|--------------|
+| **Operativsystem** | Windows 10+, macOS 10.15+, Linux | Enhver moderne OS |
+| **Visual Studio Code** | Nyeste stabile version | Nødvendig til AITK |
 | **Node.js** | v18.0+ og npm | Til MCP-serverudvikling |
-| **Python** | 3.10+ | Valgfrit for Python MCP-servere |
+| **Python** | 3.10+ | Valgfrit til Python MCP-servere |
 | **Hukommelse** | Minimum 8GB RAM | 16GB anbefales til lokale modeller |
 
 ### 🔧 Udviklingsmiljø
@@ -161,57 +162,66 @@ Skab exceptionelle kundeinteraktioner:
 - **AI Toolkit** (ms-windows-ai-studio.windows-ai-studio)
 - **Python** (ms-python.python)
 - **Python Debugger** (ms-python.debugpy)
-- **GitHub Copilot** (GitHub.copilot) - Valgfrit, men nyttigt
+- **GitHub Copilot** (GitHub.copilot) - Valgfri men nyttig
 
 #### Valgfrie værktøjer
 
-- **uv**: Moderne Python-pakkehåndtering
-- **MCP Inspector**: Visuelt fejlfindingsværktøj til MCP-servere
-- **Playwright**: Til eksempler på webautomatisering
+- **uv**: Moderne Python-pakkestyring
+- **MCP Inspector**: Visuelt debugging-værktøj til MCP-servere
+- **Playwright**: Til webautomatiseringseksempler
 
-## 🎖️ Læringsresultater og certificeringsvej
+## 🎖️ Læringsmål & Certificeringsvej
 
-### 🏆 Tjekliste for færdighedsmastery
+### 🏆 Færdighedsmestrings tjekliste
 
-Ved at gennemføre denne workshop vil du opnå færdigheder inden for:
+Ved færdiggørelse af denne workshop opnår du mestring i:
 
 #### 🎯 Kernekompetencer
 
-- [ ] **MCP-protokolmastery**: Dyb forståelse af arkitektur og implementeringsmønstre
-- [ ] **AITK-færdigheder**: Ekspertbrug af AI Toolkit til hurtig udvikling
-- [ ] **Udvikling af brugerdefinerede servere**: Byg, udrul og vedligehold produktionsklare MCP-servere
-- [ ] **Ekspertise i værktøjsintegration**: Problemfri forbindelse mellem AI og eksisterende arbejdsgange
-- [ ] **Anvendelse af problemløsning**: Brug lærte færdigheder til reelle forretningsudfordringer
+- [ ] **MCP Protokolmestring**: Dyb forståelse af arkitektur og implementeringsmønstre
+- [ ] **AITK Ekspertise**: Ekspertbrug af AI Toolkit til hurtig udvikling
+- [ ] **Tilpasset Serverudvikling**: Byg, deployer og vedligehold produktions-MCP-servere
+- [ ] **Værktøjsintegration**: Sømløs forbindelse af AI med eksisterende udviklingsarbejdsgange
+- [ ] **Problemløsning**: Anvend lærte færdigheder på reelle forretningsudfordringer
 
-#### 🔧 Tekniske færdigheder
+#### 🔧 Tekniske Færdigheder
 
 - [ ] Opsæt og konfigurer AI Toolkit i VS Code
-- [ ] Design og implementer brugerdefinerede MCP-servere
+- [ ] Design og implementer tilpassede MCP-servere
 - [ ] Integrer GitHub-modeller med MCP-arkitektur
 - [ ] Byg automatiserede testarbejdsgange med Playwright
-- [ ] Udrul AI-agenter til produktion
-- [ ] Fejlfind og optimer MCP-serverpræstation
+- [ ] Deploy AI-agenter til produktion
+- [ ] Debug og optimer MCP-serverpræstation
 
-#### 🚀 Avancerede kapaciteter
+#### 🚀 Avancerede Evner
 
-- [ ] Arkitekt AI-integrationer i virksomhedsskala
-- [ ] Implementer sikkerhedsbedste praksis for AI-applikationer
+- [ ] Arkitekt virksomhedsskala AI-integrationer
+- [ ] Implementer sikkerhedspraksis for AI-applikationer
 - [ ] Design skalerbare MCP-serverarkitekturer
-- [ ] Opret brugerdefinerede værktøjskæder til specifikke domæner
-- [ ] Vejled andre i AI-native udvikling
+- [ ] Skab tilpassede værktøjskæder til specifikke domæner
+- [ ] Mentorér andre i AI-native udvikling
 
-## 📖 Yderligere ressourcer
+## 📖 Yderligere Ressourcer
 
-- [MCP-specifikation](https://modelcontextprotocol.io/docs)
+- [MCP-specifikation (2025-11-25)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
 - [AI Toolkit GitHub Repository](https://github.com/microsoft/vscode-ai-toolkit)
-- [Samling af MCP-servereksempler](https://github.com/modelcontextprotocol/servers)
+- [Sample MCP Servers Collection](https://github.com/modelcontextprotocol/servers)
 - [Best Practices Guide](https://modelcontextprotocol.io/docs/best-practices)
+- [OWASP MCP Top 10](https://microsoft.github.io/mcp-azure-security-guide/mcp/) - Sikkerhedspraksis
 
 ---
 
 **🚀 Klar til at revolutionere din AI-udviklingsarbejdsgang?**
 
-Lad os bygge fremtiden for intelligente applikationer sammen med MCP og AI Toolkit!
+Lad os sammen bygge fremtiden for intelligente applikationer med MCP og AI Toolkit!
 
-**Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi er ikke ansvarlige for eventuelle misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
+## Hvad sker der nu
+
+Fortsæt til: [Modul 11: MCP Server Hands-On Labs](../11-MCPServerHandsOnLabs/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Ansvarsfraskrivelse**:
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi stræber efter nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål skal betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for eventuelle misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

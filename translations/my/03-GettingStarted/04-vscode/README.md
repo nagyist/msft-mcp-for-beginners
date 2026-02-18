@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d940b5e0af75e3a3a4d1c3179120d1d9",
-  "translation_date": "2025-08-26T18:28:16+00:00",
-  "source_file": "03-GettingStarted/04-vscode/README.md",
-  "language_code": "my"
-}
--->
 # GitHub Copilot Agent Mode မှ Server ကို အသုံးပြုခြင်း
 
 Visual Studio Code နှင့် GitHub Copilot သည် client အဖြစ်လုပ်ဆောင်ပြီး MCP Server ကို အသုံးပြုနိုင်ပါသည်။ ဒါကို ဘာကြောင့် လိုအပ်လဲလို့ မေးမိနိုင်ပါတယ်။ အကြောင်းကတော့ MCP Server ရဲ့ feature တွေကို IDE အတွင်းမှာ အသုံးပြုနိုင်မယ်ဆိုတာပါ။ GitHub ရဲ့ MCP Server ကို ထည့်သွင်းလိုက်တာနဲ့ GitHub ကို terminal မှာ command ရိုက်မယ့်အစား prompt တွေကို အသုံးပြုပြီး ထိန်းချုပ်နိုင်ပါမယ်။ ဒါမှမဟုတ် developer experience ကို တိုးတက်စေမယ့် feature တွေကို သဘာဝဘာသာစကားနဲ့ ထိန်းချုပ်နိုင်မယ့် အခြေအနေကို စဉ်းစားကြည့်ပါ။ အခုတော့ အကျိုးကျေးဇူးကို မြင်လာပါပြီဟုတ်?
@@ -38,9 +29,9 @@ MCP Server ကို ထိန်းချုပ်ရန် နည်းလမ�
 
 ### Screenshots
 
-![Visual Studio Code မှ MCP server configuration ကို လမ်းညွှန်ပေးခြင်း](../../../../translated_images/chat-mode-agent.729a22473f822216dd1e723aaee1f7d4a2ede571ee0948037a2d9357a63b9d0b.my.png)
-![Agent session တစ်ခုစီအတွက် tool ရွေးချယ်ခြင်း](../../../../translated_images/agent-mode-select-tools.522c7ba5df0848f8f0d1e439c2e96159431bc620cb39ccf3f5dc611412fd0006.my.png)
-![MCP development အတွင်း error များကို အလွယ်တကူ debug လုပ်နိုင်ခြင်း](../../../../translated_images/mcp-list-servers.fce89eefe3f30032bed8952e110ab9d82fadf043fcfa071f7d40cf93fb1ea9e9.my.png)
+![Visual Studio Code မှ MCP server configuration ကို လမ်းညွှန်ပေးခြင်း](../../../../translated_images/my/chat-mode-agent.729a22473f822216.webp)
+![Agent session တစ်ခုစီအတွက် tool ရွေးချယ်ခြင်း](../../../../translated_images/my/agent-mode-select-tools.522c7ba5df0848f8.webp)
+![MCP development အတွင်း error များကို အလွယ်တကူ debug လုပ်နိုင်ခြင်း](../../../../translated_images/my/mcp-list-servers.fce89eefe3f30032.webp)
 
 နောက်ပိုင်း section တွေမှာ visual interface ကို ဘယ်လိုအသုံးပြုမလဲ ဆွေးနွေးကြပါစို့။
 
@@ -103,15 +94,15 @@ Entry ကို ထည့်သွင်းပြီးပြီဆိုရင�
 
 1. *mcp.json* ဖိုင်မှာ သင့် entry ကို ရှာဖွေပြီး "play" icon ကို ရှာပါ:
 
-  ![Visual Studio Code မှ Server ကို စတင်ခြင်း](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.my.png)  
+  ![Visual Studio Code မှ Server ကို စတင်ခြင်း](../../../../translated_images/my/vscode-start-server.8e3c986612e3555d.webp)  
 
 1. "play" icon ကို click လုပ်ပါ။ GitHub Copilot Chat မှ tools icon ရဲ့ available tools အရေအတွက် တိုးလာတာကို တွေ့ရပါမယ်။ tools icon ကို click လုပ်ပါက registered tools များရဲ့ စာရင်းကို တွေ့ရပါမယ်။ GitHub Copilot ကို context အဖြစ် အသုံးပြုစေချင်/မချင် tools တစ်ခုချင်းစီကို check/uncheck လုပ်နိုင်ပါတယ်:
 
-  ![Visual Studio Code မှ Server ကို စတင်ခြင်း](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.my.png)
+  ![Visual Studio Code မှ Server ကို စတင်ခြင်း](../../../../translated_images/my/vscode-tool.0b3bbea2fb7d8c26.webp)
 
 1. Tool တစ်ခုကို run လုပ်ရန် prompt တစ်ခုကို ရိုက်ပါ။ ဥပမာအားဖြင့် "add 22 to 1" ဆိုတဲ့ prompt ကို ရိုက်ပါ:
 
-  ![GitHub Copilot မှ Tool ကို run လုပ်ခြင်း](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.my.png)
+  ![GitHub Copilot မှ Tool ကို run လုပ်ခြင်း](../../../../translated_images/my/vscode-agent.d5a0e0b897331060.webp)
 
   23 ဆိုတဲ့ response ကို တွေ့ရပါမယ်။
 

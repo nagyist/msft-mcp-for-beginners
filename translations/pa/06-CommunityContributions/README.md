@@ -1,148 +1,139 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fcf1e12b62102bf7d16b78deb2b163b7",
-  "translation_date": "2025-08-18T16:57:55+00:00",
-  "source_file": "06-CommunityContributions/README.md",
-  "language_code": "pa"
-}
--->
 # ਕਮਿਊਨਿਟੀ ਅਤੇ ਯੋਗਦਾਨ
 
-[![MCP ਵਿੱਚ ਯੋਗਦਾਨ ਦੇਣ ਦਾ ਤਰੀਕਾ: ਟੂਲ, ਦਸਤਾਵੇਜ਼, ਕੋਡ ਅਤੇ ਹੋਰ](../../../translated_images/07.1179f6de46ff196eb3cc13c3510e01c37807a13f3bb9be3c779105ce26737c67.pa.png)](https://youtu.be/v1pvCYAWpRE)
+[![MCP ਨੂੰ ਯੋਗਦਾਨ ਦੇਣ ਦਾ ਤਰੀਕਾ: ਟੂਲز, ਡੌਕਸ, ਕੋਡ ਅਤੇ ਹੋਰ](../../../translated_images/pa/07.1179f6de46ff196e.webp)](https://youtu.be/v1pvCYAWpRE)
 
-_(ਉਪਰ ਦਿੱਤੀ ਤਸਵੀਰ 'ਤੇ ਕਲਿਕ ਕਰਕੇ ਇਸ ਪਾਠ ਦਾ ਵੀਡੀਓ ਵੇਖੋ)_
+_(ਇਸ ਪਾਠ ਦੀ ਵੀਡੀਓ ਦੇਖਣ ਲਈ ਉਪਰੋਕਤ ਚਿੱਤਰ 'ਤੇ ਕਲਿੱਕ ਕਰੋ)_
 
-## ਝਲਕ
+## ਸੰਖੇਪ
 
-ਇਹ ਪਾਠ MCP ਕਮਿਊਨਿਟੀ ਨਾਲ ਜੁੜਨ, MCP ਇਕੋਸਿਸਟਮ ਵਿੱਚ ਯੋਗਦਾਨ ਦੇਣ ਅਤੇ ਸਹਿਯੋਗੀ ਵਿਕਾਸ ਲਈ ਸ੍ਰੇਸ਼ਠ ਅਭਿਆਸਾਂ ਦੀ ਪਾਲਣਾ ਕਰਨ 'ਤੇ ਧਿਆਨ ਕੇਂਦਰਿਤ ਕਰਦਾ ਹੈ। ਖੁੱਲੇ-ਸਰੋਤ MCP ਪ੍ਰੋਜੈਕਟਾਂ ਵਿੱਚ ਹਿੱਸਾ ਲੈਣ ਦਾ ਸਮਝਣਾ ਉਹਨਾਂ ਲਈ ਜ਼ਰੂਰੀ ਹੈ ਜੋ ਇਸ ਤਕਨਾਲੋਜੀ ਦੇ ਭਵਿੱਖ ਨੂੰ ਰੂਪ ਦੇਣਾ ਚਾਹੁੰਦੇ ਹਨ।
+ਇਹ ਪਾਠ MCP ਕਮਿਊਨਿਟੀ ਨਾਲ ਕਿਵੇਂ ਜੁੜਨਾ ਹੈ, MCP ਇਕੋਸਿਸਟਮ ਵਿੱਚ ਯੋਗਦਾਨ ਦੇਣਾ ਹੈ, ਅਤੇ ਸਹਿਯੋਗੀ ਵਿਧੀਵਤ ਵਿਕਾਸ ਲਈ ਸ੍ਰੇਸ਼ਟ ਅਭਿਆਸਾਂ ਦੀ ਪਾਲਣਾ ਕਰਨ 'ਤੇ ਕੇਂਦਰਿਤ ਹੈ। ਖੁੱਲ੍ਹੇ ਸਰੋਤ MCP ਪ੍ਰਾਜੈਕਟਾਂ ਵਿੱਚ ਭਾਗ ਲੈਣਾ ਸਮਝਣਾ ਉਹਨਾਂ ਲਈ ਜਰੂਰੀ ਹੈ ਜੋ ਇਸ ਤਕਨਾਲੋਜੀ ਦੇ ਭਵਿੱਖ ਨੂੰ ਆਕਾਰ ਦੇਣਾ ਚਾਹੁੰਦੇ ਹਨ।
 
-## ਸਿੱਖਣ ਦੇ ਉਦੇਸ਼
+## ਸਿੱਖਣ ਦੇ ਲੱਕੜ
 
-ਇਸ ਪਾਠ ਦੇ ਅੰਤ ਤੱਕ, ਤੁਸੀਂ ਸਮਰੱਥ ਹੋਵੋਗੇ:
+ਇਸ ਪਾਠ ਦੇ ਅੰਤ 'ਤੇ, ਤੁਸੀਂ ਸਮਰੱਥ ਹੋਵੋਗੇ:
 
-- MCP ਕਮਿਊਨਿਟੀ ਅਤੇ ਇਕੋਸਿਸਟਮ ਦੀ ਬਣਤਰ ਨੂੰ ਸਮਝਣਾ
-- MCP ਕਮਿਊਨਿਟੀ ਫੋਰਮਾਂ ਅਤੇ ਚਰਚਾਵਾਂ ਵਿੱਚ ਪ੍ਰਭਾਵਸ਼ਾਲੀ ਤਰੀਕੇ ਨਾਲ ਹਿੱਸਾ ਲੈਣਾ
-- MCP ਖੁੱਲੇ-ਸਰੋਤ ਰਿਪੋਜ਼ਿਟਰੀਜ਼ ਵਿੱਚ ਯੋਗਦਾਨ ਦੇਣਾ
-- ਕਸਟਮ MCP ਟੂਲ ਅਤੇ ਸਰਵਰ ਬਣਾਉਣਾ ਅਤੇ ਸਾਂਝੇ ਕਰਨਾ
-- MCP ਵਿਕਾਸ ਅਤੇ ਸਹਿਯੋਗ ਲਈ ਸ੍ਰੇਸ਼ਠ ਅਭਿਆਸਾਂ ਦੀ ਪਾਲਣਾ ਕਰਨਾ
-- MCP ਵਿਕਾਸ ਲਈ ਕਮਿਊਨਿਟੀ ਸਰੋਤ ਅਤੇ ਫਰੇਮਵਰਕ ਖੋਜਣਾ
+- MCP ਕਮਿਊਨਿਟੀ ਅਤੇ ਇਕੋਸਿਸਟਮ ਦੀ ਬਣਤਰ ਨੂੰ ਸਮਝੋ
+- MCP ਕਮਿਊਨਿਟੀ ਫੋਰਮਾਂ ਅਤੇ ਵਿਚਾਰ-ਵਟਾਂਦਰੇ ਵਿੱਚ ਪ੍ਰਭਾਵਸ਼ਾਲੀ ਤਰੀਕੇ ਨਾਲ ਭਾਗ ਲਵੋ
+- MCP ਖੁੱਲ੍ਹੇ ਸਰੋਤ ਰਿਪੋਜ਼ਟਰੀਜ਼ ਵਿੱਚ ਯੋਗਦਾਨ ਦਿਓ
+- ਕਸਟਮ MCP ਟੂਲਜ਼ ਅਤੇ ਸਰਵਰ ਬਣਾਓ ਅਤੇ ਸਾਂਝੇ ਕਰੋ
+- MCP ਵਿਕਾਸ ਅਤੇ ਸਹਿਯੋਗ ਲਈ ਬਿਹਤਰ ਅਭਿਆਸਾਂ ਦੀ ਪਾਲਣਾ ਕਰੋ
+- MCP ਵਿਕਾਸ ਲਈ ਕਮਿਊਨਿਟੀ ਸੰਸਾਧਨ ਅਤੇ ਫਰੇਮਵਰਕਾਂ ਦੀ ਖੋਜ ਕਰੋ
 
 ## MCP ਕਮਿਊਨਿਟੀ ਇਕੋਸਿਸਟਮ
 
-MCP ਇਕੋਸਿਸਟਮ ਵਿੱਚ ਵੱਖ-ਵੱਖ ਘਟਕ ਅਤੇ ਭਾਗੀਦਾਰ ਸ਼ਾਮਲ ਹਨ ਜੋ ਪ੍ਰੋਟੋਕੋਲ ਨੂੰ ਅੱਗੇ ਵਧਾਉਣ ਲਈ ਇਕੱਠੇ ਕੰਮ ਕਰਦੇ ਹਨ।
+MCP ਇਕੋਸਿਸਟਮ ਵੱਖ-ਵੱਖ ਭਾਗਾਂ ਅਤੇ ਭਾਗੀਦਾਰਾਂ ਦਾ ਸਮੂਹ ਹੈ ਜੋ ਪ੍ਰੋਟੋਕੋਲ ਨੂੰ ਅੱਗੇ ਵਧਾਉਣ ਲਈ ਮਿਲ ਕੇ ਕੰਮ ਕਰਦੇ ਹਨ।
 
-### ਮੁੱਖ ਕਮਿਊਨਿਟੀ ਘਟਕ
+### ਮੁੱਖ ਕਮਿਊਨਿਟੀ ਭਾਗ
 
-1. **ਕੋਰ ਪ੍ਰੋਟੋਕੋਲ ਮੇਂਟੇਨਰ**: ਅਧਿਕਾਰਕ [Model Context Protocol GitHub organization](https://github.com/modelcontextprotocol) ਕੋਰ MCP ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਅਤੇ ਰਿਫਰੈਂਸ ਇੰਪਲੀਮੈਂਟੇਸ਼ਨ ਨੂੰ ਸੰਭਾਲਦਾ ਹੈ।
-2. **ਟੂਲ ਡਿਵੈਲਪਰ**: ਵਿਅਕਤੀ ਅਤੇ ਟੀਮਾਂ ਜੋ MCP ਟੂਲ ਅਤੇ ਸਰਵਰ ਬਣਾਉਂਦੀਆਂ ਹਨ।
-3. **ਇੰਟੀਗ੍ਰੇਸ਼ਨ ਪ੍ਰੋਵਾਈਡਰ**: ਕੰਪਨੀਆਂ ਜੋ ਆਪਣੇ ਉਤਪਾਦਾਂ ਅਤੇ ਸੇਵਾਵਾਂ ਵਿੱਚ MCP ਨੂੰ ਸ਼ਾਮਲ ਕਰਦੀਆਂ ਹਨ।
-4. **ਐਂਡ ਯੂਜ਼ਰ**: ਡਿਵੈਲਪਰ ਅਤੇ ਸੰਗਠਨ ਜੋ ਆਪਣੇ ਐਪਲੀਕੇਸ਼ਨਾਂ ਵਿੱਚ MCP ਦੀ ਵਰਤੋਂ ਕਰਦੇ ਹਨ।
-5. **ਯੋਗਦਾਨਕਰਤਾ**: ਕਮਿਊਨਿਟੀ ਮੈਂਬਰ ਜੋ ਕੋਡ, ਦਸਤਾਵੇਜ਼ ਜਾਂ ਹੋਰ ਸਰੋਤਾਂ ਵਿੱਚ ਯੋਗਦਾਨ ਪਾਉਂਦੇ ਹਨ।
+1. **ਕੋਰ ਪ੍ਰੋਟੋਕੋਲ ਮੈਨਟੇਨਰਜ਼**: ਅਧਿਕਾਰਿਕ [Model Context Protocol GitHub organization](https://github.com/modelcontextprotocol) MCP ਦੀਆਂ ਕੋਰ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਅਤੇ ਸੰਕੇਤਕ ਲਾਗੂ ਕਰਦਾ ਹੈ
+2. **ਟੂਲ ਵਿਕਾਸਕਾਰ**: ਵਿਆਕਤੀ ਅਤੇ ਟੀਮਾਂ ਜਿਹੜੀਆਂ MCP ਟੂਲ ਅਤੇ ਸਰਵਰ ਬਣਾਉਂਦੀਆਂ ਹਨ
+3. **ਇੰਟੀਗ੍ਰੇਸ਼ਨ ਪ੍ਰਦਾਤਾ**: ਕੰਪਨੀਆਂ ਜੋ MCP ਨੂੰ ਆਪਣੇ ਉਤਪਾਦਾਂ ਅਤੇ ਸੇਵਾਵਾਂ ਵਿੱਚ ਜੋੜਦੀਆਂ ਹਨ
+4. **ਅੰਤ-ਉਪਭੋਗਤਾ**: ਵਿਕਾਸਕਾਰ ਅਤੇ ਸੰਸਥਾਵਾਂ ਜੋ MCP ਨੂੰ ਆਪਣੇ ਐਪਲੀਕੇਸ਼ਨਾਂ ਵਿੱਚ ਵਰਤਦੀਆਂ ਹਨ
+5. **ਯੋਗਦਾਤਾ**: ਕਮਿਊਨਿਟੀ ਮੈਂਬਰ ਜਿਹੜੇ ਕੋਡ, ਦਸਤਾਵੇਜ਼ ਜਾਂ ਹੋਰ ਸੰਸਾਧਨ ਸ਼ੇਅਰ ਕਰਦੇ ਹਨ
 
-### ਕਮਿਊਨਿਟੀ ਸਰੋਤ
+### ਕਮਿਊਨਿਟੀ ਸੰਸਾਧਨ
 
-#### ਅਧਿਕਾਰਕ ਚੈਨਲ
+#### ਅਧਿਕਾਰਿਕ ਚੈਨਲ
 
 - [MCP GitHub Organization](https://github.com/modelcontextprotocol)
 - [MCP Documentation](https://modelcontextprotocol.io/)
-- [MCP Specification](https://modelcontextprotocol.io/docs/specification)
+- [MCP Specification](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
 - [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)
 - [MCP Examples & Servers Repository](https://github.com/modelcontextprotocol/servers)
 
-#### ਕਮਿਊਨਿਟੀ-ਚਲਿਤ ਸਰੋਤ
+#### ਕਮਿਊਨਿਟੀ-ਚਲਿਤ ਸੰਸਾਧਨ
 
-- [MCP Clients](https://modelcontextprotocol.io/clients) - ਉਹ ਕਲਾਇੰਟਾਂ ਦੀ ਸੂਚੀ ਜੋ MCP ਇੰਟੀਗ੍ਰੇਸ਼ਨ ਨੂੰ ਸਹਾਰਾ ਦਿੰਦੇ ਹਨ।
-- [Community MCP Servers](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - ਕਮਿਊਨਿਟੀ ਦੁਆਰਾ ਵਿਕਸਿਤ MCP ਸਰਵਰਾਂ ਦੀ ਵਧ ਰਹੀ ਸੂਚੀ।
-- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) - ਚੁਣੇ ਹੋਏ MCP ਸਰਵਰਾਂ ਦੀ ਸੂਚੀ।
-- [PulseMCP](https://www.pulsemcp.com/) - MCP ਸਰੋਤਾਂ ਦੀ ਖੋਜ ਲਈ ਕਮਿਊਨਿਟੀ ਹੱਬ ਅਤੇ ਨਿਊਜ਼ਲੈਟਰ।
-- [Discord Server](https://discord.gg/jHEGxQu2a5) - MCP ਡਿਵੈਲਪਰਾਂ ਨਾਲ ਜੁੜੋ।
-- ਭਾਸ਼ਾ-ਵਿਸ਼ੇਸ਼ SDK ਇੰਪਲੀਮੈਂਟੇਸ਼ਨ।
-- ਬਲੌਗ ਪੋਸਟ ਅਤੇ ਟਿਊਟੋਰਿਅਲ।
+- [MCP Clients](https://modelcontextprotocol.io/clients) - MCP ਇੰਟੀਗ੍ਰੇਸ਼ਨ ਸਹਾਇਕ ਕਲਾਇੰਟਾਂ ਦੀ ਸੂਚੀ
+- [Community MCP Servers](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - ਕਮਿਊਨਿਟੀ-ਵਿਕਸਿਤ MCP ਸਰਵਰਾਂ ਦੀ ਵਧ ਰਹੀ ਸੂਚੀ
+- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) - ਚੁਣੀ ਹੋਈ MCP ਸਰਵਰਾਂ ਦੀ ਸੂਚੀ
+- [PulseMCP](https://www.pulsemcp.com/) - MCP ਸੰਸਾਧਨਾਂ ਨੂੰ ਖੋਜਣ ਲਈ ਕਮਿਊਨਿਟੀ ਹੱਬ ਅਤੇ ਨਿਊਜ਼ਲੈਟਰ
+- [Discord Server](https://discord.gg/jHEGxQu2a5) - MCP ਵਿਕਾਸਕਾਰਾਂ ਨਾਲ ਜੁੜੋ
+- ਭਾਸ਼ਾ-ਵਿਸ਼ੇਸ਼ SDK ਲਾਗੂਆਂ
+- ਬਲੌਗ ਪੋਸਟਾਂ ਅਤੇ ਟਿਊਟੋਰਿਯਲ
 
 ## MCP ਵਿੱਚ ਯੋਗਦਾਨ ਦੇਣਾ
 
-### ਯੋਗਦਾਨ ਦੇਣ ਦੇ ਕਿਸਮਾਂ
+### ਯੋਗਦਾਨ ਦੇ ਤਰ੍ਹਾਂ
 
-MCP ਇਕੋਸਿਸਟਮ ਵੱਖ-ਵੱਖ ਕਿਸਮਾਂ ਦੇ ਯੋਗਦਾਨਾਂ ਦਾ ਸਵਾਗਤ ਕਰਦਾ ਹੈ:
+MCP ਇਕੋਸਿਸਟਮ ਵੱਖ-ਵੱਖ ਪ੍ਰਕਾਰ ਦੇ ਯੋਗਦਾਨਾਂ ਦਾ ਸਵਾਗਤ ਕਰਦਾ ਹੈ:
 
 1. **ਕੋਡ ਯੋਗਦਾਨ**:
-   - ਕੋਰ ਪ੍ਰੋਟੋਕੋਲ ਵਿੱਚ ਸੁਧਾਰ
+   - ਕੋਰ ਪ੍ਰੋਟੋਕੋਲ ਸੁਧਾਰ
    - ਬੱਗ ਫਿਕਸ
-   - ਟੂਲ ਅਤੇ ਸਰਵਰ ਇੰਪਲੀਮੈਂਟੇਸ਼ਨ
+   - ਟੂਲ ਅਤੇ ਸਰਵਰ ਲਾਗੂਆ
    - ਵੱਖ-ਵੱਖ ਭਾਸ਼ਾਵਾਂ ਵਿੱਚ ਕਲਾਇੰਟ/ਸਰਵਰ ਲਾਇਬ੍ਰੇਰੀਜ਼
 
-2. **ਦਸਤਾਵੇਜ਼**:
-   - ਮੌਜੂਦਾ ਦਸਤਾਵੇਜ਼ ਵਿੱਚ ਸੁਧਾਰ
-   - ਟਿਊਟੋਰਿਅਲ ਅਤੇ ਗਾਈਡ ਬਣਾਉਣਾ
-   - ਦਸਤਾਵੇਜ਼ ਦਾ ਅਨੁਵਾਦ ਕਰਨਾ
-   - ਉਦਾਹਰਨਾਂ ਅਤੇ ਸੈਂਪਲ ਐਪਲੀਕੇਸ਼ਨ ਬਣਾਉਣਾ
+2. **ਦਸਤਾਵੇਜ਼ੀਕਰਨ**:
+   - ਮੌਜੂਦਾ ਦਸਤਾਵੇਜ਼ੀਕਰਨ ਨੂੰ ਸੁਧਾਰਨ
+   - ਟਿਊਟੋਰਿਯਲ ਅਤੇ ਮਾਰਗਦਰਸ਼ਿਕਾਵਾਂ ਬਣਾਉਣਾ
+   - ਦਸਤਾਵੇਜ਼਼ ਦਾ ਅਨੁਵਾਦ ਕਰਨਾ
+   - ਉਦਾਹਰਨਾਂ ਅਤੇ ਟੈਸਟ ਐਪਲੀਕੇਸ਼ਨਾਂ ਬਣਾਉਣਾ
 
 3. **ਕਮਿਊਨਿਟੀ ਸਹਾਇਤਾ**:
-   - ਫੋਰਮਾਂ ਅਤੇ ਚਰਚਾਵਾਂ 'ਤੇ ਸਵਾਲਾਂ ਦੇ ਜਵਾਬ ਦੇਣਾ
-   - ਟੈਸਟਿੰਗ ਅਤੇ ਮੁੱਦਿਆਂ ਦੀ ਰਿਪੋਰਟਿੰਗ
-   - ਕਮਿਊਨਿਟੀ ਇਵੈਂਟ ਆਯੋਜਿਤ ਕਰਨਾ
-   - ਨਵੇਂ ਯੋਗਦਾਨਕਰਤਾਵਾਂ ਨੂੰ ਮਦਦ ਦੇਣਾ
+   - ਫੋਰਮਾਂ ਅਤੇ ਵਿਚਾਰ-ਵਟਾਂਦਰੇ 'ਚ ਸਵਾਲਾਂ ਦੇ ਜਵਾਬ ਦੇਣਾ
+   - ਟੈਸਟਿੰਗ ਅਤੇ ਮੁੱਦੇ ਰਿਪੋਰਟ ਕਰਨਾ
+   - ਕਮਿਊਨਿਟੀ ਸਮਾਰੋਹ ਆਯੋਜਿਤ ਕਰਨਾ
+   - ਨਵੇਂ ਯੋਗਦਾਤਾ ਦਾ ਮਾਰਗਦਰਸ਼ਨ ਕਰਨਾ
 
-### ਕੋਰ ਪ੍ਰੋਟੋਕੋਲ ਵਿੱਚ ਯੋਗਦਾਨ ਦੇਣ ਦੀ ਪ੍ਰਕਿਰਿਆ
+### ਯੋਗਦਾਨ ਪ੍ਰਕਿਰਿਆ: ਕੋਰ ਪ੍ਰੋਟੋਕੋਲ
 
-ਕੋਰ MCP ਪ੍ਰੋਟੋਕੋਲ ਜਾਂ ਅਧਿਕਾਰਕ ਇੰਪਲੀਮੈਂਟੇਸ਼ਨ ਵਿੱਚ ਯੋਗਦਾਨ ਦੇਣ ਲਈ, [ਅਧਿਕਾਰਕ ਯੋਗਦਾਨ ਦੇਣ ਦੇ ਨਿਯਮ](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md) ਦੇ ਇਹ ਸਿਧਾਂਤਾਂ ਦੀ ਪਾਲਣਾ ਕਰੋ:
+ਕੋਰ MCP ਪ੍ਰੋਟੋਕੋਲ ਜਾਂ ਅਧਿਕਾਰਿਕ ਲਾਗੂਆਂ ਵਿੱਚ ਯੋਗਦਾਨ ਦੇਣ ਲਈ, [ਅਧਿਕਾਰਿਕ ਯੋਗਦਾਨ ਹਦਾਇਤਾਂ](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md) ਦੀ ਪਾਲਣਾ ਕਰੋ:
 
-1. **ਸਾਦਗੀ ਅਤੇ ਘੱਟਪਣ**: MCP ਵਿਸ਼ੇਸ਼ਤਾ ਨਵੇਂ ਸੰਕਲਪਾਂ ਨੂੰ ਸ਼ਾਮਲ ਕਰਨ ਲਈ ਉੱਚ ਮਾਪਦੰਡ ਰੱਖਦੀ ਹੈ। ਵਿਸ਼ੇਸ਼ਤਾ ਵਿੱਚ ਚੀਜ਼ਾਂ ਸ਼ਾਮਲ ਕਰਨਾ ਹਟਾਉਣ ਨਾਲ ਆਸਾਨ ਹੁੰਦਾ ਹੈ।
+1. **ਸਰਲਤਾ ਅਤੇ ਘੱਟੋ-ਘੱਟਤਾ**: MCP ਵਿਸ਼ੇਸ਼ਤਾ ਨਵੇਂ ਵਿਚਾਰ ਸ਼ਾਮਲ ਕਰਨ ਲਈ ਉੱਚ ਦਰਜ਼ਾ ਰੱਖਦੀ ਹੈ। ਵਸਤਾਂ ਸ਼ਾਮਲ ਕਰਨਾ ਘਟਾਉਣ ਨਾਲ ਆਸਾਨ ਹੈ।
 
-2. **ਠੋਸ ਦ੍ਰਿਸ਼ਟੀਕੋਣ**: ਵਿਸ਼ੇਸ਼ਤਾ ਵਿੱਚ ਬਦਲਾਅ ਵਿਸ਼ੇਸ਼ ਇੰਪਲੀਮੈਂਟੇਸ਼ਨ ਚੁਣੌਤੀਆਂ 'ਤੇ ਆਧਾਰਿਤ ਹੋਣੇ ਚਾਹੀਦੇ ਹਨ, ਨਾ ਕਿ ਅਨੁਮਾਨਿਤ ਵਿਚਾਰਾਂ 'ਤੇ।
+2. **ਠੋਸ ਦ੍ਰਿਸ਼ਟੀਕੋਣ**: ਵਿਸ਼ੇਸ਼ਤਾ ਬਦਲਾਅ ਵਿਸ਼ੇਸ਼ ਲਾਗੂ ਚੁਣੌਤੀਆਂ 'ਤੇ ਅਧਾਰਿਤ ਹੋਣੇ ਚਾਹੀਦੇ ਹਨ, ਅਟਕਲਾਂ 'ਤੇ ਨਹੀਂ।
 
-3. **ਪ੍ਰਸਤਾਵ ਦੇ ਪੜਾਅ**:
-   - ਪਰਿਭਾਸ਼ਿਤ ਕਰੋ: ਸਮੱਸਿਆ ਦੇ ਖੇਤਰ ਦੀ ਜਾਂਚ ਕਰੋ, ਪੁਸ਼ਟੀ ਕਰੋ ਕਿ ਹੋਰ MCP ਯੂਜ਼ਰ ਵੀ ਇਸੇ ਸਮੱਸਿਆ ਦਾ ਸਾਹਮਣਾ ਕਰਦੇ ਹਨ।
-   - ਪ੍ਰੋਟੋਟਾਈਪ ਬਣਾਓ: ਇੱਕ ਉਦਾਹਰਨ ਹੱਲ ਬਣਾਓ ਅਤੇ ਇਸਦੀ ਵਿਵਹਾਰਕ ਲਾਗੂ ਕਰਨ ਦੀ ਪ੍ਰਦਰਸ਼ਨ ਕਰੋ।
-   - ਲਿਖੋ: ਪ੍ਰੋਟੋਟਾਈਪ ਦੇ ਆਧਾਰ 'ਤੇ, ਵਿਸ਼ੇਸ਼ਤਾ ਪ੍ਰਸਤਾਵ ਲਿਖੋ।
+3. **ਪ੍ਰਸਤਾਵ ਦੇ ਮੰਚ**:
+   - ਪਰਿਭਾਸ਼ਿਤ ਕਰੋ: ਸਮੱਸਿਆ ਖੇਤਰ ਦੀ ਖੋਜ ਕਰੋ, ਪਕਾ ਕਰੋ ਕਿ ਹੋਰ MCP ਉਪਭੋਗਤਾ ਵੀ ਇਹ ਸਮੱਸਿਆ ਚੁਣਦੇ ਹਨ
+   - ਪ੍ਰੋਟੋਟਾਈਪ: ਇੱਕ ਉਦਾਹਰਨ ਹੱਲ ਬਣਾਓ ਅਤੇ ਇਸ ਦੀ ਪ੍ਰਯੋਗਿਕ ਅਰਜੀ ਦਾ ਪ੍ਰਦਰਸ਼ਨ ਕਰੋ
+   - ਲਿਖੋ: ਪ੍ਰੋਟੋਟਾਈਪ 'ਤੇ ਆਧਾਰਿਤ ਵਿਸ਼ੇਸ਼ਤਾ ਪ੍ਰਸਤਾਵ ਲਿਖੋ
 
-### ਵਿਕਾਸ ਵਾਤਾਵਰਣ ਸੈਟਅਪ
+### ਵਿਕਾਸ ਵਾਤਾਵਰਨ ਸੈਟਅੱਪ
 
 ```bash
-# Fork the repository
+# ਰਿਪੋਜ਼ਟਰੀ ਨੂੰ ਫੋਰਕ ਕਰੋ
 git clone https://github.com/YOUR-USERNAME/modelcontextprotocol.git
 cd modelcontextprotocol
 
-# Install dependencies
+# ਡਿਪੈਂਡੈਂਸੀਜ਼ ਇੰਸਟਾਲ ਕਰੋ
 npm install
 
-# For schema changes, validate and generate schema.json:
+# ਸਕੀਮਾ ਬਦਲਾਅ ਲਈ, ਸਕੀਮਾ.json ਤਸਦੀਕ ਅਤੇ ਬਣਾਓ:
 npm run check:schema:ts
 npm run generate:schema
 
-# For documentation changes
+# ਡਾਕੂਮੈਂਟੇਸ਼ਨ ਬਦਲਾਅ ਲਈ
 npm run check:docs
 npm run format
 
-# Preview documentation locally (optional):
+# ਸਥਾਨਕ ਤੌਰ 'ਤੇ ਡਾਕੂਮੈਂਟੇਸ਼ਨ ਦੀ ਪੂਰਵ ਦਰਸ਼ਨੀ ਜ਼ਰੂਰੀ (ਵਿਕਲਪਿਕ):
 npm run serve:docs
 ```
 
-### ਉਦਾਹਰਨ: ਬੱਗ ਫਿਕਸ ਵਿੱਚ ਯੋਗਦਾਨ ਦੇਣਾ
+### ਉਦਾਹਰਨ: ਬੱਗ ਫਿਕਸ ਵਿੱਚ ਯੋਗਦਾਨ
 
 ```javascript
-// Original code with bug in the typescript-sdk
+// ਮੂਲ ਕੋਡ ਜਿਸ ਵਿੱਚ ਟਾਈਪਸਕ੍ਰਿਪਟ-ਐਸਡੀਕੇ ਵਿੱਚ ਬੱਗ ਹੈ
 export function validateResource(resource: unknown): resource is MCPResource {
   if (!resource || typeof resource !== 'object') {
     return false;
   }
   
-  // Bug: Missing property validation
-  // Current implementation:
+  // ਬੱਗ: ਗੁਣ ਜाँच ਵਿਚ ਕਮੀ
+  // ਮੌਜੂਦਾ ਕਾਰਜਾਨਵਯਨ:
   const hasName = 'name' in resource;
   const hasSchema = 'schema' in resource;
   
   return hasName && hasSchema;
 }
 
-// Fixed implementation in a contribution
+// ਯੋਗਦਾਨ ਵਿੱਚ ਸੁਧਾਰ ਕੀਤਾ ਗਿਆ ਕਾਰਜਾਨਵਯਨ
 export function validateResource(resource: unknown): resource is MCPResource {
   if (!resource || typeof resource !== 'object') {
     return false;
   }
   
-  // Improved validation
+  // ਸੁਧਾਰੇ ਹੋਏ ਜाँच
   const hasName = 'name' in resource && typeof (resource as MCPResource).name === 'string';
   const hasSchema = 'schema' in resource && typeof (resource as MCPResource).schema === 'object';
   const hasDescription = !('description' in resource) || typeof (resource as MCPResource).description === 'string';
@@ -151,10 +142,10 @@ export function validateResource(resource: unknown): resource is MCPResource {
 }
 ```
 
-### ਉਦਾਹਰਨ: ਸਟੈਂਡਰਡ ਲਾਇਬ੍ਰੇਰੀ ਵਿੱਚ ਨਵਾਂ ਟੂਲ ਸ਼ਾਮਲ ਕਰਨਾ
+### ਉਦਾਹਰਨ: ਸਟੈਂਡਰਡ ਲਾਇਬ੍ਰੇਰੀ ਲਈ ਨਵਾਂ ਟੂਲ ਯੋਗਦਾਨ
 
 ```python
-# Example contribution: A CSV data processing tool for the MCP standard library
+# ਉਦਾਹਰਨ ਯੋਗਦਾਨ: MCP ਸਟੈਂਡਰਡ ਲਾਇਬ੍ਰੇਰੀ ਲਈ ਇੱਕ CSV ਡੇਟਾ ਪ੍ਰੋਸੈਸਿੰਗ ਟੂਲ
 
 from mcp_tools import Tool, ToolRequest, ToolResponse, ToolExecutionException
 import pandas as pd
@@ -216,14 +207,14 @@ class CsvProcessingTool(Tool):
     
     async def execute_async(self, request: ToolRequest) -> ToolResponse:
         try:
-            # Extract parameters
+            # ਪੈਰামੀਟਰ ਪ੍ਰਾਪਤ ਕਰੋ
             operation = request.parameters.get("operation")
             output_format = request.parameters.get("outputFormat", "json")
             
-            # Get CSV data from either direct data or URL
+            # ਸਿੱਧਾ ਡੇਟਾ ਜਾਂ URL ਵਿੱਚੋਂ CSV ਡੇਟਾ ਪ੍ਰਾਪਤ ਕਰੋ
             df = await self._get_dataframe(request)
             
-            # Process based on requested operation
+            # ਮੰਗੇ ਗਏ ਆਪਰੇਸ਼ਨ ਅਨੁਸਾਰ ਪ੍ਰੋਸੈਸ ਕਰੋ
             result = {}
             
             if operation == "summary":
@@ -284,7 +275,7 @@ class CsvProcessingTool(Tool):
     
     def _transform_data(self, df: pd.DataFrame, params: Dict[str, Any]) -> Dict[str, Any]:
         """Transforms the data based on parameters"""
-        # Implementation would include various transformations
+        # ਕਰਿਆ ਦਰਮਿਆਨ ਵੱਖ ਵੱਖ ਤਬਦੀਲੀਆਂ ਸ਼ਾਮਲ ਹੋਣਗੀਆਂ
         return {
             "status": "success",
             "message": "Transformation applied"
@@ -311,68 +302,70 @@ class CsvProcessingTool(Tool):
             raise ToolExecutionException(f"Unsupported output format: {format}")
 ```
 
-### ਯੋਗਦਾਨ ਦੇਣ ਦੇ ਨਿਯਮ
+### ਯੋਗਦਾਨ ਹਦਾਇਤਾਂ
 
-MCP ਪ੍ਰੋਜੈਕਟਾਂ ਵਿੱਚ ਸਫਲ ਯੋਗਦਾਨ ਦੇਣ ਲਈ:
+MCP ਪ੍ਰਾਜੈਕਟਾਂ ਵਿੱਚ ਸਫਲ ਯੋਗਦਾਨ ਦੇਣ ਲਈ:
 
-1. **ਛੋਟੇ ਤੋਂ ਸ਼ੁਰੂ ਕਰੋ**: ਦਸਤਾਵੇਜ਼, ਬੱਗ ਫਿਕਸ ਜਾਂ ਛੋਟੇ ਸੁਧਾਰਾਂ ਨਾਲ ਸ਼ੁਰੂ ਕਰੋ।
-2. **ਸਟਾਈਲ ਗਾਈਡ ਦੀ ਪਾਲਣਾ ਕਰੋ**: ਪ੍ਰੋਜੈਕਟ ਦੇ ਕੋਡਿੰਗ ਸਟਾਈਲ ਅਤੇ ਰਿਵਾਜਾਂ ਦੀ ਪਾਲਣਾ ਕਰੋ।
-3. **ਟੈਸਟ ਲਿਖੋ**: ਆਪਣੇ ਕੋਡ ਯੋਗਦਾਨਾਂ ਲਈ ਯੂਨਿਟ ਟੈਸਟ ਸ਼ਾਮਲ ਕਰੋ।
-4. **ਆਪਣੇ ਕੰਮ ਨੂੰ ਦਸਤਾਵੇਜ਼ ਬਣਾਓ**: ਨਵੀਆਂ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਜਾਂ ਬਦਲਾਅ ਲਈ ਸਪਸ਼ਟ ਦਸਤਾਵੇਜ਼ ਸ਼ਾਮਲ ਕਰੋ।
-5. **ਟਾਰਗਟ ਕੀਤੇ PRs ਸਬਮਿਟ ਕਰੋ**: ਪੂਲ ਰਿਕਵੇਸਟ ਨੂੰ ਇੱਕ ਹੀ ਮੁੱਦੇ ਜਾਂ ਵਿਸ਼ੇਸ਼ਤਾ 'ਤੇ ਕੇਂਦਰਿਤ ਰੱਖੋ।
-6. **ਫੀਡਬੈਕ ਨਾਲ ਜੁੜੋ**: ਆਪਣੇ ਯੋਗਦਾਨਾਂ 'ਤੇ ਫੀਡਬੈਕ ਲਈ ਜਵਾਬਦੇਹ ਰਹੋ।
+1. **ਛੋਟੇ ਤੋਂ ਸ਼ੁਰੂ ਕਰੋ**: ਦਸਤਾਵੇਜ਼ੀਕਰਨ, ਬੱਗ ਫਿਕਸ, ਜਾਂ ਛੋਟੀਆਂ ਸੁਧਾਰਾਂ ਨਾਲ ਸ਼ੁਰੂਆਤ ਕਰੋ
+2. **ਸਟਾਈਲ ਗਾਈਡ ਦੀ ਪਾਲਣਾ ਕਰੋ**: ਪ੍ਰੋਜੈਕਟ ਦੇ ਕੋਡਿੰਗ ਸਟਾਈਲ ਅਤੇ ਪਰੰਪਰਾਵਾਂ ਦੀ ਪਾਲਣਾ ਕਰੋ
+3. **ਟੈਸਟ ਲਿਖੋ**: ਆਪਣੀ ਕੋਡ ਯੋਗਦਾਨ ਲਈ ਯੂਨਿਟ ਟੈਸਟ ਸ਼ਾਮਿਲ ਕਰੋ
+4. **ਆਪਣਾ ਕੰਮ ਦਸਤਾਵੇਜ਼ੀਕਰਨ ਕਰੋ**: ਨਵੀਆਂ ਫੀਚਰ ਜਾਂ ਬਦਲਾਵਾਂ ਲਈ ਸਾਫ਼ ਦਸਤਾਵੇਜ਼ ਸ਼ਾਮਿਲ ਕਰੋ
+5. **ਲਕੜੀ ਦੇ ਕੇ ਕੇਵਲ ਟੀਕਾਂ ਦਿਓ**: ਪੁੱਛ 'ਤੇ ਕੇਂਦ੍ਰਿਤ ਪੁਲ ਰਿਕਵੇਸਟ ਭੇਜੋ
+6. **ਪ੍ਰਤੀਕਿਰਿਆ ਵਿੱਚ ਸ਼ਾਮਿਲ ਹੋਵੋ**: ਆਪਣੇ ਯੋਗਦਾਨ ਤੇ ਪ੍ਰਤੀਕਿਰਿਆ ਲਈ ਜਵਾਬਦੇਹ ਬਣੋ
 
-### ਯੋਗਦਾਨ ਦੇਣ ਦਾ ਵਰਕਫਲੋ
+### ਉਦਾਹਰਨ ਯੋਗਦਾਨ ਵਰਕਫਲੋ
 
 ```bash
-# Clone the repository
+# ਰਿਪੋਜ਼ਿਟਰੀ ਦੀ ਨਕਲ ਕਰੋ
 git clone https://github.com/modelcontextprotocol/typescript-sdk.git
 cd typescript-sdk
 
-# Create a new branch for your contribution
+# ਆਪਣੇ ਯੋਗਦਾਨ ਲਈ ਇੱਕ ਨਵੀਂ ਸ਼ਾਖ ਤਾਂਯਾਰ ਕਰੋ
 git checkout -b feature/my-contribution
 
-# Make your changes
+# ਆਪਣੇ ਬਦਲਾਅ ਕਰੋ
 # ...
 
-# Run tests to ensure your changes don't break existing functionality
+# ਪ੍ਰੀਖਿਆ ਚਲਾਓ ਤਾਂ ਜੋ ਯਕੀਨੀ ਬਣਾਇਆ ਜਾ ਸਕੇ ਕਿ ਤੁਹਾਡੇ ਬਦਲਾਅ ਮੌਜੂਦਾ ਕਾਰਗੁਜ਼ਾਰੀ ਨੂੰ ਖਰਾਬ ਨਹੀਂ ਕਰਦੇ
 npm test
 
-# Commit your changes with a descriptive message
+# ਆਪਣੇ ਬਦਲਾਅ ਨੂੰ ਇੱਕ ਵਰਨਾਤਮਕ ਸੁਨੇਹੇ ਨਾਲ ਕਮਿਟ ਕਰੋ
 git commit -am "Fix validation in resource handler"
 
-# Push your branch to your fork
+# ਆਪਣੀ ਸ਼ਾਖ ਨੂੰ ਆਪਣੇ ਫੋਰਕ 'ਤੇ ਧੱਕੋ
 git push origin feature/my-contribution
 
-# Create a pull request from your branch to the main repository
-# Then engage with feedback and iterate on your PR as needed
+# ਆਪਣੀ ਸ਼ਾਖ ਤੋਂ ਮੁੱਖ ਰਿਪੋਜ਼ਿਟਰੀ ਲਈ ਇੱਕ ਪੁਲ ਰਿਕਵੇਸਟ ਬਣਾਓ
+# ਫਿਰ ਫੀਡਬੈਕ ਨਾਲ ਜੁੜੋ ਅਤੇ ਜਰੂਰਤ ਮੁਤਾਬਕ ਆਪਣੇ PR 'ਤੇ ਦੁਬਾਰਾ ਕੰਮ ਕਰੋ
 ```
 
-## MCP ਸਰਵਰ ਬਣਾਉਣਾ ਅਤੇ ਸਾਂਝੇ ਕਰਨਾ
+## MCP ਸਰਵਰ ਬਣਾਉਣਾ ਅਤੇ ਸਾਂਝਾ ਕਰਨਾ
 
-MCP ਇਕੋਸਿਸਟਮ ਵਿੱਚ ਯੋਗਦਾਨ ਦੇਣ ਦੇ ਸਭ ਤੋਂ ਕੀਮਤੀ ਤਰੀਕਿਆਂ ਵਿੱਚੋਂ ਇੱਕ ਹੈ ਕਸਟਮ MCP ਸਰਵਰ ਬਣਾਉਣਾ ਅਤੇ ਸਾਂਝੇ ਕਰਨਾ। ਕਮਿਊਨਿਟੀ ਨੇ ਪਹਿਲਾਂ ਹੀ ਵੱਖ-ਵੱਖ ਸੇਵਾਵਾਂ ਅਤੇ ਵਰਤੋਂ ਦੇ ਕੇਸਾਂ ਲਈ ਸੈਂਕੜੇ ਸਰਵਰ ਵਿਕਸਿਤ ਕੀਤੇ ਹਨ।
+MCP ਇਕੋਸਿਸਟਮ ਵਿੱਚ ਯੋਗਦਾਨ ਦੇਣ ਦੇ ਸਭ ਤੋਂ ਕੀਮਤੀ ਤਰੀਕਿਆਂ ਵਿੱਚੋਂ ਇੱਕ ਕਸਟਮ MCP ਸਰਵਰ ਬਣਾਉਣਾ ਅਤੇ ਸਾਂਝਾ ਕਰਨਾ ਹੈ। ਕਮਿਊਨਿਟੀ ਨੇ ਪਹਿਲਾਂ ਹੀ ਵੱਖ-ਵੱਖ ਸੇਵਾਵਾਂ ਅਤੇ ਵਰਤੋਂਕੇਸ ਲਈ ਸੈਂਕੜੇ ਸਰਵਰ ਵਿਕਸਿਤ ਕੀਤੇ ਹਨ।
 
 ### MCP ਸਰਵਰ ਵਿਕਾਸ ਫਰੇਮਵਰਕ
 
-MCP ਸਰਵਰ ਵਿਕਾਸ ਨੂੰ ਆਸਾਨ ਬਣਾਉਣ ਲਈ ਕਈ ਫਰੇਮਵਰਕ ਉਪਲਬਧ ਹਨ:
+MCP ਸਰਵਰ ਵਿਕਾਸ ਨੂੰ ਸੌਖਾ ਬਣਾਉਣ ਲਈ ਕਈ ਫਰੇਮਵਰਕ ਉਪਲਬਧ ਹਨ:
 
-1. **ਅਧਿਕਾਰਕ SDKs**:
+1. **ਅਧਿਕਾਰਿਕ SDKs** ([MCP Specification 2025-11-25](https://spec.modelcontextprotocol.io/specification/2025-11-25/) ਦੇ ਅਨੁਕੂਲ):
    - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
    - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
    - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
    - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
    - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
    - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
+   - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk)
+   - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk)
 
 2. **ਕਮਿਊਨਿਟੀ ਫਰੇਮਵਰਕ**:
-   - [MCP-Framework](https://mcp-framework.com/) - TypeScript ਵਿੱਚ MCP ਸਰਵਰ ਬਣਾਉਣ ਲਈ ਤੇਜ਼ ਅਤੇ ਸੁੰਦਰ ਤਰੀਕਾ।
-   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - ਜਾਵਾ ਵਿੱਚ ਐਨੋਟੇਸ਼ਨ-ਚਲਿਤ MCP ਸਰਵਰ।
-   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - ਜਾਵਾ ਫਰੇਮਵਰਕ MCP ਸਰਵਰਾਂ ਲਈ।
-   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - MCP ਸਰਵਰਾਂ ਲਈ ਸ਼ੁਰੂਆਤੀ Next.js ਪ੍ਰੋਜੈਕਟ।
+   - [MCP-Framework](https://mcp-framework.com/) - ਟਾਈਪਸਕ੍ਰਿਪਟ ਵਿੱਚ ਸੁੰਦਰਤਾ ਅਤੇ ਤੇਜ਼ੀ ਨਾਲ MCP ਸਰਵਰ ਬਣਾਓ
+   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - ਜਾਵਾ ਨਾਲ ਨੋਟ ਸੂਚਕ MCP ਸਰਵਰ
+   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - MCP ਸਰਵਰਾਂ ਲਈ ਜਾਵਾ ਫਰੇਮਵਰਕ
+   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - MCP ਸਰਵਰਾਂ ਲਈ ਸ਼ੁਰੂਆਤੀ Next.js ਪ੍ਰਾਜੈਕਟ
 
-### ਸਾਂਝੇ ਕਰਨ ਯੋਗ ਟੂਲ ਵਿਕਸਿਤ ਕਰਨਾ
+### ਸਾਂਝੇ ਟੂਲ ਵਿਕਸਿਤ ਕਰਨਾ
 
-#### .NET ਉਦਾਹਰਨ: ਸਾਂਝੇ ਕਰਨ ਯੋਗ ਟੂਲ ਪੈਕੇਜ ਬਣਾਉਣਾ
+#### .NET ਉਦਾਹਰਨ: ਸਾਂਝਾ ਕੀਤੀ ਜਾ ਸਕਣ ਵਾਲੀ ਟੂਲ ਪੈਕੇਜ ਬਣਾਉਣਾ
 
 ```csharp
 // Create a new .NET library project
@@ -478,10 +471,10 @@ namespace McpFinanceTools
 // dotnet nuget push bin/Release/McpFinanceTools.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k YOUR_API_KEY
 ```
 
-#### Java ਉਦਾਹਰਨ: ਟੂਲ ਲਈ Maven ਪੈਕੇਜ ਬਣਾਉਣਾ
+#### ਜਾਵਾ ਉਦਾਹਰਨ: ਟੂਲ ਲਈ Maven ਪੈਕੇਜ ਬਣਾਉਣਾ
 
 ```java
-// pom.xml configuration for a shareable MCP tool package
+// ਸਾਂਝੇਯੋਗ MCP ਟੂਲ ਪੈਕੇਜ ਲਈ pom.xml ਵਿਵਸਥਾ
 <!-- 
 <project>
     <groupId>com.example</groupId>
@@ -542,7 +535,7 @@ public class WeatherForecastTool implements Tool {
     @Override
     public Object getSchema() {
         Map<String, Object> schema = new HashMap<>();
-        // Schema definition...
+        // ਸਕੀਮਾ ਪਰਿਭਾਸ਼ਾ...
         return schema;
     }
     
@@ -553,10 +546,10 @@ public class WeatherForecastTool implements Tool {
             int days = request.getParameters().has("days") ? 
                 request.getParameters().get("days").asInt() : 3;
             
-            // Call weather API
+            // ਮੌਸਮ API ਨੂੰ ਕਾਲ ਕਰੋ
             Map<String, Object> forecast = getForecast(location, days);
             
-            // Build response
+            // ਜਵਾਬ ਬਣਾਓ
             return new ToolResponse.Builder()
                 .setResult(forecast)
                 .build();
@@ -566,23 +559,23 @@ public class WeatherForecastTool implements Tool {
     }
     
     private Map<String, Object> getForecast(String location, int days) {
-        // Implementation would call weather API
-        // Simplified example
+        // ਇੰਪਲੀਮੈਂਟੇਸ਼ਨ ਮੌਸਮ API ਨੂੰ ਕਾਲ ਕਰੇਗੀ
+        // ਸਧਾਰਨ ਉਦਾਹਰਨ
         Map<String, Object> result = new HashMap<>();
-        // Add forecast data...
+        // ਮੌਸਮ ਭਵਿੱਖਬਾਣੀ ਡਾਟਾ ਸ਼ਾਮਲ ਕਰੋ...
         return result;
     }
 }
 
-// Build and publish using Maven
+// Maven ਦੀ ਵਰਤੋਂ ਨਾਲ ਬਣਾਓ ਅਤੇ ਪ੍ਰਕਾਸ਼ਿਤ ਕਰੋ
 // mvn clean package
 // mvn deploy
 ```
 
-#### Python ਉਦਾਹਰਨ: PyPI ਪੈਕੇਜ ਪ੍ਰਕਾਸ਼ਿਤ ਕਰਨਾ
+#### ਪਾਇਥਨ ਉਦਾਹਰਨ: PyPI ਪੈਕੇਜ ਪ੍ਰਕਾਸ਼ਿਤ ਕਰਨਾ
 
 ```python
-# Directory structure for a PyPI package:
+# ਇੱਕ PyPI ਪੈਕੇਜ ਲਈ ਡਾਇਰੈਕਟਰੀ ਢਾਂਚਾ:
 # mcp_nlp_tools/
 # ├── LICENSE
 # ├── README.md
@@ -592,7 +585,7 @@ public class WeatherForecastTool implements Tool {
 # │   ├── sentiment_tool.py
 # │   └── translation_tool.py
 
-# Example setup.py
+# ਉਦਾਹਰਣ setup.py
 """
 from setuptools import setup, find_packages
 
@@ -620,7 +613,7 @@ setup(
 )
 """
 
-# Example NLP tool implementation (sentiment_tool.py)
+# ਉਦਾਹਰਣ NLP ਟੂਲ импਲੀਮੈਂਟੇਸ਼ਨ (sentiment_tool.py)
 from mcp_tools import Tool, ToolRequest, ToolResponse, ToolExecutionException
 from transformers import pipeline
 import torch
@@ -629,7 +622,7 @@ class SentimentAnalysisTool(Tool):
     """MCP tool for sentiment analysis of text"""
     
     def __init__(self, model_name="distilbert-base-uncased-finetuned-sst-2-english"):
-        # Load the sentiment analysis model
+        # ਭਾਵਨਾ ਵਿਸ਼ਲੇਸ਼ਣ ਮਾਡਲ ਲੋਡ ਕਰੋ
         self.sentiment_analyzer = pipeline("sentiment-analysis", model=model_name)
     
     def get_name(self):
@@ -657,14 +650,14 @@ class SentimentAnalysisTool(Tool):
     
     async def execute_async(self, request: ToolRequest) -> ToolResponse:
         try:
-            # Extract parameters
+            # ਪੈਰਾਮੀਟਰ ਨਿਕਾਲੋ
             text = request.parameters.get("text")
             include_score = request.parameters.get("includeScore", True)
             
-            # Analyze sentiment
+            # ਭਾਵਨਾ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ ਕਰੋ
             sentiment_result = self.sentiment_analyzer(text)[0]
             
-            # Format result
+            # ਨਤੀਜਾ ਫਾਰਮੈਟ ਕਰੋ
             result = {
                 "sentiment": sentiment_result["label"],
                 "text": text
@@ -673,49 +666,49 @@ class SentimentAnalysisTool(Tool):
             if include_score:
                 result["score"] = sentiment_result["score"]
             
-            # Return result
+            # ਨਤੀਜਾ ਵਾਪਸ ਕਰੋ
             return ToolResponse(result=result)
             
         except Exception as e:
             raise ToolExecutionException(f"Sentiment analysis failed: {str(e)}")
 
-# To publish:
+# ਪ੍ਰਕਾਸ਼ਿਤ ਕਰਨ ਲਈ:
 # python setup.py sdist bdist_wheel
 # python -m twine upload dist/*
 ```
 
-### ਸ੍ਰੇਸ਼ਠ ਅਭਿਆਸ ਸਾਂਝੇ ਕਰਨਾ
+### ਬਿਹਤਰ ਅਭਿਆਸ ਸਾਂਝਾ ਕਰਨਾ
 
-ਕਮਿਊਨਿਟੀ ਨਾਲ MCP ਟੂਲ ਸਾਂਝੇ ਕਰਦੇ ਸਮੇਂ:
+ਜਦ MCP ਟੂਲਜ਼ ਕਮਿਊਨਿਟੀ ਨਾਲ ਸਾਂਝੇ ਕਰਦੇ ਹੋ:
 
-1. **ਪੂਰੀ ਦਸਤਾਵੇਜ਼**:
-   - ਉਦੇਸ਼, ਵਰਤੋਂ ਅਤੇ ਉਦਾਹਰਨਾਂ ਨੂੰ ਦਸਤਾਵੇਜ਼ ਬਣਾਓ।
-   - ਪੈਰਾਮੀਟਰ ਅਤੇ ਵਾਪਸੀ ਮੁੱਲਾਂ ਨੂੰ ਸਮਝਾਓ।
-   - ਕਿਸੇ ਵੀ ਬਾਹਰੀ ਨਿਰਭਰਤਾਵਾਂ ਨੂੰ ਦਸਤਾਵੇਜ਼ ਬਣਾਓ।
+1. **ਪੂਰਨ ਦਸਤਾਵੇਜ਼ੀਕਰਨ**:
+   - ਉਦੇਸ਼, ਵਰਤੋਂ ਅਤੇ ਉਦਾਹਰਨ ਦਸਤਾਵੇਜ਼ ਕਰਨੇ
+   - ਪੈਰਾਮੀਟਰ ਅਤੇ ਵਾਪਸੀ ਮੁੱਲ ਬਿਆਨ ਕਰਨਾ
+   - ਕਿਸੇ ਵੀ ਬਾਹਰੀ ਨਿਰਭਰਤਾਵਾਂ ਦਾ ਦਸਤਾਵੇਜ਼ ਬਣਾਉਣਾ
 
-2. **ਗਲਤੀ ਸੰਭਾਲ**:
-   - ਮਜ਼ਬੂਤ ਗਲਤੀ ਸੰਭਾਲ ਲਾਗੂ ਕਰੋ।
-   - ਉਪਯੋਗੀ ਗਲਤੀ ਸੁਨੇਹੇ ਪ੍ਰਦਾਨ ਕਰੋ।
-   - ਐਜ ਕੇਸਾਂ ਨੂੰ ਸੁਚਾਰੂ ਤਰੀਕੇ ਨਾਲ ਸੰਭਾਲੋ।
+2. **ਤਰੁੱਟੀ ਸੰਭਾਲ**:
+   - ਮਜ਼ਬੂਤ ਤਰੁੱਟੀ ਸੰਭਾਲ ਅਮਲ ਵਿਚ ਲਿਆਓ
+   - ਲਾਭਦਾਇਕ ਤਰੁੱਟੀ ਸੁਨੇਹੇ ਦਿਓ
+   - ਅਤਿਰਿਕਤ ਮਾਮਲਿਆਂ ਦੀ ਸੂਝਬੂਝ ਨਾਲ ਸੰਭਾਲ ਕਰੋ
 
-3. **ਕਾਰਗੁਜ਼ਾਰੀ ਦੇ ਵਿਚਾਰ**:
-   - ਗਤੀ ਅਤੇ ਸਰੋਤ ਦੀ ਵਰਤੋਂ ਦੋਵਾਂ ਲਈ ਅਨੁਕੂਲ ਬਣਾਓ।
-   - ਜਿੱਥੇ ਜ਼ਰੂਰੀ ਹੋਵੇ, ਕੈਸ਼ਿੰਗ ਲਾਗੂ ਕਰੋ।
-   - ਸਕੇਲਬਿਲਟੀ 'ਤੇ ਧਿਆਨ ਦਿਓ।
+3. **ਕਾਰਗੁਜ਼ਾਰੀ ਬਾਰੇ ਸੋਚਵਿਚਾਰ**:
+   - ਸਪੀਡ ਅਤੇ ਸਰੋਤ ਉਪਯੋਗ ਦੋਵਾਂ ਲਈ ਤਕਨੀਕਾਂ ਨੂੰ ਆਪਣੇ ਮਨ ਵਿੱਚ ਰੱਖੋ
+   - ਜਿੱਥੇ ਮੂੰਝ ਫਿੱਟ ਹੋਵੇ ਕੈਸ਼ਿੰਗ ਅਮਲ ਕਰੋ
+   - ਵਿਸਥਾਰਯੋਗਤਾ 'ਤੇ ਧਿਆਨ ਦਿਓ
 
 4. **ਸੁਰੱਖਿਆ**:
-   - ਸੁਰੱਖਿਅਤ API ਕੁੰਜੀਆਂ ਅਤੇ ਪ੍ਰਮਾਣਿਕਤਾ ਦੀ ਵਰਤੋਂ ਕਰੋ।
-   - ਇਨਪੁਟ ਨੂੰ ਵੈਧ ਅਤੇ ਸਾਫ਼ ਕਰੋ।
-   - ਬਾਹਰੀ API ਕਾਲਾਂ ਲਈ ਦਰ ਰੋਕਣ ਲਾਗੂ ਕਰੋ।
+   - ਸੁਰੱਖਿਅਤ API ਕੁੰਜੀਆਂ ਅਤੇ ਪ੍ਰਮਾਣੀਕਰਨ ਦੀ ਵਰਤੋਂ ਕਰੋ
+   - ਇਨਪੁਟਾਂ ਦੀ ਪੁਸ਼ਟੀ ਅਤੇ ਸਫਾਈ ਕਰੋ
+   - ਬਾਹਰੀ API ਕਾਲਾਂ ਲਈ ਦਰ ਸੀਮਾ ਲਾਓ
 
 5. **ਟੈਸਟਿੰਗ**:
-   - ਵਿਸਤ੍ਰਿਤ ਟੈਸਟ ਕਵਰੇਜ ਸ਼ਾਮਲ ਕਰੋ।
-   - ਵੱਖ-ਵੱਖ ਇਨਪੁਟ ਕਿਸਮਾਂ ਅਤੇ ਐਜ ਕੇਸਾਂ ਨਾਲ ਟੈਸਟ ਕਰੋ।
-   - ਟੈਸਟ ਪ੍ਰਕਿਰਿਆਵਾਂ ਨੂੰ ਦਸਤਾਵੇਜ਼ ਬਣਾਓ।
+   - ਵਿਆਪਕ ਟੈਸਟ ਕਵਰੇਜ ਸ਼ਾਮਿਲ ਕਰੋ
+   - ਵੱਖ-ਵੱਖ ਇਨਪੁਟ ਕਿਸਮਾਂ ਅਤੇ ਅਤਿਰਿਕਤ ਮਾਮਲਿਆਂ ਨਾਲ ਟੈਸਟ ਕਰੋ
+   - ਟੈਸਟ ਕਰਵਾਈਆਂ ਦਾ ਦਸਤਾਵੇਜ਼ ਬਣਾਉ
 
-## ਕਮਿਊਨਿਟੀ ਸਹਿਯੋਗ ਅਤੇ ਸ੍ਰੇਸ਼ਠ ਅਭਿਆਸ
+## ਕਮਿਊਨਿਟੀ ਸਹਿਯੋਗ ਅਤੇ ਬਿਹਤਰ ਅਭਿਆਸ
 
-ਪ੍ਰਭਾਵਸ਼ਾਲੀ ਸਹਿਯੋਗ MCP ਇਕੋਸਿਸਟਮ ਦੀ ਤਰੱਕੀ ਲਈ ਮਹੱਤਵਪੂਰਨ ਹੈ।
+ ਪ੍ਰਭਾਵਸ਼ਾਲੀ ਸਹਿਯੋਗ ਇੱਕ ਸ਼ਕਤੀਸ਼ਾਲੀ MCP ਇਕੋਸਿਸਟਮ ਦੀ ਚਾਬੀ ਹੈ।
 
 ### ਸੰਚਾਰ ਚੈਨਲ
 
@@ -724,29 +717,31 @@ class SentimentAnalysisTool(Tool):
 - Discord ਅਤੇ Slack ਚੈਨਲ
 - Stack Overflow (ਟੈਗ: `model-context-protocol` ਜਾਂ `mcp`)
 
-### ਕੋਡ ਰਿਵਿਊ
+### ਕੋਡ ਸਮੀਖਿਆ
 
-MCP ਯੋਗਦਾਨਾਂ ਦੀ ਸਮੀਖਿਆ ਕਰਦੇ ਸਮੇਂ:
+MCP ਯੋਗਦਾਨ ਸਮੀਖਿਆ ਕਰਦਿਆਂ:
 
-1. **ਸਪਸ਼ਟਤਾ**: ਕੀ ਕੋਡ ਸਪਸ਼ਟ ਅਤੇ ਚੰਗੀ ਤਰ੍ਹਾਂ ਦਸਤਾਵੇਜ਼ ਬਣਾਇਆ ਗਿਆ ਹੈ?
-2. **ਸਹੀਪਨ**: ਕੀ ਇਹ ਉਮੀਦਾਂ ਅਨੁਸਾਰ ਕੰਮ ਕਰਦਾ ਹੈ?
-3. **ਸਥਿਰਤਾ**: ਕੀ ਇਹ ਪ੍ਰੋਜੈਕਟ ਦੇ ਰਿਵਾਜਾਂ ਦੀ ਪਾਲਣਾ ਕਰਦਾ ਹੈ?
-4. **ਪੂਰਨਤਾ**: ਕੀ ਟੈਸਟ ਅਤੇ ਦਸਤਾਵੇਜ਼ ਸ਼ਾਮਲ ਹਨ?
+1. **ਸਪਸ਼ਟਤਾ**: ਕੀ ਕੋਡ ਸਪਸ਼ਟ ਅਤੇ ਹਸ਼ੇਬ-ਨਿਸ਼ੇਬ ਵਾਲਾ ਹੈ?
+2. **ਸਹੀਤਾ**: ਕੀ ਇਹ ਉਮੀਦ ਮੁਤਾਬਕ ਕੰਮ ਕਰਦਾ ਹੈ?
+3. **ਸੰਘਣਾਪਣ**: ਕੀ ਇਹ ਪ੍ਰੋਜੈਕਟ ਦੇ ਨਿਯਮਾਂ ਦੀ ਪਾਲਣਾ ਕਰਦਾ ਹੈ?
+4. **ਪੂਰਨਤਾ**: ਕੀ ਟੈਸਟ ਅਤੇ ਦਸਤਾਵੇਜ਼ ਸ਼ਾਮਿਲ ਹਨ?
 5. **ਸੁਰੱਖਿਆ**: ਕੀ ਕੋਈ ਸੁਰੱਖਿਆ ਸੰਬੰਧੀ ਚਿੰਤਾਵਾਂ ਹਨ?
 
 ### ਵਰਜਨ ਅਨੁਕੂਲਤਾ
 
-MCP ਲਈ ਵਿਕਾਸ ਕਰਦੇ ਸਮੇਂ:
+MCP ਲਈ ਵਿਕਾਸ ਕਰਦਿਆਂ:
 
-1. **ਪ੍ਰੋਟੋਕੋਲ ਵਰਜਨਿੰਗ**: ਉਸ MCP ਪ੍ਰੋਟੋਕੋਲ ਵਰਜਨ ਦੀ ਪਾਲਣਾ ਕਰੋ ਜਿਸਨੂੰ ਤੁਹਾਡਾ ਟੂਲ ਸਹਾਰਾ ਦਿੰਦਾ ਹੈ।
-2. **ਕਲਾਇੰਟ ਅਨੁਕੂਲਤਾ**: ਪਿਛਲੇ ਵਰਜਨ ਨਾਲ ਅਨੁਕੂਲਤਾ 'ਤੇ ਵਿਚਾਰ ਕਰੋ।
-3. **ਸਰਵਰ ਅਨੁਕੂਲਤਾ**: ਸਰਵਰ ਇੰਪਲੀਮੈਂਟੇਸ਼ਨ ਦੇ ਨਿਯਮਾਂ ਦੀ ਪਾਲਣਾ ਕਰੋ।
-4. **ਤੋੜਨ ਵਾਲੇ ਬਦਲਾਅ**: ਕਿਸੇ ਵੀ ਤੋੜਨ ਵਾਲੇ ਬਦਲਾਅ ਨੂੰ ਸਪਸ਼ਟ ਤੌਰ 'ਤੇ ਦਸਤਾਵੇਜ਼ ਬਣਾਓ।
+1. **ਪ੍ਰੋਟੋਕੋਲ ਵਰਜਨਿੰਗ**: ਆਪਣੇ ਟੂਲ ਦੀ MCP ਪ੍ਰੋਟੋਕੋਲ ਵਰਜਨ ਦੀ ਪਾਲਣਾ ਕਰੋ
+2. **ਕਲਾਇੰਟ ਅਨੁਕੂਲਤਾ**: ਪਿਛਲੀ ਅਨੁਕੂਲਤਾ ਬਾਰੇ ਧਿਆਨ ਦਿਓ
+3. **ਸਰਵਰ ਅਨੁਕੂਲਤਾ**: ਸਰਵਰ ਲਾਗੂ ਕਰਨ ਵਾਲੀਆਂ ਹਦਾਇਤਾਂ ਦੀ ਪਾਲਣਾ ਕਰੋ
+4. **ਤੋੜਨ ਵਾਲੇ ਬਦਲਾਅ**: ਕਿਸੇ ਵੀ ਤੋੜਨ ਵਾਲੇ ਬਦਲਾਅ ਨੂੰ ਸਪਸ਼ਟ ਦਸਤਾਵੇਜ਼ ਕਰੋ
 
-## ਉਦਾਹਰਨ ਕਮਿਊਨਿਟੀ ਪ੍ਰੋਜੈਕਟ: MCP ਟੂਲ ਰਜਿਸਟਰੀ
+## ਉਦਾਹਰਨ ਕਮਿਊਨਿਟੀ ਪ੍ਰਾਜੈਕਟ: MCP ਟੂਲ ਰਜਿਸਟਰੀ
+
+ਇੱਕ ਮਹਿਲੂ ਛ ਕਮਿਊਨਿਟੀ ਯੋਗਦਾਨ MCP ਟੂਲਾਂ ਲਈ ਇੱਕ ਸਰਕਾਰੀ ਰਜਿਸਟਰੀ ਵਿਕਸਿਤ ਕਰਨਾ ਹੋ ਸਕਦਾ ਹੈ।
 
 ```python
-# Example schema for a community tool registry API
+# ਕਮਿਊਨਿਟੀ ਟੂਲ ਰਜਿਸਟਰੀ API ਲਈ ਉਦਾਹਰਨ ਸਕੀਮਾ
 
 from fastapi import FastAPI, HTTPException, Depends
 from pydantic import BaseModel, Field, HttpUrl
@@ -754,7 +749,7 @@ from typing import List, Optional
 import datetime
 import uuid
 
-# Models for the tool registry
+# ਟੂਲ ਰਜਿਸਟਰੀ ਲਈ ਮਾਡਲ
 class ToolSchema(BaseModel):
     """JSON Schema for a tool"""
     type: str
@@ -783,10 +778,10 @@ class Tool(ToolRegistration):
     rating: float = Field(default=0.0)
     ratings_count: int = Field(default=0)
 
-# FastAPI application for the registry
+# ਰਜਿਸਟਰੀ ਲਈ ਫਾਸਟAPI ਐਪਲੀਕੇਸ਼ਨ
 app = FastAPI(title="MCP Tool Registry")
 
-# In-memory database for this example
+# ਇਸ ਉਦਾਹਰਨ ਲਈ ਯਾਦ ਵਿੱਚ ਆਧਾਰਿਤ ਡੇਟਾਬੇਸ
 tools_db = {}
 
 @app.post("/tools", response_model=Tool)
@@ -822,20 +817,35 @@ async def delete_tool(tool_name: str):
     return {"message": f"Tool '{tool_name}' deleted"}
 ```
 
-## ਮੁੱਖ ਗੱਲਾਂ
+## ਮੁੱਖ ਸਿੱਖਣਯੋਗ ਗੱਲਾਂ
 
-- MCP ਕਮਿਊਨਿਟੀ ਵਿਭਿੰਨ ਹੈ ਅਤੇ ਵੱਖ-ਵੱਖ ਕਿਸਮਾਂ ਦੇ ਯੋਗਦਾਨਾਂ ਦਾ ਸਵਾਗਤ ਕਰਦੀ ਹੈ।
-- MCP ਵਿੱਚ ਯੋਗਦਾਨ ਦੇਣਾ ਕੋਰ ਪ੍ਰੋਟੋਕੋਲ ਸੁਧਾਰ ਤੋਂ ਕਸਟਮ ਟੂਲ ਤੱਕ ਹੋ ਸਕਦਾ ਹੈ।
-- ਯੋਗਦਾਨ ਦੇਣ ਦੇ ਨਿਯਮਾਂ ਦੀ ਪਾਲਣਾ ਕਰਨ ਨਾਲ ਤੁਹਾਡਾ PR ਸਵੀਕਾਰ ਹੋਣ ਦੇ ਚਾਂਸ ਵਧਦੇ ਹਨ।
-- MCP ਟੂਲ ਬਣਾਉਣਾ ਅਤੇ ਸਾਂਝੇ ਕਰਨਾ ਇਕੋਸਿਸਟਮ ਨੂੰ ਵਧਾਉਣ ਦਾ ਕੀਮਤੀ ਤਰੀਕਾ ਹੈ।
-- ਕਮਿਊਨਿਟੀ ਸਹਿਯੋਗ MCP ਦੀ ਵਾਧੇ ਅਤੇ ਸੁਧਾਰ ਲਈ ਜ਼ਰੂਰੀ ਹੈ।
+- MCP ਕਮਿਊਨਿਟੀ ਵਿਭਿੰਨ ਹੈ ਅਤੇ ਵੱਖ-ਵੱਖ ਪ੍ਰਕਾਰ ਦੇ ਯੋਗਦਾਨ ਦਾ ਸਵਾਗਤ ਕਰਦੀ ਹੈ
+- MCP ਨੂੰ ਯੋਗਦਾਨ ਦੇਣਾ ਕੋਰ ਪ੍ਰੋਟੋਕੋਲ ਸੁਧਾਰ ਤੋਂ ਕਸਟਮ ਟੂਲ ਤਕ ਹੋ ਸਕਦਾ ਹੈ
+- ਯੋਗਦਾਨ ਹਦਾਇਤਾਂ ਦੀ ਪਾਲਣਾ ਕਰਨ ਨਾਲ ਤੁਹਾਡੇ PR ਮਿਊਲਤ ਪ੍ਰਾਪਤ ਹੋਣ ਦੇ ਮੋਕੇ ਵਧਦੇ ਹਨ
+- MCP ਟੂਲ ਬਣਾਉਣਾ ਅਤੇ ਸਾਂਝਾ ਕਰਨਾ ਇਕੋਸਿਸਟਮ ਨੂੰ ਬਿਹਤਰ ਬਣਾਉਣ ਦਾ ਕੀਮਤੀ ਤਰੀਕਾ ਹੈ
+- ਕਮਿਊਨਿਟੀ ਸਹਿਯੋਗ MCP ਦੇ ਵਿਕਾਸ ਅਤੇ ਸੁਧਾਰ ਲਈ ਜ਼ਰੂਰੀ ਹੈ
 
 ## ਅਭਿਆਸ
 
-1. MCP ਇਕੋਸਿਸਟਮ ਵਿੱਚ ਇੱਕ ਖੇਤਰ ਦੀ ਪਛਾਣ ਕਰੋ ਜਿੱਥੇ ਤੁਸੀਂ ਆਪਣੇ ਹੁਨਰ ਅਤੇ ਰੁਚੀਆਂ ਦੇ ਆਧਾਰ 'ਤੇ ਯੋਗਦਾਨ ਦੇ ਸਕਦੇ ਹੋ।
-2. MCP ਰਿਪੋਜ਼ਿਟਰੀ ਨੂੰ ਫੋਰਕ ਕਰੋ ਅਤੇ ਇੱਕ ਸਥਾਨਕ ਵਿਕਾਸ ਵਾਤਾਵਰਣ ਸੈਟਅਪ ਕਰੋ।
-3. ਇੱਕ ਛੋਟਾ ਸੁਧਾਰ, ਬੱਗ ਫਿਕਸ ਜਾਂ ਟੂਲ ਬਣਾਓ ਜੋ ਕਮਿਊਨਿਟੀ ਲਈ ਲਾਭਦਾਇਕ ਹੋਵੇ।
-4. ਆਪਣੇ ਯੋਗਦਾਨ ਨੂੰ ਸਹੀ ਟੈਸਟ ਅਤੇ ਦਸਤਾਵੇਜ਼ ਨਾਲ ਦਸਤਾਵ
+1. MCP ਇਕੋਸਿਸਟਮ ਵਿੱਚ ਆਪਣੀਆਂ ਹੁਨਰਾਂ ਅਤੇ ਰੁਚੀਆਂ ਦੇ ਆਧਾਰ 'ਤੇ ਕਿਸੇ ਖੇਤਰ ਦੀ ਪਛਾਣ ਕਰੋ ਜਿੱਥੇ ਤੁਸੀਂ ਯੋਗਦਾਨ ਦੇ ਸਕਦੇ ਹੋ
+2. MCP ਰਿਪੋਜ਼ਟਰੀ ਨੂੰ ਫੋਰਕ ਕਰੋ ਅਤੇ ਇੱਕ ਸਥਾਨਕ ਵਿਕਾਸ ਵਾਤਾਵਰਨ ਸੈਟਅੱਪ ਕਰੋ
+3. ਇੱਕ ਛੋਟਾ ਸੁਧਾਰ, ਬੱਗ ਫਿਕਸ, ਜਾਂ ਟੂਲ ਬਣਾਓ ਜੋ ਕਮਿਊਨਿਟੀ ਦੇ ਲਈ ਲਾਭਦਾਇਕ ਹੋਵੇ
+4. ਆਪਣੇ ਯੋਗਦਾਨ ਦਾ ਸਹੀ ਟੈਸਟ ਅਤੇ ਦਸਤਾਵੇਜ਼ ਬਣਾਓ
+5. ਸਬੰਧਤ ਰਿਪੋਜ਼ਟਰੀ ਵਿੱਚ ਪੁਲ ਰਿਕਵੇਸਟ ਭੇਜੋ
 
-**ਅਸਵੀਕਾਰਨਾ**:  
-ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀਤਾ ਲਈ ਯਤਨਸ਼ੀਲ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਦਿਓ ਕਿ ਸਵੈਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸੁਣੀਕਤਾਵਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਨੂੰ ਇਸਦੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਅਧਿਕਾਰਤ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹੱਤਵਪੂਰਨ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਤੋਂ ਪੈਦਾ ਹੋਣ ਵਾਲੇ ਕਿਸੇ ਵੀ ਗਲਤਫਹਿਮੀ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆ ਲਈ ਅਸੀਂ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।
+## ਵਾਧੂ ਸੰਸਾਧਨ
+
+- [MCP Community Projects](https://github.com/topics/model-context-protocol)
+
+---
+
+## ਅਗਲਾ ਕੀ ਹੈ
+
+ਅਗਲਾ: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**ਇਨਕਾਰਨਾਮਾ**:
+ਇਹ ਦਸਤਾਵੇਜ਼ AI ਟ੍ਰਾਂਸਲੇਸ਼ਨ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦਿਤ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸ਼ੁੱਧਤਾ ਲਈ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਰੱਖੋ ਕਿ ਸਵੈਚਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸਥਿਰਤਾਵਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਆਪਣੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਪ੍ਰਮਾਣਿਕ ਸੋਰਸ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹਤਵਪੂਰਣ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫ਼ਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਇਸ ਅਨੁਵਾਦ ਦੇ ਉਪਯੋਗ ਤੋਂ ਉੱਪਜਣ ਵਾਲੀਆਂ ਕਿਸੇ ਵੀ ਗਲਤ ਫਹਮੀ ਜਾਂ ਭ੍ਰਮ ਲਈ ਅਸੀਂ ਜਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

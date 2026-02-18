@@ -1,21 +1,12 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fcf1e12b62102bf7d16b78deb2b163b7",
-  "translation_date": "2025-08-26T20:51:49+00:00",
-  "source_file": "06-CommunityContributions/README.md",
-  "language_code": "lt"
-}
--->
-# Bendruomenė ir indėlis
+# Bendruomenė ir Indėliai
 
-[![Kaip prisidėti prie MCP: įrankiai, dokumentacija, kodas ir daugiau](../../../translated_images/07.1179f6de46ff196eb3cc13c3510e01c37807a13f3bb9be3c779105ce26737c67.lt.png)](https://youtu.be/v1pvCYAWpRE)
+[![Kaip prisidėti prie MCP: įrankiai, dokumentacija, kodas ir daugiau](../../../translated_images/lt/07.1179f6de46ff196e.webp)](https://youtu.be/v1pvCYAWpRE)
 
-_(Spustelėkite paveikslėlį aukščiau, kad peržiūrėtumėte šios pamokos vaizdo įrašą)_
+_(Spustelėkite aukščiau esantį vaizdą, kad peržiūrėtumėte šios pamokos vaizdo įrašą)_
 
 ## Apžvalga
 
-Ši pamoka skirta tam, kaip įsitraukti į MCP bendruomenę, prisidėti prie MCP ekosistemos ir laikytis geriausių bendradarbiavimo praktikos principų. Suprasti, kaip dalyvauti atvirojo kodo MCP projektuose, yra būtina tiems, kurie nori formuoti šios technologijos ateitį.
+Ši pamoka sutelkia dėmesį į tai, kaip įsitraukti į MCP bendruomenę, prisidėti prie MCP ekosistemos ir laikytis geriausių bendradarbiavimo praktikos principų. Suprasti, kaip dalyvauti atvirojo kodo MCP projektuose, yra svarbu tiems, kurie nori formuoti šios technologijos ateitį.
 
 ## Mokymosi tikslai
 
@@ -24,21 +15,21 @@ Pamokos pabaigoje galėsite:
 - Suprasti MCP bendruomenės ir ekosistemos struktūrą
 - Efektyviai dalyvauti MCP bendruomenės forumuose ir diskusijose
 - Prisidėti prie MCP atvirojo kodo saugyklų
-- Kurti ir dalintis individualiais MCP įrankiais ir serveriais
+- Kurti ir dalytis individualiais MCP įrankiais ir serveriais
 - Laikytis geriausių MCP kūrimo ir bendradarbiavimo praktikų
-- Atrasti bendruomenės išteklius ir sistemas MCP kūrimui
+- Atrasti bendruomenės išteklius ir karkasus MCP kūrimui
 
 ## MCP bendruomenės ekosistema
 
-MCP ekosistemą sudaro įvairūs komponentai ir dalyviai, kurie kartu dirba siekdami protokolo pažangos.
+MCP ekosistemą sudaro įvairūs komponentai ir dalyviai, kurie dirba kartu, siekdami pažangą protokole.
 
 ### Pagrindiniai bendruomenės komponentai
 
-1. **Pagrindiniai protokolo prižiūrėtojai**: Oficialus [Model Context Protocol GitHub organizacija](https://github.com/modelcontextprotocol) prižiūri pagrindines MCP specifikacijas ir pavyzdines įgyvendinimo versijas.
-2. **Įrankių kūrėjai**: Asmenys ir komandos, kuriančios MCP įrankius ir serverius.
-3. **Integracijos teikėjai**: Įmonės, kurios integruoja MCP į savo produktus ir paslaugas.
-4. **Galutiniai vartotojai**: Kūrėjai ir organizacijos, naudojančios MCP savo programose.
-5. **Prisidedantys nariai**: Bendruomenės nariai, kurie prisideda kodu, dokumentacija ar kitais ištekliais.
+1. **Pagrindinio protokolo prižiūrėtojai**: oficiali [Model Context Protocol GitHub organizacija](https://github.com/modelcontextprotocol) prižiūri pagrindines MCP specifikacijas ir pavyzdinius įgyvendinimus
+2. **Įrankių kūrėjai**: asmenys ir komandos, kurios kuria MCP įrankius ir serverius
+3. **Integracijos teikėjai**: įmonės, integruojančios MCP į savo produktus ir paslaugas
+4. **Galutiniai vartotojai**: programuotojai ir organizacijos, naudojančios MCP savo programose
+5. **Prisidėtojai**: bendruomenės nariai, prisidedantys kodu, dokumentacija arba kitais ištekliais
 
 ### Bendruomenės ištekliai
 
@@ -46,103 +37,103 @@ MCP ekosistemą sudaro įvairūs komponentai ir dalyviai, kurie kartu dirba siek
 
 - [MCP GitHub organizacija](https://github.com/modelcontextprotocol)
 - [MCP dokumentacija](https://modelcontextprotocol.io/)
-- [MCP specifikacija](https://modelcontextprotocol.io/docs/specification)
+- [MCP specifikacija](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
 - [GitHub diskusijos](https://github.com/orgs/modelcontextprotocol/discussions)
 - [MCP pavyzdžių ir serverių saugykla](https://github.com/modelcontextprotocol/servers)
 
-#### Bendruomenės valdomi ištekliai
+#### Bendruomenės kuriami ištekliai
 
-- [MCP klientai](https://modelcontextprotocol.io/clients) - Klientų, palaikančių MCP integracijas, sąrašas.
-- [Bendruomenės MCP serveriai](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - Augantis bendruomenės sukurtų MCP serverių sąrašas.
-- [Nuostabūs MCP serveriai](https://github.com/wong2/awesome-mcp-servers) - Kruopščiai atrinktas MCP serverių sąrašas.
-- [PulseMCP](https://www.pulsemcp.com/) - Bendruomenės centras ir naujienlaiškis MCP ištekliams atrasti.
-- [Discord serveris](https://discord.gg/jHEGxQu2a5) - Susisiekite su MCP kūrėjais.
-- Kalboms pritaikytos SDK įgyvendinimo versijos.
-- Tinklaraščio įrašai ir mokymai.
+- [MCP klientai](https://modelcontextprotocol.io/clients) - MCP integracijas palaikančių klientų sąrašas
+- [Bendruomenės MCP serveriai](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - nuolat augantis bendruomenės kuriamų MCP serverių sąrašas
+- [Awesome MCP serveriai](https://github.com/wong2/awesome-mcp-servers) - atrinktas MCP serverių sąrašas
+- [PulseMCP](https://www.pulsemcp.com/) - bendruomenės centras ir naujienlaiškis MCP išteklių atradimui
+- [Discord serveris](https://discord.gg/jHEGxQu2a5) - susisiekite su MCP programuotojais
+- Kalbų specifiniai SDK įgyvendinimai
+- Tinklaraščio įrašai ir pamokos
 
 ## Prisidėjimas prie MCP
 
 ### Prisidėjimo tipai
 
-MCP ekosistema laukia įvairių prisidėjimo formų:
+MCP ekosistema priima įvairius prisidėjimo tipus:
 
-1. **Kodo indėlis**:
-   - Pagrindinio protokolo patobulinimai
+1. **Kodo indėliai**:
+   - Pagrindinio protokolo tobulinimai
    - Klaidų taisymai
-   - Įrankių ir serverių įgyvendinimas
-   - Klientų/serverių bibliotekos skirtingomis kalbomis
+   - Įrankių ir serverių įgyvendinimai
+   - Klientų/serverių bibliotekos įvairiomis kalbomis
 
 2. **Dokumentacija**:
    - Esamos dokumentacijos tobulinimas
-   - Mokymų ir vadovų kūrimas
+   - Pamokų ir vadovų kūrimas
    - Dokumentacijos vertimas
    - Pavyzdžių ir demonstracinių programų kūrimas
 
 3. **Bendruomenės palaikymas**:
    - Atsakymai į klausimus forumuose ir diskusijose
-   - Testavimas ir klaidų pranešimas
+   - Testavimas ir problemų pranešimas
    - Bendruomenės renginių organizavimas
-   - Naujų prisidedančiųjų mentorystė
+   - Naujiems prisidėjėjams mentorystė
 
-### Prisidėjimo procesas: pagrindinis protokolas
+### Prisidėjimo prie pagrindinio protokolo procesas
 
-Norėdami prisidėti prie pagrindinio MCP protokolo ar oficialių įgyvendinimo versijų, laikykitės šių principų iš [oficialių prisidėjimo gairių](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
+Norint prisidėti prie pagrindinio MCP protokolo ar oficialių įgyvendinimų, vadovaukitės šiais principais iš [oficialios prisidėjimo gairių](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
 
-1. **Paprastumas ir minimalizmas**: MCP specifikacija išlaiko aukštą kartelę naujų koncepcijų pridėjimui. Lengviau pridėti dalykus į specifikaciją nei juos pašalinti.
+1. **Paprastumas ir minimalizmas**: MCP specifikacija kelia aukštus reikalavimus naujiems konceptams pridėti. Lengviau ką nors pridėti nei pašalinti.
 
-2. **Konkreti prieiga**: Specifikacijos pakeitimai turėtų būti pagrįsti konkrečiais įgyvendinimo iššūkiais, o ne spekuliatyviomis idėjomis.
+2. **Konkreti prieiga**: Specifikacijos pakeitimai turėtų būti pagrįsti konkrečiomis įgyvendinimo problemomis, o ne spekuliacinėmis idėjomis.
 
 3. **Pasiūlymo etapai**:
-   - Apibrėžimas: Ištirkite problemos sritį, patvirtinkite, kad kiti MCP vartotojai susiduria su panašia problema.
-   - Prototipas: Sukurkite pavyzdinį sprendimą ir pademonstruokite jo praktinį pritaikymą.
-   - Rašymas: Remdamiesi prototipu, parašykite specifikacijos pasiūlymą.
+   - Apibrėžimas: ištirti problemos sritį, patvirtinti, kad kiti MCP naudotojai susiduria su panašia problema
+   - Prototipas: sukurti pavyzdinį sprendimą ir parodyti jo praktinį panaudojimą
+   - Rašymas: remiantis prototipu parašyti specifikacijos pasiūlymą
 
-### Kūrimo aplinkos nustatymas
+### Kūrimo aplinkos paruošimas
 
 ```bash
-# Fork the repository
+# Padalinkite saugyklą
 git clone https://github.com/YOUR-USERNAME/modelcontextprotocol.git
 cd modelcontextprotocol
 
-# Install dependencies
+# Įdiekite priklausomybes
 npm install
 
-# For schema changes, validate and generate schema.json:
+# Schemai pakeitus, patikrinkite ir sugeneruokite schema.json:
 npm run check:schema:ts
 npm run generate:schema
 
-# For documentation changes
+# Dokumentacijos pakeitimams
 npm run check:docs
 npm run format
 
-# Preview documentation locally (optional):
+# Peržiūrėkite dokumentaciją lokaliai (pasirinktinai):
 npm run serve:docs
 ```
 
-### Pavyzdys: klaidos taisymo indėlis
+### Pavyzdys: Klaidos taisymo prisidėjimas
 
 ```javascript
-// Original code with bug in the typescript-sdk
+// Originalus kodas su klaida typescript-sdk
 export function validateResource(resource: unknown): resource is MCPResource {
   if (!resource || typeof resource !== 'object') {
     return false;
   }
   
-  // Bug: Missing property validation
-  // Current implementation:
+  // Klaida: trūksta savybės patvirtinimo
+  // Dabartinė implementacija:
   const hasName = 'name' in resource;
   const hasSchema = 'schema' in resource;
   
   return hasName && hasSchema;
 }
 
-// Fixed implementation in a contribution
+// Pataisyta implementacija prisidėjime
 export function validateResource(resource: unknown): resource is MCPResource {
   if (!resource || typeof resource !== 'object') {
     return false;
   }
   
-  // Improved validation
+  // Patobulintas patvirtinimas
   const hasName = 'name' in resource && typeof (resource as MCPResource).name === 'string';
   const hasSchema = 'schema' in resource && typeof (resource as MCPResource).schema === 'object';
   const hasDescription = !('description' in resource) || typeof (resource as MCPResource).description === 'string';
@@ -151,10 +142,10 @@ export function validateResource(resource: unknown): resource is MCPResource {
 }
 ```
 
-### Pavyzdys: naujo įrankio pridėjimas į standartinę biblioteką
+### Pavyzdys: Naujo įrankio pridėjimas į standartinę biblioteką
 
 ```python
-# Example contribution: A CSV data processing tool for the MCP standard library
+# Pavyzdinė indėlis: CSV duomenų apdorojimo įrankis MCP standartinei bibliotekai
 
 from mcp_tools import Tool, ToolRequest, ToolResponse, ToolExecutionException
 import pandas as pd
@@ -216,14 +207,14 @@ class CsvProcessingTool(Tool):
     
     async def execute_async(self, request: ToolRequest) -> ToolResponse:
         try:
-            # Extract parameters
+            # Išgauti parametrus
             operation = request.parameters.get("operation")
             output_format = request.parameters.get("outputFormat", "json")
             
-            # Get CSV data from either direct data or URL
+            # Gauti CSV duomenis tiesiogiai arba iš URL
             df = await self._get_dataframe(request)
             
-            # Process based on requested operation
+            # Apdoroti pagal prašomą operaciją
             result = {}
             
             if operation == "summary":
@@ -284,7 +275,7 @@ class CsvProcessingTool(Tool):
     
     def _transform_data(self, df: pd.DataFrame, params: Dict[str, Any]) -> Dict[str, Any]:
         """Transforms the data based on parameters"""
-        # Implementation would include various transformations
+        # Įgyvendinimas apimtų įvairius transformavimus
         return {
             "status": "success",
             "message": "Transformation applied"
@@ -313,66 +304,68 @@ class CsvProcessingTool(Tool):
 
 ### Prisidėjimo gairės
 
-Norėdami sėkmingai prisidėti prie MCP projektų:
+Siekiant sėkmingo prisidėjimo prie MCP projektų:
 
-1. **Pradėkite nuo mažų dalykų**: Pradėkite nuo dokumentacijos, klaidų taisymo ar nedidelių patobulinimų.
-2. **Laikykitės stiliaus vadovo**: Laikykitės projekto kodavimo stiliaus ir konvencijų.
-3. **Rašykite testus**: Įtraukite vienetinius testus savo kodo indėliams.
-4. **Dokumentuokite savo darbą**: Pridėkite aiškią dokumentaciją naujoms funkcijoms ar pakeitimams.
-5. **Pateikite tikslinius PR**: Laikykite „pull request“ sutelktus į vieną problemą ar funkciją.
-6. **Reaguokite į atsiliepimus**: Būkite atviri atsiliepimams apie savo indėlius.
+1. **Pradėkite nuo nedidelių dalykų**: pradėkite nuo dokumentacijos, klaidų taisymų ar mažų patobulinimų
+2. **Laikykitės stiliaus gairių**: laikykitės projekto kodavimo stiliaus ir konvencijų
+3. **Rašykite testus**: pridėkite vienetinius testus savo kodo indėliams
+4. **Dokumentuokite savo darbą**: aiškiai dokumentuokite naujas funkcijas ar pakeitimus
+5. **Pateikite konkrečius prašymus**: išlaikykite PR skirtus vienai problemai ar funkcijai
+6. **Bendraukite su atsiliepimais**: būkite atviri ir greit reaguokite į atsiliepimus
 
 ### Pavyzdinis prisidėjimo darbo procesas
 
 ```bash
-# Clone the repository
+# Nukopijuokite saugyklą
 git clone https://github.com/modelcontextprotocol/typescript-sdk.git
 cd typescript-sdk
 
-# Create a new branch for your contribution
+# Sukurkite naują šaką jūsų indėliui
 git checkout -b feature/my-contribution
 
-# Make your changes
+# Atlikite savo pakeitimus
 # ...
 
-# Run tests to ensure your changes don't break existing functionality
+# Vykdykite testus, kad įsitikintumėte, jog jūsų pakeitimai nesugadina esamos funkcionalumo
 npm test
 
-# Commit your changes with a descriptive message
+# Įsipareigokite savo pakeitimus su aprašomu pranešimu
 git commit -am "Fix validation in resource handler"
 
-# Push your branch to your fork
+# Užkelkite savo šaką į savo šaką (fork)
 git push origin feature/my-contribution
 
-# Create a pull request from your branch to the main repository
-# Then engage with feedback and iterate on your PR as needed
+# Sukurkite traukos prašymą iš savo šakos į pagrindinę saugyklą
+# Tada įtraukite atsiliepimus ir iteruokite savo PR, kaip reikia
 ```
 
 ## MCP serverių kūrimas ir dalijimasis
 
-Vienas vertingiausių būdų prisidėti prie MCP ekosistemos yra kurti ir dalintis individualiais MCP serveriais. Bendruomenė jau sukūrė šimtus serverių įvairioms paslaugoms ir naudojimo atvejams.
+Viena iš vertingiausių galimybių prisidėti prie MCP ekosistemos yra kurti ir dalytis individualiais MCP serveriais. Bendruomenė jau sukūrė šimtus serverių įvairioms paslaugoms ir naudojimo atvejams.
 
-### MCP serverių kūrimo sistemos
+### MCP serverių kūrimo karkasai
 
-Yra keletas sistemų, kurios supaprastina MCP serverių kūrimą:
+Yra keletas karkasų, palengvinančių MCP serverių kūrimą:
 
-1. **Oficialūs SDK**:
+1. **Oficialūs SDK** (atitinkantys [MCP specifikaciją 2025-11-25](https://spec.modelcontextprotocol.io/specification/2025-11-25/)):
    - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
    - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
    - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
    - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
    - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
    - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
+   - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk)
+   - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk)
 
-2. **Bendruomenės sistemos**:
-   - [MCP-Framework](https://mcp-framework.com/) - Kurkite MCP serverius elegantiškai ir greitai naudodami TypeScript.
-   - [MCP Deklaratyvus Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - MCP serveriai su Java, pagrįsti anotacijomis.
-   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - Java sistema MCP serveriams.
-   - [Next.js MCP Server šablonas](https://github.com/vercel-labs/mcp-for-next.js) - Pradinis Next.js projektas MCP serveriams.
+2. **Bendruomenės karkasai**:
+   - [MCP-Framework](https://mcp-framework.com/) - statykite MCP serverius elegantiškai ir greitai TypeScript kalba
+   - [MCP Deklaratyvus Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - anotacijomis valdomi MCP serveriai su Java
+   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - Java karkasas MCP serveriams
+   - [Next.js MCP Server šablonas](https://github.com/vercel-labs/mcp-for-next.js) - pradinė Next.js projekto versija MCP serveriams
 
-### Dalijimasis įrankiais
+### Dalijamų įrankių kūrimas
 
-#### .NET pavyzdys: dalijimasis įrankių paketu
+#### .NET pavyzdys: dalijamo įrankio paketo kūrimas
 
 ```csharp
 // Create a new .NET library project
@@ -478,10 +471,10 @@ namespace McpFinanceTools
 // dotnet nuget push bin/Release/McpFinanceTools.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k YOUR_API_KEY
 ```
 
-#### Java pavyzdys: Maven paketo kūrimas įrankiams
+#### Java pavyzdys: Maven paketo įrankiams kūrimas
 
 ```java
-// pom.xml configuration for a shareable MCP tool package
+// pom.xml konfigūracija bendrinamai MCP įrankių paketui
 <!-- 
 <project>
     <groupId>com.example</groupId>
@@ -542,7 +535,7 @@ public class WeatherForecastTool implements Tool {
     @Override
     public Object getSchema() {
         Map<String, Object> schema = new HashMap<>();
-        // Schema definition...
+        // Schemos apibrėžimas...
         return schema;
     }
     
@@ -553,10 +546,10 @@ public class WeatherForecastTool implements Tool {
             int days = request.getParameters().has("days") ? 
                 request.getParameters().get("days").asInt() : 3;
             
-            // Call weather API
+            // Iškvieskite orų API
             Map<String, Object> forecast = getForecast(location, days);
             
-            // Build response
+            // Sukurkite atsakymą
             return new ToolResponse.Builder()
                 .setResult(forecast)
                 .build();
@@ -566,15 +559,15 @@ public class WeatherForecastTool implements Tool {
     }
     
     private Map<String, Object> getForecast(String location, int days) {
-        // Implementation would call weather API
-        // Simplified example
+        // Įgyvendinimas iškvies orų API
+        // Supaprastintas pavyzdys
         Map<String, Object> result = new HashMap<>();
-        // Add forecast data...
+        // Pridėti prognozės duomenis...
         return result;
     }
 }
 
-// Build and publish using Maven
+// Kurkite ir skelbkite naudodami Maven
 // mvn clean package
 // mvn deploy
 ```
@@ -582,7 +575,7 @@ public class WeatherForecastTool implements Tool {
 #### Python pavyzdys: PyPI paketo publikavimas
 
 ```python
-# Directory structure for a PyPI package:
+# Katalogo struktūra PyPI paketui:
 # mcp_nlp_tools/
 # ├── LICENSE
 # ├── README.md
@@ -592,7 +585,7 @@ public class WeatherForecastTool implements Tool {
 # │   ├── sentiment_tool.py
 # │   └── translation_tool.py
 
-# Example setup.py
+# setup.py pavyzdys
 """
 from setuptools import setup, find_packages
 
@@ -620,7 +613,7 @@ setup(
 )
 """
 
-# Example NLP tool implementation (sentiment_tool.py)
+# NLP įrankio pavyzdinis įgyvendinimas (sentiment_tool.py)
 from mcp_tools import Tool, ToolRequest, ToolResponse, ToolExecutionException
 from transformers import pipeline
 import torch
@@ -629,7 +622,7 @@ class SentimentAnalysisTool(Tool):
     """MCP tool for sentiment analysis of text"""
     
     def __init__(self, model_name="distilbert-base-uncased-finetuned-sst-2-english"):
-        # Load the sentiment analysis model
+        # Įkelti nuotaikų analizės modelį
         self.sentiment_analyzer = pipeline("sentiment-analysis", model=model_name)
     
     def get_name(self):
@@ -657,14 +650,14 @@ class SentimentAnalysisTool(Tool):
     
     async def execute_async(self, request: ToolRequest) -> ToolResponse:
         try:
-            # Extract parameters
+            # Ištraukti parametrus
             text = request.parameters.get("text")
             include_score = request.parameters.get("includeScore", True)
             
-            # Analyze sentiment
+            # Analizuoti nuotaiką
             sentiment_result = self.sentiment_analyzer(text)[0]
             
-            # Format result
+            # Formatuoti rezultatą
             result = {
                 "sentiment": sentiment_result["label"],
                 "text": text
@@ -673,82 +666,82 @@ class SentimentAnalysisTool(Tool):
             if include_score:
                 result["score"] = sentiment_result["score"]
             
-            # Return result
+            # Grąžinti rezultatą
             return ToolResponse(result=result)
             
         except Exception as e:
             raise ToolExecutionException(f"Sentiment analysis failed: {str(e)}")
 
-# To publish:
+# Norint publikuoti:
 # python setup.py sdist bdist_wheel
 # python -m twine upload dist/*
 ```
 
-### Geriausios praktikos dalijimasis
+### Dalinimosi geriausios praktikos
 
 Dalijantis MCP įrankiais su bendruomene:
 
 1. **Išsami dokumentacija**:
-   - Dokumentuokite tikslą, naudojimą ir pavyzdžius.
-   - Paaiškinkite parametrus ir grąžinimo reikšmes.
-   - Dokumentuokite išorines priklausomybes.
+   - dokumentuokite paskirtį, naudojimą ir pavyzdžius
+   - paaiškinkite parametrus ir grąžinamas reikšmes
+   - dokumentuokite visus išorinius priklausomybes
 
-2. **Klaidų tvarkymas**:
-   - Įgyvendinkite patikimą klaidų tvarkymą.
-   - Pateikite naudingas klaidų žinutes.
-   - Tvarkykite kraštutinius atvejus.
+2. **Klaidų valdymas**:
+   - įgyvendinkite patikimą klaidų valdymą
+   - pateikite naudingas klaidų žinutes
+   - tvarkykite kraštutinius atvejus sklandžiai
 
-3. **Našumo aspektai**:
-   - Optimizuokite greitį ir resursų naudojimą.
-   - Įgyvendinkite talpyklą, kai tai tinkama.
-   - Apsvarstykite mastelio didinimą.
+3. **Veikimo aspektai**:
+   - optimizuokite greitį ir išteklių naudojimą
+   - naudokite kešavimą, kai tinka
+   - apsvarstykite mastelio galimybes
 
 4. **Saugumas**:
-   - Naudokite saugius API raktus ir autentifikaciją.
-   - Tikrinkite ir valykite įvestis.
-   - Įgyvendinkite iškvietimų ribojimą išoriniams API.
+   - naudokite saugius API raktus ir autentifikavimą
+   - tikrinkite ir valykite įvestis
+   - įgyvendinkite kvotų ribojimą išoriniams API kvietimams
 
 5. **Testavimas**:
-   - Įtraukite išsamų testų aprėptį.
-   - Testuokite su skirtingais įvesties tipais ir kraštutiniais atvejais.
-   - Dokumentuokite testavimo procedūras.
+   - apimkite išsamų testų spektrą
+   - testuokite su skirtingais įvesties tipais ir kraštutiniais atvejais
+   - dokumentuokite testavimo procedūras
 
 ## Bendruomenės bendradarbiavimas ir geriausios praktikos
 
-Efektyvus bendradarbiavimas yra MCP ekosistemos klestėjimo pagrindas.
+Efektyvus bendradarbiavimas yra svarbus klestinčios MCP ekosistemos pagrindas.
 
-### Komunikacijos kanalai
+### Bendravimo kanalai
 
 - GitHub problemos ir diskusijos
 - Microsoft Tech Community
 - Discord ir Slack kanalai
 - Stack Overflow (žymos: `model-context-protocol` arba `mcp`)
 
-### Kodo peržiūros
+### Kodo peržiūra
 
 Peržiūrint MCP indėlius:
 
-1. **Aiškumas**: Ar kodas aiškus ir gerai dokumentuotas?
-2. **Teisingumas**: Ar jis veikia kaip tikėtasi?
-3. **Nuoseklumas**: Ar laikomasi projekto konvencijų?
-4. **Išsamumas**: Ar įtraukti testai ir dokumentacija?
-5. **Saugumas**: Ar yra kokių nors saugumo problemų?
+1. **Aiškumas**: ar kodas aiškus ir gerai dokumentuotas?
+2. **Taisyklingumas**: ar jis veikia kaip tikėtasi?
+3. **Nuoseklumas**: ar laikomasi projekto konvencijų?
+4. **Pilnumas**: ar yra testų ir dokumentacijos?
+5. **Saugumas**: ar yra kokių nors saugumo problemų?
 
 ### Versijų suderinamumas
 
-Kuriant MCP:
+Kurdami MCP:
 
-1. **Protokolo versijavimas**: Laikykitės MCP protokolo versijos, kurią palaiko jūsų įrankis.
-2. **Kliento suderinamumas**: Apsvarstykite atgalinį suderinamumą.
-3. **Serverio suderinamumas**: Laikykitės serverio įgyvendinimo gairių.
-4. **Lūžtantys pakeitimai**: Aiškiai dokumentuokite visus lūžtančius pakeitimus.
+1. **Protokolo versijavimas**: laikykitės MCP protokolo versijos, kurią palaiko jūsų įrankis
+2. **Kliento suderinamumas**: apsvarstykite atgalinį suderinamumą
+3. **Serverio suderinamumas**: laikykitės serverio įgyvendinimo gairių
+4. **Draudžiami pakeitimai**: aiškiai dokumentuokite bet kokius draudžiamus pakeitimus
 
 ## Pavyzdinis bendruomenės projektas: MCP įrankių registras
 
 Svarbus bendruomenės indėlis galėtų būti viešo MCP įrankių registro kūrimas.
 
 ```python
-# Example schema for a community tool registry API
+# Bendruomenės įrankių registracijos API pavyzdinis schema
 
 from fastapi import FastAPI, HTTPException, Depends
 from pydantic import BaseModel, Field, HttpUrl
@@ -756,7 +749,7 @@ from typing import List, Optional
 import datetime
 import uuid
 
-# Models for the tool registry
+# Modeliai įrankių registrui
 class ToolSchema(BaseModel):
     """JSON Schema for a tool"""
     type: str
@@ -785,10 +778,10 @@ class Tool(ToolRegistration):
     rating: float = Field(default=0.0)
     ratings_count: int = Field(default=0)
 
-# FastAPI application for the registry
+# FastAPI programa registrui
 app = FastAPI(title="MCP Tool Registry")
 
-# In-memory database for this example
+# Atminties duomenų bazė šiam pavyzdžiui
 tools_db = {}
 
 @app.post("/tools", response_model=Tool)
@@ -824,21 +817,21 @@ async def delete_tool(tool_name: str):
     return {"message": f"Tool '{tool_name}' deleted"}
 ```
 
-## Pagrindinės mintys
+## Pagrindinės išvados
 
-- MCP bendruomenė yra įvairi ir laukia įvairių prisidėjimo formų.
-- Prisidėjimas prie MCP gali apimti nuo pagrindinio protokolo patobulinimų iki individualių įrankių kūrimo.
-- Laikantis prisidėjimo gairių padidėja tikimybė, kad jūsų PR bus priimtas.
-- MCP įrankių kūrimas ir dalijimasis yra vertingas būdas praturtinti ekosistemą.
-- Bendruomenės bendradarbiavimas yra būtinas MCP augimui ir tobulėjimui.
+- MCP bendruomenė yra įvairi ir priima įvairių tipų prisidėjimus
+- Prisidėjimas prie MCP apima nuo pagrindinio protokolo tobulinimų iki individualių įrankių kūrimo
+- Prisidėjimo gairių laikymasis padidina jūsų PR priėmimo galimybes
+- MCP įrankių kūrimas ir dalijimasis yra vertingas ekosistemos tobulinimo būdas
+- Bendruomenės bendradarbiavimas yra būtinas MCP augimui ir tobulėjimui
 
 ## Užduotis
 
-1. Nustatykite MCP ekosistemos sritį, kurioje galėtumėte prisidėti pagal savo įgūdžius ir interesus.
-2. Fork'inkite MCP saugyklą ir nustatykite vietinę kūrimo aplinką.
-3. Sukurkite nedidelį patobulinimą, klaidos taisymą ar įrankį, kuris būtų naudingas bendruomenei.
-4. Dokumentuokite savo indėlį su tinkamais testais ir dokumentacija.
-5. Pateikite „pull request“ į atitinkamą saugyklą.
+1. Nustatykite MCP ekosistemos sritį, kurioje galėtumėte prisidėti pagal savo įgūdžius ir pomėgius
+2. Atšakokite MCP saugyklą ir sukurkite vietinę kūrimo aplinką
+3. Sukurkite nedidelį patobulinimą, klaidos taisymą ar įrankį, kuris būtų naudingas bendruomenei
+4. Dokumentuokite savo indėlį su tinkamais testais ir dokumentacija
+5. Pateikite pull request tinkamoje saugykloje
 
 ## Papildomi ištekliai
 
@@ -846,9 +839,13 @@ async def delete_tool(tool_name: str):
 
 ---
 
-Toliau: [Pamokos iš ankstyvojo pritaikymo](../07-LessonsfromEarlyAdoption/README.md)
+## Kas toliau
+
+Kitas: [Pamokos iš ankstyvosios adaptacijos](../07-LessonsfromEarlyAdoption/README.md)
 
 ---
 
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Atsakomybės apribojimas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama naudoti profesionalų žmogaus vertimą. Mes neprisiimame atsakomybės už nesusipratimus ar klaidingus interpretavimus, atsiradusius dėl šio vertimo naudojimo.
+Šis dokumentas buvo išverstas naudojant dirbtinio intelekto vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors stengiamės užtikrinti tikslumą, prašome atkreipti dėmesį, kad automatizuoti vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas savo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Svarbiai informacijai rekomenduojamas profesionalus žmogaus atliktas vertimas. Mes neatsakome už bet kokius nesusipratimus ar neteisingus interpretavimus, kilusius naudojantis šiuo vertimu.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

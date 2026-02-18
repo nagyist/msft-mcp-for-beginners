@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5ef8f5821c1a04f7b1fc4f15098ecab8",
-  "translation_date": "2025-07-13T19:39:01+00:00",
-  "source_file": "03-GettingStarted/04-vscode/solution/README.md",
-  "language_code": "ar"
-}
--->
 هذا يتوافق مع تشغيل أمر مثل: `node build/index.js`.
 
 - قم بتغيير إدخال الخادم ليتناسب مع مكان وجود ملف الخادم الخاص بك أو بما هو مطلوب لتشغيل الخادم بناءً على بيئة التشغيل وموقع الخادم الذي اخترته.
@@ -23,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     يجب أن ترى أداة تظهر فوق مربع نص الدردشة تشير إلى أنه يمكنك اختيار تشغيل الأداة كما في الصورة التالية:
 
-    ![VS Code يشير إلى رغبته في تشغيل أداة](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.ar.png)
+    ![VS Code يشير إلى رغبته في تشغيل أداة](../../../../../translated_images/ar/vscode-agent.d5a0e0b897331060.webp)
 
     اختيار الأداة يجب أن ينتج نتيجة رقمية تقول "23" إذا كان طلبك كما ذكرنا سابقًا.
 

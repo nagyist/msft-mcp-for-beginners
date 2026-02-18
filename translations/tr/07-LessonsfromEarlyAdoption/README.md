@@ -1,52 +1,43 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "41f16dac486d2086a53bc644a01cbe42",
-  "translation_date": "2025-08-18T17:46:10+00:00",
-  "source_file": "07-LessonsfromEarlyAdoption/README.md",
-  "language_code": "tr"
-}
--->
 # 🌟 Erken Benimseyenlerden Dersler
 
-[![MCP Erken Benimseyenlerden Dersler](../../../translated_images/08.980bb2babbaadd8a97739effc9b31e5f1abd8f4c4a3fbc90fb9f931a866674d0.tr.png)](https://youtu.be/jds7dSmNptE)
+[![Lessons from MCP Early Adopters](../../../translated_images/tr/08.980bb2babbaadd8a.webp)](https://youtu.be/jds7dSmNptE)
 
-_(Bu dersin videosunu izlemek için yukarıdaki görsele tıklayın)_
+_(Bu dersin videosunu görüntülemek için yukarıdaki görsele tıklayın)_
 
-## 🎯 Bu Modül Neleri Kapsıyor?
+## 🎯 Bu Modül Neleri Kapsar
 
-Bu modül, gerçek organizasyonların ve geliştiricilerin Model Context Protocol (MCP)'yi nasıl kullanarak gerçek zorlukları çözdüğünü ve yenilikleri nasıl yönlendirdiğini inceliyor. Ayrıntılı vaka çalışmaları ve uygulamalı projelerle MCP'nin dil modellerini, araçları ve kurumsal verileri güvenli ve ölçeklenebilir bir şekilde entegre ederek nasıl birleştirdiğini keşfedeceksiniz.
+Bu modül, gerçek organizasyonların ve geliştiricilerin Model Context Protocol (MCP)’ü nasıl gerçek zorlukları çözmek ve yenilikleri tetiklemek için kullandığını keşfeder. Ayrıntılı vaka çalışmaları, uygulamalı projeler ve pratik örnekler aracılığıyla, MCP’nin dil modelleri, araçlar ve kurumsal verileri bağlayan güvenli, ölçeklenebilir AI entegrasyonunu nasıl mümkün kıldığına tanık olacaksınız.
 
-### 📚 MCP'yi İş Başında Görün
+### 📚 MCP’yi Uygulamada Görün
 
-Bu ilkeleri üretime hazır araçlarda uygulandığını görmek ister misiniz? Bugün kullanabileceğiniz gerçek Microsoft MCP sunucularını sergileyen [**Geliştirici Verimliliğini Dönüştüren 10 Microsoft MCP Sunucusu**](microsoft-mcp-servers.md) rehberimize göz atın.
+Bu ilkeleri üretime hazır araçlarda görmek ister misiniz? Bugün kullanabileceğiniz gerçek Microsoft MCP sunucularını sergileyen [**10 Microsoft MCP Sunucusu – Geliştirici Verimliliğini Dönüştürenler**](microsoft-mcp-servers.md) rehberimize göz atın.
 
 ## Genel Bakış
 
-Bu ders, erken benimseyenlerin Model Context Protocol (MCP)'yi kullanarak gerçek dünya zorluklarını nasıl çözdüğünü ve endüstrilerde yenilikleri nasıl yönlendirdiğini inceliyor. Ayrıntılı vaka çalışmaları ve uygulamalı projelerle MCP'nin büyük dil modellerini, araçları ve kurumsal verileri standartlaştırılmış, güvenli ve ölçeklenebilir bir çerçevede nasıl birleştirdiğini göreceksiniz. MCP tabanlı çözümler tasarlama ve oluşturma konusunda pratik deneyim kazanacak, kanıtlanmış uygulama modellerinden öğrenecek ve MCP'yi üretim ortamlarında dağıtmak için en iyi uygulamaları keşfedeceksiniz. Ders ayrıca ortaya çıkan trendleri, gelecekteki yönleri ve MCP teknolojisinin ve gelişen ekosisteminin ön saflarında kalmanıza yardımcı olacak açık kaynak kaynaklarını vurguluyor.
+Bu ders, erken benimseyenlerin Model Context Protocol (MCP)’ü gerçek dünya sorunlarını çözmek ve sektörler arası yeniliği teşvik etmek için nasıl kullandığını inceler. Ayrıntılı vaka çalışmaları ve uygulamalı projelerle MCP’nin standartlaştırılmış, güvenli ve ölçeklenebilir AI entegrasyonunu nasıl mümkün kıldığını göreceksiniz—büyük dil modelleri, araçlar ve kurumsal verileri birleşik bir çerçevede birbirine bağlayarak. MCP tabanlı çözümler tasarlama ve oluşturma konusunda pratik deneyim kazanacak, kanıtlanmış uygulama kalıplarından öğrenecek ve MCP’yi üretim ortamlarında devreye alma için en iyi uygulamaları keşfedeceksiniz. Ders ayrıca güncel trendleri, gelecekteki yönelimleri ve açık kaynak kaynaklarını vurgulayarak MCP teknolojisi ve gelişen ekosisteminin ön safhalarında kalmanıza yardımcı olur.
 
 ## Öğrenme Hedefleri
 
-- Farklı endüstrilerdeki gerçek MCP uygulamalarını analiz edin  
-- Tam MCP tabanlı uygulamalar tasarlayın ve oluşturun  
-- MCP teknolojisindeki ortaya çıkan trendleri ve gelecekteki yönleri keşfedin  
-- Gerçek geliştirme senaryolarında en iyi uygulamaları uygulayın  
+- Farklı sektörlerdeki gerçek MCP uygulamalarını analiz etmek
+- Tamamen MCP tabanlı uygulamalar tasarlamak ve geliştirmek
+- MCP teknolojisindeki yükselen trendleri ve gelecek yönelimleri keşfetmek
+- Güncel geliştirme senaryolarında en iyi uygulamaları kullanmak
 
 ## Gerçek Dünya MCP Uygulamaları
 
 ### Vaka Çalışması 1: Kurumsal Müşteri Destek Otomasyonu
 
-Bir çok uluslu şirket, müşteri destek sistemleri arasında AI etkileşimlerini standartlaştırmak için MCP tabanlı bir çözüm uyguladı. Bu çözüm sayesinde:  
+Çok uluslu bir şirket, müşteri destek sistemleri arasındaki AI etkileşimlerini standartlaştırmak için MCP tabanlı bir çözüm uyguladı. Bu sayede:
 
-- Birden fazla LLM sağlayıcısı için birleşik bir arayüz oluşturuldu  
-- Departmanlar arasında tutarlı prompt yönetimi sağlandı  
-- Güçlü güvenlik ve uyumluluk kontrolleri uygulandı  
-- Belirli ihtiyaçlara göre farklı AI modelleri arasında kolay geçiş sağlandı  
+- Birden fazla LLM sağlayıcısı için birleşik bir arayüz oluşturuldu
+- Bölümler arasında tutarlı prompt yönetimi sağlandı
+- Güçlü güvenlik ve uyum kontrolleri uygulandı
+- Spesifik ihtiyaçlara bağlı olarak farklı AI modelleri arasında kolayca geçiş yapıldı
 
-**Teknik Uygulama:**  
+**Teknik Uygulama:**
 
 ```python
-# Python MCP server implementation for customer support
+# Müşteri desteği için Python MCP sunucu uygulaması
 import logging
 import asyncio
 from modelcontextprotocol import create_server, ServerConfig
@@ -56,21 +47,21 @@ from modelcontextprotocol.resources import ResourceDefinition
 from modelcontextprotocol.prompts import PromptDefinition
 from modelcontextprotocol.tool import ToolDefinition
 
-# Configure logging
+# Günlüğü yapılandır
 logging.basicConfig(level=logging.INFO)
 
 async def main():
-    # Create server configuration
+    # Sunucu yapılandırması oluştur
     config = ServerConfig(
         name="Enterprise Customer Support Server",
         version="1.0.0",
         description="MCP server for handling customer support inquiries"
     )
     
-    # Initialize MCP server
+    # MCP sunucusunu başlat
     server = create_server(config)
     
-    # Register knowledge base resources
+    # Bilgi tabanı kaynaklarını kaydet
     server.resources.register(
         ResourceDefinition(
             name="customer_kb",
@@ -79,7 +70,7 @@ async def main():
         lambda params: get_customer_documentation(params)
     )
     
-    # Register prompt templates
+    # İstemi şablonlarını kaydet
     server.prompts.register(
         PromptDefinition(
             name="support_template",
@@ -88,7 +79,7 @@ async def main():
         lambda params: get_support_templates(params)
     )
     
-    # Register support tools
+    # Destek araçlarını kaydet
     server.tools.register(
         ToolDefinition(
             name="ticketing",
@@ -97,26 +88,26 @@ async def main():
         handle_ticketing_operations
     )
     
-    # Start server with HTTP transport
+    # HTTP taşıma ile sunucuyu başlat
     transport = create_http_transport(port=8080)
     await server.run(transport)
 
 if __name__ == "__main__":
     asyncio.run(main())
-```  
+```
+  
+**Sonuçlar:** Model maliyetlerinde %30 azalma, yanıt tutarlılığında %45 iyileşme ve küresel operasyonlarda artırılmış uyumluluk.
 
-**Sonuçlar:** Model maliyetlerinde %30 azalma, yanıt tutarlılığında %45 iyileşme ve küresel operasyonlarda artırılmış uyumluluk.  
+### Vaka Çalışması 2: Sağlık Hizmetleri Tanı Asistanı
 
-### Vaka Çalışması 2: Sağlık Tanı Asistanı
+Bir sağlık hizmeti sağlayıcısı, hassas hasta verilerinin korunmasını sağlarken birden fazla uzmanlaşmış tıbbi AI modelini entegre etmek için MCP altyapısı geliştirdi:
 
-Bir sağlık hizmeti sağlayıcısı, hassas hasta verilerini korurken birden fazla özel tıbbi AI modelini entegre etmek için bir MCP altyapısı geliştirdi:  
+- Genel ve uzman tıbbi modeller arasında kesintisiz geçiş
+- Katı gizlilik kontrolleri ve denetim kayıtları
+- Mevcut Elektronik Sağlık Kayıtları (EHR) sistemleri ile entegrasyon
+- Tıbbi terminoloji için tutarlı prompt mühendisliği
 
-- Genel ve uzman tıbbi modeller arasında sorunsuz geçiş  
-- Katı gizlilik kontrolleri ve denetim izleri  
-- Mevcut Elektronik Sağlık Kaydı (EHR) sistemleriyle entegrasyon  
-- Tıbbi terminoloji için tutarlı prompt mühendisliği  
-
-**Teknik Uygulama:**  
+**Teknik Uygulama:**
 
 ```csharp
 // C# MCP host application implementation in healthcare application
@@ -180,29 +171,29 @@ public class DiagnosticAssistant
         return DiagnosticSuggestion.FromMCPResponse(response);
     }
 }
-```  
+```
+  
+**Sonuçlar:** Doktorlar için iyileştirilmiş tanı önerileri, tam HIPAA uyumluluğu ve sistemler arasındaki bağlam değişimlerinde önemli azalma.
 
-**Sonuçlar:** Hekimler için iyileştirilmiş tanı önerileri, tam HIPAA uyumluluğu ve sistemler arası bağlam geçişinde önemli azalma.  
+### Vaka Çalışması 3: Finansal Hizmetlerde Risk Analizi
 
-### Vaka Çalışması 3: Finansal Hizmetler Risk Analizi
+Bir finans kurumu, risk analiz süreçlerini farklı departmanlar arasında standartlaştırmak amacıyla MCP uyguladı:
 
-Bir finans kurumu, farklı departmanlar arasında risk analizi süreçlerini standartlaştırmak için MCP'yi uyguladı:  
+- Kredi riski, dolandırıcılık tespiti ve yatırım riski modelleri için birleşik bir arayüz oluşturuldu
+- Katı erişim kontrolleri ve model versiyonlama uygulandı
+- Tüm AI önerilerinin denetlenebilirliği sağlandı
+- Farklı sistemler arasında tutarlı veri formatlama sağlandı
 
-- Kredi riski, dolandırıcılık tespiti ve yatırım risk modelleri için birleşik bir arayüz oluşturuldu  
-- Katı erişim kontrolleri ve model sürümleme uygulandı  
-- Tüm AI önerilerinin denetlenebilirliği sağlandı  
-- Çeşitli sistemler arasında tutarlı veri formatlama korundu  
-
-**Teknik Uygulama:**  
+**Teknik Uygulama:**
 
 ```java
-// Java MCP server for financial risk assessment
+// Finansal risk değerlendirmesi için Java MCP sunucusu
 import org.mcp.server.*;
 import org.mcp.security.*;
 
 public class FinancialRiskMCPServer {
     public static void main(String[] args) {
-        // Create MCP server with financial compliance features
+        // Finansal uyumluluk özellikleri ile MCP sunucusu oluştur
         MCPServer server = new MCPServerBuilder()
             .withModelProviders(
                 new ModelProvider("risk-assessment-primary", new AzureOpenAIProvider()),
@@ -223,29 +214,29 @@ public class FinancialRiskMCPServer {
         System.out.println("Financial Risk MCP Server running on port 9000");
     }
 }
-```  
-
-**Sonuçlar:** Artırılmış düzenleyici uyumluluk, model dağıtım döngülerinde %40 hızlanma ve departmanlar arasında iyileştirilmiş risk değerlendirme tutarlılığı.  
+```
+  
+**Sonuçlar:** Artırılmış düzenleyici uyumluluk, %40 daha hızlı model dağıtım döngüleri ve departmanlar arasında geliştirilmiş risk değerlendirme tutarlılığı.
 
 ### Vaka Çalışması 4: Microsoft Playwright MCP Sunucusu ile Tarayıcı Otomasyonu
 
-Microsoft, Model Context Protocol aracılığıyla güvenli, standartlaştırılmış tarayıcı otomasyonu sağlamak için [Playwright MCP sunucusunu](https://github.com/microsoft/playwright-mcp) geliştirdi. Bu üretime hazır sunucu, AI ajanlarının ve LLM'lerin web tarayıcılarıyla kontrollü, denetlenebilir ve genişletilebilir bir şekilde etkileşim kurmasını sağlar—otomatik web testi, veri çıkarma ve uçtan uca iş akışları gibi kullanım senaryolarını mümkün kılar.  
+Microsoft, Model Context Protocol aracılığıyla güvenli, standartlaştırılmış tarayıcı otomasyonu sağlamak için [Playwright MCP sunucusunu](https://github.com/microsoft/playwright-mcp) geliştirdi. Bu üretime hazır sunucu, AI ajanları ve LLM’lerin web tarayıcılarıyla kontrollü, denetlenebilir ve genişletilebilir şekilde etkileşim kurmasını sağlar—otomatik web testleri, veri çıkarımı ve uçtan uca iş akışları gibi kullanımlara olanak tanır.
 
-> **🎯 Üretime Hazır Araç**  
->  
-> Bu vaka çalışması, bugün kullanabileceğiniz gerçek bir MCP sunucusunu sergiliyor! Playwright MCP Sunucusu ve diğer 9 üretime hazır Microsoft MCP sunucusu hakkında daha fazla bilgi edinin: [**Microsoft MCP Sunucuları Rehberi**](microsoft-mcp-servers.md#8--playwright-mcp-server).  
+> **🎯 Üretime Hazır Araç**
+> 
+> Bu vaka çalışması, bugün kullanabileceğiniz gerçek bir MCP sunucusunu gösterir! Playwright MCP Sunucusu ve diğer 9 üretime hazır Microsoft MCP sunucusu hakkında daha fazla bilgi için [**Microsoft MCP Sunucuları Kılavuzu**](microsoft-mcp-servers.md#8--playwright-mcp-server) sayfasına bakın.
 
-**Ana Özellikler:**  
-- Tarayıcı otomasyon yeteneklerini (navigasyon, form doldurma, ekran görüntüsü alma vb.) MCP araçları olarak sunar  
-- Yetkisiz işlemleri önlemek için katı erişim kontrolleri ve sandboxing uygular  
-- Tüm tarayıcı etkileşimleri için ayrıntılı denetim günlükleri sağlar  
-- Azure OpenAI ve diğer LLM sağlayıcıları ile entegrasyonu destekler  
-- GitHub Copilot'un Kodlama Ajanı'na web tarama yetenekleri sağlar  
+**Temel Özellikler:**
+- Tarayıcı otomasyon yeteneklerini (navigasyon, form doldurma, ekran görüntüsü alma vb.) MCP araçları olarak sunar
+- Yetkisiz eylemleri önlemek için sıkı erişim kontrolleri ve sandbox uygulaması
+- Tüm tarayıcı etkileşimleri için ayrıntılı denetim kayıtları sağlar
+- Azure OpenAI ve diğer LLM sağlayıcıları ile agent-tabanlı otomasyon entegrasyonu destekler
+- GitHub Copilot’un Kodlama Ajanını web tarama yetenekleriyle güçlendirir
 
-**Teknik Uygulama:**  
+**Teknik Uygulama:**
 
 ```typescript
-// TypeScript: Registering Playwright browser automation tools in an MCP server
+// TypeScript: Bir MCP sunucusunda Playwright tarayıcı otomasyon araçlarını kaydetme
 import { createServer, ToolDefinition } from 'modelcontextprotocol';
 import { launch } from 'playwright';
 
@@ -255,7 +246,7 @@ const server = createServer({
   description: 'MCP server for browser automation using Playwright'
 });
 
-// Register a tool for navigating to a URL and capturing a screenshot
+// Bir URL'ye gitmek ve ekran görüntüsü almak için bir araç kaydet
 server.tools.register(
   new ToolDefinition({
     name: 'navigate_and_screenshot',
@@ -274,35 +265,37 @@ server.tools.register(
   }
 );
 
-// Start the MCP server
+// MCP sunucusunu başlat
 server.listen(8080);
-```  
+```
+  
+**Sonuçlar:**
 
-**Sonuçlar:**  
-- AI ajanları ve LLM'ler için güvenli, programlanabilir tarayıcı otomasyonu sağlandı  
-- Web uygulamaları için manuel test çabası azaltıldı ve test kapsamı iyileştirildi  
-- Kurumsal ortamlarda tarayıcı tabanlı araç entegrasyonu için yeniden kullanılabilir, genişletilebilir bir çerçeve sağlandı  
-- GitHub Copilot'un web tarama yeteneklerini güçlendirdi  
+- AI ajanları ve LLM’ler için güvenli, programlanabilir tarayıcı otomasyonu sağlandı
+- Manuel test çabaları azaldı ve web uygulamaları için test kapsamı arttı
+- Kurumsal ortamlarda tarayıcı tabanlı araç entegrasyonu için yeniden kullanılabilir, genişletilebilir çerçeve sağlandı
+- GitHub Copilot’un web tarama özellikleri desteklendi
 
-**Referanslar:**  
-- [Playwright MCP Sunucusu GitHub Deposu](https://github.com/microsoft/playwright-mcp)  
-- [Microsoft AI ve Otomasyon Çözümleri](https://azure.microsoft.com/en-us/products/ai-services/)  
+**Referanslar:**
 
-### Vaka Çalışması 5: Azure MCP – Kurumsal Düzeyde Model Context Protocol Hizmeti
+- [Playwright MCP Sunucusu GitHub Deposu](https://github.com/microsoft/playwright-mcp)
+- [Microsoft AI ve Otomasyon Çözümleri](https://azure.microsoft.com/en-us/products/ai-services/)
 
-Azure MCP Sunucusu ([https://aka.ms/azmcp](https://aka.ms/azmcp)), Microsoft’un Model Context Protocol’ün yönetilen, kurumsal düzeydeki uygulamasıdır. Bu hizmet, ölçeklenebilir, güvenli ve uyumlu MCP sunucu yeteneklerini bir bulut hizmeti olarak sunar. Azure MCP, organizasyonların MCP sunucularını hızla dağıtmasını, yönetmesini ve Azure AI, veri ve güvenlik hizmetleriyle entegre etmesini sağlar, operasyonel yükü azaltır ve AI benimsemesini hızlandırır.  
+### Vaka Çalışması 5: Azure MCP – Kurumsal Düzeyde Hizmet Olarak Model Context Protocol
 
-> **🎯 Üretime Hazır Araç**  
->  
-> Bu, bugün kullanabileceğiniz gerçek bir MCP sunucusudur! Azure AI Foundry MCP Sunucusu hakkında daha fazla bilgi edinin: [**Microsoft MCP Sunucuları Rehberi**](microsoft-mcp-servers.md).  
+Azure MCP Sunucusu ([https://aka.ms/azmcp](https://aka.ms/azmcp)), Model Context Protocol’ün Microsoft tarafından yönetilen, kurumsal düzeyde bir uygulamasıdır ve ölçeklenebilir, güvenli ve uyumlu MCP sunucu yeteneklerini bulut hizmeti olarak sağlar. Azure MCP, organizasyonların MCP sunucularını Azure AI, veri ve güvenlik hizmetleriyle hızlıca dağıtmasını, yönetmesini ve entegre etmesini kolaylaştırır; operasyonel yükü azaltır ve AI benimseme hızını artırır.
 
-- Yerleşik ölçeklendirme, izleme ve güvenlik ile tamamen yönetilen MCP sunucu barındırma  
-- Azure OpenAI, Azure AI Search ve diğer Azure hizmetleri ile yerel entegrasyon  
-- Microsoft Entra ID aracılığıyla kurumsal kimlik doğrulama ve yetkilendirme  
-- Özel araçlar, prompt şablonları ve kaynak bağlayıcıları desteği  
-- Kurumsal güvenlik ve düzenleyici gerekliliklere uyum  
+> **🎯 Üretime Hazır Araç**
+> 
+> Bu, bugün kullanabileceğiniz gerçek bir MCP sunucusudur! Azure AI Foundry MCP Sunucusu hakkında daha fazla bilgi için [**Microsoft MCP Sunucuları Kılavuzu**](microsoft-mcp-servers.md) sayfasına bakın.
 
-**Teknik Uygulama:**  
+- Yerleşik ölçeklendirme, izleme ve güvenlik özellikleri ile tam yönetilen MCP sunucu barındırma
+- Azure OpenAI, Azure AI Search ve diğer Azure hizmetleri ile yerel entegrasyon
+- Microsoft Entra ID ile kurumsal kimlik doğrulama ve yetkilendirme
+- Özel araçlar, prompt şablonları ve kaynak bağlayıcılar desteği
+- Kurumsal güvenlik ve düzenleyici gereksinimlere uyum
+
+**Teknik Uygulama:**
 
 ```yaml
 # Example: Azure MCP server deployment configuration (YAML)
@@ -327,272 +320,284 @@ spec:
   monitoring:
     enabled: true
     logAnalyticsWorkspace: <your-log-analytics-id>
-```  
-
+```
+  
 **Sonuçlar:**  
-- Kurumsal AI projeleri için hazır, uyumlu MCP sunucu platformu ile değer elde etme süresi azaltıldı  
-- LLM'lerin, araçların ve kurumsal veri kaynaklarının entegrasyonu basitleştirildi  
-- MCP iş yükleri için artırılmış güvenlik, gözlemlenebilirlik ve operasyonel verimlilik  
-- Azure SDK en iyi uygulamaları ve güncel kimlik doğrulama modelleri ile kod kalitesi iyileştirildi  
+- Kullanıma hazır, uyumlu MCP sunucu platformu sunarak kurumsal AI projelerinde değer elde etme süresini kısalttı  
+- LLM’ler, araçlar ve kurumsal veri kaynaklarının entegrasyonunu sadeleştirdi  
+- MCP iş yüklerinde güvenlik, gözlemlenebilirlik ve operasyonel verimliliği artırdı  
+- Azure SDK en iyi uygulamaları ve güncel kimlik doğrulama kalıpları ile kod kalitesini iyileştirdi
 
 **Referanslar:**  
-- [Azure MCP Belgeleri](https://aka.ms/azmcp)  
+- [Azure MCP Dokümantasyonu](https://aka.ms/azmcp)  
 - [Azure MCP Sunucusu GitHub Deposu](https://github.com/Azure/azure-mcp)  
 - [Azure AI Hizmetleri](https://azure.microsoft.com/en-us/products/ai-services/)  
-- [Microsoft MCP Merkezi](https://mcp.azure.com)  
+- [Microsoft MCP Merkezi](https://mcp.azure.com)
 
-### Vaka Çalışması 6: NLWeb
+## Vaka Çalışması 6: NLWeb  
+MCP (Model Context Protocol), Chatbotlar ve AI asistanlarının araçlarla etkileşimini sağlayan yükselen bir protokoldür. Her NLWeb örneği aynı zamanda bir MCP sunucusudur ve doğal dilde bir web sitesine soru sormak için kullanılan tek temel metodu destekler: ask. Dönen yanıt, web verilerini tanımlamak için yaygın kullanılan bir sözlük olan schema.org’u kullanır. Basitçe söylemek gerekirse, MCP, NLWeb’in HTTP’nin HTML’ye yaptığı şey gibidir. NLWeb, protokolleri, Schema.org formatlarını ve örnek kodları birleştirerek sitelerin bu uç noktaları hızlıca oluşturmasına yardımcı olur; böylece insanlar konuşma arayüzlerinden, makineler ise doğal ajanlar arası etkileşimden faydalanır.
 
-MCP (Model Context Protocol), Chatbotlar ve AI asistanlarının araçlarla etkileşim kurmasını sağlayan yeni bir protokoldür. Her NLWeb örneği aynı zamanda bir MCP sunucusudur ve bir web sitesine doğal dilde bir soru sormak için kullanılan bir temel yöntem olan "ask" yöntemini destekler. Döndürülen yanıt, web verilerini tanımlamak için yaygın olarak kullanılan bir sözlük olan schema.org'u kullanır. Kabaca konuşursak, MCP, NLWeb'in Http'nin HTML'ye olduğu gibidir. NLWeb, protokolleri, Schema.org formatlarını ve örnek kodları birleştirerek sitelerin bu uç noktaları hızla oluşturmasına yardımcı olur ve hem insanlar için konuşma arayüzleri hem de makineler için doğal ajan-ajan etkileşimi sağlar.  
-
-NLWeb'in iki farklı bileşeni vardır:  
-- Bir siteyle doğal dilde arayüz oluşturmak için çok basit bir protokol ve döndürülen yanıt için json ve schema.org'u kullanan bir format. REST API belgelerine daha fazla bilgi için bakın.  
-- (1)'in mevcut işaretlemeyi kullanan basit bir uygulaması, ürünler, tarifler, cazibe merkezleri, incelemeler vb. öğeler listesi olarak soyutlanabilen siteler için. Kullanıcı arayüzü widget'ları ile birlikte, siteler içeriklerine kolayca konuşma arayüzleri sağlayabilir. Bir sohbet sorgusunun yaşam döngüsü hakkında daha fazla bilgi için belgeleri inceleyin.  
+NLWeb’in iki belirgin bileşeni vardır.  
+- Doğal dilde siteyle arayüz sağlamak için çok basit başlayan bir protokol ve dönen yanıt için json ve schema.org kullanan bir format. REST API dokümantasyonuna bakınız.  
+- Ürünler, tarifler, gezilecek yerler, yorumlar gibi öğe listeleri olarak soyutlanabilen siteler için mevcut işaretlemeyi kullanan basit bir uygulama. Kullanıcı arayüzü bileşenleriyle birlikte sitelerin içeriklerine kolayca konuşma arayüzleri sunmasını sağlar. Life of a chat query dokümantasyonunda daha fazla bilgi bulunabilir.
 
 **Referanslar:**  
-- [Azure MCP Belgeleri](https://aka.ms/azmcp)  
-- [NLWeb](https://github.com/microsoft/NlWeb)  
+- [Azure MCP Dokümantasyonu](https://aka.ms/azmcp)  
+- [NLWeb](https://github.com/microsoft/NlWeb)
 
-### Vaka Çalışması 7: Azure AI Foundry MCP Sunucusu – Kurumsal AI Ajanı Entegrasyonu
+### Vaka Çalışması 7: Azure AI Foundry MCP Sunucusu – Kurumsal AI Ajan Entegrasyonu
 
-Azure AI Foundry MCP sunucuları, MCP'nin kurumsal ortamlarda AI ajanlarını ve iş akışlarını düzenlemek ve yönetmek için nasıl kullanılabileceğini gösterir. MCP'yi Azure AI Foundry ile entegre ederek, organizasyonlar ajan etkileşimlerini standartlaştırabilir, Foundry'nin iş akışı yönetiminden yararlanabilir ve güvenli, ölçeklenebilir dağıtımları garanti edebilir.  
+Azure AI Foundry MCP sunucuları, MCP’nin kurumsal ortamlarda AI ajanları ve iş akışlarını organize etmek ve yönetmek için nasıl kullanılabileceğini gösterir. MCP Azure AI Foundry ile entegre edilerek, organizasyonlar ajan etkileşimlerini standartlaştırabilir, Foundry’nin iş akışı yönetimini kullanabilir ve güvenli, ölçeklenebilir dağıtımlar sağlayabilir.
 
-> **🎯 Üretime Hazır Araç**  
->  
-> Bu, bugün kullanabileceğiniz gerçek bir MCP sunucusudur! Azure AI Foundry MCP Sunucusu hakkında daha fazla bilgi edinin: [**Microsoft MCP Sunucuları Rehberi**](microsoft-mcp-servers.md#9--azure-ai-foundry-mcp-server).  
+> **🎯 Üretime Hazır Araç**
+> 
+> Bu, bugün kullanabileceğiniz gerçek bir MCP sunucusudur! Azure AI Foundry MCP Sunucusu hakkında daha fazla bilgi için [**Microsoft MCP Sunucuları Kılavuzu**](microsoft-mcp-servers.md#9--azure-ai-foundry-mcp-server) sayfasına bakın.
 
-**Ana Özellikler:**  
-- Azure'un AI ekosistemine, model kataloglarına ve dağıtım yönetimine kapsamlı erişim  
+**Temel Özellikler:**
+- Model katalogları ve dağıtım yönetimi dahil olmak üzere Azure’un AI ekosistemine kapsamlı erişim  
 - RAG uygulamaları için Azure AI Search ile bilgi indeksleme  
 - AI model performansı ve kalite güvencesi için değerlendirme araçları  
-- Azure AI Foundry Catalog ve Labs ile ileri araştırma modelleri entegrasyonu  
-- Üretim senaryoları için ajan yönetimi ve değerlendirme yetenekleri  
+- En son araştırma modelleri için Azure AI Foundry Catalog ve Labs entegrasyonu  
+- Üretim senaryoları için ajan yönetimi ve değerlendirme yetenekleri
 
-**Sonuçlar:**  
+**Sonuçlar:**
 - AI ajan iş akışlarının hızlı prototiplenmesi ve sağlam izlenmesi  
-- Gelişmiş senaryolar için Azure AI hizmetleri ile sorunsuz entegrasyon  
-- Ajan boru hatlarını oluşturmak, dağıtmak ve izlemek için birleşik bir arayüz  
-- Kurumsal güvenlik, uyumluluk ve operasyonel verimlilikte iyileşme  
-- Karmaşık ajan odaklı süreçler üzerinde kontrol sağlarken AI benimsemesini hızlandırma  
+- Gelişmiş senaryolar için Azure AI hizmetleriyle kesintisiz entegrasyon  
+- Ajan boru hatlarının oluşturulması, devreye alınması ve izlenmesi için birleşik arayüz  
+- Kurumlar için iyileştirilmiş güvenlik, uyumluluk ve operasyonel verimlilik  
+- Karmaşık ajan tabanlı süreçler üzerinde kontrol sağlarken AI benimseme hızının artırılması
 
-**Referanslar:**  
+**Referanslar:**
 - [Azure AI Foundry MCP Sunucusu GitHub Deposu](https://github.com/azure-ai-foundry/mcp-foundry)  
-- [Azure AI Ajanlarını MCP ile Entegre Etme (Microsoft Foundry Blog)](https://devblogs.microsoft.com/foundry/integrating-azure-ai-agents-mcp/)  
+- [Azure AI Ajanlarının MCP ile Entegrasyonu (Microsoft Foundry Blog)](https://devblogs.microsoft.com/foundry/integrating-azure-ai-agents-mcp/)
 
-### Vaka Çalışması 8: Foundry MCP Playground – Deney ve Prototipleme
+### Vaka Çalışması 8: Foundry MCP Playground – Deney ve Prototip Oluşturma
 
-Foundry MCP Playground, MCP sunucuları ve Azure AI Foundry entegrasyonları ile deney yapmak için hazır bir ortam sunar. Geliştiriciler, Azure AI Foundry Catalog ve Labs'tan kaynaklar kullanarak AI modelleri ve ajan iş akışlarını hızla prototipleme, test etme ve değerlendirme yapabilir. Playground, kurulum sürecini basitleştirir, örnek projeler sağlar ve işbirlikçi geliştirmeyi destekler, en iyi uygulamaları ve yeni senaryoları keşfetmeyi kolaylaştırır. Karmaşık altyapıya ihtiyaç duymadan fikirleri doğrulamak, deneyleri paylaşmak ve öğrenmeyi hızlandırmak isteyen ekipler için özellikle kullanışlıdır. Playground, MCP ve Azure AI Foundry ekosisteminde yenilik ve topluluk katkılarını teşvik ederek giriş engelini düşürür.  
+Foundry MCP Playground, MCP sunucuları ve Azure AI Foundry entegrasyonlarıyla deney yapmaya hazır bir ortam sunar. Geliştiriciler, Azure AI Foundry Catalog ve Labs kaynaklarını kullanarak AI modellerini ve ajan iş akışlarını hızla prototipleyip test edebilir ve değerlendirebilir. Playground, kurulumu kolaylaştırır, örnek projeler sunar ve ortak geliştirmeyi destekler; böylece minimal yükle en iyi uygulamalar ve yeni senaryolar keşfedilebilir. Özellikle karmaşık altyapı gerektirmeden fikir doğrulamak, deneyleri paylaşmak ve öğrenmeyi hızlandırmak isteyen ekipler için etkilidir. Bu ortam, MCP ve Azure AI Foundry ekosisteminde yenilik ve topluluk katkılarını teşvik eder.
 
-**Referanslar:**  
-- [Foundry MCP Playground GitHub Deposu](https://github.com/azure-ai-foundry/foundry-mcp-playground)  
+**Referanslar:**
+
+- [Foundry MCP Playground GitHub Deposu](https://github.com/azure-ai-foundry/foundry-mcp-playground)
 
 ### Vaka Çalışması 9: Microsoft Learn Docs MCP Sunucusu – AI Destekli Dokümantasyon Erişimi
 
-Microsoft Learn Docs MCP Sunucusu, Model Context Protocol aracılığıyla AI asistanlarına resmi Microsoft dokümantasyonuna gerçek zamanlı erişim sağlayan bulut barındırmalı bir hizmettir. Bu üretime hazır sunucu, kapsamlı Microsoft Learn ekosistemine bağlanır ve tüm resmi Microsoft kaynakları arasında anlamsal arama sağlar.
+Microsoft Learn Docs MCP Sunucusu, AI asistanlarının Model Context Protocol aracılığıyla resmi Microsoft dokümantasyonuna gerçek zamanlı erişim sağlamasını sunan bulut tabanlı bir hizmettir. Bu üretime hazır sunucu, kapsamlı Microsoft Learn ekosistemine bağlanır ve tüm resmi kaynaklarda anlamsal arama yapılmasını mümkün kılar.
+
 > **🎯 Üretime Hazır Araç**
 > 
-> Bugün kullanabileceğiniz gerçek bir MCP sunucusu! Microsoft Learn Docs MCP Sunucusu hakkında daha fazla bilgi için [**Microsoft MCP Sunucuları Kılavuzu**](microsoft-mcp-servers.md#1--microsoft-learn-docs-mcp-server) bölümüne göz atın.
-**Anahtar Özellikler:**
-- Microsoft'un resmi belgelerine, Azure dokümanlarına ve Microsoft 365 belgelerine gerçek zamanlı erişim
-- Bağlam ve niyeti anlayan gelişmiş anlamsal arama yetenekleri
-- Microsoft Learn içeriği yayınlandıkça her zaman güncel bilgi
-- Microsoft Learn, Azure belgeleri ve Microsoft 365 kaynakları arasında kapsamlı içerik
-- Makale başlıkları ve URL'leri ile birlikte en fazla 10 yüksek kaliteli içerik parçası döndürür
+> Bu, bugün kullanabileceğiniz gerçek bir MCP sunucusudur! Microsoft Learn Docs MCP Sunucusu hakkında daha fazla bilgi için [**Microsoft MCP Sunucuları Kılavuzu**](microsoft-mcp-servers.md#1--microsoft-learn-docs-mcp-server) sayfasına bakın.
 
-**Neden Kritik:**
-- Microsoft teknolojileri için "güncel olmayan AI bilgisi" sorununu çözer
-- AI asistanlarının en son .NET, C#, Azure ve Microsoft 365 özelliklerine erişmesini sağlar
-- Doğru kod üretimi için otoriter, birinci taraf bilgi sunar
+**Temel Özellikler:**
+- Resmi Microsoft dokümantasyonuna, Azure belgelerine ve Microsoft 365 dokümantasyonuna gerçek zamanlı erişim  
+- Bağlamı ve amacı anlayan gelişmiş anlamsal arama yetenekleri  
+- Microsoft Learn içeriği yayımlandıkça her zaman güncel bilgi  
+- Microsoft Learn, Azure dokümantasyonu ve Microsoft 365 kaynaklarında kapsamlı erişim  
+- Makale başlıkları ve URL’lerle 10 yüksek kaliteli içerik parçası döndürme
+
+**Neden Kritik?**
+- Microsoft teknolojilerindeki “güncellenmemiş AI bilgisi” sorununu çözer  
+- AI asistanlarının en yeni .NET, C#, Azure ve Microsoft 365 özelliklerine erişmesini sağlar  
+- Doğru kod üretimi için yetkili, birinci taraf bilgi sağlar  
 - Hızla gelişen Microsoft teknolojileriyle çalışan geliştiriciler için vazgeçilmezdir
 
 **Sonuçlar:**
-- Microsoft teknolojileri için AI tarafından üretilen kodun doğruluğunda büyük bir iyileşme
-- Güncel belgeleri ve en iyi uygulamaları aramak için harcanan sürede azalma
-- IDE'den çıkmadan bağlama duyarlı belge erişimi ile geliştirici verimliliğinde artış
+- Microsoft teknolojileri için AI tarafından üretilen kodun doğruluğu önemli ölçüde arttı  
+- Geçerli dokümantasyon ve en iyi uygulama arama zamanını azalttı  
+- Bağlam farkındalıklı dokümantasyon erişimiyle geliştirici verimliliğini artırdı  
+- IDE’den çıkmadan geliştirme iş akışlarına sorunsuz entegrasyon sağlar
 
 **Referanslar:**
-- [Microsoft Learn Docs MCP Server GitHub Deposu](https://github.com/MicrosoftDocs/mcp)
-- [Microsoft Learn Belgeleri](https://learn.microsoft.com/)
+- [Microsoft Learn Docs MCP Sunucusu GitHub Deposu](https://github.com/MicrosoftDocs/mcp)  
+- [Microsoft Learn Dokümantasyonu](https://learn.microsoft.com/)
 
 ## Uygulamalı Projeler
 
-### Proje 1: Çoklu Sağlayıcı MCP Sunucusu Oluşturma
+### Proje 1: Çok Sağlayıcılı Bir MCP Sunucusu Oluşturma
 
-**Amaç:** Belirli kriterlere göre istekleri birden fazla AI model sağlayıcısına yönlendirebilen bir MCP sunucusu oluşturun.
+**Amaç:** Belirli kriterlere göre isteği birden çok AI model sağlayıcısına yönlendirebilen bir MCP sunucusu oluşturmak.
 
 **Gereksinimler:**
 
-- En az üç farklı model sağlayıcısını destekleyin (ör. OpenAI, Anthropic, yerel modeller)
-- İstek metadatasına dayalı bir yönlendirme mekanizması uygulayın
-- Sağlayıcı kimlik bilgilerini yönetmek için bir yapılandırma sistemi oluşturun
-- Performansı ve maliyetleri optimize etmek için önbellekleme ekleyin
-- Kullanımı izlemek için basit bir kontrol paneli oluşturun
+- En az üç farklı model sağlayıcısını desteklemek (örn. OpenAI, Anthropic, yerel modeller)
+- İstek meta verilerine dayalı bir yönlendirme mekanizması uygulamak
+- Sağlayıcı kimlik bilgilerini yönetmek için bir yapılandırma sistemi oluşturmak
+- Performans ve maliyetleri optimize etmek için önbellekleme eklemek
+- Kullanımı izlemek için basit bir kontrol paneli geliştirmek
 
 **Uygulama Adımları:**
 
-1. Temel MCP sunucu altyapısını kurun
-2. Her bir AI model hizmeti için sağlayıcı adaptörlerini uygulayın
-3. İstek özelliklerine dayalı yönlendirme mantığını oluşturun
-4. Sık yapılan istekler için önbellekleme mekanizmaları ekleyin
-5. İzleme kontrol panelini geliştirin
-6. Çeşitli istek desenleriyle test edin
+1. Temel MCP sunucu altyapısını kurmak  
+2. Her AI model servisi için sağlayıcı adaptörleri uygulamak  
+3. İstek özelliklerine göre yönlendirme mantığını oluşturmak  
+4. Sık yapılan istekler için önbellekleme mekanizmaları eklemek  
+5. İzleme kontrol paneli geliştirmek  
+6. Çeşitli istek desenleri ile test etmek
 
-**Teknolojiler:** Python (.NET/Java/Python tercihinize bağlı olarak), Redis önbellekleme için ve kontrol paneli için basit bir web çerçevesi seçin.
+**Teknolojiler:** Tercihinize bağlı olarak Python (.NET/Java/Python), önbellekleme için Redis ve kontrol paneli için basit bir web çatısı seçin.
 
 ### Proje 2: Kurumsal Prompt Yönetim Sistemi
-
-**Amaç:** Prompt şablonlarını bir organizasyon genelinde yönetmek, sürümlemek ve dağıtmak için MCP tabanlı bir sistem geliştirin.
+**Amaç:** Bir organizasyon genelinde istem şablonlarını yönetmek, versiyonlamak ve dağıtmak için MCP tabanlı bir sistem geliştirmek.
 
 **Gereksinimler:**
 
-- Prompt şablonları için merkezi bir depo oluşturun
-- Sürümleme ve onay iş akışlarını uygulayın
-- Örnek girdilerle şablon test etme yetenekleri geliştirin
-- Rol tabanlı erişim kontrolleri oluşturun
-- Şablon alma ve dağıtım için bir API oluşturun
+- İstem şablonları için merkezi bir depo oluşturmak
+- Versiyonlama ve onay iş akışlarını uygulamak
+- Örnek girdilerle şablon testi yetenekleri geliştirmek
+- Rol tabanlı erişim kontrolleri geliştirmek
+- Şablon alma ve dağıtım için bir API oluşturmak
 
 **Uygulama Adımları:**
 
-1. Şablon depolama için veritabanı şemasını tasarlayın
-2. Şablon CRUD işlemleri için temel API'yi oluşturun
-3. Sürümleme sistemini uygulayın
-4. Onay iş akışını geliştirin
-5. Test çerçevesini oluşturun
-6. Yönetim için basit bir web arayüzü oluşturun
-7. MCP sunucusuyla entegre edin
+1. Şablon depolama için veritabanı şemasını tasarlamak
+2. Şablon CRUD işlemleri için çekirdek API'yi oluşturmak
+3. Versiyonlama sistemini uygulamak
+4. Onay iş akışını oluşturmak
+5. Test çerçevesini geliştirmek
+6. Yönetim için basit bir web arayüzü oluşturmak
+7. Bir MCP sunucusuyla entegrasyon yapmak
 
-**Teknolojiler:** Tercih ettiğiniz backend çerçevesi, SQL veya NoSQL veritabanı ve yönetim arayüzü için bir frontend çerçevesi seçin.
+**Teknolojiler:** Tercih ettiğiniz backend çerçevesi, SQL veya NoSQL veritabanı ve yönetim arayüzü için bir frontend çerçevesi.
 
 ### Proje 3: MCP Tabanlı İçerik Üretim Platformu
 
-**Amaç:** MCP'yi kullanarak farklı içerik türlerinde tutarlı sonuçlar sağlayan bir içerik üretim platformu oluşturun.
+**Amaç:** MCP kullanarak farklı içerik türleri arasında tutarlı sonuçlar sağlayan bir içerik üretim platformu kurmak.
 
 **Gereksinimler:**
 
-- Birden fazla içerik formatını destekleyin (blog yazıları, sosyal medya, pazarlama metni)
-- Özelleştirme seçenekleriyle şablon tabanlı üretim uygulayın
-- İçerik inceleme ve geri bildirim sistemi oluşturun
-- İçerik performans metriklerini takip edin
-- İçerik sürümleme ve yinelemeyi destekleyin
+- Çoklu içerik formatlarını desteklemek (blog yazıları, sosyal medya, pazarlama metni)
+- Özelleştirme seçenekleri ile şablon tabanlı üretimi uygulamak
+- İçerik inceleme ve geri bildirim sistemi oluşturmak
+- İçerik performans metriklerini takip etmek
+- İçerik versiyonlama ve iterasyon desteği sunmak
 
 **Uygulama Adımları:**
 
-1. MCP istemci altyapısını kurun
-2. Farklı içerik türleri için şablonlar oluşturun
-3. İçerik üretim hattını oluşturun
-4. İnceleme sistemini uygulayın
-5. Metrik takip sistemini geliştirin
-6. Şablon yönetimi ve içerik üretimi için bir kullanıcı arayüzü oluşturun
+1. MCP istemci altyapısını kurmak
+2. Farklı içerik türleri için şablonlar oluşturmak
+3. İçerik üretim hattını oluşturmak
+4. İnceleme sistemini uygulamak
+5. Metrik takip sistemini geliştirmek
+6. Şablon yönetimi ve içerik üretimi için bir kullanıcı arayüzü oluşturmak
 
 **Teknolojiler:** Tercih ettiğiniz programlama dili, web çerçevesi ve veritabanı sistemi.
 
-## MCP Teknolojisi için Gelecek Yönelimler
+## MCP Teknolojisi İçin Gelecek Yönelimler
 
 ### Ortaya Çıkan Trendler
 
 1. **Çok Modlu MCP**
-   - MCP'nin görüntü, ses ve video modelleriyle etkileşimleri standartlaştıracak şekilde genişletilmesi
-   - Çapraz modlu akıl yürütme yeteneklerinin geliştirilmesi
-   - Farklı modlar için standartlaştırılmış prompt formatları
+   - MCP'nin görüntü, ses ve video modelleriyle etkileşimleri standartlaştırmak üzere genişlemesi
+   - Modlar arası akıl yürütme yeteneklerinin geliştirilmesi
+   - Farklı modaliteler için standartlaştırılmış istem formatları
 
-2. **Federasyonlu MCP Altyapısı**
-   - Organizasyonlar arasında kaynak paylaşımı yapabilen dağıtılmış MCP ağları
+2. **Federated MCP Altyapısı**
+   - Kuruluşlar arasında kaynak paylaşabilen dağıtık MCP ağları
    - Güvenli model paylaşımı için standartlaştırılmış protokoller
    - Gizliliği koruyan hesaplama teknikleri
 
 3. **MCP Pazar Yerleri**
-   - MCP şablonları ve eklentileri paylaşmak ve ticarileştirmek için ekosistemler
+   - MCP şablonları ve eklentilerinin paylaşılması ve gelir elde edilmesi için ekosistemler
    - Kalite güvencesi ve sertifikasyon süreçleri
-   - Model pazar yerleriyle entegrasyon
+   - Model pazar yerleri ile entegrasyonlar
 
 4. **Edge Computing için MCP**
-   - Kaynak kısıtlı edge cihazlar için MCP standartlarının uyarlanması
-   - Düşük bant genişliği ortamları için optimize edilmiş protokoller
+   - Kaynak kısıtlı uç cihazlar için MCP standartlarının uyarlanması
+   - Düşük bant genişliğine optimize edilmiş protokoller
    - IoT ekosistemleri için özel MCP uygulamaları
 
 5. **Düzenleyici Çerçeveler**
-   - Düzenleyici uyumluluk için MCP uzantılarının geliştirilmesi
-   - Standartlaştırılmış denetim izleri ve açıklanabilirlik arayüzleri
-   - Gelişmekte olan AI yönetim çerçeveleriyle entegrasyon
+   - Düzenleyici uyumluluk için MCP genişletmelerinin geliştirilmesi
+   - Standardize denetim kayıtları ve açıklanabilirlik arayüzleri
+   - Yeni gelişen Yapay Zeka yönetişim çerçeveleri ile entegrasyon
 
-### Microsoft'tan MCP Çözümleri
+### Microsoft’tan MCP Çözümleri
 
-Microsoft ve Azure, çeşitli senaryolarda MCP'yi uygulamak için geliştiricilere yardımcı olan birkaç açık kaynak deposu geliştirdi:
+Microsoft ve Azure, MCP'yi çeşitli senaryolarda uygulamaya yardımcı olmak için birkaç açık kaynak depo geliştirmiştir:
 
 #### Microsoft Organizasyonu
 
-1. [playwright-mcp](https://github.com/microsoft/playwright-mcp) - Tarayıcı otomasyonu ve test için bir Playwright MCP sunucusu
-2. [files-mcp-server](https://github.com/microsoft/files-mcp-server) - Yerel test ve topluluk katkısı için bir OneDrive MCP sunucusu uygulaması
-3. [NLWeb](https://github.com/microsoft/NlWeb) - AI Web için temel bir katman oluşturmayı hedefleyen açık protokoller ve açık kaynak araçlar koleksiyonu
+1. [playwright-mcp](https://github.com/microsoft/playwright-mcp) - Tarayıcı otomasyonu ve testi için Playwright MCP sunucusu
+2. [files-mcp-server](https://github.com/microsoft/files-mcp-server) - Yerel test ve topluluk katkısı için OneDrive MCP sunucu uygulaması
+3. [NLWeb](https://github.com/microsoft/NlWeb) - NLWeb, açık protokollerin ve ilişkili açık kaynak araçlarının koleksiyonudur. Ana odağı AI Web için temel katman oluşturmak
 
 #### Azure-Samples Organizasyonu
 
-1. [mcp](https://github.com/Azure-Samples/mcp) - Azure'da MCP sunucuları oluşturmak ve entegre etmek için örnekler, araçlar ve kaynaklar
-2. [mcp-auth-servers](https://github.com/Azure-Samples/mcp-auth-servers) - Mevcut Model Context Protocol spesifikasyonu ile kimlik doğrulama gösteren referans MCP sunucuları
-3. [remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions) - Azure Functions'da özel uzak MCP sunucuları oluşturmak ve dağıtmak için hızlı başlangıç şablonları
-4. [remote-mcp-functions-python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Python kullanarak Azure Functions'da özel uzak MCP sunucuları oluşturmak ve dağıtmak için hızlı başlangıç şablonu
-5. [remote-mcp-functions-dotnet](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - .NET/C# kullanarak Azure Functions'da özel uzak MCP sunucuları oluşturmak ve dağıtmak için hızlı başlangıç şablonu
-6. [remote-mcp-functions-typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - TypeScript kullanarak Azure Functions'da özel uzak MCP sunucuları oluşturmak ve dağıtmak için hızlı başlangıç şablonu
-7. [remote-mcp-apim-functions-python](https://github.com/Azure-Samples/remote-mcp-apim-functions-python) - Python kullanarak Azure API Management ile Uzak MCP sunucularına AI Gateway entegrasyonu
-8. [AI-Gateway](https://github.com/Azure-Samples/AI-Gateway) - Azure OpenAI ve AI Foundry ile entegrasyon dahil MCP yeteneklerini içeren APIM ❤️ AI deneyleri
+1. [mcp](https://github.com/Azure-Samples/mcp) - Azure'da MCP sunucuları kurmak ve entegre etmek için örnekler, araçlar ve kaynaklar
+2. [mcp-auth-servers](https://github.com/Azure-Samples/mcp-auth-servers) - Mevcut Model Context Protocol spesifikasyonu ile kimlik doğrulamayı gösteren referans MCP sunucuları
+3. [remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions) - Azure Functions'da Remote MCP Sunucu uygulamalarının açılış sayfası ve dil bazlı repolar için bağlantılar
+4. [remote-mcp-functions-python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Python ile Azure Functions kullanarak özel remote MCP sunucularını oluşturma ve dağıtma hızlı başlangıç şablonu
+5. [remote-mcp-functions-dotnet](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - .NET/C# ile Azure Functions kullanarak özel remote MCP sunucularını oluşturma ve dağıtma hızlı başlangıç şablonu
+6. [remote-mcp-functions-typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - TypeScript ile Azure Functions kullanarak özel remote MCP sunucularını oluşturma ve dağıtma hızlı başlangıç şablonu
+7. [remote-mcp-apim-functions-python](https://github.com/Azure-Samples/remote-mcp-apim-functions-python) - Python kullanarak Azure API Yönetimi ile Uzak MCP sunucuları için AI Ağ Geçidi
+8. [AI-Gateway](https://github.com/Azure-Samples/AI-Gateway) - Rica ederim APIM ❤️ AI deneyleri, MCP yeteneklerini içeren Azure OpenAI ve AI Foundry ile entegrasyon
 
-Bu depolar, Model Context Protocol ile çalışmak için farklı programlama dilleri ve Azure hizmetleri arasında çeşitli uygulamalar, şablonlar ve kaynaklar sağlar. Temel sunucu uygulamalarından kimlik doğrulama, bulut dağıtımı ve kurumsal entegrasyon senaryolarına kadar bir dizi kullanım durumunu kapsar.
+Bu depolar, Model Context Protocol ile çalışmak için farklı programlama dilleri ve Azure servislerinde çeşitli uygulamalar, şablonlar ve kaynaklar sunar. Temel sunucu uygulamalarından kimlik doğrulama, bulut dağıtımı ve kurumsal entegrasyon senaryolarına kadar geniş kullanım alanlarını kapsar.
 
-#### MCP Kaynaklar Dizini
+#### MCP Kaynak Dizini
 
-Resmi Microsoft MCP deposundaki [MCP Kaynaklar dizini](https://github.com/microsoft/mcp/tree/main/Resources), Model Context Protocol sunucularıyla kullanılmak üzere örnek kaynaklar, prompt şablonları ve araç tanımları içeren küratörlü bir koleksiyon sunar. Bu dizin, geliştiricilerin MCP ile hızlı bir şekilde başlamasına yardımcı olmak için yeniden kullanılabilir yapı taşları ve en iyi uygulama örnekleri sunar:
+Resmi Microsoft MCP deposundaki [MCP Resources dizini](https://github.com/microsoft/mcp/tree/main/Resources), Model Context Protocol sunucuları ile kullanılmak üzere örnek kaynaklar, istem şablonları ve araç tanımlamaları sunan seçilmiş bir koleksiyondur. Bu dizin, geliştiricilerin MCP ile hızla başlamasına yardımcı olmak için yeniden kullanılabilir yapı taşları ve en iyi uygulama örnekleri sağlar:
 
-- **Prompt Şablonları:** Yaygın AI görevleri ve senaryoları için kullanıma hazır prompt şablonları, kendi MCP sunucu uygulamalarınıza uyarlanabilir.
-- **Araç Tanımları:** Farklı MCP sunucuları arasında araç entegrasyonu ve çağrısını standartlaştırmak için örnek araç şemaları ve metadatalar.
-- **Kaynak Örnekleri:** MCP çerçevesi içinde veri kaynaklarına, API'lere ve harici hizmetlere bağlanmak için örnek kaynak tanımları.
-- **Referans Uygulamalar:** Gerçek dünya MCP projelerinde kaynakları, promptları ve araçları nasıl yapılandıracağınızı ve organize edeceğinizi gösteren pratik örnekler.
+- **İstem Şablonları:** Yaygın AI görevleri ve senaryolar için hazır kullanıma uygun istem şablonları, kendi MCP sunucu uygulamalarınız için uyarlanabilir.
+- **Araç Tanımları:** Farklı MCP sunucuları arasında araç entegrasyonu ve çağrısını standartlaştırmak için örnek araç şemaları ve meta veriler.
+- **Kaynak Örnekleri:** MCP çerçevesinde veri kaynaklarına, API’lere ve dış hizmetlere bağlanmak için örnek kaynak tanımlamaları.
+- **Referans Uygulamalar:** Gerçek dünya MCP projelerinde kaynaklar, istemler ve araçların nasıl yapılandırılıp düzenleneceğini gösteren pratik örnekler.
 
-Bu kaynaklar, geliştirmeyi hızlandırır, standardizasyonu teşvik eder ve MCP tabanlı çözümler oluştururken en iyi uygulamaları sağlamaya yardımcı olur.
+Bu kaynaklar geliştirmeyi hızlandırır, standartlaşmayı teşvik eder ve MCP tabanlı çözümler inşa ederken en iyi uygulamalar doğrultusunda rehberlik eder.
 
-#### MCP Kaynaklar Dizini
+#### MCP Kaynak Dizini
 
-- [MCP Kaynaklar (Örnek Promptlar, Araçlar ve Kaynak Tanımları)](https://github.com/microsoft/mcp/tree/main/Resources)
+- [MCP Resources (Örnek İstemler, Araçlar ve Kaynak Tanımları)](https://github.com/microsoft/mcp/tree/main/Resources)
 
 ### Araştırma Fırsatları
 
-- MCP çerçeveleri içinde verimli prompt optimizasyon teknikleri
+- MCP çerçeveleri içinde verimli istem optimizasyon teknikleri
 - Çok kiracılı MCP dağıtımları için güvenlik modelleri
-- Farklı MCP uygulamaları arasında performans karşılaştırmaları
-- MCP sunucuları için resmi doğrulama yöntemleri
+- Farklı MCP uygulamalarının performans karşılaştırmaları
+- MCP sunucuları için formal doğrulama yöntemleri
 
 ## Sonuç
 
-Model Context Protocol (MCP), endüstriler arasında standartlaştırılmış, güvenli ve birlikte çalışabilir AI entegrasyonunun geleceğini hızla şekillendiriyor. Bu dersteki vaka çalışmaları ve uygulamalı projeler aracılığıyla, Microsoft ve Azure gibi erken benimseyenlerin MCP'yi gerçek dünya zorluklarını çözmek, AI benimsemesini hızlandırmak ve uyumluluk, güvenlik ve ölçeklenebilirlik sağlamak için nasıl kullandığını gördünüz. MCP'nin modüler yaklaşımı, büyük dil modellerini, araçları ve kurumsal verileri birleşik, denetlenebilir bir çerçevede bağlamayı mümkün kılar. MCP gelişmeye devam ettikçe, toplulukla etkileşimde bulunmak, açık kaynak kaynaklarını keşfetmek ve en iyi uygulamaları uygulamak, sağlam ve geleceğe hazır AI çözümleri oluşturmanın anahtarı olacaktır.
+Model Context Protocol (MCP), endüstriler arasında standartlaşmış, güvenli ve birbirleriyle uyumlu Yapay Zeka entegrasyonlarının geleceğini şekillendiriyor. Bu dersteki vaka çalışmaları ve uygulamalı projeler aracılığıyla, Microsoft ve Azure gibi erken benimseyicilerin MCP’yi gerçek dünya zorluklarını çözmek, Yapay Zeka benimsemesini hızlandırmak ve uyumluluk, güvenlik ve ölçeklenebilirliği sağlamak için nasıl kullandığını gördünüz. MCP’nin modüler yaklaşımı, kuruluşların büyük dil modellerini, araçları ve kurumsal verileri birleşik, denetlenebilir bir çerçevede entegre etmesine imkan tanır. MCP geliştikçe, toplulukla etkileşimde kalmak, açık kaynak kaynakları keşfetmek ve en iyi uygulamaları uygulamak, sağlam ve geleceğe hazır Yapay Zeka çözümleri inşa etmenin anahtarı olacaktır.
 
 ## Ek Kaynaklar
 
 - [MCP Foundry GitHub Deposu](https://github.com/azure-ai-foundry/mcp-foundry)
 - [Foundry MCP Playground](https://github.com/azure-ai-foundry/foundry-mcp-playground)
-- [Azure AI Agentlerini MCP ile Entegre Etme (Microsoft Foundry Blog)](https://devblogs.microsoft.com/foundry/integrating-azure-ai-agents-mcp/)
+- [Azure AI Ajanlarını MCP ile Entegre Etmek (Microsoft Foundry Blog)](https://devblogs.microsoft.com/foundry/integrating-azure-ai-agents-mcp/)
 - [MCP GitHub Deposu (Microsoft)](https://github.com/microsoft/mcp)
-- [MCP Kaynaklar Dizini (Örnek Promptlar, Araçlar ve Kaynak Tanımları)](https://github.com/microsoft/mcp/tree/main/Resources)
-- [MCP Topluluğu ve Belgeler](https://modelcontextprotocol.io/introduction)
-- [Azure MCP Belgeleri](https://aka.ms/azmcp)
-- [Playwright MCP Sunucusu GitHub Deposu](https://github.com/microsoft/playwright-mcp)
-- [Files MCP Sunucusu (OneDrive)](https://github.com/microsoft/files-mcp-server)
+- [MCP Kaynak Dizini (Örnek İstemler, Araçlar ve Kaynak Tanımları)](https://github.com/microsoft/mcp/tree/main/Resources)
+- [MCP Topluluğu & Dokümantasyon](https://modelcontextprotocol.io/introduction)
+- [MCP Spesifikasyonu (2025-11-25)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
+- [Azure MCP Dokümantasyonu](https://aka.ms/azmcp)
+- [OWASP MCP İlk 10](https://microsoft.github.io/mcp-azure-security-guide/mcp/) - Güvenlik en iyi uygulamaları
+- [Playwright MCP Server GitHub Deposu](https://github.com/microsoft/playwright-mcp)
+- [Files MCP Server (OneDrive)](https://github.com/microsoft/files-mcp-server)
 - [Azure-Samples MCP](https://github.com/Azure-Samples/mcp)
-- [MCP Auth Sunucuları (Azure-Samples)](https://github.com/Azure-Samples/mcp-auth-servers)
-- [Uzak MCP Fonksiyonları (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions)
-- [Uzak MCP Fonksiyonları Python (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions-python)
-- [Uzak MCP Fonksiyonları .NET (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions-dotnet)
-- [Uzak MCP Fonksiyonları TypeScript (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions-typescript)
-- [Uzak MCP APIM Fonksiyonları Python (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)
+- [MCP Auth Servers (Azure-Samples)](https://github.com/Azure-Samples/mcp-auth-servers)
+- [Remote MCP Functions (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions)
+- [Remote MCP Functions Python (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions-python)
+- [Remote MCP Functions .NET (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions-dotnet)
+- [Remote MCP Functions TypeScript (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-functions-typescript)
+- [Remote MCP APIM Functions Python (Azure-Samples)](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)
 - [AI-Gateway (Azure-Samples)](https://github.com/Azure-Samples/AI-Gateway)
-- [Microsoft AI ve Otomasyon Çözümleri](https://azure.microsoft.com/en-us/products/ai-services/)
+- [Microsoft Yapay Zeka ve Otomasyon Çözümleri](https://azure.microsoft.com/en-us/products/ai-services/)
 
-## Alıştırmalar
+## Egzersizler
 
 1. Vaka çalışmalarından birini analiz edin ve alternatif bir uygulama yaklaşımı önerin.
-2. Proje fikirlerinden birini seçin ve ayrıntılı bir teknik spesifikasyon oluşturun.
-3. Vaka çalışmalarında ele alınmayan bir sektörü araştırın ve MCP'nin bu sektörün özel zorluklarını nasıl çözebileceğini açıklayın.
-4. Gelecek yönelimlerden birini keşfedin ve bunu desteklemek için yeni bir MCP uzantısı konsepti oluşturun.
+2. Proje fikirlerinden birini seçip detaylı teknik bir spesifikasyon oluşturun.
+3. Vaka çalışmalarında yer almayan bir sektörü araştırın ve MCP’nin özel zorluklarını nasıl çözeceğini özetleyin.
+4. Gelecek yönelimlerden birini keşfedin ve desteklemek üzere yeni bir MCP uzantısı için bir konsept oluşturun.
 
-Sonraki: [Microsoft MCP Sunucusu](../07-LessonsfromEarlyAdoption/microsoft-mcp-servers.md)
+## Sonraki Adımlar
 
-**Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belgenin kendi dilindeki hali yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan herhangi bir yanlış anlama veya yanlış yorumlama durumunda sorumluluk kabul edilmez.
+Daha fazlasını keşfedin: [Microsoft MCP Sunucuları](./microsoft-mcp-servers.md)
+
+Devam edin: [Modül 8: En İyi Uygulamalar](../08-BestPractices/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Feragatname**:
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi ana dilindeki haliyle yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımıyla ortaya çıkabilecek herhangi bir yanlış anlama veya yanlış yorumlama nedeniyle sorumluluk kabul edilmez.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

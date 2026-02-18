@@ -1,157 +1,155 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "83efa75a69bc831277263a6f1ae53669",
-  "translation_date": "2025-08-18T17:47:23+00:00",
-  "source_file": "04-PracticalImplementation/README.md",
-  "language_code": "tr"
-}
--->
 # Pratik Uygulama
 
-[![Gerçek Araçlar ve İş Akışlarıyla MCP Uygulamaları Nasıl Oluşturulur, Test Edilir ve Dağıtılır](../../../translated_images/05.64bea204e25ca891e3dd8b8f960d2170b9a000d8364305f57db3ec4a2c049a9a.tr.png)](https://youtu.be/vCN9-mKBDfQ)
+[![Gerçek Araçlar ve İş Akışlarıyla MCP Uygulamaları Nasıl Oluşturulur, Test Edilir ve Yayınlanır](../../../translated_images/tr/05.64bea204e25ca891.webp)](https://youtu.be/vCN9-mKBDfQ)
 
-_(Bu dersin videosunu izlemek için yukarıdaki görsele tıklayın)_
+_(Bu dersin videosunu izlemek için yukarıdaki resme tıklayın)_
 
-Pratik uygulama, Model Context Protocol (MCP) gücünün somut hale geldiği yerdir. MCP'nin teorisini ve mimarisini anlamak önemli olsa da, gerçek değer, bu kavramları gerçek dünya problemlerini çözen çözümler oluşturmak, test etmek ve dağıtmak için uyguladığınızda ortaya çıkar. Bu bölüm, kavramsal bilgi ile uygulamalı geliştirme arasındaki boşluğu doldurarak MCP tabanlı uygulamaları hayata geçirme sürecinde size rehberlik eder.
+Pratik uygulama, Model Context Protocol’ün (MCP) gücünün somut hale geldiği yerdir. MCP’nin teorisini ve mimarisini anlamak önemli olmakla birlikte, gerçek değer bu kavramları kullanarak gerçek dünya problemlerini çözen çözümler geliştirdiğinizde ortaya çıkar. Bu bölüm, kavramsal bilgi ile uygulamalı geliştirme arasındaki boşluğu kapatır ve MCP tabanlı uygulamaları hayata geçirme sürecinde size rehberlik eder.
 
-İster akıllı asistanlar geliştiriyor, ister yapay zekayı iş akışlarına entegre ediyor, ister veri işleme için özel araçlar oluşturuyor olun, MCP esnek bir temel sağlar. Dil bağımsız tasarımı ve popüler programlama dilleri için resmi SDK'ları, geniş bir geliştirici kitlesine erişilebilirlik sunar. Bu SDK'ları kullanarak, çözümlerinizi farklı platformlar ve ortamlar arasında hızla prototipleyebilir, yineleyebilir ve ölçeklendirebilirsiniz.
+İster akıllı asistanlar geliştiriyor olun, ister işletme iş akışlarına yapay zekayı entegre ediyor olun veya veri işleme için özel araçlar inşa ediyor olun, MCP esnek bir temel sağlar. Dil bağımsız tasarımı ve popüler programlama dilleri için resmi SDK’ları sayesinde geniş bir geliştirici kitlesine erişilebilir. Bu SDK’ları kullanarak çözümlerinizi hızlıca prototipleyebilir, deneyebilir ve farklı platformlar ile ortamlarda ölçeklendirebilirsiniz.
 
-Aşağıdaki bölümlerde, MCP'nin C#, Java ile Spring, TypeScript, JavaScript ve Python'da nasıl uygulanacağını gösteren pratik örnekler, örnek kodlar ve dağıtım stratejileri bulacaksınız. Ayrıca MCP sunucularını nasıl hata ayıklayacağınızı ve test edeceğinizi, API'leri nasıl yöneteceğinizi ve çözümleri Azure kullanarak buluta nasıl dağıtacağınızı öğreneceksiniz. Bu uygulamalı kaynaklar, öğreniminizi hızlandırmak ve sağlam, üretime hazır MCP uygulamaları oluşturma konusunda kendinize güvenmenizi sağlamak için tasarlanmıştır.
+Aşağıdaki bölümlerde, C#, Java Spring ile, TypeScript, JavaScript ve Python’da MCP nasıl uygulanır, örnek kodlar, dağıtım stratejileri, MCP sunucularının nasıl hata ayıklanıp test edileceği, API yönetimi ve Azure kullanarak buluta çözümlerin nasıl dağıtılacağı gibi pratik örnekleri bulacaksınız. Bu uygulamalı kaynaklar, öğrenmenizi hızlandırmak ve güçlü, üretim hazır MCP uygulamaları geliştirirken size güven kazandırmak için tasarlanmıştır.
 
 ## Genel Bakış
 
-Bu ders, MCP'nin birden fazla programlama dili üzerindeki pratik uygulama yönlerine odaklanmaktadır. MCP SDK'larını C#, Java ile Spring, TypeScript, JavaScript ve Python'da kullanarak sağlam uygulamalar oluşturmayı, MCP sunucularını hata ayıklamayı ve test etmeyi, yeniden kullanılabilir kaynaklar, istemler ve araçlar oluşturmayı keşfedeceğiz.
+Bu ders, MCP uygulamasının çoklu programlama dillerindeki pratik yönlerine odaklanmaktadır. C#, Java Spring, TypeScript, JavaScript ve Python’da MCP SDK’larının nasıl kullanılacağını, sağlam uygulamalar inşa etmeyi, MCP sunucularının hata ayıklanmasını ve test edilmesini ve yeniden kullanılabilir kaynaklar, istemler (prompts) ve araçlar oluşturmayı keşfedeceğiz.
 
 ## Öğrenme Hedefleri
 
 Bu dersin sonunda şunları yapabileceksiniz:
 
-- Çeşitli programlama dillerinde resmi SDK'ları kullanarak MCP çözümleri uygulamak
+- Resmi SDK’ları kullanarak çeşitli programlama dillerinde MCP çözümleri uygulamak
 - MCP sunucularını sistematik olarak hata ayıklamak ve test etmek
-- Sunucu özelliklerini (Kaynaklar, İstemler ve Araçlar) oluşturmak ve kullanmak
+- Sunucu özellikleri (Kaynaklar, İstemler ve Araçlar) oluşturmak ve kullanmak
 - Karmaşık görevler için etkili MCP iş akışları tasarlamak
-- Performans ve güvenilirlik için MCP uygulamalarını optimize etmek
+- MCP uygulamalarını performans ve güvenilirlik açısından optimize etmek
 
 ## Resmi SDK Kaynakları
 
-Model Context Protocol, birden fazla dil için resmi SDK'lar sunar:
+Model Context Protocol, birden çok dil için resmi SDK’lar sunmaktadır ([MCP Spesifikasyonu 2025-11-25](https://spec.modelcontextprotocol.io/specification/2025-11-25/) ile uyumlu):
 
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
-- [Java ile Spring SDK](https://github.com/modelcontextprotocol/java-sdk) **Not:** [Project Reactor](https://projectreactor.io) bağımlılığı gerektirir. ([tartışma konusu 246](https://github.com/orgs/modelcontextprotocol/discussions/246)'ya bakın.)
+- [Java Spring SDK](https://github.com/modelcontextprotocol/java-sdk) **Not:** [Project Reactor](https://projectreactor.io) bağımlılığı gerektirir. (Bkz. [tartışma konusu 246](https://github.com/orgs/modelcontextprotocol/discussions/246).)
 - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
 - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
 - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
+- [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
 
-## MCP SDK'ları ile Çalışmak
+## MCP SDK’ları ile Çalışma
 
-Bu bölüm, MCP'nin birden fazla programlama dili üzerinde nasıl uygulanacağını gösteren pratik örnekler sunar. `samples` dizininde dil bazında düzenlenmiş örnek kodlar bulabilirsiniz.
+Bu bölüm, MCP’nin çoklu programlama dillerinde nasıl uygulanacağına dair pratik örnekler sunar. Dil bazında organize edilmiş örnek kodlar `samples` dizininde bulunabilir.
 
 ### Mevcut Örnekler
 
-Depo, aşağıdaki dillerde [örnek uygulamalar](../../../04-PracticalImplementation/samples) içerir:
+Depoda aşağıdaki dillerde [örnek uygulamalar](../../../04-PracticalImplementation/samples) mevcuttur:
 
 - [C#](./samples/csharp/README.md)
-- [Java ile Spring](./samples/java/containerapp/README.md)
+- [Java Spring ile](./samples/java/containerapp/README.md)
 - [TypeScript](./samples/typescript/README.md)
 - [JavaScript](./samples/javascript/README.md)
 - [Python](./samples/python/README.md)
 
-Her örnek, o dil ve ekosistem için temel MCP kavramlarını ve uygulama desenlerini gösterir.
+Her örnek, o dil ve ekosistem için temel MCP kavramlarını ve uygulama kalıplarını göstermektedir.
+
+### Pratik Rehberler
+
+Pratik MCP uygulamaları için ek rehberler:
+
+- [Sayfalandırma ve Büyük Sonuç Setleri](./pagination/README.md) - araçlar, kaynaklar ve büyük veri kümeleri için imleç tabanlı sayfalandırma yönetimi
 
 ## Temel Sunucu Özellikleri
 
-MCP sunucuları, aşağıdaki özelliklerin herhangi bir kombinasyonunu uygulayabilir:
+MCP sunucuları aşağıdaki özellikleri herhangi bir kombinasyonda uygulayabilir:
 
 ### Kaynaklar
 
-Kaynaklar, kullanıcı veya yapay zeka modeli için bağlam ve veri sağlar:
+Kaynaklar, kullanıcı veya yapay zeka modelinin kullanacağı bağlam ve veriyi sağlar:
 
 - Belge depoları
 - Bilgi tabanları
 - Yapılandırılmış veri kaynakları
 - Dosya sistemleri
 
-### İstemler
+### İstemler (Prompts)
 
 İstemler, kullanıcılar için şablonlanmış mesajlar ve iş akışlarıdır:
 
 - Önceden tanımlanmış konuşma şablonları
 - Yönlendirilmiş etkileşim desenleri
-- Uzmanlaşmış diyalog yapıları
+- Özelleşmiş diyalog yapıları
 
 ### Araçlar
 
-Araçlar, yapay zeka modelinin gerçekleştireceği işlevlerdir:
+Araçlar, yapay zeka modelinin çalıştıracağı fonksiyonlardır:
 
-- Veri işleme yardımcıları
+- Veri işleme araçları
 - Harici API entegrasyonları
-- Hesaplama yetenekleri
-- Arama işlevselliği
+- Hesaplamalı yetenekler
+- Arama fonksiyonları
 
 ## Örnek Uygulamalar: C# Uygulaması
 
-Resmi C# SDK deposu, MCP'nin farklı yönlerini gösteren birkaç örnek uygulama içerir:
+Resmi C# SDK deposunda MCP’nin farklı yönlerini gösteren çeşitli örnek uygulamalar bulunur:
 
-- **Temel MCP İstemcisi**: MCP istemcisi oluşturmayı ve araçları çağırmayı gösteren basit bir örnek
-- **Temel MCP Sunucusu**: Temel araç kaydı ile minimal sunucu uygulaması
-- **Gelişmiş MCP Sunucusu**: Araç kaydı, kimlik doğrulama ve hata işleme ile tam özellikli sunucu
-- **ASP.NET Entegrasyonu**: ASP.NET Core ile entegrasyonu gösteren örnekler
-- **Araç Uygulama Desenleri**: Farklı karmaşıklık seviyelerinde araç uygulama desenleri
+- **Temel MCP İstemcisi**: MCP istemcisi oluşturmayı ve araçları çağırmayı gösteren basit örnek
+- **Temel MCP Sunucusu**: Basit araç kaydını içeren minimal sunucu uygulaması
+- **Gelişmiş MCP Sunucusu**: Tam özellikli sunucu; araç kaydı, kimlik doğrulama ve hata yönetimi
+- **ASP.NET Entegrasyonu**: ASP.NET Core ile entegrasyon örnekleri
+- **Araç Uygulama Kalıpları**: Farklı karmaşıklık düzeylerinde araç uygulama kalıpları
 
-C# MCP SDK önizleme aşamasındadır ve API'ler değişebilir. SDK geliştikçe bu blogu sürekli olarak güncelleyeceğiz.
+MCP C# SDK önizlemededir ve API'lerde değişiklik olabilir. SDK geliştikçe bu bloğu sürekli güncelleyeceğiz.
 
-### Temel Özellikler
+### Ana Özellikler
 
 - [C# MCP Nuget ModelContextProtocol](https://www.nuget.org/packages/ModelContextProtocol)
 - [İlk MCP Sunucunuzu oluşturma](https://devblogs.microsoft.com/dotnet/build-a-model-context-protocol-mcp-server-in-csharp/).
 
-Tam C# uygulama örnekleri için [resmi C# SDK örnekleri deposunu](https://github.com/modelcontextprotocol/csharp-sdk) ziyaret edin.
+Tam C# uygulama örnekleri için [resmi C# SDK örnek deposunu](https://github.com/modelcontextprotocol/csharp-sdk) ziyaret edin.
 
-## Örnek Uygulama: Java ile Spring Uygulaması
+## Örnek Uygulama: Java Spring ile Uygulama
 
-Java ile Spring SDK, kurumsal düzeyde özelliklerle sağlam MCP uygulama seçenekleri sunar.
+Java Spring SDK, kurumsal düzeyde özelliklerle güçlü MCP uygulama seçenekleri sunar.
 
-### Temel Özellikler
+### Ana Özellikler
 
 - Spring Framework entegrasyonu
 - Güçlü tip güvenliği
 - Reaktif programlama desteği
-- Kapsamlı hata işleme
+- Kapsamlı hata yönetimi
 
-Tam bir Java ile Spring uygulama örneği için `samples` dizinindeki [Java ile Spring örneğine](samples/java/containerapp/README.md) bakın.
+Tam bir Java Spring uygulama örneği için örnekler dizinindeki [Java Spring örneğine](samples/java/containerapp/README.md) bakabilirsiniz.
 
 ## Örnek Uygulama: JavaScript Uygulaması
 
 JavaScript SDK, MCP uygulaması için hafif ve esnek bir yaklaşım sunar.
 
-### Temel Özellikler
+### Ana Özellikler
 
 - Node.js ve tarayıcı desteği
 - Promise tabanlı API
 - Express ve diğer frameworklerle kolay entegrasyon
 - Akış için WebSocket desteği
 
-Tam bir JavaScript uygulama örneği için `samples` dizinindeki [JavaScript örneğine](samples/javascript/README.md) bakın.
+Tam bir JavaScript uygulama örneği için örnekler dizinindeki [JavaScript örneğine](samples/javascript/README.md) bakınız.
 
 ## Örnek Uygulama: Python Uygulaması
 
-Python SDK, MCP uygulaması için Python'a özgü bir yaklaşım sunar ve mükemmel ML framework entegrasyonları sağlar.
+Python SDK, ML frameworkleriyle mükemmel entegrasyon sağlayan Python dostu bir MCP uygulama yaklaşımı sunar.
 
-### Temel Özellikler
+### Ana Özellikler
 
 - asyncio ile async/await desteği
 - FastAPI entegrasyonu
 - Basit araç kaydı
-- Popüler ML kütüphaneleriyle yerel entegrasyon
+- Popüler ML kütüphaneleri ile yerel entegrasyon
 
-Tam bir Python uygulama örneği için `samples` dizinindeki [Python örneğine](samples/python/README.md) bakın.
+Tam bir Python uygulama örneği için örnekler dizinindeki [Python örneğine](samples/python/README.md) bakabilirsiniz.
 
 ## API Yönetimi
 
-Azure API Management, MCP Sunucularını nasıl güvence altına alabileceğimiz konusunda harika bir çözümdür. Fikir, MCP Sunucunuzun önüne bir Azure API Management örneği koymak ve aşağıdaki gibi özellikleri yönetmesini sağlamaktır:
+Azure API Management, MCP Sunucularını nasıl güvenlik altına alabileceğimize dair harika bir çözümdür. Fikir, MCP Sunucunuzun önüne bir Azure API Management örneği koymak ve şöyle işlevleri yönetmesini sağlamaktır:
 
-- hız sınırlaması
+- kota sınırlandırma
 - token yönetimi
 - izleme
 - yük dengeleme
@@ -159,31 +157,31 @@ Azure API Management, MCP Sunucularını nasıl güvence altına alabileceğimiz
 
 ### Azure Örneği
 
-Tam olarak bunu yapan bir Azure örneği, yani [bir MCP Sunucusu oluşturma ve Azure API Management ile güvence altına alma](https://github.com/Azure-Samples/remote-mcp-apim-functions-python).
+İşte tam olarak bunu yapan bir Azure Örneği, yani [bir MCP Sunucu oluşturup Azure API Management ile güvenliğini sağlamak](https://github.com/Azure-Samples/remote-mcp-apim-functions-python).
 
-Aşağıdaki görselde yetkilendirme akışının nasıl gerçekleştiğini görebilirsiniz:
+Yetkilendirme akışının aşağıdaki görselde nasıl gerçekleştiğine bakınız:
 
 ![APIM-MCP](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/mcp-client-authorization.gif?raw=true)
 
-Yukarıdaki görselde şu işlemler gerçekleşir:
+Yukarıdaki görüntüde şunlar gerçekleşir:
 
-- Kimlik doğrulama/Yetkilendirme Microsoft Entra kullanılarak gerçekleşir.
-- Azure API Management bir geçit görevi görür ve trafiği yönlendirmek ve yönetmek için politikalar kullanır.
-- Azure Monitor tüm istekleri daha fazla analiz için kaydeder.
+- Kimlik doğrulama/Yetkilendirme Microsoft Entra kullanılarak yapılır.
+- Azure API Management bir ağ geçidi görevi görür ve politikalar ile trafiği yönlendirip yönetir.
+- Azure Monitor tüm istekleri analiz için kaydeder.
 
-#### Yetkilendirme Akışı
+#### Yetkilendirme akışı
 
-Yetkilendirme akışını daha ayrıntılı olarak inceleyelim:
+Yetkilendirme akışına daha detaylı bakalım:
 
-![Sıralama Diyagramı](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/infra/app/apim-oauth/diagrams/images/mcp-client-auth.png?raw=true)
+![Sequence Diagram](https://github.com/Azure-Samples/remote-mcp-apim-functions-python/blob/main/infra/app/apim-oauth/diagrams/images/mcp-client-auth.png?raw=true)
 
-#### MCP Yetkilendirme Spesifikasyonu
+#### MCP yetkilendirme spesifikasyonu
 
-[MCP Yetkilendirme spesifikasyonu](https://modelcontextprotocol.io/specification/2025-03-26/basic/authorization#2-10-third-party-authorization-flow) hakkında daha fazla bilgi edinin.
+[MCP Yetkilendirme spesifikasyonunu](https://spec.modelcontextprotocol.io/specification/2025-11-25/basic/authorization/) daha detaylı öğrenin.
 
-## Azure'a Uzaktan MCP Sunucusu Dağıtma
+## Uzak MCP Sunucusunu Azure’a Dağıtma
 
-Daha önce bahsettiğimiz örneği dağıtmayı deneyelim:
+Daha önce bahsettiğimiz örneği dağıtabilir miyiz görelim:
 
 1. Depoyu klonlayın
 
@@ -195,31 +193,31 @@ Daha önce bahsettiğimiz örneği dağıtmayı deneyelim:
 1. `Microsoft.App` kaynak sağlayıcısını kaydedin.
 
    - Azure CLI kullanıyorsanız, `az provider register --namespace Microsoft.App --wait` komutunu çalıştırın.
-   - Azure PowerShell kullanıyorsanız, `Register-AzResourceProvider -ProviderNamespace Microsoft.App` komutunu çalıştırın. Daha sonra kaydın tamamlanıp tamamlanmadığını kontrol etmek için bir süre sonra `(Get-AzResourceProvider -ProviderNamespace Microsoft.App).RegistrationState` komutunu çalıştırın.
+   - Azure PowerShell kullanıyorsanız, `Register-AzResourceProvider -ProviderNamespace Microsoft.App` komutunu çalıştırın. Ardından kaydın tamamlanıp tamamlanmadığını kontrol etmek için biraz bekleyip `(Get-AzResourceProvider -ProviderNamespace Microsoft.App).RegistrationState` komutunu çalıştırın.
 
-1. API yönetim hizmetini, işlev uygulamasını (kodla birlikte) ve diğer gerekli Azure kaynaklarını sağlamak için bu [azd](https://aka.ms/azd) komutunu çalıştırın:
+1. Bu [azd](https://aka.ms/azd) komutunu çalıştırarak api yönetim servisini, fonksiyon uygulamasını (kod ile) ve diğer tüm gerekli Azure kaynaklarını oluşturun
 
     ```shell
     azd up
     ```
 
-    Bu komutlar tüm bulut kaynaklarını Azure'da dağıtmalıdır.
+    Bu komutlar tüm bulut kaynaklarını Azure üzerinde dağıtmalıdır.
 
-### MCP Inspector ile Sunucunuzu Test Etme
+### MCP Inspector ile sunucunuzu test etme
 
-1. **Yeni bir terminal penceresinde**, MCP Inspector'ı yükleyin ve çalıştırın
+1. **Yeni bir terminal penceresinde** MCP Inspector'ı yükleyin ve çalıştırın
 
     ```shell
     npx @modelcontextprotocol/inspector
     ```
 
-    Aşağıdakine benzer bir arayüz görmelisiniz:
+    Aşağıdaki gibi bir arayüz görmelisiniz:
 
-    ![Node Inspector'a Bağlan](../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.tr.png)
+    ![Node inspector’a bağlan](../../../translated_images/tr/connect.141db0b2bd05f096.webp)
 
-1. Uygulama tarafından görüntülenen URL'den MCP Inspector web uygulamasını yüklemek için CTRL tıklayın (ör. [http://127.0.0.1:6274/#resources](http://127.0.0.1:6274/#resources))
+1. Uygulamanın gösterdiği URL’den (örn. [http://127.0.0.1:6274/#resources](http://127.0.0.1:6274/#resources)) MCP Inspector web uygulamasını CTRL tıklayarak açın
 1. Taşıma türünü `SSE` olarak ayarlayın
-1. `azd up` sonrası görüntülenen API Management SSE uç noktanıza URL'yi ayarlayın ve **Bağlan**:
+1. `azd up` sonrası gösterilen çalışan API Yönetim SSE uç noktasını URL olarak girin ve **Bağlan**’a tıklayın:
 
     ```shell
     https://<apim-servicename-from-azd-output>.azure-api.net/mcp/sse
@@ -227,57 +225,63 @@ Daha önce bahsettiğimiz örneği dağıtmayı deneyelim:
 
 1. **Araçları Listele**. Bir araca tıklayın ve **Aracı Çalıştır**.
 
-Tüm adımlar çalıştıysa, artık MCP sunucusuna bağlı olmalısınız ve bir aracı çağırmayı başardınız.
+Tüm adımlar başarılı olduysa, MCP sunucusuna bağlandınız ve bir aracı çağırabilmiş olmalısınız.
 
-## Azure için MCP Sunucuları
+## Azure için MCP sunucuları
 
-[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): Bu depo seti, Python, C# .NET veya Node/TypeScript kullanarak Azure Functions ile özel uzaktan MCP (Model Context Protocol) sunucuları oluşturmak ve dağıtmak için hızlı başlangıç şablonlarıdır.
+[Remote-mcp-functions](https://github.com/Azure-Samples/remote-mcp-functions-dotnet): Bu depo setleri, Python, C# .NET veya Node/TypeScript kullanarak Azure Functions ile özel uzak MCP (Model Context Protocol) sunucuları oluşturma ve dağıtma için hızlı başlangıç şablonlarıdır.
 
-Örnekler, geliştiricilere aşağıdakileri sağlayan eksiksiz bir çözüm sunar:
+Örnekler, geliştiricilerin şunları yapmasını sağlar:
 
-- Yerel olarak oluşturma ve çalıştırma: Yerel bir makinede bir MCP sunucusu geliştirin ve hata ayıklayın
-- Azure'a dağıtma: Basit bir azd up komutuyla buluta kolayca dağıtın
-- İstemcilerden bağlanma: VS Code'un Copilot ajan modu ve MCP Inspector aracı dahil olmak üzere çeşitli istemcilerden MCP sunucusuna bağlanın
+- Yerel olarak oluşturma ve çalıştırma: MCP sunucusunu yerel makinede geliştirme ve hata ayıklama
+- Azure’a dağıtım: Tek bir azd up komutuyla kolay bulut dağıtımı
+- İstemcilerden bağlantı: VS Code’un Copilot agent modu ve MCP Inspector aracı dahil çeşitli istemcilerden MCP sunucusuna bağlantı
 
-### Temel Özellikler
+### Ana Özellikler
 
-- Tasarım gereği güvenlik: MCP sunucusu anahtarlar ve HTTPS kullanılarak güvence altına alınır
-- Kimlik doğrulama seçenekleri: Dahili kimlik doğrulama ve/veya API Management kullanarak OAuth desteği
-- Ağ izolasyonu: Azure Sanal Ağlar (VNET) kullanarak ağ izolasyonu sağlar
-- Sunucusuz mimari: Ölçeklenebilir, olay odaklı yürütme için Azure Functions kullanır
+- Tasarım gereği güvenlik: MCP sunucusu anahtarlar ve HTTPS ile korunur
+- Kimlik doğrulama seçenekleri: Yerleşik kimlik doğrulama ve/veya API Yönetimi ile OAuth desteği
+- Ağ izolasyonu: Azure Sanal Ağlar (VNET) ile ağ izolasyonu imkanı
+- Sunucusuz mimari: Ölçeklenebilir, olay tetikli yürütme için Azure Functions kullanımı
 - Yerel geliştirme: Kapsamlı yerel geliştirme ve hata ayıklama desteği
-- Basit dağıtım: Azure'a kolaylaştırılmış dağıtım süreci
+- Basit dağıtım: Azure’a kolaylaştırılmış dağıtım süreci
 
-Depo, üretime hazır bir MCP sunucu uygulamasıyla hızlı bir şekilde başlamak için gerekli tüm yapılandırma dosyalarını, kaynak kodunu ve altyapı tanımlarını içerir.
+Depoda, üretim hazır MCP sunucu uygulamasına hızlı başlamak için gerekli tüm yapılandırma dosyaları, kaynak kodu ve altyapı tanımları yer almaktadır.
 
-- [Azure Remote MCP Functions Python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Python ile Azure Functions kullanarak MCP'nin örnek uygulaması
+- [Azure Remote MCP Functions Python](https://github.com/Azure-Samples/remote-mcp-functions-python) - Python ile Azure Functions kullanarak MCP örnek uygulaması
 
-- [Azure Remote MCP Functions .NET](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - C# .NET ile Azure Functions kullanarak MCP'nin örnek uygulaması
+- [Azure Remote MCP Functions .NET](https://github.com/Azure-Samples/remote-mcp-functions-dotnet) - C# .NET ile Azure Functions kullanarak MCP örnek uygulaması
 
-- [Azure Remote MCP Functions Node/Typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Node/TypeScript ile Azure Functions kullanarak MCP'nin örnek uygulaması.
+- [Azure Remote MCP Functions Node/Typescript](https://github.com/Azure-Samples/remote-mcp-functions-typescript) - Node/TypeScript ile Azure Functions kullanarak MCP örnek uygulaması
 
-## Temel Çıkarımlar
+## Anahtar Çıkarımlar
 
-- MCP SDK'ları, sağlam MCP çözümleri uygulamak için dil spesifik araçlar sağlar
-- Hata ayıklama ve test süreci, güvenilir MCP uygulamaları için kritiktir
-- Yeniden kullanılabilir istem şablonları, tutarlı yapay zeka etkileşimlerini mümkün kılar
-- İyi tasarlanmış iş akışları, birden fazla aracı kullanarak karmaşık görevleri düzenleyebilir
-- MCP çözümleri uygulamak, güvenlik, performans ve hata işleme konularını dikkate almayı gerektirir
+- MCP SDK’ları, sağlam MCP çözümleri için dile özgü araçlar sağlar
+- Hata ayıklama ve test süreci, güvenilir MCP uygulamaları için kritik önemdedir
+- Tekrar kullanılabilir istem şablonları tutarlı AI etkileşimleri sağlar
+- İyi tasarlanmış iş akışları birden çok araç kullanarak karmaşık görevleri koordine eder
+- MCP çözümlerinin uygulanması güvenlik, performans ve hata yönetimi dikkate almalıdır
 
 ## Egzersiz
 
-Kendi alanınızda gerçek bir problemi ele alan pratik bir MCP iş akışı tasarlayın:
+Sizin alanınızdaki gerçek bir problemi ele alan pratik bir MCP iş akışı tasarlayın:
 
-1. Bu problemi çözmek için faydalı olabilecek 3-4 araç belirleyin
-2. Bu araçların nasıl etkileşimde bulunduğunu gösteren bir iş akışı diyagramı oluşturun
-3. Tercih ettiğiniz dili kullanarak araçlardan birinin temel bir versiyonunu uygulayın
-4. Modelin aracınızı etkili bir şekilde kullanmasına yardımcı olacak bir istem şablonu oluşturun
+1. Bu problemi çözmek için faydalı olabilecek 3-4 aracı belirleyin
+2. Bu araçların nasıl etkileşime girdiğini gösteren bir iş akış diyagramı oluşturun
+3. Tercih ettiğiniz dilde araçlardan birinin temel bir versiyonunu uygulayın
+4. Modelin aracınızı etkili kullanmasına yardımcı olacak bir istem şablonu oluşturun
 
 ## Ek Kaynaklar
 
 ---
 
-Sonraki: [İleri Düzey Konular](../05-AdvancedTopics/README.md)
+## Sıradaki Ne
 
+Sonraki: [Gelişmiş Konular](../05-AdvancedTopics/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Feragatname**:  
-Bu belge, [Co-op Translator](https://github.com/Azure/co-op-translator) adlı yapay zeka çeviri hizmeti kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belgenin kendi dilindeki hali, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel bir insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan herhangi bir yanlış anlama veya yanlış yorumlama durumunda sorumluluk kabul edilmez.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba sarf etsek de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayınız. Orijinal belge, kendi yerel dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek herhangi bir yanlış anlama veya yanlış yorumlamadan sorumlu değiliz.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

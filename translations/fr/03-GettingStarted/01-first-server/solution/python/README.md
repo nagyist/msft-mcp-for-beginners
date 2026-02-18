@@ -1,15 +1,6 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d26f746e21775c30b4d7ed97962b24df",
-  "translation_date": "2025-08-11T10:12:48+00:00",
-  "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
-  "language_code": "fr"
-}
--->
-# Exécution de cet exemple
+# Exécuter cet exemple
 
-Il est recommandé d'installer `uv`, mais ce n'est pas obligatoire. Consultez [les instructions](https://docs.astral.sh/uv/#highlights).
+Il est recommandé d'installer `uv`, mais ce n'est pas obligatoire. Voir [instructions](https://docs.astral.sh/uv/#highlights)
 
 ## -0- Créer un environnement virtuel
 
@@ -47,11 +38,11 @@ Cela devrait démarrer un serveur web avec une interface visuelle vous permettan
 
 Une fois le serveur connecté :
 
-- Essayez de lister les outils et d'exécuter `add` avec les arguments 2 et 4. Vous devriez voir 6 dans le résultat.
+- Essayez de lister les outils et exécutez `add` avec les arguments 2 et 4. Vous devriez voir 6 dans le résultat.
 
-- Allez dans "resources" et "resource template", appelez `get_greeting`, entrez un nom, et vous devriez voir un message de bienvenue avec le nom que vous avez fourni.
+- Allez dans les ressources et le modèle de ressource, puis appelez `get_greeting`. Entrez un nom et vous devriez voir un message de salutation avec le nom que vous avez fourni.
 
-### Test en mode CLI
+### Tester en mode CLI
 
 L'inspecteur que vous avez lancé est en réalité une application Node.js, et `mcp dev` est un wrapper autour de celle-ci.
 
@@ -112,9 +103,11 @@ Vous devriez voir la sortie suivante :
 }
 ```
 
-> [!TIP]  
-> Il est généralement beaucoup plus rapide d'exécuter l'inspecteur en mode CLI que dans le navigateur.  
+> [!TIP]
+> Il est généralement beaucoup plus rapide d'exécuter l'inspecteur en mode CLI plutôt que dans le navigateur.
 > En savoir plus sur l'inspecteur [ici](https://github.com/modelcontextprotocol/inspector).
 
+---
+
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction professionnelle réalisée par un humain. Nous ne sommes pas responsables des malentendus ou des interprétations erronées résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction professionnelle réalisée par un humain. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.

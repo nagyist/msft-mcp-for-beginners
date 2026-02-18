@@ -1,41 +1,55 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1b6c746d9e190deba4d8765267ffb94e",
-  "translation_date": "2025-07-17T13:51:28+00:00",
-  "source_file": "02-Security/azure-content-safety-implementation.md",
-  "language_code": "ro"
-}
--->
 # Implementarea Azure Content Safety cu MCP
 
-Pentru a întări securitatea MCP împotriva injecțiilor de prompt, otrăvirii uneltelor și altor vulnerabilități specifice AI, se recomandă cu tărie integrarea Azure Content Safety.
+> **Risc MCP OWASP Abordat**: [MCP06 - Injecție Promptă prin Payload-uri Contextuale](https://microsoft.github.io/mcp-azure-security-guide/mcp/mcp06-prompt-injection/)
 
-## Integrarea cu serverul MCP
+Pentru a întări securitatea MCP împotriva injecției prompte, otrăvirii uneltelor și altor vulnerabilități specifice AI, se recomandă puternic integrarea Azure Content Safety. Acest ghid de implementare este aliniat cu [MCP Security Summit Workshop (Sherpa)](https://azure-samples.github.io/sherpa/) Camp 3: Securitatea I/O.
 
-Pentru a integra Azure Content Safety cu serverul tău MCP, adaugă filtrul de siguranță a conținutului ca middleware în fluxul de procesare a cererilor:
+## Integrare cu serverul MCP
 
-1. Inițializează filtrul la pornirea serverului  
-2. Validează toate cererile uneltelor înainte de procesare  
-3. Verifică toate răspunsurile înainte de a le returna clienților  
-4. Înregistrează și alertează în cazul încălcărilor de siguranță  
-5. Implementează gestionarea corespunzătoare a erorilor pentru verificările de siguranță eșuate  
+Pentru a integra Azure Content Safety cu serverul dvs. MCP, adăugați filtrul de siguranță a conținutului ca middleware în fluxul de procesare a cererilor:
 
-Aceasta oferă o apărare solidă împotriva:  
-- Atacurilor de injecție de prompt  
-- Tentativelor de otrăvire a uneltelor  
-- Exfiltrării de date prin inputuri malițioase  
-- Generării de conținut dăunător  
+1. Inițializați filtrul la pornirea serverului
+2. Validați toate cererile uneltelor primite înainte de procesare
+3. Verificați toate răspunsurile trimise înainte de a le returna clienților
+4. Înregistrați și alertați în caz de încălcări ale siguranței
+5. Implementați tratarea erorilor adecvată pentru verificările de siguranță a conținutului eșuate
+
+Aceasta oferă o apărare robustă împotriva:
+- Atacurilor de injecție promptă
+- Tentativelor de otrăvire a uneltelor
+- Exfiltrării de date prin inputuri malițioase
+- Generării de conținut dăunător
 
 ## Cele mai bune practici pentru integrarea Azure Content Safety
 
-1. **Liste de blocare personalizate**: Creează liste de blocare personalizate special pentru tiparele de injecție MCP  
-2. **Ajustarea severității**: Reglează pragurile de severitate în funcție de cazul tău specific și toleranța la risc  
-3. **Acoperire completă**: Aplică verificările de siguranță a conținutului pentru toate inputurile și outputurile  
-4. **Optimizarea performanței**: Ia în considerare implementarea caching-ului pentru verificările repetate de siguranță a conținutului  
-5. **Mecanisme de rezervă**: Definește comportamente clare de fallback când serviciile de siguranță a conținutului nu sunt disponibile  
-6. **Feedback pentru utilizatori**: Oferă feedback clar utilizatorilor când conținutul este blocat din motive de siguranță  
-7. **Îmbunătățire continuă**: Actualizează regulat listele de blocare și tiparele pe baza amenințărilor emergente
+1. **Liste de blocare personalizate**: Creați liste de blocare personalizate specific pentru tipare de injecție MCP
+2. **Ajustarea severității**: Modificați pragurile de severitate în funcție de scenariul dvs. specific și toleranța la risc
+3. **Acoperire completă**: Aplicați verificări de siguranță a conținutului tuturor inputurilor și outputurilor
+4. **Optimizare performanță**: Luați în considerare implementarea caching-ului pentru verificările repetate ale siguranței conținutului
+5. **Mecanisme de rezervă**: Definiți comportamente clare de fallback când serviciile de siguranță a conținutului nu sunt disponibile
+6. **Feedback utilizator**: Oferiți feedback clar utilizatorilor când conținutul este blocat din motive de siguranță
+7. **Îmbunătățire continuă**: Actualizați regulat listele de blocare și tiparele bazate pe amenințări noi
 
-**Declinare de responsabilitate**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
+## Resurse suplimentare
+
+### Ghidul de securitate MCP OWASP
+- [Ghidul de securitate MCP Azure OWASP](https://microsoft.github.io/mcp-azure-security-guide/) - Top 10 MCP OWASP detaliat cu implementare Azure
+- [MCP06 - Injecție promptă](https://microsoft.github.io/mcp-azure-security-guide/mcp/mcp06-prompt-injection/) - Tipare detaliate pentru atenuarea injecției prompte
+- [MCP Security Summit Workshop](https://azure-samples.github.io/sherpa/) - Camp 3: Securitatea I/O include siguranța conținutului
+
+### Documentație Azure
+- [Prezentare generală Azure Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/)
+- [Documentația Prompt Shields](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection)
+- [Azure AI Content Safety Quickstart](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text)
+
+## Ce urmează
+
+- Revenire la: [Prezentare modul securitate](./README.md)
+- Continuare la: [Modul 3: Primii pași](../03-GettingStarted/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Declinare de responsabilitate**:
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autoritară. Pentru informații critice, se recomandă o traducere profesională realizată de un traducător uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

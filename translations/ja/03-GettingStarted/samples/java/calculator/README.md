@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13231e9951b68efd9df8c56bd5cdb27e",
-  "translation_date": "2025-07-13T22:23:16+00:00",
-  "source_file": "03-GettingStarted/samples/java/calculator/README.md",
-  "language_code": "ja"
-}
--->
 # Basic Calculator MCP Service
 
 このサービスは、Spring BootのWebFluxトランスポートを使ってModel Context Protocol（MCP）経由で基本的な計算機能を提供します。MCPの実装を学ぶ初心者向けのシンプルな例として設計されています。
@@ -201,7 +192,7 @@ MCP InspectorはMCPサービスとやり取りするための便利なツール�
    - 「List Tools」をクリックして利用可能な計算機操作を表示
    - ツールを選択し、「Run Tool」をクリックして操作を実行
 
-![MCP Inspector Screenshot](../../../../../../translated_images/tool.c75a0b2380efcf1a47a8478f54380a36ddcca7943b98f56dabbac8b07e15c3bb.ja.png)
+![MCP Inspector Screenshot](../../../../../../translated_images/ja/tool.c75a0b2380efcf1a.webp)
 
 ### Dockerの利用
 

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d940b5e0af75e3a3a4d1c3179120d1d9",
-  "translation_date": "2025-08-26T18:09:57+00:00",
-  "source_file": "03-GettingStarted/04-vscode/README.md",
-  "language_code": "sw"
-}
--->
 # Kutumia seva kutoka kwa hali ya Wakala wa GitHub Copilot
 
 Visual Studio Code na GitHub Copilot vinaweza kufanya kazi kama mteja na kutumia seva ya MCP. Kwa nini tungependa kufanya hivyo, unaweza kuuliza? Naam, hii inamaanisha kwamba vipengele vyovyote ambavyo seva ya MCP inavyo sasa vinaweza kutumika moja kwa moja kutoka ndani ya IDE yako. Fikiria ukiongeza, kwa mfano, seva ya MCP ya GitHub, hii itakuruhusu kudhibiti GitHub kupitia maelekezo badala ya kuandika amri maalum kwenye terminal. Au fikiria chochote kwa ujumla ambacho kinaweza kuboresha uzoefu wako wa maendeleo, vyote vikidhibitiwa kwa lugha ya kawaida. Sasa unaanza kuona faida, sivyo?
@@ -38,9 +29,9 @@ Unaweza kudhibiti seva yako ya MCP kwa njia mbili tofauti:
 
 ### Picha za Skrini
 
-![Usanidi wa seva ya MCP unaoongozwa katika Visual Studio Code](../../../../translated_images/chat-mode-agent.729a22473f822216dd1e723aaee1f7d4a2ede571ee0948037a2d9357a63b9d0b.sw.png)
-![Uchaguzi wa zana kwa kila kikao cha wakala](../../../../translated_images/agent-mode-select-tools.522c7ba5df0848f8f0d1e439c2e96159431bc620cb39ccf3f5dc611412fd0006.sw.png)
-![Kurekebisha kwa urahisi makosa wakati wa maendeleo ya MCP](../../../../translated_images/mcp-list-servers.fce89eefe3f30032bed8952e110ab9d82fadf043fcfa071f7d40cf93fb1ea9e9.sw.png)
+![Usanidi wa seva ya MCP unaoongozwa katika Visual Studio Code](../../../../translated_images/sw/chat-mode-agent.729a22473f822216.webp)
+![Uchaguzi wa zana kwa kila kikao cha wakala](../../../../translated_images/sw/agent-mode-select-tools.522c7ba5df0848f8.webp)
+![Kurekebisha kwa urahisi makosa wakati wa maendeleo ya MCP](../../../../translated_images/sw/mcp-list-servers.fce89eefe3f30032.webp)
 
 Hebu tuzungumze zaidi kuhusu jinsi tunavyotumia kiolesura cha kuona katika sehemu zinazofuata.
 
@@ -103,15 +94,15 @@ Sasa kwamba umeongeza ingizo, hebu tuanzishe seva:
 
 1. Tafuta ingizo lako katika *mcp.json* na hakikisha unapata ikoni ya "play":
 
-  ![Kuanzisha seva katika Visual Studio Code](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.sw.png)  
+  ![Kuanzisha seva katika Visual Studio Code](../../../../translated_images/sw/vscode-start-server.8e3c986612e3555d.webp)  
 
 1. Bonyeza ikoni ya "play", unapaswa kuona ikoni ya zana katika GitHub Copilot Chat ikiongeza idadi ya zana zinazopatikana. Ukibonyeza ikoni ya zana, utaona orodha ya zana zilizosajiliwa. Unaweza kuangalia/kutoa alama kwa kila zana kulingana na kama unataka GitHub Copilot kuzitumia kama muktadha:
 
-  ![Kuanzisha seva katika Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.sw.png)
+  ![Kuanzisha seva katika Visual Studio Code](../../../../translated_images/sw/vscode-tool.0b3bbea2fb7d8c26.webp)
 
 1. Ili kuendesha zana, andika maelekezo unayojua yatalingana na maelezo ya mojawapo ya zana zako, kwa mfano maelekezo kama "ongeza 22 kwa 1":
 
-  ![Kuendesha zana kutoka GitHub Copilot](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.sw.png)
+  ![Kuendesha zana kutoka GitHub Copilot](../../../../translated_images/sw/vscode-agent.d5a0e0b897331060.webp)
 
   Unapaswa kuona jibu likisema 23.
 

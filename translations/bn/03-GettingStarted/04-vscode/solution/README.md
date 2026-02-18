@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5ef8f5821c1a04f7b1fc4f15098ecab8",
-  "translation_date": "2025-07-13T19:40:57+00:00",
-  "source_file": "03-GettingStarted/04-vscode/solution/README.md",
-  "language_code": "bn"
-}
--->
 এটি এমন একটি কমান্ড চালানোর সমতুল্য: `node build/index.js`।
 
 - আপনার সার্ভার ফাইল কোথায় অবস্থিত বা আপনার নির্বাচিত রানটাইম এবং সার্ভার অবস্থানের উপর নির্ভর করে সার্ভার চালু করার জন্য যা প্রয়োজন, সেই অনুযায়ী এই সার্ভার এন্ট্রি পরিবর্তন করুন।
@@ -23,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     আপনি দেখতে পাবেন চ্যাট টেক্সট বক্সের উপরে একটি টুল প্রদর্শিত হচ্ছে যা আপনাকে টুলটি চালানোর জন্য নির্বাচন করতে বলছে, যেমন এই চিত্রে:
 
-    ![VS Code indicating it wanting to run a tool](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.bn.png)
+    ![VS Code indicating it wanting to run a tool](../../../../../translated_images/bn/vscode-agent.d5a0e0b897331060.webp)
 
     টুলটি নির্বাচন করলে একটি সংখ্যাসূচক ফলাফল দেখাবে, যেমন "23", যদি আপনার প্রম্পট আগের মতো হয়।
 

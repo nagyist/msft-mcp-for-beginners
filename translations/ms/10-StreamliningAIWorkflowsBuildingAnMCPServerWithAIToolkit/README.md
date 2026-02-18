@@ -1,50 +1,41 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1b000fd6e1b04c047578bfc5d07d54eb",
-  "translation_date": "2025-08-18T18:06:14+00:00",
-  "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md",
-  "language_code": "ms"
-}
--->
 # Memperkemas Aliran Kerja AI: Membina Pelayan MCP dengan AI Toolkit
 
-[![Versi MCP](https://img.shields.io/badge/MCP-1.9.3-blue.svg)](https://modelcontextprotocol.io/)
+[![MCP Spec](https://img.shields.io/badge/MCP%20Spec-2025--11--25-blue.svg)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
 [![Python](https://img.shields.io/badge/Python-3.10+-green.svg)](https://python.org)
 [![VS Code](https://img.shields.io/badge/VS%20Code-Latest-orange.svg)](https://code.visualstudio.com/)
 
-![logo](../../../translated_images/logo.ec93918ec338dadde1715c8aaf118079e0ed0502e9efdfcc84d6a0f4a9a70ae8.ms.png)
+![logo](../../../translated_images/ms/logo.ec93918ec338dadd.webp)
 
-## 🎯 Gambaran Keseluruhan
+## 🎯  Gambaran Keseluruhan
 
-[![Bina Ejen AI dalam VS Code: 4 Makmal Praktikal dengan MCP dan AI Toolkit](../../../translated_images/11.0f6db6a0fb6068856d0468590a120ffe35dbccc49b93dc88b2003f306c81493a.ms.png)](https://youtu.be/r34Csn3rkeQ)
+[![Build AI Agents in VS Code: 4 Hands-On Labs with MCP and AI Toolkit](../../../translated_images/ms/11.0f6db6a0fb606885.webp)](https://youtu.be/r34Csn3rkeQ)
 
 _(Klik imej di atas untuk menonton video pelajaran ini)_
 
-Selamat datang ke **Bengkel Model Context Protocol (MCP)**! Bengkel praktikal ini menggabungkan dua teknologi terkini untuk merevolusikan pembangunan aplikasi AI:
+Selamat datang ke **Model Context Protocol (MCP) Workshop**! Bengkel praktikal menyeluruh ini menggabungkan dua teknologi tercanggih untuk merevolusikan pembangunan aplikasi AI:
 
 - **🔗 Model Context Protocol (MCP)**: Standard terbuka untuk integrasi alat AI yang lancar
-- **🛠️ AI Toolkit untuk Visual Studio Code (AITK)**: Sambungan pembangunan AI yang berkuasa dari Microsoft
+- **🛠️ AI Toolkit untuk Visual Studio Code (AITK)**: Sambungan pembangunan AI yang mantap dari Microsoft
 
-### 🎓 Apa yang Akan Anda Pelajari
+### 🎓 Apa Yang Akan Anda Pelajari
 
-Menjelang akhir bengkel ini, anda akan menguasai seni membina aplikasi pintar yang menghubungkan model AI dengan alat dan perkhidmatan dunia sebenar. Dari ujian automatik hingga integrasi API tersuai, anda akan memperoleh kemahiran praktikal untuk menyelesaikan cabaran perniagaan yang kompleks.
+Menjelang akhir bengkel ini, anda akan menguasai seni membina aplikasi pintar yang menghubungkan model AI dengan alat dan perkhidmatan dunia sebenar. Dari ujian automatik ke integrasi API tersuai, anda akan memperoleh kemahiran praktikal untuk menyelesaikan cabaran perniagaan yang kompleks.
 
 ## 🏗️ Tumpuan Teknologi
 
 ### 🔌 Model Context Protocol (MCP)
 
-MCP ialah **"USB-C untuk AI"** - standard universal yang menghubungkan model AI kepada alat dan sumber data luaran.
+MCP adalah **"USB-C untuk AI"** - standard universal yang menghubungkan model AI ke alat dan sumber data luaran.
 
 **✨ Ciri Utama:**
 
 - 🔄 **Integrasi Standard**: Antara muka universal untuk sambungan alat AI
-- 🏛️ **Seni Bina Fleksibel**: Pelayan tempatan & jauh melalui pengangkutan stdio/SSE
+- 🏛️ **Senibina Fleksibel**: Pelayan tempatan & jauh melalui pemindahan stdio/SSE
 - 🧰 **Ekosistem Kaya**: Alat, arahan, dan sumber dalam satu protokol
-- 🔒 **Sedia untuk Perusahaan**: Keselamatan dan kebolehpercayaan terbina dalam
+- 🔒 **Sedia Perusahaan**: Keselamatan dan kebolehpercayaan terbina dalam
 
 **🎯 Kenapa MCP Penting:**
-Seperti USB-C yang menghapuskan kekusutan kabel, MCP menghapuskan kerumitan integrasi AI. Satu protokol, kemungkinan tanpa had.
+Seperti USB-C menghapuskan kekacauan kabel, MCP menghapuskan kerumitan integrasi AI. Satu protokol, kemungkinan tanpa had.
 
 ### 🤖 AI Toolkit untuk Visual Studio Code (AITK)
 
@@ -53,15 +44,15 @@ Sambungan pembangunan AI utama Microsoft yang mengubah VS Code menjadi kuasa AI.
 **🚀 Keupayaan Teras:**
 
 - 📦 **Katalog Model**: Akses model dari Azure AI, GitHub, Hugging Face, Ollama
-- ⚡ **Inferens Tempatan**: Pelaksanaan CPU/GPU/NPU yang dioptimumkan ONNX
+- ⚡ **Inferens Tempatan**: Pelaksanaan CPU/GPU/NPU dioptimumkan ONNX
 - 🏗️ **Pembina Ejen**: Pembangunan ejen AI visual dengan integrasi MCP
-- 🎭 **Multi-Mod**: Sokongan teks, penglihatan, dan output berstruktur
+- 🎭 **Multi-Modal**: Sokongan teks, penglihatan, dan output berstruktur
 
-**💡 Kelebihan Pembangunan:**
+**💡 Manfaat Pembangunan:**
 
-- Penyebaran model tanpa konfigurasi
-- Kejuruteraan arahan secara visual
-- Taman permainan ujian masa nyata
+- Pelaksanaan model tanpa konfigurasi
+- Kejuruteraan arahan visual
+- Kawasan ujian masa sebenar
 - Integrasi pelayan MCP yang lancar
 
 ## 📚 Perjalanan Pembelajaran
@@ -72,25 +63,25 @@ Sambungan pembangunan AI utama Microsoft yang mengubah VS Code menjadi kuasa AI.
 
 - 🛠️ Pasang dan konfigurasikan AI Toolkit untuk VS Code
 - 🗂️ Terokai Katalog Model (100+ model dari GitHub, ONNX, OpenAI, Anthropic, Google)
-- 🎮 Kuasai Taman Permainan Interaktif untuk ujian model masa nyata
-- 🤖 Bina ejen AI pertama anda dengan Pembina Ejen
-- 📊 Nilai prestasi model dengan metrik terbina dalam (F1, relevan, kesamaan, koheren)
-- ⚡ Pelajari keupayaan pemprosesan kelompok dan sokongan multi-mod
+- 🎮 Kuasai Interactive Playground untuk ujian model masa nyata
+- 🤖 Bina ejen AI pertama anda dengan Agent Builder
+- 📊 Nilai prestasi model dengan metrik terbina dalam (F1, relevansi, persamaan, koheren)
+- ⚡ Pelajari pemprosesan berjangka dan sokongan multi-modal
 
-**🎯 Hasil Pembelajaran**: Cipta ejen AI berfungsi dengan pemahaman menyeluruh tentang keupayaan AITK
+**🎯 Hasil Pembelajaran**: Cipta ejen AI berfungsi dengan kefahaman menyeluruh tentang keupayaan AITK
 
-### [🌐 Modul 2: Asas MCP dengan AI Toolkit](./lab2/README.md)
+### [🌐 Modul 2: MCP dengan Asas AI Toolkit](./lab2/README.md)
 
 **Tempoh**: 20 minit
 
-- 🧠 Kuasai seni bina dan konsep Model Context Protocol (MCP)
+- 🧠 Kuasai senibina dan konsep Model Context Protocol (MCP)
 - 🌐 Terokai ekosistem pelayan MCP Microsoft
 - 🤖 Bina ejen automasi pelayar menggunakan pelayan MCP Playwright
-- 🔧 Integrasikan pelayan MCP dengan Pembina Ejen AI Toolkit
+- 🔧 Integrasi pelayan MCP dengan Agent Builder AI Toolkit
 - 📊 Konfigurasikan dan uji alat MCP dalam ejen anda
-- 🚀 Eksport dan sebarkan ejen berkuasa MCP untuk kegunaan produksi
+- 🚀 Eksport dan laksanakan ejen diperkasa MCP untuk penggunaan produksi
 
-**🎯 Hasil Pembelajaran**: Sebarkan ejen AI yang dipertingkatkan dengan alat luaran melalui MCP
+**🎯 Hasil Pembelajaran**: Melaksanakan ejen AI diperkasa dengan alat luar melalui MCP
 
 ### [🔧 Modul 3: Pembangunan MCP Lanjutan dengan AI Toolkit](./lab3/README.md)
 
@@ -98,25 +89,25 @@ Sambungan pembangunan AI utama Microsoft yang mengubah VS Code menjadi kuasa AI.
 
 - 💻 Cipta pelayan MCP tersuai menggunakan AI Toolkit
 - 🐍 Konfigurasikan dan gunakan SDK Python MCP terkini (v1.9.3)
-- 🔍 Sediakan dan gunakan MCP Inspector untuk penyahpepijatan
-- 🛠️ Bina Pelayan MCP Cuaca dengan aliran kerja penyahpepijatan profesional
-- 🧪 Nyahpepijat pelayan MCP dalam persekitaran Pembina Ejen dan MCP Inspector
+- 🔍 Sediakan dan gunakan MCP Inspector untuk debugging
+- 🛠️ Bina Pelayan MCP Cuaca dengan aliran kerja debugging profesional
+- 🧪 Debug pelayan MCP dalam persekitaran Agent Builder dan Inspector
 
-**🎯 Hasil Pembelajaran**: Bangunkan dan nyahpepijat pelayan MCP tersuai dengan alat moden
+**🎯 Hasil Pembelajaran**: Bangunkan dan debug pelayan MCP tersuai dengan alat moden
 
 ### [🐙 Modul 4: Pembangunan MCP Praktikal - Pelayan Klon GitHub Tersuai](./lab4/README.md)
 
 **Tempoh**: 30 minit
 
 - 🏗️ Bina Pelayan MCP Klon GitHub dunia sebenar untuk aliran kerja pembangunan
-- 🔄 Laksanakan klon repositori pintar dengan pengesahan dan pengendalian ralat
-- 📁 Cipta pengurusan direktori pintar dan integrasi VS Code
+- 🔄 Laksanakan klon repositori pintar dengan pengesahan dan pengendalian kesilapan
+- 📁 Cipta pengurusan direktori bijak dan integrasi VS Code
 - 🤖 Gunakan Mod Ejen GitHub Copilot dengan alat MCP tersuai
-- 🛡️ Terapkan kebolehpercayaan sedia produksi dan keserasian merentas platform
+- 🛡️ Gunakan kebolehpercayaan sedia produksi dan keserasian merentas platform
 
-**🎯 Hasil Pembelajaran**: Sebarkan pelayan MCP sedia produksi yang memperkemas aliran kerja pembangunan sebenar
+**🎯 Hasil Pembelajaran**: Deploy pelayan MCP sedia produksi yang memperkemas aliran kerja pembangunan sebenar
 
-## 💡 Aplikasi Dunia Sebenar & Impak
+## 💡 Aplikasi & Impak Dunia Sebenar
 
 ### 🏢 Kes Penggunaan Perusahaan
 
@@ -124,33 +115,33 @@ Sambungan pembangunan AI utama Microsoft yang mengubah VS Code menjadi kuasa AI.
 
 Transformasikan aliran kerja pembangunan anda dengan automasi pintar:
 
-- **Pengurusan Repositori Pintar**: Semakan kod dan keputusan penggabungan yang dipacu AI
-- **CI/CD Pintar**: Pengoptimuman saluran paip automatik berdasarkan perubahan kod
-- **Triage Isu**: Pengelasan dan penugasan pepijat secara automatik
+- **Pengurusan Repositori Pintar**: Semakan kod dan keputusan penggabungan dipacu AI
+- **CI/CD Pintar**: Pengoptimasian saluran automatik berdasarkan perubahan kod
+- **Triage Isu**: Klasifikasi dan tugasan bug automatik
 
 #### 🧪 Revolusi Jaminan Kualiti
 
-Tingkatkan ujian dengan automasi berkuasa AI:
+Tingkatkan ujian dengan automasi dipacu AI:
 
-- **Penjanaan Ujian Pintar**: Cipta suite ujian komprehensif secara automatik
-- **Ujian Regresi Visual**: Pengesanan perubahan UI berkuasa AI
+- **Penjanaan Ujian Pintar**: Cipta suite ujian menyeluruh secara automatik
+- **Ujian Regresi Visual**: Pengesanan perubahan UI dipacu AI
 - **Pemantauan Prestasi**: Pengenalpastian dan penyelesaian isu secara proaktif
 
-#### 📊 Kecerdasan Saluran Data
+#### 📊 Kecerdasan Jalur Data
 
 Bina aliran kerja pemprosesan data yang lebih pintar:
 
-- **Proses ETL Adaptif**: Transformasi data yang mengoptimumkan diri
+- **Proses ETL Adaptif**: Transformasi data yang mengoptimum sendiri
 - **Pengesanan Anomali**: Pemantauan kualiti data masa nyata
-- **Penghalaan Pintar**: Pengurusan aliran data yang bijak
+- **Penghalaan Pintar**: Pengurusan aliran data pintar
 
 #### 🎧 Peningkatan Pengalaman Pelanggan
 
 Cipta interaksi pelanggan yang luar biasa:
 
-- **Sokongan Berasaskan Konteks**: Ejen AI dengan akses kepada sejarah pelanggan
-- **Penyelesaian Isu Proaktif**: Perkhidmatan pelanggan ramalan
-- **Integrasi Pelbagai Saluran**: Pengalaman AI bersatu merentas platform
+- **Sokongan Sadar Konteks**: Ejen AI dengan akses ke sejarah pelanggan
+- **Penyelesaian Isu Proaktif**: Perkhidmatan pelanggan prediktif
+- **Integrasi Multi-Saluran**: Pengalaman AI bersatu merentas platform
 
 ## 🛠️ Prasyarat & Persediaan
 
@@ -162,66 +153,75 @@ Cipta interaksi pelanggan yang luar biasa:
 | **Visual Studio Code** | Versi stabil terkini | Diperlukan untuk AITK |
 | **Node.js** | v18.0+ dan npm | Untuk pembangunan pelayan MCP |
 | **Python** | 3.10+ | Pilihan untuk pelayan MCP Python |
-| **Memori** | Minimum 8GB RAM | 16GB disyorkan untuk model tempatan |
+| **Memori** | Minimum 8GB RAM | 16GB disarankan untuk model tempatan |
 
 ### 🔧 Persekitaran Pembangunan
 
-#### Sambungan VS Code yang Disyorkan
+#### Sambungan VS Code Disyorkan
 
 - **AI Toolkit** (ms-windows-ai-studio.windows-ai-studio)
 - **Python** (ms-python.python)
 - **Python Debugger** (ms-python.debugpy)
-- **GitHub Copilot** (GitHub.copilot) - Pilihan tetapi berguna
+- **GitHub Copilot** (GitHub.copilot) - Pilihan tapi membantu
 
 #### Alat Pilihan
 
 - **uv**: Pengurus pakej Python moden
-- **MCP Inspector**: Alat penyahpepijatan visual untuk pelayan MCP
+- **MCP Inspector**: Alat debugging visual untuk pelayan MCP
 - **Playwright**: Untuk contoh automasi web
 
 ## 🎖️ Hasil Pembelajaran & Laluan Pensijilan
 
 ### 🏆 Senarai Semak Penguasaan Kemahiran
 
-Dengan melengkapkan bengkel ini, anda akan mencapai penguasaan dalam:
+Dengan menamatkan bengkel ini, anda akan mencapai penguasaan dalam:
 
-#### 🎯 Kecekapan Teras
+#### 🎯 Kompetensi Teras
 
-- [ ] **Penguasaan Protokol MCP**: Pemahaman mendalam tentang seni bina dan corak pelaksanaan
+- [ ] **Penguasaan Protokol MCP**: Kefahaman mendalam tentang senibina dan corak pelaksanaan
 - [ ] **Kemahiran AITK**: Penggunaan tahap pakar AI Toolkit untuk pembangunan pantas
-- [ ] **Pembangunan Pelayan Tersuai**: Bina, sebarkan, dan selenggara pelayan MCP produksi
-- [ ] **Integrasi Alat yang Cemerlang**: Sambungkan AI dengan aliran kerja pembangunan sedia ada dengan lancar
-- [ ] **Aplikasi Penyelesaian Masalah**: Terapkan kemahiran yang dipelajari untuk cabaran perniagaan sebenar
+- [ ] **Pembangunan Pelayan Tersuai**: Membangun, melaksanakan, dan menyelenggara pelayan MCP produksi
+- [ ] **Kecemerlangan Integrasi Alat**: Sambungkan AI secara lancar dengan aliran kerja pembangunan sedia ada
+- [ ] **Aplikasi Penyelesaian Masalah**: Terap kemahiran yang dipelajari kepada cabaran perniagaan sebenar
 
 #### 🔧 Kemahiran Teknikal
 
 - [ ] Sediakan dan konfigurasikan AI Toolkit dalam VS Code
 - [ ] Reka bentuk dan laksanakan pelayan MCP tersuai
-- [ ] Integrasikan Model GitHub dengan seni bina MCP
+- [ ] Integrasikan Model GitHub dengan senibina MCP
 - [ ] Bina aliran kerja ujian automatik dengan Playwright
-- [ ] Sebarkan ejen AI untuk kegunaan produksi
-- [ ] Nyahpepijat dan optimalkan prestasi pelayan MCP
+- [ ] Laksanakan ejen AI untuk penggunaan produksi
+- [ ] Debug dan optimakan prestasi pelayan MCP
 
 #### 🚀 Keupayaan Lanjutan
 
-- [ ] Reka bentuk integrasi AI skala perusahaan
-- [ ] Laksanakan amalan terbaik keselamatan untuk aplikasi AI
-- [ ] Reka bentuk seni bina pelayan MCP yang boleh diskalakan
-- [ ] Cipta rantai alat tersuai untuk domain tertentu
+- [ ] Reka senibina integrasi AI berskala perusahaan
+- [ ] Laksanakan amalan keselamatan terbaik untuk aplikasi AI
+- [ ] Reka senibina pelayan MCP yang boleh diskalakan
+- [ ] Cipta rantaian alat tersuai untuk domain khusus
 - [ ] Bimbing orang lain dalam pembangunan asli AI
 
 ## 📖 Sumber Tambahan
 
-- [Spesifikasi MCP](https://modelcontextprotocol.io/docs)
+- [Spesifikasi MCP (2025-11-25)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
 - [Repositori GitHub AI Toolkit](https://github.com/microsoft/vscode-ai-toolkit)
 - [Koleksi Pelayan MCP Contoh](https://github.com/modelcontextprotocol/servers)
 - [Panduan Amalan Terbaik](https://modelcontextprotocol.io/docs/best-practices)
+- [OWASP MCP Top 10](https://microsoft.github.io/mcp-azure-security-guide/mcp/) - Amalan keselamatan terbaik
 
 ---
 
-**🚀 Bersedia untuk merevolusikan aliran kerja pembangunan AI anda?**
+**🚀 Sedia untuk merevolusikan aliran kerja pembangunan AI anda?**
 
 Mari bina masa depan aplikasi pintar bersama MCP dan AI Toolkit!
 
+## Apa Seterusnya
+
+Teruskan ke: [Modul 11: Makmal Praktikal Pelayan MCP](../11-MCPServerHandsOnLabs/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk memastikan ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat penting, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh penterjemah manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

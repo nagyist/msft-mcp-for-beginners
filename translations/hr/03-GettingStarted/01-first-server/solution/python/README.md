@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d26f746e21775c30b4d7ed97962b24df",
-  "translation_date": "2025-08-19T17:55:03+00:00",
-  "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
-  "language_code": "hr"
-}
--->
 # Pokretanje ovog primjera
 
 Preporučuje se instalirati `uv`, ali nije obavezno, pogledajte [upute](https://docs.astral.sh/uv/#highlights)
@@ -37,15 +28,15 @@ mcp run server.py
 
 ## -4- Testirajte primjer
 
-Dok je poslužitelj pokrenut u jednom terminalu, otvorite drugi terminal i pokrenite sljedeću naredbu:
+Dok je server pokrenut u jednom terminalu, otvorite drugi terminal i pokrenite sljedeću naredbu:
 
 ```bash
 mcp dev server.py
 ```
 
-Ovo bi trebalo pokrenuti web poslužitelj s vizualnim sučeljem koje vam omogućuje testiranje primjera.
+Ovo bi trebalo pokrenuti web server s vizualnim sučeljem koje vam omogućuje testiranje primjera.
 
-Kada se poslužitelj poveže:
+Kada se server poveže:
 
 - pokušajte popisati alate i pokrenuti `add`, s argumentima 2 i 4, trebali biste vidjeti rezultat 6.
 
@@ -53,15 +44,15 @@ Kada se poslužitelj poveže:
 
 ### Testiranje u CLI načinu
 
-Inspektor koji ste pokrenuli zapravo je Node.js aplikacija, a `mcp dev` je omot oko nje.
+Inspektor koji ste pokrenuli zapravo je Node.js aplikacija, a `mcp dev` je omotač oko nje.
 
-Možete ga pokrenuti izravno u CLI načinu pokretanjem sljedeće naredbe:
+Možete ga pokrenuti direktno u CLI načinu pokretanjem sljedeće naredbe:
 
 ```bash
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 ```
 
-Ovo će prikazati popis svih alata dostupnih na poslužitelju. Trebali biste vidjeti sljedeći izlaz:
+Ovo će prikazati sve dostupne alate na serveru. Trebali biste vidjeti sljedeći izlaz:
 
 ```text
 {
@@ -112,9 +103,11 @@ Trebali biste vidjeti sljedeći izlaz:
 }
 ```
 
-> [!TIP]  
-> Obično je puno brže pokrenuti inspektor u CLI načinu nego u pregledniku.  
-> Pročitajte više o inspektoru [ovdje](https://github.com/modelcontextprotocol/inspector).
+> [!TIP]
+> Obično je puno brže pokrenuti inspektor u CLI načinu nego u pregledniku.
+> Više o inspektoru pročitajte [ovdje](https://github.com/modelcontextprotocol/inspector).
+
+---
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge za prijevod [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati mjerodavnim izvorom. Za ključne informacije preporučuje se profesionalni prijevod od strane stručnjaka. Ne preuzimamo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni prijevod od strane čovjeka. Ne preuzimamo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

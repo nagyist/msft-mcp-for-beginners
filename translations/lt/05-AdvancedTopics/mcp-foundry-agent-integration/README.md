@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "036e01c8c6ecc8610809d52e4a738641",
-  "translation_date": "2025-08-26T18:55:31+00:00",
-  "source_file": "05-AdvancedTopics/mcp-foundry-agent-integration/README.md",
-  "language_code": "lt"
-}
--->
 # Modelio konteksto protokolo (MCP) integracija su Azure AI Foundry
 
 Šiame vadove parodoma, kaip integruoti Modelio konteksto protokolo (MCP) serverius su Azure AI Foundry agentais, suteikiant galingą įrankių koordinavimą ir įmonės AI galimybes.
@@ -60,7 +51,7 @@ Pasirinkite pageidaujamą kūrimo aplinką:
 
 ## Python įgyvendinimas
 
-***Pastaba*** Galite paleisti šį [notebook](./mcp_support_python.ipynb)
+***Pastaba*** Galite paleisti šį [notebook](mcp_support_python.ipynb)
 
 ### 1. Įdiekite reikalingus paketus
 
@@ -189,7 +180,7 @@ with project_client:
 
 ## .NET įgyvendinimas
 
-***Pastaba*** Galite paleisti šį [notebook](./mcp_support_dotnet.ipynb)
+***Pastaba*** Galite paleisti šį [notebook](mcp_support_dotnet.ipynb)
 
 ### 1. Įdiekite reikalingus paketus
 

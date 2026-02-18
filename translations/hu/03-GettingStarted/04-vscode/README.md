@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d940b5e0af75e3a3a4d1c3179120d1d9",
-  "translation_date": "2025-08-26T18:12:06+00:00",
-  "source_file": "03-GettingStarted/04-vscode/README.md",
-  "language_code": "hu"
-}
--->
 # GitHub Copilot Agent mód használata egy szerver fogyasztására
 
 A Visual Studio Code és a GitHub Copilot kliensként működhet, és képes egy MCP szervert fogyasztani. Miért lenne ez hasznos, kérdezhetnéd? Nos, ez azt jelenti, hogy az MCP szerver bármilyen funkciója mostantól elérhető az IDE-n belül. Képzeld el például, hogy hozzáadod a GitHub MCP szerverét, így természetes nyelvű utasításokkal vezérelheted a GitHubot ahelyett, hogy konkrét parancsokat írnál a terminálba. Vagy gondolj bármire, ami javíthatja a fejlesztői élményt, mindezt természetes nyelvvel irányítva. Most már látod, miért előnyös ez, igaz?
@@ -38,9 +29,9 @@ Kétféleképpen vezérelheted az MCP szervert:
 
 ### Képernyőképek
 
-![Irányított MCP szerver konfiguráció a Visual Studio Code-ban](../../../../translated_images/chat-mode-agent.729a22473f822216dd1e723aaee1f7d4a2ede571ee0948037a2d9357a63b9d0b.hu.png)
-![Eszközválasztás ügynök munkamenetenként](../../../../translated_images/agent-mode-select-tools.522c7ba5df0848f8f0d1e439c2e96159431bc620cb39ccf3f5dc611412fd0006.hu.png)
-![Hibák egyszerű hibakeresése MCP fejlesztés közben](../../../../translated_images/mcp-list-servers.fce89eefe3f30032bed8952e110ab9d82fadf043fcfa071f7d40cf93fb1ea9e9.hu.png)
+![Irányított MCP szerver konfiguráció a Visual Studio Code-ban](../../../../translated_images/hu/chat-mode-agent.729a22473f822216.webp)
+![Eszközválasztás ügynök munkamenetenként](../../../../translated_images/hu/agent-mode-select-tools.522c7ba5df0848f8.webp)
+![Hibák egyszerű hibakeresése MCP fejlesztés közben](../../../../translated_images/hu/mcp-list-servers.fce89eefe3f30032.webp)
 
 A következő szakaszokban részletesebben beszélünk arról, hogyan használjuk a vizuális felületet.
 
@@ -103,15 +94,15 @@ Most, hogy hozzáadtál egy bejegyzést, indítsd el a szervert:
 
 1. Keresd meg a bejegyzést az *mcp.json* fájlban, és győződj meg róla, hogy megtalálod a "lejátszás" ikont:
 
-  ![Szerver indítása a Visual Studio Code-ban](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.hu.png)  
+  ![Szerver indítása a Visual Studio Code-ban](../../../../translated_images/hu/vscode-start-server.8e3c986612e3555d.webp)  
 
 1. Kattints a "lejátszás" ikonra. Látnod kell, hogy a GitHub Copilot Chat eszközikonja növeli az elérhető eszközök számát. Ha rákattintasz az eszközikonra, látni fogod a regisztrált eszközök listáját. Kipipálhatod vagy kiveheted az egyes eszközöket attól függően, hogy szeretnéd-e, hogy a GitHub Copilot használja őket kontextusként:
 
-  ![Szerver indítása a Visual Studio Code-ban](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.hu.png)
+  ![Szerver indítása a Visual Studio Code-ban](../../../../translated_images/hu/vscode-tool.0b3bbea2fb7d8c26.webp)
 
 1. Egy eszköz futtatásához írj be egy olyan promptot, amelyről tudod, hogy illeszkedik az egyik eszköz leírására, például egy ilyen promptot: "add 22 to 1":
 
-  ![Eszköz futtatása a GitHub Copilotból](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.hu.png)
+  ![Eszköz futtatása a GitHub Copilotból](../../../../translated_images/hu/vscode-agent.d5a0e0b897331060.webp)
 
   Látnod kell egy választ, amely 23-at mond.
 

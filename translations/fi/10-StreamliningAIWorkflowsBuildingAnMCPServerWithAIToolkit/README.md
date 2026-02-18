@@ -1,168 +1,159 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1b000fd6e1b04c047578bfc5d07d54eb",
-  "translation_date": "2025-08-18T16:20:55+00:00",
-  "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md",
-  "language_code": "fi"
-}
--->
-# AI-työnkulkujen tehostaminen: MCP-palvelimen rakentaminen AI Toolkitilla
+# Sujuvoita tekoälytyönkulkuja: Rakennetaan MCP-palvelin AI Toolkitilla
 
-[![MCP Versio](https://img.shields.io/badge/MCP-1.9.3-blue.svg)](https://modelcontextprotocol.io/)
+[![MCP Spec](https://img.shields.io/badge/MCP%20Spec-2025--11--25-blue.svg)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
 [![Python](https://img.shields.io/badge/Python-3.10+-green.svg)](https://python.org)
 [![VS Code](https://img.shields.io/badge/VS%20Code-Latest-orange.svg)](https://code.visualstudio.com/)
 
-![logo](../../../translated_images/logo.ec93918ec338dadde1715c8aaf118079e0ed0502e9efdfcc84d6a0f4a9a70ae8.fi.png)
+![logo](../../../translated_images/fi/logo.ec93918ec338dadd.webp)
 
 ## 🎯 Yleiskatsaus
 
-[![Rakenna AI-agentteja VS Codessa: 4 käytännön harjoitusta MCP:llä ja AI Toolkitilla](../../../translated_images/11.0f6db6a0fb6068856d0468590a120ffe35dbccc49b93dc88b2003f306c81493a.fi.png)](https://youtu.be/r34Csn3rkeQ)
+[![Build AI Agents in VS Code: 4 Hands-On Labs with MCP and AI Toolkit](../../../translated_images/fi/11.0f6db6a0fb606885.webp)](https://youtu.be/r34Csn3rkeQ)
 
 _(Klikkaa yllä olevaa kuvaa nähdäksesi tämän oppitunnin videon)_
 
-Tervetuloa **Model Context Protocol (MCP) -työpajaan**! Tämä kattava käytännön työpaja yhdistää kaksi huipputeknologiaa mullistaakseen tekoälysovellusten kehittämisen:
+Tervetuloa **Model Context Protocol (MCP) -työpajaan**! Tämä kattava käytännön työpaja yhdistää kaksi huipputeknologiaa mullistaakseen tekoälysovelluskehityksen:
 
-- **🔗 Model Context Protocol (MCP)**: Avoin standardi tekoälytyökalujen saumattomaan integrointiin
-- **🛠️ AI Toolkit for Visual Studio Code (AITK)**: Microsoftin tehokas tekoälykehityksen laajennus
+- **🔗 Model Context Protocol (MCP)**: Avoin standardi saumattomaan tekoälytyökalujen integraatioon
+- **🛠️ AI Toolkit for Visual Studio Code (AITK)**: Microsoftin tehokas tekoälykehityslaajennus
 
 ### 🎓 Mitä opit
 
-Työpajan lopussa hallitset älykkäiden sovellusten rakentamisen, jotka yhdistävät tekoälymallit tosielämän työkaluihin ja palveluihin. Automatisoidusta testauksesta räätälöityihin API-integraatioihin, saat käytännön taitoja ratkaista monimutkaisia liiketoimintaongelmia.
+Työpajan päätteeksi hallitset älykkäiden sovellusten rakentamisen, jotka yhdistävät tekoälymallit todellisen maailman työkaluihin ja palveluihin. Automaattisesta testauksesta räätälöityihin API-integraatioihin saat käytännön taitoja monimutkaisten liiketoiminnan haasteiden ratkaisuun.
 
-## 🏗️ Teknologiakokonaisuus
+## 🏗️ Teknologiapino
 
 ### 🔌 Model Context Protocol (MCP)
 
-MCP on tekoälyn **"USB-C"** - universaali standardi, joka yhdistää tekoälymallit ulkoisiin työkaluihin ja tietolähteisiin.
+MCP on **"USB-C tekoälylle"** – yleinen standardi, joka yhdistää tekoälymallit ulkoisiin työkaluihin ja tietolähteisiin.
 
 **✨ Keskeiset ominaisuudet:**
 
-- 🔄 **Standardoitu integrointi**: Universaali rajapinta tekoälytyökalujen yhdistämiseen
-- 🏛️ **Joustava arkkitehtuuri**: Paikalliset ja etäpalvelimet stdio/SSE-siirron kautta
-- 🧰 **Rikas ekosysteemi**: Työkalut, kehotteet ja resurssit yhdessä protokollassa
-- 🔒 **Yrityskäyttöön valmis**: Sisäänrakennettu turvallisuus ja luotettavuus
+- 🔄 **Standardoitu integraatio**: Yleinen rajapinta tekoälytyökaluyhteyksiin
+- 🏛️ **Joustava arkkitehtuuri**: Paikalliset ja etäpalvelimet stdio/SSE-siirrolla
+- 🧰 **Rikas ekosysteemi**: Työkaluja, kehotteita ja resursseja yhdessä protokollassa
+- 🔒 **Yritystason valmius**: Sisäänrakennettu turvallisuus ja luotettavuus
 
 **🎯 Miksi MCP on tärkeä:**
-Aivan kuten USB-C poisti kaapelikaaoksen, MCP poistaa tekoälyintegraatioiden monimutkaisuuden. Yksi protokolla, rajattomat mahdollisuudet.
+Aivan kuten USB-C poisti johtosekoilun, MCP poistaa tekoälyn integraatioiden monimutkaisuuden. Yksi protokolla, rajattomat mahdollisuudet.
 
 ### 🤖 AI Toolkit for Visual Studio Code (AITK)
 
-Microsoftin lippulaivalaajennus, joka muuttaa VS Coden tekoälykehityksen voimapesäksi.
+Microsoftin lippulaiva tekoälykehityslaajennus, joka muuttaa VS Coden tehokkaaksi tekoälyalustaksi.
 
-**🚀 Keskeiset kyvyt:**
+**🚀 Keskeiset kyvykkyydet:**
 
-- 📦 **Mallikatalogi**: Pääsy malleihin Azure AI:sta, GitHubista, Hugging Facesta, Ollamasta
+- 📦 **Malliluettelo**: Pääsy malleihin Azure AI:sta, GitHubista, Hugging Facesta, Ollamasta
 - ⚡ **Paikallinen päättely**: ONNX-optimoitu CPU/GPU/NPU-suoritus
-- 🏗️ **Agent Builder**: Visuaalinen tekoälyagenttien kehitys MCP-integraatiolla
-- 🎭 **Monimodaalinen tuki**: Teksti-, kuva- ja rakenteellinen ulostulo
+- 🏗️ **Agenttirakentaja**: Visuaalinen tekoälyagenttien kehitys MCP-integraatiolla
+- 🎭 **Monimuotoinen**: Teksti-, näkö- ja rakenteellisen tulosteen tuki
 
-**💡 Kehityksen hyödyt:**
+**💡 Kehitysetuja:**
 
-- Mallien käyttöönotto ilman konfigurointia
+- Nollakonfiguraatiolla käyttöön otettavat mallit
 - Visuaalinen kehotteiden suunnittelu
 - Reaaliaikainen testausympäristö
-- Saumaton MCP-palvelimen integrointi
+- Saumaton MCP-palvelinintegraatio
 
-## 📚 Oppimispolku
+## 📚 Oppimismatka
 
 ### [🚀 Moduuli 1: AI Toolkitin perusteet](./lab1/README.md)
 
 **Kesto**: 15 minuuttia
 
 - 🛠️ Asenna ja konfiguroi AI Toolkit VS Codeen
-- 🗂️ Tutustu mallikatalogiin (yli 100 mallia GitHubista, ONNX:stä, OpenAI:sta, Anthropicsista, Googlesta)
-- 🎮 Hallitse interaktiivinen testausympäristö reaaliaikaiseen mallien testaukseen
+- 🗂️ Tutustu malliluetteloon (yli 100 mallia GitHubista, ONNX:stä, OpenAI:sta, Anthropista, Googlelta)
+- 🎮 Hallitse interaktiivinen testausympäristö reaaliaikaista mallin testausta varten
 - 🤖 Rakenna ensimmäinen tekoälyagenttisi Agent Builderilla
-- 📊 Arvioi mallien suorituskykyä sisäänrakennetuilla mittareilla (F1, relevanssi, samankaltaisuus, koherenssi)
-- ⚡ Opi eräkäsittelyn ja monimodaalisen tuen ominaisuudet
+- 📊 Arvioi mallin suorituskykyä sisäänrakennetuilla mittareilla (F1, relevanssi, samankaltaisuus, johdonmukaisuus)
+- ⚡ Opi eräprosessoinnista ja monimuotoisen tuen ominaisuuksista
 
-**🎯 Oppimistulos**: Luo toimiva tekoälyagentti ja ymmärrä kattavasti AITK:n ominaisuudet
+**🎯 Oppimistulos**: Luo toimiva tekoälyagentti, jolla on laaja ymmärrys AITK:n kyvykkyyksistä
 
 ### [🌐 Moduuli 2: MCP ja AI Toolkitin perusteet](./lab2/README.md)
 
 **Kesto**: 20 minuuttia
 
-- 🧠 Hallitse Model Context Protocol (MCP) -arkkitehtuuri ja -konseptit
+- 🧠 Hallitse Model Context Protocolin (MCP) arkkitehtuuri ja käsitteet
 - 🌐 Tutustu Microsoftin MCP-palvelinekosysteemiin
-- 🤖 Rakenna selaimen automaatioagentti Playwright MCP -palvelimella
+- 🤖 Rakenna selaimen automatisointiantti Playwright MCP -palvelimella
 - 🔧 Integroi MCP-palvelimet AI Toolkit Agent Builderiin
 - 📊 Konfiguroi ja testaa MCP-työkaluja agenteissasi
-- 🚀 Vie ja ota käyttöön MCP-pohjaisia agentteja tuotantokäyttöön
+- 🚀 Vie tuotantoon MCP-voimalla toimivat agentit
 
-**🎯 Oppimistulos**: Ota käyttöön tekoälyagentti, joka on tehostettu ulkoisilla työkaluilla MCP:n avulla
+**🎯 Oppimistulos**: Ota käyttöön tekoälyagentti, joka saa lisätehoa ulkoisista työkaluista MCP:n kautta
 
-### [🔧 Moduuli 3: Kehittynyt MCP-kehitys AI Toolkitilla](./lab3/README.md)
+### [🔧 Moduuli 3: Edistynyt MCP-kehitys AI Toolkitilla](./lab3/README.md)
 
 **Kesto**: 20 minuuttia
 
-- 💻 Luo räätälöityjä MCP-palvelimia AI Toolkitilla
-- 🐍 Konfiguroi ja käytä uusinta MCP Python SDK:ta (v1.9.3)
-- 🔍 Ota käyttöön ja hyödynnä MCP Inspector -työkalua virheenkorjaukseen
-- 🛠️ Rakenna Sää-MCP-palvelin ammattimaisilla virheenkorjaustyönkuluilla
-- 🧪 Korjaa MCP-palvelimia sekä Agent Builder- että Inspector-ympäristöissä
+- 💻 Luo omia MCP-palvelimia AI Toolkitilla
+- 🐍 Asenna ja käytä uusinta MCP Python SDK:ta (v1.9.3)
+- 🔍 Ota käyttöön MCP Inspector virheiden selvitykseen
+- 🛠️ Rakenna Sää MCP -palvelin ammattimaisella debug-käsikirjoituksella
+- 🧪 Debuggaa MCP-palvelimia sekä Agent Builderissa että Inspector-ympäristössä
 
-**🎯 Oppimistulos**: Kehitä ja korjaa räätälöityjä MCP-palvelimia modernilla työkalustolla
+**🎯 Oppimistulos**: Kehitä ja debuggaa räätälöityjä MCP-palvelimia nykyaikaisilla työkaluilla
 
 ### [🐙 Moduuli 4: Käytännön MCP-kehitys - Räätälöity GitHub Clone -palvelin](./lab4/README.md)
 
 **Kesto**: 30 minuuttia
 
-- 🏗️ Rakenna todellisen maailman GitHub Clone MCP -palvelin kehitystyönkulkuihin
-- 🔄 Toteuta älykäs repositorion kloonaus validoinnilla ja virheenkäsittelyllä
-- 📁 Luo älykäs hakemistohallinta ja VS Code -integraatio
-- 🤖 Käytä GitHub Copilot Agent Modea räätälöityjen MCP-työkalujen kanssa
-- 🛡️ Sovella tuotantovalmiita luotettavuus- ja monialustayhteensopivuusratkaisuja
+- 🏗️ Rakenna todellisen maailman GitHub Clone MCP -palvelin kehitysprosesseihin
+- 🔄 Toteuta älykäs repositorion kloonaus validoinnilla ja virheiden käsittelyllä
+- 📁 Luo älykäs hakemistojen hallinta ja VS Code -integraatio
+- 🤖 Käytä GitHub Copilot Agent -tilaa räätälöidyillä MCP-työkaluilla
+- 🛡️ Hyödynnä tuotantovalmiudet luotettavuudessa ja monialustaisuudessa
 
-**🎯 Oppimistulos**: Ota käyttöön tuotantovalmis MCP-palvelin, joka tehostaa kehitystyönkulkuja
+**🎯 Oppimistulos**: Julkaise tuotantovalmis MCP-palvelin, joka sujuvoittaa todellisia kehitystyönkulkuja
 
-## 💡 Käytännön sovellukset ja vaikutus
+## 💡 Todelliset käyttötapaukset ja vaikutus
 
-### 🏢 Yrityskäyttötapaukset
+### 🏢 Yrityssovellukset
 
-#### 🔄 DevOps-automaatio
+#### 🔄 DevOpsin automaatio
 
-Muunna kehitystyönkulut älykkäällä automaatiolla:
+Muuta kehitystyönkulku älykkäällä automaatiolla:
 
-- **Älykäs repositorion hallinta**: Tekoälypohjainen koodin tarkistus ja yhdistämispäätökset
-- **Älykäs CI/CD**: Automatisoitu putkiston optimointi koodimuutosten perusteella
-- **Ongelman priorisointi**: Automaattinen bugien luokittelu ja jakaminen
+- **Älykäs repositorionhallinta**: Tekoälypohjainen koodin tarkistus ja yhdistämispäätökset
+- **Älykäs CI/CD**: Automaattinen putkistojen optimointi koodimuutosten perusteella
+- **Ongelma triage**: Automaattinen virheiden luokittelu ja tehtävien jako
 
 #### 🧪 Laadunvarmistuksen vallankumous
 
-Nosta testaus uudelle tasolle tekoälypohjaisella automaatiolla:
+Nosta testaus uudelle tasolle tekoälyllä:
 
-- **Älykäs testigenerointi**: Luo kattavat testisarjat automaattisesti
-- **Visuaalinen regressiotestaus**: Tekoälypohjainen käyttöliittymän muutosten tunnistus
-- **Suorituskyvyn seuranta**: Ennakoiva ongelmien tunnistus ja ratkaisu
+- **Älykäs testien generointi**: Laajat testikattavuudet automaattisesti
+- **Visuaalinen regressiotestaus**: AI-pohjainen käyttöliittymän muutosten tunnistus
+- **Suorituskyvyn seuranta**: Ennakoiva ongelmien tunnistus ja korjaus
 
-#### 📊 Dataputkien älykkyys
+#### 📊 Tietoputkien älykkyys
 
-Rakenna älykkäämpiä datankäsittelytyönkulkuja:
+Rakenna fiksumpia tietoputkia:
 
 - **Mukautuvat ETL-prosessit**: Itseoptimoituvat datamuunnokset
-- **Poikkeamien tunnistus**: Reaaliaikainen datan laadun seuranta
-- **Älykäs reititys**: Älykäs datavirtojen hallinta
+- **Poikkeavuuksien havaitseminen**: Reaaliaikainen datan laadun valvonta
+- **Älykäs reititys**: Fiksu datavirran hallinta
 
 #### 🎧 Asiakaskokemuksen parantaminen
 
-Luo poikkeuksellisia asiakasvuorovaikutuksia:
+Luo poikkeuksellisia asiakaskohtaamisia:
 
-- **Kontekstia ymmärtävä tuki**: Tekoälyagentit, joilla on pääsy asiakashistoriaan
+- **Kontekstintietoinen tuki**: Tekoälyagentit, joilla pääsy asiakashistoriaan
 - **Ennakoiva ongelmanratkaisu**: Ennustava asiakaspalvelu
-- **Monikanavaintegraatio**: Yhtenäinen tekoälykokemus eri alustoilla
+- **Monikanavainen integraatio**: Yhtenäinen tekoälykokemus eri alustoilla
 
-## 🛠️ Esivaatimukset ja asennus
+## 🛠️ Ennen aloitusta ja asennus
 
 ### 💻 Järjestelmävaatimukset
 
-| Komponentti | Vaatimus | Huomautukset |
-|-------------|----------|--------------|
-| **Käyttöjärjestelmä** | Windows 10+, macOS 10.15+, Linux | Mikä tahansa moderni käyttöjärjestelmä |
-| **Visual Studio Code** | Uusin vakaa versio | Vaaditaan AITK:lle |
-| **Node.js** | v18.0+ ja npm | MCP-palvelimen kehitykseen |
-| **Python** | 3.10+ | Valinnainen Python MCP -palvelimille |
-| **Muisti** | Vähintään 8GB RAM | 16GB suositeltu paikallisille malleille |
+| Komponentti             | Vaatimus           | Huomautuksia            |
+|------------------------|--------------------|------------------------|
+| **Käyttöjärjestelmä**     | Windows 10+, macOS 10.15+, Linux | Mikä tahansa nykyaikainen OS |
+| **Visual Studio Code**   | Uusin vakaa versio | Tarvitaan AITK:lle      |
+| **Node.js**             | v18.0+ ja npm      | MCP-palvelin kehitykseen |
+| **Python**              | 3.10+              | Valinnainen Python MCP -palvelimille |
+| **Muisti**              | Vähintään 8GB RAM  | 16GB suositeltu paikallisille malleille |
 
 ### 🔧 Kehitysympäristö
 
@@ -171,57 +162,66 @@ Luo poikkeuksellisia asiakasvuorovaikutuksia:
 - **AI Toolkit** (ms-windows-ai-studio.windows-ai-studio)
 - **Python** (ms-python.python)
 - **Python Debugger** (ms-python.debugpy)
-- **GitHub Copilot** (GitHub.copilot) - Valinnainen mutta hyödyllinen
+- **GitHub Copilot** (GitHub.copilot) – valinnainen, mutta hyödyllinen
 
 #### Valinnaiset työkalut
 
-- **uv**: Moderni Python-pakettien hallinta
-- **MCP Inspector**: Visuaalinen virheenkorjaustyökalu MCP-palvelimille
-- **Playwright**: Verkkoselaimen automaation esimerkkeihin
+- **uv**: Nykyajan Python-pakettien hallinta
+- **MCP Inspector**: Visualisointityökalu MCP-palvelimien debuggaamiseen
+- **Playwright**: Web-automaatioesimerkeille
 
 ## 🎖️ Oppimistulokset ja sertifiointipolku
 
 ### 🏆 Taitojen hallinnan tarkistuslista
 
-Työpajan suorittamalla saavutat seuraavat taidot:
+Tämän työpajan suorittamalla saavutat seuraavat taidot:
 
-#### 🎯 Ydinosaamiset
+#### 🎯 Keskeiset kompetenssit
 
-- [ ] **MCP-protokollan hallinta**: Syvällinen ymmärrys arkkitehtuurista ja toteutusmalleista
-- [ ] **AITK-osaaminen**: Asiantuntijatason käyttö AI Toolkitilla nopeaan kehitykseen
-- [ ] **Räätälöity palvelinkehitys**: Rakenna, ota käyttöön ja ylläpidä tuotantovalmiita MCP-palvelimia
-- [ ] **Työkalujen integroinnin hallinta**: Yhdistä tekoäly saumattomasti olemassa oleviin kehitystyönkulkuihin
-- [ ] **Ongelmanratkaisun soveltaminen**: Käytä opittuja taitoja todellisiin liiketoimintaongelmiin
+- [ ] **MCP-protokollan hallinta**: Syvällinen arkkitehtuurin ja toteutusmallien ymmärrys
+- [ ] **AITK-osaaminen**: Asiantuntijan tasoinen AI Toolkitin käyttö nopeaan kehitykseen
+- [ ] **Räätälöity palvelin-kehitys**: Rakennus, käyttöönotto ja ylläpito tuotannon MCP-palvelimille
+- [ ] **Työkalujen integraation huippuosaaminen**: Saumaton yhdistäminen tekoälyn ja kehitystyönkulkujen välillä
+- [ ] **Ongelmanratkaisun soveltaminen**: Opittujen taitojen käyttö todellisten liiketoimintaongelmien ratkaisuun
 
 #### 🔧 Teknisiä taitoja
 
-- [ ] Asenna ja konfiguroi AI Toolkit VS Codeen
-- [ ] Suunnittele ja toteuta räätälöityjä MCP-palvelimia
-- [ ] Integroi GitHub-mallit MCP-arkkitehtuuriin
-- [ ] Rakenna automatisoituja testausprosesseja Playwrightilla
-- [ ] Ota käyttöön tekoälyagentteja tuotantokäyttöön
-- [ ] Korjaa ja optimoi MCP-palvelinten suorituskykyä
+- [ ] AI Toolkitin asennus ja konfigurointi VS Codessa
+- [ ] Räätälöityjen MCP-palvelimien suunnittelu ja toteutus
+- [ ] GitHub-mallien integrointi MCP-arkkitehtuuriin
+- [ ] Automaattisten testausprosessien rakentaminen Playwrightilla
+- [ ] Tekoälyagenttien käyttöönotto tuotannossa
+- [ ] MCP-palvelimen suorituskyvyn debuggaus ja optimointi
 
 #### 🚀 Edistyneet kyvyt
 
 - [ ] Suunnittele yritystason tekoälyintegraatioita
-- [ ] Toteuta turvallisuuden parhaat käytännöt tekoälysovelluksille
-- [ ] Suunnittele skaalautuvia MCP-palvelinarkkitehtuureja
-- [ ] Luo räätälöityjä työkaluketjuja tiettyihin toimialoihin
-- [ ] Mentoroi muita tekoälypohjaisessa kehityksessä
+- [ ] Toteuta tekoälysovellusten turvallisuuskäytännöt
+- [ ] Suunnittele skaalautuvat MCP-palvelinarkkitehtuurit
+- [ ] Rakenna räätälöityjä työkaluketjuja erityisaloille
+- [ ] Mentoroi muita tekoälyn kehitystyössä
 
 ## 📖 Lisäresurssit
 
-- [MCP-määrittely](https://modelcontextprotocol.io/docs)
-- [AI Toolkit GitHub -repositorio](https://github.com/microsoft/vscode-ai-toolkit)
-- [Esimerkkikokoelma MCP-palvelimista](https://github.com/modelcontextprotocol/servers)
-- [Parhaiden käytäntöjen opas](https://modelcontextprotocol.io/docs/best-practices)
+- [MCP Specification (2025-11-25)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
+- [AI Toolkit GitHub -varasto](https://github.com/microsoft/vscode-ai-toolkit)
+- [Esimerkkipalvelinten kokoelma MCP](https://github.com/modelcontextprotocol/servers)
+- [Parhaat käytännöt -opas](https://modelcontextprotocol.io/docs/best-practices)
+- [OWASP MCP Top 10](https://microsoft.github.io/mcp-azure-security-guide/mcp/) – Turvallisuuden parhaat käytännöt
 
 ---
 
-**🚀 Valmis mullistamaan tekoälykehityksesi työnkulut?**
+**🚀 Valmiina mullistamaan tekoälykehitystyösi?**
 
-Rakennetaan yhdessä tekoälyn tulevaisuus MCP:n ja AI Toolkitin avulla!
+Rakennetaan yhdessä älykkäiden sovellusten tulevaisuus MCP:n ja AI Toolkitin avulla!
 
+## Mitä seuraavaksi
+
+Jatka: [Moduuli 11: MCP-palvelimen käytännön työpajat](../11-MCPServerHandsOnLabs/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset voivat sisältää virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäisellä kielellä tulisi pitää ensisijaisena lähteenä. Kriittisen tiedon osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa väärinkäsityksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
+Tämä asiakirja on käännetty tekoälypohjaisella käännöspalvelulla [Co-op Translator](https://github.com/Azure/co-op-translator). Pyrimme tarkkuuteen, mutta huomioithan, että automaattikäännökset saattavat sisältää virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäiskielellä on virallinen lähde. Tärkeiden tietojen osalta suositellaan ammattimaista ihmiskäännöstä. Emme ota vastuuta mahdollisista väärinymmärryksistä tai tulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

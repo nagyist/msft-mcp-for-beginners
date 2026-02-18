@@ -1,207 +1,223 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "057dd5cc6bea6434fdb788e6c93f3f3d",
-  "translation_date": "2025-08-18T17:51:51+00:00",
-  "source_file": "02-Security/mcp-security-best-practices-2025.md",
-  "language_code": "tr"
-}
--->
-# MCP Güvenlik En İyi Uygulamaları - Ağustos 2025 Güncellemesi
+# MCP Güvenlik En İyi Uygulamaları - Şubat 2026 Güncellemesi
 
-> **Önemli**: Bu belge, en son [MCP Specification 2025-06-18](https://spec.modelcontextprotocol.io/specification/2025-06-18/) güvenlik gereksinimlerini ve resmi [MCP Güvenlik En İyi Uygulamaları](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices) rehberini yansıtmaktadır. Her zaman en güncel rehberlik için mevcut spesifikasyona başvurun.
+> **Önemli**: Bu belge en son [MCP Spesifikasyonu 2025-11-25](https://spec.modelcontextprotocol.io/specification/2025-11-25/) güvenlik gereksinimlerini ve resmi [MCP Güvenlik En İyi Uygulamaları](https://modelcontextprotocol.io/specification/2025-11-25/basic/security_best_practices) yansıtıyor. En güncel rehberlik için her zaman mevcut spesifikasyona başvurun.
 
-## MCP Uygulamaları için Temel Güvenlik Uygulamaları
+## 🏔️ Uygulamalı Güvenlik Eğitimi
 
-Model Context Protocol, geleneksel yazılım güvenliğinin ötesine geçen benzersiz güvenlik zorlukları sunar. Bu uygulamalar, temel güvenlik gereksinimlerini ve MCP'ye özgü tehditleri ele alır; bunlar arasında prompt enjeksiyonu, araç zehirlenmesi, oturum ele geçirme, karışık vekil sorunları ve token geçişi açıkları bulunur.
+Pratik uygulama deneyimi için **[MCP Güvenlik Zirvesi Atölyesi (Sherpa)](https://azure-samples.github.io/sherpa/)** - Azure'da MCP sunucularının güvenliğini sağlamak için kapsamlı rehberli bir keşif öneriyoruz. Atölye, tüm OWASP MCP Top 10 risklerini "açık → suistimal → düzelt → doğrula" metodolojisiyle kapsar.
+
+Bu belgede yer alan tüm uygulamalar, Azure'a özgü uygulama rehberliği için **[OWASP MCP Azure Güvenlik Rehberi](https://microsoft.github.io/mcp-azure-security-guide/)** ile uyumludur.
+
+## MCP Uygulamaları İçin Temel Güvenlik Uygulamaları
+
+Model Context Protocol, geleneksel yazılım güvenliğinin ötesine geçen benzersiz güvenlik zorlukları sunar. Bu uygulamalar, temel güvenlik gereksinimleri ve MCP’ye özgü tehditler (prompt enjeksiyonu, araç zehirlenmesi, oturum kaçırma, karışık yetki sorunları ve token geçtiği açıklıkları) ele alır.
 
 ### **ZORUNLU Güvenlik Gereksinimleri**
 
 **MCP Spesifikasyonundan Kritik Gereksinimler:**
 
-> **MUST NOT**: MCP sunucuları, MCP sunucusu için açıkça verilmemiş hiçbir token'ı kabul etmemelidir.  
+### **ZORUNLU Güvenlik Gereksinimleri**
+
+**MCP Spesifikasyonundan Kritik Gereksinimler:**
+
+> **KABUL EDİLEMEZ**: MCP sunucuları, açıkça MCP sunucusu için verilmemiş herhangi bir tokenı **KABUL EDEMEZ**
 > 
-> **MUST**: Yetkilendirme uygulayan MCP sunucuları, tüm gelen istekleri doğrulamalıdır.  
+> **GEREKLİ**: Yetkilendirme uygulayan MCP sunucuları TÜM gelen istekleri doğrulamalıdır
 >  
-> **MUST NOT**: MCP sunucuları, kimlik doğrulama için oturumları kullanmamalıdır.  
+> **KABUL EDİLEMEZ**: MCP sunucuları kimlik doğrulaması için oturum kullanamaz
 >
-> **MUST**: Statik istemci kimlikleri kullanan MCP proxy sunucuları, her dinamik olarak kaydedilen istemci için kullanıcı onayı almalıdır.
+> **GEREKLİ**: Statik istemci kimlikleri kullanan MCP proxy sunucuları, her dinamik olarak kayıtlı istemci için kullanıcı onayı almalıdır
 
 ---
 
 ## 1. **Token Güvenliği ve Kimlik Doğrulama**
 
 **Kimlik Doğrulama ve Yetkilendirme Kontrolleri:**
-   - **Titiz Yetkilendirme İncelemesi**: MCP sunucusu yetkilendirme mantığının kapsamlı denetimlerini yaparak yalnızca amaçlanan kullanıcıların ve istemcilerin kaynaklara erişmesini sağlayın.
-   - **Harici Kimlik Sağlayıcı Entegrasyonu**: Özel kimlik doğrulama uygulamak yerine Microsoft Entra ID gibi tanınmış kimlik sağlayıcıları kullanın.
-   - **Token Hedef Doğrulaması**: Token'ların MCP sunucunuz için açıkça verildiğini her zaman doğrulayın - yukarı akış token'larını asla kabul etmeyin.
-   - **Doğru Token Yaşam Döngüsü**: Güvenli token döndürme, son kullanma politikaları uygulayın ve token tekrar saldırılarını önleyin.
+   - **Titiz Yetkilendirme İncelemesi**: MCP sunucu yetkilendirme mantığını kapsamlı denetimlerle gözden geçirerek yalnızca hedeflenen kullanıcılar ve istemcilerin kaynaklara erişebilmesini sağlamak
+   - **Harici Kimlik Sağlayıcı Entegrasyonu**: Özel kimlik doğrulama yerine Microsoft Entra ID gibi kabul görmüş kimlik sağlayıcıları kullanmak
+   - **Token Hedef Kitle Doğrulaması**: Tokenların açıkça MCP sunucunuz için verildiğini her zaman doğrulayın - asla yukarı akış tokenlarını kabul etmeyin
+   - **Uygun Token Yaşam Döngüsü**: Güvenli token rotasyonu, son kullanma politikaları uygulayın ve token tekrar saldırılarını önleyin
 
-**Korunan Token Depolama:**
-   - Tüm gizli bilgiler için Azure Key Vault veya benzeri güvenli kimlik bilgisi depolarını kullanın.
-   - Token'ları hem bekleme hem de aktarım sırasında şifreleyin.
-   - Yetkisiz erişim için düzenli kimlik bilgisi döndürme ve izleme uygulayın.
+**Korumalı Token Depolama:**
+   - Tüm gizli bilgiler için Azure Key Vault veya benzeri güvenli kimlik bilgisi depolama kullanın
+   - Tokenları hem beklemede hem de aktarımda şifreleyin
+   - Düzenli kimlik bilgisi rotasyonu ve yetkisiz erişim izleme uygulayın
 
-## 2. **Oturum Yönetimi ve Taşıma Güvenliği**
+## 2. **Oturum Yönetimi ve Aktarım Güvenliği**
 
 **Güvenli Oturum Uygulamaları:**
-   - **Kriptografik Olarak Güvenli Oturum Kimlikleri**: Güvenli rastgele sayı üreteçleriyle oluşturulan güvenli, belirlenemez oturum kimlikleri kullanın.
-   - **Kullanıcıya Özgü Bağlama**: Oturum kimliklerini `<user_id>:<session_id>` gibi formatlarla kullanıcı kimliklerine bağlayarak çapraz kullanıcı oturum kötüye kullanımını önleyin.
-   - **Oturum Yaşam Döngüsü Yönetimi**: Uygun son kullanma, döndürme ve geçersiz kılma uygulayarak açık pencereleri sınırlayın.
-   - **HTTPS/TLS Zorunluluğu**: Oturum kimliği ele geçirmeyi önlemek için tüm iletişimde HTTPS zorunlu kılın.
+   - **Kriptografik Güvenli Oturum Kimlikleri**: Güvenli, belirlenemez oturum kimlikleri için güvenli rastgele sayı üreteçleri kullanın
+   - **Kullanıcıya Özel Bağlama**: Oturum kimliklerini `<user_id>:<session_id>` gibi formatlarla kullanıcı kimliklerine bağlayarak kullanıcılar arası oturum suistimalini önleyin
+   - **Oturum Yaşam Döngüsü Yönetimi**: Doğru sonlandırma, rotasyon ve geçersiz kılma uygulayarak zafiyet pencerelerini sınırlayın
+   - **HTTPS/TLS Zorunluluğu**: Oturum kimliği ele geçirilmesini önlemek için tüm iletişimde zorunlu HTTPS kullanın
 
-**Taşıma Katmanı Güvenliği:**
-   - TLS 1.3'ü mümkün olduğunca doğru sertifika yönetimiyle yapılandırın.
-   - Kritik bağlantılar için sertifika sabitleme uygulayın.
-   - Düzenli sertifika döndürme ve geçerlilik doğrulaması yapın.
+**Aktarım Katmanı Güvenliği:**
+   - İmkan varsa TLS 1.3 uygulatın ve uygun sertifika yönetimi sağlayın
+   - Kritik bağlantılar için sertifika pinleme uygulayın
+   - Düzenli sertifika rotasyonu ve geçerlilik kontrolü yapın
 
-## 3. **AI'ye Özgü Tehdit Koruması** 🤖
+## 3. **Yapay Zekâya Özgü Tehdit Koruması** 🤖
 
-**Prompt Enjeksiyon Savunması:**
-   - **Microsoft Prompt Shields**: Kötü niyetli talimatların gelişmiş algılanması ve filtrelenmesi için AI Prompt Shields kullanın.
-   - **Girdi Temizleme**: Enjeksiyon saldırılarını ve karışık vekil sorunlarını önlemek için tüm girdileri doğrulayın ve temizleyin.
-   - **İçerik Sınırları**: Güvenilir talimatlar ile harici içerik arasında ayrım yapmak için ayırıcı ve veri işaretleme sistemleri kullanın.
+**Prompt Enjeksiyonu Savunması:**
+   - **Microsoft Prompt Shields**: Kötü niyetli talimatların gelişmiş algılanması ve filtrelenmesi için AI Prompt Shield’ları uygulayın
+   - **Girdi Temizleme**: Tüm girdileri doğrulayın ve temizleyin; enjeksiyon saldırılarını ve karışık yetki problemlerini önleyin
+   - **İçerik Sınırlandırmaları**: Güvenilir talimatlar ile dış içerik arasındaki ayrımı sağlamak için ayırıcı ve veri işaretleme sistemleri kullanın
 
-**Araç Zehirlenmesini Önleme:**
-   - **Araç Meta Veri Doğrulaması**: Araç tanımları için bütünlük kontrolleri uygulayın ve beklenmedik değişiklikleri izleyin.
-   - **Dinamik Araç İzleme**: Çalışma zamanı davranışını izleyin ve beklenmedik yürütme desenleri için uyarı sistemleri kurun.
-   - **Onay İş Akışları**: Araç değişiklikleri ve yetenek değişiklikleri için açık kullanıcı onayı gerektirin.
+**Araç Zehirlenmesi Önleme:**
+   - **Araç Metaveri Doğrulaması**: Araç tanımları için bütünlük kontrolleri uygulayın ve beklenmedik değişiklikler için izleme yapın
+   - **Dinamik Araç İzleme**: Çalışma zamanı davranışını gözlemleyin ve beklenmeyen yürütme modelleri için uyarı sistemleri kurun
+   - **Onay İş Akışları**: Araç değişiklikleri ve yetenek değişimleri için açık kullanıcı onayı gerektirin
 
 ## 4. **Erişim Kontrolü ve İzinler**
 
-**En Az Ayrıcalık İlkesi:**
-   - MCP sunucularına yalnızca amaçlanan işlevsellik için gereken minimum izinleri verin.
-   - İnce ayrıntılı izinlerle rol tabanlı erişim kontrolü (RBAC) uygulayın.
-   - Düzenli izin incelemeleri ve ayrıcalık yükseltme için sürekli izleme yapın.
+**Asgari Yetki İlkesi:**
+   - MCP sunucularına sadece gereken minimum izinleri verin
+   - Ayrıntılı izinlerle rol tabanlı erişim kontrolü (RBAC) uygulayın
+   - Düzenli izin incelemeleri ve ayrıcalık yükseltmeleri için sürekli izleme yapın
 
 **Çalışma Zamanı İzin Kontrolleri:**
-   - Kaynak tükenmesi saldırılarını önlemek için kaynak sınırları uygulayın.
-   - Araç yürütme ortamları için konteyner izolasyonu kullanın.
-   - Yönetim işlevleri için tam zamanında erişim uygulayın.
+   - Kaynak tüketimi saldırılarını önlemek için kaynak sınırları koyun
+   - Araç çalıştırma ortamları için konteyner izolasyonu kullanın  
+   - Yönetim işlevleri için ihtiyaç bazlı erişim uygulayın
 
 ## 5. **İçerik Güvenliği ve İzleme**
 
-**İçerik Güvenliği Uygulaması:**
-   - **Azure İçerik Güvenliği Entegrasyonu**: Zararlı içerik, jailbreak girişimleri ve politika ihlallerini algılamak için Azure İçerik Güvenliği kullanın.
-   - **Davranışsal Analiz**: MCP sunucusu ve araç yürütme sırasında anormallikleri algılamak için çalışma zamanı davranış izleme uygulayın.
-   - **Kapsamlı Günlükleme**: Tüm kimlik doğrulama girişimlerini, araç çağrılarını ve güvenlik olaylarını güvenli, değiştirilemez bir depoda kaydedin.
+**İçerik Güvenliği Uygulamaları:**
+   - **Azure Content Safety Entegrasyonu**: Zararlı içerik, jailbreak girişimleri ve politika ihlallerini tespit etmek için Azure Content Safety kullanın
+   - **Davranışsal Analiz**: MCP sunucu ve araç yürütme anormalliklerini belirlemek için çalışma zamanı davranış izleme uygulayın
+   - **Kapsamlı Kayıt Tutma**: Tüm kimlik doğrulama girişimleri, araç çağrıları ve güvenlik olaylarını güvenli ve değişmez depolamayla kayıt altına alın
 
 **Sürekli İzleme:**
-   - Şüpheli desenler ve yetkisiz erişim girişimleri için gerçek zamanlı uyarılar.
-   - Merkezi güvenlik olay yönetimi için SIEM sistemleriyle entegrasyon.
-   - MCP uygulamalarının düzenli güvenlik denetimleri ve penetrasyon testleri.
+   - Şüpheli desenler ve yetkisiz erişim denemeleri için gerçek zamanlı uyarı sistemi  
+   - Merkezi güvenlik olay yönetimi için SIEM sistemleriyle entegrasyon
+   - MCP uygulamalarının düzenli güvenlik denetimleri ve penetrasyon testleri
 
 ## 6. **Tedarik Zinciri Güvenliği**
 
 **Bileşen Doğrulaması:**
-   - **Bağımlılık Taraması**: Tüm yazılım bağımlılıkları ve AI bileşenleri için otomatik güvenlik açığı taraması kullanın.
-   - **Kaynak Doğrulaması**: Modellerin, veri kaynaklarının ve harici hizmetlerin kökenini, lisansını ve bütünlüğünü doğrulayın.
-   - **İmzalı Paketler**: Kriptografik olarak imzalanmış paketler kullanın ve dağıtımdan önce imzaları doğrulayın.
+   - **Bağımlılık Taraması**: Tüm yazılım bağımlılıkları ve AI bileşenleri için otomatik zafiyet taraması kullanın
+   - **Köken Doğrulaması**: Modellerin, veri kaynaklarının ve dış servislerin kökenini, lisansını ve bütünlüğünü doğrulayın
+   - **İmzalı Paketler**: Kriptografik olarak imzalanmış paketler kullanın ve dağıtımdan önce imzaları doğrulayın
 
 **Güvenli Geliştirme Hattı:**
-   - **GitHub Gelişmiş Güvenlik**: Gizli tarama, bağımlılık analizi ve CodeQL statik analiz uygulayın.
-   - **CI/CD Güvenliği**: Otomatik dağıtım hatlarında güvenlik doğrulamasını entegre edin.
-   - **Eser Bütünlüğü**: Dağıtılan eserler ve yapılandırmalar için kriptografik doğrulama uygulayın.
+   - **GitHub Gelişmiş Güvenlik**: Gizli anahtar tarama, bağımlılık analizi ve CodeQL statik analiz uygulayın
+   - **CI/CD Güvenliği**: Otomatik dağıtım hatlarında güvenlik doğrulamasını entegre edin
+   - **Ürün Bütünlüğü**: Dağıtılan ürün ve yapılandırmalar için kriptografik doğrulama uygulayın
 
-## 7. **OAuth Güvenliği ve Karışık Vekil Önleme**
+## 7. **OAuth Güvenliği ve Karışık Yetki Önleme**
 
 **OAuth 2.1 Uygulaması:**
-   - **PKCE Uygulaması**: Tüm yetkilendirme istekleri için Proof Key for Code Exchange (PKCE) kullanın.
-   - **Açık Onay**: Karışık vekil saldırılarını önlemek için her dinamik olarak kaydedilen istemci için kullanıcı onayı alın.
-   - **Yönlendirme URI Doğrulaması**: Yönlendirme URI'leri ve istemci tanımlayıcılarının sıkı doğrulamasını uygulayın.
+   - **PKCE Uygulaması**: Tüm yetkilendirme istekleri için Kod Değişim Kanıtı (PKCE) kullanın
+   - **Açık Onay**: Karışık yetki saldırılarını önlemek için her dinamik kayıtlı istemci için kullanıcı onayı alın
+   - **Yönlendirme URI Doğrulaması**: Yönlendirme URI’leri ve istemci kimliklerini katı şekilde doğrulayın
 
 **Proxy Güvenliği:**
-   - Statik istemci kimliği istismarları yoluyla yetkilendirme atlamayı önleyin.
-   - Üçüncü taraf API erişimi için uygun onay iş akışlarını uygulayın.
-   - Yetkilendirme kodu hırsızlığı ve yetkisiz API erişimini izleyin.
+   - Statik istemci kimliği suistimali yoluyla yetkilendirme atlamasını önleyin
+   - Üçüncü taraf API erişimi için uygun onay iş akışları uygulayın
+   - Yetkilendirme kodu hırsızlığı ve yetkisiz API erişimi için izleme yapın
 
 ## 8. **Olay Müdahalesi ve Kurtarma**
 
-**Hızlı Müdahale Yetkinlikleri:**
-   - **Otomatik Müdahale**: Kimlik bilgisi döndürme ve tehdit sınırlama için otomatik sistemler uygulayın.
-   - **Geri Alma Prosedürleri**: Bilinen iyi yapılandırmalara ve bileşenlere hızla geri dönme yeteneği.
-   - **Adli Yetkinlikler**: Olay soruşturması için ayrıntılı denetim izleri ve günlükleme.
+**Hızlı Müdahale Yetenekleri:**
+   - **Otomatik Müdahale**: Kimlik bilgisi rotasyonu ve tehdit sınırlama için otomatik sistemler uygulayın
+   - **Geri Alma Prosedürleri**: Hızlıca bilinen iyi yapılandırmalara ve bileşenlere geri dönme yeteneği
+   - **Adli Yetenekler**: Olay araştırması için ayrıntılı denetim izleri ve kayıtlar tutun
 
 **İletişim ve Koordinasyon:**
-   - Güvenlik olayları için açık yükseltme prosedürleri.
-   - Kurumsal olay müdahale ekipleriyle entegrasyon.
-   - Düzenli güvenlik olay simülasyonları ve masa başı tatbikatları.
+   - Güvenlik olayları için net yükseltme prosedürleri
+   - Kurumsal olay müdahale ekipleriyle entegrasyon
+   - Düzenli güvenlik olayı simülasyonları ve masaüstü tatbikatları
 
 ## 9. **Uyumluluk ve Yönetim**
 
-**Yasal Uyumluluk:**
-   - MCP uygulamalarının sektör spesifik gereksinimleri (GDPR, HIPAA, SOC 2) karşılamasını sağlayın.
-   - AI veri işleme için veri sınıflandırma ve gizlilik kontrolleri uygulayın.
-   - Uyumluluk denetimi için kapsamlı belgeler tutun.
+**Düzenleyici Uyumluluk:**
+   - MCP uygulamalarının sektör özel gereksinimlere (GDPR, HIPAA, SOC 2) uygun olmasını sağlayın
+   - AI veri işleme için veri sınıflandırması ve gizlilik kontrolleri uygulayın
+   - Uyumluluk denetimleri için kapsamlı dokümantasyon tutun
 
 **Değişiklik Yönetimi:**
-   - Tüm MCP sistem değişiklikleri için resmi güvenlik inceleme süreçleri.
-   - Yapılandırma değişiklikleri için sürüm kontrolü ve onay iş akışları.
-   - Düzenli uyumluluk değerlendirmeleri ve boşluk analizleri.
+   - Tüm MCP sistem değişiklikleri için resmi güvenlik inceleme süreçleri
+   - Sürüm kontrolü ve yapılandırma değişiklikleri için onay iş akışları
+   - Düzenli uyumluluk değerlendirmeleri ve boşluk analizleri
 
 ## 10. **Gelişmiş Güvenlik Kontrolleri**
 
-**Sıfır Güven Mimarisi:**
-   - **Asla Güvenme, Her Zaman Doğrula**: Kullanıcıların, cihazların ve bağlantıların sürekli doğrulanması.
-   - **Mikro Segmentasyon**: Bireysel MCP bileşenlerini izole eden ayrıntılı ağ kontrolleri.
-   - **Koşullu Erişim**: Mevcut bağlam ve davranışa uyum sağlayan risk tabanlı erişim kontrolleri.
+**Sıfır Güven Mimarisı:**
+   - **Asla Güvenme, Her Zaman Doğrula**: Kullanıcılar, cihazlar ve bağlantılar için sürekli doğrulama
+   - **Mikro segmentasyon**: Bireysel MCP bileşenlerini izole eden ayrıntılı ağ kontrolleri
+   - **Koşullu Erişim**: Mevcut bağlam ve davranışa uyum sağlayan risk tabanlı erişim kontrolleri
 
 **Çalışma Zamanı Uygulama Koruması:**
-   - **Çalışma Zamanı Uygulama Kendini Koruma (RASP)**: Gerçek zamanlı tehdit algılama için RASP tekniklerini dağıtın.
-   - **Uygulama Performans İzleme**: Saldırıları gösterebilecek performans anormalliklerini izleyin.
-   - **Dinamik Güvenlik Politikaları**: Mevcut tehdit ortamına dayalı olarak uyum sağlayan güvenlik politikaları uygulayın.
+   - **Çalışma Zamanı Uygulama Kendi Kendini Koruma (RASP)**: Gerçek zamanlı tehdit tespiti için RASP teknikleri kullanın
+   - **Uygulama Performans İzleme**: Saldırı göstergesi olabilecek performans anormalliklerini izleyin
+   - **Dinamik Güvenlik Politikaları**: Güncel tehdit ortamına göre uyum sağlayan güvenlik politikaları uygulayın
 
 ## 11. **Microsoft Güvenlik Ekosistemi Entegrasyonu**
 
 **Kapsamlı Microsoft Güvenliği:**
-   - **Microsoft Defender for Cloud**: MCP iş yükleri için bulut güvenlik duruş yönetimi.
-   - **Azure Sentinel**: Gelişmiş tehdit algılama için bulut tabanlı SIEM ve SOAR yetenekleri.
-   - **Microsoft Purview**: AI iş akışları ve veri kaynakları için veri yönetimi ve uyumluluk.
+   - **Microsoft Defender for Cloud**: MCP iş yükleri için bulut güvenlik duruşu yönetimi
+   - **Azure Sentinel**: Gelişmiş tehdit tespiti için bulut tabanlı SIEM ve SOAR yetenekleri
+   - **Microsoft Purview**: AI iş akışları ve veri kaynakları için veri yönetimi ve uyumluluk
 
 **Kimlik ve Erişim Yönetimi:**
-   - **Microsoft Entra ID**: Koşullu erişim politikalarıyla kurumsal kimlik yönetimi.
-   - **Ayrıcalıklı Kimlik Yönetimi (PIM)**: Yönetim işlevleri için tam zamanında erişim ve onay iş akışları.
-   - **Kimlik Koruma**: Risk tabanlı koşullu erişim ve otomatik tehdit yanıtı.
+   - **Microsoft Entra ID**: Koşullu erişim politikaları ile kurumsal kimlik yönetimi
+   - **Yetkili Kimlik Yönetimi (PIM)**: Yönetim işlevleri için ihtiyaç bazlı erişim ve onay iş akışları
+   - **Kimlik Koruma**: Risk bazlı koşullu erişim ve otomatik tehdit yanıtı
 
 ## 12. **Sürekli Güvenlik Evrimi**
 
-**Güncel Kalma:**
-   - **Spesifikasyon İzleme**: MCP spesifikasyon güncellemelerinin ve güvenlik rehberliği değişikliklerinin düzenli olarak gözden geçirilmesi.
-   - **Tehdit İstihbaratı**: AI'ye özgü tehdit akışlarının ve tehlike göstergelerinin entegrasyonu.
-   - **Güvenlik Topluluğu Katılımı**: MCP güvenlik topluluğuna aktif katılım ve güvenlik açığı bildirim programları.
+**Güncel Kalmak:**
+   - **Spesifikasyon Takibi**: MCP spesifikasyon güncellemeleri ve güvenlik rehberi değişikliklerini düzenli inceleme
+   - **Tehdit İstihbaratı**: AI'ya özgü tehdit beslemeleri ve güvenlik ihlali göstergeleri entegrasyonu
+   - **Güvenlik Topluluğu Katılımı**: MCP güvenlik topluluğunda aktif katılım ve zafiyet açıklama programları
 
 **Uyarlanabilir Güvenlik:**
-   - **Makine Öğrenimi Güvenliği**: Yeni saldırı desenlerini tanımlamak için ML tabanlı anomali algılama kullanın.
-   - **Tahminsel Güvenlik Analitiği**: Proaktif tehdit tanımlama için tahminsel modeller uygulayın.
-   - **Güvenlik Otomasyonu**: Tehdit istihbaratı ve spesifikasyon değişikliklerine dayalı olarak otomatik güvenlik politikası güncellemeleri.
+   - **Makine Öğrenmesi Güvenliği**: Yeni saldırı desenlerini belirlemek için ML tabanlı anomali tespiti kullanımı
+   - **Öngörücü Güvenlik Analitiği**: Proaktif tehdit tanımlaması için öngörücü modeller uygulama
+   - **Güvenlik Otomasyonu**: Tehdit istihbaratı ve spesifikasyon değişikliklerine göre otomatik güvenlik politika güncellemeleri
 
 ---
 
 ## **Kritik Güvenlik Kaynakları**
 
-### **Resmi MCP Belgeleri**
-- [MCP Specification (2025-06-18)](https://spec.modelcontextprotocol.io/specification/2025-06-18/)
-- [MCP Güvenlik En İyi Uygulamaları](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices)
-- [MCP Yetkilendirme Spesifikasyonu](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization)
+### **Resmi MCP Dokümantasyonu**
+- [MCP Spesifikasyonu (2025-11-25)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
+- [MCP Güvenlik En İyi Uygulamaları](https://modelcontextprotocol.io/specification/2025-11-25/basic/security_best_practices)
+- [MCP Yetkilendirme Spesifikasyonu](https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization)
+
+### **OWASP MCP Güvenlik Kaynakları**
+- [OWASP MCP Azure Güvenlik Rehberi](https://microsoft.github.io/mcp-azure-security-guide/) - Azure uygulaması ile kapsamlı OWASP MCP Top 10
+- [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/) - Resmi OWASP MCP güvenlik riskleri
+- [MCP Güvenlik Zirvesi Atölyesi (Sherpa)](https://azure-samples.github.io/sherpa/) - Azure üzerinde MCP için uygulamalı güvenlik eğitimi
 
 ### **Microsoft Güvenlik Çözümleri**
 - [Microsoft Prompt Shields](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection)
-- [Azure İçerik Güvenliği](https://learn.microsoft.com/azure/ai-services/content-safety/)
+- [Azure Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/)
 - [Microsoft Entra ID Güvenliği](https://learn.microsoft.com/entra/identity-platform/secure-least-privileged-access)
 - [GitHub Gelişmiş Güvenlik](https://github.com/security/advanced-security)
 
 ### **Güvenlik Standartları**
 - [OAuth 2.0 Güvenlik En İyi Uygulamaları (RFC 9700)](https://datatracker.ietf.org/doc/html/rfc9700)
-- [OWASP Büyük Dil Modelleri için İlk 10](https://genai.owasp.org/)
-- [NIST AI Risk Yönetimi Çerçevesi](https://www.nist.gov/itl/ai-risk-management-framework)
+- [Büyük Dil Modelleri için OWASP Top 10](https://genai.owasp.org/)
+- [NIST AI Risk Yönetim Çerçevesi](https://www.nist.gov/itl/ai-risk-management-framework)
 
 ### **Uygulama Rehberleri**
-- [Azure API Yönetimi MCP Kimlik Doğrulama Geçidi](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)
+- [Azure API Yönetimi MCP Kimlik Doğrulama Ağ Geçidi](https://techcommunity.microsoft.com/blog/integrationsonazureblog/azure-api-management-your-auth-gateway-for-mcp-servers/4402690)
 - [Microsoft Entra ID ile MCP Sunucuları](https://den.dev/blog/mcp-server-auth-entra-id-session/)
 
 ---
 
-> **Güvenlik Uyarısı**: MCP güvenlik uygulamaları hızla gelişmektedir. Uygulamadan önce her zaman mevcut [MCP spesifikasyonu](https://spec.modelcontextprotocol.io/) ve [resmi güvenlik belgeleri](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices) ile doğrulayın.
+> **Güvenlik Uyarısı**: MCP güvenlik uygulamaları hızla evrilmektedir. Uygulamadan önce her zaman mevcut [MCP spesifikasyonunu](https://spec.modelcontextprotocol.io/) ve [resmi güvenlik dokümantasyonunu](https://modelcontextprotocol.io/specification/2025-11-25/basic/security_best_practices) doğrulayın.
 
+## Sonraki Adımlar
+
+- Oku: [MCP Güvenlik Kontrolleri 2025](./mcp-security-controls-2025.md)
+- Geri Dön: [Güvenlik Modülü Genel Bakış](./README.md)
+- Devam Et: [Modül 3: Başlarken](../03-GettingStarted/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Feragatname**:  
-Bu belge, [Co-op Translator](https://github.com/Azure/co-op-translator) adlı yapay zeka çeviri hizmeti kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlıklar içerebileceğini lütfen unutmayın. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlama veya yanlış yorumlamalardan sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

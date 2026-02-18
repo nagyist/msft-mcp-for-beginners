@@ -1,15 +1,6 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d26f746e21775c30b4d7ed97962b24df",
-  "translation_date": "2025-08-18T15:45:49+00:00",
-  "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
-  "language_code": "no"
-}
--->
 # Kjøre dette eksempelet
 
-Det anbefales å installere `uv`, men det er ikke et krav. Se [instruksjoner](https://docs.astral.sh/uv/#highlights)
+Det anbefales å installere `uv`, men det er ikke et krav, se [instruksjoner](https://docs.astral.sh/uv/#highlights)
 
 ## -0- Opprett et virtuelt miljø
 
@@ -45,15 +36,15 @@ mcp dev server.py
 
 Dette skal starte en webserver med et visuelt grensesnitt som lar deg teste eksempelet.
 
-Når serveren er tilkoblet:
+Når serveren er koblet til:
 
-- Prøv å liste opp verktøyene og kjør `add` med argumentene 2 og 4. Du bør se 6 som resultat.
+- prøv å liste verktøy og kjør `add`, med argumentene 2 og 4, du bør se 6 som resultat.
 
-- Gå til ressurser og ressursmal, og kall `get_greeting`. Skriv inn et navn, og du bør se en hilsen med navnet du oppga.
+- gå til ressurser og ressursmal og kall get_greeting, skriv inn et navn, og du bør se en hilsen med navnet du oppga.
 
 ### Testing i CLI-modus
 
-Inspektøren du kjørte er faktisk en Node.js-app, og `mcp dev` er en wrapper rundt den.
+Inspektøren du kjørte er faktisk en Node.js-app, og `mcp dev` er en innpakning rundt den.
 
 Du kan starte den direkte i CLI-modus ved å kjøre følgende kommando:
 
@@ -61,7 +52,7 @@ Du kan starte den direkte i CLI-modus ved å kjøre følgende kommando:
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 ```
 
-Dette vil liste opp alle verktøyene som er tilgjengelige på serveren. Du bør se følgende utdata:
+Dette vil liste alle verktøyene som er tilgjengelige på serveren. Du bør se følgende utdata:
 
 ```text
 {
@@ -116,5 +107,7 @@ Du bør se følgende utdata:
 > Det er vanligvis mye raskere å kjøre inspektøren i CLI-modus enn i nettleseren.
 > Les mer om inspektøren [her](https://github.com/modelcontextprotocol/inspector).
 
+---
+
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi tilstreber nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

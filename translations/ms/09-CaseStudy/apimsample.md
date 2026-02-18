@@ -1,76 +1,68 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2228721599c0c8673de83496b4d7d7a9",
-  "translation_date": "2025-08-18T17:50:03+00:00",
-  "source_file": "09-CaseStudy/apimsample.md",
-  "language_code": "ms"
-}
--->
-# Kajian Kes: Dedahkan REST API dalam API Management sebagai pelayan MCP
+# Kajian Kes: Dedahkan REST API dalam Pengurusan API sebagai pelayan MCP
 
-Azure API Management adalah perkhidmatan yang menyediakan Gateway di atas Endpoint API anda. Cara ia berfungsi adalah Azure API Management bertindak seperti proksi di hadapan API anda dan boleh menentukan apa yang perlu dilakukan dengan permintaan masuk.
+Azure API Management, adalah perkhidmatan yang menyediakan Gateway di atas Titik Akhir API anda. Cara ia berfungsi ialah Azure API Management bertindak seperti proksi di hadapan API anda dan boleh memutuskan apa yang perlu dilakukan dengan permintaan masuk.
 
 Dengan menggunakannya, anda menambah pelbagai ciri seperti:
 
-- **Keselamatan**, anda boleh menggunakan segala-galanya daripada kunci API, JWT hingga identiti terurus.
-- **Had kadar**, ciri hebat ialah keupayaan untuk menentukan berapa banyak panggilan yang dibenarkan dalam tempoh masa tertentu. Ini membantu memastikan semua pengguna mendapat pengalaman yang baik dan juga perkhidmatan anda tidak dibebani dengan permintaan.
-- **Penskalaan & Pengimbangan Beban**. Anda boleh menyediakan beberapa endpoint untuk mengimbangi beban dan juga menentukan cara untuk "mengimbangi beban".
-- **Ciri AI seperti caching semantik**, had token, pemantauan token dan banyak lagi. Ini adalah ciri hebat yang meningkatkan responsif serta membantu anda memantau penggunaan token anda. [Baca lebih lanjut di sini](https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities).
+- **Keselamatan**, anda boleh menggunakan segala-galanya dari kunci API, JWT kepada pengenalan terurus.
+- **Had kadar**, ciri hebat adalah keupayaan untuk memutuskan berapa banyak panggilan yang dibenarkan dalam satu unit masa tertentu. Ini membantu memastikan semua pengguna mempunyai pengalaman yang baik dan juga memastikan perkhidmatan anda tidak terlalu terbeban dengan permintaan.
+- **Pengimbangan beban & skala**. Anda boleh menyediakan beberapa titik akhir untuk mengimbangkan beban dan anda juga boleh memutuskan bagaimana untuk "mengimbangkan beban".
+- **Ciri AI seperti caching semantik**, had token dan pemantauan token dan banyak lagi. Ini adalah ciri hebat yang meningkatkan responsiviti serta membantu anda mengawal perbelanjaan token anda. [Baca selanjutnya di sini](https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities).
 
-## Mengapa MCP + Azure API Management?
+## Kenapa MCP + Azure API Management?
 
-Model Context Protocol (MCP) dengan cepat menjadi standard untuk aplikasi AI agen dan cara untuk mendedahkan alat dan data secara konsisten. Azure API Management adalah pilihan semula jadi apabila anda perlu "menguruskan" API. Pelayan MCP sering berintegrasi dengan API lain untuk menyelesaikan permintaan kepada alat, sebagai contoh. Oleh itu, menggabungkan Azure API Management dan MCP sangat masuk akal.
+Model Context Protocol cepat menjadi piawaian untuk aplikasi AI agen dan cara untuk mendedahkan alat dan data dengan cara yang konsisten. Azure API Management adalah pilihan semula jadi apabila anda perlu "mengurus" API. Pelayan MCP sering berintegrasi dengan API lain untuk menyelesaikan permintaan kepada alat sebagai contoh. Oleh itu, menggabungkan Azure API Management dan MCP adalah sangat masuk akal.
 
 ## Gambaran Keseluruhan
 
-Dalam kes penggunaan ini, kita akan belajar untuk mendedahkan endpoint API sebagai Pelayan MCP. Dengan melakukan ini, kita boleh dengan mudah menjadikan endpoint ini sebahagian daripada aplikasi agen sambil memanfaatkan ciri-ciri daripada Azure API Management.
+Dalam kes penggunaan khusus ini, kita akan belajar untuk mendedahkan titik akhir API sebagai Pelayan MCP. Dengan melakukan ini, kita boleh dengan mudah menjadikan titik akhir ini sebahagian daripada aplikasi agen sambil memanfaatkan ciri dari Azure API Management.
 
 ## Ciri Utama
 
-- Anda memilih kaedah endpoint yang ingin didedahkan sebagai alat.
-- Ciri tambahan yang anda dapat bergantung pada apa yang anda konfigurasikan dalam bahagian polisi untuk API anda. Tetapi di sini kami akan menunjukkan cara anda boleh menambah had kadar.
+- Anda memilih kaedah titik akhir yang anda mahu dedahkan sebagai alat.
+- Ciri tambahan yang anda dapat bergantung pada apa yang anda konfigurasikan dalam bahagian dasar untuk API anda. Tetapi di sini kami akan tunjukkan bagaimana anda boleh menambah had kadar.
 
-## Langkah Awal: Import API
+## Langkah Pra: import API
 
-Jika anda sudah mempunyai API dalam Azure API Management, bagus, anda boleh melangkau langkah ini. Jika tidak, lihat pautan ini, [mengimport API ke Azure API Management](https://learn.microsoft.com/en-us/azure/api-management/import-and-publish#import-and-publish-a-backend-api).
+Jika anda sudah mempunyai API dalam Azure API Management, bagus, maka anda boleh langkau langkah ini. Jika tidak, semak pautan ini, [mengimport API ke Azure API Management](https://learn.microsoft.com/en-us/azure/api-management/import-and-publish#import-and-publish-a-backend-api).
 
 ## Dedahkan API sebagai Pelayan MCP
 
-Untuk mendedahkan endpoint API, ikuti langkah-langkah berikut:
+Untuk mendedahkan titik akhir API, ikuti langkah ini:
 
-1. Navigasi ke Azure Portal dan alamat berikut <https://portal.azure.com/?Microsoft_Azure_ApiManagement=mcp>  
-   Navigasi ke instans API Management anda.
+1. Navigasi ke Azure Portal dan alamat berikut <https://portal.azure.com/?Microsoft_Azure_ApiManagement=mcp> 
+Navigasi ke instans Pengurusan API anda.
 
-1. Dalam menu kiri, pilih **APIs > MCP Servers > + Create new MCP Server**.
+1. Dalam menu kiri, pilih APIs > MCP Servers > + Create new MCP Server.
 
 1. Dalam API, pilih REST API untuk didedahkan sebagai pelayan MCP.
 
 1. Pilih satu atau lebih Operasi API untuk didedahkan sebagai alat. Anda boleh memilih semua operasi atau hanya operasi tertentu.
 
-    ![Pilih kaedah untuk didedahkan](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/create-mcp-server-small.png)
+    ![Pilih kaedah untuk dedahkan](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/create-mcp-server-small.png)
+
 
 1. Pilih **Create**.
 
-1. Navigasi ke pilihan menu **APIs** dan **MCP Servers**, anda seharusnya melihat yang berikut:
+1. Navigasi ke pilihan menu **APIs** dan **MCP Servers**, anda harus melihat yang berikut:
 
     ![Lihat Pelayan MCP dalam panel utama](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-list.png)
 
-    Pelayan MCP telah dicipta dan operasi API didedahkan sebagai alat. Pelayan MCP disenaraikan dalam panel MCP Servers. Lajur URL menunjukkan endpoint pelayan MCP yang boleh anda panggil untuk ujian atau dalam aplikasi klien.
+    Pelayan MCP telah dicipta dan operasi API didedahkan sebagai alat. Pelayan MCP disenaraikan dalam panel MCP Servers. Lajur URL menunjukkan titik akhir pelayan MCP yang anda boleh panggil untuk ujian atau dalam aplikasi klien.
 
-## Pilihan: Konfigurasikan Polisi
+## Pilihan: Konfigurasikan dasar
 
-Azure API Management mempunyai konsep teras polisi di mana anda menetapkan peraturan yang berbeza untuk endpoint anda seperti had kadar atau caching semantik. Polisi ini ditulis dalam format XML.
+Azure API Management mempunyai konsep teras dasar di mana anda menetapkan peraturan berbeza untuk titik akhir anda seperti contohnya had kadar atau caching semantik. Dasar ini ditulis dalam XML.
 
-Berikut adalah cara anda boleh menetapkan polisi untuk menghadkan kadar pelayan MCP anda:
+Berikut ialah cara anda boleh menyediakan dasar untuk had kadar Pelayan MCP anda:
 
-1. Dalam portal, di bawah **APIs**, pilih **MCP Servers**.
+1. Dalam portal, di bawah APIs, pilih **MCP Servers**.
 
 1. Pilih pelayan MCP yang anda cipta.
 
 1. Dalam menu kiri, di bawah MCP, pilih **Policies**.
 
-1. Dalam editor polisi, tambah atau edit polisi yang anda ingin terapkan pada alat pelayan MCP. Polisi ditakrifkan dalam format XML. Sebagai contoh, anda boleh menambah polisi untuk menghadkan panggilan kepada alat pelayan MCP (contohnya, 5 panggilan setiap 30 saat bagi setiap alamat IP klien). Berikut adalah XML yang akan menyebabkan had kadar:
+1. Dalam penyunting dasar, tambah atau edit dasar yang anda ingin gunakan pada alat pelayan MCP. Dasar ditakrifkan dalam format XML. Sebagai contoh, anda boleh menambah dasar untuk menghadkan panggilan ke alat pelayan MCP (dalam contoh ini, 5 panggilan per 30 saat per alamat IP klien). Berikut XML yang akan menghadkan kadar:
 
     ```xml
      <rate-limit-by-key calls="5" 
@@ -80,27 +72,27 @@ Berikut adalah cara anda boleh menetapkan polisi untuk menghadkan kadar pelayan 
     />
     ```
 
-    Berikut adalah imej editor polisi:
+    Berikut adalah imej penyunting dasar:
 
-    ![Editor polisi](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-policies-small.png)
-
-## Cuba Ia
+    ![Penyunting dasar](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-policies-small.png)
+ 
+## Cuba ia
 
 Mari pastikan Pelayan MCP kita berfungsi seperti yang diinginkan.
 
-Untuk ini, kita akan menggunakan Visual Studio Code dan GitHub Copilot dalam mod Agennya. Kita akan menambah pelayan MCP ke dalam fail *mcp.json*. Dengan cara ini, Visual Studio Code akan bertindak sebagai klien dengan keupayaan agen dan pengguna akhir boleh menaip arahan dan berinteraksi dengan pelayan tersebut.
+Untuk ini, kita akan menggunakan Visual Studio Code dan GitHub Copilot serta mod Agent-nya. Kita akan tambah pelayan MCP ke dalam *mcp.json*. Dengan berbuat demikian, Visual Studio Code akan bertindak sebagai klien dengan kebolehan agen dan pengguna akhir boleh menaip arahan dan berinteraksi dengan pelayan tersebut.
 
-Berikut adalah cara untuk menambah pelayan MCP dalam Visual Studio Code:
+Mari lihat bagaimana, untuk menambah pelayan MCP dalam Visual Studio Code:
 
-1. Gunakan arahan MCP: **Add Server dari Command Palette**.
+1. Gunakan perintah MCP: **Add Server dari Command Palette**.
 
 1. Apabila diminta, pilih jenis pelayan: **HTTP (HTTP atau Server Sent Events)**.
 
-1. Masukkan URL pelayan MCP dalam API Management. Contoh: **https://<apim-service-name>.azure-api.net/<api-name>-mcp/sse** (untuk endpoint SSE) atau **https://<apim-service-name>.azure-api.net/<api-name>-mcp/mcp** (untuk endpoint MCP), perhatikan perbezaan antara pengangkutan ialah `/sse` atau `/mcp`.
+1. Masukkan URL pelayan MCP dalam Pengurusan API. Contoh: **https://<apim-service-name>.azure-api.net/<api-name>-mcp/sse** (untuk titik akhir SSE) atau **https://<apim-service-name>.azure-api.net/<api-name>-mcp/mcp** (untuk titik akhir MCP), perhatikan perbezaan antara pengangkutan adalah `/sse` atau `/mcp`.
 
-1. Masukkan ID pelayan pilihan anda. Ini bukan nilai penting tetapi ia akan membantu anda mengingati apa instans pelayan ini.
+1. Masukkan ID pelayan pilihan anda. Ini bukan nilai penting tetapi akan membantu anda mengingati instans pelayan ini.
 
-1. Pilih sama ada untuk menyimpan konfigurasi ke tetapan ruang kerja anda atau tetapan pengguna.
+1. Pilih sama ada untuk simpan konfigurasi ke tetapan ruang kerja anda atau tetapan pengguna.
 
   - **Tetapan ruang kerja** - Konfigurasi pelayan disimpan ke fail .vscode/mcp.json yang hanya tersedia dalam ruang kerja semasa.
 
@@ -115,7 +107,7 @@ Berikut adalah cara untuk menambah pelayan MCP dalam Visual Studio Code:
     }
     ```
 
-    atau jika anda memilih HTTP streaming sebagai pengangkutan, ia akan sedikit berbeza:
+    atau jika anda memilih HTTP streaming sebagai pengangkutan ia akan sedikit berbeza:
 
     ```json
     "servers": {
@@ -126,17 +118,17 @@ Berikut adalah cara untuk menambah pelayan MCP dalam Visual Studio Code:
     }
     ```
 
-  - **Tetapan pengguna** - Konfigurasi pelayan ditambah ke fail *settings.json* global anda dan tersedia dalam semua ruang kerja. Konfigurasi kelihatan seperti berikut:
+  - **Tetapan pengguna** - Konfigurasi pelayan ditambah ke fail *settings.json* global anda dan tersedia dalam semua ruang kerja. Konfigurasi adalah seperti berikut:
 
     ![Tetapan pengguna](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-servers-visual-studio-code.png)
 
-1. Anda juga perlu menambah konfigurasi, iaitu header untuk memastikan ia mengesahkan dengan betul terhadap Azure API Management. Ia menggunakan header yang dipanggil **Ocp-Apim-Subscription-Key**.
+1. Anda juga perlu tambah konfigurasi, satu header untuk memastikan ia mengesahkan dengan betul ke arah Azure API Management. Ia menggunakan header yang dipanggil **Ocp-Apim-Subscription-Key**. 
 
-    - Berikut adalah cara anda boleh menambahnya ke tetapan:
+    - Berikut cara anda boleh tambahkannya ke tetapan:
 
-    ![Menambah header untuk pengesahan](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-with-header-visual-studio-code.png), ini akan menyebabkan arahan dipaparkan untuk meminta nilai kunci API yang boleh anda temui di Azure Portal untuk instans Azure API Management anda.
+    ![Menambah header untuk pengesahan](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-with-header-visual-studio-code.png), ini akan menyebabkan prompt dipaparkan untuk meminta nilai kunci API yang boleh anda dapati dalam Azure Portal untuk instans Azure API Management anda.
 
-   - Untuk menambahnya ke *mcp.json* sebaliknya, anda boleh menambahnya seperti berikut:
+   - Untuk menambahnya ke *mcp.json* sebaliknya, anda boleh tambah seperti berikut:
 
     ```json
     "inputs": [
@@ -158,44 +150,53 @@ Berikut adalah cara untuk menambah pelayan MCP dalam Visual Studio Code:
     }
     ```
 
-### Gunakan Mod Agen
+### Gunakan mod Agent
 
-Sekarang kita sudah bersedia sama ada dalam tetapan atau dalam *.vscode/mcp.json*. Mari cuba.
+Sekarang kita sudah semua sedia sama ada dalam tetapan atau dalam *.vscode/mcp.json*. Mari cuba.
 
-Seharusnya ada ikon Alat seperti berikut, di mana alat yang didedahkan dari pelayan anda disenaraikan:
+Seharusnya terdapat ikon Alat seperti ini, di mana alat yang didedahkan daripada pelayan anda tersenarai:
 
-![Alat dari pelayan](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/tools-button-visual-studio-code.png)
+![Alat daripada pelayan](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/tools-button-visual-studio-code.png)
 
-1. Klik ikon alat dan anda seharusnya melihat senarai alat seperti berikut:
+1. Klik ikon alat dan anda harus melihat senarai alat seperti ini:
 
     ![Alat](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/select-tools-visual-studio-code.png)
 
-1. Masukkan arahan dalam chat untuk memanggil alat. Sebagai contoh, jika anda memilih alat untuk mendapatkan maklumat tentang pesanan, anda boleh bertanya kepada agen tentang pesanan. Berikut adalah contoh arahan:
+1. Masukkan arahan dalam sembang untuk menggunakan alat tersebut. Sebagai contoh, jika anda memilih alat untuk mendapatkan maklumat tentang pesanan, anda boleh bertanya kepada agen tentang pesanan. Berikut adalah contoh arahan:
 
     ```text
     get information from order 2
     ```
 
-    Anda kini akan dipaparkan dengan ikon alat yang meminta anda untuk meneruskan memanggil alat. Pilih untuk terus menjalankan alat, anda seharusnya melihat output seperti berikut:
+    Anda akan dipaparkan dengan ikon alat yang meminta anda meneruskan panggilan ke alat. Pilih untuk terus menjalankan alat, anda seharusnya melihat output seperti ini:
 
-    ![Hasil dari arahan](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/chat-results-visual-studio-code.png)
+    ![Keputusan dari arahan](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/chat-results-visual-studio-code.png)
 
-    **apa yang anda lihat di atas bergantung pada alat yang anda tetapkan, tetapi idenya adalah anda mendapat respons teks seperti di atas**
+    **apa yang anda lihat di atas bergantung pada alat yang anda sediakan, tetapi idenya ialah anda mendapat respons teks seperti di atas**
 
 ## Rujukan
 
-Berikut adalah cara anda boleh belajar lebih lanjut:
+Berikut cara anda boleh belajar lebih lanjut:
 
-- [Tutorial tentang Azure API Management dan MCP](https://learn.microsoft.com/en-us/azure/api-management/export-rest-mcp-server)
-- [Contoh Python: Amankan pelayan MCP jauh menggunakan Azure API Management (eksperimen)](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)
+- [Tutorial mengenai Azure API Management dan MCP](https://learn.microsoft.com/en-us/azure/api-management/export-rest-mcp-server)
+- [Contoh Python: Secure remote MCP servers using Azure API Management (eksperimen)](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)
 
 - [Makmal kebenaran klien MCP](https://github.com/Azure-Samples/AI-Gateway/tree/main/labs/mcp-client-authorization)
 
-- [Gunakan sambungan Azure API Management untuk VS Code untuk mengimport dan menguruskan API](https://learn.microsoft.com/en-us/azure/api-management/visual-studio-code-tutorial)
+- [Gunakan ekstensi Azure API Management untuk VS Code untuk mengimport dan mengurus API](https://learn.microsoft.com/en-us/azure/api-management/visual-studio-code-tutorial)
 
-- [Daftar dan temui pelayan MCP jauh dalam Azure API Center](https://learn.microsoft.com/en-us/azure/api-center/register-discover-mcp-server)
-- [AI Gateway](https://github.com/Azure-Samples/AI-Gateway) Repositori hebat yang menunjukkan banyak keupayaan AI dengan Azure API Management
-- [Bengkel AI Gateway](https://azure-samples.github.io/AI-Gateway/) Mengandungi bengkel menggunakan Azure Portal, yang merupakan cara yang baik untuk mula menilai keupayaan AI.
+- [Daftar dan temui pelayan MCP jauh di Azure API Center](https://learn.microsoft.com/en-us/azure/api-center/register-discover-mcp-server)
+- [AI Gateway](https://github.com/Azure-Samples/AI-Gateway) Repositori hebat yang menunjukkan banyak kebolehan AI dengan Azure API Management
+- [Bengkel AI Gateway](https://azure-samples.github.io/AI-Gateway/) Mengandungi bengkel menggunakan Azure Portal, yang merupakan cara hebat untuk mula menilai kebolehan AI.
 
+## Apa Seterusnya
+
+- Kembali ke: [Gambaran Keseluruhan Kajian Kes](./README.md)
+- Seterusnya: [Ejen Perjalanan Azure AI](./travelagentsample.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk memastikan ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat penting, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidakakuratan. Dokumen asal dalam bahasa asalnya hendaklah dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab terhadap sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -61,3 +61,8 @@ flowchart TD
 - [Azure DevOps MCP](https://github.com/microsoft/azure-devops-mcp)
 - [Playwright MCP](https://github.com/microsoft/playwright-mcp)
 - [Model Context Protocol (MCP)](https://modelcontextprotocol.io/)
+
+## What's Next
+
+- Back to: [Case Studies Overview](./README.md)
+- Next: [Real-Time Documentation Retrieval with MCP](./docs-mcp/README.md)

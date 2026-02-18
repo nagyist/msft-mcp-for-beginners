@@ -72,6 +72,9 @@ server.resource(
       uri: uri.href,
       text: `File, ${path}!`
     }]
+  })
+);
+
 // Add a file resource that reads the file contents
 server.resource(
   "file",
@@ -412,8 +415,8 @@ Open the *package.json* file and replace the content with the following to ensur
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "tsc && node ./build/index.js",
-    "build": "tsc && node ./build/index.js"
+    "build": "tsc",
+    "start": "npm run build && node ./build/index.js",
   },
   "keywords": [],
   "author": "",
@@ -955,7 +958,7 @@ def get_greeting(name: str) -> str:
 
 In the preceding code we've:
 
-- Defined a tool `add` that takes parameters `a` and `p`, both integers.
+- Defined a tool `add` that takes parameters `a` and `b`, both integers.
 - Created a resource called `greeting` that takes parameter `name`.
 
 #### .NET
@@ -1248,6 +1251,8 @@ npx @modelcontextprotocol/inspector node build/index.js
 ```
 
 or add it to your *package.json* like so: `"inspector": "npx @modelcontextprotocol/inspector node build/index.js"` and then run `npm run inspector`
+
+#### Python
 
 Python wraps a Node.js tool called inspector. It's possible to call said tool like so:
 

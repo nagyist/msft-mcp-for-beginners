@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5ef8f5821c1a04f7b1fc4f15098ecab8",
-  "translation_date": "2025-07-13T19:40:31+00:00",
-  "source_file": "03-GettingStarted/04-vscode/solution/README.md",
-  "language_code": "ko"
-}
--->
 이는 `node build/index.js`와 같은 명령어를 실행하는 것과 같습니다.
 
 - 서버 항목을 서버 파일이 위치한 경로나 선택한 런타임과 서버 위치에 따라 서버를 시작하는 데 필요한 전체 명령어로 변경하세요.
@@ -23,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     그러면 채팅 입력창 위에 도구를 선택해 실행할 수 있다는 표시가 나타납니다. 다음 이미지와 같습니다:
 
-    ![VS Code indicating it wanting to run a tool](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.ko.png)
+    ![VS Code indicating it wanting to run a tool](../../../../../translated_images/ko/vscode-agent.d5a0e0b897331060.webp)
 
     도구를 선택하면, 이전에 입력한 프롬프트에 따라 "23"과 같은 숫자 결과가 표시됩니다.
 

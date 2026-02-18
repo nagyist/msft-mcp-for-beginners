@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5ef8f5821c1a04f7b1fc4f15098ecab8",
-  "translation_date": "2025-07-13T19:41:20+00:00",
-  "source_file": "03-GettingStarted/04-vscode/solution/README.md",
-  "language_code": "ne"
-}
--->
 यो कमाण्ड चलाउने जस्तै हो: `node build/index.js`।
 
 - आफ्नो सर्भर फाइल कहाँ छ वा कुन रनटाइम र सर्भर स्थान अनुसार सर्भर सुरु गर्न के आवश्यक छ, त्यसअनुसार यो सर्भर इन्ट्री परिवर्तन गर्नुहोस्।
@@ -23,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     तपाईंले च्याट टेक्स्ट बक्सको माथि उपकरण चयन गर्नका लागि देखिने संकेत देख्नु पर्नेछ, जस्तै यो दृश्यमा:
 
-    ![VS Code indicating it wanting to run a tool](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.ne.png)
+    ![VS Code indicating it wanting to run a tool](../../../../../translated_images/ne/vscode-agent.d5a0e0b897331060.webp)
 
     उपकरण चयन गर्दा यदि तपाईंले पहिले जस्तै प्रॉम्प्ट टाइप गर्नुभयो भने, "23" भन्ने संख्यात्मक परिणाम देखिनु पर्छ।
 

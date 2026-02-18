@@ -1,24 +1,17 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f5300fd1b5e84520d500b2a8f568a1d8",
-  "translation_date": "2025-07-17T13:50:07+00:00",
-  "source_file": "02-Security/azure-content-safety.md",
-  "language_code": "hr"
-}
--->
 # Napredna MCP sigurnost s Azure Content Safety
 
-Azure Content Safety nudi nekoliko moćnih alata koji mogu poboljšati sigurnost vaših MCP implementacija:
+> **OWASP MCP rizik koji se rješava**: [MCP06 - Prompt injekcija putem kontekstualnih podataka](https://microsoft.github.io/mcp-azure-security-guide/mcp/mcp06-prompt-injection/)
+
+Azure Content Safety pruža nekoliko moćnih alata koji mogu poboljšati sigurnost vaših MCP implementacija. Za praktično iskustvo implementacije, pogledajte [MCP Security Summit radionicu (Sherpa)](https://azure-samples.github.io/sherpa/) Camp 3: I/O sigurnost.
 
 ## Prompt Shields
 
-Microsoftovi AI Prompt Shields pružaju snažnu zaštitu od izravnih i neizravnih napada ubrizgavanja prompta kroz:
+Microsoftovi AI Prompt Shields pružaju snažnu zaštitu protiv izravnih i neizravnih prompt injekcijskih napada kroz:
 
-1. **Napredna detekcija**: Koristi strojno učenje za prepoznavanje zlonamjernih uputa ugrađenih u sadržaj.
-2. **Isticanje**: Pretvara ulazni tekst kako bi AI sustavi lakše razlikovali valjane upute od vanjskih unosa.
-3. **Ograničivači i označavanje podataka**: Označava granice između pouzdanih i nepouzdanih podataka.
-4. **Integracija Content Safety**: Radi s Azure AI Content Safety za otkrivanje pokušaja jailbreaka i štetnog sadržaja.
+1. **Napredno otkrivanje**: Koristi strojno učenje za identificiranje zlonamjernih uputa ugrađenih u sadržaj.
+2. **Isticanje**: Transformira ulazni tekst kako bi AI sustavi razlikovali važeće upute od vanjskih unosa.
+3. **Razdjelnici i označavanje podataka**: Označava granice između pouzdanih i nepouzdanih podataka.
+4. **Integracija s Content Safety**: Radi s Azure AI Content Safety za otkrivanje pokušaja jailbreaka i štetnog sadržaja.
 5. **Kontinuirana ažuriranja**: Microsoft redovito ažurira mehanizme zaštite protiv novih prijetnji.
 
 ## Implementacija Azure Content Safety s MCP
@@ -27,21 +20,31 @@ Ovaj pristup pruža višeslojnu zaštitu:
 - Skeniranje unosa prije obrade
 - Validacija izlaza prije vraćanja
 - Korištenje bloklista za poznate štetne obrasce
-- Iskorištavanje kontinuirano ažuriranih modela sigurnosti sadržaja iz Azurea
+- Iskorištavanje kontinuirano ažuriranih modela za sigurnost sadržaja iz Azurea
 
 ## Resursi za Azure Content Safety
 
 Za više informacija o implementaciji Azure Content Safety s vašim MCP serverima, konzultirajte ove službene izvore:
 
-1. [Azure AI Content Safety Documentation](https://learn.microsoft.com/azure/ai-services/content-safety/) - Službena dokumentacija za Azure Content Safety.
-2. [Prompt Shield Documentation](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/prompt-shield) - Naučite kako spriječiti napade ubrizgavanja prompta.
-3. [Content Safety API Reference](https://learn.microsoft.com/rest/api/contentsafety/) - Detaljan API referentni vodič za implementaciju Content Safety.
-4. [Quickstart: Azure Content Safety with C#](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-csharp) - Brzi vodič za implementaciju koristeći C#.
-5. [Content Safety Client Libraries](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-client-libraries-rest-api) - Klijentske biblioteke za različite programske jezike.
-6. [Detecting Jailbreak Attempts](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection) - Specifične upute za otkrivanje i sprječavanje pokušaja jailbreaka.
-7. [Best Practices for Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/best-practices) - Najbolje prakse za učinkovitu implementaciju sigurnosti sadržaja.
+1. [Dokumentacija za Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/) - Službena dokumentacija za Azure Content Safety.
+2. [Dokumentacija za Prompt Shield](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/prompt-shield) - Naučite kako spriječiti napade prompt injekcije.
+3. [Content Safety API referenca](https://learn.microsoft.com/rest/api/contentsafety/) - Detaljna API referenca za implementaciju Content Safety.
+4. [Brzi početak: Azure Content Safety s C#](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-csharp) - Brzi vodič za implementaciju koristeći C#.
+5. [Content Safety klijentske biblioteke](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-client-libraries-rest-api) - Klijentske biblioteke za različite programske jezike.
+6. [Otkrivanje pokušaja jailbreaka](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection) - Specifične upute za otkrivanje i sprječavanje pokušaja jailbreaka.
+7. [Najbolje prakse za Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/best-practices) - Najbolje prakse za učinkovitu implementaciju sigurnosti sadržaja.
 
-Za detaljniju implementaciju, pogledajte naš [Azure Content Safety Implementation guide](./azure-content-safety-implementation.md).
+Za detaljniju implementaciju pogledajte naš [Vodič za implementaciju Azure Content Safety](./azure-content-safety-implementation.md).
 
-**Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+## Što dalje
+
+- Pročitajte: [Implementacija Azure Content Safety](./azure-content-safety-implementation.md)
+- Povratak na: [Pregled sigurnosnog modula](./README.md)
+- Nastavite na: [Modul 3: Početak rada](../03-GettingStarted/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Odricanje od odgovornosti**:
+Ovaj dokument je preveden korištenjem AI usluge prijevoda [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na njegovom izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni prijevod od strane ljudskog prevoditelja. Ne snosimo odgovornost za bilo kakve nesporazume ili kriva tumačenja koja proizlaze iz korištenja ovog prijevoda.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

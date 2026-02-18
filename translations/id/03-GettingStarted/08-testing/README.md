@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-13T22:02:25+00:00",
-  "source_file": "03-GettingStarted/08-testing/README.md",
-  "language_code": "id"
-}
--->
 ## Pengujian dan Debugging
 
 Sebelum mulai menguji server MCP Anda, penting untuk memahami alat yang tersedia dan praktik terbaik dalam debugging. Pengujian yang efektif memastikan server Anda berfungsi sesuai harapan dan membantu Anda dengan cepat mengidentifikasi serta menyelesaikan masalah. Bagian berikut menjelaskan pendekatan yang direkomendasikan untuk memvalidasi implementasi MCP Anda.
@@ -48,7 +39,7 @@ npx @modelcontextprotocol/inspector node build/index.js
 
 Perintah di atas menjalankan MCP dan antarmuka visualnya serta membuka antarmuka web lokal di browser Anda. Anda akan melihat dashboard yang menampilkan server MCP yang terdaftar, alat, sumber daya, dan prompt yang tersedia. Antarmuka ini memungkinkan Anda menguji eksekusi alat secara interaktif, memeriksa metadata server, dan melihat respons secara real-time, sehingga memudahkan validasi dan debugging implementasi server MCP Anda.
 
-Berikut tampilannya: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.id.png)
+Berikut tampilannya: ![Inspector](../../../../translated_images/id/connect.141db0b2bd05f096.webp)
 
 Anda juga bisa menjalankan alat ini dalam mode CLI dengan menambahkan atribut `--cli`. Berikut contoh menjalankan alat dalam mode "CLI" yang menampilkan semua alat di server:
 

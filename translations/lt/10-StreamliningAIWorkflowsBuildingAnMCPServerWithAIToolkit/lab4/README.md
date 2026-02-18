@@ -1,59 +1,50 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "f83bc722dc758efffd68667d6a1db470",
-  "translation_date": "2025-08-26T20:48:50+00:00",
-  "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab4/README.md",
-  "language_code": "lt"
-}
--->
-# 🐙 Modulis 4: Praktinis MCP kūrimas – Individualus GitHub klonavimo serveris
+# 🐙 4 modulis: Praktinis MCP kūrimas - Individualus GitHub klono serveris
 
 ![Trukmė](https://img.shields.io/badge/Duration-30_minutes-blue?style=flat-square)
-![Sudėtingumas](https://img.shields.io/badge/Difficulty-Intermediate-orange?style=flat-square)
+![Sunkumas](https://img.shields.io/badge/Difficulty-Intermediate-orange?style=flat-square)
 ![MCP](https://img.shields.io/badge/MCP-Custom%20Server-purple?style=flat-square&logo=github)
 ![VS Code](https://img.shields.io/badge/VS%20Code-Integration-blue?style=flat-square&logo=visualstudiocode)
 ![GitHub Copilot](https://img.shields.io/badge/GitHub%20Copilot-Agent%20Mode-green?style=flat-square&logo=github)
 
-> **⚡ Greitas startas:** Sukurkite gamybai paruoštą MCP serverį, kuris automatizuoja GitHub saugyklų klonavimą ir VS Code integraciją vos per 30 minučių!
+> **⚡ Greitas pradėjimas:** Sukurkite gamybai paruoštą MCP serverį, kuris automatiškai klonuos GitHub saugyklas ir integruos jas su VS Code vos per 30 minučių!
 
 ## 🎯 Mokymosi tikslai
 
-Baigę šį laboratorinį darbą, galėsite:
+Šio laboratorinio darbo pabaigoje sugebėsite:
 
-- ✅ Sukurti individualų MCP serverį realiems kūrimo procesams
+- ✅ Sukurti individualų MCP serverį tikroms kūrimo darbo eigoms
 - ✅ Įgyvendinti GitHub saugyklų klonavimo funkcionalumą per MCP
 - ✅ Integruoti individualius MCP serverius su VS Code ir Agent Builder
-- ✅ Naudoti GitHub Copilot Agent Mode su individualiais MCP įrankiais
-- ✅ Testuoti ir diegti individualius MCP serverius gamybinėje aplinkoje
+- ✅ Naudoti GitHub Copilot Agent režimą su individualiais MCP įrankiais
+- ✅ Testuoti ir diegti individualius MCP serverius gamybos aplinkose
 
 ## 📋 Reikalavimai
 
-- Baigti 1–3 laboratoriniai darbai (MCP pagrindai ir pažangus kūrimas)
-- GitHub Copilot prenumerata ([nemokama registracija](https://github.com/github-copilot/signup))
+- Įvykdyti laboratorinius darbus 1-3 (MCP pagrindai ir pažangesnis kūrimas)
+- GitHub Copilot prenumerata ([galima užsiregistruoti nemokamai](https://github.com/github-copilot/signup))
 - VS Code su AI Toolkit ir GitHub Copilot plėtiniais
-- Įdiegtas ir sukonfigūruotas Git CLI
+- Įdiegta ir sukonfigūruota Git komandinės eilutės sąsaja
 
 ## 🏗️ Projekto apžvalga
 
-### **Realaus pasaulio kūrimo iššūkis**
-Kaip kūrėjai, dažnai naudojame GitHub saugykloms klonuoti ir atidaryti jas VS Code arba VS Code Insiders. Šis rankinis procesas apima:
-1. Terminalo/komandinės eilutės atidarymą
-2. Naršymą į norimą katalogą
-3. `git clone` komandos vykdymą
-4. VS Code atidarymą klonuotame kataloge
+### **Tikro pasaulio kūrimo iššūkis**  
+Kaip kūrėjai, dažnai naudojame GitHub, norėdami klonuoti saugyklas ir atidaryti jas VS Code arba VS Code Insiders. Šis rankinis procesas apima:
+1. Terminalo/komandinės eilutės atidarymą  
+2. Navigavimą į norimą katalogą  
+3. `git clone` komandos vykdymą  
+4. VS Code atidarymą klonuotame kataloge  
 
-**Mūsų MCP sprendimas supaprastina šį procesą į vieną išmanią komandą!**
+**Mūsų MCP sprendimas tai apjungia į vieną protingą komandą!**
 
-### **Ką sukursite**
-**GitHub klonavimo MCP serverį** (`git_mcp_server`), kuris siūlo:
+### **Ką sukursite**  
+**GitHub klono MCP serverį** (`git_mcp_server`), kuris suteiks:
 
 | Funkcija | Aprašymas | Privalumas |
-|----------|-----------|------------|
-| 🔄 **Išmanus saugyklų klonavimas** | Klonuokite GitHub saugyklas su validacija | Automatinis klaidų tikrinimas |
-| 📁 **Išmanus katalogų valdymas** | Saugiai tikrinkite ir kurkite katalogus | Apsauga nuo perrašymo |
-| 🚀 **Kryžminė VS Code integracija** | Atidarykite projektus VS Code/Insiders | Sklandus darbo perėjimas |
-| 🛡️ **Patikimas klaidų valdymas** | Tvarkykite tinklo, leidimų ir kelių problemas | Gamybai paruoštas patikimumas |
+|---------|-------------|---------|
+| 🔄 **Išmanus saugyklos klonavimas** | Klonuoti GitHub saugyklas su patikra | Automatizuotas klaidų tikrinimas |
+| 📁 **Išmanus katalogų valdymas** | Patikrina ir saugiai kuria katalogus | Užkerta kelią perrašymui |
+| 🚀 **Kryžminė platforma VS Code integracija** | Atidaro projektus VS Code/Insiders | Sklandus darbo eigos perėjimas |
+| 🛡️ **Patikima klaidų tvarka** | Tvarko tinklo, leidimų ir kelių problemas | Gamybai paruošta patikimumas |
 
 ---
 
@@ -61,30 +52,30 @@ Kaip kūrėjai, dažnai naudojame GitHub saugykloms klonuoti ir atidaryti jas VS
 
 ### 1 žingsnis: Sukurkite GitHub agentą Agent Builder
 
-1. **Paleiskite Agent Builder** per AI Toolkit plėtinį
-2. **Sukurkite naują agentą** su šia konfigūracija:
+1. **Paleiskite Agent Builder** per AI Toolkit plėtinį  
+2. **Sukurkite naują agentą** su šia konfigūracija:  
    ```
    Agent Name: GitHubAgent
    ```
-
-3. **Inicijuokite individualų MCP serverį:**
-   - Eikite į **Tools** → **Add Tool** → **MCP Server**
-   - Pasirinkite **"Create A new MCP Server"**
-   - Pasirinkite **Python šabloną** dėl didžiausio lankstumo
+  
+3. **Inicializuokite individualų MCP serverį:**  
+   - Eikite į **Tools** → **Add Tool** → **MCP Server**  
+   - Pasirinkite **"Create A new MCP Server"**  
+   - Pasirinkite **Python šabloną** didžiausiam lankstumui  
    - **Serverio pavadinimas:** `git_mcp_server`
 
-### 2 žingsnis: Suaktyvinkite GitHub Copilot Agent Mode
+### 2 žingsnis: Konfigūruokite GitHub Copilot Agent režimą
 
-1. **Atidarykite GitHub Copilot** VS Code (Ctrl/Cmd + Shift + P → "GitHub Copilot: Open")
-2. **Pasirinkite Agent Model** Copilot sąsajoje
-3. **Pasirinkite Claude 3.7 modelį** dėl geresnių loginio mąstymo galimybių
-4. **Įjunkite MCP integraciją** įrankių prieigai
+1. **Atidarykite GitHub Copilot** VS Code (Ctrl/Cmd + Shift + P → "GitHub Copilot: Open")  
+2. **Pasirinkite Agent modelį** Copilot sąsajoje  
+3. **Pasirinkite Claude 3.7 modelį** geresniam loginio mąstymo palaikymui  
+4. **Įjunkite MCP integraciją** įrankių prieigai  
 
-> **💡 Patarimas:** Claude 3.7 pasižymi puikiu kūrimo procesų ir klaidų valdymo šablonų supratimu.
+> **💡 Patarimas:** Claude 3.7 geriau supranta kūrimo darbo eigos ir klaidų tvarkymo šablonus.
 
 ### 3 žingsnis: Įgyvendinkite pagrindinį MCP serverio funkcionalumą
 
-**Naudokite šį išsamų raginimą su GitHub Copilot Agent Mode:**
+**Naudokite šį išsamų užklausos šabloną su GitHub Copilot Agent režimu:**  
 
 ```
 Create two MCP tools with the following comprehensive requirements:
@@ -116,20 +107,20 @@ Additional Requirements:
 - Add input validation for all parameters
 - Include comprehensive error handling
 ```
-
+  
 ### 4 žingsnis: Testuokite savo MCP serverį
 
 #### 4a. Testavimas Agent Builder
 
-1. **Paleiskite derinimo konfigūraciją** Agent Builder
-2. **Sukonfigūruokite savo agentą su šiuo sistemos raginimu:**
+1. **Paleiskite derinimo konfigūraciją** Agent Builder  
+2. **Sukonfigūruokite savo agentą su šiuo sistemos užklausa:**  
 
 ```
 SYSTEM_PROMPT:
 You are my intelligent coding repository assistant. You help developers efficiently clone GitHub repositories and set up their development environment. Always provide clear feedback about operations and handle errors gracefully.
 ```
-
-3. **Testuokite su realistiniais vartotojo scenarijais:**
+  
+3. **Testuokite su realiomis naudotojų situacijomis:**  
 
 ```
 USER_PROMPT EXAMPLES:
@@ -138,71 +129,82 @@ Scenario : Basic Clone and Open
 "Clone {Your GitHub Repo link such as https://github.com/kinfey/GHCAgentWorkshop
  } and save to {The global path you specify}, then open it with VS Code Insiders"
 ```
+  
+![Agent Builder testavimas](../../../../translated_images/lt/DebugAgent.81d152370c503241.webp)
 
-![Agent Builder Testavimas](../../../../translated_images/DebugAgent.81d152370c503241b3b39a251b8966f7f739286df19dd57f9147f6402214a012.lt.png)
-
-**Tikėtini rezultatai:**
-- ✅ Sėkmingas klonavimas su kelio patvirtinimu
-- ✅ Automatinis VS Code paleidimas
-- ✅ Aiškios klaidų žinutės netinkamais atvejais
-- ✅ Tinkamas kraštutinių atvejų valdymas
+**Laukiami rezultatai:**  
+- ✅ Sėkmingas klonavimas su kelio patvirtinimu  
+- ✅ Automatinis VS Code paleidimas  
+- ✅ Aiškios klaidų žinutės negaliojantiems atvejams  
+- ✅ Teisingas kampinių atvejų valdymas
 
 #### 4b. Testavimas MCP Inspector
 
-![MCP Inspector Testavimas](../../../../translated_images/DebugInspector.eb5c95f94c69a8ba36944941b9a3588309a3a2fae101ace470ee09bde41d1667.lt.png)
+![MCP Inspector testavimas](../../../../translated_images/lt/DebugInspector.eb5c95f94c69a8ba.webp)
 
 ---
 
-**🎉 Sveikiname!** Jūs sėkmingai sukūrėte praktišką, gamybai paruoštą MCP serverį, kuris sprendžia realius kūrimo procesų iššūkius. Jūsų individualus GitHub klonavimo serveris demonstruoja MCP galimybes automatizuoti ir pagerinti kūrėjų produktyvumą.
+**🎉 Sveikinimai!** Sėkmingai sukūrėte praktišką, gamybai paruoštą MCP serverį, kuris sprendžia realius kūrimo darbo eigos iššūkius. Jūsų individualus GitHub klono serveris demonstruoja MCP galią automatizuojant ir gerinant kūrėjų produktyvumą.
 
-### 🏆 Pasiekimai:
-- ✅ **MCP kūrėjas** – Sukūrėte individualų MCP serverį
-- ✅ **Procesų automatizatorius** – Supaprastinote kūrimo procesus  
-- ✅ **Integracijos ekspertas** – Sujungėte kelis kūrimo įrankius
-- ✅ **Gamybai paruoštas** – Sukūrėte diegimui tinkamus sprendimus
+### 🏆 Pasiekimai:  
+- ✅ **MCP kūrėjas** - sukurtas individualus MCP serveris  
+- ✅ **Darbo eigos automatizatorius** - supaprastintos kūrimo procedūros  
+- ✅ **Integracijos ekspertas** - sujungti keli kūrimo įrankiai  
+- ✅ **Gamybai paruoštas** - sukurti sprendimai diegimui
 
 ---
 
-## 🎓 Seminaro pabaiga: Jūsų kelionė su Model Context Protocol
+## 🎓 Workshop pabaiga: Jūsų kelionė su Model Context Protocol
 
-**Gerbiamas seminaro dalyvi,**
+**Gerbiamas workshop dalyvi,**
 
-Sveikiname baigus visus keturis Model Context Protocol seminaro modulius! Jūs nuėjote ilgą kelią nuo AI Toolkit pagrindų supratimo iki gamybai paruoštų MCP serverių kūrimo, kurie sprendžia realius kūrimo iššūkius.
+Sveikiname baigus Model Context Protocol keturis modulius! Jūs žengėte ilgą kelią nuo AI Toolkit pagrindų supratimo iki gamybai paruoštų MCP serverių kūrimo, sprendžiančių tikrus kūrimo iššūkius.
 
-### 🚀 Jūsų mokymosi kelio apžvalga:
+### 🚀 Jūsų mokymosi kelias:
 
-**[1 modulis](../lab1/README.md)**: Pradėjote tyrinėti AI Toolkit pagrindus, modelių testavimą ir sukūrėte savo pirmąjį AI agentą.
+**[1 modulis](../lab1/README.md)**: Pradėjote tyrinėti AI Toolkit pagrindus, modelių testavimą ir sukūrėte pirmąjį AI agentą.
 
-**[2 modulis](../lab2/README.md)**: Sužinojote apie MCP architektūrą, integravote Playwright MCP ir sukūrėte pirmąjį naršyklės automatizavimo agentą.
+**[2 modulis](../lab2/README.md)**: Išmokote MCP architektūrą, integravote Playwright MCP ir sukūrėte pirmąjį naršyklės automatizavimo agentą.
 
-**[3 modulis](../lab3/README.md)**: Pažengėte į individualių MCP serverių kūrimą su Weather MCP serveriu ir įvaldėte derinimo įrankius.
+**[3 modulis](../lab3/README.md)**: Pažengėte individualių MCP serverių kūrime su Weather MCP serveriu ir įvaldėte derinimo įrankius.
 
-**[4 modulis](../lab4/README.md)**: Praktiškai pritaikėte viską, sukurdami GitHub saugyklų darbo eigos automatizavimo įrankį.
+**[4 modulis](../lab4/README.md)**: Dabar taikote viską, kad sukurtumėte praktišką GitHub saugyklų darbo eigos automatizavimo įrankį.
 
-### 🌟 Ką įvaldėte:
+### 🌟 Ko išmokote:
 
-- ✅ **AI Toolkit ekosistema**: Modeliai, agentai ir integracijos šablonai
-- ✅ **MCP architektūra**: Kliento-serverio dizainas, transporto protokolai ir saugumas
-- ✅ **Kūrėjo įrankiai**: Nuo Playground iki Inspector iki gamybos diegimo
-- ✅ **Individualus kūrimas**: MCP serverių kūrimas, testavimas ir diegimas
-- ✅ **Praktinės taikymo sritys**: Realių darbo eigos iššūkių sprendimas su AI
+- ✅ **AI Toolkit ekosistema**: modeliai, agentai ir integravimo modeliai  
+- ✅ **MCP architektūra**: klientas-serveris dizainas, transportavimo protokolai, saugumas  
+- ✅ **Kūrėjo įrankiai**: nuo Playground iki Inspector ir gamybos diegimo  
+- ✅ **Individualus kūrimas**: MCP serverių kūrimas, testavimas ir diegimas  
+- ✅ **Praktinės taikymai**: realių darbo eigos problemų sprendimas panaudojant AI
 
 ### 🔮 Jūsų kiti žingsniai:
 
-1. **Sukurkite savo MCP serverį**: Pritaikykite šiuos įgūdžius savo unikaliems procesams automatizuoti
-2. **Prisijunkite prie MCP bendruomenės**: Dalinkitės savo kūriniais ir mokykitės iš kitų
-3. **Tyrinėkite pažangią integraciją**: Sujunkite MCP serverius su įmonių sistemomis
-4. **Prisidėkite prie atvirojo kodo**: Padėkite tobulinti MCP įrankius ir dokumentaciją
+1. **Sukurkite savo MCP serverį**: taikykite įgūdžius savo unikalioms darbo eigoms automatizuoti  
+2. **Prisijunkite prie MCP bendruomenės**: dalinkitės savo kūriniais ir mokykitės iš kitų  
+3. **Tyrinėkite pažangią integraciją**: jungkite MCP serverius su įmonių sistemomis  
+4. **Prisidėkite prie atviro kodo**: padėkite tobulinti MCP įrankius ir dokumentaciją
 
-Prisiminkite, kad šis seminaras yra tik pradžia. Model Context Protocol ekosistema sparčiai vystosi, ir dabar jūs esate pasiruošę būti AI pagrįstų kūrimo įrankių priešakyje.
+Prisiminkite, šis workshopas yra tik pradžia. Model Context Protocol ekosistema greitai tobulėja, o jūs dabar esate pasiruošę būti AI paremto kūrimo įrankių priešakyje.
 
-**Dėkojame už jūsų dalyvavimą ir atsidavimą mokymuisi!**
+**Dėkojame už jūsų dalyvavimą ir mokymosi atsidavimą!**
 
-**Sėkmingo programavimo!**
+Tikimės, kad šis seminaras įkvėpė idėjų, kurios pakeis, kaip kuriate ir naudojatės AI įrankiais savo kūrimo kelionėje.
+
+**Sėkmės programuojant!**
 
 ---
 
+## Kas toliau
+
+Sveikiname baigus visus laboratorinius darbus 10 modulyje!  
+
+- Grįžti į: [10 modulio apžvalga](../README.md)  
+- Tęsti į: [11 modulis: MCP serverio praktinės laboratorijos](../../11-MCPServerHandsOnLabs/README.md)
+
 ---
 
-**Atsakomybės apribojimas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors stengiamės užtikrinti tikslumą, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama naudoti profesionalų žmogaus vertimą. Mes neprisiimame atsakomybės už nesusipratimus ar klaidingus interpretavimus, atsiradusius dėl šio vertimo naudojimo.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Atsakomybės atsisakymas**:  
+Šis dokumentas buvo išverstas naudojant dirbtinio intelekto vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors stengiamės užtikrinti tikslumą, atkreipkite dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba laikomas autoritetingu šaltiniu. Svarbiai informacijai rekomenduojama pasitelkti profesionalų žmogišką vertimą. Mes neatsakome už jokius nesusipratimus ar neteisingus interpretavimus, kylančius iš šio vertimo naudojimo.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

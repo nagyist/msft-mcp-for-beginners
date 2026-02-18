@@ -37,7 +37,7 @@ The MCP ecosystem consists of various components and participants that work toge
 
 - [MCP GitHub Organization](https://github.com/modelcontextprotocol)
 - [MCP Documentation](https://modelcontextprotocol.io/)
-- [MCP Specification](https://modelcontextprotocol.io/docs/specification)
+- [MCP Specification](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
 - [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)
 - [MCP Examples & Servers Repository](https://github.com/modelcontextprotocol/servers)
 
@@ -347,13 +347,15 @@ One of the most valuable ways to contribute to the MCP ecosystem is by creating 
 
 Several frameworks are available to simplify MCP server development:
 
-1. **Official SDKs**:
+1. **Official SDKs** (aligned with [MCP Specification 2025-11-25](https://spec.modelcontextprotocol.io/specification/2025-11-25/)):
    - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
    - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
    - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
    - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
    - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
    - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
+   - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk)
+   - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk)
 
 2. **Community Frameworks**:
    - [MCP-Framework](https://mcp-framework.com/) - Build MCP servers with elegance and speed in TypeScript
@@ -836,5 +838,7 @@ async def delete_tool(tool_name: str):
 - [MCP Community Projects](https://github.com/topics/model-context-protocol)
 
 ---
+
+## What's Next
 
 Next: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)

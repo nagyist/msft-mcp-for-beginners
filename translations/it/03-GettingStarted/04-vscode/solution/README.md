@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5ef8f5821c1a04f7b1fc4f15098ecab8",
-  "translation_date": "2025-07-13T19:42:09+00:00",
-  "source_file": "03-GettingStarted/04-vscode/solution/README.md",
-  "language_code": "it"
-}
--->
 Questo corrisponde all'esecuzione di un comando come: `node build/index.js`.
 
 - Modifica questa voce del server in modo che corrisponda alla posizione del file del tuo server o a ciò che è necessario per avviare il server, a seconda del runtime scelto e della posizione del server.
@@ -23,7 +14,7 @@ Questo corrisponde all'esecuzione di un comando come: `node build/index.js`.
 
     Dovresti vedere uno strumento presentato sopra la casella di testo della chat che ti invita a selezionarlo per eseguire lo strumento, come mostrato in questa immagine:
 
-    ![VS Code che indica la volontà di eseguire uno strumento](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.it.png)
+    ![VS Code che indica la volontà di eseguire uno strumento](../../../../../translated_images/it/vscode-agent.d5a0e0b897331060.webp)
 
     Selezionando lo strumento dovrebbe apparire un risultato numerico con il valore "23" se il tuo prompt era simile a quello che abbiamo indicato prima.
 

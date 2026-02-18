@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d940b5e0af75e3a3a4d1c3179120d1d9",
-  "translation_date": "2025-08-26T17:52:30+00:00",
-  "source_file": "03-GettingStarted/04-vscode/README.md",
-  "language_code": "da"
-}
--->
 # Forbrug af en server fra GitHub Copilot Agent-tilstand
 
 Visual Studio Code og GitHub Copilot kan fungere som en klient og forbruge en MCP-server. Hvorfor skulle vi ønske at gøre det, spørger du måske? Jo, det betyder, at de funktioner, MCP-serveren har, nu kan bruges direkte i dit IDE. Forestil dig for eksempel, at du tilføjer GitHubs MCP-server – det ville give dig mulighed for at kontrollere GitHub via prompts i stedet for at skrive specifikke kommandoer i terminalen. Eller forestil dig generelt alt, der kunne forbedre din udvikleroplevelse, alt sammen styret af naturligt sprog. Nu begynder du at se fordelen, ikke?
@@ -38,9 +29,9 @@ Du kan styre din MCP-server på to forskellige måder:
 
 ### Skærmbilleder
 
-![Guidet MCP-serverkonfiguration i Visual Studio Code](../../../../translated_images/chat-mode-agent.729a22473f822216dd1e723aaee1f7d4a2ede571ee0948037a2d9357a63b9d0b.da.png)
-![Værktøjsvalg pr. agent-session](../../../../translated_images/agent-mode-select-tools.522c7ba5df0848f8f0d1e439c2e96159431bc620cb39ccf3f5dc611412fd0006.da.png)
-![Fejlfinding af fejl under MCP-udvikling](../../../../translated_images/mcp-list-servers.fce89eefe3f30032bed8952e110ab9d82fadf043fcfa071f7d40cf93fb1ea9e9.da.png)
+![Guidet MCP-serverkonfiguration i Visual Studio Code](../../../../translated_images/da/chat-mode-agent.729a22473f822216.webp)
+![Værktøjsvalg pr. agent-session](../../../../translated_images/da/agent-mode-select-tools.522c7ba5df0848f8.webp)
+![Fejlfinding af fejl under MCP-udvikling](../../../../translated_images/da/mcp-list-servers.fce89eefe3f30032.webp)
 
 Lad os tale mere om, hvordan vi bruger den visuelle grænseflade i de næste afsnit.
 
@@ -103,15 +94,15 @@ Nu hvor du har tilføjet en post, lad os starte serveren:
 
 1. Find din post i *mcp.json* og sørg for, at du finder "play"-ikonet:
 
-  ![Start af server i Visual Studio Code](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.da.png)  
+  ![Start af server i Visual Studio Code](../../../../translated_images/da/vscode-start-server.8e3c986612e3555d.webp)  
 
 1. Klik på "play"-ikonet. Du bør se værktøjsikonet i GitHub Copilot Chat øge antallet af tilgængelige værktøjer. Hvis du klikker på det nævnte værktøjsikon, vil du se en liste over registrerede værktøjer. Du kan markere/afmarkere hvert værktøj afhængigt af, om du vil have GitHub Copilot til at bruge dem som kontekst:
 
-  ![Start af server i Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.da.png)
+  ![Start af server i Visual Studio Code](../../../../translated_images/da/vscode-tool.0b3bbea2fb7d8c26.webp)
 
 1. For at køre et værktøj skal du skrive en prompt, som du ved matcher beskrivelsen af et af dine værktøjer, for eksempel en prompt som denne: "add 22 to 1":
 
-  ![Kørsel af et værktøj fra GitHub Copilot](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.da.png)
+  ![Kørsel af et værktøj fra GitHub Copilot](../../../../translated_images/da/vscode-agent.d5a0e0b897331060.webp)
 
   Du bør se et svar, der siger 23.
 

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5ef8f5821c1a04f7b1fc4f15098ecab8",
-  "translation_date": "2025-07-13T19:41:08+00:00",
-  "source_file": "03-GettingStarted/04-vscode/solution/README.md",
-  "language_code": "mr"
-}
--->
 हे खालीलप्रमाणे कमांड चालवण्याशी संबंधित आहे: `node build/index.js`.
 
 - तुमच्या सर्व्हर फाइलचा स्थान किंवा तुमच्या निवडलेल्या रनटाइम आणि सर्व्हर स्थानानुसार सर्व्हर सुरू करण्यासाठी आवश्यक असलेली पूर्ण कमांड दाखवण्यासाठी या सर्व्हर एंट्रीमध्ये बदल करा.
@@ -23,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     तुम्हाला चॅट टेक्स्ट बॉक्सच्या वर टूल प्रदर्शित होताना दिसेल ज्यामुळे तुम्हाला टूल निवडून चालवता येईल, खालील चित्रात दाखवल्याप्रमाणे:
 
-    ![VS Code indicating it wanting to run a tool](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.mr.png)
+    ![VS Code indicating it wanting to run a tool](../../../../../translated_images/mr/vscode-agent.d5a0e0b897331060.webp)
 
     टूल निवडल्यानंतर जर तुमचा प्रॉम्प्ट वरीलप्रमाणे असेल तर "23" असा संख्यात्मक निकाल दिसेल.
 

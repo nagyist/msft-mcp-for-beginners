@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5ef8f5821c1a04f7b1fc4f15098ecab8",
-  "translation_date": "2025-07-13T19:44:42+00:00",
-  "source_file": "03-GettingStarted/04-vscode/solution/README.md",
-  "language_code": "ms"
-}
--->
 Ini bersamaan dengan menjalankan arahan seperti ini: `node build/index.js`.
 
 - Tukar entri server ini supaya sesuai dengan lokasi fail server anda atau apa yang diperlukan untuk memulakan server anda bergantung pada runtime dan lokasi server yang anda pilih.
@@ -23,7 +14,7 @@ Ini bersamaan dengan menjalankan arahan seperti ini: `node build/index.js`.
 
     Anda sepatutnya melihat alat dipaparkan di atas kotak teks chat yang menunjukkan anda boleh memilih untuk menjalankan alat tersebut seperti dalam visual ini:
 
-    ![VS Code menunjukkan ia ingin menjalankan alat](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.ms.png)
+    ![VS Code menunjukkan ia ingin menjalankan alat](../../../../../translated_images/ms/vscode-agent.d5a0e0b897331060.webp)
 
     Memilih alat tersebut sepatutnya menghasilkan keputusan nombor yang mengatakan "23" jika arahan anda seperti yang kami sebutkan sebelum ini.
 

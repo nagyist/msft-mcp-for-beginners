@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0bc7bd48f55f1565f1d95ccb2c16f728",
-  "translation_date": "2025-07-13T23:03:54+00:00",
-  "source_file": "04-PracticalImplementation/samples/csharp/README.md",
-  "language_code": "fa"
-}
--->
 # نمونه
 
 مثال قبلی نشان می‌دهد چگونه می‌توان از یک پروژه محلی .NET با نوع `stdio` استفاده کرد و سرور را به صورت محلی در یک کانتینر اجرا کرد. این راه‌حل در بسیاری از موقعیت‌ها مناسب است. اما گاهی اوقات مفید است که سرور به صورت راه دور، مثلاً در یک محیط ابری، اجرا شود. اینجاست که نوع `http` وارد می‌شود.
@@ -26,7 +17,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. وقتی مرورگر وب داشبورد .NET Aspire را باز کرد، آدرس `http` را یادداشت کنید. باید چیزی شبیه به `http://localhost:5058/` باشد.
 
-   ![داشبورد .NET Aspire](../../../../../translated_images/dotnet-aspire-dashboard.0a7095710e9301e90df2efd867e1b675b3b9bc2ccd7feb1ebddc0751522bc37c.fa.png)
+   ![داشبورد .NET Aspire](../../../../../translated_images/fa/dotnet-aspire-dashboard.0a7095710e9301e9.webp)
 
 ## تست Streamable HTTP با MCP Inspector
 
@@ -38,7 +29,7 @@ CO_OP_TRANSLATOR_METADATA:
 npx @modelcontextprotocol/inspector http://localhost:5058
 ```
 
-![MCP Inspector](../../../../../translated_images/mcp-inspector.c223422b9b494fb4a518a3b3911b3e708e6a5715069470f9163ee2ee8d5f1ba9.fa.png)
+![MCP Inspector](../../../../../translated_images/fa/mcp-inspector.c223422b9b494fb4.webp)
 
 - نوع Transport را روی `Streamable HTTP` انتخاب کنید.
 - در فیلد Url، آدرس سرور که قبلاً یادداشت کردید را وارد کنید و `/mcp` را به آن اضافه کنید. باید `http` باشد (نه `https`) و چیزی شبیه به `http://localhost:5058/mcp`.
@@ -83,7 +74,7 @@ azd up
 
 پس از پایان استقرار، باید پیامی شبیه به این ببینید:
 
-![موفقیت استقرار Azd](../../../../../translated_images/azd-deployment-success.bd42940493f1b834a5ce6251a6f88966546009b350df59d0cc4a8caabe94a4f1.fa.png)
+![موفقیت استقرار Azd](../../../../../translated_images/fa/azd-deployment-success.bd42940493f1b834.webp)
 
 آدرس URL را بردارید و در MCP Inspector و GitHub Copilot Chat استفاده کنید.
 

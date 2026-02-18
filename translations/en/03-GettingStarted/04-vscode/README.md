@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d940b5e0af75e3a3a4d1c3179120d1d9",
-  "translation_date": "2025-08-26T17:00:17+00:00",
-  "source_file": "03-GettingStarted/04-vscode/README.md",
-  "language_code": "en"
-}
--->
 # Consuming a server from GitHub Copilot Agent mode
 
 Visual Studio Code and GitHub Copilot can act as a client to consume an MCP Server. Why would you want to do that? Well, it means that any features provided by the MCP Server can now be accessed directly from your IDE. For example, if you add GitHub's MCP server, you could control GitHub using prompts instead of typing specific commands in the terminal. Or imagine any other functionality that could enhance your development experience, all managed through natural language. Sounds like a win, right?
@@ -38,9 +29,9 @@ You can control your MCP server in two ways:
 
 ### Screenshots
 
-![Guided MCP server configuration in Visual Studio Code](../../../../translated_images/chat-mode-agent.729a22473f822216dd1e723aaee1f7d4a2ede571ee0948037a2d9357a63b9d0b.en.png)
-![Tool selection per agent session](../../../../translated_images/agent-mode-select-tools.522c7ba5df0848f8f0d1e439c2e96159431bc620cb39ccf3f5dc611412fd0006.en.png)
-![Easily debug errors during MCP development](../../../../translated_images/mcp-list-servers.fce89eefe3f30032bed8952e110ab9d82fadf043fcfa071f7d40cf93fb1ea9e9.en.png)
+![Guided MCP server configuration in Visual Studio Code](../../../../translated_images/en/chat-mode-agent.729a22473f822216.webp)
+![Tool selection per agent session](../../../../translated_images/en/agent-mode-select-tools.522c7ba5df0848f8.webp)
+![Easily debug errors during MCP development](../../../../translated_images/en/mcp-list-servers.fce89eefe3f30032.webp)
 
 We'll discuss how to use the visual interface in the following sections.
 
@@ -103,15 +94,15 @@ Now that you’ve added an entry, let’s start the server:
 
 1. Locate your entry in *mcp.json* and find the "play" icon:
 
-  ![Starting server in Visual Studio Code](../../../../translated_images/vscode-start-server.8e3c986612e3555de47e5b1e37b2f3020457eeb6a206568570fd74a17e3796ad.en.png)  
+  ![Starting server in Visual Studio Code](../../../../translated_images/en/vscode-start-server.8e3c986612e3555d.webp)  
 
 1. Click the "play" icon. You should see the tools icon in the GitHub Copilot Chat interface show an increased number of available tools. If you click the tools icon, you’ll see a list of registered tools. You can check or uncheck each tool depending on whether you want GitHub Copilot to use them as context:
 
-  ![Starting server in Visual Studio Code](../../../../translated_images/vscode-tool.0b3bbea2fb7d8c26ddf573cad15ef654e55302a323267d8ee6bd742fe7df7fed.en.png)
+  ![Starting server in Visual Studio Code](../../../../translated_images/en/vscode-tool.0b3bbea2fb7d8c26.webp)
 
 1. To run a tool, type a prompt that matches the description of one of your tools. For example, a prompt like "add 22 to 1":
 
-  ![Running a tool from GitHub Copilot](../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.en.png)
+  ![Running a tool from GitHub Copilot](../../../../translated_images/en/vscode-agent.d5a0e0b897331060.webp)
 
   You should see a response of 23.
 

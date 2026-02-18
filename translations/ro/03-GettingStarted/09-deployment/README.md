@@ -1,46 +1,37 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1d9dc83260576b76f272d330ed93c51f",
-  "translation_date": "2025-07-13T22:11:11+00:00",
-  "source_file": "03-GettingStarted/09-deployment/README.md",
-  "language_code": "ro"
-}
--->
 # Implementarea serverelor MCP
 
-Implementarea serverului MCP permite altora să acceseze uneltele și resursele acestuia dincolo de mediul tău local. Există mai multe strategii de implementare de luat în considerare, în funcție de cerințele tale legate de scalabilitate, fiabilitate și ușurința în administrare. Mai jos vei găsi îndrumări pentru implementarea serverelor MCP local, în containere și în cloud.
+Implementarea serverului tău MCP permite altora să acceseze instrumentele și resursele sale dincolo de mediul tău local. Există mai multe strategii de implementare de luat în considerare, în funcție de cerințele tale privind scalabilitatea, fiabilitatea și ușurința gestionării. Mai jos vei găsi îndrumări pentru implementarea serverelor MCP local, în containere și în cloud.
 
 ## Prezentare generală
 
-Această lecție acoperă modul de implementare a aplicației tale MCP Server.
+Această lecție acoperă modul de a implementa aplicația ta MCP Server.
 
 ## Obiective de învățare
 
-La finalul acestei lecții, vei putea:
+La finalul acestei lecții, vei putea să:
 
-- Evalua diferite abordări de implementare.
-- Implementa aplicația ta.
+- Evaluezi diferite abordări de implementare.
+- Îți implementezi aplicația.
 
 ## Dezvoltare și implementare locală
 
-Dacă serverul tău este destinat să fie folosit rulând pe mașina utilizatorului, poți urma pașii următori:
+Dacă serverul tău este destinat să fie utilizat rulând pe mașina utilizatorului, poți urma pașii următori:
 
-1. **Descarcă serverul**. Dacă nu ai scris serverul, descarcă-l mai întâi pe mașina ta.  
-1. **Pornește procesul serverului**: Rulează aplicația MCP server.
+1. **Descarcă serverul**. Dacă nu ai scris serverul, descarcă-l mai întâi pe mașina ta.
+1. **Pornește procesul serverului**: Rulează aplicația ta MCP server
 
 Pentru SSE (nu este necesar pentru serverele de tip stdio)
 
-1. **Configurează rețeaua**: Asigură-te că serverul este accesibil pe portul așteptat.  
-1. **Conectează clienții**: Folosește URL-uri de conexiune locală, cum ar fi `http://localhost:3000`.
+1. **Configurează rețeaua**: Asigură-te că serverul este accesibil pe portul așteptat
+1. **Conectează clienții**: Folosește URL-uri de conexiune locale precum `http://localhost:3000`
 
 ## Implementare în cloud
 
 Serverele MCP pot fi implementate pe diverse platforme cloud:
 
-- **Funcții serverless**: Implementarea serverelor MCP ușoare ca funcții serverless.  
-- **Servicii de containere**: Folosește servicii precum Azure Container Apps, AWS ECS sau Google Cloud Run.  
-- **Kubernetes**: Implementarea și gestionarea serverelor MCP în clustere Kubernetes pentru disponibilitate ridicată.
+- **Funcții serverless**: Implementarea serverelor MCP ușoare ca funcții serverless
+- **Servicii de containere**: Folosește servicii precum Azure Container Apps, AWS ECS sau Google Cloud Run
+- **Kubernetes**: Implementarea și gestionarea serverelor MCP în clustere Kubernetes pentru disponibilitate ridicată
 
 ### Exemplu: Azure Container Apps
 
@@ -68,7 +59,7 @@ Iată cum poți proceda:
   uv run fastapi dev main.py
   ```
 
-1. Pentru a-l testa local, creează un fișier *mcp.json* într-un director *.vscode* și adaugă următorul conținut:
+1. Pentru a încerca local, creează un fișier *mcp.json* într-un director *.vscode* și adaugă următorul conținut:
 
   ```json
   {
@@ -92,26 +83,30 @@ Iată cum poți proceda:
   }
   ```
 
-  Odată ce serverul SSE este pornit, poți da click pe iconița de redare din fișierul JSON; acum ar trebui să vezi uneltele serverului preluate de GitHub Copilot, vezi iconița Tool.
+  Odată ce serverul SSE este pornit, poți face clic pe pictograma de redare din fișierul JSON, acum ar trebui să vezi instrumentele de pe server preluate de GitHub Copilot, vezi pictograma Tool.
 
-1. Pentru a implementa, rulează următoarea comandă:
+1. Pentru a implementa, rulează comanda următoare:
 
   ```sh
   az containerapp up -g <RESOURCE_GROUP_NAME> -n weather-mcp --environment mcp -l westus --env-vars API_KEYS=<AN_API_KEY> --source .
   ```
 
-Asta este tot, implementează-l local sau în Azure urmând acești pași.
+Asta este tot, implementează-l local, implementează-l pe Azure urmând acești pași.
 
 ## Resurse suplimentare
 
-- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)  
-- [Articol Azure Container Apps](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)  
-- [Repo Azure Container Apps MCP](https://github.com/anthonychu/azure-container-apps-mcp-sample)  
+- [Azure Functions + MCP](https://learn.microsoft.com/en-us/samples/azure-samples/remote-mcp-functions-dotnet/remote-mcp-functions-dotnet/)
+- [Articol Azure Container Apps](https://techcommunity.microsoft.com/blog/appsonazureblog/host-remote-mcp-servers-in-azure-container-apps/4403550)
+- [Repo Azure Container Apps MCP](https://github.com/anthonychu/azure-container-apps-mcp-sample)
 
 
 ## Ce urmează
 
-- Următorul: [Implementare practică](../../04-PracticalImplementation/README.md)
+- Următorul: [Subiecte avansate despre server](../10-advanced/README.md)
 
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Declinare de responsabilitate**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
+Acest document a fost tradus folosind serviciul de traducere automată AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să țineți cont că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventuale neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

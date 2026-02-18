@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0bc7bd48f55f1565f1d95ccb2c16f728",
-  "translation_date": "2025-07-13T23:06:48+00:00",
-  "source_file": "04-PracticalImplementation/samples/csharp/README.md",
-  "language_code": "tr"
-}
--->
 # Örnek
 
 Önceki örnek, `stdio` türü ile yerel bir .NET projesinin nasıl kullanılacağını ve sunucunun yerel bir konteynerde nasıl çalıştırılacağını gösteriyor. Bu birçok durumda iyi bir çözümdür. Ancak, sunucunun uzaktan, örneğin bir bulut ortamında çalışması da faydalı olabilir. İşte burada `http` türü devreye girer.
@@ -26,7 +17,7 @@ Diğer projeler [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-star
 
 1. Bir web tarayıcısı .NET Aspire panosunu açtığında, `http` URL’sini not edin. Şöyle bir şey olmalı: `http://localhost:5058/`.
 
-   ![.NET Aspire Dashboard](../../../../../translated_images/dotnet-aspire-dashboard.0a7095710e9301e90df2efd867e1b675b3b9bc2ccd7feb1ebddc0751522bc37c.tr.png)
+   ![.NET Aspire Dashboard](../../../../../translated_images/tr/dotnet-aspire-dashboard.0a7095710e9301e9.webp)
 
 ## MCP Inspector ile Streamable HTTP’yi test etme
 
@@ -38,7 +29,7 @@ Sunucuyu başlatın ve bir terminalde aşağıdaki komutu çalıştırın:
 npx @modelcontextprotocol/inspector http://localhost:5058
 ```
 
-![MCP Inspector](../../../../../translated_images/mcp-inspector.c223422b9b494fb4a518a3b3911b3e708e6a5715069470f9163ee2ee8d5f1ba9.tr.png)
+![MCP Inspector](../../../../../translated_images/tr/mcp-inspector.c223422b9b494fb4.webp)
 
 - Taşıma türü olarak `Streamable HTTP` seçin.
 - Url alanına daha önce not ettiğiniz sunucu URL’sini girin ve sonuna `/mcp` ekleyin. `http` (https değil) olmalı, örneğin `http://localhost:5058/mcp`.
@@ -83,7 +74,7 @@ azd up
 
 Dağıtım tamamlandığında şöyle bir mesaj görmelisiniz:
 
-![Azd deployment success](../../../../../translated_images/azd-deployment-success.bd42940493f1b834a5ce6251a6f88966546009b350df59d0cc4a8caabe94a4f1.tr.png)
+![Azd deployment success](../../../../../translated_images/tr/azd-deployment-success.bd42940493f1b834.webp)
 
 URL’yi alın ve MCP Inspector ile GitHub Copilot Chat’te kullanın.
 

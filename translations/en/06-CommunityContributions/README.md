@@ -1,21 +1,12 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fcf1e12b62102bf7d16b78deb2b163b7",
-  "translation_date": "2025-08-19T14:20:33+00:00",
-  "source_file": "06-CommunityContributions/README.md",
-  "language_code": "en"
-}
--->
 # Community and Contributions
 
-[![How to Contribute to MCP: Tools, Docs, Code and More](../../../translated_images/07.1179f6de46ff196eb3cc13c3510e01c37807a13f3bb9be3c779105ce26737c67.en.png)](https://youtu.be/v1pvCYAWpRE)
+[![How to Contribute to MCP: Tools, Docs, Code and More](../../../translated_images/en/07.1179f6de46ff196e.webp)](https://youtu.be/v1pvCYAWpRE)
 
-_(Click the image above to view the video for this lesson)_
+_(Click the image above to view video of this lesson)_
 
 ## Overview
 
-This lesson explains how to engage with the MCP community, contribute to the MCP ecosystem, and follow best practices for collaborative development. Learning how to participate in open-source MCP projects is crucial for those who want to influence the future of this technology.
+This lesson focuses on how to engage with the MCP community, contribute to the MCP ecosystem, and follow best practices for collaborative development. Understanding how to participate in open-source MCP projects is essential for those looking to shape the future of this technology.
 
 ## Learning Objectives
 
@@ -26,19 +17,19 @@ By the end of this lesson, you will be able to:
 - Contribute to MCP open-source repositories
 - Create and share custom MCP tools and servers
 - Follow best practices for MCP development and collaboration
-- Explore community resources and frameworks for MCP development
+- Discover community resources and frameworks for MCP development
 
 ## The MCP Community Ecosystem
 
-The MCP ecosystem is made up of various components and participants working together to advance the protocol.
+The MCP ecosystem consists of various components and participants that work together to advance the protocol.
 
 ### Key Community Components
 
-1. **Core Protocol Maintainers**: The official [Model Context Protocol GitHub organization](https://github.com/modelcontextprotocol) manages the core MCP specifications and reference implementations.
-2. **Tool Developers**: Individuals and teams who create MCP tools and servers.
-3. **Integration Providers**: Companies that incorporate MCP into their products and services.
-4. **End Users**: Developers and organizations using MCP in their applications.
-5. **Contributors**: Community members who provide code, documentation, or other resources.
+1. **Core Protocol Maintainers**: The official [Model Context Protocol GitHub organization](https://github.com/modelcontextprotocol) maintains the core MCP specifications and reference implementations
+2. **Tool Developers**: Individuals and teams that create MCP tools and servers
+3. **Integration Providers**: Companies that integrate MCP into their products and services
+4. **End Users**: Developers and organizations that use MCP in their applications
+5. **Contributors**: Community members who contribute code, documentation, or other resources
 
 ### Community Resources
 
@@ -46,54 +37,56 @@ The MCP ecosystem is made up of various components and participants working toge
 
 - [MCP GitHub Organization](https://github.com/modelcontextprotocol)
 - [MCP Documentation](https://modelcontextprotocol.io/)
-- [MCP Specification](https://modelcontextprotocol.io/docs/specification)
+- [MCP Specification](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
 - [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)
 - [MCP Examples & Servers Repository](https://github.com/modelcontextprotocol/servers)
 
 #### Community-Driven Resources
 
-- [MCP Clients](https://modelcontextprotocol.io/clients) - A list of clients supporting MCP integrations.
-- [Community MCP Servers](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - A growing list of community-developed MCP servers.
-- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) - A curated list of MCP servers.
-- [PulseMCP](https://www.pulsemcp.com/) - A community hub and newsletter for discovering MCP resources.
-- [Discord Server](https://discord.gg/jHEGxQu2a5) - Connect with MCP developers.
-- Language-specific SDK implementations.
-- Blog posts and tutorials.
+- [MCP Clients](https://modelcontextprotocol.io/clients) - List of clients that support MCP integrations
+- [Community MCP Servers](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - Growing list of community-developed MCP servers
+- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) - Curated list of MCP servers
+- [PulseMCP](https://www.pulsemcp.com/) - Community hub & newsletter for discovering MCP resources
+- [Discord Server](https://discord.gg/jHEGxQu2a5) - Connect with MCP developers
+- Language-specific SDK implementations
+- Blog posts and tutorials
 
 ## Contributing to MCP
 
 ### Types of Contributions
 
-The MCP ecosystem encourages various types of contributions:
+The MCP ecosystem welcomes various types of contributions:
 
 1. **Code Contributions**:
-   - Enhancements to the core protocol.
-   - Bug fixes.
-   - Tool and server implementations.
-   - Client/server libraries in different programming languages.
+   - Core protocol enhancements
+   - Bug fixes
+   - Tool and server implementations
+   - Client/server libraries in different languages
 
 2. **Documentation**:
-   - Improving existing documentation.
-   - Creating tutorials and guides.
-   - Translating documentation.
-   - Developing examples and sample applications.
+   - Improving existing documentation
+   - Creating tutorials and guides
+   - Translating documentation
+   - Creating examples and sample applications
 
 3. **Community Support**:
-   - Answering questions in forums and discussions.
-   - Testing and reporting issues.
-   - Organizing community events.
-   - Mentoring new contributors.
+   - Answering questions on forums and discussions
+   - Testing and reporting issues
+   - Organizing community events
+   - Mentoring new contributors
 
 ### Contribution Process: Core Protocol
 
-To contribute to the core MCP protocol or official implementations, follow these principles outlined in the [official contributing guidelines](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
+To contribute to the core MCP protocol or official implementations, follow these principles from the [official contributing guidelines](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
 
-1. **Simplicity and Minimalism**: The MCP specification prioritizes simplicity. Adding new concepts is easier than removing them later.
-2. **Concrete Approach**: Changes to the specification should address specific implementation challenges rather than speculative ideas.
+1. **Simplicity and Minimalism**: The MCP specification maintains a high bar for adding new concepts. It's easier to add things to a specification than to remove them.
+
+2. **Concrete Approach**: Specification changes should be based on specific implementation challenges, not speculative ideas.
+
 3. **Stages of a Proposal**:
-   - Define: Explore the problem space and confirm that other MCP users face similar issues.
-   - Prototype: Build an example solution and demonstrate its practical application.
-   - Write: Draft a specification proposal based on the prototype.
+   - Define: Explore the problem space, validate that other MCP users face a similar issue
+   - Prototype: Build an example solution and demonstrate its practical application
+   - Write: Based on the prototype, write a specification proposal
 
 ### Development Environment Setup
 
@@ -313,12 +306,12 @@ class CsvProcessingTool(Tool):
 
 To make a successful contribution to MCP projects:
 
-1. **Start Small**: Begin with documentation, bug fixes, or minor enhancements.
-2. **Follow the Style Guide**: Stick to the project's coding style and conventions.
-3. **Write Tests**: Include unit tests for your code contributions.
-4. **Document Your Work**: Provide clear documentation for new features or changes.
-5. **Submit Targeted PRs**: Keep pull requests focused on a single issue or feature.
-6. **Engage with Feedback**: Respond to feedback on your contributions.
+1. **Start Small**: Begin with documentation, bug fixes, or small enhancements
+2. **Follow the Style Guide**: Adhere to the coding style and conventions of the project
+3. **Write Tests**: Include unit tests for your code contributions
+4. **Document Your Work**: Add clear documentation for new features or changes
+5. **Submit Targeted PRs**: Keep pull requests focused on a single issue or feature
+6. **Engage with Feedback**: Be responsive to feedback on your contributions
 
 ### Example Contribution Workflow
 
@@ -348,25 +341,27 @@ git push origin feature/my-contribution
 
 ## Creating and Sharing MCP Servers
 
-Developing and sharing custom MCP servers is one of the most impactful ways to contribute to the MCP ecosystem. The community has already created hundreds of servers for various services and use cases.
+One of the most valuable ways to contribute to the MCP ecosystem is by creating and sharing custom MCP servers. The community has already developed hundreds of servers for various services and use cases.
 
 ### MCP Server Development Frameworks
 
 Several frameworks are available to simplify MCP server development:
 
-1. **Official SDKs**:
+1. **Official SDKs** (aligned with [MCP Specification 2025-11-25](https://spec.modelcontextprotocol.io/specification/2025-11-25/)):
    - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
    - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
    - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
    - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
    - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
    - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
+   - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk)
+   - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk)
 
 2. **Community Frameworks**:
-   - [MCP-Framework](https://mcp-framework.com/) - Build MCP servers quickly and efficiently in TypeScript.
-   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - Annotation-driven MCP servers in Java.
-   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - A Java framework for MCP servers.
-   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - A starter Next.js project for MCP servers.
+   - [MCP-Framework](https://mcp-framework.com/) - Build MCP servers with elegance and speed in TypeScript
+   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - Annotation-driven MCP servers with Java
+   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - Java framework for MCP servers
+   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - Starter Next.js project for MCP servers
 
 ### Developing Shareable Tools
 
@@ -687,47 +682,47 @@ class SentimentAnalysisTool(Tool):
 When sharing MCP tools with the community:
 
 1. **Complete Documentation**:
-   - Explain the tool's purpose, usage, and examples.
-   - Describe parameters and return values.
-   - Document any external dependencies.
+   - Document purpose, usage, and examples
+   - Explain parameters and return values
+   - Document any external dependencies
 
 2. **Error Handling**:
-   - Implement robust error handling.
-   - Provide meaningful error messages.
-   - Handle edge cases effectively.
+   - Implement robust error handling
+   - Provide useful error messages
+   - Handle edge cases gracefully
 
 3. **Performance Considerations**:
-   - Optimize for speed and resource efficiency.
-   - Use caching where appropriate.
-   - Design for scalability.
+   - Optimize for both speed and resource usage
+   - Implement caching when appropriate
+   - Consider scalability
 
 4. **Security**:
-   - Use secure API keys and authentication methods.
-   - Validate and sanitize inputs.
-   - Implement rate limiting for external API calls.
+   - Use secure API keys and authentication
+   - Validate and sanitize inputs
+   - Implement rate limiting for external API calls
 
 5. **Testing**:
-   - Ensure comprehensive test coverage.
-   - Test with various input types and edge cases.
-   - Document testing procedures.
+   - Include comprehensive test coverage
+   - Test with different input types and edge cases
+   - Document test procedures
 
 ## Community Collaboration and Best Practices
 
-Effective collaboration is essential for a thriving MCP ecosystem.
+Effective collaboration is key to a thriving MCP ecosystem.
 
 ### Communication Channels
 
-- GitHub Issues and Discussions.
-- Microsoft Tech Community.
-- Discord and Slack channels.
-- Stack Overflow (tags: `model-context-protocol` or `mcp`).
+- GitHub Issues and Discussions
+- Microsoft Tech Community
+- Discord and Slack channels
+- Stack Overflow (tag: `model-context-protocol` or `mcp`)
 
 ### Code Reviews
 
 When reviewing MCP contributions:
 
-1. **Clarity**: Is the code easy to understand and well-documented?
-2. **Correctness**: Does it function as intended?
+1. **Clarity**: Is the code clear and well-documented?
+2. **Correctness**: Does it work as expected?
 3. **Consistency**: Does it follow project conventions?
 4. **Completeness**: Are tests and documentation included?
 5. **Security**: Are there any security concerns?
@@ -736,14 +731,14 @@ When reviewing MCP contributions:
 
 When developing for MCP:
 
-1. **Protocol Versioning**: Ensure compatibility with the MCP protocol version your tool supports.
-2. **Client Compatibility**: Consider backward compatibility.
-3. **Server Compatibility**: Follow server implementation guidelines.
-4. **Breaking Changes**: Clearly document any breaking changes.
+1. **Protocol Versioning**: Adhere to the MCP protocol version your tool supports
+2. **Client Compatibility**: Consider backward compatibility
+3. **Server Compatibility**: Follow server implementation guidelines
+4. **Breaking Changes**: Clearly document any breaking changes
 
 ## Example Community Project: MCP Tool Registry
 
-A valuable community contribution could be creating a public registry for MCP tools.
+An important community contribution could be developing a public registry for MCP tools.
 
 ```python
 # Example schema for a community tool registry API
@@ -824,19 +819,19 @@ async def delete_tool(tool_name: str):
 
 ## Key Takeaways
 
-- The MCP community is diverse and encourages various types of contributions.
-- Contributions can range from core protocol enhancements to custom tools.
-- Following contribution guidelines increases the likelihood of your PR being accepted.
-- Developing and sharing MCP tools is a great way to strengthen the ecosystem.
-- Community collaboration is vital for MCP's growth and improvement.
+- The MCP community is diverse and welcomes various types of contributions
+- Contributing to MCP can range from core protocol enhancements to custom tools
+- Following contribution guidelines improves the chances of your PR being accepted
+- Creating and sharing MCP tools is a valuable way to enhance the ecosystem
+- Community collaboration is essential for the growth and improvement of MCP
 
 ## Exercise
 
-1. Identify an area in the MCP ecosystem where you can contribute based on your skills and interests.
-2. Fork the MCP repository and set up a local development environment.
-3. Create a small enhancement, bug fix, or tool that benefits the community.
-4. Document your contribution with proper tests and documentation.
-5. Submit a pull request to the appropriate repository.
+1. Identify an area in the MCP ecosystem where you could make a contribution based on your skills and interests
+2. Fork the MCP repository and set up a local development environment
+3. Create a small enhancement, bug fix, or tool that would benefit the community
+4. Document your contribution with proper tests and documentation
+5. Submit a pull request to the appropriate repository
 
 ## Additional Resources
 
@@ -844,7 +839,13 @@ async def delete_tool(tool_name: str):
 
 ---
 
+## What's Next
+
 Next: [Lessons from Early Adoption](../07-LessonsfromEarlyAdoption/README.md)
 
-**Disclaimer**:  
-This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please note that automated translations may contain errors or inaccuracies. The original document in its native language should be regarded as the authoritative source. For critical information, professional human translation is recommended. We are not responsible for any misunderstandings or misinterpretations resulting from the use of this translation.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Disclaimer**:
+This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

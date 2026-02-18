@@ -1,92 +1,92 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4d3415b9d2bf58bc69be07f945a69e07",
-  "translation_date": "2025-07-14T06:04:37+00:00",
-  "source_file": "09-CaseStudy/travelagentsample.md",
-  "language_code": "hu"
-}
--->
 # Esettanulmány: Azure AI Utazási Ügynökök – Referencia Implementáció
 
 ## Áttekintés
 
-Az [Azure AI Travel Agents](https://github.com/Azure-Samples/azure-ai-travel-agents) egy átfogó referencia megoldás, amelyet a Microsoft fejlesztett ki, és bemutatja, hogyan lehet több ügynökből álló, mesterséges intelligenciával támogatott utazástervező alkalmazást építeni a Model Context Protocol (MCP), az Azure OpenAI és az Azure AI Search használatával. Ez a projekt a legjobb gyakorlatokat szemlélteti a több AI ügynök összehangolására, vállalati adatok integrálására, valamint egy biztonságos és bővíthető platform biztosítására valós életbeli helyzetekhez.
+az [Azure AI Utazási Ügynökök](https://github.com/Azure-Samples/azure-ai-travel-agents) egy átfogó referencia megoldás, amelyet a Microsoft fejlesztett ki, és bemutatja, hogyan lehet egy többügynökös, mesterséges intelligenciával támogatott utazástervező alkalmazást építeni a Model Context Protocol (MCP), az Azure OpenAI és az Azure AI Search használatával. Ez a projekt bemutatja a több AI ügynök összehangolásának, az vállalati adatok integrálásának és egy biztonságos, bővíthető platform biztosításának legjobb gyakorlatait valós életbeli forgatókönyvekhez.
 
-## Főbb jellemzők
-- **Több ügynök összehangolása:** Az MCP segítségével koordinálja a specializált ügynököket (pl. repülőjárat, szállás, útiterv ügynökök), amelyek együttműködve teljesítik a komplex utazástervezési feladatokat.
-- **Vállalati adatok integrálása:** Csatlakozik az Azure AI Search-hoz és más vállalati adatforrásokhoz, hogy naprakész, releváns információkat nyújtson az utazási ajánlásokhoz.
+## Főbb funkciók
+- **Többügynökös összhangzás:** Az MCP-t használja specializált ügynökök (pl. repülőjárat-, szálloda- és útiterv ügynökök) koordinálására, amelyek együttműködnek összetett utazástervezési feladatok ellátásához.
+- **Vállalati adatintegráció:** Csatlakozik az Azure AI Search-hez és más vállalati adatforrásokhoz, hogy naprakész, releváns információkat nyújtson utazási ajánlásokhoz.
 - **Biztonságos, skálázható architektúra:** Az Azure szolgáltatásait használja hitelesítéshez, jogosultságkezeléshez és skálázható telepítéshez, követve a vállalati biztonsági legjobb gyakorlatokat.
-- **Bővíthető eszköztár:** Újrahasznosítható MCP eszközöket és prompt sablonokat valósít meg, amelyek gyors alkalmazkodást tesznek lehetővé új területekhez vagy üzleti igényekhez.
-- **Felhasználói élmény:** Beszélgetés-alapú felületet biztosít a felhasználók számára az utazási ügynökökkel való interakcióhoz, amelyet az Azure OpenAI és az MCP hajt.
+- **Bővíthető eszköztár:** Újrahasznosítható MCP eszközöket és prompt sablonokat valósít meg, lehetővé téve a gyors alkalmazkodást új területekhez vagy üzleti követelményekhez.
+- **Felhasználói élmény:** Párbeszédes felületet biztosít a felhasználóknak az utazási ügynökökkel való interakcióra, amelyet az Azure OpenAI és az MCP támogat.
 
 ## Architektúra
 ![Architecture](https://raw.githubusercontent.com/Azure-Samples/azure-ai-travel-agents/main/docs/ai-travel-agents-architecture-diagram.png)
 
-### Az architektúra diagram leírása
+### Architektúra diagram leírása
 
-Az Azure AI Travel Agents megoldás moduláris, skálázható és biztonságos integrációra lett tervezve több AI ügynök és vállalati adatforrás között. A fő komponensek és az adatáramlás a következő:
+Az Azure AI Utazási Ügynökök megoldás moduláris, skálázható és biztonságos integrációra lett tervezve több mesterséges intelligencia ügynök és vállalati adatforrás számára. A fő komponensek és az adatfolyam a következők:
 
-- **Felhasználói felület:** A felhasználók egy beszélgetés-alapú UI-n (például webes chat vagy Teams bot) keresztül lépnek kapcsolatba a rendszerrel, ahol kérdéseket tesznek fel és utazási ajánlásokat kapnak.
-- **MCP Server:** Központi koordinátorként működik, fogadja a felhasználói bemenetet, kezeli a kontextust, és összehangolja a specializált ügynökök (pl. FlightAgent, HotelAgent, ItineraryAgent) tevékenységét a Model Context Protocol segítségével.
-- **AI ügynökök:** Minden ügynök egy adott területért felel (repülőjáratok, szállások, útiterv), és MCP eszközként van megvalósítva. Az ügynökök prompt sablonokat és logikát használnak a kérések feldolgozására és válaszok generálására.
-- **Azure OpenAI Service:** Fejlett természetes nyelvi megértést és generálást biztosít, lehetővé téve az ügynökök számára a felhasználói szándék értelmezését és beszélgetés-alapú válaszok létrehozását.
-- **Azure AI Search és vállalati adatok:** Az ügynökök lekérdezik az Azure AI Search-t és más vállalati adatforrásokat, hogy naprakész információkat szerezzenek a repülőjáratokról, szállásokról és utazási lehetőségekről.
-- **Hitelesítés és biztonság:** Integrálódik a Microsoft Entra ID-vel a biztonságos hitelesítés érdekében, és a legkisebb jogosultság elvét alkalmazza az összes erőforrásra.
-- **Telepítés:** Azure Container Apps-re tervezték a telepítést, biztosítva a skálázhatóságot, a monitorozást és az üzemeltetési hatékonyságot.
+- **Felhasználói felület:** A felhasználók egy párbeszédes UI-n (például webes csevegőfelületen vagy Teams boton keresztül) lépnek kapcsolatba a rendszerrel, ahol felteszik kérdéseiket és megkapják az utazási ajánlásokat.
+- **MCP szerver:** Központi koordinátorként működik, fogadja a felhasználói bemeneteket, kezeli a kontextust és összehangolja a specializált ügynökök (pl. FlightAgent, HotelAgent, ItineraryAgent) tevékenységét a Model Context Protocol segítségével.
+- **AI ügynökök:** Minden ügynök egy adott területért felelős (repülőjáratok, szállodák, útiterv) és MCP eszközként van megvalósítva. Az ügynökök prompt sablonokat és logikát használnak a kérések feldolgozására és válaszok generálására.
+- **Azure OpenAI szolgáltatás:** Fejlett természetes nyelv megértést és generálást biztosít, lehetővé téve az ügynökök számára a felhasználói szándék pontos értelmezését és párbeszédes válaszok létrehozását.
+- **Azure AI Search & vállalati adatok:** Az ügynökök lekérdezik az Azure AI Search-t és más vállalati adatforrásokat, hogy naprakész információkat szerezzenek a repülőjáratokról, szállodákról és utazási lehetőségekről.
+- **Hitelesítés és biztonság:** A Microsoft Entra ID-val integrált biztonságos hitelesítést biztosít, és a legkisebb jogosultság elvét alkalmazza az összes erőforrás hozzáférésére.
+- **Telepítés:** Az Azure Container Apps-en történik a telepítés, biztosítva a skálázhatóságot, figyelést és működési hatékonyságot.
 
-Ez az architektúra lehetővé teszi a több AI ügynök zökkenőmentes összehangolását, a vállalati adatok biztonságos integrációját, valamint egy robusztus, bővíthető platformot domain-specifikus AI megoldások építéséhez.
+Ez az architektúra lehetővé teszi a több AI ügynök zökkenőmentes összehangolását, a biztonságos vállalati adat integrációt, és egy robusztus, bővíthető platformot domain-specifikus AI megoldások építéséhez.
 
-## Az architektúra diagram lépésről lépésre történő magyarázata
-Képzeld el, hogy egy nagy utazást tervezel, és egy szakértő asszisztensekből álló csapat segít neked minden részletben. Az Azure AI Travel Agents rendszer hasonlóan működik, különböző részekből (mint a csapattagok) áll, amelyek mindegyike különleges feladatot lát el. Így illeszkedik össze az egész:
+## Lépésről lépésre az architektúra diagram magyarázata
+Képzelj el egy nagy utazás megtervezését, ahol egy szakértő asszisztens csapat segít minden részletben. Az Azure AI Utazási Ügynökök rendszer hasonlóan működik, különböző részekből áll (mint egy csapat tagjai), amik mind egy különleges feladatért felelősek. Így illeszkedik össze mindez:
 
 ### Felhasználói felület (UI):
-Gondolj erre úgy, mint az utazási ügynököd recepciójára. Itt teszed fel a kérdéseidet vagy adod meg a kéréseidet, például: „Találj nekem egy repülőjáratot Párizsba.” Ez lehet egy weboldalon lévő chat ablak vagy egy üzenetküldő alkalmazás.
+Gondolj erre úgy, mint az utazási ügynököd recepciójára. Ott teszed fel a kérdéseidet vagy kéred az utazást, például „Találj nekem egy járatot Párizsba.” Ez lehet egy weboldali csevegőablak vagy egy üzenetküldő alkalmazás.
 
-### MCP Server (A koordinátor):
-Az MCP Server olyan, mint a menedzser, aki a recepcióban meghallgatja a kérésedet, és eldönti, melyik szakértőnek kell foglalkoznia vele. Nyomon követi a beszélgetést, és gondoskodik arról, hogy minden zökkenőmentesen működjön.
+### MCP szerver (A koordinátor):
+Az MCP szerver olyan, mint a menedzser, aki meghallgatja a kérésedet a recepción, és eldönti, hogy melyik szakértő foglalkozzon az adott résszel. Nyomon követi a beszélgetést, és gondoskodik róla, hogy minden gördülékenyen működjön.
 
-### AI ügynökök (Szakértő asszisztensek):
-Minden ügynök egy adott terület szakértője – az egyik mindent tud a repülőjáratokról, a másik a szállásokról, a harmadik az útiterv tervezéséről. Amikor utazást kérsz, az MCP Server elküldi a kérésedet a megfelelő ügynök(ök)nek. Ezek az ügynökök a tudásukat és eszközeiket használva keresik meg a legjobb lehetőségeket.
+### AI ügynökök (szakértő asszisztensek):
+Minden ügynök egy adott terület specialistája – az egyik mindent tud a repülőjáratokról, a másik a szállodákról, a harmadik az útiterv tervezéséről. Amikor utazást kérsz, az MCP szerver elküldi a kérést a megfelelő ügynök(ök)nek. Ezek az ügynökök a tudásukat és eszközeiket használják, hogy megtalálják a legjobb lehetőségeket számodra.
 
-### Azure OpenAI Service (Nyelvi szakértő):
-Ez olyan, mintha lenne egy nyelvi szakértőd, aki pontosan érti, mit kérsz, bármilyen formában is fogalmazod meg. Segít az ügynököknek megérteni a kéréseidet és természetes, beszélgetéshez hasonló válaszokat adni.
+### Azure OpenAI szolgáltatás (nyelvi szakértő):
+Olyan, mintha egy nyelvi szakértő segítene, aki pontosan érti, mit kérsz, bárhogy is fogalmazol. Segíti az ügynököket a kéréseid megértésében és természetes, párbeszédes válaszok létrehozásában.
 
-### Azure AI Search és vállalati adatok (Információs könyvtár):
-Képzelj el egy hatalmas, naprakész könyvtárat, amelyben minden legfrissebb utazási információ megtalálható – repülőjárat menetrendek, szállás elérhetőség és még sok más. Az ügynökök ebben a könyvtárban keresik meg a legpontosabb válaszokat.
+### Azure AI Search & vállalati adatok (információs könyvtár):
+Képzelj el egy hatalmas, naprakész könyvtárat az összes legfrissebb utazási információval – repülőjárat menetrendekkel, szállodai elérhetőséggel és egyebekkel. Az ügynökök ebben a könyvtárban keresik meg a legpontosabb válaszokat neked.
 
-### Hitelesítés és biztonság (Biztonsági őr):
-Ahogy egy biztonsági őr ellenőrzi, ki léphet be bizonyos területekre, ez a rész gondoskodik arról, hogy csak az arra jogosult személyek és ügynökök férhessenek hozzá érzékeny adatokhoz. Biztosítja az adataid védelmét és titkosságát.
+### Hitelesítés és biztonság (biztonsági őr):
+Ahogy egy biztonsági őr ellenőrzi, ki léphet be bizonyos területekre, ez a rész gondoskodik róla, hogy csak engedélyezett személyek és ügynökök férjenek hozzá bizalmas adatokhoz. Biztosítja az adataid védelmét és magánéletét.
 
-### Telepítés Azure Container Apps-en (Az épület):
-Minden asszisztens és eszköz együtt dolgozik egy biztonságos, skálázható épületben (a felhőben). Ez azt jelenti, hogy a rendszer egyszerre sok felhasználót képes kiszolgálni, és mindig elérhető, amikor szükséged van rá.
+### Telepítés az Azure Container Apps-en (az épület):
+Minden asszisztens és eszköz egy biztonságos, skálázható épületben (a felhőben) dolgozik együtt. Ez azt jelenti, hogy a rendszer sok felhasználót tud egyszerre kezelni, és mindig elérhető, amikor szükséged van rá.
 
-## Hogyan működik mindez együtt:
+## Hogyan működik együtt mindez:
 
-Először a recepcióban (UI) teszel fel egy kérdést.
-A menedzser (MCP Server) eldönti, melyik szakértő (ügynök) segít neked.
-A szakértő a nyelvi szakértőt (OpenAI) használja a kérésed megértéséhez, és a könyvtárat (AI Search) a legjobb válasz megtalálásához.
-A biztonsági őr (Hitelesítés) gondoskodik arról, hogy minden biztonságos legyen.
-Mindez egy megbízható, skálázható épületben (Azure Container Apps) történik, így az élmény gördülékeny és biztonságos.
-Ez a csapatmunka lehetővé teszi, hogy a rendszer gyorsan és biztonságosan segítsen megtervezni az utazásodat, akár egy modern irodában dolgozó szakértő utazási ügynökök csapata!
+Először egy kérdést teszel fel a recepción (UI).
+A menedzser (MCP szerver) kitalálja, melyik szakértő (ügynök) segíthet neked.
+A szakértő a nyelvi szakértővel (OpenAI) érti meg a kérésed, és a könyvtárban (AI Search) keresi meg a legjobb választ.
+A biztonsági őr (Hitelesítés) gondoskodik róla, hogy minden biztonságos legyen.
+Mindez egy megbízható, skálázható épületben (Azure Container Apps) történik, így az élmény zökkenőmentes és biztonságos.
+Ez a csapatmunka lehetővé teszi, hogy a rendszer gyorsan és biztonságosan segítsen neked megtervezni az utadat, pont úgy, mint egy szakértő utazási ügynökökből álló csapat egy modern irodában!
 
 ## Műszaki megvalósítás
-- **MCP Server:** A fő összehangoló logikát futtatja, elérhetővé teszi az ügynökök eszközeit, és kezeli a kontextust a többlépéses utazástervezési munkafolyamatokhoz.
-- **Ügynökök:** Minden ügynök (pl. FlightAgent, HotelAgent) MCP eszközként van megvalósítva, saját prompt sablonokkal és logikával.
-- **Azure integráció:** Az Azure OpenAI-t használja a természetes nyelvi megértéshez, és az Azure AI Search-t az adatok lekéréséhez.
-- **Biztonság:** Integrálódik a Microsoft Entra ID-vel a hitelesítéshez, és a legkisebb jogosultság elvét alkalmazza az összes erőforrásra.
-- **Telepítés:** Támogatja az Azure Container Apps-re történő telepítést a skálázhatóság és az üzemeltetési hatékonyság érdekében.
+- **MCP szerver:** A központi összehangoló logikát hosztolja, kiteszi az ügynök eszközöket, és kezeli a kontextust a többlépcsős utazástervezési munkafolyamatokhoz.
+- **Ügynökök:** Minden ügynök (pl. FlightAgent, HotelAgent) MCP eszközként van megvalósítva a saját prompt sablonjaival és logikájával.
+- **Azure integráció:** Az Azure OpenAI-t használja természetes nyelvi megértésre, és az Azure AI Search-t az adatok lekérésére.
+- **Biztonság:** A Microsoft Entra ID-val integrálódik hitelesítéshez, és a legkisebb jogosultság elvét alkalmazza az erőforrásokra.
+- **Telepítés:** Támogatja az Azure Container Apps-re történő telepítést a skálázhatóság és üzemeltetési hatékonyság érdekében.
 
 ## Eredmények és hatás
-- Bemutatja, hogyan használható az MCP több AI ügynök összehangolására valós, éles környezetben.
-- Gyorsítja a megoldásfejlesztést újrahasznosítható minták biztosításával az ügynökök koordinációjához, adatintegrációhoz és biztonságos telepítéshez.
-- Mintaként szolgál domain-specifikus, AI-alapú alkalmazások építéséhez MCP és Azure szolgáltatások használatával.
+- Bemutatja, hogyan lehet az MCP-t használni több AI ügynök összehangolására valós, éles környezetben.
+- Felgyorsítja a megoldásfejlesztést újrahasznosítható mintákkal az ügynök koordináció, adat integráció és biztonságos telepítés terén.
+- Útmutatóként szolgál domain-specifikus, AI-vezérelt alkalmazások építéséhez MCP és Azure szolgáltatások használatával.
 
 ## Hivatkozások
-- [Azure AI Travel Agents GitHub tárhely](https://github.com/Azure-Samples/azure-ai-travel-agents)
-- [Azure OpenAI Service](https://azure.microsoft.com/en-us/products/ai-services/openai-service/)
+- [Azure AI Travel Agents GitHub Tároló](https://github.com/Azure-Samples/azure-ai-travel-agents)
+- [Azure OpenAI Szolgáltatás](https://azure.microsoft.com/en-us/products/ai-services/openai-service/)
 - [Azure AI Search](https://azure.microsoft.com/en-us/products/ai-services/ai-search/)
 - [Model Context Protocol (MCP)](https://modelcontextprotocol.io/)
 
-**Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+## Mi következik
+
+- Vissza ide: [Esettanulmányok áttekintése](./README.md)
+- Következő: [ADO elemek frissítése YouTube-ról](./UpdateADOItemsFromYT.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Jogi nyilatkozat**:
+Ezt a dokumentumot a [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordító szolgáltatással fordítottuk le. Bár igyekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum anyanyelvű változata tekintendő hiteles forrásnak. Fontos információk esetén javasolt a szakmai, emberi fordítás igénybevétele. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy félreértelmezésekért.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

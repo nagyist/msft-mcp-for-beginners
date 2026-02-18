@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2aa9dbc165e104764fa57e8a0d3f1c73",
-  "translation_date": "2025-07-14T07:32:34+00:00",
-  "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/lab1/README.md",
-  "language_code": "sw"
-}
--->
 # 🚀 Moduli 1: Misingi ya AI Toolkit
 
 [![Duration](https://img.shields.io/badge/Duration-15%20minutes-blue.svg)]()
@@ -60,7 +51,7 @@ Mwisho wa moduli hii, utaweza:
 
 **Hatua 3: Sakinisha na Washa**
 
-![AI Toolkit Extension](../../../../translated_images/aitkext.d28945a03eed003c39fc39bc96ae655af9b64b9b922e78e88b07214420ed7985.sw.png)
+![AI Toolkit Extension](../../../../translated_images/sw/aitkext.d28945a03eed003c.webp)
 
 ### ✅ Orodha ya Ukaguzi wa Uthibitisho
 - [ ] Ikoni ya AI Toolkit inaonekana kwenye upau wa VS Code
@@ -79,7 +70,7 @@ Katalogi ya Modeli ni mlango wako wa mfumo wa AI. Inakusanya modeli kutoka kwa w
 
 Bonyeza **MODELS - Catalog** kwenye upau wa AI Toolkit
 
-![Model Catalog](../../../../translated_images/aimodel.263ed2be013d8fb0e2265c4f742cfe490f6f00eca5e132ec50438c8e826e34ed.sw.png)
+![Model Catalog](../../../../translated_images/sw/aimodel.263ed2be013d8fb0.webp)
 
 **💡 Ushauri Bora**: Tafuta modeli zilizo na uwezo maalum unaolingana na matumizi yako (mfano, uzalishaji wa msimbo, uandishi wa ubunifu, uchambuzi).
 
@@ -97,7 +88,7 @@ Bonyeza **MODELS - Catalog** kwenye upau wa AI Toolkit
 3. Chagua **Try in Playground** kuanzisha mazingira ya majaribio
 4. Subiri modeli ianze (usanidi wa mara ya kwanza unaweza kuchukua muda kidogo)
 
-![Playground Setup](../../../../translated_images/playground.dd6f5141344878ca4d4f3de819775da7b113518941accf37c291117c602f85db.sw.png)
+![Playground Setup](../../../../translated_images/sw/playground.dd6f5141344878ca.webp)
 
 **⚙️ Kuelewa Vigezo vya Modeli:**
 - **Temperature**: Inadhibiti ubunifu (0 = thabiti, 1 = ubunifu)
@@ -126,7 +117,7 @@ Playground ni maabara yako ya majaribio ya AI. Hapa ni jinsi ya kutumia uwezo wa
 "Analyze this sales data and provide insights: [paste your data]. Focus on trends, anomalies, and actionable recommendations."
 ```
 
-![Testing Results](../../../../translated_images/result.1dfcf211fb359cf65902b09db191d3bfc65713ca15e279c1a30be213bb526949.sw.png)
+![Testing Results](../../../../translated_images/sw/result.1dfcf211fb359cf6.webp)
 
 ### 🏆 Zoefleo la Changamoto: Linganisha Utendaji wa Modeli
 
@@ -136,12 +127,12 @@ Playground ni maabara yako ya majaribio ya AI. Hapa ni jinsi ya kutumia uwezo wa
 1. Ongeza **Phi-4-mini** kwenye eneo lako la kazi
 2. Tumia prompt ile ile kwa GPT-4.1 na Phi-4-mini
 
-![set](../../../../translated_images/set.88132df189ecde2cbbda256c1841db5aac8e9bdeba1a4e343dfa031b9545d6c9.sw.png)
+![set](../../../../translated_images/sw/set.88132df189ecde2c.webp)
 
 3. Linganisha ubora wa majibu, kasi, na usahihi
 4. Andika matokeo yako katika sehemu ya matokeo
 
-![Model Comparison](../../../../translated_images/compare.97746cd0f907495503c1fc217739f3890dc76ea5f6fd92379a6db0cc331feb58.sw.png)
+![Model Comparison](../../../../translated_images/sw/compare.97746cd0f9074955.webp)
 
 **💡 Maarifa Muhimu ya Kugundua:**
 - Wakati wa kutumia LLM dhidi ya SLM
@@ -163,7 +154,7 @@ Agent Builder ni sehemu ambapo AI Toolkit inaangaza kweli. Inakuwezesha kuunda w
 - **Tools Integration**: Unganisha na API za nje na huduma za MCP
 - **Memory**: Muktadha wa mazungumzo na kuhifadhi kikao
 
-![Agent Builder Interface](../../../../translated_images/agentbuilder.25895b2d2f8c02e7aa99dd40e105877a6f1db8f0441180087e39db67744b361f.sw.png)
+![Agent Builder Interface](../../../../translated_images/sw/agentbuilder.25895b2d2f8c02e7.webp)
 
 ### ⚙️ Hatua 2: Uchunguzi wa Usanidi wa Maajenti
 
@@ -237,7 +228,7 @@ You are a senior Python developer with 10+ years of experience. You excel at wri
    - Max Tokens: 2000 (maelezo ya kina)
    - Top-p: 0.9 (ubunifu wa wastani)
 
-![Python Agent Configuration](../../../../translated_images/pythonagent.5e51b406401c165fcabfd66f2d943c27f46b5fed0f9fb73abefc9e91ca3489d4.sw.png)
+![Python Agent Configuration](../../../../translated_images/sw/pythonagent.5e51b406401c165f.webp)
 
 ### 🧪 Hatua 4: Jaribu Maajenti Yako wa Python
 

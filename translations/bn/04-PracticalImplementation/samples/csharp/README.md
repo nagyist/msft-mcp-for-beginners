@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0bc7bd48f55f1565f1d95ccb2c16f728",
-  "translation_date": "2025-07-13T23:05:24+00:00",
-  "source_file": "04-PracticalImplementation/samples/csharp/README.md",
-  "language_code": "bn"
-}
--->
 # নমুনা
 
 আগের উদাহরণটি দেখায় কীভাবে একটি লোকাল .NET প্রজেক্ট `stdio` টাইপের সাথে ব্যবহার করতে হয়। এবং কীভাবে একটি কন্টেইনারে লোকালি সার্ভার চালানো যায়। এটি অনেক পরিস্থিতিতে একটি ভালো সমাধান। তবে, সার্ভারটি দূর থেকে, যেমন ক্লাউড পরিবেশে চালানোও উপকারী হতে পারে। এ ক্ষেত্রে `http` টাইপ ব্যবহৃত হয়।
@@ -26,7 +17,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. যখন একটি ওয়েব ব্রাউজার .NET Aspire ড্যাশবোর্ড খুলবে, তখন `http` URLটি নোট করুন। এটি সাধারণত এরকম কিছু হবে: `http://localhost:5058/`।
 
-   ![.NET Aspire Dashboard](../../../../../translated_images/dotnet-aspire-dashboard.0a7095710e9301e90df2efd867e1b675b3b9bc2ccd7feb1ebddc0751522bc37c.bn.png)
+   ![.NET Aspire Dashboard](../../../../../translated_images/bn/dotnet-aspire-dashboard.0a7095710e9301e9.webp)
 
 ## MCP Inspector দিয়ে Streamable HTTP পরীক্ষা করুন
 
@@ -38,7 +29,7 @@ CO_OP_TRANSLATOR_METADATA:
 npx @modelcontextprotocol/inspector http://localhost:5058
 ```
 
-![MCP Inspector](../../../../../translated_images/mcp-inspector.c223422b9b494fb4a518a3b3911b3e708e6a5715069470f9163ee2ee8d5f1ba9.bn.png)
+![MCP Inspector](../../../../../translated_images/bn/mcp-inspector.c223422b9b494fb4.webp)
 
 - Transport টাইপ হিসেবে `Streamable HTTP` নির্বাচন করুন।
 - Url ফিল্ডে আগের নোট করা সার্ভারের URL দিন এবং শেষে `/mcp` যোগ করুন। এটি অবশ্যই `http` (https নয়) হবে, যেমন `http://localhost:5058/mcp`।
@@ -83,7 +74,7 @@ azd up
 
 ডিপ্লয়মেন্ট শেষ হলে, আপনি এরকম একটি মেসেজ দেখতে পাবেন:
 
-![Azd deployment success](../../../../../translated_images/azd-deployment-success.bd42940493f1b834a5ce6251a6f88966546009b350df59d0cc4a8caabe94a4f1.bn.png)
+![Azd deployment success](../../../../../translated_images/bn/azd-deployment-success.bd42940493f1b834.webp)
 
 URLটি নিন এবং MCP Inspector ও GitHub Copilot Chat-এ ব্যবহার করুন।
 

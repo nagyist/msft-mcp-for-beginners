@@ -1,59 +1,52 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4319d291c9d124ecafea52b3d04bfa0e",
-  "translation_date": "2025-08-26T18:35:55+00:00",
-  "source_file": "09-CaseStudy/docs-mcp/README.md",
-  "language_code": "lt"
-}
--->
-# Atvejo analizė: Prisijungimas prie Microsoft Learn Docs MCP serverio iš kliento
+# Atvejo analizė: prisijungimas prie Microsoft Learn Docs MCP serverio iš kliento
 
-Ar kada nors teko blaškytis tarp dokumentacijos svetainių, „Stack Overflow“ ir nesibaigiančių paieškos variklių skirtukų, bandant išspręsti problemą savo kode? Galbūt turite antrą monitorių, skirtą tik dokumentacijai, arba nuolat perjungiate langus tarp IDE ir naršyklės. Ar nebūtų geriau, jei dokumentacija būtų integruota tiesiai į jūsų darbo eigą—į jūsų programas, IDE ar net jūsų pačių sukurtus įrankius? Šioje atvejo analizėje aptarsime, kaip tai padaryti, prisijungiant tiesiogiai prie Microsoft Learn Docs MCP serverio iš savo kliento programos.
+Ar kada nors teko šokinėti tarp dokumentacijos svetainių, Stack Overflow ir begalės paieškos variklių skirtukų, tuo pačiu bandant išspręsti problemą savo kode? Galbūt turi antrą monitorių tik dokumentacijai arba nuolatos keiti langus tarp IDE ir naršyklės. Ar negeriau būtų, jei dokumentacija būtų tiesiai tavo darbo eigoje – integruota į tavo programas, IDE ar net tavo pačių sukurtus įrankius? Šioje atvejo analizėje apžvelgsime, kaip tai padaryti prisijungiant tiesiogiai prie Microsoft Learn Docs MCP serverio iš savo kliento programos.
 
 ## Apžvalga
 
-Šiuolaikinis programavimas yra ne tik kodavimas—tai ir tinkamos informacijos radimas tinkamu metu. Dokumentacija yra visur, tačiau retai ten, kur jos labiausiai reikia: jūsų įrankiuose ir darbo eigoje. Integruodami dokumentacijos paiešką tiesiai į savo programas, galite sutaupyti laiko, sumažinti konteksto perjungimą ir padidinti produktyvumą. Šiame skyriuje parodysime, kaip prisijungti prie Microsoft Learn Docs MCP serverio, kad galėtumėte pasiekti realaus laiko, konteksto pagrindu veikiančią dokumentaciją neišeidami iš savo programos.
+Moderni plėtra yra ne tik kodo rašymas – tai tinkamos informacijos radimas tinkamu metu. Dokumentacija yra visur, tačiau retai ten, kur jos labiausiai reikia: tavo įrankiuose ir darbo procesuose. Integravus dokumentacijos gavimą tiesiogiai į programas, galima sutaupyti laiko, sumažinti konteksto keitimą ir padidinti produktyvumą. Šioje dalyje parodysime, kaip prijungti klientą prie Microsoft Learn Docs MCP serverio, kad galėtum prieiti prie realaus laiko, kontekstui pritaikytos dokumentacijos neišeidamas iš savo programos.
 
-Mes aptarsime, kaip užmegzti ryšį, siųsti užklausą ir efektyviai apdoroti srautinį atsakymą. Šis požiūris ne tik supaprastina jūsų darbo eigą, bet ir suteikia galimybę kurti išmanesnius, naudingesnius įrankius programuotojams.
+Pažingsniui pereisime per ryšio užmezgimo procesą, užklausos siuntimą ir efektyvų srautinio atsakymo apdorojimą. Šis metodas ne tik supaprastina darbo eigą, bet ir atveria duris kurti protingesnius, naudingesnius kūrėjų įrankius.
 
 ## Mokymosi tikslai
 
-Kodėl tai darome? Nes geriausia programuotojo patirtis yra ta, kuri pašalina trukdžius. Įsivaizduokite pasaulį, kuriame jūsų kodo redaktorius, pokalbių robotas ar internetinė programa gali akimirksniu atsakyti į jūsų dokumentacijos klausimus, naudodamiesi naujausiu Microsoft Learn turiniu. Šio skyriaus pabaigoje jūs sužinosite, kaip:
+Kodėl tai darome? Nes geriausios kūrėjo patirtys yra tos, kurios pašalina trintį. Įsivaizduok pasaulį, kuriame tavo kodo redaktorius, pokalbių robotas ar žiniatinklio programa gali akimirksniu atsakyti į dokumentacijos klausimus, naudodami naujausią turinį iš Microsoft Learn. Skaitydamas šį skyrių tu:
 
-- Suprasti MCP serverio ir kliento komunikacijos pagrindus dokumentacijai
-- Įgyvendinti konsolės ar internetinę programą, kuri prisijungia prie Microsoft Learn Docs MCP serverio
-- Naudoti srautinį HTTP klientą realaus laiko dokumentacijos paieškai
-- Registruoti ir interpretuoti dokumentacijos atsakymus savo programoje
+- Suprasies MCP serverio-kliento komunikacijos pagrindus dokumentacijai
+- Įgyvendinsi konsolinę ar web- programą, jungiamą prie Microsoft Learn Docs MCP serverio
+- Naudosi srautinio HTTP kliento technologiją realaus laiko dokumentacijos gavimui
+- Fiksuosi ir interpretuosi dokumentacijos atsakymus savo programoje
 
-Jūs pamatysite, kaip šie įgūdžiai gali padėti kurti įrankius, kurie yra ne tik reaguojantys, bet ir interaktyvūs bei konteksto pagrindu veikiantys.
+Sužinosi, kaip šie įgūdžiai padės kurti įrankius, kurie yra ne tik reaktyvūs, bet ir tikrai interaktyvūs bei kontekstui pritaikyti.
 
-## Scenarijus 1 - Realiojo laiko dokumentacijos paieška su MCP
+## Scenario 1 – realaus laiko dokumentacijos gavimas su MCP
 
-Šiame scenarijuje parodysime, kaip prisijungti prie Microsoft Learn Docs MCP serverio, kad galėtumėte pasiekti realaus laiko, konteksto pagrindu veikiančią dokumentaciją neišeidami iš savo programos.
+Šiame scenarijuje parodysime, kaip prijungti klientą prie Microsoft Learn Docs MCP serverio, kad galėtum prieiti prie realaus laiko, kontekstui pritaikytos dokumentacijos neišeidamas iš savo programos.
 
-### Kodėl šis požiūris?
-Nes tai yra pagrindas kuriant pažangesnes integracijas—nesvarbu, ar norite sukurti pokalbių robotą, IDE plėtinį ar internetinį valdymo skydelį.
+Pradėkime praktikuotis. Tavo užduotis – parašyti programą, kuri prisijungia prie Microsoft Learn Docs MCP serverio, iškviečia `microsoft_docs_search` įrankį ir fiksuoja srautinius atsakymus konsolėje.
 
-Jūs rasite kodą ir instrukcijas šio scenarijaus [`solution`](./solution/README.md) aplanke. Žingsniai padės jums nustatyti ryšį:
-- Naudokite oficialų MCP SDK ir srautinį HTTP klientą ryšiui
-- Iškvieskite `microsoft_docs_search` įrankį su užklausos parametru dokumentacijai gauti
-- Įgyvendinkite tinkamą registravimą ir klaidų tvarkymą
-- Sukurkite interaktyvią konsolės sąsają, leidžiančią vartotojams įvesti kelias paieškos užklausas
+### Kodėl šis metodas?
+Nes tai pagrindas kurti pažangesnes integracijas – ar tai būtų pokalbių robotas, IDE plėtinys, ar web valdymo skydelis.
 
-Šis scenarijus parodo, kaip:
+Šio scenarijaus kodą ir instrukcijas rasi [`solution`](./solution/README.md) kataloge šiame atvejo analize. Žingsniai parodys, kaip sukurti ryšį:
+- Naudoti oficialų MCP SDK ir srautinį HTTP klientą ryšiui
+- Kviesti `microsoft_docs_search` įrankį su užklausos parametru dokumentacijai gauti
+- Įdiegti tinkamą žurnalo fiksavimą ir klaidų valdymą
+- Sukurti interaktyvią konsolės sąsają vartotojams įvesti kelias paieškos užklausas
+
+Šis scenarijus demonstruoja, kaip:
 - Prisijungti prie Docs MCP serverio
-- Siųsti užklausą
-- Analizuoti ir atspausdinti rezultatus
+- Išsiųsti užklausą
+- Išanalizuoti ir atspausdinti rezultatus
 
-Štai kaip gali atrodyti sprendimo vykdymas:
+Štai kaip gali atrodyti sprendimo paleidimas:
 
 ```
 Prompt> What is Azure Key Vault?
 Answer> Azure Key Vault is a cloud service for securely storing and accessing secrets. ...
 ```
 
-Žemiau pateikiamas minimalus sprendimo pavyzdys. Pilnas kodas ir detalės yra prieinami sprendimo aplanke.
+Žemiau pateiktas minimalus pavyzdinis sprendimas. Visas kodas ir detalės yra sprendimo kataloge.
 
 <details>
 <summary>Python</summary>
@@ -74,20 +67,21 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-- Pilną įgyvendinimą ir registravimą rasite [`scenario1.py`](../../../../09-CaseStudy/docs-mcp/solution/python/scenario1.py).
-- Diegimo ir naudojimo instrukcijas rasite [`README.md`](./solution/python/README.md) faile tame pačiame aplanke.
+- Dėl pilnos įgyvendinimo ir žurnalo žymėjimo žr. [`scenario1.py`](../../../../09-CaseStudy/docs-mcp/solution/python/scenario1.py).
+- Dėl diegimo ir naudojimo instrukcijų žr. [`README.md`](./solution/python/README.md) tą pačią katalogą.
 </details>
 
-## Scenarijus 2 - Interaktyvus mokymosi plano generatorius internetinėje programoje su MCP
 
-Šiame scenarijuje sužinosite, kaip integruoti Docs MCP į internetinės programos kūrimo projektą. Tikslas yra leisti vartotojams ieškoti Microsoft Learn dokumentacijos tiesiai iš internetinės sąsajos, kad dokumentacija būtų akimirksniu pasiekiama jūsų programoje ar svetainėje.
+## Scenario 2 – interaktyvi studijų plano generatoriaus web programa su MCP
 
-Jūs pamatysite, kaip:
-- Nustatyti internetinę programą
+Šiame scenarijuje išmoksite, kaip integruoti Docs MCP į web vystymo projektą. Tikslas – leisti vartotojams tiesiogiai iš web sąsajos ieškoti Microsoft Learn dokumentacijos, kad ji būtų akimirksniu prieinama tavo programoje ar svetainėje.
+
+Sužinosi, kaip:
+- Sukurti web programą
 - Prisijungti prie Docs MCP serverio
-- Tvarkyti vartotojo įvestį ir rodyti rezultatus
+- Apdoroti vartotojo įvestį ir pateikti rezultatus
 
-Štai kaip gali atrodyti sprendimo vykdymas:
+Štai kaip gali atrodyti sprendimo paleidimas:
 
 ```
 User> I want to learn about AI102 - so suggest the roadmap to get it started from learn for 6 weeks
@@ -106,14 +100,14 @@ Assistant> Here’s a detailed 6-week roadmap to start your preparation for the 
 Let me know if you want module-specific recommendations or need more customized weekly tasks!
 ```
 
-Žemiau pateikiamas minimalus sprendimo pavyzdys. Pilnas kodas ir detalės yra prieinami sprendimo aplanke.
+Žemiau pateiktas minimalus pavyzdinis sprendimas. Visas kodas ir detalės yra sprendimo kataloge.
 
-![Scenarijus 2 apžvalga](../../../../translated_images/scenario2.0c92726d5cd81f68238e5ba65f839a0b300d5b74b8ca7db28bc8f900c3e7d037.lt.png)
+![Scenario 2 Overview](../../../../translated_images/lt/scenario2.0c92726d5cd81f68.webp)
 
 <details>
 <summary>Python (Chainlit)</summary>
 
-Chainlit yra sistema, skirta kurti pokalbių AI internetines programas. Ji leidžia lengvai kurti interaktyvius pokalbių robotus ir asistentus, kurie gali iškviesti MCP įrankius ir realiu laiku rodyti rezultatus. Tai idealu greitam prototipų kūrimui ir vartotojui patogioms sąsajoms.
+Chainlit yra karkasas pokalbių dirbtinio intelekto web programoms kurti. Jis leidžia lengvai sukurti interaktyvius robotus ir asistentus, kurie gali kviesti MCP įrankius ir realiu laiku rodyti rezultatus. Puikiai tinka greitam prototipų kūrimui ir draugiškoms vartotojo sąsajoms.
 
 ```python
 import chainlit as cl
@@ -132,24 +126,25 @@ def handle_message(message):
         cl.Message(content="Error: " + response.text).send()
 ```
 
-- Pilną įgyvendinimą rasite [`scenario2.py`](../../../../09-CaseStudy/docs-mcp/solution/python/scenario2.py).
-- Nustatymo ir vykdymo instrukcijas rasite [`README.md`](./solution/python/README.md).
+- Dėl pilnos įgyvendinimo žr. [`scenario2.py`](../../../../09-CaseStudy/docs-mcp/solution/python/scenario2.py).
+- Dėl nustatymo ir paleidimo instrukcijų žr. [`README.md`](./solution/python/README.md).
 </details>
 
-## Scenarijus 3: Dokumentacija redaktoriuje su MCP serveriu VS Code
 
-Jei norite gauti Microsoft Learn dokumentaciją tiesiai savo VS Code (užuot perjungę naršyklės skirtukus), galite naudoti MCP serverį savo redaktoriuje. Tai leidžia:
-- Ieškoti ir skaityti dokumentaciją VS Code neišeinant iš kodavimo aplinkos.
-- Nurodyti dokumentaciją ir įterpti nuorodas tiesiai į savo README ar kursų failus.
-- Naudoti GitHub Copilot ir MCP kartu, kad sukurtumėte sklandžią, AI pagrindu veikiančią dokumentacijos darbo eigą.
+## Scenario 3: dokumentacija redaktoriuje su MCP serveriu VS Code
 
-**Jūs sužinosite, kaip:**
-- Pridėti galiojantį `.vscode/mcp.json` failą į savo darbo aplanko šaknį (žr. pavyzdį žemiau).
-- Atidaryti MCP panelę arba naudoti komandų paletę VS Code dokumentacijai ieškoti ir įterpti.
-- Nurodyti dokumentaciją tiesiai savo markdown failuose dirbant.
-- Derinti šią darbo eigą su GitHub Copilot dar didesniam produktyvumui.
+Jei nori Microsoft Learn dokumentaciją gauti tiesiai VS Code (vietoje naršyklės skirtukų keitimo), gali naudoti MCP serverį savo redaktoriuje. Tai leidžia:
+- Ieškoti ir skaityti dokumentaciją VS Code nepaliekant kodo kūrimo aplinkos
+- Įterpti dokumentacijos nuorodas tiesiogiai README ar kursų failuose
+- Derinti GitHub Copilot ir MCP sklandžiam, AI pagrindu veikiančiam dokumentacijos darbo procesui
 
-Štai pavyzdys, kaip nustatyti MCP serverį VS Code:
+**Sužinosi, kaip:**
+- Įtraukti galiojantį `.vscode/mcp.json` failą į savo darbo srities šaknį (žr. žemiau pateiktą pavyzdį).
+- Atidaryti MCP panelę arba naudoti komandų meniu VS Code paieškai ir įrašymui.
+- Tiesiogiai nuorodinti dokumentaciją markdown failuose darbo metu.
+- Derinti šį procesą su GitHub Copilot dar didesniam produktyvumui.
+
+Pavyzdys, kaip nustatyti MCP serverį VS Code:
 
 ```json
 {
@@ -163,33 +158,40 @@ Jei norite gauti Microsoft Learn dokumentaciją tiesiai savo VS Code (užuot per
 
 </details>
 
-> Išsamų vadovą su ekrano nuotraukomis ir žingsnis po žingsnio instrukcijas rasite [`README.md`](./solution/scenario3/README.md).
+> Detalus žingsnis po žingsnio gidų ir ekrano kopijų rinkinys yra [`README.md`](./solution/scenario3/README.md).
 
-![Scenarijus 3 apžvalga](../../../../translated_images/step4-prompt-chat.12187bb001605efc5077992b621f0fcd1df12023c5dce0464f8eb8f3d595218f.lt.png)
+![Scenario 3 Overview](../../../../translated_images/lt/step4-prompt-chat.12187bb001605efc.webp)
 
-Šis požiūris yra idealus visiems, kurie kuria techninius kursus, rašo dokumentaciją ar kuria kodą, dažnai remdamiesi nuorodomis.
+Šis metodas puikiai tinka tiems, kas kuria techninius kursus, rašo dokumentaciją ar vysto kodą su dažnai reikalingomis nuorodomis.
 
-## Pagrindinės išvados
+## Svarbiausios išvados
 
-Dokumentacijos integravimas tiesiai į jūsų įrankius nėra tik patogumas—tai produktyvumo revoliucija. Prisijungdami prie Microsoft Learn Docs MCP serverio iš savo kliento, galite:
+Dokumentacijos integravimas tiesiogiai į tavo įrankius yra ne tik patogumas – tai produktyvumo žaidimo keitėjas. Prisijungęs prie Microsoft Learn Docs MCP serverio iš savo kliento, tu gali:
 
-- Pašalinti konteksto perjungimą tarp kodo ir dokumentacijos
-- Gauti naujausią, konteksto pagrindu veikiančią dokumentaciją realiu laiku
-- Kurti išmanesnius, interaktyvesnius programuotojų įrankius
+- Pašalinti konteksto keitimą tarp kodo ir dokumentacijos
+- Gauti atnaujintą, kontekstui pritaikytą dokumentaciją realiu laiku
+- Kurti protingesnius, interaktyvesnius kūrėjų įrankius
 
-Šie įgūdžiai padės jums kurti sprendimus, kurie yra ne tik efektyvūs, bet ir malonūs naudoti.
+Šie įgūdžiai padės sukurti sprendimus, kurie yra ne tik efektyvūs, bet ir malonūs naudoti.
 
 ## Papildomi ištekliai
 
-Norėdami gilinti savo žinias, peržiūrėkite šiuos oficialius išteklius:
+Gilink savo žinias šiais oficialiais šaltiniais:
 
 - [Microsoft Learn Docs MCP Server (GitHub)](https://github.com/MicrosoftDocs/mcp)
-- [Pradėkite naudotis Azure MCP Server (mcp-python)](https://learn.microsoft.com/en-us/azure/developer/azure-mcp-server/get-started#create-the-python-app)
+- [Pradžia su Azure MCP Server (mcp-python)](https://learn.microsoft.com/en-us/azure/developer/azure-mcp-server/get-started#create-the-python-app)
 - [Kas yra Azure MCP Server?](https://learn.microsoft.com/en-us/azure/developer/azure-mcp-server/)
-- [Model Context Protocol (MCP) Įvadas](https://modelcontextprotocol.io/introduction)
-- [Pridėti MCP serverio įskiepius (Python)](https://learn.microsoft.com/en-us/semantic-kernel/concepts/plugins/adding-mcp-plugins)
+- [Model Context Protocol (MCP) įvadas](https://modelcontextprotocol.io/introduction)
+- [Kaip pridėti papildinius iš MCP serverio (Python)](https://learn.microsoft.com/en-us/semantic-kernel/concepts/plugins/adding-mcp-plugins)
+
+## Kas toliau
+
+- Grįžti į: [Atvejo analizės apžvalga](../README.md)
+- Tęsti į: [Modulis 10: AI darbo eigų sklandinimas su AI Toolkit](../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
 
 ---
 
-**Atsakomybės atsisakymas**:  
-Šis dokumentas buvo išverstas naudojant AI vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors siekiame tikslumo, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų ar netikslumų. Originalus dokumentas jo gimtąja kalba turėtų būti laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama naudoti profesionalų žmogaus vertimą. Mes neprisiimame atsakomybės už nesusipratimus ar klaidingus interpretavimus, atsiradusius dėl šio vertimo naudojimo.
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Atsakomybės apribojimas**:  
+Šis dokumentas buvo išverstas naudojant dirbtinio intelekto vertimo paslaugą [Co-op Translator](https://github.com/Azure/co-op-translator). Nors stengiamės užtikrinti tikslumą, prašome atkreipti dėmesį, kad automatiniai vertimai gali turėti klaidų arba netikslumų. Originalus dokumentas gimtąja kalba laikomas autoritetingu šaltiniu. Kritinei informacijai rekomenduojama naudoti profesionalų žmogaus vertimą. Mes neatsakome už bet kokius nesusipratimus ar klaidingus interpretavimus, kylančius dėl šio vertimo naudojimo.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

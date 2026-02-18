@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ed9cab32cc67c12d8969b407aa47100a",
-  "translation_date": "2025-07-13T17:56:17+00:00",
-  "source_file": "03-GettingStarted/01-first-server/solution/java/README.md",
-  "language_code": "cs"
-}
--->
 # Základní kalkulační služba MCP
 
 Tato služba poskytuje základní kalkulační operace prostřednictvím Model Context Protocolu (MCP) s využitím Spring Boot a WebFlux transportu. Je navržena jako jednoduchý příklad pro začátečníky, kteří se učí o implementacích MCP.
@@ -73,7 +64,7 @@ MCP Inspector je užitečný nástroj pro práci se službami MCP. Pro použití
    - Klikněte na "List Tools" pro zobrazení dostupných kalkulačních operací
    - Vyberte nástroj a klikněte na "Run Tool" pro spuštění operace
 
-![MCP Inspector Screenshot](../../../../../../translated_images/tool.40e180a7b0d0fe2067cf96435532b01f63f7f8619d6b0132355a04b426b669ac.cs.png)
+![MCP Inspector Screenshot](../../../../../../translated_images/cs/tool.40e180a7b0d0fe20.webp)
 
 **Prohlášení o vyloučení odpovědnosti**:  
 Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

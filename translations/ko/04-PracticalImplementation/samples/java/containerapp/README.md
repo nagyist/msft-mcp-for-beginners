@@ -1,17 +1,8 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e5ea5e7582f70008ea9bec3b3820f20a",
-  "translation_date": "2025-07-13T23:13:44+00:00",
-  "source_file": "04-PracticalImplementation/samples/java/containerapp/README.md",
-  "language_code": "ko"
-}
--->
 ## 시스템 아키텍처
 
 이 프로젝트는 사용자 프롬프트를 계산기 서비스에 전달하기 전에 콘텐츠 안전성 검사를 수행하는 웹 애플리케이션을 Model Context Protocol (MCP)을 통해 구현한 예시입니다.
 
-![System Architecture Diagram](../../../../../../translated_images/plant.b079fed84e945b7c2978993a16163bb53f0517cfe3548d2e442ff40d619ba4b4.ko.png)
+![System Architecture Diagram](../../../../../../translated_images/ko/plant.b079fed84e945b7c.webp)
 
 ### 작동 방식
 

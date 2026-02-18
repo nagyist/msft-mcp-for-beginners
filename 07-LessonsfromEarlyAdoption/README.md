@@ -6,31 +6,7 @@ _(Click the image above to view video of this lesson)_
 
 ## 🎯 What This Module Covers
 
-This module explores how real organizations and developers are leveraging the Model Context Protocol (MCP) to solve actual challenges and drive innovation. Through detailed case studies, hands-on projects### Case Study 5: Azure MCP – Enterprise-Grade Model Context Protocol as a Service
-
-Azure MCP ([https://aka.ms/azmcp](https://aka.ms/azmcp)) is Microsoft's managed, enterprise-grade implementation of the Model Context Protocol, designed to provide scalable, secure, and compliant MCP server capabilities as a cloud service. This comprehensive suite includes multiple specialized MCP servers for different Azure services and scenarios.
-
-[Microsoft MCP Center](https://mcp.azure.com) Build Your Scalable, Enterprise-Ready MCP Registry with Azure API Center this is a catalog of available Microsoft MCP Servers.
-
-> **🎯 Production Ready Tools**
-> 
-> This case study represents multiple production-ready MCP servers! Learn about the Azure MCP Server and other Azure-integrated servers in our [**Microsoft MCP Servers Guide**](microsoft-mcp-servers.md#2--azure-mcp-server).
-
-**Key Features:**
-- Fully managed MCP server hosting with built-in scaling, monitoring, and security
-- Native integration with Azure OpenAI, Azure AI Search, and other Azure services
-- Enterprise authentication and authorization via Microsoft Entra ID
-- Support for custom tools, prompt templates, and resource connectors
-- Compliance with enterprise security and regulatory requirements
-- 15+ specialized Azure service connectors including database, monitoring, and storage
-
-**Azure MCP Server Capabilities:**
-- **Resource Management**: Full Azure resource lifecycle management
-- **Database Connectors**: Direct access to Azure Database for PostgreSQL and SQL Server
-- **Azure Monitor**: KQL-powered log analysis and operational insights
-- **Authentication**: DefaultAzureCredential and managed identity patterns
-- **Storage Services**: Blob Storage, Queue Storage, and Table Storage operations
-- **Container Services**: Azure Container Apps, Container Instances, and AKS managementctical examples, you'll discover how MCP enables secure, scalable AI integration that connects language models, tools, and enterprise data.
+This module explores how real organizations and developers are leveraging the Model Context Protocol (MCP) to solve actual challenges and drive innovation. Through detailed case studies, hands-on projects, and practical examples, you'll discover how MCP enables secure, scalable AI integration that connects language models, tools, and enterprise data.
 
 ### 📚 See MCP in Action
 
@@ -593,7 +569,9 @@ The Model Context Protocol (MCP) is rapidly shaping the future of standardized, 
 - [MCP GitHub Repository (Microsoft)](https://github.com/microsoft/mcp)
 - [MCP Resources Directory (Sample Prompts, Tools, and Resource Definitions)](https://github.com/microsoft/mcp/tree/main/Resources)
 - [MCP Community & Documentation](https://modelcontextprotocol.io/introduction)
+- [MCP Specification (2025-11-25)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
 - [Azure MCP Documentation](https://aka.ms/azmcp)
+- [OWASP MCP Top 10](https://microsoft.github.io/mcp-azure-security-guide/mcp/) - Security best practices
 - [Playwright MCP Server GitHub Repository](https://github.com/microsoft/playwright-mcp)
 - [Files MCP Server (OneDrive)](https://github.com/microsoft/files-mcp-server)
 - [Azure-Samples MCP](https://github.com/Azure-Samples/mcp)
@@ -613,4 +591,8 @@ The Model Context Protocol (MCP) is rapidly shaping the future of standardized, 
 3. Research an industry not covered in the case studies and outline how MCP could address its specific challenges.
 4. Explore one of the future directions and create a concept for a new MCP extension to support it.
 
-Next: [Microsoft MCP Server](../07-LessonsfromEarlyAdoption/microsoft-mcp-servers.md)
+## What's Next
+
+Explore more: [Microsoft MCP Servers](./microsoft-mcp-servers.md)
+
+Continue to: [Module 8: Best Practices](../08-BestPractices/README.md)

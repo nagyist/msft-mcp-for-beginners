@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-13T22:02:14+00:00",
-  "source_file": "03-GettingStarted/08-testing/README.md",
-  "language_code": "vi"
-}
--->
 ## Kiểm thử và Gỡ lỗi
 
 Trước khi bắt đầu kiểm thử server MCP của bạn, điều quan trọng là phải hiểu các công cụ có sẵn và các phương pháp tốt nhất để gỡ lỗi. Kiểm thử hiệu quả đảm bảo server của bạn hoạt động như mong đợi và giúp bạn nhanh chóng phát hiện cũng như khắc phục sự cố. Phần sau đây sẽ trình bày các cách tiếp cận được khuyến nghị để xác thực việc triển khai MCP của bạn.
@@ -48,7 +39,7 @@ npx @modelcontextprotocol/inspector node build/index.js
 
 Lệnh trên khởi động MCP cùng giao diện trực quan và mở giao diện web cục bộ trên trình duyệt của bạn. Bạn sẽ thấy một bảng điều khiển hiển thị các server MCP đã đăng ký, các công cụ, tài nguyên và lời nhắc có sẵn. Giao diện cho phép bạn tương tác kiểm thử thực thi công cụ, kiểm tra metadata server và xem phản hồi theo thời gian thực, giúp việc xác thực và gỡ lỗi các triển khai MCP trở nên dễ dàng hơn.
 
-Giao diện có thể trông như thế này: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.vi.png)
+Giao diện có thể trông như thế này: ![Inspector](../../../../translated_images/vi/connect.141db0b2bd05f096.webp)
 
 Bạn cũng có thể chạy công cụ này ở chế độ CLI bằng cách thêm thuộc tính `--cli`. Ví dụ dưới đây chạy công cụ ở chế độ "CLI" liệt kê tất cả các công cụ trên server:
 

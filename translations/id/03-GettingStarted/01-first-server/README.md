@@ -1,45 +1,36 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ee93d6093964ea579dbdc20b4d643e9b",
-  "translation_date": "2025-08-18T17:39:56+00:00",
-  "source_file": "03-GettingStarted/01-first-server/README.md",
-  "language_code": "id"
-}
--->
 # Memulai dengan MCP
 
-Selamat datang di langkah pertama Anda dengan Model Context Protocol (MCP)! Baik Anda baru mengenal MCP atau ingin memperdalam pemahaman Anda, panduan ini akan membantu Anda melalui proses pengaturan dan pengembangan yang penting. Anda akan menemukan bagaimana MCP memungkinkan integrasi yang mulus antara model AI dan aplikasi, serta belajar cara cepat menyiapkan lingkungan untuk membangun dan menguji solusi berbasis MCP.
+Selamat datang di langkah pertama Anda dengan Model Context Protocol (MCP)! Baik Anda baru mengenal MCP atau ingin memperdalam pemahaman Anda, panduan ini akan memandu Anda melalui proses pengaturan dan pengembangan yang penting. Anda akan menemukan bagaimana MCP memungkinkan integrasi mulus antara model AI dan aplikasi, serta belajar cara cepat menyiapkan lingkungan Anda untuk membangun dan menguji solusi yang didukung MCP.
 
-> TLDR; Jika Anda membangun aplikasi AI, Anda tahu bahwa Anda dapat menambahkan alat dan sumber daya lain ke LLM (large language model) untuk membuat LLM lebih berpengetahuan. Namun, jika Anda meletakkan alat dan sumber daya tersebut di server, kemampuan aplikasi dan server dapat digunakan oleh klien mana pun dengan/atau tanpa LLM.
+> TLDR; Jika Anda membangun aplikasi AI, Anda tahu bahwa Anda dapat menambahkan alat dan sumber daya lain ke LLM (large language model), untuk membuat LLM lebih berpengetahuan. Namun jika Anda menempatkan alat dan sumber daya tersebut di server, kemampuan aplikasi dan server dapat digunakan oleh klien mana pun dengan/tanpa LLM.
 
-## Gambaran Umum
+## Ikhtisar
 
-Pelajaran ini memberikan panduan praktis tentang cara menyiapkan lingkungan MCP dan membangun aplikasi MCP pertama Anda. Anda akan belajar cara mengatur alat dan kerangka kerja yang diperlukan, membangun server MCP dasar, membuat aplikasi host, dan menguji implementasi Anda.
+Pelajaran ini memberikan panduan praktis tentang pengaturan lingkungan MCP dan membangun aplikasi MCP pertama Anda. Anda akan belajar cara menyiapkan alat dan kerangka kerja yang diperlukan, membangun server MCP dasar, membuat aplikasi host, dan menguji implementasi Anda.
 
-Model Context Protocol (MCP) adalah protokol terbuka yang menstandarkan cara aplikasi menyediakan konteks untuk LLM. Pikirkan MCP seperti port USB-C untuk aplikasi AI - ini menyediakan cara standar untuk menghubungkan model AI ke berbagai sumber data dan alat.
+Model Context Protocol (MCP) adalah protokol terbuka yang menstandarisasi bagaimana aplikasi menyediakan konteks ke LLM. Pikirkan MCP seperti port USB-C untuk aplikasi AI - ia menyediakan cara standar untuk menghubungkan model AI ke berbagai sumber data dan alat.
 
 ## Tujuan Pembelajaran
 
 Pada akhir pelajaran ini, Anda akan dapat:
 
 - Menyiapkan lingkungan pengembangan untuk MCP dalam C#, Java, Python, TypeScript, dan Rust
-- Membangun dan menerapkan server MCP dasar dengan fitur khusus (sumber daya, prompt, dan alat)
+- Membangun dan menerapkan server MCP dasar dengan fitur kustom (sumber daya, prompt, dan alat)
 - Membuat aplikasi host yang terhubung ke server MCP
-- Menguji dan memperbaiki implementasi MCP
+- Menguji dan men-debug implementasi MCP
 
 ## Menyiapkan Lingkungan MCP Anda
 
-Sebelum mulai bekerja dengan MCP, penting untuk mempersiapkan lingkungan pengembangan Anda dan memahami alur kerja dasar. Bagian ini akan memandu Anda melalui langkah-langkah pengaturan awal untuk memastikan awal yang lancar dengan MCP.
+Sebelum mulai bekerja dengan MCP, penting untuk menyiapkan lingkungan pengembangan Anda dan memahami alur kerja dasar. Bagian ini akan memandu Anda melalui langkah-langkah pengaturan awal untuk memastikan awal yang lancar dengan MCP.
 
 ### Prasyarat
 
-Sebelum memulai pengembangan MCP, pastikan Anda memiliki:
+Sebelum terjun ke pengembangan MCP, pastikan Anda memiliki:
 
 - **Lingkungan Pengembangan**: Untuk bahasa pilihan Anda (C#, Java, Python, TypeScript, atau Rust)
 - **IDE/Editor**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm, atau editor kode modern lainnya
-- **Package Managers**: NuGet, Maven/Gradle, pip, npm/yarn, atau Cargo
-- **API Keys**: Untuk layanan AI apa pun yang Anda rencanakan untuk digunakan dalam aplikasi host Anda
+- **Manajer Paket**: NuGet, Maven/Gradle, pip, npm/yarn, atau Cargo
+- **Kunci API**: Untuk layanan AI apa pun yang Anda rencanakan gunakan dalam aplikasi host Anda
 
 ## Struktur Dasar Server MCP
 
@@ -50,20 +41,20 @@ Server MCP biasanya mencakup:
 - **Alat**: Fungsionalitas yang dapat dipanggil oleh model
 - **Prompt**: Template untuk menghasilkan atau menyusun teks
 
-Berikut adalah contoh sederhana dalam TypeScript:
+Berikut contoh sederhana dalam TypeScript:
 
 ```typescript
 import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
 
-// Create an MCP server
+// Buat server MCP
 const server = new McpServer({
   name: "Demo",
   version: "1.0.0"
 });
 
-// Add an addition tool
+// Tambahkan alat penjumlahan
 server.tool("add",
   { a: z.number(), b: z.number() },
   async ({ a, b }) => ({
@@ -71,17 +62,20 @@ server.tool("add",
   })
 );
 
-// Add a dynamic greeting resource
+// Tambahkan sumber sapaan dinamis
 server.resource(
   "file",
-  // The 'list' parameter controls how the resource lists available files. Setting it to undefined disables listing for this resource.
+  // Parameter 'list' mengontrol bagaimana sumber daya mencantumkan file yang tersedia. Mengaturnya ke undefined menonaktifkan pencantuman untuk sumber daya ini.
   new ResourceTemplate("file://{path}", { list: undefined }),
   async (uri, { path }) => ({
     contents: [{
       uri: uri.href,
       text: `File, ${path}!`
     }]
-// Add a file resource that reads the file contents
+  })
+);
+
+// Tambahkan sumber file yang membaca isi file
 server.resource(
   "file",
   new ResourceTemplate("file://{path}", { list: undefined }),
@@ -115,70 +109,70 @@ server.prompt(
   })
 );
 
-// Start receiving messages on stdin and sending messages on stdout
+// Mulai menerima pesan di stdin dan mengirim pesan di stdout
 const transport = new StdioServerTransport();
 await server.connect(transport);
 ```
 
-Dalam kode di atas kita:
+Dalam kode sebelumnya kami:
 
-- Mengimpor kelas yang diperlukan dari MCP TypeScript SDK.
+- Mengimpor kelas yang diperlukan dari SDK MCP TypeScript.
 - Membuat dan mengonfigurasi instance server MCP baru.
-- Mendaftarkan alat khusus (`calculator`) dengan fungsi handler.
+- Mendaftarkan alat kustom (`calculator`) dengan fungsi penangan.
 - Memulai server untuk mendengarkan permintaan MCP yang masuk.
 
 ## Pengujian dan Debugging
 
-Sebelum Anda mulai menguji server MCP Anda, penting untuk memahami alat yang tersedia dan praktik terbaik untuk debugging. Pengujian yang efektif memastikan server Anda berperilaku seperti yang diharapkan dan membantu Anda dengan cepat mengidentifikasi serta menyelesaikan masalah. Bagian berikut menguraikan pendekatan yang direkomendasikan untuk memvalidasi implementasi MCP Anda.
+Sebelum mulai menguji server MCP Anda, penting untuk memahami alat yang tersedia dan praktik terbaik untuk debugging. Pengujian yang efektif memastikan server Anda berperilaku sesuai harapan dan membantu Anda dengan cepat mengidentifikasi serta menyelesaikan masalah. Bagian berikut menguraikan pendekatan yang direkomendasikan untuk memvalidasi implementasi MCP Anda.
 
-MCP menyediakan alat untuk membantu Anda menguji dan memperbaiki server Anda:
+MCP menyediakan alat untuk membantu Anda menguji dan men-debug server Anda:
 
-- **Inspector tool**, antarmuka grafis ini memungkinkan Anda terhubung ke server dan menguji alat, prompt, serta sumber daya Anda.
+- **Alat Inspector**, antarmuka grafis ini memungkinkan Anda terhubung ke server dan menguji alat, prompt, dan sumber daya Anda.
 - **curl**, Anda juga dapat terhubung ke server menggunakan alat baris perintah seperti curl atau klien lain yang dapat membuat dan menjalankan perintah HTTP.
 
 ### Menggunakan MCP Inspector
 
 [MCP Inspector](https://github.com/modelcontextprotocol/inspector) adalah alat pengujian visual yang membantu Anda:
 
-1. **Menemukan Kemampuan Server**: Secara otomatis mendeteksi sumber daya, alat, dan prompt yang tersedia
-2. **Menguji Eksekusi Alat**: Mencoba parameter berbeda dan melihat respons secara real-time
+1. **Menemukan Kapabilitas Server**: Mendeteksi secara otomatis sumber daya, alat, dan prompt yang tersedia
+2. **Mengujicoba Eksekusi Alat**: Mencoba parameter berbeda dan melihat respons secara real-time
 3. **Melihat Metadata Server**: Memeriksa info server, skema, dan konfigurasi
 
 ```bash
-# ex TypeScript, installing and running MCP Inspector
+# contoh TypeScript, menginstal dan menjalankan MCP Inspector
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-Saat Anda menjalankan perintah di atas, MCP Inspector akan meluncurkan antarmuka web lokal di browser Anda. Anda dapat melihat dashboard yang menampilkan server MCP yang terdaftar, alat, sumber daya, dan prompt yang tersedia. Antarmuka ini memungkinkan Anda menguji eksekusi alat secara interaktif, memeriksa metadata server, dan melihat respons real-time, sehingga memudahkan validasi dan debugging implementasi server MCP Anda.
+Saat Anda menjalankan perintah di atas, MCP Inspector akan meluncurkan antarmuka web lokal di browser Anda. Anda dapat mengharapkan melihat dashboard yang menampilkan server MCP yang terdaftar, alat, sumber daya, dan prompt yang tersedia. Antarmuka ini memungkinkan Anda menguji eksekusi alat secara interaktif, memeriksa metadata server, dan melihat respons secara real-time, sehingga memudahkan validasi dan debugging implementasi server MCP Anda.
 
-Berikut adalah tangkapan layar tentang bagaimana tampilannya:
+Berikut tangkapan layar seperti apa tampilannya:
 
-![Koneksi server MCP Inspector](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.id.png)
+![MCP Inspector server connection](../../../../translated_images/id/connected.73d1e042c24075d3.webp)
 
-## Masalah Pengaturan Umum dan Solusinya
+## Masalah Umum Pengaturan dan Solusinya
 
 | Masalah | Solusi yang Mungkin |
 |---------|---------------------|
 | Koneksi ditolak | Periksa apakah server berjalan dan port sudah benar |
 | Kesalahan eksekusi alat | Tinjau validasi parameter dan penanganan kesalahan |
-| Kegagalan autentikasi | Verifikasi API keys dan izin |
+| Gagal autentikasi | Verifikasi kunci API dan izin |
 | Kesalahan validasi skema | Pastikan parameter sesuai dengan skema yang ditentukan |
 | Server tidak mulai | Periksa konflik port atau dependensi yang hilang |
 | Kesalahan CORS | Konfigurasikan header CORS yang tepat untuk permintaan lintas asal |
-| Masalah autentikasi | Verifikasi validitas token dan izin |
+| Masalah autentikasi | Verifikasi keabsahan token dan izin |
 
 ## Pengembangan Lokal
 
 Untuk pengembangan dan pengujian lokal, Anda dapat menjalankan server MCP langsung di mesin Anda:
 
 1. **Mulai proses server**: Jalankan aplikasi server MCP Anda
-2. **Konfigurasi jaringan**: Pastikan server dapat diakses di port yang diharapkan
+2. **Konfigurasikan jaringan**: Pastikan server dapat diakses pada port yang diharapkan
 3. **Hubungkan klien**: Gunakan URL koneksi lokal seperti `http://localhost:3000`
 
 ```bash
-# Example: Running a TypeScript MCP server locally
+# Contoh: Menjalankan server MCP TypeScript secara lokal
 npm run start
-# Server running at http://localhost:3000
+# Server berjalan di http://localhost:3000
 ```
 
 ## Membangun Server MCP Pertama Anda
@@ -187,23 +181,23 @@ Kami telah membahas [Konsep Inti](/01-CoreConcepts/README.md) dalam pelajaran se
 
 ### Apa yang dapat dilakukan server
 
-Sebelum kita mulai menulis kode, mari kita ingat apa yang dapat dilakukan server:
+Sebelum mulai menulis kode, mari kita ingat kembali apa yang dapat dilakukan server:
 
-Server MCP dapat, misalnya:
+Server MCP dapat misalnya:
 
-- Mengakses file dan database lokal
+- Mengakses file lokal dan basis data
 - Terhubung ke API jarak jauh
 - Melakukan perhitungan
-- Berintegrasi dengan alat dan layanan lain
+- Mengintegrasikan dengan alat dan layanan lain
 - Menyediakan antarmuka pengguna untuk interaksi
 
-Bagus, sekarang kita tahu apa yang bisa kita lakukan dengannya, mari kita mulai coding.
+Bagus, sekarang kita tahu apa yang bisa dilakukan, mari mulai coding.
 
 ## Latihan: Membuat server
 
 Untuk membuat server, Anda perlu mengikuti langkah-langkah berikut:
 
-- Instal MCP SDK.
+- Instal SDK MCP.
 - Buat proyek dan atur struktur proyek.
 - Tulis kode server.
 - Uji server.
@@ -213,7 +207,7 @@ Untuk membuat server, Anda perlu mengikuti langkah-langkah berikut:
 #### TypeScript
 
 ```sh
-# Create project directory and initialize npm project
+# Buat direktori proyek dan inisialisasi proyek npm
 mkdir calculator-server
 cd calculator-server
 npm init -y
@@ -222,10 +216,10 @@ npm init -y
 #### Python
 
 ```sh
-# Create project dir
+# Buat direktori proyek
 mkdir calculator-server
 cd calculator-server
-# Open the folder in Visual Studio Code - Skip this if you are using a different IDE
+# Buka folder di Visual Studio Code - Lewati ini jika Anda menggunakan IDE yang berbeda
 code .
 ```
 
@@ -257,7 +251,7 @@ Ekstrak file zip:
 ```bash
 unzip calculator-server.zip -d calculator-server
 cd calculator-server
-# optional remove the unused test
+# opsional hapus tes yang tidak digunakan
 rm -rf src/test/java
 ```
 
@@ -371,15 +365,15 @@ cargo init
 
 ### -2- Menambahkan dependensi
 
-Sekarang proyek Anda telah dibuat, mari tambahkan dependensi berikutnya:
+Sekarang proyek Anda sudah dibuat, mari tambahkan dependensi berikut:
 
 #### TypeScript
 
 ```sh
-# If not already installed, install TypeScript globally
+# Jika belum terpasang, pasang TypeScript secara global
 npm install typescript -g
 
-# Install the MCP SDK and Zod for schema validation
+# Pasang MCP SDK dan Zod untuk validasi skema
 npm install @modelcontextprotocol/sdk zod
 npm install -D @types/node typescript
 ```
@@ -387,7 +381,7 @@ npm install -D @types/node typescript
 #### Python
 
 ```sh
-# Create a virtual env and install dependencies
+# Buat lingkungan virtual dan instal dependensi
 python -m venv venv
 venv\Scripts\activate
 pip install "mcp[cli]"
@@ -412,7 +406,7 @@ cargo add tokio --features rt-multi-thread
 
 #### TypeScript
 
-Buka file *package.json* dan ganti kontennya dengan yang berikut untuk memastikan Anda dapat membangun dan menjalankan server:
+Buka file *package.json* dan ganti isinya dengan berikut ini untuk memastikan Anda dapat membangun dan menjalankan server:
 
 ```json
 {
@@ -421,8 +415,8 @@ Buka file *package.json* dan ganti kontennya dengan yang berikut untuk memastika
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "tsc && node ./build/index.js",
-    "build": "tsc && node ./build/index.js"
+    "build": "tsc",
+    "start": "npm run build && node ./build/index.js",
   },
   "keywords": [],
   "author": "",
@@ -439,7 +433,7 @@ Buka file *package.json* dan ganti kontennya dengan yang berikut untuk memastika
 }
 ```
 
-Buat file *tsconfig.json* dengan konten berikut:
+Buat *tsconfig.json* dengan isi berikut:
 
 ```json
 {
@@ -502,14 +496,14 @@ import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mc
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
  
-// Create an MCP server
+// Buat server MCP
 const server = new McpServer({
   name: "Calculator MCP Server",
   version: "1.0.0"
 });
 ```
 
-Sekarang Anda memiliki server, tetapi belum banyak berfungsi, mari kita perbaiki.
+Sekarang Anda memiliki server, tapi belum banyak fungsi, mari perbaiki itu.
 
 #### Python
 
@@ -517,7 +511,7 @@ Sekarang Anda memiliki server, tetapi belum banyak berfungsi, mari kita perbaiki
 # server.py
 from mcp.server.fastmcp import FastMCP
 
-# Create an MCP server
+# Buat server MCP
 mcp = FastMCP("Demo")
 ```
 
@@ -775,7 +769,7 @@ public class HealthController {
 }
 ```
 
-Buat handler exception *src/main/java/com/microsoft/mcp/sample/server/exception/GlobalExceptionHandler.java*:
+Buat penangan pengecualian *src/main/java/com/microsoft/mcp/sample/server/exception/GlobalExceptionHandler.java*:
 
 ```java
 package com.microsoft.mcp.sample.server.exception;
@@ -805,14 +799,14 @@ public class GlobalExceptionHandler {
             this.message = message;
         }
 
-        // Getters
+        // Pengambil nilai
         public String getCode() { return code; }
         public String getMessage() { return message; }
     }
 }
 ```
 
-Buat banner khusus *src/main/resources/banner.txt*:
+Buat banner kustom *src/main/resources/banner.txt*:
 
 ```text
 _____      _            _       _             
@@ -826,9 +820,11 @@ Calculator MCP Server v1.0
 Spring Boot MCP Application
 ```
 
+</details>
+
 #### Rust
 
-Tambahkan kode berikut ke bagian atas file *src/main.rs*. Ini mengimpor pustaka dan modul yang diperlukan untuk server MCP Anda.
+Tambahkan kode berikut di bagian atas file *src/main.rs*. Ini mengimpor pustaka dan modul yang diperlukan untuk server MCP Anda.
 
 ```rust
 use rmcp::{
@@ -841,7 +837,7 @@ use rmcp::{
 use std::error::Error;
 ```
 
-Server kalkulator akan menjadi server sederhana yang dapat menambahkan dua angka bersama-sama. Mari buat struct untuk mewakili permintaan kalkulator.
+Server kalkulator akan sederhana yang dapat menjumlahkan dua angka. Mari buat struct untuk merepresentasikan permintaan kalkulator.
 
 ```rust
 #[derive(Debug, serde::Deserialize, schemars::JsonSchema)]
@@ -851,7 +847,7 @@ pub struct CalculatorRequest {
 }
 ```
 
-Selanjutnya, buat struct untuk mewakili server kalkulator. Struct ini akan menyimpan router alat, yang digunakan untuk mendaftarkan alat.
+Selanjutnya, buat struct untuk merepresentasikan server kalkulator. Struct ini akan memegang router alat, yang digunakan untuk mendaftarkan alat.
 
 ```rust
 #[derive(Debug, Clone)]
@@ -860,7 +856,7 @@ pub struct Calculator {
 }
 ```
 
-Sekarang, kita dapat mengimplementasikan struct `Calculator` untuk membuat instance baru dari server dan mengimplementasikan handler server untuk menyediakan informasi server.
+Sekarang, kita dapat mengimplementasikan struct `Calculator` untuk membuat instance server baru dan mengimplementasikan handler server untuk menyediakan informasi server.
 
 ```rust
 #[tool_router]
@@ -884,7 +880,7 @@ impl ServerHandler for Calculator {
 }
 ```
 
-Terakhir, kita perlu mengimplementasikan fungsi utama untuk memulai server. Fungsi ini akan membuat instance dari struct `Calculator` dan melayani melalui input/output standar.
+Terakhir, kita perlu mengimplementasikan fungsi utama untuk memulai server. Fungsi ini akan membuat instance struct `Calculator` dan melayani melalui input/output standar.
 
 ```rust
 #[tokio::main]
@@ -895,7 +891,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
 }
 ```
 
-Server sekarang siap untuk menyediakan informasi dasar tentang dirinya. Selanjutnya, kita akan menambahkan alat untuk melakukan penjumlahan.
+Server sekarang sudah siap menyediakan informasi dasar tentang dirinya. Selanjutnya, kita akan menambahkan alat untuk melakukan penjumlahan.
 
 ### -5- Menambahkan alat dan sumber daya
 
@@ -924,7 +920,7 @@ server.resource(
 );
 ```
 
-Alat Anda mengambil parameter `a` dan `b` dan menjalankan fungsi yang menghasilkan respons dalam bentuk:
+Alat Anda menerima parameter `a` dan `b` dan menjalankan fungsi yang menghasilkan respons dalam bentuk:
 
 ```typescript
 {
@@ -934,7 +930,7 @@ Alat Anda mengambil parameter `a` dan `b` dan menjalankan fungsi yang menghasilk
 }
 ```
 
-Sumber daya Anda diakses melalui string "greeting" dan mengambil parameter `name` serta menghasilkan respons serupa dengan alat:
+Sumber daya Anda diakses melalui string "greeting" dan menerima parameter `name` serta menghasilkan respons serupa dengan alat:
 
 ```typescript
 {
@@ -946,24 +942,24 @@ Sumber daya Anda diakses melalui string "greeting" dan mengambil parameter `name
 #### Python
 
 ```python
-# Add an addition tool
+# Tambahkan alat penjumlahan
 @mcp.tool()
 def add(a: int, b: int) -> int:
     """Add two numbers"""
     return a + b
 
 
-# Add a dynamic greeting resource
+# Tambahkan sumber sapaan dinamis
 @mcp.resource("greeting://{name}")
 def get_greeting(name: str) -> str:
     """Get a personalized greeting"""
     return f"Hello, {name}!"
 ```
 
-Dalam kode di atas kita telah:
+Dalam kode sebelumnya kami:
 
-- Mendefinisikan alat `add` yang mengambil parameter `a` dan `p`, keduanya integer.
-- Membuat sumber daya bernama `greeting` yang mengambil parameter `name`.
+- Mendefinisikan alat `add` yang menerima parameter `a` dan `b`, keduanya integer.
+- Membuat sumber daya bernama `greeting` yang menerima parameter `name`.
 
 #### .NET
 
@@ -980,7 +976,7 @@ public static class CalculatorTool
 
 #### Java
 
-Alat telah dibuat pada langkah sebelumnya.
+Alat sudah dibuat pada langkah sebelumnya.
 
 #### Rust
 
@@ -998,17 +994,17 @@ async fn add(
 
 ### -6- Kode akhir
 
-Mari tambahkan kode terakhir yang kita butuhkan agar server dapat mulai:
+Mari tambahkan kode terakhir yang kita butuhkan agar server dapat mulai berjalan:
 
 #### TypeScript
 
 ```typescript
-// Start receiving messages on stdin and sending messages on stdout
+// Mulai menerima pesan di stdin dan mengirim pesan di stdout
 const transport = new StdioServerTransport();
 await server.connect(transport);
 ```
 
-Berikut adalah kode lengkapnya:
+Berikut kode lengkapnya:
 
 ```typescript
 // index.ts
@@ -1016,13 +1012,13 @@ import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mc
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
 
-// Create an MCP server
+// Buat server MCP
 const server = new McpServer({
   name: "Calculator MCP Server",
   version: "1.0.0"
 });
 
-// Add an addition tool
+// Tambahkan alat penjumlahan
 server.tool(
   "add",
   { a: z.number(), b: z.number() },
@@ -1031,7 +1027,7 @@ server.tool(
   })
 );
 
-// Add a dynamic greeting resource
+// Tambahkan sumber sapaan dinamis
 server.resource(
   "greeting",
   new ResourceTemplate("greeting://{name}", { list: undefined }),
@@ -1043,7 +1039,7 @@ server.resource(
   })
 );
 
-// Start receiving messages on stdin and sending messages on stdout
+// Mulai menerima pesan di stdin dan mengirim pesan di stdout
 const transport = new StdioServerTransport();
 server.connect(transport);
 ```
@@ -1054,31 +1050,31 @@ server.connect(transport);
 # server.py
 from mcp.server.fastmcp import FastMCP
 
-# Create an MCP server
+# Buat server MCP
 mcp = FastMCP("Demo")
 
 
-# Add an addition tool
+# Tambahkan alat penjumlahan
 @mcp.tool()
 def add(a: int, b: int) -> int:
     """Add two numbers"""
     return a + b
 
 
-# Add a dynamic greeting resource
+# Tambahkan sumber sapaan dinamis
 @mcp.resource("greeting://{name}")
 def get_greeting(name: str) -> str:
     """Get a personalized greeting"""
     return f"Hello, {name}!"
 
-# Main execution block - this is required to run the server
+# Blok eksekusi utama - ini diperlukan untuk menjalankan server
 if __name__ == "__main__":
     mcp.run()
 ```
 
 #### .NET
 
-Buat file Program.cs dengan konten berikut:
+Buat file Program.cs dengan isi berikut:
 
 ```csharp
 using Microsoft.Extensions.DependencyInjection;
@@ -1110,7 +1106,7 @@ public static class CalculatorTool
 
 #### Java
 
-Kelas aplikasi utama Anda yang lengkap harus terlihat seperti ini:
+Kelas aplikasi utama lengkap Anda harus terlihat seperti ini:
 
 ```java
 // McpServerApplication.java
@@ -1214,7 +1210,7 @@ npm run build
 mcp run server.py
 ```
 
-> Untuk menggunakan MCP Inspector, gunakan `mcp dev server.py` yang secara otomatis meluncurkan Inspector dan menyediakan token sesi proxy yang diperlukan. Jika menggunakan `mcp run server.py`, Anda perlu secara manual memulai Inspector dan mengonfigurasi koneksi.
+> Untuk menggunakan MCP Inspector, gunakan `mcp dev server.py` yang secara otomatis meluncurkan Inspector dan menyediakan token sesi proxy yang diperlukan. Jika menggunakan `mcp run server.py`, Anda perlu memulai Inspector secara manual dan mengonfigurasi koneksi.
 
 #### .NET
 
@@ -1243,10 +1239,10 @@ cargo run
 
 ### -8- Menjalankan menggunakan inspector
 
-Inspector adalah alat hebat yang dapat memulai server Anda dan memungkinkan Anda berinteraksi dengannya sehingga Anda dapat menguji apakah server berfungsi. Mari kita mulai:
+Inspector adalah alat hebat yang dapat memulai server Anda dan memungkinkan Anda berinteraksi dengannya sehingga Anda dapat menguji apakah server berfungsi. Mari mulai:
 
 > [!NOTE]
-> Mungkin terlihat berbeda di bidang "command" karena berisi perintah untuk menjalankan server dengan runtime spesifik Anda.
+> mungkin terlihat berbeda di bidang "command" karena berisi perintah untuk menjalankan server dengan runtime spesifik Anda.
 
 #### TypeScript
 
@@ -1256,19 +1252,22 @@ npx @modelcontextprotocol/inspector node build/index.js
 
 atau tambahkan ke *package.json* Anda seperti ini: `"inspector": "npx @modelcontextprotocol/inspector node build/index.js"` lalu jalankan `npm run inspector`
 
-Python membungkus alat Node.js yang disebut inspector. Dimungkinkan untuk memanggil alat tersebut seperti ini:
+#### Python
+
+Python membungkus alat Node.js bernama inspector. Anda bisa memanggil alat tersebut seperti ini:
 
 ```sh
 mcp dev server.py
 ```
 
-Namun, alat ini tidak mengimplementasikan semua metode yang tersedia pada alat tersebut sehingga disarankan untuk menjalankan alat Node.js secara langsung seperti di bawah ini:
+Namun, alat ini tidak mengimplementasikan semua metode yang tersedia pada alat tersebut sehingga disarankan menjalankan alat Node.js langsung seperti di bawah ini:
 
 ```sh
 npx @modelcontextprotocol/inspector mcp run server.py
 ```
 
-Jika Anda menggunakan alat atau IDE yang memungkinkan Anda mengonfigurasi perintah dan argumen untuk menjalankan skrip, pastikan untuk mengatur `python` di bidang `Command` dan `server.py` sebagai `Arguments`. Ini memastikan skrip berjalan dengan benar.
+Jika Anda menggunakan alat atau IDE yang memungkinkan Anda mengonfigurasi perintah dan argumen untuk menjalankan skrip, 
+pastikan untuk mengatur `python` di bidang `Command` dan `server.py` sebagai `Arguments`. Ini memastikan skrip berjalan dengan benar.
 
 #### .NET
 
@@ -1293,29 +1292,30 @@ Di antarmuka web inspector:
 1. Pilih "SSE" sebagai jenis transportasi
 2. Atur URL ke: `http://localhost:8080/sse`
 3. Klik "Connect"
-![Connect](../../../../translated_images/tool.163d33e3ee307e209ef146d8f85060d2f7e83e9f59b3b1699a77204ae0454ad2.id.png)
 
-**Anda sekarang terhubung ke server**  
-**Bagian pengujian server Java telah selesai**
+![Connect](../../../../translated_images/id/tool.163d33e3ee307e20.webp)
 
-Bagian selanjutnya adalah tentang berinteraksi dengan server.
+**Anda sekarang terhubung ke server**
+**Bagian pengujian server Java sekarang selesai**
 
-Anda seharusnya melihat antarmuka pengguna berikut:
+Bagian berikutnya adalah tentang berinteraksi dengan server.
 
-![Connect](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.id.png)
+Anda harus melihat antarmuka pengguna berikut:
 
-1. Hubungkan ke server dengan memilih tombol Connect  
-   Setelah Anda terhubung ke server, Anda seharusnya melihat tampilan berikut:
+![Connect](../../../../translated_images/id/connect.141db0b2bd05f096.webp)
 
-   ![Connected](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.id.png)
+1. Hubungkan ke server dengan memilih tombol Connect
+  Setelah Anda terhubung ke server, Anda sekarang harus melihat yang berikut:
 
-2. Pilih "Tools" dan "listTools", Anda akan melihat "Add" muncul. Pilih "Add" dan isi nilai parameter.
+  ![Connected](../../../../translated_images/id/connected.73d1e042c24075d3.webp)
 
-   Anda seharusnya melihat respons berikut, yaitu hasil dari alat "add":
+1. Pilih "Tools" dan "listTools", Anda harus melihat "Add" muncul, pilih "Add" dan isi nilai parameter.
 
-   ![Result of running add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.id.png)
+  Anda harus melihat respons berikut, yaitu hasil dari alat "add":
 
-Selamat, Anda telah berhasil membuat dan menjalankan server pertama Anda!
+  ![Result of running add](../../../../translated_images/id/ran-tool.a5a6ee878c1369ec.webp)
+
+Selamat, Anda berhasil membuat dan menjalankan server pertama Anda!
 
 #### Rust
 
@@ -1327,53 +1327,57 @@ npx @modelcontextprotocol/inspector cargo run --cli --method tools/call --tool-n
 
 ### SDK Resmi
 
-MCP menyediakan SDK resmi untuk berbagai bahasa:
+MCP menyediakan SDK resmi untuk beberapa bahasa:
 
-- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Dikelola bersama dengan Microsoft  
-- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Dikelola bersama dengan Spring AI  
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Implementasi resmi TypeScript  
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Implementasi resmi Python  
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Implementasi resmi Kotlin  
-- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Dikelola bersama dengan Loopwork AI  
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Implementasi resmi Rust  
+- [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Dipelihara bekerja sama dengan Microsoft
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Dipelihara bekerja sama dengan Spring AI
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Implementasi resmi TypeScript
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Implementasi resmi Python
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Implementasi resmi Kotlin
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Dipelihara bekerja sama dengan Loopwork AI
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Implementasi resmi Rust
 
 ## Poin Penting
 
-- Menyiapkan lingkungan pengembangan MCP mudah dilakukan dengan SDK khusus bahasa.  
-- Membangun server MCP melibatkan pembuatan dan pendaftaran alat dengan skema yang jelas.  
-- Pengujian dan debugging sangat penting untuk implementasi MCP yang andal.  
+- Menyiapkan lingkungan pengembangan MCP mudah dengan SDK khusus bahasa
+- Membangun server MCP melibatkan pembuatan dan pendaftaran alat dengan skema yang jelas
+- Pengujian dan debugging penting untuk implementasi MCP yang andal
 
 ## Contoh
 
-- [Java Calculator](../samples/java/calculator/README.md)  
-- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)  
-- [JavaScript Calculator](../samples/javascript/README.md)  
-- [TypeScript Calculator](../samples/typescript/README.md)  
-- [Python Calculator](../../../../03-GettingStarted/samples/python)  
-- [Rust Calculator](../../../../03-GettingStarted/samples/rust)  
+- [Java Calculator](../samples/java/calculator/README.md)
+- [.Net Calculator](../../../../03-GettingStarted/samples/csharp)
+- [JavaScript Calculator](../samples/javascript/README.md)
+- [TypeScript Calculator](../samples/typescript/README.md)
+- [Python Calculator](../../../../03-GettingStarted/samples/python)
+- [Rust Calculator](../../../../03-GettingStarted/samples/rust)
 
 ## Tugas
 
 Buat server MCP sederhana dengan alat pilihan Anda:
 
-1. Implementasikan alat tersebut dalam bahasa pilihan Anda (.NET, Java, Python, TypeScript, atau Rust).  
-2. Definisikan parameter input dan nilai pengembalian.  
-3. Jalankan alat inspector untuk memastikan server berfungsi sebagaimana mestinya.  
-4. Uji implementasi dengan berbagai input.  
+1. Implementasikan alat dalam bahasa pilihan Anda (.NET, Java, Python, TypeScript, atau Rust).
+2. Definisikan parameter input dan nilai kembalian.
+3. Jalankan alat inspector untuk memastikan server berfungsi sebagaimana mestinya.
+4. Uji implementasi dengan berbagai input.
 
 ## Solusi
 
-[Solusi](./solution/README.md)
+[Solution](./solution/README.md)
 
-## Sumber Daya Tambahan
+## Sumber Tambahan
 
-- [Membangun Agen menggunakan Model Context Protocol di Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)  
-- [Remote MCP dengan Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)  
-- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)  
+- [Membangun Agen menggunakan Model Context Protocol di Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+- [MCP Jarak Jauh dengan Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
+- [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
-## Apa Selanjutnya
+## Selanjutnya
 
-Selanjutnya: [Memulai dengan MCP Clients](../02-client/README.md)  
+Selanjutnya: [Memulai dengan Klien MCP](../02-client/README.md)
 
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang berwenang. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

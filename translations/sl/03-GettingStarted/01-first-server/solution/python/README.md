@@ -1,15 +1,6 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "d26f746e21775c30b4d7ed97962b24df",
-  "translation_date": "2025-08-19T18:20:28+00:00",
-  "source_file": "03-GettingStarted/01-first-server/solution/python/README.md",
-  "language_code": "sl"
-}
--->
 # Zagon tega vzorca
 
-Priporočljivo je namestiti `uv`, vendar to ni nujno potrebno, glejte [navodila](https://docs.astral.sh/uv/#highlights).
+Priporočljivo je namestiti `uv`, vendar ni nujno, glejte [navodila](https://docs.astral.sh/uv/#highlights)
 
 ## -0- Ustvarite virtualno okolje
 
@@ -49,11 +40,11 @@ Ko je strežnik povezan:
 
 - poskusite našteti orodja in zaženite `add` z argumentoma 2 in 4, v rezultatu bi morali videti 6.
 
-- pojdite na resources in resource template ter pokličite get_greeting, vnesite ime in videli boste pozdrav z vnesenim imenom.
+- pojdite na vire in predlogo virov ter pokličite get_greeting, vnesite ime in videli boste pozdrav z imenom, ki ste ga vnesli.
 
 ### Testiranje v načinu CLI
 
-Inšpektor, ki ste ga zagnali, je pravzaprav aplikacija Node.js, `mcp dev` pa je njen ovitek.
+Inšpektor, ki ste ga zagnali, je dejansko aplikacija Node.js, `mcp dev` pa je ovojnica okoli nje.
 
 Lahko ga zaženete neposredno v načinu CLI z naslednjim ukazom:
 
@@ -61,7 +52,7 @@ Lahko ga zaženete neposredno v načinu CLI z naslednjim ukazom:
 npx @modelcontextprotocol/inspector --cli mcp run server.py --method tools/list
 ```
 
-To bo prikazalo seznam vseh orodij, ki so na voljo na strežniku. Videti bi morali naslednji izpis:
+To bo prikazalo seznam vseh orodij, ki so na voljo v strežniku. Videti bi morali naslednji izpis:
 
 ```text
 {
@@ -116,5 +107,7 @@ Videti bi morali naslednji izpis:
 > Običajno je veliko hitreje zagnati inšpektor v načinu CLI kot v brskalniku.
 > Več o inšpektorju preberite [tukaj](https://github.com/modelcontextprotocol/inspector).
 
+---
+
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve AI za prevajanje [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne razlage, ki bi nastale zaradi uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo storitve za prevajanje z umetno inteligenco [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo profesionalni človeški prevod. Ne prevzemamo odgovornosti za morebitna nesporazumevanja ali napačne razlage, ki bi nastale zaradi uporabe tega prevoda.

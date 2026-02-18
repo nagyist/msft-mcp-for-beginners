@@ -1,17 +1,8 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e5ea5e7582f70008ea9bec3b3820f20a",
-  "translation_date": "2025-07-13T23:11:49+00:00",
-  "source_file": "04-PracticalImplementation/samples/java/containerapp/README.md",
-  "language_code": "ru"
-}
--->
 ## Архитектура системы
 
 Этот проект демонстрирует веб-приложение, которое использует проверку безопасности контента перед передачей пользовательских запросов в сервис калькулятора через Model Context Protocol (MCP).
 
-![Диаграмма архитектуры системы](../../../../../../translated_images/plant.b079fed84e945b7c2978993a16163bb53f0517cfe3548d2e442ff40d619ba4b4.ru.png)
+![Диаграмма архитектуры системы](../../../../../../translated_images/ru/plant.b079fed84e945b7c.webp)
 
 ### Как это работает
 

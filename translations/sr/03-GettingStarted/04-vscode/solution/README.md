@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5ef8f5821c1a04f7b1fc4f15098ecab8",
-  "translation_date": "2025-07-13T19:46:20+00:00",
-  "source_file": "03-GettingStarted/04-vscode/solution/README.md",
-  "language_code": "sr"
-}
--->
 Ово одговара покретању команде као што је: `node build/index.js`.
 
 - Промените овај унос сервера тако да одговара локацији ваше серверске датотеке или ономе што је потребно за покретање вашег сервера у зависности од изабраног окружења и локације сервера.
@@ -23,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     Требало би да видите алат приказан изнад поља за текст у ћаскању који вам омогућава да изаберете покретање алата, као на овој слици:
 
-    ![VS Code indicating it wanting to run a tool](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.sr.png)
+    ![VS Code indicating it wanting to run a tool](../../../../../translated_images/sr/vscode-agent.d5a0e0b897331060.webp)
 
     Избор алата треба да да резултат у виду броја „23“ ако је ваш упит био као што смо претходно навели.
 

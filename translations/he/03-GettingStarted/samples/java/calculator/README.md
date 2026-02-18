@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13231e9951b68efd9df8c56bd5cdb27e",
-  "translation_date": "2025-07-13T22:28:44+00:00",
-  "source_file": "03-GettingStarted/samples/java/calculator/README.md",
-  "language_code": "he"
-}
--->
 # שירות מחשבון בסיסי MCP
 
 שירות זה מספק פעולות מחשבון בסיסיות דרך פרוטוקול Model Context (MCP) באמצעות Spring Boot עם WebFlux כתחבורה. הוא מיועד כדוגמה פשוטה למתחילים הלומדים על יישומי MCP.
@@ -201,7 +192,7 @@ MCP Inspector הוא כלי שימושי לאינטראקציה עם שירות�
    - לחץ על "List Tools" כדי לראות את פעולות המחשבון הזמינות
    - בחר כלי ולחץ על "Run Tool" כדי לבצע פעולה
 
-![צילום מסך של MCP Inspector](../../../../../../translated_images/tool.c75a0b2380efcf1a47a8478f54380a36ddcca7943b98f56dabbac8b07e15c3bb.he.png)
+![צילום מסך של MCP Inspector](../../../../../../translated_images/he/tool.c75a0b2380efcf1a.webp)
 
 ### שימוש ב-Docker
 

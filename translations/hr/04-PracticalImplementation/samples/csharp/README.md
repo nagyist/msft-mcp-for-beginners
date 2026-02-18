@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0bc7bd48f55f1565f1d95ccb2c16f728",
-  "translation_date": "2025-07-13T23:10:17+00:00",
-  "source_file": "04-PracticalImplementation/samples/csharp/README.md",
-  "language_code": "hr"
-}
--->
 # Primjer
 
 Prethodni primjer pokazuje kako koristiti lokalni .NET projekt s tipom `stdio`. I kako pokrenuti server lokalno u kontejneru. Ovo je dobro rješenje u mnogim situacijama. Međutim, može biti korisno imati server koji radi udaljeno, primjerice u oblaku. Tu dolazi do izražaja tip `http`.
@@ -26,7 +17,7 @@ Ostali projekti dolaze iz [.NET Aspire](https://learn.microsoft.com/dotnet/aspir
 
 1. Kada se u web pregledniku otvori .NET Aspire nadzorna ploča, zabilježite `http` URL. Trebao bi biti nešto poput `http://localhost:5058/`.
 
-   ![.NET Aspire Dashboard](../../../../../translated_images/dotnet-aspire-dashboard.0a7095710e9301e90df2efd867e1b675b3b9bc2ccd7feb1ebddc0751522bc37c.hr.png)
+   ![.NET Aspire Dashboard](../../../../../translated_images/hr/dotnet-aspire-dashboard.0a7095710e9301e9.webp)
 
 ## Testirajte Streamable HTTP s MCP Inspectorom
 
@@ -38,7 +29,7 @@ Pokrenite server i u terminalu izvršite sljedeću naredbu:
 npx @modelcontextprotocol/inspector http://localhost:5058
 ```
 
-![MCP Inspector](../../../../../translated_images/mcp-inspector.c223422b9b494fb4a518a3b3911b3e708e6a5715069470f9163ee2ee8d5f1ba9.hr.png)
+![MCP Inspector](../../../../../translated_images/hr/mcp-inspector.c223422b9b494fb4.webp)
 
 - Odaberite `Streamable HTTP` kao tip Transporta.
 - U polje Url unesite URL servera koji ste ranije zabilježili i dodajte `/mcp`. Trebao bi biti `http` (ne `https`), nešto poput `http://localhost:5058/mcp`.
@@ -83,7 +74,7 @@ azd up
 
 Nakon što se postavljanje završi, trebali biste vidjeti poruku poput ove:
 
-![Azd deployment success](../../../../../translated_images/azd-deployment-success.bd42940493f1b834a5ce6251a6f88966546009b350df59d0cc4a8caabe94a4f1.hr.png)
+![Azd deployment success](../../../../../translated_images/hr/azd-deployment-success.bd42940493f1b834.webp)
 
 Zabilježite URL i koristite ga u MCP Inspectoru i u GitHub Copilot Chatu.
 

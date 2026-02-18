@@ -1,96 +1,89 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b62150e27d4b7b5797ee41146d176e6b",
-  "translation_date": "2025-08-18T16:27:51+00:00",
-  "source_file": "08-BestPractices/README.md",
-  "language_code": "nl"
-}
--->
-# MCP Ontwikkelingsbeste Praktijken
+# MCP Ontwikkelingsrichtlijnen
 
-[![MCP Ontwikkelingsbeste Praktijken](../../../translated_images/09.d0f6d86c9d72134ccf5a8d8c8650a0557e519936661fc894cad72d73522227cb.nl.png)](https://youtu.be/W56H9W7x-ao)
+[![MCP Ontwikkelingsrichtlijnen](../../../translated_images/nl/09.d0f6d86c9d72134c.webp)](https://youtu.be/W56H9W7x-ao)
 
 _(Klik op de afbeelding hierboven om de video van deze les te bekijken)_
 
 ## Overzicht
 
-Deze les richt zich op geavanceerde beste praktijken voor het ontwikkelen, testen en implementeren van MCP-servers en functies in productieomgevingen. Naarmate MCP-ecosystemen complexer en belangrijker worden, zorgt het volgen van vastgestelde patronen voor betrouwbaarheid, onderhoudbaarheid en interoperabiliteit. Deze les bundelt praktische inzichten uit echte MCP-implementaties om je te begeleiden bij het creëren van robuuste, efficiënte servers met effectieve hulpmiddelen, prompts en tools.
+Deze les richt zich op geavanceerde best practices voor het ontwikkelen, testen en implementeren van MCP-servers en -functies in productieomgevingen. Naarmate MCP-ecosystemen in complexiteit en belang groeien, zorgt het volgen van vastgestelde patronen voor betrouwbaarheid, onderhoudbaarheid en interoperabiliteit. Deze les bundelt praktische kennis die is opgedaan uit MCP-implementaties in de echte wereld om je te begeleiden bij het creëren van robuuste, efficiënte servers met effectieve resources, prompts en tools.
 
 ## Leerdoelen
 
 Aan het einde van deze les kun je:
 
-- Industriestandaard beste praktijken toepassen bij het ontwerpen van MCP-servers en functies
-- Uitgebreide teststrategieën ontwikkelen voor MCP-servers
+- Industriële best practices toepassen bij het ontwerpen van MCP-servers en functies
+- Uitgebreide teststrategieën voor MCP-servers creëren
 - Efficiënte, herbruikbare workflowpatronen ontwerpen voor complexe MCP-toepassingen
-- Correcte foutafhandeling, logging en observatie implementeren in MCP-servers
+- Juiste foutafhandeling, logging en observeerbaarheid implementeren in MCP-servers
 - MCP-implementaties optimaliseren voor prestaties, beveiliging en onderhoudbaarheid
 
-## MCP Kernprincipes
+## Kernprincipes van MCP
 
-Voordat we ingaan op specifieke implementatiepraktijken, is het belangrijk om de kernprincipes te begrijpen die effectief MCP-ontwikkelen sturen:
+Voordat we dieper ingaan op specifieke implementatiepraktijken, is het belangrijk de kernprincipes te begrijpen die effectieve MCP-ontwikkeling sturen:
 
-1. **Gestandaardiseerde Communicatie**: MCP gebruikt JSON-RPC 2.0 als basis, wat een consistent formaat biedt voor verzoeken, antwoorden en foutafhandeling in alle implementaties.
+1. **Gestandaardiseerde communicatie**: MCP gebruikt JSON-RPC 2.0 als basis, wat een consistent formaat biedt voor verzoeken, antwoorden en foutafhandeling in alle implementaties.
 
-2. **Gebruikersgerichte Ontwerp**: Geef altijd prioriteit aan gebruikersinstemming, controle en transparantie in je MCP-implementaties.
+2. **Gebruikersgericht ontwerp**: Geef altijd prioriteit aan toestemming van de gebruiker, controle en transparantie in je MCP-implementaties.
 
-3. **Beveiliging Voorop**: Implementeer robuuste beveiligingsmaatregelen, waaronder authenticatie, autorisatie, validatie en snelheidsbeperking.
+3. **Beveiliging eerst**: Implementeer robuuste beveiligingsmaatregelen inclusief authenticatie, autorisatie, validatie en rate limiting.
 
-4. **Modulaire Architectuur**: Ontwerp je MCP-servers met een modulaire aanpak, waarbij elk hulpmiddel en elke bron een duidelijke, gerichte functie heeft.
+4. **Modulaire architectuur**: Ontwerp je MCP-servers met een modulaire aanpak, waarbij elk hulpmiddel en resource een duidelijk, gericht doel heeft.
 
-5. **Stateful Verbindingen**: Maak gebruik van MCP's mogelijkheid om status te behouden over meerdere verzoeken voor meer samenhangende en contextbewuste interacties.
+5. **Statevolle verbindingen**: Benut MCP’s mogelijkheid om status te behouden over meerdere verzoeken voor meer coherente en contextbewuste interacties.
 
-## Officiële MCP Beste Praktijken
+## Officiële MCP Best Practices
 
-De volgende beste praktijken zijn afgeleid van de officiële Model Context Protocol-documentatie:
+De volgende best practices zijn afgeleid uit de officiële Model Context Protocol-documentatie:
 
-### Beveiligingsbeste Praktijken
+### Beveiligingsbest practices
 
-1. **Gebruikersinstemming en Controle**: Vereis altijd expliciete gebruikersinstemming voordat je gegevens opent of bewerkingen uitvoert. Bied duidelijke controle over welke gegevens worden gedeeld en welke acties zijn geautoriseerd.
+1. **Toestemming en controle gebruiker**: Vereis altijd expliciete toestemming van de gebruiker voordat je gegevens toegankelijk maakt of bewerkingen uitvoert. Bied duidelijke controle over welke gegevens worden gedeeld en welke acties zijn geautoriseerd.
 
-2. **Gegevensprivacy**: Stel gebruikersgegevens alleen bloot met expliciete toestemming en bescherm ze met passende toegangscontroles. Voorkom ongeautoriseerde gegevensoverdracht.
+2. **Gegevensprivacy**: Maak gebruikersgegevens alleen toegankelijk met expliciete toestemming en bescherm ze met passende toegangscontroles. Bescherm tegen ongeautoriseerde gegevensoverdracht.
 
-3. **Hulpmiddelveiligheid**: Vereis expliciete gebruikersinstemming voordat je een hulpmiddel activeert. Zorg ervoor dat gebruikers de functionaliteit van elk hulpmiddel begrijpen en handhaaf robuuste beveiligingsgrenzen.
+3. **Veiligheid van hulpmiddelen**: Vereis expliciete toestemming van de gebruiker voordat een hulpmiddel wordt aangeroepen. Zorg dat gebruikers de functionaliteit van elk hulpmiddel begrijpen en handhaaf robuuste beveiligingsgrenzen.
 
-4. **Hulpmiddelmachtigingscontrole**: Configureer welke hulpmiddelen een model mag gebruiken tijdens een sessie, zodat alleen expliciet geautoriseerde hulpmiddelen toegankelijk zijn.
+4. **Toestemmingscontrole voor hulpmiddelen**: Configureer welke hulpmiddelen een model mag gebruiken tijdens een sessie, zodat alleen expliciet geautoriseerde hulpmiddelen toegankelijk zijn.
 
-5. **Authenticatie**: Vereis correcte authenticatie voordat toegang wordt verleend tot hulpmiddelen, bronnen of gevoelige bewerkingen met behulp van API-sleutels, OAuth-tokens of andere veilige authenticatiemethoden.
+5. **Authenticatie**: Vereis juiste authenticatie voordat toegang wordt verleend tot hulpmiddelen, resources of gevoelige handelingen via API-sleutels, OAuth-tokens of andere veilige authenticatiemethoden.
 
-6. **Parameter Validatie**: Handhaaf validatie voor alle hulpmiddelacties om te voorkomen dat onjuiste of schadelijke invoer de implementaties bereikt.
+6. **Parametervalidatie**: Voer validatie uit voor alle aanroepen van hulpmiddelen om te voorkomen dat verkeerd gevormde of kwaadaardige invoer bij de implementaties terechtkomt.
 
-7. **Snelheidsbeperking**: Implementeer snelheidsbeperking om misbruik te voorkomen en eerlijk gebruik van serverbronnen te garanderen.
+7. **Rate limiting**: Implementeer rate limiting om misbruik te voorkomen en eerlijk gebruik van serverresources te waarborgen.
 
-### Implementatie Beste Praktijken
+### Implementatiebest practices
 
-1. **Capaciteitsonderhandeling**: Wissel tijdens het opzetten van de verbinding informatie uit over ondersteunde functies, protocolversies, beschikbare hulpmiddelen en bronnen.
+1. **Capabiliteitsonderhandeling**: Wissel tijdens het opzetten van de verbinding informatie uit over ondersteunde functies, protocoll versies, beschikbare hulpmiddelen en resources.
 
-2. **Hulpmiddelontwerp**: Ontwikkel gerichte hulpmiddelen die één taak goed uitvoeren, in plaats van monolithische hulpmiddelen die meerdere taken afhandelen.
+2. **Ontwerp van hulpmiddelen**: Maak gerichte hulpmiddelen die één ding goed doen, in plaats van monolithische hulpmiddelen die meerdere verantwoordelijkheden beheersen.
 
-3. **Foutafhandeling**: Implementeer gestandaardiseerde foutmeldingen en -codes om problemen te diagnosticeren, fouten gracieus af te handelen en bruikbare feedback te geven.
+3. **Foutafhandeling**: Implementeer gestandaardiseerde foutmeldingen en codes om problemen te helpen diagnosticeren, falen gracieus af te handelen en bruikbare feedback te bieden.
 
-4. **Logging**: Configureer gestructureerde logs voor auditing, debugging en monitoring van protocolinteracties.
+4. **Logging**: Configureer gestructureerde logs voor auditing, debuggen en het monitoren van protocolinteracties.
 
-5. **Voortgangsrapportage**: Voor langdurige bewerkingen, rapporteer voortgangsupdates om responsieve gebruikersinterfaces mogelijk te maken.
+5. **Voortgangstracking**: Rapporteer voortgangsupdates bij langlopende handelingen om responsieve gebruikersinterfaces mogelijk te maken.
 
-6. **Verzoekannulering**: Sta klanten toe om lopende verzoeken te annuleren die niet langer nodig zijn of te lang duren.
+6. **Annulering van verzoeken**: Sta cliënten toe om lopende verzoeken te annuleren die niet langer nodig zijn of te lang duren.
 
-## Aanvullende Referenties
+## Aanvullende documenten
 
-Voor de meest actuele informatie over MCP beste praktijken, raadpleeg:
+Voor de meest recente informatie over MCP-best practices, raadpleeg:
 
 - [MCP Documentatie](https://modelcontextprotocol.io/)
-- [MCP Specificatie](https://spec.modelcontextprotocol.io/)
+- [MCP Specificatie (2025-11-25)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
 - [GitHub Repository](https://github.com/modelcontextprotocol)
-- [Beveiligingsbeste Praktijken](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
+- [Beveiligingsbest practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
+- [OWASP MCP Top 10](https://microsoft.github.io/mcp-azure-security-guide/mcp/) - Beveiligingsrisico's en mitigaties
+- [MCP Security Summit Workshop (Sherpa)](https://azure-samples.github.io/sherpa/) - Praktische beveiligingstraining
 
-## Praktische Implementatievoorbeelden
+## Praktische implementatievoorbeelden
 
-### Hulpmiddelontwerp Beste Praktijken
+### Best Practices voor Ontwerp van Hulpmiddelen
 
 #### 1. Single Responsibility Principle
 
-Elk MCP-hulpmiddel moet een duidelijke, gerichte functie hebben. In plaats van monolithische hulpmiddelen te maken die meerdere taken proberen af te handelen, ontwikkel gespecialiseerde hulpmiddelen die uitblinken in specifieke taken.
+Elk MCP-hulpmiddel moet een duidelijk, gericht doel hebben. Ontwikkel gespecialiseerde hulpmiddelen die uitblinken in specifieke taken, in plaats van monolithische tools die meerdere verantwoordelijkheden proberen te combineren.
 
 ```csharp
 // A focused tool that does one thing well
@@ -150,12 +143,12 @@ public class WeatherForecastTool : ITool
 }
 ```
 
-#### 2. Consistente Foutafhandeling
+#### 2. Consistente foutafhandeling
 
 Implementeer robuuste foutafhandeling met informatieve foutmeldingen en passende herstelmechanismen.
 
 ```python
-# Python example with comprehensive error handling
+# Python voorbeeld met uitgebreide foutafhandeling
 class DataQueryTool:
     def get_name(self):
         return "dataQuery"
@@ -165,19 +158,19 @@ class DataQueryTool:
     
     async def execute(self, parameters):
         try:
-            # Parameter validation
+            # Parametervalidatie
             if "query" not in parameters:
                 raise ToolParameterError("Missing required parameter: query")
                 
             query = parameters["query"]
             
-            # Security validation
+            # Beveiligingsvalidatie
             if self._contains_unsafe_sql(query):
                 raise ToolSecurityError("Query contains potentially unsafe SQL")
             
             try:
-                # Database operation with timeout
-                async with timeout(10):  # 10 second timeout
+                # Databasebewerking met time-out
+                async with timeout(10):  # 10 seconden time-out
                     result = await self._database.execute_query(query)
                     
                 return ToolResponse(
@@ -186,37 +179,37 @@ class DataQueryTool:
             except asyncio.TimeoutError:
                 raise ToolExecutionError("Database query timed out after 10 seconds")
             except DatabaseConnectionError as e:
-                # Connection errors might be transient
+                # Verbindingsfouten kunnen tijdelijk zijn
                 self._log_error("Database connection error", e)
                 raise ToolExecutionError(f"Database connection error: {str(e)}")
             except DatabaseQueryError as e:
-                # Query errors are likely client errors
+                # Queryfouten zijn waarschijnlijk clientfouten
                 self._log_error("Database query error", e)
                 raise ToolExecutionError(f"Invalid query: {str(e)}")
                 
         except ToolError:
-            # Let tool-specific errors pass through
+            # Laat toolspecifieke fouten door
             raise
         except Exception as e:
-            # Catch-all for unexpected errors
+            # Catch-all voor onverwachte fouten
             self._log_error("Unexpected error in DataQueryTool", e)
             raise ToolExecutionError(f"An unexpected error occurred: {str(e)}")
     
     def _contains_unsafe_sql(self, query):
-        # Implementation of SQL injection detection
+        # Implementatie van SQL-injectiedetectie
         pass
         
     def _log_error(self, message, error):
-        # Implementation of error logging
+        # Implementatie van foutlogboekregistratie
         pass
 ```
 
-#### 3. Parameter Validatie
+#### 3. Parametervalidatie
 
-Valideer parameters altijd grondig om onjuiste of schadelijke invoer te voorkomen.
+Valideer parameters altijd grondig om verkeerd gevormde of kwaadaardige invoer te voorkomen.
 
 ```javascript
-// JavaScript/TypeScript example with detailed parameter validation
+// JavaScript/TypeScript voorbeeld met gedetailleerde parametervalidatie
 class FileOperationTool {
   getName() {
     return "fileOperation";
@@ -251,7 +244,7 @@ class FileOperationTool {
   }
   
   async execute(parameters) {
-    // 1. Validate parameter presence
+    // 1. Valideer aanwezigheid van parameters
     if (!parameters.operation) {
       throw new ToolError("Missing required parameter: operation");
     }
@@ -260,7 +253,7 @@ class FileOperationTool {
       throw new ToolError("Missing required parameter: path");
     }
     
-    // 2. Validate parameter types
+    // 2. Valideer parameter types
     if (typeof parameters.operation !== "string") {
       throw new ToolError("Parameter 'operation' must be a string");
     }
@@ -269,28 +262,28 @@ class FileOperationTool {
       throw new ToolError("Parameter 'path' must be a string");
     }
     
-    // 3. Validate parameter values
+    // 3. Valideer parameterwaarden
     const validOperations = ["read", "write", "delete"];
     if (!validOperations.includes(parameters.operation)) {
       throw new ToolError(`Invalid operation. Must be one of: ${validOperations.join(", ")}`);
     }
     
-    // 4. Validate content presence for write operation
+    // 4. Valideer aanwezigheid van inhoud voor schrijfoperatie
     if (parameters.operation === "write" && !parameters.content) {
       throw new ToolError("Content parameter is required for write operation");
     }
     
-    // 5. Path safety validation
+    // 5. Validatie van padveiligheid
     if (!this.isPathWithinAllowedDirectories(parameters.path)) {
       throw new ToolError("Access denied: path is outside of allowed directories");
     }
     
-    // Implementation based on validated parameters
+    // Implementatie gebaseerd op gevalideerde parameters
     // ...
   }
   
   isPathWithinAllowedDirectories(path) {
-    // Implementation of path safety check
+    // Implementatie van padveiligheidscontrole
     // ...
   }
 }
@@ -298,10 +291,10 @@ class FileOperationTool {
 
 ### Beveiligingsimplementatievoorbeelden
 
-#### 1. Authenticatie en Autorisatie
+#### 1. Authenticatie en autorisatie
 
 ```java
-// Java example with authentication and authorization
+// Java voorbeeld met authenticatie en autorisatie
 public class SecureDataAccessTool implements Tool {
     private final AuthenticationService authService;
     private final AuthorizationService authzService;
@@ -324,10 +317,10 @@ public class SecureDataAccessTool implements Tool {
     
     @Override
     public ToolResponse execute(ToolRequest request) {
-        // 1. Extract authentication context
+        // 1. Haal authenticatiecontext op
         String authToken = request.getContext().getAuthToken();
         
-        // 2. Authenticate user
+        // 2. Verifieer gebruiker
         UserIdentity user;
         try {
             user = authService.validateToken(authToken);
@@ -335,7 +328,7 @@ public class SecureDataAccessTool implements Tool {
             return ToolResponse.error("Authentication failed: " + e.getMessage());
         }
         
-        // 3. Check authorization for the specific operation
+        // 3. Controleer autorisatie voor de specifieke operatie
         String dataId = request.getParameters().get("dataId").getAsString();
         String operation = request.getParameters().get("operation").getAsString();
         
@@ -344,7 +337,7 @@ public class SecureDataAccessTool implements Tool {
             return ToolResponse.error("Access denied: Insufficient permissions for this operation");
         }
         
-        // 4. Proceed with authorized operation
+        // 4. Ga door met geautoriseerde operatie
         try {
             switch (operation) {
                 case "read":
@@ -364,7 +357,7 @@ public class SecureDataAccessTool implements Tool {
 }
 ```
 
-#### 2. Snelheidsbeperking
+#### 2. Rate limiting
 
 ```csharp
 // C# rate limiting implementation
@@ -440,30 +433,30 @@ public class RateLimitingMiddleware
 }
 ```
 
-## Testen Beste Praktijken
+## Testbest practices
 
-### 1. Unit Testing MCP Hulpmiddelen
+### 1. Unit testen van MCP-hulpmiddelen
 
-Test je hulpmiddelen altijd geïsoleerd, waarbij externe afhankelijkheden worden gesimuleerd:
+Test je hulpmiddelen altijd geïsoleerd en mock externe afhankelijkheden:
 
 ```typescript
-// TypeScript example of a tool unit test
+// TypeScript voorbeeld van een tool unit test
 describe('WeatherForecastTool', () => {
   let tool: WeatherForecastTool;
   let mockWeatherService: jest.Mocked<IWeatherService>;
   
   beforeEach(() => {
-    // Create a mock weather service
+    // Maak een mock weer service
     mockWeatherService = {
       getForecasts: jest.fn()
     } as any;
     
-    // Create the tool with the mock dependency
+    // Maak de tool met de mock afhankelijkheid
     tool = new WeatherForecastTool(mockWeatherService);
   });
   
   it('should return weather forecast for a location', async () => {
-    // Arrange
+    // Orden
     const mockForecast = {
       location: 'Seattle',
       forecasts: [
@@ -475,23 +468,23 @@ describe('WeatherForecastTool', () => {
     
     mockWeatherService.getForecasts.mockResolvedValue(mockForecast);
     
-    // Act
+    // Handelen
     const response = await tool.execute({
       location: 'Seattle',
       days: 3
     });
     
-    // Assert
+    // Bevestigen
     expect(mockWeatherService.getForecasts).toHaveBeenCalledWith('Seattle', 3);
     expect(response.content[0].text).toContain('Seattle');
     expect(response.content[0].text).toContain('Sunny');
   });
   
   it('should handle errors from the weather service', async () => {
-    // Arrange
+    // Orden
     mockWeatherService.getForecasts.mockRejectedValue(new Error('Service unavailable'));
     
-    // Act & Assert
+    // Handelen & Bevestigen
     await expect(tool.execute({
       location: 'Seattle',
       days: 3
@@ -502,38 +495,38 @@ describe('WeatherForecastTool', () => {
 
 ### 2. Integratietesten
 
-Test de volledige stroom van klantverzoeken tot serverreacties:
+Test de volledige stroom van clientverzoeken naar serverantwoorden:
 
 ```python
-# Python integration test example
+# Python integratietestvoorbeeld
 @pytest.mark.asyncio
 async def test_mcp_server_integration():
-    # Start a test server
+    # Start een testserver
     server = McpServer()
     server.register_tool(WeatherForecastTool(MockWeatherService()))
     await server.start(port=5000)
     
     try:
-        # Create a client
+        # Maak een client aan
         client = McpClient("http://localhost:5000")
         
-        # Test tool discovery
+        # Test zoekopdracht van hulpmiddel
         tools = await client.discover_tools()
         assert "weatherForecast" in [t.name for t in tools]
         
-        # Test tool execution
+        # Test uitvoering van hulpmiddel
         response = await client.execute_tool("weatherForecast", {
             "location": "Seattle",
             "days": 3
         })
         
-        # Verify response
+        # Verifieer antwoord
         assert response.status_code == 200
         assert "Seattle" in response.content[0].text
         assert len(json.loads(response.content[0].text)["forecasts"]) == 3
         
     finally:
-        # Clean up
+        # Opruimen
         await server.stop()
 ```
 
@@ -541,7 +534,7 @@ async def test_mcp_server_integration():
 
 ### 1. Cachingstrategieën
 
-Implementeer geschikte caching om latentie en middelengebruik te verminderen:
+Implementeer passende caching om latentie en resourcegebruik te verminderen:
 
 ```csharp
 // C# example with caching
@@ -610,18 +603,18 @@ public class CachedWeatherTool : ITool
 }
 ```
 
-#### 2. Dependency Injection en Testbaarheid
+#### 2. Dependency Injection en testbaarheid
 
-Ontwerp hulpmiddelen zodat ze hun afhankelijkheden ontvangen via constructorinjectie, waardoor ze testbaar en configureerbaar zijn:
+Ontwerp hulpmiddelen die hun afhankelijkheden via constructor-injectie ontvangen, waardoor ze testbaar en configureerbaar zijn:
 
 ```java
-// Java example with dependency injection
+// Java-voorbeeld met afhankelijkheidsinjectie
 public class CurrencyConversionTool implements Tool {
     private final ExchangeRateService exchangeService;
     private final CacheService cacheService;
     private final Logger logger;
     
-    // Dependencies injected through constructor
+    // Afhankelijkheden geïnjecteerd via constructor
     public CurrencyConversionTool(
             ExchangeRateService exchangeService,
             CacheService cacheService,
@@ -631,51 +624,51 @@ public class CurrencyConversionTool implements Tool {
         this.logger = logger;
     }
     
-    // Tool implementation
+    // Tool-implementatie
     // ...
 }
 ```
 
-#### 3. Combineren van Hulpmiddelen
+#### 3. Composable tools
 
-Ontwerp hulpmiddelen die samen kunnen worden gebruikt om complexere workflows te creëren:
+Ontwerp hulpmiddelen die gecombineerd kunnen worden om complexere workflows te creëren:
 
 ```python
-# Python example showing composable tools
+# Python voorbeeld dat samenstelbare tools toont
 class DataFetchTool(Tool):
     def get_name(self):
         return "dataFetch"
     
-    # Implementation...
+    # Implementatie...
 
 class DataAnalysisTool(Tool):
     def get_name(self):
         return "dataAnalysis"
     
-    # This tool can use results from the dataFetch tool
+    # Deze tool kan resultaten gebruiken van de dataFetch-tool
     async def execute_async(self, request):
-        # Implementation...
+        # Implementatie...
         pass
 
 class DataVisualizationTool(Tool):
     def get_name(self):
         return "dataVisualize"
     
-    # This tool can use results from the dataAnalysis tool
+    # Deze tool kan resultaten gebruiken van de dataAnalysis-tool
     async def execute_async(self, request):
-        # Implementation...
+        # Implementatie...
         pass
 
-# These tools can be used independently or as part of a workflow
+# Deze tools kunnen onafhankelijk worden gebruikt of als onderdeel van een workflow
 ```
 
-### Schema Ontwerp Beste Praktijken
+### Best Practices voor Schema-ontwerp
 
-Het schema is het contract tussen het model en je hulpmiddel. Goed ontworpen schema's leiden tot betere bruikbaarheid van hulpmiddelen.
+Het schema is het contract tussen het model en je hulpmiddel. Goed ontworpen schema’s leiden tot betere bruikbaarheid van hulpmiddelen.
 
-#### 1. Duidelijke Parameterbeschrijvingen
+#### 1. Duidelijke parameterbeschrijvingen
 
-Voeg altijd beschrijvende informatie toe voor elke parameter:
+Voeg altijd beschrijvende informatie toe bij elke parameter:
 
 ```csharp
 public object GetSchema()
@@ -714,7 +707,7 @@ public object GetSchema()
 
 #### 2. Validatiebeperkingen
 
-Voeg validatiebeperkingen toe om ongeldige invoer te voorkomen:
+Neem validatiebeperkingen op om ongeldige invoer te voorkomen:
 
 ```java
 Map<String, Object> getSchema() {
@@ -723,20 +716,20 @@ Map<String, Object> getSchema() {
     
     Map<String, Object> properties = new HashMap<>();
     
-    // Email property with format validation
+    // E-mail eigenschap met formaatvalidatie
     Map<String, Object> email = new HashMap<>();
     email.put("type", "string");
     email.put("format", "email");
     email.put("description", "User email address");
     
-    // Age property with numeric constraints
+    // Leeftijd eigenschap met numerieke beperkingen
     Map<String, Object> age = new HashMap<>();
     age.put("type", "integer");
     age.put("minimum", 13);
     age.put("maximum", 120);
     age.put("description", "User age in years");
     
-    // Enumerated property
+    // Genummerde eigenschap
     Map<String, Object> subscription = new HashMap<>();
     subscription.put("type", "string");
     subscription.put("enum", Arrays.asList("free", "basic", "premium"));
@@ -754,17 +747,17 @@ Map<String, Object> getSchema() {
 }
 ```
 
-#### 3. Consistente Retourstructuren
+#### 3. Consistente retourstructuren
 
-Handhaaf consistentie in je antwoordstructuren om het voor modellen gemakkelijker te maken resultaten te interpreteren:
+Houd consistentie in je antwoordstructuren aan om het voor modellen gemakkelijker te maken resultaten te interpreteren:
 
 ```python
 async def execute_async(self, request):
     try:
-        # Process request
+        # Verzoek verwerken
         results = await self._search_database(request.parameters["query"])
         
-        # Always return a consistent structure
+        # Altijd een consistente structuur retourneren
         return ToolResponse(
             result={
                 "matches": [self._format_item(item) for item in results],
@@ -797,11 +790,11 @@ def _format_item(self, item):
 
 ### Foutafhandeling
 
-Robuuste foutafhandeling is cruciaal voor MCP-hulpmiddelen om betrouwbaarheid te behouden.
+Robuuste foutafhandeling is cruciaal om betrouwbaarheid van MCP-hulpmiddelen te waarborgen.
 
-#### 1. Gracieus Fouten Afhandelen
+#### 1. Gracieuze foutafhandeling
 
-Handel fouten af op geschikte niveaus en geef informatieve berichten:
+Behandel fouten op passende niveaus en geef informatieve meldingen:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -843,15 +836,15 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 }
 ```
 
-#### 2. Gestructureerde Foutreacties
+#### 2. Gestructureerde foutantwoorden
 
-Geef waar mogelijk gestructureerde foutinformatie terug:
+Retourneer gestructureerde foutinformatie waar mogelijk:
 
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
     try {
-        // Implementation
+        // Implementatie
     } catch (Exception ex) {
         Map<String, Object> errorResult = new HashMap<>();
         
@@ -869,37 +862,37 @@ public ToolResponse execute(ToolRequest request) {
                 .build();
         }
         
-        // Re-throw other exceptions as ToolExecutionException
+        // Gooi andere uitzonderingen opnieuw als ToolExecutionException
         throw new ToolExecutionException("Tool execution failed: " + ex.getMessage(), ex);
     }
 }
 ```
 
-#### 3. Retry Logica
+#### 3. Retry-logica
 
-Implementeer passende retry-logica voor tijdelijke fouten:
+Implementeer correcte retry-logica voor tijdelijke fouten:
 
 ```python
 async def execute_async(self, request):
     max_retries = 3
     retry_count = 0
-    base_delay = 1  # seconds
+    base_delay = 1  # seconden
     
     while retry_count < max_retries:
         try:
-            # Call external API
+            # Externe API aanroepen
             return await self._call_api(request.parameters)
         except TransientError as e:
             retry_count += 1
             if retry_count >= max_retries:
                 raise ToolExecutionException(f"Operation failed after {max_retries} attempts: {str(e)}")
                 
-            # Exponential backoff
+            # Exponentiële terugval
             delay = base_delay * (2 ** (retry_count - 1))
             logging.warning(f"Transient error, retrying in {delay}s: {str(e)}")
             await asyncio.sleep(delay)
         except Exception as e:
-            # Non-transient error, don't retry
+            # Niet-overgangsfout, niet opnieuw proberen
             raise ToolExecutionException(f"Operation failed: {str(e)}")
 ```
 
@@ -953,9 +946,9 @@ public class CachedDataTool : IMcpTool
 }
 ```
 
-#### 2. Asynchrone Verwerking
+#### 2. Asynchrone verwerking
 
-Gebruik asynchrone programmeerpatronen voor I/O-gebonden bewerkingen:
+Gebruik asynchrone programmeerpatronen voor I/O-gebonden handelingen:
 
 ```java
 public class AsyncDocumentProcessingTool implements Tool {
@@ -966,23 +959,23 @@ public class AsyncDocumentProcessingTool implements Tool {
     public ToolResponse execute(ToolRequest request) {
         String documentId = request.getParameters().get("documentId").asText();
         
-        // For long-running operations, return a processing ID immediately
+        // Voor langlopende bewerkingen onmiddellijk een verwerkings-ID retourneren
         String processId = UUID.randomUUID().toString();
         
-        // Start async processing
+        // Start asynchrone verwerking
         CompletableFuture.runAsync(() -> {
             try {
-                // Perform long-running operation
+                // Voer langlopende bewerking uit
                 documentService.processDocument(documentId);
                 
-                // Update status (would typically be stored in a database)
+                // Status bijwerken (wordt meestal opgeslagen in een database)
                 processStatusRepository.updateStatus(processId, "completed");
             } catch (Exception ex) {
                 processStatusRepository.updateStatus(processId, "failed", ex.getMessage());
             }
         }, executorService);
         
-        // Return immediate response with process ID
+        // Geef onmiddellijke reactie terug met proces-ID
         Map<String, Object> result = new HashMap<>();
         result.put("processId", processId);
         result.put("status", "processing");
@@ -991,7 +984,7 @@ public class AsyncDocumentProcessingTool implements Tool {
         return new ToolResponse.Builder().setResult(result).build();
     }
     
-    // Companion status check tool
+    // Hulpmiddel voor het controleren van de status
     public class ProcessStatusTool implements Tool {
         @Override
         public ToolResponse execute(ToolRequest request) {
@@ -1004,35 +997,35 @@ public class AsyncDocumentProcessingTool implements Tool {
 }
 ```
 
-#### 3. Middelenbeperking
+#### 3. Resource throttling
 
-Implementeer middelenbeperking om overbelasting te voorkomen:
+Implementeer resource throttling om overbelasting te voorkomen:
 
 ```python
 class ThrottledApiTool(Tool):
     def __init__(self):
         self.rate_limiter = TokenBucketRateLimiter(
-            tokens_per_second=5,  # Allow 5 requests per second
-            bucket_size=10        # Allow bursts up to 10 requests
+            tokens_per_second=5,  # Sta 5 aanvragen per seconde toe
+            bucket_size=10        # Sta uitschieters toe tot 10 aanvragen
         )
     
     async def execute_async(self, request):
-        # Check if we can proceed or need to wait
+        # Controleer of we kunnen doorgaan of moeten wachten
         delay = self.rate_limiter.get_delay_time()
         
         if delay > 0:
-            if delay > 2.0:  # If wait is too long
+            if delay > 2.0:  # Als het wachten te lang is
                 raise ToolExecutionException(
                     f"Rate limit exceeded. Please try again in {delay:.1f} seconds."
                 )
             else:
-                # Wait for the appropriate delay time
+                # Wacht de juiste vertragingstijd af
                 await asyncio.sleep(delay)
         
-        # Consume a token and proceed with the request
+        # Verbruik een token en ga door met de aanvraag
         self.rate_limiter.consume()
         
-        # Call API
+        # Roep API aan
         result = await self._call_api(request.parameters)
         return ToolResponse(result=result)
 
@@ -1050,7 +1043,7 @@ class TokenBucketRateLimiter:
             if self.tokens >= 1:
                 return 0
             
-            # Calculate time until next token available
+            # Bereken de tijd tot het volgende token beschikbaar is
             return (1 - self.tokens) / self.tokens_per_second
     
     async def consume(self):
@@ -1062,17 +1055,17 @@ class TokenBucketRateLimiter:
         now = time.time()
         elapsed = now - self.last_refill
         
-        # Add new tokens based on elapsed time
+        # Voeg nieuwe tokens toe op basis van verstreken tijd
         new_tokens = elapsed * self.tokens_per_second
         self.tokens = min(self.bucket_size, self.tokens + new_tokens)
         self.last_refill = now
 ```
 
-### Beveiligingsbeste Praktijken
+### Beveiligingsbest practices
 
-#### 1. Invoervalidatie
+#### 1. Validatie van invoer
 
-Valideer invoerparameters altijd grondig:
+Valideer altijd invoerparameters grondig:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -1115,31 +1108,31 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 
 #### 2. Autorisatiecontroles
 
-Implementeer correcte autorisatiecontroles:
+Voer juiste autorisatiecontroles uit:
 
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
-    // Get user context from request
+    // Verkrijg gebruikerscontext uit verzoek
     UserContext user = request.getContext().getUserContext();
     
-    // Check if user has required permissions
+    // Controleer of gebruiker de vereiste permissies heeft
     if (!authorizationService.hasPermission(user, "documents:read")) {
         throw new ToolExecutionException("User does not have permission to access documents");
     }
     
-    // For specific resources, check access to that resource
+    // Controleer voor specifieke bronnen toegang tot die bron
     String documentId = request.getParameters().get("documentId").asText();
     if (!documentService.canUserAccess(user.getId(), documentId)) {
         throw new ToolExecutionException("Access denied to the requested document");
     }
     
-    // Proceed with tool execution
+    // Ga door met uitvoering van het gereedschap
     // ...
 }
 ```
 
-#### 3. Gevoelige Gegevensverwerking
+#### 3. Verwerking van gevoelige data
 
 Ga zorgvuldig om met gevoelige gegevens:
 
@@ -1159,44 +1152,44 @@ class SecureDataTool(Tool):
         user_id = request.parameters["userId"]
         include_sensitive = request.parameters.get("includeSensitiveData", False)
         
-        # Get user data
+        # Gebruikersgegevens ophalen
         user_data = await self.user_service.get_user_data(user_id)
         
-        # Filter sensitive fields unless explicitly requested AND authorized
+        # Filter gevoelige velden tenzij expliciet opgevraagd EN geautoriseerd
         if not include_sensitive or not self._is_authorized_for_sensitive_data(request):
             user_data = self._redact_sensitive_fields(user_data)
         
         return ToolResponse(result=user_data)
     
     def _is_authorized_for_sensitive_data(self, request):
-        # Check authorization level in request context
+        # Controleer autorisatieniveau in de aanvraagcontext
         auth_level = request.context.get("authorizationLevel")
         return auth_level == "admin"
     
     def _redact_sensitive_fields(self, user_data):
-        # Create a copy to avoid modifying the original
+        # Maak een kopie om wijziging van het origineel te voorkomen
         redacted = user_data.copy()
         
-        # Redact specific sensitive fields
+        # Specifieke gevoelige velden redigeren
         sensitive_fields = ["ssn", "creditCardNumber", "password"]
         for field in sensitive_fields:
             if field in redacted:
                 redacted[field] = "REDACTED"
         
-        # Redact nested sensitive data
+        # Geneste gevoelige gegevens redigeren
         if "financialInfo" in redacted:
             redacted["financialInfo"] = {"available": True, "accessRestricted": True}
         
         return redacted
 ```
 
-## Testen Beste Praktijken voor MCP Hulpmiddelen
+## Testen Best Practices voor MCP-hulpmiddelen
 
 Uitgebreid testen zorgt ervoor dat MCP-hulpmiddelen correct functioneren, randgevallen afhandelen en goed integreren met de rest van het systeem.
 
 ### Unit Testing
 
-#### 1. Test Elk Hulpmiddel Geïsoleerd
+#### 1. Test elk hulpmiddel geïsoleerd
 
 Maak gerichte tests voor de functionaliteit van elk hulpmiddel:
 
@@ -1258,27 +1251,27 @@ public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
 }
 ```
 
-#### 2. Schema Validatietesten
+#### 2. Schema-validatie testen
 
-Test of schema's geldig zijn en correct beperkingen afdwingen:
+Test of schema’s geldig zijn en beperkingen juist afdwingen:
 
 ```java
 @Test
 public void testSchemaValidation() {
-    // Create tool instance
+    // Maak toolinstantie aan
     SearchTool searchTool = new SearchTool();
     
-    // Get schema
+    // Haal schema op
     Object schema = searchTool.getSchema();
     
-    // Convert schema to JSON for validation
+    // Zet schema om naar JSON voor validatie
     String schemaJson = objectMapper.writeValueAsString(schema);
     
-    // Validate schema is valid JSONSchema
+    // Valideer dat schema geldige JSONSchema is
     JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
     JsonSchema jsonSchema = factory.getJsonSchema(schemaJson);
     
-    // Test valid parameters
+    // Test geldige parameters
     JsonNode validParams = objectMapper.createObjectNode()
         .put("query", "test query")
         .put("limit", 5);
@@ -1286,14 +1279,14 @@ public void testSchemaValidation() {
     ProcessingReport validReport = jsonSchema.validate(validParams);
     assertTrue(validReport.isSuccess());
     
-    // Test missing required parameter
+    // Test ontbrekende verplichte parameter
     JsonNode missingRequired = objectMapper.createObjectNode()
         .put("limit", 5);
         
     ProcessingReport missingReport = jsonSchema.validate(missingRequired);
     assertFalse(missingReport.isSuccess());
     
-    // Test invalid parameter type
+    // Test ongeldig type parameter
     JsonNode invalidType = objectMapper.createObjectNode()
         .put("query", "test")
         .put("limit", "not-a-number");
@@ -1305,19 +1298,19 @@ public void testSchemaValidation() {
 
 #### 3. Foutafhandelingstests
 
-Maak specifieke tests voor foutomstandigheden:
+Maak specifieke tests voor foutcondities:
 
 ```python
 @pytest.mark.asyncio
 async def test_api_tool_handles_timeout():
-    # Arrange
-    tool = ApiTool(timeout=0.1)  # Very short timeout
+    # Regelen
+    tool = ApiTool(timeout=0.1)  # Zeer korte time-out
     
-    # Mock a request that will time out
+    # Imiteer een verzoek dat zal time-outen
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
-            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # Longer than timeout
+            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # Langer dan de time-out
         )
         
         request = ToolRequest(
@@ -1325,19 +1318,19 @@ async def test_api_tool_handles_timeout():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Act & Assert
+        # Handelen & Bevestigen
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Verify exception message
+        # Controleer de uitzonderingstekst
         assert "timed out" in str(exc_info.value).lower()
 
 @pytest.mark.asyncio
 async def test_api_tool_handles_rate_limiting():
-    # Arrange
+    # Regelen
     tool = ApiTool()
     
-    # Mock a rate-limited response
+    # Imiteer een antwoord met snelheidslimiet
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
@@ -1351,11 +1344,11 @@ async def test_api_tool_handles_rate_limiting():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Act & Assert
+        # Handelen & Bevestigen
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Verify exception contains rate limit information
+        # Controleer of de uitzondering informatie over de snelheidslimiet bevat
         error_msg = str(exc_info.value).lower()
         assert "rate limit" in error_msg
         assert "try again" in error_msg
@@ -1363,7 +1356,7 @@ async def test_api_tool_handles_rate_limiting():
 
 ### Integratietesten
 
-#### 1. Hulpmiddelketentesten
+#### 1. Test ketens van hulpmiddelen
 
 Test hulpmiddelen die samenwerken in verwachte combinaties:
 
@@ -1404,9 +1397,9 @@ public async Task DataProcessingWorkflow_CompletesSuccessfully()
 }
 ```
 
-#### 2. MCP Server Testen
+#### 2. MCP-server testen
 
-Test de MCP-server met volledige hulpmiddelregistratie en uitvoering:
+Test de MCP-server met volledige registratie en uitvoering van hulpmiddelen:
 
 ```java
 @SpringBootTest
@@ -1421,7 +1414,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolDiscovery() throws Exception {
-        // Test the discovery endpoint
+        // Test het ontdekkingseindpunt
         mockMvc.perform(get("/mcp/tools"))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.tools").isArray())
@@ -1432,7 +1425,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolExecution() throws Exception {
-        // Create tool request
+        // Maak toolverzoek aan
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
@@ -1442,7 +1435,7 @@ public class McpServerIntegrationTest {
         parameters.put("b", 7);
         request.put("parameters", parameters);
         
-        // Send request and verify response
+        // Verstuur verzoek en verifieer antwoord
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -1452,17 +1445,17 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolValidation() throws Exception {
-        // Create invalid tool request
+        // Maak ongeldig toolverzoek aan
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("operation", "divide");
         parameters.put("a", 10);
-        // Missing parameter "b"
+        // Ontbrekende parameter "b"
         request.put("parameters", parameters);
         
-        // Send request and verify error response
+        // Verstuur verzoek en verifieer foutantwoord
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -1472,17 +1465,17 @@ public class McpServerIntegrationTest {
 }
 ```
 
-#### 3. End-to-End Testen
+#### 3. End-to-end testen
 
-Test complete workflows van modelprompt tot hulpmiddeluitvoering:
+Test volledige workflows vanaf de modelprompt tot uitvoering van het hulpmiddel:
 
 ```python
 @pytest.mark.asyncio
 async def test_model_interaction_with_tool():
-    # Arrange - Set up MCP client and mock model
+    # Regelen - MCP-client en mockmodel opzetten
     mcp_client = McpClient(server_url="http://localhost:5000")
     
-    # Mock model responses
+    # Mock model reacties
     mock_model = MockLanguageModel([
         MockResponse(
             "What's the weather in Seattle?",
@@ -1497,7 +1490,7 @@ async def test_model_interaction_with_tool():
         )
     ])
     
-    # Mock weather tool response
+    # Mock weerhulpmiddel respons
     with aioresponses() as mocked:
         mocked.post(
             "http://localhost:5000/mcp/execute",
@@ -1513,14 +1506,14 @@ async def test_model_interaction_with_tool():
             }
         )
         
-        # Act
+        # Handelen
         response = await mcp_client.send_prompt(
             "What's the weather in Seattle?",
             model=mock_model,
             allowed_tools=["weatherForecast"]
         )
         
-        # Assert
+        # Bevestigen
         assert "Seattle" in response.generated_text
         assert "65" in response.generated_text
         assert "Sunny" in response.generated_text
@@ -1529,11 +1522,11 @@ async def test_model_interaction_with_tool():
         assert response.tool_calls[0].tool_name == "weatherForecast"
 ```
 
-### Prestatie Testen
+### Prestatie testen
 
-#### 1. Load Testing
+#### 1. Load testen
 
-Test hoeveel gelijktijdige verzoeken je MCP-server aankan:
+Test hoeveel gelijktijdige verzoeken je MCP-server kan verwerken:
 
 ```csharp
 [Fact]
@@ -1566,7 +1559,7 @@ public async Task McpServer_HandlesHighConcurrency()
 }
 ```
 
-#### 2. Stress Testing
+#### 2. Stress testen
 
 Test het systeem onder extreme belasting:
 
@@ -1577,13 +1570,13 @@ public void testServerUnderStress() {
     int rampUpTimeSeconds = 60;
     int testDurationSeconds = 300;
     
-    // Set up JMeter for stress testing
+    // Stel JMeter in voor stresstesten
     StandardJMeterEngine jmeter = new StandardJMeterEngine();
     
-    // Configure JMeter test plan
+    // Configureer JMeter testplan
     HashTree testPlanTree = new HashTree();
     
-    // Create test plan, thread group, samplers, etc.
+    // Maak testplan, threadgroep, samplers, enz.
     TestPlan testPlan = new TestPlan("MCP Server Stress Test");
     testPlanTree.add(testPlan);
     
@@ -1595,7 +1588,7 @@ public void testServerUnderStress() {
     
     testPlanTree.add(threadGroup);
     
-    // Add HTTP sampler for tool execution
+    // Voeg HTTP-sampler toe voor tooluitvoering
     HTTPSampler toolExecutionSampler = new HTTPSampler();
     toolExecutionSampler.setDomain("localhost");
     toolExecutionSampler.setPort(5000);
@@ -1606,29 +1599,29 @@ public void testServerUnderStress() {
     
     threadGroup.add(toolExecutionSampler);
     
-    // Add listeners
+    // Voeg luisteraars toe
     SummaryReport summaryReport = new SummaryReport();
     threadGroup.add(summaryReport);
     
-    // Run test
+    // Voer test uit
     jmeter.configure(testPlanTree);
     jmeter.run();
     
-    // Validate results
+    // Valideer resultaten
     assertEquals(0, summaryReport.getErrorCount());
-    assertTrue(summaryReport.getAverage() < 200); // Average response time < 200ms
-    assertTrue(summaryReport.getPercentile(90.0) < 500); // 90th percentile < 500ms
+    assertTrue(summaryReport.getAverage() < 200); // Gemiddelde responstijd < 200ms
+    assertTrue(summaryReport.getPercentile(90.0) < 500); // 90e percentiel < 500ms
 }
 ```
 
-#### 3. Monitoring en Profilering
+#### 3. Monitoring en profiling
 
 Stel monitoring in voor langdurige prestatieanalyse:
 
 ```python
-# Configure monitoring for an MCP server
+# Configureer monitoring voor een MCP-server
 def configure_monitoring(server):
-    # Set up Prometheus metrics
+    # Stel Prometheus-metricss in
     prometheus_metrics = {
         "request_count": Counter("mcp_requests_total", "Total MCP requests"),
         "request_latency": Histogram(
@@ -1654,10 +1647,10 @@ def configure_monitoring(server):
         )
     }
     
-    # Add middleware for timing and recording metrics
+    # Voeg middleware toe voor het timen en opnemen van metrics
     server.add_middleware(PrometheusMiddleware(prometheus_metrics))
     
-    # Expose metrics endpoint
+    # Maak een metrics-endpoint beschikbaar
     @server.router.get("/metrics")
     async def metrics():
         return generate_latest()
@@ -1665,29 +1658,29 @@ def configure_monitoring(server):
     return server
 ```
 
-## MCP Workflow Ontwerp Patronen
+## Ontwerp patronen voor MCP-workflows
 
 Goed ontworpen MCP-workflows verbeteren efficiëntie, betrouwbaarheid en onderhoudbaarheid. Hier zijn belangrijke patronen om te volgen:
 
-### 1. Ketting van Hulpmiddelen Patroon
+### 1. Chain of Tools patroon
 
-Verbind meerdere hulpmiddelen in een reeks waarbij de uitvoer van elk hulpmiddel de invoer wordt voor het volgende:
+Verbind meerdere hulpmiddelen in een keten waarbij de output van het ene hulpmiddel de input wordt voor de volgende:
 
 ```python
-# Python Chain of Tools implementation
+# Implementatie van Python Chain of Tools
 class ChainWorkflow:
     def __init__(self, tools_chain):
-        self.tools_chain = tools_chain  # List of tool names to execute in sequence
+        self.tools_chain = tools_chain  # Lijst van toolnamen om achtereenvolgens uit te voeren
     
     async def execute(self, mcp_client, initial_input):
         current_result = initial_input
         all_results = {"input": initial_input}
         
         for tool_name in self.tools_chain:
-            # Execute each tool in the chain, passing previous result
+            # Voer elke tool in de keten uit, waarbij het vorige resultaat wordt doorgegeven
             response = await mcp_client.execute_tool(tool_name, current_result)
             
-            # Store result and use as input for next tool
+            # Resultaat opslaan en gebruiken als invoer voor de volgende tool
             all_results[tool_name] = response.result
             current_result = response.result
         
@@ -1696,7 +1689,7 @@ class ChainWorkflow:
             "all_results": all_results
         }
 
-# Example usage
+# Voorbeeld van gebruik
 data_processing_chain = ChainWorkflow([
     "dataFetch",
     "dataCleaner",
@@ -1710,9 +1703,9 @@ result = await data_processing_chain.execute(
 )
 ```
 
-### 2. Dispatcher Patroon
+### 2. Dispatcher patroon
 
-Gebruik een centraal hulpmiddel dat doorverwijst naar gespecialiseerde hulpmiddelen op basis van invoer:
+Gebruik een centraal hulpmiddel dat afhandelt naar gespecialiseerde hulpmiddelen op basis van invoer:
 
 ```csharp
 public class ContentDispatcherTool : IMcpTool
@@ -1792,9 +1785,9 @@ public class ContentDispatcherTool : IMcpTool
 }
 ```
 
-### 3. Parallel Verwerkingspatroon
+### 3. Parallelle verwerking patroon
 
-Voer meerdere hulpmiddelen tegelijkertijd uit voor efficiëntie:
+Voer meerdere hulpmiddelen gelijktijdig uit voor efficiëntie:
 
 ```java
 public class ParallelDataProcessingWorkflow {
@@ -1805,11 +1798,11 @@ public class ParallelDataProcessingWorkflow {
     }
     
     public WorkflowResult execute(String datasetId) {
-        // Step 1: Fetch dataset metadata (synchronous)
+        // Stap 1: Ophalen van datasetmetadata (synchroon)
         ToolResponse metadataResponse = mcpClient.executeTool("datasetMetadata", 
             Map.of("datasetId", datasetId));
         
-        // Step 2: Launch multiple analyses in parallel
+        // Stap 2: Start meerdere analyses parallel
         CompletableFuture<ToolResponse> statisticalAnalysis = CompletableFuture.supplyAsync(() ->
             mcpClient.executeTool("statisticalAnalysis", Map.of(
                 "datasetId", datasetId,
@@ -1831,25 +1824,25 @@ public class ParallelDataProcessingWorkflow {
             ))
         );
         
-        // Wait for all parallel tasks to complete
+        // Wacht tot alle parallelle taken voltooid zijn
         CompletableFuture<Void> allAnalyses = CompletableFuture.allOf(
             statisticalAnalysis, correlationAnalysis, outlierDetection
         );
         
-        allAnalyses.join();  // Wait for completion
+        allAnalyses.join();  // Wacht op voltooiing
         
-        // Step 3: Combine results
+        // Stap 3: Combineer resultaten
         Map<String, Object> combinedResults = new HashMap<>();
         combinedResults.put("metadata", metadataResponse.getResult());
         combinedResults.put("statistics", statisticalAnalysis.join().getResult());
         combinedResults.put("correlations", correlationAnalysis.join().getResult());
         combinedResults.put("outliers", outlierDetection.join().getResult());
         
-        // Step 4: Generate summary report
+        // Stap 4: Genereer samenvattend rapport
         ToolResponse summaryResponse = mcpClient.executeTool("reportGenerator", 
             Map.of("analysisResults", combinedResults));
         
-        // Return complete workflow result
+        // Retourneer het volledige workflowresultaat
         WorkflowResult result = new WorkflowResult();
         result.setDatasetId(datasetId);
         result.setAnalysisResults(combinedResults);
@@ -1860,9 +1853,9 @@ public class ParallelDataProcessingWorkflow {
 }
 ```
 
-### 4. Foutherstel Patroon
+### 4. Foutherstel patroon
 
-Implementeer gracieus terugvallen voor hulpmiddelfouten:
+Implementeer gracieuze terugvallen bij falen van hulpmiddelen:
 
 ```python
 class ResilientWorkflow:
@@ -1871,7 +1864,7 @@ class ResilientWorkflow:
     
     async def execute_with_fallback(self, primary_tool, fallback_tool, parameters):
         try:
-            # Try primary tool first
+            # Probeer eerst het primaire hulpmiddel
             response = await self.client.execute_tool(primary_tool, parameters)
             return {
                 "result": response.result,
@@ -1879,12 +1872,12 @@ class ResilientWorkflow:
                 "tool": primary_tool
             }
         except ToolExecutionException as e:
-            # Log the failure
+            # Log de fout
             logging.warning(f"Primary tool '{primary_tool}' failed: {str(e)}")
             
-            # Fall back to secondary tool
+            # Val terug op het secundaire hulpmiddel
             try:
-                # Might need to transform parameters for fallback tool
+                # Mogelijk moeten parameters worden getransformeerd voor het fallback-hulpmiddel
                 fallback_params = self._adapt_parameters(parameters, primary_tool, fallback_tool)
                 
                 response = await self.client.execute_tool(fallback_tool, fallback_params)
@@ -1895,7 +1888,7 @@ class ResilientWorkflow:
                     "primaryError": str(e)
                 }
             except ToolExecutionException as fallback_error:
-                # Both tools failed
+                # Beide hulpmiddelen faalden
                 logging.error(f"Both primary and fallback tools failed. Fallback error: {str(fallback_error)}")
                 raise WorkflowExecutionException(
                     f"Workflow failed: primary error: {str(e)}; fallback error: {str(fallback_error)}"
@@ -1903,22 +1896,22 @@ class ResilientWorkflow:
     
     def _adapt_parameters(self, params, from_tool, to_tool):
         """Adapt parameters between different tools if needed"""
-        # This implementation would depend on the specific tools
-        # For this example, we'll just return the original parameters
+        # Deze implementatie zou afhankelijk zijn van de specifieke hulpmiddelen
+        # Voor dit voorbeeld geven we gewoon de oorspronkelijke parameters terug
         return params
 
-# Example usage
+# Voorbeeldgebruik
 async def get_weather(workflow, location):
     return await workflow.execute_with_fallback(
-        "premiumWeatherService",  # Primary (paid) weather API
-        "basicWeatherService",    # Fallback (free) weather API
+        "premiumWeatherService",  # Primaire (betaalde) weer-API
+        "basicWeatherService",    # Fallback (gratis) weer-API
         {"location": location}
     )
 ```
 
-### 5. Workflow Samenstellingspatroon
+### 5. Workflowcompositie patroon
 
-Bouw complexe workflows door eenvoudigere samen te stellen:
+Bouw complexe workflows door simpelere te combineren:
 
 ```csharp
 public class CompositeWorkflow : IWorkflow
@@ -1965,37 +1958,37 @@ var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
 });
 ```
 
-# Testen van MCP-Servers: Beste Praktijken en Top Tips
+# MCP-servers testen: Best practices en top tips
 
 ## Overzicht
 
-Testen is een cruciaal aspect van het ontwikkelen van betrouwbare, hoogwaardige MCP-servers. Deze gids biedt uitgebreide beste praktijken en tips voor het testen van je MCP-servers gedurende de hele ontwikkelingscyclus, van unit tests tot integratietests en end-to-end validatie.
+Testen is een cruciaal aspect van het ontwikkelen van betrouwbare, hoogwaardige MCP-servers. Deze gids biedt uitgebreide best practices en tips voor het testen van je MCP-servers gedurende de volledige ontwikkelingscyclus, van unittests tot integratietesten en end-to-end validatie.
 
-## Waarom Testen Belangrijk is voor MCP-Servers
+## Waarom testen belangrijk is voor MCP-servers
 
-MCP-servers fungeren als cruciale middleware tussen AI-modellen en klanttoepassingen. Grondig testen zorgt voor:
+MCP-servers fungeren als cruciale middleware tussen AI-modellen en clientapplicaties. Grondig testen zorgt voor:
 
 - Betrouwbaarheid in productieomgevingen
 - Nauwkeurige afhandeling van verzoeken en antwoorden
 - Correcte implementatie van MCP-specificaties
 - Weerbaarheid tegen fouten en randgevallen
-- Consistente prestaties onder verschillende belastingen
+- Consistente prestaties onder diverse belasting
 
-## Unit Testing voor MCP-Servers
+## Unit testing voor MCP-servers
 
-### Unit Testing (Basis)
+### Unit testing (Fundament)
 
-Unit tests verifiëren individuele componenten van je MCP-server in isolatie.
+Unit tests verifiëren individuele componenten van je MCP-server geïsoleerd.
 
-#### Wat te Testen
+#### Wat te testen
 
-1. **Resource Handlers**: Test de logica van elke resource handler onafhankelijk
-2. **Hulpmiddelimplementaties**: Verifieer hulpmiddelgedrag met verschillende invoer
-3. **Prompt Templates**: Zorg ervoor dat prompt templates correct worden gerenderd
-4. **Schema Validatie**: Test parameter validatielogica
-5. **Foutafhandeling**: Verifieer foutreacties voor ongeldige invoer
+1. **Resource handlers**: Test de logica van elke resource handler afzonderlijk
+2. **Implementaties van tools**: Verifieer het gedrag van tools met verschillende invoer
+3. **Prompt-sjablonen**: Zorg dat prompt-sjablonen correct renderen
+4. **Schema-validatie**: Test validatielogica van parameters
+5. **Foutafhandeling**: Verifieer foutantwoorden bij ongeldige invoer
 
-#### Beste Praktijken voor Unit Testing
+#### Best practices voor unit testing
 
 ```csharp
 // Example unit test for a calculator tool in C#
@@ -2021,9 +2014,9 @@ public async Task CalculatorTool_Add_ReturnsCorrectSum()
 ```
 
 ```python
-# Example unit test for a calculator tool in Python
+# Voorbeeld eenheidstest voor een rekenmachine tool in Python
 def test_calculator_tool_add():
-    # Arrange
+    # Regelen
     calculator = CalculatorTool()
     parameters = {
         "operation": "add",
@@ -2031,27 +2024,27 @@ def test_calculator_tool_add():
         "b": 7
     }
     
-    # Act
+    # Handelen
     response = calculator.execute(parameters)
     result = json.loads(response.content[0].text)
     
-    # Assert
+    # Bevestigen
     assert result["value"] == 12
 ```
 
 ### Integratietesten (Middellaag)
 
-Integratietests verifiëren interacties tussen componenten van je MCP-server.
+Integratietesten verifiëren de interacties tussen componenten van je MCP-server.
 
-#### Wat te Testen
+#### Wat te testen
 
-1. **Server Initialisatie**: Test serveropstart met verschillende configuraties
-2. **Route Registratie**: Controleer of alle eindpunten correct zijn geregistreerd
-3. **Verwerkingsverzoeken**: Test de volledige verzoek-antwoordcyclus
-4. **Foutpropagatie**: Zorg ervoor dat fouten correct worden afgehandeld tussen componenten
-5. **Authenticatie & Autorisatie**: Test beveiligingsmechanismen
+1. **Serverinitialisatie**: Test serveropstart met diverse configuraties
+2. **Registeren van routes**: Verifieer dat alle endpoints correct geregistreerd zijn
+3. **Verzoekverwerking**: Test de volledige verzoek-antwoordcyclus
+4. **Foutpropagatie**: Zorg dat fouten correct worden doorgegeven tussen componenten
+5. **Authenticatie en autorisatie**: Test beveiligingsmechanismen
 
-#### Beste Praktijken voor Integratietesten
+#### Best practices voor integratietesten
 
 ```csharp
 // Example integration test for MCP server in C#
@@ -2087,27 +2080,27 @@ public async Task Server_ProcessToolRequest_ReturnsValidResponse()
 }
 ```
 
-### End-to-End Testen (Toplaag)
+### End-to-end testen (Bovenlaag)
 
-End-to-end tests verifiëren het volledige systeemgedrag van klant tot server.
+End-to-end testen verifiëren het volledige systeemgedrag van client tot server.
 
-#### Wat te Testen
+#### Wat te testen
 
-1. **Klant-Server Communicatie**: Test complete verzoek-antwoordcycli
-2. **Echte Klant SDK's**: Test met daadwerkelijke klantimplementaties
-3. **Prestaties Onder Belasting**: Controleer gedrag met meerdere gelijktijdige verzoeken
-4. **Foutherstel**: Test systeemherstel na fouten
-5. **Langdurige Operaties**: Verifieer afhandeling van streaming en lange operaties
+1. **Client-servercommunicatie**: Test volledige verzoek-antwoordcycli
+2. **Echte client SDK’s**: Test met daadwerkelijke clientimplementaties
+3. **Prestaties onder belasting**: Verifieer gedrag bij meerdere gelijktijdige verzoeken
+4. **Foutherstel**: Test systeemherstel bij fouten
+5. **Langlopende handelingen**: Verifieer afhandeling van streaming en lange processen
 
-#### Beste Praktijken voor E2E Testen
+#### Best practices voor e2e-testen
 
 ```typescript
-// Example E2E test with a client in TypeScript
+// Voorbeeld E2E-test met een client in TypeScript
 describe('MCP Server E2E Tests', () => {
   let client: McpClient;
   
   beforeAll(async () => {
-    // Start server in test environment
+    // Start server in testomgeving
     await startTestServer();
     client = new McpClient('http://localhost:5000');
   });
@@ -2117,32 +2110,32 @@ describe('MCP Server E2E Tests', () => {
   });
   
   test('Client can invoke calculator tool and get correct result', async () => {
-    // Act
+    // Actie
     const response = await client.invokeToolAsync('calculator', {
       operation: 'divide',
       a: 20,
       b: 4
     });
     
-    // Assert
+    // Bevestigen
     expect(response.statusCode).toBe(200);
     expect(response.content[0].text).toContain('5');
   });
 });
 ```
 
-## Mocking Strategieën voor MCP Testen
+## Mocking-strategieën voor MCP-testen
 
-Mocking is essentieel voor het isoleren van componenten tijdens het testen.
+Mocking is essentieel om componenten te isoleren tijdens testen.
 
-### Componenten om te Mocken
+### Componenten om te mocken
 
-1. **Externe AI-Modellen**: Mock modelreacties voor voorspelbaar testen
-2. **Externe Diensten**: Mock API-afhankelijkheden (databases, externe diensten)
-3. **Authenticatiediensten**: Mock identiteitsproviders
-4. **Resource Providers**: Mock dure resource handlers
+1. **Externe AI-modellen**: Mock modelantwoorden voor voorspelbare testen
+2. **Externe services**: Mock API-afhankelijkheden (databases, derde partijen)
+3. **Authenticatieservices**: Mock identiteitsproviders
+4. **Resourceproviders**: Mock dure resourcehandlers
 
-### Voorbeeld: Mocken van een AI Model Reactie
+### Voorbeeld: mocken van een AI-modelantwoord
 
 ```csharp
 // C# example with Moq
@@ -2160,48 +2153,48 @@ var server = new McpServer(modelClient: mockModel.Object);
 ```
 
 ```python
-# Python example with unittest.mock
+# Python voorbeeld met unittest.mock
 @patch('mcp_server.models.OpenAIModel')
 def test_with_mock_model(mock_model):
-    # Configure mock
+    # Configureer mock
     mock_model.return_value.generate_response.return_value = {
         "text": "Mocked model response",
         "finish_reason": "completed"
     }
     
-    # Use mock in test
+    # Gebruik mock in test
     server = McpServer(model_client=mock_model)
-    # Continue with test
+    # Ga door met test
 ```
 
-## Prestatie Testen
+## Prestatie testen
 
 Prestatie testen is cruciaal voor productie MCP-servers.
 
-### Wat te Meten
+### Wat te meten
 
 1. **Latentie**: Reactietijd voor verzoeken
-2. **Doorvoer**: Verzoeken verwerkt per seconde
-3. **Middelengebruik**: CPU-, geheugen- en netwerkgebruik
-4. **Gelijktijdige Afhandeling**: Gedrag onder parallelle verzoeken
-5. **Schaalkenmerken**: Prestaties naarmate de belasting toeneemt
+2. **Doorvoer**: Verzoeken per seconde verwerkt
+3. **Resourcegebruik**: CPU, geheugen, netwerkgebruik
+4. **Gelijkwaardigheidsafhandeling**: Gedrag bij parallelle verzoeken
+5. **Schaalbaarheidskenmerken**: Prestaties naarmate belasting toeneemt
 
-### Tools voor Prestatie Testen
+### Tools voor prestatie testen
 
 - **k6**: Open-source load testing tool
-- **JMeter**: Uitgebreide prestatietesttool
+- **JMeter**: Uitgebreide prestatie testen
 - **Locust**: Python-gebaseerde load testing
-- **Azure Load Testing**: Cloud-gebaseerde prestatietesten
+- **Azure Load Testing**: Cloud-gebaseerde prestatie testen
 
-### Voorbeeld: Basis Load Test met k6
+### Voorbeeld: basis load test met k6
 
 ```javascript
-// k6 script for load testing MCP server
+// k6-script voor loadtesten van MCP-server
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
 export const options = {
-  vus: 10,  // 10 virtual users
+  vus: 10,  // 10 virtuele gebruikers
   duration: '30s',
 };
 
@@ -2233,18 +2226,17 @@ export default function () {
 }
 ```
 
-## Testautomatisering voor MCP-Servers
+## Testautomatisering voor MCP-servers
 
 Het automatiseren van je tests zorgt voor consistente kwaliteit en snellere feedbackloops.
 
-### CI/CD Integratie
-
-1. **Voer Unit Tests uit bij Pull Requests**: Zorg ervoor dat codewijzigingen bestaande functionaliteit niet breken
-2. **Integratietests in Staging**: Voer integratietests uit in pre-productieomgevingen
-3. **Prestatiebenchmarks**: Behoud prestatienormen om regressies te detecteren  
+### CI/CD-integratie
+1. **Voer unittests uit bij pull requests**: Zorg ervoor dat codewijzigingen bestaande functionaliteit niet breken  
+2. **Integratietests in staging**: Voer integratietests uit in pre-productieomgevingen  
+3. **Prestatie-baselines**: Onderhoud prestatienormen om regressies te detecteren  
 4. **Beveiligingsscans**: Automatiseer beveiligingstests als onderdeel van de pipeline  
 
-### Voorbeeld CI-pipeline (GitHub Actions)  
+### Voorbeeld CI-pijplijn (GitHub Actions)
 
 ```yaml
 name: MCP Server Tests
@@ -2281,21 +2273,21 @@ jobs:
       
     - name: Performance Tests
       run: dotnet run --project tests/PerformanceTests/PerformanceTests.csproj
-```  
+```
+  
+## Testen op naleving van de MCP-specificatie
 
-## Testen op naleving van MCP-specificatie  
+Verifieer dat uw server de MCP-specificatie correct implementeert.
 
-Controleer of je server de MCP-specificatie correct implementeert.  
+### Belangrijke nalevingsgebieden
 
-### Belangrijke nalevingsgebieden  
+1. **API-eindpunten**: Test de vereiste eindpunten (/resources, /tools, enz.)  
+2. **Request/response-formaat**: Valideer klasseconformiteit  
+3. **Foutcodes**: Verifieer juiste statuscodes voor verschillende scenario's  
+4. **Inhoudstypen**: Test de verwerking van verschillende inhoudstypen  
+5. **Authenticatiestroom**: Verifieer auth-mechanismen die voldoen aan de specificatie  
 
-1. **API-eindpunten**: Test vereiste eindpunten (/resources, /tools, etc.)  
-2. **Request/Response-formaat**: Valideer schema-naleving  
-3. **Foutcodes**: Controleer correcte statuscodes voor verschillende scenario's  
-4. **Contenttypes**: Test de verwerking van verschillende contenttypes  
-5. **Authenticatiestroom**: Controleer op specificatie-conforme authenticatiemechanismen  
-
-### Nalevingstestpakket  
+### Nalevings-testsuite
 
 ```csharp
 [Fact]
@@ -2320,64 +2312,70 @@ public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
         // Additional schema validation
     });
 }
-```  
+```
+  
+## Top 10 tips voor effectieve MCP-servertests
 
-## Top 10 tips voor effectief testen van MCP-servers  
+1. **Test tooldefinities apart**: Verifieer schema-definities onafhankelijk van de logic van de tool  
+2. **Gebruik geparametriseerde tests**: Test tools met verschillende invoer, inclusief randgevallen  
+3. **Controleer foutreacties**: Verifieer correcte foutafhandeling voor alle mogelijke foutcondities  
+4. **Test autorisatielogica**: Zorg voor juiste toegangscontrole voor verschillende gebruikersrollen  
+5. **Monitor testdekking**: Streef naar een hoge dekking van kritieke codepaden  
+6. **Test streaming responses**: Verifieer juiste verwerking van streaminginhoud  
+7. **Simuleer netwerkproblemen**: Test gedrag onder slechte netwerkomstandigheden  
+8. **Test resource-limieten**: Verifieer gedrag bij het bereiken van quota of snelheidslimieten  
+9. **Automatiseer regressietests**: Bouw een suite die bij elke codewijziging draait  
+10. **Documenteer testgevallen**: Houd duidelijke documentatie bij van testscenario’s  
 
-1. **Test tooldefinities afzonderlijk**: Controleer schema-definities onafhankelijk van de toollogica  
-2. **Gebruik geparameteriseerde tests**: Test tools met verschillende invoer, inclusief randgevallen  
-3. **Controleer foutreacties**: Verifieer correcte foutafhandeling voor alle mogelijke foutomstandigheden  
-4. **Test autorisatielogica**: Zorg voor correcte toegangscontrole voor verschillende gebruikersrollen  
-5. **Monitor testdekking**: Streef naar een hoge dekking van kritieke padcode  
-6. **Test streamingreacties**: Controleer correcte verwerking van streamingcontent  
-7. **Simuleer netwerkproblemen**: Test gedrag onder slechte netwerkcondities  
-8. **Test resourcebeperkingen**: Controleer gedrag bij het bereiken van quota of snelheidslimieten  
-9. **Automatiseer regressietests**: Bouw een suite die bij elke codewijziging wordt uitgevoerd  
-10. **Documenteer testcases**: Houd duidelijke documentatie bij van testscenario's  
+## Veelvoorkomende valkuilen bij testen
 
-## Veelvoorkomende testvalkuilen  
+- **Te veel vertrouwen op happy path testing**: Zorg ervoor dat foutgevallen grondig worden getest  
+- **Negeren van prestatietests**: Identificeer knelpunten voordat ze productie beïnvloeden  
+- **Alleen isolatietests uitvoeren**: Combineer unit-, integratie- en end-to-end-tests  
+- **Onvolledige API-dekking**: Zorg dat alle eindpunten en functies getest worden  
+- **Inconsistente testomgevingen**: Gebruik containers voor consistente testomgevingen  
 
-- **Te veel vertrouwen op happy path-tests**: Zorg ervoor dat foutgevallen grondig worden getest  
-- **Het negeren van prestatietests**: Identificeer knelpunten voordat ze productie beïnvloeden  
-- **Alleen in isolatie testen**: Combineer unit-, integratie- en E2E-tests  
-- **Onvolledige API-dekking**: Zorg ervoor dat alle eindpunten en functies worden getest  
-- **Inconsistente testomgevingen**: Gebruik containers om consistente testomgevingen te garanderen  
+## Conclusie
 
-## Conclusie  
+Een uitgebreide teststrategie is essentieel voor het ontwikkelen van betrouwbare, hoogwaardige MCP-servers. Door het toepassen van de beste praktijken en tips uit deze gids kunt u ervoor zorgen dat uw MCP-implementaties voldoen aan de hoogste kwaliteits-, betrouwbaarheid- en prestatienormen.  
 
-Een uitgebreide teststrategie is essentieel voor het ontwikkelen van betrouwbare, hoogwaardige MCP-servers. Door de beste praktijken en tips in deze gids te implementeren, kun je ervoor zorgen dat je MCP-implementaties voldoen aan de hoogste normen van kwaliteit, betrouwbaarheid en prestaties.  
-
-## Belangrijkste punten  
+## Belangrijkste punten
 
 1. **Toolontwerp**: Volg het single responsibility-principe, gebruik dependency injection en ontwerp voor samenstelbaarheid  
-2. **Schemaontwerp**: Maak duidelijke, goed gedocumenteerde schema's met juiste validatiebeperkingen  
-3. **Foutafhandeling**: Implementeer gracieuze foutafhandeling, gestructureerde foutreacties en retry-logica  
+2. **Schema-ontwerp**: Maak heldere, goed gedocumenteerde schema's met de juiste validatiebeperkingen  
+3. **Foutafhandeling**: Implementeer elegante foutafhandeling, gestructureerde foutreacties en retry-logica  
 4. **Prestaties**: Gebruik caching, asynchrone verwerking en resource-throttling  
-5. **Beveiliging**: Pas grondige invoervalidatie, autorisatiecontroles en verwerking van gevoelige gegevens toe  
+5. **Beveiliging**: Pas grondige invoervalidatie, autorisatiecontroles en omgang met gevoelige gegevens toe  
 6. **Testen**: Maak uitgebreide unit-, integratie- en end-to-end-tests  
-7. **Workflowpatronen**: Pas gevestigde patronen toe zoals ketens, dispatchers en parallelle verwerking  
+7. **Workflow-patronen**: Pas gevestigde patronen toe zoals chains, dispatchers en parallelle verwerking  
 
-## Oefening  
+## Oefening
 
-Ontwerp een MCP-tool en workflow voor een documentverwerkingssysteem dat:  
+Ontwerp een MCP-tool en workflow voor een documentverwerkingssysteem dat:
 
 1. Documenten in meerdere formaten accepteert (PDF, DOCX, TXT)  
 2. Tekst en belangrijke informatie uit de documenten extraheert  
 3. Documenten classificeert op type en inhoud  
 4. Een samenvatting van elk document genereert  
 
-Implementeer de toolschema's, foutafhandeling en een workflowpatroon dat het beste past bij dit scenario. Overweeg hoe je deze implementatie zou testen.  
+Implementeer de toolschemas, foutafhandeling en een workflow-patroon dat het beste bij dit scenario past. Overweeg hoe u deze implementatie zou testen.  
 
-## Bronnen  
+## Bronnen
 
 1. Word lid van de MCP-community op de [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) om op de hoogte te blijven van de laatste ontwikkelingen  
 2. Draag bij aan open-source [MCP-projecten](https://github.com/modelcontextprotocol)  
-3. Pas MCP-principes toe in de AI-initiatieven van je eigen organisatie  
-4. Verken gespecialiseerde MCP-implementaties voor jouw branche  
-5. Overweeg het volgen van geavanceerde cursussen over specifieke MCP-onderwerpen, zoals multimodale integratie of integratie van bedrijfsapplicaties  
-6. Experimenteer met het bouwen van je eigen MCP-tools en workflows met behulp van de principes die je hebt geleerd via de [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)  
+3. Pas MCP-principes toe in de AI-initiatieven van uw eigen organisatie  
+4. Verken gespecialiseerde MCP-implementaties voor uw branche  
+5. Overweeg gevorderde cursussen over specifieke MCP-onderwerpen, zoals multi-modale integratie of enterprise-application integratie  
+6. Experimenteer met het bouwen van uw eigen MCP-tools en workflows met behulp van de principes geleerd in de [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)  
 
-Volgende: Best Practices [case studies](../09-CaseStudy/README.md)  
+## Wat volgt
 
-**Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Vervolg: [Case Studies](../09-CaseStudy/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Disclaimer**:
+Dit document is vertaald met behulp van AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat automatische vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het oorspronkelijke document in de originele taal wordt beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor enige misverstanden of verkeerde interpretaties voortvloeiend uit het gebruik van deze vertaling.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,227 +1,227 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "1b000fd6e1b04c047578bfc5d07d54eb",
-  "translation_date": "2025-08-19T16:42:39+00:00",
-  "source_file": "10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md",
-  "language_code": "ro"
-}
--->
-# Simplificarea Fluxurilor de Lucru AI: Construirea unui Server MCP cu AI Toolkit
+# Simplificarea fluxurilor de lucru AI: Construirea unui server MCP cu AI Toolkit
 
-[![MCP Version](https://img.shields.io/badge/MCP-1.9.3-blue.svg)](https://modelcontextprotocol.io/)
+[![MCP Spec](https://img.shields.io/badge/MCP%20Spec-2025--11--25-blue.svg)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
 [![Python](https://img.shields.io/badge/Python-3.10+-green.svg)](https://python.org)
 [![VS Code](https://img.shields.io/badge/VS%20Code-Latest-orange.svg)](https://code.visualstudio.com/)
 
-![logo](../../../translated_images/logo.ec93918ec338dadde1715c8aaf118079e0ed0502e9efdfcc84d6a0f4a9a70ae8.ro.png)
+![logo](../../../translated_images/ro/logo.ec93918ec338dadd.webp)
 
-## 🎯 Prezentare Generală
+## 🎯 Prezentare generală
 
-[![Build AI Agents in VS Code: 4 Hands-On Labs with MCP and AI Toolkit](../../../translated_images/11.0f6db6a0fb6068856d0468590a120ffe35dbccc49b93dc88b2003f306c81493a.ro.png)](https://youtu.be/r34Csn3rkeQ)
+[![Build AI Agents in VS Code: 4 Hands-On Labs with MCP and AI Toolkit](../../../translated_images/ro/11.0f6db6a0fb606885.webp)](https://youtu.be/r34Csn3rkeQ)
 
-_(Click pe imaginea de mai sus pentru a viziona videoclipul acestei lecții)_
+_(Faceți clic pe imaginea de mai sus pentru a viziona videoclipul acestei lecții)_
 
 Bine ați venit la **Atelierul Model Context Protocol (MCP)**! Acest atelier practic cuprinzător combină două tehnologii de ultimă generație pentru a revoluționa dezvoltarea aplicațiilor AI:
 
-- **🔗 Model Context Protocol (MCP)**: Un standard deschis pentru integrarea fără cusur a instrumentelor AI
-- **🛠️ AI Toolkit pentru Visual Studio Code (AITK)**: Extensia puternică de dezvoltare AI de la Microsoft
+- **🔗 Model Context Protocol (MCP)**: Un standard deschis pentru integrarea fără întreruperi a instrumentelor AI
+- **🛠️ AI Toolkit pentru Visual Studio Code (AITK)**: Extensia Microsoft puternică pentru dezvoltarea AI
 
-### 🎓 Ce Veți Învăța
+### 🎓 Ce vei învăța
 
-Până la finalul acestui atelier, veți stăpâni arta construirii aplicațiilor inteligente care conectează modelele AI cu instrumentele și serviciile din lumea reală. De la testare automată la integrarea API-urilor personalizate, veți dobândi abilități practice pentru a rezolva provocări complexe de afaceri.
+Până la finalul acestui atelier, vei stăpâni arta construirii de aplicații inteligente care leagă modelele AI cu instrumente și servicii din lumea reală. De la testare automată la integrări API personalizate, vei dobândi abilități practice pentru a rezolva provocări complexe de afaceri.
 
-## 🏗️ Tehnologii Utilizate
+## 🏗️ Stiva Tehnologică
 
 ### 🔌 Model Context Protocol (MCP)
 
-MCP este **"USB-C pentru AI"** - un standard universal care conectează modelele AI la instrumente și surse de date externe.
+MCP este **„USB-C pentru AI”** – un standard universal care conectează modelele AI la instrumente și surse de date externe.
 
-**✨ Caracteristici Cheie:**
+**✨ Caracteristici cheie:**
 
-- 🔄 **Integrare Standardizată**: Interfață universală pentru conexiuni AI-instrumente
-- 🏛️ **Arhitectură Flexibilă**: Servere locale și la distanță prin transport stdio/SSE
-- 🧰 **Ecosistem Bogat**: Instrumente, prompturi și resurse într-un singur protocol
-- 🔒 **Pregătit pentru Enterprise**: Securitate și fiabilitate integrate
+- 🔄 **Integrare standardizată**: Interfață universală pentru conectarea instrumentelor AI
+- 🏛️ **Arhitectură flexibilă**: Servere locale și la distanță prin transport stdio/SSE
+- 🧰 **Ecosistem bogat**: Instrumente, prompturi și resurse într-un singur protocol
+- 🔒 **Gata pentru mediul enterprise**: Securitate și fiabilitate integrate
 
-**🎯 De ce este Important MCP:**
-Așa cum USB-C a eliminat haosul cablurilor, MCP elimină complexitatea integrărilor AI. Un protocol, posibilități infinite.
+**🎯 De ce este important MCP:**  
+La fel cum USB-C a eliminat haosul cablurilor, MCP elimină complexitatea integrărilor AI. Un protocol, posibilități infinite.
 
 ### 🤖 AI Toolkit pentru Visual Studio Code (AITK)
 
-Extensia de dezvoltare AI de la Microsoft care transformă VS Code într-un centru de putere AI.
+Extensia emblematică Microsoft pentru dezvoltarea AI care transformă VS Code într-o putere AI.
 
-**🚀 Capacități de Bază:**
+**🚀 Capabilități de bază:**
 
-- 📦 **Catalog de Modele**: Acces la modele din Azure AI, GitHub, Hugging Face, Ollama
-- ⚡ **Inferență Locală**: Execuție optimizată ONNX pe CPU/GPU/NPU
+- 📦 **Catalog de modele**: Acces la modele de la Azure AI, GitHub, Hugging Face, Ollama
+- ⚡ **Inferență locală**: Execuție optimizată ONNX pe CPU/GPU/NPU
 - 🏗️ **Agent Builder**: Dezvoltare vizuală de agenți AI cu integrare MCP
-- 🎭 **Multi-Modal**: Suport pentru text, viziune și ieșiri structurate
+- 🎭 **Multi-modal**: Suport pentru text, viziune și output structurat
 
-**💡 Beneficii pentru Dezvoltare:**
+**💡 Beneficii pentru dezvoltare:**
 
-- Implementare de modele fără configurare
+- Implementare modele fără configurare
 - Inginerie vizuală a prompturilor
-- Teren de testare în timp real
-- Integrare fără cusur a serverului MCP
+- Mediu de testare în timp real
+- Integrare perfectă cu serverul MCP
 
-## 📚 Parcurs de Învățare
+## 📚 Parcurs de învățare
 
-### [🚀 Modulul 1: Fundamentele AI Toolkit](./lab1/README.md)
+### [🚀 Modulul 1: Fundamente AI Toolkit](./lab1/README.md)
 
-**Durată**: 15 minute
+**Durată:** 15 minute
 
-- 🛠️ Instalați și configurați AI Toolkit pentru VS Code
-- 🗂️ Explorați Catalogul de Modele (peste 100 de modele din GitHub, ONNX, OpenAI, Anthropic, Google)
-- 🎮 Stăpâniți Terenul Interactiv pentru testarea modelelor în timp real
-- 🤖 Construiți primul dvs. agent AI cu Agent Builder
-- 📊 Evaluați performanța modelelor cu metrici integrate (F1, relevanță, similaritate, coerență)
-- ⚡ Învățați procesarea în loturi și capabilitățile de suport multi-modal
+- 🛠️ Instalarea și configurarea AI Toolkit pentru VS Code
+- 🗂️ Explorarea Catalogului de modele (peste 100 de modele de pe GitHub, ONNX, OpenAI, Anthropic, Google)
+- 🎮 Stăpânirea Playground-ului Interactiv pentru testarea modelelor în timp real
+- 🤖 Construirea primului agent AI cu Agent Builder
+- 📊 Evaluarea performanței modelelor cu metrici integrate (F1, relevanță, similitudine, coerență)
+- ⚡ Învățarea procesării în batch și suportul multi-modal
 
-**🎯 Rezultat al Învățării**: Creați un agent AI funcțional cu o înțelegere cuprinzătoare a capacităților AITK
+**🎯 Rezultat învățare:** Crearea unui agent AI funcțional cu înțelegere cuprinzătoare a capabilităților AITK
 
-### [🌐 Modulul 2: MCP cu Fundamentele AI Toolkit](./lab2/README.md)
+### [🌐 Modulul 2: MCP cu fundamente AI Toolkit](./lab2/README.md)
 
-**Durată**: 20 minute
+**Durată:** 20 minute
 
-- 🧠 Stăpâniți arhitectura și conceptele Model Context Protocol (MCP)
-- 🌐 Explorați ecosistemul de servere MCP de la Microsoft
-- 🤖 Construiți un agent de automatizare a browserului folosind serverul MCP Playwright
-- 🔧 Integrați serverele MCP cu Agent Builder din AI Toolkit
-- 📊 Configurați și testați instrumentele MCP în cadrul agenților dvs.
-- 🚀 Exportați și implementați agenți alimentați de MCP pentru utilizare în producție
+- 🧠 Stăpânirea arhitecturii și conceptelor Model Context Protocol (MCP)
+- 🌐 Explorarea ecosistemului serverelor MCP Microsoft
+- 🤖 Construirea unui agent de automatizare browser folosind serverul Playwright MCP
+- 🔧 Integrarea serverelor MCP cu AI Toolkit Agent Builder
+- 📊 Configurarea și testarea instrumentelor MCP în agenții
+- 🚀 Exportarea și implementarea agenților alimentați de MCP pentru producție
 
-**🎯 Rezultat al Învățării**: Implementați un agent AI îmbunătățit cu instrumente externe prin MCP
+**🎯 Rezultat învățare:** Implementarea unui agent AI puternic cu instrumente externe prin MCP
 
-### [🔧 Modulul 3: Dezvoltare Avansată MCP cu AI Toolkit](./lab3/README.md)
+### [🔧 Modulul 3: Dezvoltare avansată MCP cu AI Toolkit](./lab3/README.md)
 
-**Durată**: 20 minute
+**Durată:** 20 minute
 
-- 💻 Creați servere MCP personalizate folosind AI Toolkit
-- 🐍 Configurați și utilizați cel mai recent SDK MCP Python (v1.9.3)
-- 🔍 Configurați și utilizați MCP Inspector pentru depanare
-- 🛠️ Construiți un Server MCP pentru Vreme cu fluxuri de lucru profesionale de depanare
-- 🧪 Depanați serverele MCP atât în Agent Builder, cât și în mediile Inspector
+- 💻 Crearea de servere MCP personalizate cu AI Toolkit
+- 🐍 Configurarea și utilizarea celui mai recent MCP Python SDK (v1.9.3)
+- 🔍 Configurarea și utilizarea MCP Inspector pentru depanare
+- 🛠️ Construirea unui Server Weather MCP cu fluxuri de lucru profesioniste pentru depanare
+- 🧪 Depanarea serverelor MCP atât în Agent Builder, cât și în Inspector
 
-**🎯 Rezultat al Învățării**: Dezvoltați și depanați servere MCP personalizate cu instrumente moderne
+**🎯 Rezultat învățare:** Dezvoltarea și depanarea serverelor MCP personalizate cu instrumente moderne
 
-### [🐙 Modulul 4: Dezvoltare Practică MCP - Server Personalizat GitHub Clone](./lab4/README.md)
+### [🐙 Modulul 4: Dezvoltare practică MCP - Server personalizat GitHub Clone](./lab4/README.md)
 
-**Durată**: 30 minute
+**Durată:** 30 minute
 
-- 🏗️ Construiți un Server MCP GitHub Clone pentru fluxuri de lucru de dezvoltare
-- 🔄 Implementați clonarea inteligentă a depozitelor cu validare și gestionarea erorilor
-- 📁 Creați gestionarea inteligentă a directoarelor și integrarea cu VS Code
-- 🤖 Utilizați GitHub Copilot Agent Mode cu instrumente MCP personalizate
-- 🛡️ Aplicați fiabilitate pregătită pentru producție și compatibilitate multiplatformă
+- 🏗️ Construirea unui server GitHub Clone MCP pentru fluxuri reale de dezvoltare
+- 🔄 Implementarea clonării inteligente a repository-urilor cu validare și gestionare erori
+- 📁 Crearea managementului inteligent al directoarelor și integrarea VS Code
+- 🤖 Utilizarea modului Agent GitHub Copilot cu instrumente MCP personalizate
+- 🛡️ Aplicarea fiabilității gata de producție și compatibilitatea cross-platform
 
-**🎯 Rezultat al Învățării**: Implementați un server MCP pregătit pentru producție care simplifică fluxurile de lucru reale de dezvoltare
+**🎯 Rezultat învățare:** Implementarea unui server MCP gata pentru producție care eficientizează fluxurile reale de dezvoltare
 
-## 💡 Aplicații și Impact în Lumea Reală
+## 💡 Aplicații și impact în lumea reală
 
-### 🏢 Cazuri de Utilizare în Enterprise
+### 🏢 Cazuri de utilizare enterprise
 
-#### 🔄 Automatizare DevOps
+#### 🔄 Automatizarea DevOps
 
-Transformați fluxul de lucru de dezvoltare cu automatizare inteligentă:
+Transformă fluxul tău de dezvoltare cu automatizare inteligentă:
 
-- **Gestionare Inteligentă a Depozitelor**: Revizuirea codului și decizii de îmbinare bazate pe AI
-- **CI/CD Inteligent**: Optimizarea automată a pipeline-urilor pe baza modificărilor de cod
-- **Trierea Problemelor**: Clasificarea automată a erorilor și atribuirea lor
+- **Management inteligent al repository-urilor**: Revizuire cod AI-driven și decizii de fuziune
+- **CI/CD inteligent**: Optimizarea automată a pipeline-urilor pe baza modificărilor de cod
+- **Triage probleme**: Clasificare și alocare automată a defectelor
 
-#### 🧪 Revoluția Asigurării Calității
+#### 🧪 Revoluția asigurării calității
 
-Îmbunătățiți testarea cu automatizare alimentată de AI:
+Ridică testarea cu automatizare alimentată de AI:
 
-- **Generare Inteligentă de Teste**: Crearea automată a suitei de teste complete
-- **Testare Vizuală de Regresie**: Detectarea schimbărilor UI cu ajutorul AI
-- **Monitorizare a Performanței**: Identificarea și rezolvarea proactivă a problemelor
+- **Generare inteligentă de teste**: Crearea automată de suite de testare cuprinzătoare
+- **Testare vizuală de regresie**: Detectare AI a modificărilor UI
+- **Monitorizare performanță**: Identificare proactivă și rezolvare a problemelor
 
-#### 📊 Inteligență pentru Fluxurile de Date
+#### 📊 Inteligența fluxurilor de date
 
-Construiți fluxuri de procesare a datelor mai inteligente:
+Construiește fluxuri de prelucrare a datelor mai inteligente:
 
-- **Procese ETL Adaptive**: Transformări de date auto-optimizante
-- **Detectarea Anomaliilor**: Monitorizare în timp real a calității datelor
-- **Rutare Inteligentă**: Gestionarea inteligentă a fluxului de date
+- **Procese ETL adaptive**: Transformări de date care se auto-optimizează
+- **Detectarea anomaliilor**: Monitorizare în timp real a calității datelor
+- **Rute inteligente**: Management inteligent al fluxului de date
 
-#### 🎧 Îmbunătățirea Experienței Clienților
+#### 🎧 Îmbunătățirea experienței clienților
 
-Creați interacțiuni excepționale cu clienții:
+Creează interacțiuni excepționale cu clienții:
 
-- **Suport Conștient de Context**: Agenți AI cu acces la istoricul clienților
-- **Rezolvarea Proactivă a Problemelor**: Servicii predictive pentru clienți
-- **Integrare Multi-Canal**: Experiență AI unificată pe toate platformele
+- **Suport conștient de context**: Agenți AI cu acces la istoricul clienților
+- **Rezolvarea proactivă a problemelor**: Serviciu clienți predictiv
+- **Integrare multi-canal**: Experiență AI unificată pe platforme multiple
 
-## 🛠️ Cerințe și Configurare
+## 🛠️ Cerințe și configurare
 
-### 💻 Cerințe de Sistem
+### 💻 Cerințe sistem
 
 | Componentă | Cerință | Note |
-|------------|---------|------|
-| **Sistem de Operare** | Windows 10+, macOS 10.15+, Linux | Orice OS modern |
-| **Visual Studio Code** | Cea mai recentă versiune stabilă | Necesară pentru AITK |
-| **Node.js** | v18.0+ și npm | Pentru dezvoltarea serverelor MCP |
-| **Python** | 3.10+ | Opțional pentru serverele MCP Python |
-| **Memorie** | Minimum 8GB RAM | 16GB recomandat pentru modele locale |
+|-----------|---------|-------|
+| **Sistem de operare** | Windows 10+, macOS 10.15+, Linux | Orice OS modern |
+| **Visual Studio Code** | Ultima versiune stabilă | Necesari pentru AITK |
+| **Node.js** | v18.0+ și npm | Pentru dezvoltare server MCP |
+| **Python** | 3.10+ | Opțional pentru servere MCP Python |
+| **Memorie** | Minim 8GB RAM | Recomandat 16GB pentru modele locale |
 
-### 🔧 Mediu de Dezvoltare
+### 🔧 Mediu de dezvoltare
 
-#### Extensii Recomandate pentru VS Code
+#### Extensii VS Code recomandate
 
 - **AI Toolkit** (ms-windows-ai-studio.windows-ai-studio)
 - **Python** (ms-python.python)
 - **Python Debugger** (ms-python.debugpy)
-- **GitHub Copilot** (GitHub.copilot) - Opțional, dar util
+- **GitHub Copilot** (GitHub.copilot) - Opțional dar util
 
-#### Instrumente Opționale
+#### Instrumente opționale
 
-- **uv**: Manager modern de pachete Python
-- **MCP Inspector**: Instrument vizual de depanare pentru serverele MCP
+- **uv**: Manager modern pachete Python
+- **MCP Inspector**: Instrument vizual pentru depanare servere MCP
 - **Playwright**: Pentru exemple de automatizare web
 
-## 🎖️ Rezultate ale Învățării și Certificare
+## 🎖️ Rezultate de învățare și cale de certificare
 
-### 🏆 Lista de Verificare a Competențelor
+### 🏆 Listă de competențe dobândite
 
-Prin finalizarea acestui atelier, veți dobândi competențe în:
+Finalizând acest atelier, vei obține competențe în:
 
-#### 🎯 Competențe de Bază
+#### 🎯 Competențe de bază
 
-- [ ] **Stăpânirea Protocolului MCP**: Înțelegere profundă a arhitecturii și a modelelor de implementare
-- [ ] **Proficiență AITK**: Utilizare la nivel expert a AI Toolkit pentru dezvoltare rapidă
-- [ ] **Dezvoltare de Servere Personalizate**: Construirea, implementarea și întreținerea serverelor MCP de producție
-- [ ] **Excelență în Integrarea Instrumentelor**: Conectarea fără cusur a AI cu fluxurile de lucru existente
-- [ ] **Aplicarea Rezolvării Problemelor**: Aplicarea abilităților învățate la provocări reale de afaceri
+- [ ] **Stăpânirea Protocolului MCP**: Înțelegere aprofundată a arhitecturii și a pattern-urilor de implementare
+- [ ] **Competență AITK**: Utilizare expertă a AI Toolkit pentru dezvoltare rapidă
+- [ ] **Dezvoltare server personalizat**: Construirea, implementarea și mentenanța serverelor MCP de producție
+- [ ] **Excelență în integrarea instrumentelor**: Conectarea fluentă a AI cu fluxuri existente de dezvoltare
+- [ ] **Aplicarea soluțiilor**: Folosirea abilităților pentru provocări reale de business
 
-#### 🔧 Abilități Tehnice
+#### 🔧 Abilități tehnice
 
-- [ ] Configurarea și utilizarea AI Toolkit în VS Code
+- [ ] Configurarea și configurarea AI Toolkit în VS Code
 - [ ] Proiectarea și implementarea serverelor MCP personalizate
 - [ ] Integrarea modelelor GitHub cu arhitectura MCP
-- [ ] Construirea fluxurilor de lucru de testare automată cu Playwright
-- [ ] Implementarea agenților AI pentru utilizare în producție
-- [ ] Depanarea și optimizarea performanței serverelor MCP
+- [ ] Construirea fluxurilor de testare automate cu Playwright
+- [ ] Implementarea agenților AI pentru producție
+- [ ] Depanarea și optimizarea performanței serverului MCP
 
-#### 🚀 Capacități Avansate
+#### 🚀 Capacități avansate
 
 - [ ] Arhitectura integrărilor AI la scară enterprise
-- [ ] Implementarea celor mai bune practici de securitate pentru aplicațiile AI
-- [ ] Proiectarea arhitecturilor scalabile pentru serverele MCP
-- [ ] Crearea de lanțuri de instrumente personalizate pentru domenii specifice
-- [ ] Mentorat în dezvoltarea nativă AI
+- [ ] Implementarea celor mai bune practici de securitate pentru aplicații AI
+- [ ] Proiectarea arhitecturilor scalabile pentru servere MCP
+- [ ] Crearea lanțurilor de instrumente personalizate pentru domenii specifice
+- [ ] Mentorat pentru dezvoltare AI nativă
 
-## 📖 Resurse Suplimentare
+## 📖 Resurse suplimentare
 
-- [Specificația MCP](https://modelcontextprotocol.io/docs)
-- [Repository-ul GitHub AI Toolkit](https://github.com/microsoft/vscode-ai-toolkit)
-- [Colecția de Servere MCP Exemplu](https://github.com/modelcontextprotocol/servers)
-- [Ghidul celor Mai Bune Practici](https://modelcontextprotocol.io/docs/best-practices)
+- [Specificarea MCP (2025-11-25)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
+- [Repozitoriu AI Toolkit GitHub](https://github.com/microsoft/vscode-ai-toolkit)
+- [Colecție servere MCP exemplu](https://github.com/modelcontextprotocol/servers)
+- [Ghid de bune practici](https://modelcontextprotocol.io/docs/best-practices)
+- [OWASP MCP Top 10](https://microsoft.github.io/mcp-azure-security-guide/mcp/) - Cele mai bune practici de securitate
 
 ---
 
-**🚀 Gata să revoluționați fluxul de lucru al dezvoltării AI?**
+**🚀 Gata să revoluționezi fluxul de lucru în dezvoltarea AI?**
 
-Hai să construim împreună viitorul aplicațiilor inteligente cu MCP și AI Toolkit!
+Să construim împreună viitorul aplicațiilor inteligente cu MCP și AI Toolkit!
 
-**Declinare de responsabilitate**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim să asigurăm acuratețea, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa natală ar trebui considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+## Ce urmează
+
+Continuă cu: [Modul 11: Laboratoare practice server MCP](../11-MCPServerHandsOnLabs/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Declinare a responsabilității**:
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un traducător uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

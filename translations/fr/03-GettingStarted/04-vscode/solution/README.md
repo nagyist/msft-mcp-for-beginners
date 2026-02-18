@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5ef8f5821c1a04f7b1fc4f15098ecab8",
-  "translation_date": "2025-07-13T19:38:16+00:00",
-  "source_file": "03-GettingStarted/04-vscode/solution/README.md",
-  "language_code": "fr"
-}
--->
 Cela correspond à l'exécution d'une commande comme celle-ci : `node build/index.js`.
 
 - Modifiez cette entrée serveur pour indiquer l'emplacement de votre fichier serveur ou ce qui est nécessaire pour démarrer votre serveur en fonction de votre environnement d'exécution et de l'emplacement du serveur choisis.
@@ -23,7 +14,7 @@ Cela correspond à l'exécution d'une commande comme celle-ci : `node build/inde
 
     Vous devriez voir un outil s'afficher au-dessus de la zone de texte du chat vous invitant à sélectionner l'outil pour l'exécuter, comme dans cette illustration :
 
-    ![VS Code indiquant qu'il souhaite exécuter un outil](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.fr.png)
+    ![VS Code indiquant qu'il souhaite exécuter un outil](../../../../../translated_images/fr/vscode-agent.d5a0e0b897331060.webp)
 
     La sélection de l'outil devrait produire un résultat numérique indiquant "23" si votre invite était comme celle mentionnée précédemment.
 

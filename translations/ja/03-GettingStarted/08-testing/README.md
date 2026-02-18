@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-13T21:58:13+00:00",
-  "source_file": "03-GettingStarted/08-testing/README.md",
-  "language_code": "ja"
-}
--->
 ## テストとデバッグ
 
 MCPサーバーのテストを始める前に、利用可能なツールやデバッグのベストプラクティスを理解しておくことが重要です。効果的なテストはサーバーが期待通りに動作することを保証し、問題の特定と解決を迅速に行うのに役立ちます。以下のセクションでは、MCPの実装を検証するための推奨される方法を紹介します。
@@ -48,7 +39,7 @@ npx @modelcontextprotocol/inspector node build/index.js
 
 上記のコマンドはMCPとそのビジュアルインターフェースを起動し、ブラウザでローカルのWebインターフェースを開きます。登録されたMCPサーバー、利用可能なツール、リソース、プロンプトが表示されるダッシュボードが見られます。このインターフェースを使うことで、ツールの実行を対話的にテストしたり、サーバーメタデータを調査したり、リアルタイムのレスポンスを確認したりでき、MCPサーバーの実装検証やデバッグが容易になります。
 
-画面はこのようなイメージです： ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.ja.png)
+画面はこのようなイメージです： ![Inspector](../../../../translated_images/ja/connect.141db0b2bd05f096.webp)
 
 また、`--cli`オプションを付けてCLIモードで実行することも可能です。以下はCLIモードでツール一覧を表示する例です：
 

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0bc7bd48f55f1565f1d95ccb2c16f728",
-  "translation_date": "2025-07-13T23:07:22+00:00",
-  "source_file": "04-PracticalImplementation/samples/csharp/README.md",
-  "language_code": "sv"
-}
--->
 # Exempel
 
 Det föregående exemplet visar hur man använder ett lokalt .NET-projekt med typen `stdio`. Och hur man kör servern lokalt i en container. Detta är en bra lösning i många situationer. Men det kan vara användbart att ha servern igång på distans, till exempel i en molnmiljö. Det är här typen `http` kommer in i bilden.
@@ -26,7 +17,7 @@ De andra projekten kommer från [.NET Aspire](https://learn.microsoft.com/dotnet
 
 1. När en webbläsare öppnar .NET Aspire-dashboarden, notera `http`-URL:en. Den bör vara något i stil med `http://localhost:5058/`.
 
-   ![.NET Aspire Dashboard](../../../../../translated_images/dotnet-aspire-dashboard.0a7095710e9301e90df2efd867e1b675b3b9bc2ccd7feb1ebddc0751522bc37c.sv.png)
+   ![.NET Aspire Dashboard](../../../../../translated_images/sv/dotnet-aspire-dashboard.0a7095710e9301e9.webp)
 
 ## Testa Streamable HTTP med MCP Inspector
 
@@ -38,7 +29,7 @@ Starta servern och kör följande kommando i en terminal:
 npx @modelcontextprotocol/inspector http://localhost:5058
 ```
 
-![MCP Inspector](../../../../../translated_images/mcp-inspector.c223422b9b494fb4a518a3b3911b3e708e6a5715069470f9163ee2ee8d5f1ba9.sv.png)
+![MCP Inspector](../../../../../translated_images/sv/mcp-inspector.c223422b9b494fb4.webp)
 
 - Välj `Streamable HTTP` som transporttyp.
 - I fältet Url, ange den URL för servern som noterades tidigare och lägg till `/mcp`. Det ska vara `http` (inte `https`), något i stil med `http://localhost:5058/mcp`.
@@ -83,7 +74,7 @@ azd up
 
 När distributionen är klar bör du se ett meddelande som detta:
 
-![Azd deployment success](../../../../../translated_images/azd-deployment-success.bd42940493f1b834a5ce6251a6f88966546009b350df59d0cc4a8caabe94a4f1.sv.png)
+![Azd deployment success](../../../../../translated_images/sv/azd-deployment-success.bd42940493f1b834.webp)
 
 Ta URL:en och använd den i MCP Inspector och i GitHub Copilot Chat.
 

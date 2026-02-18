@@ -1,96 +1,89 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b62150e27d4b7b5797ee41146d176e6b",
-  "translation_date": "2025-08-18T15:32:15+00:00",
-  "source_file": "08-BestPractices/README.md",
-  "language_code": "mr"
-}
--->
 # MCP विकास सर्वोत्तम पद्धती
 
-[![MCP विकास सर्वोत्तम पद्धती](../../../translated_images/09.d0f6d86c9d72134ccf5a8d8c8650a0557e519936661fc894cad72d73522227cb.mr.png)](https://youtu.be/W56H9W7x-ao)
+[![MCP विकास सर्वोत्तम पद्धती](../../../translated_images/mr/09.d0f6d86c9d72134c.webp)](https://youtu.be/W56H9W7x-ao)
 
-_(वरील प्रतिमेवर क्लिक करून या धड्याचा व्हिडिओ पहा)_
+_(या धड्याच्या व्हिडिओसाठी वर दिलेल्या प्रतिमेक्लिक करा)_
 
 ## आढावा
 
-हा धडा उत्पादन वातावरणात MCP सर्व्हर आणि वैशिष्ट्ये विकसित करणे, चाचणी करणे आणि तैनात करण्यासाठी प्रगत सर्वोत्तम पद्धतींवर केंद्रित आहे. MCP परिसंस्था जसे अधिक गुंतागुंतीच्या आणि महत्त्वाच्या होत जातात, तसे प्रस्थापित नमुन्यांचे पालन करणे विश्वसनीयता, देखभालक्षमता आणि परस्परसंवाद सुनिश्चित करते. हा धडा MCP अंमलबजावणीच्या वास्तव-जगातील अनुभवांमधून मिळालेल्या व्यावहारिक ज्ञानाचे संकलन करतो, जेणेकरून तुम्ही मजबूत, कार्यक्षम सर्व्हर तयार करू शकाल.
+हा धडा उत्पादन वातावरणात MCP सर्व्हर्स आणि वैशिष्ट्ये विकसित करणे, चाचणी घेणे आणि तैनात करण्यासाठी प्रगत सर्वोत्तम पद्धतींवर लक्ष केंद्रित करतो. MCP परिसंस्था जसे जास्तीच्या गुंतागुंतीच्या आणि महत्त्वाच्या बनतात, तसेच स्थापित नमुन्यांचे पालन केल्यामुळे विश्वासार्हता, देखभालयोग्यता आणि परस्परसंवाद सुनिश्चित होतो. हा धडा वास्तविक जगातील MCP अंमलबजावणींपासून प्राप्त व्यावहारिक ज्ञान एकत्र करतो जेणेकरून प्रभावी संसाधने, प्रॉम्प्ट्स आणि साधने वापरुन आपण मजबूत, कार्यक्षम सर्व्हर्स तयार करू शकता.
 
 ## शिकण्याची उद्दिष्टे
 
-या धड्याच्या शेवटी, तुम्ही खालील गोष्टी करू शकाल:
+या धड्याच्या शेवटी, आपण करू शकाल:
 
-- MCP सर्व्हर आणि वैशिष्ट्य डिझाइनमध्ये उद्योगातील सर्वोत्तम पद्धती लागू करा
-- MCP सर्व्हरसाठी सर्वसमावेशक चाचणी धोरणे तयार करा
-- जटिल MCP अनुप्रयोगांसाठी कार्यक्षम, पुनर्वापरयोग्य कार्यप्रवाह नमुने डिझाइन करा
-- MCP सर्व्हरमध्ये योग्य त्रुटी हाताळणी, लॉगिंग आणि निरीक्षण अंमलात आणा
-- कार्यक्षमता, सुरक्षा आणि देखभालक्षमतेसाठी MCP अंमलबजावणी ऑप्टिमाइझ करा
+- MCP सर्व्हर आणि वैशिष्ट्य डिझाइनमध्ये उद्योगातील सर्वोत्तम पद्धती लागू करणे
+- MCP सर्व्हर साठी व्यापक चाचणी धोरणे तयार करणे
+- गुंतागुंतीच्या MCP अनुप्रयोगांसाठी कार्यक्षम, पुनर्वापरयोग्य वर्कफ्लो नमुने डिझाइन करणे
+- MCP सर्व्हरमध्ये योग्य त्रुटी हाताळणी, लॉगिंग आणि निरीक्षण लागू करणे
+- कार्यक्षमता, सुरक्षा आणि देखभालयोग्यता साठी MCP अंमलबजावणी अनुकूलित करणे
 
 ## MCP मुख्य तत्त्वे
 
-विशिष्ट अंमलबजावणी पद्धतींमध्ये जाण्यापूर्वी, प्रभावी MCP विकास मार्गदर्शन करणारी मुख्य तत्त्वे समजून घेणे महत्त्वाचे आहे:
+विशिष्ट अंमलबजावणी पद्धतीत प्रवेश करण्यापूर्वी, प्रभावी MCP विकासासाठी मार्गदर्शक मुख्य तत्त्वे समजून घेणे महत्त्वाचे आहे:
 
-1. **प्रमाणित संवाद**: MCP JSON-RPC 2.0 चा पाया म्हणून वापरतो, सर्व अंमलबजावणींमध्ये विनंत्या, प्रतिसाद आणि त्रुटी हाताळणीसाठी सुसंगत स्वरूप प्रदान करतो.
+1. **मानकीकृत संवाद**: MCP ची पायाभूत बिघड सुरु करण्यासाठी JSON-RPC 2.0 वापरतो, जे विनंत्या, प्रतिसाद आणि त्रुटी हाताळणी साठी सर्व अंमलबजावणींमध्ये सुसंगत स्वरूप प्रदान करते.
 
-2. **वापरकर्ता-केंद्रित डिझाइन**: नेहमीच MCP अंमलबजावणीमध्ये वापरकर्त्याची संमती, नियंत्रण आणि पारदर्शकतेला प्राधान्य द्या.
+2. **वापरकर्ता-केंद्रित डिझाईन**: आपल्या MCP अंमलबजावणीत नेहमी वापरकर्त्याची संमती, नियंत्रण आणि पारदर्शकता प्राधान्य द्या.
 
-3. **सुरक्षा प्रथम**: प्रमाणीकरण, अधिकृतता, सत्यापन आणि दर मर्यादेसह मजबूत सुरक्षा उपाय अंमलात आणा.
+3. **सुरक्षितता प्रथम**: प्रमाणीकरण, प्राधिकरण, प्रमाणीकरण, आणि दर मर्यादिती यांसहित मजबूत सुरक्षा उपाय अंमलात आणा.
 
-4. **मॉड्यूलर आर्किटेक्चर**: MCP सर्व्हर मॉड्यूलर दृष्टिकोनाने डिझाइन करा, जिथे प्रत्येक साधन आणि संसाधनाचे स्पष्ट, केंद्रित उद्दिष्ट असते.
+4. **मॉड्युलर आर्किटेक्चर**: आपल्या MCP सर्व्हर्सचे डिझाईन असे करा की प्रत्येक साधन आणि संसाधनाचे स्पष्ट, केंद्रित हेतू असावेत.
 
-5. **स्थितीपूर्ण कनेक्शन**: अधिक सुसंगत आणि संदर्भ-जागरूक संवादांसाठी अनेक विनंत्यांमध्ये स्थिती राखण्याची MCP ची क्षमता वापरा.
+5. **स्थितीपूर्ण संपर्क**: अधिक सुसंगत आणि संदर्भासह संवादासाठी MCP ची अनेक विनंत्यांमधील स्थिती राखण्याची क्षमता वापरा.
 
 ## अधिकृत MCP सर्वोत्तम पद्धती
 
-खालील सर्वोत्तम पद्धती अधिकृत मॉडेल संदर्भ प्रोटोकॉल दस्तऐवजांमधून घेतल्या आहेत:
+खालील सर्वोत्तम पद्धती Model Context Protocol च्या अधिकृत दस्तऐवजापासून घेतल्या आहेत:
 
 ### सुरक्षा सर्वोत्तम पद्धती
 
-1. **वापरकर्ता संमती आणि नियंत्रण**: डेटा प्रवेश करण्यापूर्वी किंवा ऑपरेशन्स करण्यापूर्वी नेहमी स्पष्ट वापरकर्ता संमती आवश्यक आहे. कोणता डेटा सामायिक केला जातो आणि कोणती क्रिया अधिकृत आहे यावर स्पष्ट नियंत्रण प्रदान करा.
+1. **वापरकर्ता संमती आणि नियंत्रण**: डेटा प्रवेश किंवा ऑपरेशन्स करण्यापूर्वी नेहमी स्पष्ट वापरकर्ता संमतीची गरज भरा. कोणता डेटा सामायिक केला जातो आणि कोणते क्रिया अधिकृत आहेत हे स्पष्ट नियंत्रण द्या.
 
-2. **डेटा गोपनीयता**: केवळ स्पष्ट संमतीने वापरकर्ता डेटा उघड करा आणि त्याचे योग्य प्रवेश नियंत्रणांसह संरक्षण करा. अनधिकृत डेटा प्रसारण टाळा.
+2. **डेटा गोपनीयता**: वापरकर्त्याच्या स्पष्ट संमतीनेच डेटा उघडा आणि योग्य प्रवेश नियंत्रणांसह त्याचे रक्षण करा. अनधिकृत डेटा प्रसाराविरोधात संरक्षण करा.
 
-3. **साधन सुरक्षा**: कोणतेही साधन सक्रिय करण्यापूर्वी स्पष्ट वापरकर्ता संमती आवश्यक आहे. प्रत्येक साधनाची कार्यक्षमता वापरकर्त्यांना समजेल याची खात्री करा आणि मजबूत सुरक्षा सीमा लागू करा.
+3. **साधन सुरक्षितता**: कोणतेही साधन चालविण्यापूर्वी स्पष्ट वापरकर्ता संमतीची आवश्यकता भरा. वापरकर्त्यांना प्रत्येक साधनाची कार्यक्षमता समजून घेण्यासाठी सुनिश्चित करा आणि मजबूत सुरक्षा सीमा अंमलात आणा.
 
-4. **साधन परवानगी नियंत्रण**: सत्रादरम्यान कोणती साधने मॉडेल वापरू शकतात ते कॉन्फिगर करा, जेणेकरून केवळ स्पष्टपणे अधिकृत साधनेच प्रवेशयोग्य असतील.
+4. **साधन परवानगी नियंत्रण**: सेशन दरम्यान कोणती साधने वापरता येतील हे कॉन्फिगर करा, जेणेकरुन फक्त स्पष्टपणे अधिकृत साधनांसाठी प्रवेश असेल.
 
-5. **प्रमाणीकरण**: API की, OAuth टोकन किंवा इतर सुरक्षित प्रमाणीकरण पद्धती वापरून साधने, संसाधने किंवा संवेदनशील ऑपरेशन्समध्ये प्रवेश देण्यापूर्वी योग्य प्रमाणीकरण आवश्यक आहे.
+5. **प्रमाणीकरण**: API की, OAuth टोकन किंवा इतर सुरक्षित प्रमाणीकरण पद्धती वापरून साधने, संसाधने किंवा संवेदनशील ऑपरेशन्ससाठी योग्य प्रमाणीकरण आवश्यक आहे.
 
-6. **पॅरामीटर सत्यापन**: चुकीच्या किंवा दुर्भावनायुक्त इनपुटला साधन अंमलबजावणीपर्यंत पोहोचण्यापासून रोखण्यासाठी सर्व साधन सक्रियतेसाठी सत्यापन लागू करा.
+6. **परामीटर प्रमाणीकरण**: सर्व साधन कॉल्ससाठी प्रमाणीकरण लागू करा जेणेकरून बांधकाम खराब होणारी किंवा खराब हेतूचे इनपुट साधनांपर्यंत पोहोचू नये.
 
-7. **दर मर्यादित करणे**: गैरवापर टाळण्यासाठी आणि सर्व्हर संसाधनांचा न्याय्य वापर सुनिश्चित करण्यासाठी दर मर्यादित करणे अंमलात आणा.
+7. **दर मर्यादिती**: दुरुपयोग टाळण्यासाठी आणि सर्व्हर संसाधनांच्या न्याय्य वापरासाठी दर मर्यादिती लागू करा.
 
 ### अंमलबजावणी सर्वोत्तम पद्धती
 
-1. **क्षमता वाटाघाटी**: कनेक्शन सेटअप दरम्यान, समर्थित वैशिष्ट्ये, प्रोटोकॉल आवृत्त्या, उपलब्ध साधने आणि संसाधने याबद्दल माहिती देवाणघेवाण करा.
+1. **क्षमता वाटाघाटी**: कनेक्शन स्थापनेदरम्यान समर्थित वैशिष्ट्ये, प्रोटोकॉल आवृत्त्या, उपलब्ध साधने आणि संसाधनांची माहिती विनिमय करा.
 
-2. **साधन डिझाइन**: एकाच वेळी अनेक जबाबदाऱ्या हाताळणाऱ्या साधनांऐवजी, एकाच कार्यात उत्कृष्ट काम करणारी केंद्रित साधने तयार करा.
+2. **साधन डिझाईन**: monolithic साधने ज्यामध्ये अनेक चिंता हाताळल्या जातात त्याऐवजी एकच कार्य नीट पार पाडणारी केंद्रित साधने तयार करा.
 
-3. **त्रुटी हाताळणी**: समस्या निदान करण्यासाठी, अपयशांचा सौम्यपणे सामना करण्यासाठी आणि कृतीयोग्य अभिप्राय प्रदान करण्यासाठी प्रमाणित त्रुटी संदेश आणि कोड अंमलात आणा.
+3. **त्रुटी हाताळणी**: समस्या शोधण्यासाठी, अपयश सौम्यतेने हाताळण्यासाठी आणि उपयुक्त अभिप्राय देण्यासाठी मानक त्रुटी संदेश आणि कोड अंमलात आणा.
 
-4. **लॉगिंग**: प्रोटोकॉल संवादांचे ऑडिटिंग, डीबगिंग आणि निरीक्षण करण्यासाठी संरचित लॉग्स कॉन्फिगर करा.
+4. **लॉगिंग**: प्रोटोकॉलच्या संवादाचा लेखा-जोखा, डीबगिंग आणि निरीक्षणासाठी संरचित लॉग कॉन्फिगर करा.
 
-5. **प्रगती ट्रॅकिंग**: दीर्घकालीन ऑपरेशन्ससाठी, प्रतिसादक्षम वापरकर्ता इंटरफेस सक्षम करण्यासाठी प्रगती अद्यतने नोंदवा.
+5. **प्रगती ट्रॅकिंग**: दीर्घकालीन ऑपरेशन्ससाठी प्रगती अद्यतने द्या ज्यामुळे संवेदनशील वापरकर्ता इंटरफेस सक्षम होतात.
 
-6. **विनंती रद्द करणे**: क्लायंटला गरज नसलेल्या किंवा खूप वेळ घेणाऱ्या विनंत्या रद्द करण्याची परवानगी द्या.
+6. **विनंती रद्द करा**: जे विनंती इन-फ्लाइट आहेत आणि आता आवश्यक नाहीत किंवा फार वेळ घेत आहेत त्यांना क्लायंट्स रद्द करू शकतात.
 
 ## अतिरिक्त संदर्भ
 
-MCP सर्वोत्तम पद्धतींबद्दल सर्वात अद्ययावत माहितीसाठी, खालील गोष्टी पहा:
+MCP सर्वोत्तम पद्धतींसाठी ताजी माहिती साठी पाहा:
 
-- [MCP दस्तऐवज](https://modelcontextprotocol.io/)
-- [MCP तपशील](https://spec.modelcontextprotocol.io/)
-- [GitHub रिपॉझिटरी](https://github.com/modelcontextprotocol)
-- [सुरक्षा सर्वोत्तम पद्धती](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
+- [MCP Documentation](https://modelcontextprotocol.io/)
+- [MCP Specification (2025-11-25)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
+- [GitHub Repository](https://github.com/modelcontextprotocol)
+- [Security Best Practices](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
+- [OWASP MCP Top 10](https://microsoft.github.io/mcp-azure-security-guide/mcp/) - सुरक्षा धोके आणि प्रतिबंध
+- [MCP Security Summit Workshop (Sherpa)](https://azure-samples.github.io/sherpa/) - हाताळणी सुरक्षा प्रशिक्षण
 
 ## व्यावहारिक अंमलबजावणी उदाहरणे
 
-### साधन डिझाइन सर्वोत्तम पद्धती
+### साधन डिझाईन सर्वोत्तम पद्धती
 
-#### 1. सिंगल रिस्पॉन्सिबिलिटी प्रिन्सिपल
+#### 1. एकल जबाबदारी तत्त्व
 
-प्रत्येक MCP साधनाचे स्पष्ट, केंद्रित उद्दिष्ट असावे. अनेक जबाबदाऱ्या हाताळण्याचा प्रयत्न करणारी साधने तयार करण्याऐवजी, विशिष्ट कार्यांमध्ये उत्कृष्ट काम करणारी तज्ज्ञ साधने विकसित करा.
+प्रत्येक MCP साधनाचे स्पष्ट, केंद्रित उद्दिष्ट असावे. एकाच वेळी अनेक चिंता हाताळणाऱ्या monolithic साधनांच्या ऐवजी विशिष्ट कामे करणारी विशेषीकृत साधने विकसित करा.
 
 ```csharp
 // A focused tool that does one thing well
@@ -150,12 +143,12 @@ public class WeatherForecastTool : ITool
 }
 ```
 
-#### 2. सुसंगत त्रुटी हाताळणी
+#### 2. सातत्यपूर्ण त्रुटी हाताळणी
 
-माहितीपूर्ण त्रुटी संदेश आणि योग्य पुनर्प्राप्ती यंत्रणांसह मजबूत त्रुटी हाताळणी अंमलात आणा.
+सुस्पष्ट त्रुटी संदेश आणि योग्य पुनर्प्राप्ती यंत्रणा यांसह मजबूत त्रुटी हाताळणी अंमलात आणा.
 
 ```python
-# Python example with comprehensive error handling
+# सर्वसमावेशक त्रुटी हाताळणीसहित Python उदाहरण
 class DataQueryTool:
     def get_name(self):
         return "dataQuery"
@@ -165,19 +158,19 @@ class DataQueryTool:
     
     async def execute(self, parameters):
         try:
-            # Parameter validation
+            # पॅरामीटर प्रमाणीकरण
             if "query" not in parameters:
                 raise ToolParameterError("Missing required parameter: query")
                 
             query = parameters["query"]
             
-            # Security validation
+            # सुरक्षा प्रमाणीकरण
             if self._contains_unsafe_sql(query):
                 raise ToolSecurityError("Query contains potentially unsafe SQL")
             
             try:
-                # Database operation with timeout
-                async with timeout(10):  # 10 second timeout
+                # टाइमआउटसह डेटाबेस ऑपरेशन
+                async with timeout(10):  # 10 सेकंदांचा टाइमआउट
                     result = await self._database.execute_query(query)
                     
                 return ToolResponse(
@@ -186,37 +179,37 @@ class DataQueryTool:
             except asyncio.TimeoutError:
                 raise ToolExecutionError("Database query timed out after 10 seconds")
             except DatabaseConnectionError as e:
-                # Connection errors might be transient
+                # कनेक्शन त्रुटी तात्पुरत्या असू शकतात
                 self._log_error("Database connection error", e)
                 raise ToolExecutionError(f"Database connection error: {str(e)}")
             except DatabaseQueryError as e:
-                # Query errors are likely client errors
+                # क्वेरी त्रुटी बहुतेक ग्राहकांच्या त्रुटी आहेत
                 self._log_error("Database query error", e)
                 raise ToolExecutionError(f"Invalid query: {str(e)}")
                 
         except ToolError:
-            # Let tool-specific errors pass through
+            # साधन-विशिष्ट त्रुटींना परवानगी द्या
             raise
         except Exception as e:
-            # Catch-all for unexpected errors
+            # अनपेक्षित त्रुटींसाठी सर्वकाही पकडा
             self._log_error("Unexpected error in DataQueryTool", e)
             raise ToolExecutionError(f"An unexpected error occurred: {str(e)}")
     
     def _contains_unsafe_sql(self, query):
-        # Implementation of SQL injection detection
+        # SQL इंजेक्शन शोधण्याची अंमलबजावणी
         pass
         
     def _log_error(self, message, error):
-        # Implementation of error logging
+        # त्रुटी नोंदणीची अंमलबजावणी
         pass
 ```
 
-#### 3. पॅरामीटर सत्यापन
+#### 3. परामीटर प्रमाणीकरण
 
-चुकीच्या किंवा दुर्भावनायुक्त इनपुटला टाळण्यासाठी नेहमीच पॅरामीटरची काटेकोरपणे पडताळणी करा.
+त्रुटीपूर्ण किंवा दुष्ट इनपुट टाळण्यासाठी नेहमी परामीटर काळजीपूर्वक प्रमाणीकरण करा.
 
 ```javascript
-// JavaScript/TypeScript example with detailed parameter validation
+// तपशीलवार पॅरामीटर प्रमाणीकरणासह JavaScript/TypeScript उदाहरण
 class FileOperationTool {
   getName() {
     return "fileOperation";
@@ -251,7 +244,7 @@ class FileOperationTool {
   }
   
   async execute(parameters) {
-    // 1. Validate parameter presence
+    // 1. पॅरामीटर उपस्थितीचे प्रमाणीकरण करा
     if (!parameters.operation) {
       throw new ToolError("Missing required parameter: operation");
     }
@@ -260,7 +253,7 @@ class FileOperationTool {
       throw new ToolError("Missing required parameter: path");
     }
     
-    // 2. Validate parameter types
+    // 2. पॅरामीटर प्रकारांचे प्रमाणीकरण करा
     if (typeof parameters.operation !== "string") {
       throw new ToolError("Parameter 'operation' must be a string");
     }
@@ -269,28 +262,28 @@ class FileOperationTool {
       throw new ToolError("Parameter 'path' must be a string");
     }
     
-    // 3. Validate parameter values
+    // 3. पॅरामीटर मूल्यांचे प्रमाणीकरण करा
     const validOperations = ["read", "write", "delete"];
     if (!validOperations.includes(parameters.operation)) {
       throw new ToolError(`Invalid operation. Must be one of: ${validOperations.join(", ")}`);
     }
     
-    // 4. Validate content presence for write operation
+    // 4. लेखन क्रियेसाठी मजकूर उपस्थितीचे प्रमाणीकरण करा
     if (parameters.operation === "write" && !parameters.content) {
       throw new ToolError("Content parameter is required for write operation");
     }
     
-    // 5. Path safety validation
+    // 5. पथ सुरक्षा प्रमाणीकरण
     if (!this.isPathWithinAllowedDirectories(parameters.path)) {
       throw new ToolError("Access denied: path is outside of allowed directories");
     }
     
-    // Implementation based on validated parameters
+    // प्रमाणीकरण केलेल्या पॅरामीटर्सवर आधारित अंमलबजावणी
     // ...
   }
   
   isPathWithinAllowedDirectories(path) {
-    // Implementation of path safety check
+    // पथ सुरक्षा तपासणीची अंमलबजावणी
     // ...
   }
 }
@@ -298,16 +291,16 @@ class FileOperationTool {
 
 ### सुरक्षा अंमलबजावणी उदाहरणे
 
-#### 1. प्रमाणीकरण आणि अधिकृतता
+#### 1. प्रमाणीकरण आणि प्राधिकरण
 
 ```java
-// Java example with authentication and authorization
+// प्रामाणीकरण आणि प्राधिकरणासह Java उदाहरण
 public class SecureDataAccessTool implements Tool {
     private final AuthenticationService authService;
     private final AuthorizationService authzService;
     private final DataService dataService;
     
-    // Dependency injection
+    // अवलंबित्व इंजेक्शन
     public SecureDataAccessTool(
             AuthenticationService authService,
             AuthorizationService authzService,
@@ -324,10 +317,10 @@ public class SecureDataAccessTool implements Tool {
     
     @Override
     public ToolResponse execute(ToolRequest request) {
-        // 1. Extract authentication context
+        // 1. प्रामाणीकरण संदर्भ काढा
         String authToken = request.getContext().getAuthToken();
         
-        // 2. Authenticate user
+        // 2. वापरकर्त्याचा प्रामाणीकरण करा
         UserIdentity user;
         try {
             user = authService.validateToken(authToken);
@@ -335,7 +328,7 @@ public class SecureDataAccessTool implements Tool {
             return ToolResponse.error("Authentication failed: " + e.getMessage());
         }
         
-        // 3. Check authorization for the specific operation
+        // 3. विशिष्ट ऑपरेशनसाठी प्राधिकरण तपासा
         String dataId = request.getParameters().get("dataId").getAsString();
         String operation = request.getParameters().get("operation").getAsString();
         
@@ -344,7 +337,7 @@ public class SecureDataAccessTool implements Tool {
             return ToolResponse.error("Access denied: Insufficient permissions for this operation");
         }
         
-        // 4. Proceed with authorized operation
+        // 4. अधिकृत ऑपरेशनसह पुढे जा
         try {
             switch (operation) {
                 case "read":
@@ -364,7 +357,7 @@ public class SecureDataAccessTool implements Tool {
 }
 ```
 
-#### 2. दर मर्यादित करणे
+#### 2. दर मर्यादिती
 
 ```csharp
 // C# rate limiting implementation
@@ -442,28 +435,28 @@ public class RateLimitingMiddleware
 
 ## चाचणी सर्वोत्तम पद्धती
 
-### 1. MCP साधनांची युनिट चाचणी
+### 1. एकक चाचणी MCP साधनांसाठी
 
-नेहमीच साधनांची स्वतंत्र चाचणी करा, बाह्य अवलंबित्वांचे मॉकिंग करा:
+आपली साधने स्वतंत्रपणे चाचणी घ्या, बाह्य अवलंबनांचे मॉकिंग करा:
 
 ```typescript
-// TypeScript example of a tool unit test
+// टाइपस्क्रिप्ट उदाहरण उपकरण युनिट चाचणीचे
 describe('WeatherForecastTool', () => {
   let tool: WeatherForecastTool;
   let mockWeatherService: jest.Mocked<IWeatherService>;
   
   beforeEach(() => {
-    // Create a mock weather service
+    // एक मॉक हवामान सेवा तयार करा
     mockWeatherService = {
       getForecasts: jest.fn()
     } as any;
     
-    // Create the tool with the mock dependency
+    // मॉक अवलंबित्वासह उपकरण तयार करा
     tool = new WeatherForecastTool(mockWeatherService);
   });
   
   it('should return weather forecast for a location', async () => {
-    // Arrange
+    // आयोजन करा
     const mockForecast = {
       location: 'Seattle',
       forecasts: [
@@ -475,23 +468,23 @@ describe('WeatherForecastTool', () => {
     
     mockWeatherService.getForecasts.mockResolvedValue(mockForecast);
     
-    // Act
+    // कृती करा
     const response = await tool.execute({
       location: 'Seattle',
       days: 3
     });
     
-    // Assert
+    // खात्री करा
     expect(mockWeatherService.getForecasts).toHaveBeenCalledWith('Seattle', 3);
     expect(response.content[0].text).toContain('Seattle');
     expect(response.content[0].text).toContain('Sunny');
   });
   
   it('should handle errors from the weather service', async () => {
-    // Arrange
+    // आयोजन करा
     mockWeatherService.getForecasts.mockRejectedValue(new Error('Service unavailable'));
     
-    // Act & Assert
+    // कृती करा आणि खात्री करा
     await expect(tool.execute({
       location: 'Seattle',
       days: 3
@@ -502,46 +495,46 @@ describe('WeatherForecastTool', () => {
 
 ### 2. एकत्रीकरण चाचणी
 
-क्लायंट विनंत्यांपासून सर्व्हर प्रतिसादांपर्यंत संपूर्ण प्रवाहाची चाचणी करा:
+क्लायंट मागण्या ते सर्व्हर प्रतिसाद यांची संपूर्ण प्रक्रिया चाचणी करा:
 
 ```python
-# Python integration test example
+# पायथन एकत्रीकरण चाचणी उदाहरण
 @pytest.mark.asyncio
 async def test_mcp_server_integration():
-    # Start a test server
+    # चाचणी सर्व्हर सुरू करा
     server = McpServer()
     server.register_tool(WeatherForecastTool(MockWeatherService()))
     await server.start(port=5000)
     
     try:
-        # Create a client
+        # एक क्लायंट तयार करा
         client = McpClient("http://localhost:5000")
         
-        # Test tool discovery
+        # साधन शोधण्याची चाचणी करा
         tools = await client.discover_tools()
         assert "weatherForecast" in [t.name for t in tools]
         
-        # Test tool execution
+        # साधन अंमलबजावणीची चाचणी करा
         response = await client.execute_tool("weatherForecast", {
             "location": "Seattle",
             "days": 3
         })
         
-        # Verify response
+        # प्रतिसादाची पडताळणी करा
         assert response.status_code == 200
         assert "Seattle" in response.content[0].text
         assert len(json.loads(response.content[0].text)["forecasts"]) == 3
         
     finally:
-        # Clean up
+        # साफसफाई करा
         await server.stop()
 ```
 
-## कार्यक्षमता ऑप्टिमायझेशन
+## कार्यक्षमता अनुकूलन
 
 ### 1. कॅशिंग धोरणे
 
-प्रतीक्षा वेळ कमी करण्यासाठी आणि संसाधनांचा वापर कमी करण्यासाठी योग्य कॅशिंग अंमलात आणा:
+विलंब आणि संसाधन वापर कमी करण्यासाठी योग्य कॅशिंग लागू करा:
 
 ```csharp
 // C# example with caching
@@ -610,18 +603,18 @@ public class CachedWeatherTool : ITool
 }
 ```
 
-#### 2. अवलंबित्व इंजेक्शन आणि चाचणीक्षमता
+#### 2. डिपेंडन्सी इंजेक्शन आणि चाचणीयोग्यता
 
-साधनांना त्यांच्या अवलंबित्वांचे कन्स्ट्रक्टर इंजेक्शनद्वारे प्राप्त होण्यासाठी डिझाइन करा, ज्यामुळे ती चाचणीयोग्य आणि कॉन्फिगर करण्यायोग्य बनतील:
+साधने त्यांच्या निर्भरता कन्स्ट्रक्टर इंजेक्शनमार्फत मिळवतील असे डिझाइन करा, ज्यामुळे ती चाचणीयोग्य आणि कॉन्फिगरेबल होतील:
 
 ```java
-// Java example with dependency injection
+// dependency injection सह Java उदाहरण
 public class CurrencyConversionTool implements Tool {
     private final ExchangeRateService exchangeService;
     private final CacheService cacheService;
     private final Logger logger;
     
-    // Dependencies injected through constructor
+    // constructor द्वारे dependencies चे इन्जेक्शन
     public CurrencyConversionTool(
             ExchangeRateService exchangeService,
             CacheService cacheService,
@@ -631,51 +624,51 @@ public class CurrencyConversionTool implements Tool {
         this.logger = logger;
     }
     
-    // Tool implementation
+    // साधन अंमलबजावणी
     // ...
 }
 ```
 
-#### 3. संयोज्य साधने
+#### 3. कंपोजेबल साधने
 
-अधिक जटिल कार्यप्रवाह तयार करण्यासाठी एकत्रितपणे कार्य करणारी साधने डिझाइन करा:
+जास्त गुंतागुंतीचे वर्कफ्लो तयार करण्यासाठी साधने एकत्र करून डिझाइन करा:
 
 ```python
-# Python example showing composable tools
+# कंपोजेबल साधने दाखवणारे पायथन उदाहरण
 class DataFetchTool(Tool):
     def get_name(self):
         return "dataFetch"
     
-    # Implementation...
+    # अमलबजावणी...
 
 class DataAnalysisTool(Tool):
     def get_name(self):
         return "dataAnalysis"
     
-    # This tool can use results from the dataFetch tool
+    # हा साधन dataFetch साधनाच्या निकालांचा उपयोग करू शकतो
     async def execute_async(self, request):
-        # Implementation...
+        # अमलबजावणी...
         pass
 
 class DataVisualizationTool(Tool):
     def get_name(self):
         return "dataVisualize"
     
-    # This tool can use results from the dataAnalysis tool
+    # हा साधन dataAnalysis साधनाच्या निकालांचा उपयोग करू शकतो
     async def execute_async(self, request):
-        # Implementation...
+        # अमलबजावणी...
         pass
 
-# These tools can be used independently or as part of a workflow
+# हे साधने स्वतंत्रपणे किंवा कार्यप्रवाहाचा भाग म्हणून वापरली जाऊ शकतात
 ```
 
-### स्कीमा डिझाइन सर्वोत्तम पद्धती
+### स्कीमा डिझाईन सर्वोत्तम पद्धती
 
-स्कीमा हे मॉडेल आणि तुमच्या साधनादरम्यानचे करार आहे. चांगल्या प्रकारे डिझाइन केलेल्या स्कीमांमुळे साधनांचा वापर सुलभ होतो.
+स्कीमा हा मॉडेल आणि आपल्या साधनातील करार आहे. चांगले डिझाइन केलेले स्कीमा साधन वापरास अधिक सुलभ करतात.
 
-#### 1. स्पष्ट पॅरामीटर वर्णने
+#### 1. स्पष्ट परामीटर वर्णने
 
-प्रत्येक पॅरामीटरसाठी वर्णनात्मक माहिती नेहमीच समाविष्ट करा:
+प्रत्येक परामीटरसाठी वर्णन संबंधी माहिती नेहमी समाविष्ट करा:
 
 ```csharp
 public object GetSchema()
@@ -712,9 +705,9 @@ public object GetSchema()
 }
 ```
 
-#### 2. सत्यापन मर्यादा
+#### 2. प्रमाणीकरण मर्यादा
 
-अवैध इनपुट टाळण्यासाठी सत्यापन मर्यादा समाविष्ट करा:
+अवैध इनपुट प्रतिबंधासाठी प्रमाणीकरण मर्यादा समाविष्ट करा:
 
 ```java
 Map<String, Object> getSchema() {
@@ -723,20 +716,20 @@ Map<String, Object> getSchema() {
     
     Map<String, Object> properties = new HashMap<>();
     
-    // Email property with format validation
+    // स्वरूप पडताळणीसह ईमेल मालमत्ता
     Map<String, Object> email = new HashMap<>();
     email.put("type", "string");
     email.put("format", "email");
     email.put("description", "User email address");
     
-    // Age property with numeric constraints
+    // संख्यात्मक अटींसह वयाचे वैशिष्ट्य
     Map<String, Object> age = new HashMap<>();
     age.put("type", "integer");
     age.put("minimum", 13);
     age.put("maximum", 120);
     age.put("description", "User age in years");
     
-    // Enumerated property
+    // एन्युमरेटेड मालमत्ता
     Map<String, Object> subscription = new HashMap<>();
     subscription.put("type", "string");
     subscription.put("enum", Arrays.asList("free", "basic", "premium"));
@@ -754,17 +747,17 @@ Map<String, Object> getSchema() {
 }
 ```
 
-#### 3. सुसंगत परतावा संरचना
+#### 3. सातत्यपूर्ण प्रतिसाद संरचना
 
-तुमच्या प्रतिसाद संरचनांमध्ये सुसंगतता राखा, ज्यामुळे मॉडेल्सना परिणाम समजणे सोपे होईल:
+मॉडेलना निकाल समजावून घ्यण्यास सोपे व्हावे म्हणून तुमच्या प्रतिसाद संरचनांमध्ये सातत्य राखा:
 
 ```python
 async def execute_async(self, request):
     try:
-        # Process request
+        # विनंती प्रक्रिया करा
         results = await self._search_database(request.parameters["query"])
         
-        # Always return a consistent structure
+        # नेहमी सातत्यपूर्ण रचना परत करा
         return ToolResponse(
             result={
                 "matches": [self._format_item(item) for item in results],
@@ -797,11 +790,11 @@ def _format_item(self, item):
 
 ### त्रुटी हाताळणी
 
-MCP साधनांच्या विश्वसनीयतेसाठी मजबूत त्रुटी हाताळणी महत्त्वाची आहे.
+MCP साधनांची विश्वासार्हता राखण्यासाठी मजबूत त्रुटी हाताळणी अत्यावश्यक आहे.
 
-#### 1. सौम्य त्रुटी हाताळणी
+#### 1. सुखद त्रुटी हाताळणी
 
-योग्य स्तरांवर त्रुटी हाताळा आणि माहितीपूर्ण संदेश प्रदान करा:
+योग्य पातळीवर त्रुटी हाताळा आणि माहितीपूर्ण संदेश द्या:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -845,13 +838,13 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 
 #### 2. संरचित त्रुटी प्रतिसाद
 
-शक्य असल्यास संरचित त्रुटी माहिती परत करा:
+संभाव्य असल्यास संरचित त्रुटी माहिती परत द्या:
 
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
     try {
-        // Implementation
+        // अंमलबजावणी
     } catch (Exception ex) {
         Map<String, Object> errorResult = new HashMap<>();
         
@@ -869,45 +862,45 @@ public ToolResponse execute(ToolRequest request) {
                 .build();
         }
         
-        // Re-throw other exceptions as ToolExecutionException
+        // इतर अपवादांना ToolExecutionException म्हणून पुन्हा उछाला
         throw new ToolExecutionException("Tool execution failed: " + ex.getMessage(), ex);
     }
 }
 ```
 
-#### 3. पुनःप्रयत्न युक्तिवाद
+#### 3. पुनर्प्रयत्न तंत्रज्ञान
 
-तात्पुरत्या अपयशांसाठी योग्य पुनःप्रयत्न युक्तिवाद अंमलात आणा:
+अस्थायी अपयशांसाठी योग्य पुनर्प्रयत्न तंत्रज्ञान अंमलात आणा:
 
 ```python
 async def execute_async(self, request):
     max_retries = 3
     retry_count = 0
-    base_delay = 1  # seconds
+    base_delay = 1  # सेकंद
     
     while retry_count < max_retries:
         try:
-            # Call external API
+            # बाह्य API कॉल करा
             return await self._call_api(request.parameters)
         except TransientError as e:
             retry_count += 1
             if retry_count >= max_retries:
                 raise ToolExecutionException(f"Operation failed after {max_retries} attempts: {str(e)}")
                 
-            # Exponential backoff
+            # घातांकी परतावा
             delay = base_delay * (2 ** (retry_count - 1))
             logging.warning(f"Transient error, retrying in {delay}s: {str(e)}")
             await asyncio.sleep(delay)
         except Exception as e:
-            # Non-transient error, don't retry
+            # अस्थायी त्रुटी नाही, पुनः प्रयत्न करू नका
             raise ToolExecutionException(f"Operation failed: {str(e)}")
 ```
 
-### कार्यक्षमता ऑप्टिमायझेशन
+### कार्यक्षमता अनुकूलन
 
 #### 1. कॅशिंग
 
-महागड्या ऑपरेशन्ससाठी कॅशिंग अंमलात आणा:
+खर्चिक ऑपरेशन्ससाठी कॅशिंग लागू करा:
 
 ```csharp
 public class CachedDataTool : IMcpTool
@@ -955,7 +948,7 @@ public class CachedDataTool : IMcpTool
 
 #### 2. असिंक्रोनस प्रक्रिया
 
-I/O-बाउंड ऑपरेशन्ससाठी असिंक्रोनस प्रोग्रामिंग नमुने वापरा:
+I/O-बाधित ऑपरेशन्ससाठी असिंक्रोनस प्रोग्रामिंग पॅटर्न वापरा:
 
 ```java
 public class AsyncDocumentProcessingTool implements Tool {
@@ -966,23 +959,23 @@ public class AsyncDocumentProcessingTool implements Tool {
     public ToolResponse execute(ToolRequest request) {
         String documentId = request.getParameters().get("documentId").asText();
         
-        // For long-running operations, return a processing ID immediately
+        // दीर्घकालीन ऑपरेशन्ससाठी, त्वरित प्रक्रिया आयडी परत करा
         String processId = UUID.randomUUID().toString();
         
-        // Start async processing
+        // असिंक्रोनस प्रक्रिया सुरू करा
         CompletableFuture.runAsync(() -> {
             try {
-                // Perform long-running operation
+                // दीर्घकालीन ऑपरेशन करा
                 documentService.processDocument(documentId);
                 
-                // Update status (would typically be stored in a database)
+                // स्थिती अद्यतनित करा (सामान्यतः डेटाबेसमध्ये संग्रहित केली जाते)
                 processStatusRepository.updateStatus(processId, "completed");
             } catch (Exception ex) {
                 processStatusRepository.updateStatus(processId, "failed", ex.getMessage());
             }
         }, executorService);
         
-        // Return immediate response with process ID
+        // प्रक्रिया आयडीसह त्वरित प्रतिसाद परत करा
         Map<String, Object> result = new HashMap<>();
         result.put("processId", processId);
         result.put("status", "processing");
@@ -991,7 +984,7 @@ public class AsyncDocumentProcessingTool implements Tool {
         return new ToolResponse.Builder().setResult(result).build();
     }
     
-    // Companion status check tool
+    // साथीदार स्थिती तपासणी साधन
     public class ProcessStatusTool implements Tool {
         @Override
         public ToolResponse execute(ToolRequest request) {
@@ -1004,35 +997,35 @@ public class AsyncDocumentProcessingTool implements Tool {
 }
 ```
 
-#### 3. संसाधन थ्रॉटलिंग
+#### 3. संसाधन नियंत्रण
 
-ओव्हरलोड टाळण्यासाठी संसाधन थ्रॉटलिंग अंमलात आणा:
+ओव्हरलोड टाळण्यासाठी संसाधन नियंत्रण लागू करा:
 
 ```python
 class ThrottledApiTool(Tool):
     def __init__(self):
         self.rate_limiter = TokenBucketRateLimiter(
-            tokens_per_second=5,  # Allow 5 requests per second
-            bucket_size=10        # Allow bursts up to 10 requests
+            tokens_per_second=5,  # प्रती सेकंद 5 विनंत्यांना परवानगी द्या
+            bucket_size=10        # 10 विनंत्यांपर्यंत अचानक वाढीस परवानगी द्या
         )
     
     async def execute_async(self, request):
-        # Check if we can proceed or need to wait
+        # आपण पुढे जाऊ शकतो का किंवा थांबावे लागेल का ते तपासा
         delay = self.rate_limiter.get_delay_time()
         
         if delay > 0:
-            if delay > 2.0:  # If wait is too long
+            if delay > 2.0:  # जर थांबण्याचा वेळ खूप जास्त असेल
                 raise ToolExecutionException(
                     f"Rate limit exceeded. Please try again in {delay:.1f} seconds."
                 )
             else:
-                # Wait for the appropriate delay time
+                # योग्य विलंब वेळेसाठी थांबा
                 await asyncio.sleep(delay)
         
-        # Consume a token and proceed with the request
+        # एका टोकनचा वापर करा आणि विनंतीसह पुढे चालू ठेवा
         self.rate_limiter.consume()
         
-        # Call API
+        # API कॉल करा
         result = await self._call_api(request.parameters)
         return ToolResponse(result=result)
 
@@ -1050,7 +1043,7 @@ class TokenBucketRateLimiter:
             if self.tokens >= 1:
                 return 0
             
-            # Calculate time until next token available
+            # पुढील टोकन उपलब्ध होईपर्यंतचा वेळ गणना करा
             return (1 - self.tokens) / self.tokens_per_second
     
     async def consume(self):
@@ -1062,7 +1055,7 @@ class TokenBucketRateLimiter:
         now = time.time()
         elapsed = now - self.last_refill
         
-        # Add new tokens based on elapsed time
+        # गेल्या वेळेनुसार नवीन टोकन जोडा
         new_tokens = elapsed * self.tokens_per_second
         self.tokens = min(self.bucket_size, self.tokens + new_tokens)
         self.last_refill = now
@@ -1070,9 +1063,9 @@ class TokenBucketRateLimiter:
 
 ### सुरक्षा सर्वोत्तम पद्धती
 
-#### 1. इनपुट सत्यापन
+#### 1. इनपुट प्रमाणीकरण
 
-नेहमीच इनपुट पॅरामीटरची काटेकोरपणे पडताळणी करा:
+इनपुट परामीटर्स नेहमी काळजीपूर्वक प्रमाणीकरण करा:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -1113,35 +1106,35 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 }
 ```
 
-#### 2. अधिकृतता तपासणी
+#### 2. प्राधिकरण तपासणी
 
-योग्य अधिकृतता तपासणी अंमलात आणा:
+योग्य प्राधिकरण तपासणी अंमलात आणा:
 
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
-    // Get user context from request
+    // विनंतीमधून वापरकर्ता संदर्भ मिळवा
     UserContext user = request.getContext().getUserContext();
     
-    // Check if user has required permissions
+    // वापरकर्त्याकडे आवश्यक परवानग्या आहेत का ते तपासा
     if (!authorizationService.hasPermission(user, "documents:read")) {
         throw new ToolExecutionException("User does not have permission to access documents");
     }
     
-    // For specific resources, check access to that resource
+    // विशिष्ट संसाधनांसाठी, त्या संसाधनाचा प्रवेश तपासा
     String documentId = request.getParameters().get("documentId").asText();
     if (!documentService.canUserAccess(user.getId(), documentId)) {
         throw new ToolExecutionException("Access denied to the requested document");
     }
     
-    // Proceed with tool execution
+    // साधन कार्यान्वयनास पुढे जा
     // ...
 }
 ```
 
 #### 3. संवेदनशील डेटा हाताळणी
 
-संवेदनशील डेटाचे काळजीपूर्वक हाताळणी करा:
+संवेदनशील डेटाच्या हाताळणीमध्ये काळजी घ्या:
 
 ```python
 class SecureDataTool(Tool):
@@ -1159,31 +1152,31 @@ class SecureDataTool(Tool):
         user_id = request.parameters["userId"]
         include_sensitive = request.parameters.get("includeSensitiveData", False)
         
-        # Get user data
+        # वापरकर्ता डेटा मिळवा
         user_data = await self.user_service.get_user_data(user_id)
         
-        # Filter sensitive fields unless explicitly requested AND authorized
+        # स्पष्टपणे विनंती AND अधिकृत नसल्यास संवेदनशील फील्ड फिल्टर करा
         if not include_sensitive or not self._is_authorized_for_sensitive_data(request):
             user_data = self._redact_sensitive_fields(user_data)
         
         return ToolResponse(result=user_data)
     
     def _is_authorized_for_sensitive_data(self, request):
-        # Check authorization level in request context
+        # विनंती संदर्भात प्राधिकरण स्तर तपासा
         auth_level = request.context.get("authorizationLevel")
         return auth_level == "admin"
     
     def _redact_sensitive_fields(self, user_data):
-        # Create a copy to avoid modifying the original
+        # मूळ मध्ये बदल होऊ नये यासाठी कॉपी तयार करा
         redacted = user_data.copy()
         
-        # Redact specific sensitive fields
+        # विशिष्ट संवेदनशील फील्ड रेडॅक्ट करा
         sensitive_fields = ["ssn", "creditCardNumber", "password"]
         for field in sensitive_fields:
             if field in redacted:
                 redacted[field] = "REDACTED"
         
-        # Redact nested sensitive data
+        # अंतर्गत संवेदनशील डेटा रेडॅक्ट करा
         if "financialInfo" in redacted:
             redacted["financialInfo"] = {"available": True, "accessRestricted": True}
         
@@ -1192,11 +1185,11 @@ class SecureDataTool(Tool):
 
 ## MCP साधनांसाठी चाचणी सर्वोत्तम पद्धती
 
-संपूर्ण चाचणी MCP साधने योग्यरित्या कार्य करतात, काठाच्या प्रकरणांचा सामना करतात आणि सिस्टमच्या उर्वरित भागाशी योग्यरित्या समाकलित होतात याची खात्री करते.
+व्यापक चाचणी सुनिश्चित करते की MCP साधने योग्य प्रकारे काम करतात, कोपऱ्याच्या केसेस हाताळतात आणि सिस्टमशी योग्यरित्या एकत्र येतात.
 
-### युनिट चाचणी
+### एकक चाचणी
 
-#### 1. प्रत्येक साधन स्वतंत्रपणे चाचणी करा
+#### 1. प्रत्येक साधन स्वतंत्र चाचणी करा
 
 प्रत्येक साधनाच्या कार्यक्षमतेसाठी केंद्रित चाचण्या तयार करा:
 
@@ -1258,27 +1251,27 @@ public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
 }
 ```
 
-#### 2. स्कीमा सत्यापन चाचणी
+#### 2. स्कीमा प्रमाणीकरण चाचणी
 
-स्कीमा वैध आहेत आणि योग्यरित्या मर्यादा लागू करतात याची चाचणी करा:
+स्कीमा वैध आहेत आणि योग्य पद्धतीने मर्यादा लादतात का ते चाचणी करा:
 
 ```java
 @Test
 public void testSchemaValidation() {
-    // Create tool instance
+    // साधन उदाहरण तयार करा
     SearchTool searchTool = new SearchTool();
     
-    // Get schema
+    // योजना मिळवा
     Object schema = searchTool.getSchema();
     
-    // Convert schema to JSON for validation
+    // पडताळणीसाठी योजना JSON मध्ये रूपांतरित करा
     String schemaJson = objectMapper.writeValueAsString(schema);
     
-    // Validate schema is valid JSONSchema
+    // योजना वैध JSONSchema आहे का ते पडताळा
     JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
     JsonSchema jsonSchema = factory.getJsonSchema(schemaJson);
     
-    // Test valid parameters
+    // वैध पॅरामिटर्स तपासा
     JsonNode validParams = objectMapper.createObjectNode()
         .put("query", "test query")
         .put("limit", 5);
@@ -1286,14 +1279,14 @@ public void testSchemaValidation() {
     ProcessingReport validReport = jsonSchema.validate(validParams);
     assertTrue(validReport.isSuccess());
     
-    // Test missing required parameter
+    // आवश्यक पॅरामीटर गायब असल्याचे तपासा
     JsonNode missingRequired = objectMapper.createObjectNode()
         .put("limit", 5);
         
     ProcessingReport missingReport = jsonSchema.validate(missingRequired);
     assertFalse(missingReport.isSuccess());
     
-    // Test invalid parameter type
+    // अवैध पॅरामीटर प्रकार तपासा
     JsonNode invalidType = objectMapper.createObjectNode()
         .put("query", "test")
         .put("limit", "not-a-number");
@@ -1305,19 +1298,19 @@ public void testSchemaValidation() {
 
 #### 3. त्रुटी हाताळणी चाचण्या
 
-त्रुटी परिस्थितीसाठी विशिष्ट चाचण्या तयार करा:
+विशिष्ट त्रुटी परिस्थितीसाठी चाचण्या तयार करा:
 
 ```python
 @pytest.mark.asyncio
 async def test_api_tool_handles_timeout():
-    # Arrange
-    tool = ApiTool(timeout=0.1)  # Very short timeout
+    # व्यवस्था करा
+    tool = ApiTool(timeout=0.1)  # खूप लहान टाइमआउट
     
-    # Mock a request that will time out
+    # टाइमआउट होईल असा विनंती मॉक करा
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
-            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # Longer than timeout
+            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # टाइमआउटपेक्षा जास्त वेळ
         )
         
         request = ToolRequest(
@@ -1325,19 +1318,19 @@ async def test_api_tool_handles_timeout():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Act & Assert
+        # कृती करा आणि पडताळणी करा
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Verify exception message
+        # अपवाद संदेशाची पुष्टी करा
         assert "timed out" in str(exc_info.value).lower()
 
 @pytest.mark.asyncio
 async def test_api_tool_handles_rate_limiting():
-    # Arrange
+    # व्यवस्था करा
     tool = ApiTool()
     
-    # Mock a rate-limited response
+    # दरमर्यादित प्रतिसाद मॉक करा
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
@@ -1351,21 +1344,21 @@ async def test_api_tool_handles_rate_limiting():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Act & Assert
+        # कृती करा आणि पडताळणी करा
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Verify exception contains rate limit information
+        # अपवादात दरमर्यादा माहिती आहे का ते तपासा
         error_msg = str(exc_info.value).lower()
         assert "rate limit" in error_msg
         assert "try again" in error_msg
 ```
 
-### एकत्रीकरण चाचणी
+### एकत्रिकरण चाचणी
 
 #### 1. साधन साखळी चाचणी
 
-अपेक्षित संयोजनांमध्ये एकत्र काम करणाऱ्या साधनांची चाचणी करा:
+अपेक्षित संयोजनांत साधने एकत्र काम करत असल्याची चाचणी करा:
 
 ```csharp
 [Fact]
@@ -1406,7 +1399,7 @@ public async Task DataProcessingWorkflow_CompletesSuccessfully()
 
 #### 2. MCP सर्व्हर चाचणी
 
-पूर्ण साधन नोंदणी आणि अंमलबजावणीसह MCP सर्व्हरची चाचणी करा:
+पूर्ण साधन नोंदणी आणि अंमलबजावणीसह MCP सर्व्हर चाचणी करा:
 
 ```java
 @SpringBootTest
@@ -1421,7 +1414,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolDiscovery() throws Exception {
-        // Test the discovery endpoint
+        // शोध एन्डपॉईंटची चाचणी करा
         mockMvc.perform(get("/mcp/tools"))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.tools").isArray())
@@ -1432,7 +1425,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolExecution() throws Exception {
-        // Create tool request
+        // टूल विनंती तयार करा
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
@@ -1442,7 +1435,7 @@ public class McpServerIntegrationTest {
         parameters.put("b", 7);
         request.put("parameters", parameters);
         
-        // Send request and verify response
+        // विनंती पाठवा आणि प्रतिसाद तपासा
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -1452,17 +1445,17 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolValidation() throws Exception {
-        // Create invalid tool request
+        // अवैध टूल विनंती तयार करा
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("operation", "divide");
         parameters.put("a", 10);
-        // Missing parameter "b"
+        // "b" हा पॅरामीटर गहाळ आहे
         request.put("parameters", parameters);
         
-        // Send request and verify error response
+        // विनंती पाठवा आणि त्रुटी प्रतिसाद तपासा
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -1474,15 +1467,15 @@ public class McpServerIntegrationTest {
 
 #### 3. एंड-टू-एंड चाचणी
 
-मॉडेल प्रॉम्प्टपासून साधन अंमलबजावणीपर्यंत संपूर्ण कार्यप्रवाहांची चाचणी करा:
+मॉडेल प्रॉम्प्ट ते साधन कार्यान्वयन या संपूर्ण वर्कफ्लोची चाचणी करा:
 
 ```python
 @pytest.mark.asyncio
 async def test_model_interaction_with_tool():
-    # Arrange - Set up MCP client and mock model
+    # सेट अप करा - MCP क्लायंट आणि मॉक मॉडेल सेट करा
     mcp_client = McpClient(server_url="http://localhost:5000")
     
-    # Mock model responses
+    # मॉक मॉडेल प्रतिसाद
     mock_model = MockLanguageModel([
         MockResponse(
             "What's the weather in Seattle?",
@@ -1497,7 +1490,7 @@ async def test_model_interaction_with_tool():
         )
     ])
     
-    # Mock weather tool response
+    # मॉक हवामान टूल प्रतिसाद
     with aioresponses() as mocked:
         mocked.post(
             "http://localhost:5000/mcp/execute",
@@ -1513,14 +1506,14 @@ async def test_model_interaction_with_tool():
             }
         )
         
-        # Act
+        # क्रिया करा
         response = await mcp_client.send_prompt(
             "What's the weather in Seattle?",
             model=mock_model,
             allowed_tools=["weatherForecast"]
         )
         
-        # Assert
+        # निश्चित करा
         assert "Seattle" in response.generated_text
         assert "65" in response.generated_text
         assert "Sunny" in response.generated_text
@@ -1533,7 +1526,7 @@ async def test_model_interaction_with_tool():
 
 #### 1. लोड चाचणी
 
-तुमचा MCP सर्व्हर किती समांतर विनंत्या हाताळू शकतो याची चाचणी करा:
+आपल्या MCP सर्व्हरवर किती एकाचवेळी विनंती करणे शक्य आहे ते चाचणी करा:
 
 ```csharp
 [Fact]
@@ -1566,9 +1559,9 @@ public async Task McpServer_HandlesHighConcurrency()
 }
 ```
 
-#### 2. ताण चाचणी
+#### 2. तणाव चाचणी
 
-अत्यंत लोडखाली सिस्टमची चाचणी करा:
+अत्यंत लोडखाली प्रणालीची चाचणी करा:
 
 ```java
 @Test
@@ -1577,13 +1570,13 @@ public void testServerUnderStress() {
     int rampUpTimeSeconds = 60;
     int testDurationSeconds = 300;
     
-    // Set up JMeter for stress testing
+    // स्ट्रेस चाचणीसाठी JMeter सेट करा
     StandardJMeterEngine jmeter = new StandardJMeterEngine();
     
-    // Configure JMeter test plan
+    // JMeter चाचणी योजना कॉन्फिगर करा
     HashTree testPlanTree = new HashTree();
     
-    // Create test plan, thread group, samplers, etc.
+    // चाचणी योजना, थ्रेड गट, सॅम्पलर्स इत्यादी तयार करा
     TestPlan testPlan = new TestPlan("MCP Server Stress Test");
     testPlanTree.add(testPlan);
     
@@ -1595,7 +1588,7 @@ public void testServerUnderStress() {
     
     testPlanTree.add(threadGroup);
     
-    // Add HTTP sampler for tool execution
+    // टूल अंमलबजावणीसाठी HTTP सॅम्पलर जोडा
     HTTPSampler toolExecutionSampler = new HTTPSampler();
     toolExecutionSampler.setDomain("localhost");
     toolExecutionSampler.setPort(5000);
@@ -1606,29 +1599,29 @@ public void testServerUnderStress() {
     
     threadGroup.add(toolExecutionSampler);
     
-    // Add listeners
+    // लिसनर्स जोडा
     SummaryReport summaryReport = new SummaryReport();
     threadGroup.add(summaryReport);
     
-    // Run test
+    // चाचणी चालवा
     jmeter.configure(testPlanTree);
     jmeter.run();
     
-    // Validate results
+    // निकालांची पडताळणी करा
     assertEquals(0, summaryReport.getErrorCount());
-    assertTrue(summaryReport.getAverage() < 200); // Average response time < 200ms
-    assertTrue(summaryReport.getPercentile(90.0) < 500); // 90th percentile < 500ms
+    assertTrue(summaryReport.getAverage() < 200); // सरासरी प्रतिसाद वेळ < 200ms
+    assertTrue(summaryReport.getPercentile(90.0) < 500); // 90वा टक्केवारी < 500ms
 }
 ```
 
 #### 3. निरीक्षण आणि प्रोफाइलिंग
 
-दीर्घकालीन कार्यक्षमता विश्लेषणासाठी निरीक्षण सेट करा:
+दीर्घकालीन कार्यक्षमता विश्लेषणासाठी निरीक्षण सेटअप करा:
 
 ```python
-# Configure monitoring for an MCP server
+# MCP सर्व्हरसाठी मॉनिटरिंग सेट करा
 def configure_monitoring(server):
-    # Set up Prometheus metrics
+    # Prometheus मेट्रिक्स सेट करा
     prometheus_metrics = {
         "request_count": Counter("mcp_requests_total", "Total MCP requests"),
         "request_latency": Histogram(
@@ -1654,10 +1647,10 @@ def configure_monitoring(server):
         )
     }
     
-    # Add middleware for timing and recording metrics
+    # वेळ मोजण्यासाठी आणि मेट्रिक्स रेकॉर्ड करण्यासाठी मिडलवेअर जोडा
     server.add_middleware(PrometheusMiddleware(prometheus_metrics))
     
-    # Expose metrics endpoint
+    # मेट्रिक्स एन्डपॉइंट उघडा
     @server.router.get("/metrics")
     async def metrics():
         return generate_latest()
@@ -1665,29 +1658,29 @@ def configure_monitoring(server):
     return server
 ```
 
-## MCP कार्यप्रवाह डिझाइन नमुने
+## MCP वर्कफ्लो डिझाईन नमुने
 
-चांगल्या प्रकारे डिझाइन केलेले MCP कार्यप्रवाह कार्यक्षमता, विश्वसनीयता आणि देखभालक्षमता सुधारतात. खालील महत्त्वाचे नमुने अनुसरण करा:
+चांगले डिझाइन केलेल्या MCP वर्कफ्लोमुळे कार्यक्षमता, विश्वासार्हता आणि देखभालयोग्यता सुधारते. येथे अनुसरण करण्यासाठी प्रमुख नमुने आहेत:
 
-### 1. साधन साखळी नमुना
+### 1. साधने साखळी नमुना
 
-प्रत्येक साधनाचे आउटपुट पुढील साधनासाठी इनपुट म्हणून वापरून अनेक साधने जोडणे:
+अनेक साधने अशा अनुक्रमात जोडा जिथे प्रत्येक साधनाचा आउटपुट पुढीलला इनपुट बनतो:
 
 ```python
-# Python Chain of Tools implementation
+# Python चेन ऑफ टूल्ज अंमलबजावणी
 class ChainWorkflow:
     def __init__(self, tools_chain):
-        self.tools_chain = tools_chain  # List of tool names to execute in sequence
+        self.tools_chain = tools_chain  # अनुक्रमाने चालवण्यासाठी टूल नावांची यादी
     
     async def execute(self, mcp_client, initial_input):
         current_result = initial_input
         all_results = {"input": initial_input}
         
         for tool_name in self.tools_chain:
-            # Execute each tool in the chain, passing previous result
+            # चेनमधील प्रत्येक टूल चालवा, मागील निकाल पास करत
             response = await mcp_client.execute_tool(tool_name, current_result)
             
-            # Store result and use as input for next tool
+            # निकाल साठवा आणि पुढील टूलसाठी इनपुट म्हणून वापरा
             all_results[tool_name] = response.result
             current_result = response.result
         
@@ -1696,7 +1689,7 @@ class ChainWorkflow:
             "all_results": all_results
         }
 
-# Example usage
+# उदाहरण वापराचे
 data_processing_chain = ChainWorkflow([
     "dataFetch",
     "dataCleaner",
@@ -1712,7 +1705,7 @@ result = await data_processing_chain.execute(
 
 ### 2. डिस्पॅचर नमुना
 
-इनपुटच्या आधारे विशेष साधनांकडे पाठवणारे केंद्रीय साधन वापरा:
+इनपुटच्या आधारावर विशिष्ट साधनांकडे डिस्पॅच करणारे केंद्रीकृत साधन वापरा:
 
 ```csharp
 public class ContentDispatcherTool : IMcpTool
@@ -1794,7 +1787,7 @@ public class ContentDispatcherTool : IMcpTool
 
 ### 3. समांतर प्रक्रिया नमुना
 
-कार्यक्षमतेसाठी अनेक साधने एकाच वेळी चालवा:
+कार्यक्षमता वाढवण्यासाठी अनेक साधने एकाच वेळी चालवा:
 
 ```java
 public class ParallelDataProcessingWorkflow {
@@ -1805,11 +1798,11 @@ public class ParallelDataProcessingWorkflow {
     }
     
     public WorkflowResult execute(String datasetId) {
-        // Step 1: Fetch dataset metadata (synchronous)
+        // पायरी 1: डेटासेट मेटाडेटा मिळवा (सिंक्रोनस)
         ToolResponse metadataResponse = mcpClient.executeTool("datasetMetadata", 
             Map.of("datasetId", datasetId));
         
-        // Step 2: Launch multiple analyses in parallel
+        // पायरी 2: अनेक विश्लेषणे समांतर चालवा
         CompletableFuture<ToolResponse> statisticalAnalysis = CompletableFuture.supplyAsync(() ->
             mcpClient.executeTool("statisticalAnalysis", Map.of(
                 "datasetId", datasetId,
@@ -1831,25 +1824,25 @@ public class ParallelDataProcessingWorkflow {
             ))
         );
         
-        // Wait for all parallel tasks to complete
+        // सर्व समांतर कार्य पूर्ण होईपर्यंत वाट पहा
         CompletableFuture<Void> allAnalyses = CompletableFuture.allOf(
             statisticalAnalysis, correlationAnalysis, outlierDetection
         );
         
-        allAnalyses.join();  // Wait for completion
+        allAnalyses.join();  // पूर्णत्वासाठी वाट पहा
         
-        // Step 3: Combine results
+        // पायरी 3: निकाल एकत्र करा
         Map<String, Object> combinedResults = new HashMap<>();
         combinedResults.put("metadata", metadataResponse.getResult());
         combinedResults.put("statistics", statisticalAnalysis.join().getResult());
         combinedResults.put("correlations", correlationAnalysis.join().getResult());
         combinedResults.put("outliers", outlierDetection.join().getResult());
         
-        // Step 4: Generate summary report
+        // पायरी 4: सारांश अहवाल तयार करा
         ToolResponse summaryResponse = mcpClient.executeTool("reportGenerator", 
             Map.of("analysisResults", combinedResults));
         
-        // Return complete workflow result
+        // संपूर्ण वर्कफ्लो परिणाम परत करा
         WorkflowResult result = new WorkflowResult();
         result.setDatasetId(datasetId);
         result.setAnalysisResults(combinedResults);
@@ -1862,7 +1855,7 @@ public class ParallelDataProcessingWorkflow {
 
 ### 4. त्रुटी पुनर्प्राप्ती नमुना
 
-साधन अपयशांसाठी सौम्य फॉलबॅक अंमलात आणा:
+साधन अपयशासाठी सुखद फॉलबॅक अंमलात आणा:
 
 ```python
 class ResilientWorkflow:
@@ -1871,7 +1864,7 @@ class ResilientWorkflow:
     
     async def execute_with_fallback(self, primary_tool, fallback_tool, parameters):
         try:
-            # Try primary tool first
+            # प्रथम प्राथमिक साधन वापरून पहा
             response = await self.client.execute_tool(primary_tool, parameters)
             return {
                 "result": response.result,
@@ -1879,12 +1872,12 @@ class ResilientWorkflow:
                 "tool": primary_tool
             }
         except ToolExecutionException as e:
-            # Log the failure
+            # अपयश लॉग करा
             logging.warning(f"Primary tool '{primary_tool}' failed: {str(e)}")
             
-            # Fall back to secondary tool
+            # दुय्यम साधन वापरून पहा
             try:
-                # Might need to transform parameters for fallback tool
+                # फॉलबॅक साधनासाठी पॅरामीटर्स ट्रान्सफॉर्म करावे लागू शकतात
                 fallback_params = self._adapt_parameters(parameters, primary_tool, fallback_tool)
                 
                 response = await self.client.execute_tool(fallback_tool, fallback_params)
@@ -1895,7 +1888,7 @@ class ResilientWorkflow:
                     "primaryError": str(e)
                 }
             except ToolExecutionException as fallback_error:
-                # Both tools failed
+                # दोन्ही साधने अयशस्वी झाली
                 logging.error(f"Both primary and fallback tools failed. Fallback error: {str(fallback_error)}")
                 raise WorkflowExecutionException(
                     f"Workflow failed: primary error: {str(e)}; fallback error: {str(fallback_error)}"
@@ -1903,22 +1896,22 @@ class ResilientWorkflow:
     
     def _adapt_parameters(self, params, from_tool, to_tool):
         """Adapt parameters between different tools if needed"""
-        # This implementation would depend on the specific tools
-        # For this example, we'll just return the original parameters
+        # ही अंमलबजावणी विशिष्ट साधनांवर अवलंबून असेल
+        # या उदाहरणासाठी, आपण केवळ मूळ पॅरामीटर्स परत करू
         return params
 
-# Example usage
+# उदाहरण वापर
 async def get_weather(workflow, location):
     return await workflow.execute_with_fallback(
-        "premiumWeatherService",  # Primary (paid) weather API
-        "basicWeatherService",    # Fallback (free) weather API
+        "premiumWeatherService",  # प्राथमिक (पैसे भरलेले) हवामान API
+        "basicWeatherService",    # फॉलबॅक (मोफत) हवामान API
         {"location": location}
     )
 ```
 
-### 5. कार्यप्रवाह रचना नमुना
+### 5. वर्कफ्लो कंपोजीशन नमुना
 
-सोप्या कार्यप्रवाहांचे संयोजन करून जटिल कार्यप्रवाह तयार करा:
+सोप्या वर्कफ्लो एकत्र करून जास्त गुंतागुंतीची वर्कफ्लो तयार करा:
 
 ```csharp
 public class CompositeWorkflow : IWorkflow
@@ -1965,35 +1958,35 @@ var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
 });
 ```
 
-# MCP सर्व्हर चाचणी: सर्वोत्तम पद्धती आणि शीर्ष टिपा
+# MCP सर्व्हर्सची चाचणी: सर्वोत्तम पद्धती आणि टॉप सूचना
 
 ## आढावा
 
-चाचणी हा MCP सर्व्हर विकसित करण्याचा एक महत्त्वाचा भाग आहे. युनिट चाचण्यांपासून एकत्रीकरण चाचण्यांपर्यंत आणि एंड-टू-एंड पडताळणीपर्यंत, विकास जीवनचक्रात MCP सर्व्हरची चाचणी घेण्यासाठी या मार्गदर्शकामध्ये सर्वसमावेशक सर्वोत्तम पद्धती आणि टिपा दिल्या आहेत.
+चाचणी ही विश्वासार्ह, उच्च-गुणवत्तेच्या MCP सर्व्हर्सच्या विकासाचा महत्त्वाचा भाग आहे. हा मार्गदर्शक आपल्या MCP सर्व्हर्सच्या विकास जीवनचक्रात युनिट चाचण्यांपासून एकत्रिकरण चाचण्यांपर्यंत आणि एंड-टू-एंड प्रमाणीकरणापर्यंत सर्वसमावेशक सर्वोत्तम पद्धती आणि सूचना प्रदान करतो.
 
-## MCP सर्व्हरसाठी चाचणी का महत्त्वाची आहे
+## MCP सर्व्हर्ससाठी चाचणी का महत्त्वाची आहे
 
-MCP सर्व्हर हे AI मॉडेल्स आणि क्लायंट अनुप्रयोगांमधील महत्त्वाचे मध्यस्थ म्हणून काम करतात. सखोल चाचणी सुनिश्चित करते:
+MCP सर्व्हर्स AI मॉडेल्स आणि क्लायंट अनुप्रयोगांमधील महत्वाचा मिडलवेयर म्हणून काम करतात. सखोल चाचणी सुनिश्चित करते:
 
-- उत्पादन वातावरणातील विश्वसनीयता
-- विनंत्या आणि प्रतिसादांचे अचूक हाताळणी
-- MCP तपशीलांचे योग्य अंमलबजावणी
-- अपयश आणि काठाच्या प्रकरणांपासून लवचिकता
-- विविध लोड्सखाली सुसंगत कार्यक्षमता
+- उत्पादन वातावरणात विश्वासार्हता
+- विनंत्या आणि प्रतिसादांची अचूक हाताळणी
+- MCP विनिर्देशांची योग्य अंमलबजावणी
+- अपयश आणि कोपऱ्याच्या प्रकरणांविरुद्ध टिकाऊपणा
+- विविध लोड अंतर्गत सातत्यपूर्ण कार्यक्षमता
 
-## MCP सर्व्हरसाठी युनिट चाचणी
+## MCP सर्व्हर्ससाठी युनिट चाचणी
 
 ### युनिट चाचणी (पायाभूत)
 
-युनिट चाचण्या MCP सर्व्हरच्या वैयक्तिक घटकांची स्वतंत्रपणे पडताळणी करतात.
+युनिट चाचण्यांमध्ये आपल्या MCP सर्व्हरचे वेगळे घटक स्वतंत्रपणे तपासले जातात.
 
-#### काय चाचणी करावी
+#### काय चाचणी कराल
 
-1. **संसाधन हँडलर्स**: प्रत्येक संसाधन हँडलरचे लॉजिक स्वतंत्रपणे चाचणी करा
-2. **साधन अंमलबजावणी**: विविध इनपुटसह साधनांचे वर्तन पडताळा
-3. **प्रॉम्प्ट टेम्पलेट्स**: प्रॉम्प्ट टेम्पलेट्स योग्यरित्या रेंडर होतात याची खात्री करा
-4. **स्कीमा सत्यापन**: पॅरामीटर सत्यापन लॉजिक चाचणी करा
-5. **त्रुटी हाताळणी**: अवैध इनपुटसाठी त्रुटी प्रतिसाद पडताळा
+1. **संसाधन हँडलर्स**: प्रत्येक संसाधन हँडलरच्या तार्किकतेची स्वतंत्रपणे चाचणी करा
+2. **साधन अंमलबजावणी**: विविध इनपुटसह साधनांच्या वर्तनाचे परीक्षण करा
+3. **प्रॉम्प्ट टेम्प्लेट्स**: प्रॉम्प्ट टेम्प्लेट योग्यरित्या रेंडर होतात का याची खात्री करा
+4. **स्कीमा प्रमाणीकरण**: परामीटर प्रमाणीकरण लॉजिकची चाचणी करा
+5. **त्रुटी हाताळणी**: अवैध इनपुटसाठी त्रुटी प्रतिसादांचे परीक्षण करा
 
 #### युनिट चाचणीसाठी सर्वोत्तम पद्धती
 
@@ -2021,9 +2014,9 @@ public async Task CalculatorTool_Add_ReturnsCorrectSum()
 ```
 
 ```python
-# Example unit test for a calculator tool in Python
+# पायथॉनमधील कॅल्क्युलेटर साधनासाठी उदाहरण युनिट चाचणी
 def test_calculator_tool_add():
-    # Arrange
+    # व्यवस्था करा
     calculator = CalculatorTool()
     parameters = {
         "operation": "add",
@@ -2031,26 +2024,217 @@ def test_calculator_tool_add():
         "b": 7
     }
     
-    # Act
+    # कृती करा
     response = calculator.execute(parameters)
     result = json.loads(response.content[0].text)
     
-    # Assert
+    # खात्री करा
     assert result["value"] == 12
 ```
 
-### एकत्रीकरण चाचणी (मध्य स्तर)
+### एकत्रिकरण चाचणी (मध्य पातळी)
 
-एकत्रीकरण चाचण्या MCP सर्व्हरच्या घटकांमधील परस्परसंवाद पडताळतात.
+एकत्रिकरण चाचणीमध्ये आपल्या MCP सर्व्हरच्या घटकांमधील परस्परसंवाद तपासले जातात.
 
-#### काय चाचणी करावी
+#### काय चाचणी कराल
 
-1. **सर्व्हर प्रारंभ**: विविध कॉन्फिगरेशनसह सर्व्हर स्टार्टअप चाचणी करा
-2. **मार्ग नोंदणी**: सर्व एंडपॉइंट्स योग्यरित्या नोंदणीकृत आहेत याची पडताळणी करा
-3. **विनंती प्रक्रिया**: संपूर्ण विनंती-प्रतिसाद चक्र चाचणी करा
-4. **त्रुटी प्रसार**: घटकांमध्ये त्रुटी योग्यरित
-3. **कामगिरीची मूलभूत पातळी**: कामगिरीची मानके राखा जेणेकरून मागे जाण्याचे प्रकार ओळखता येतील  
-4. **सुरक्षा स्कॅन**: पाइपलाइनचा भाग म्हणून सुरक्षा चाचणी स्वयंचलित करा  
+1. **सर्व्हर प्रारंभ**: विविध कॉन्फिगरेशनसह सर्व्हर सुरु करण्याची चाचणी करा
+2. **रूट नोंदणी**: सर्व API एंडपॉइंट्स योग्यरित्या नोंदणीकृत आहेत का याची तपासणी करा
+3. **विनंती प्रक्रिया**: पूर्ण विनंती-प्रतिसाद सायकल तपासा
+4. **त्रुटी प्रसार**: घटकांदरम्यान त्रुटी योग्यरित्या हाताळल्या जातात का याची खात्री करा
+5. **प्रमाणीकरण आणि प्राधिकरण**: सुरक्षा यंत्रणा तपासा
+
+#### एकत्रिकरण चाचणीसाठी सर्वोत्तम पद्धती
+
+```csharp
+// Example integration test for MCP server in C#
+[Fact]
+public async Task Server_ProcessToolRequest_ReturnsValidResponse()
+{
+    // Arrange
+    var server = new McpServer();
+    server.RegisterTool(new CalculatorTool());
+    await server.StartAsync();
+    
+    var request = new McpRequest
+    {
+        Tool = "calculator",
+        Parameters = new Dictionary<string, object>
+        {
+            ["operation"] = "multiply",
+            ["a"] = 6,
+            ["b"] = 7
+        }
+    };
+    
+    // Act
+    var response = await server.ProcessRequestAsync(request);
+    
+    // Assert
+    Assert.NotNull(response);
+    Assert.Equal(McpStatusCodes.Success, response.StatusCode);
+    // Additional assertions for response content
+    
+    // Cleanup
+    await server.StopAsync();
+}
+```
+
+### एंड-टू-एंड चाचणी (वरची पातळी)
+
+एंड-टू-एंड चाचणीमध्ये क्लायंट पासून सर्व्हरपर्यंत संपूर्ण प्रणालीचे वर्तन तपासले जाते.
+
+#### काय चाचणी कराल
+
+1. **क्लायंट-सर्व्हर संवाद**: संपूर्ण विनंती-प्रतिसाद सायकल तपासा
+2. **खरे क्लायंट SDKs**: वास्तविक क्लायंट अंमलबजावणीसह चाचणी करा
+3. **लोड अंतर्गत कार्यक्षमता**: अनेक एकाचवेळी विनंतीसह वर्तन तपासा
+4. **त्रुटी पुनर्प्राप्ती**: अपयशांपासून प्रणाली पुनर्प्राप्ती तपासा
+5. **दीर्घकालीन ऑपरेशन्स**: स्ट्रीमिंग आणि दीर्घकालीन ऑपरेशन्सचे हाताळणी तपासा
+
+#### एंड-टू-एंड चाचणीसाठी सर्वोत्तम पद्धती
+
+```typescript
+// Typescript मध्ये क्लायंटसह उदाहरण E2E चाचणी
+describe('MCP Server E2E Tests', () => {
+  let client: McpClient;
+  
+  beforeAll(async () => {
+    // चाचणी वातावरणात सर्व्हर प्रारंभ करा
+    await startTestServer();
+    client = new McpClient('http://localhost:5000');
+  });
+  
+  afterAll(async () => {
+    await stopTestServer();
+  });
+  
+  test('Client can invoke calculator tool and get correct result', async () => {
+    // क्रिया करा
+    const response = await client.invokeToolAsync('calculator', {
+      operation: 'divide',
+      a: 20,
+      b: 4
+    });
+    
+    // पुष्टी करा
+    expect(response.statusCode).toBe(200);
+    expect(response.content[0].text).toContain('5');
+  });
+});
+```
+
+## MCP चाचणीसाठी मॉकिंग धोरणे
+
+मॉकिंग चाचणी दरम्यान घटक वेगळे करण्यासाठी आवश्यक आहे.
+
+### घटक मॉक करण्यासाठी
+
+1. **बाह्य AI मॉडेल्स**: विश्वासार्ह चाचणीसाठी मॉडेल प्रतिसाद मॉक करा
+2. **बाह्य सेवा**: API अवलंबन (डेटाबेस, तृतीय-पक्ष सेवा) मॉक करा
+3. **प्रमाणीकरण सेवा**: ओळख प्रदात्यांचे मॉकिंग करा
+4. **संसाधन प्रदाते**: महागडे संसाधन हँडलर्स मॉक करा
+
+### उदाहरण: AI मॉडेल प्रतिसादाचे मॉकिंग
+
+```csharp
+// C# example with Moq
+var mockModel = new Mock<ILanguageModel>();
+mockModel
+    .Setup(m => m.GenerateResponseAsync(
+        It.IsAny<string>(),
+        It.IsAny<McpRequestContext>()))
+    .ReturnsAsync(new ModelResponse { 
+        Text = "Mocked model response",
+        FinishReason = FinishReason.Completed
+    });
+
+var server = new McpServer(modelClient: mockModel.Object);
+```
+
+```python
+# unittest.mock सह Python उदाहरण
+@patch('mcp_server.models.OpenAIModel')
+def test_with_mock_model(mock_model):
+    # मॉक कॉन्फिगर करा
+    mock_model.return_value.generate_response.return_value = {
+        "text": "Mocked model response",
+        "finish_reason": "completed"
+    }
+    
+    # चाचणीमध्ये मॉक वापरा
+    server = McpServer(model_client=mock_model)
+    # चाचणीसह सुरू ठेवा
+```
+
+## कार्यक्षमता चाचणी
+
+उत्पादन MCP सर्व्हर्ससाठी कार्यक्षमतेची चाचणी अत्यावश्यक आहे.
+
+### काय मोजाल
+
+1. **विलंब**: विनंत्यांसाठी प्रतिसाद वेळ
+2. **थ्रूपुट**: प्रति सेकंद हाताळलेली विनंत्या
+3. **संसाधन वापर**: CPU, स्मृती, नेटवर्क वापर
+4. **समांतर हाताळणी**: समांतर विनंत्यांखाली वर्तन
+5. **स्केलिंग वैशिष्ट्ये**: भार वाढल्यावर कार्यक्षमता
+
+### कार्यक्षमता चाचणीसाठी साधने
+
+- **k6**: मुक्त स्रोत लोड टेस्टिंग साधन
+- **JMeter**: व्यापक कार्यक्षमता चाचणी
+- **Locust**: पायथन-आधारित लोड टेस्टिंग
+- **Azure Load Testing**: क्लाऊड-आधारित कार्यक्षमता चाचणी
+
+### उदाहरण: k6 सह मूलभूत लोड टेस्ट
+
+```javascript
+// MCP सर्व्हरसाठी लोड टेस्टिंगसाठी k6 स्क्रिप्ट
+import http from 'k6/http';
+import { check, sleep } from 'k6';
+
+export const options = {
+  vus: 10,  // 10 आभासी वापरकर्ते
+  duration: '30s',
+};
+
+export default function () {
+  const payload = JSON.stringify({
+    tool: 'calculator',
+    parameters: {
+      operation: 'add',
+      a: Math.floor(Math.random() * 100),
+      b: Math.floor(Math.random() * 100)
+    }
+  });
+
+  const params = {
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer test-token'
+    },
+  };
+
+  const res = http.post('http://localhost:5000/api/tools/invoke', payload, params);
+  
+  check(res, {
+    'status is 200': (r) => r.status === 200,
+    'response time < 500ms': (r) => r.timings.duration < 500,
+  });
+  
+  sleep(1);
+}
+```
+
+## MCP सर्व्हर्ससाठी चाचणी ऑटोमेशन
+
+आपल्या चाचण्या स्वयंचलित केल्यामुळे गुणवत्ता सातत्यपूर्ण राहते आणि अभिप्राय साखळी जलद होते.
+
+### CI/CD एकत्रीकरण
+1. **पुल रिक्वेस्टवर युनिट टेस्ट चालवा**: खात्री करा की कोड बदलांमुळे विद्यमान कार्यक्षमता बिघडू नये
+2. **स्टेजिंगमध्ये इंटिग्रेशन टेस्ट**: प्री-प्रॉडक्शन वातावरणात इंटिग्रेशन टेस्ट चालवा
+3. **परफॉर्मन्स बेसलाइन**: परफॉर्मन्स मापदंड राखा जेणेकरून पुनरावृत्ती पकडता येईल
+4. **सुरक्षा स्कॅन्स**: पाइपलाइनचा भाग म्हणून सुरक्षा चाचणी स्वयंचलित करा
 
 ### उदाहरण CI पाइपलाइन (GitHub Actions)
 
@@ -2091,19 +2275,19 @@ jobs:
       run: dotnet run --project tests/PerformanceTests/PerformanceTests.csproj
 ```
 
-## MCP स्पेसिफिकेशनशी अनुपालनासाठी चाचणी  
+## MCP स्पेसिफिकेशनशी अनुरूपतेसाठी चाचणी
 
-तुमचा सर्व्हर MCP स्पेसिफिकेशन योग्य प्रकारे अंमलात आणतो का ते सत्यापित करा.  
+तुमचा सर्व्हर योग्यरित्या MCP स्पेसिफिकेशनची अंमलबजावणी करतो याची पडताळणी करा.
 
-### मुख्य अनुपालन क्षेत्रे  
+### मुख्य अनुरूपता क्षेत्रे
 
-1. **API एंडपॉइंट्स**: आवश्यक एंडपॉइंट्सची चाचणी करा (/resources, /tools, इत्यादी)  
-2. **रिक्वेस्ट/रेस्पॉन्स फॉर्मॅट**: स्कीमा अनुपालन सत्यापित करा  
-3. **एरर कोड्स**: विविध परिस्थितींसाठी योग्य स्टेटस कोड्स सत्यापित करा  
-4. **कंटेंट टाइप्स**: विविध कंटेंट टाइप्स हाताळण्याची चाचणी करा  
-5. **ऑथेंटिकेशन फ्लो**: स्पेसिफिकेशन-अनुपालन ऑथ मेकॅनिझम सत्यापित करा  
+1. **API एंडपॉइंट्स**: आवश्यक एंडपॉइंट्सची चाचणी करा (/resources, /tools, इत्यादी)
+2. **विनंती/प्रतिसाद स्वरूप**: स्कीमा अनुरूपतेची पडताळणी करा
+3. **त्रुटी कोड**: विविध परिस्थितींमध्ये योग्य स्थिती कोड तपासा
+4. **सामग्री प्रकार**: वेगवेगळ्या सामग्री प्रकारांच्या हाताळणीची चाचणी करा
+5. **प्रमाणीकरण प्रवाह**: स्पेक-आधारित प्रमाणीकरण यंत्रणांची पडताळणी करा
 
-### अनुपालन चाचणी संच  
+### अनुरूपता चाचणी संच
 
 ```csharp
 [Fact]
@@ -2130,62 +2314,68 @@ public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
 }
 ```
 
-## प्रभावी MCP सर्व्हर चाचणीसाठी टॉप 10 टिप्स  
+## परिणामकारक MCP सर्व्हर चाचणीसाठी टॉप 10 टिप्स
 
-1. **टूल डिफिनिशन्स स्वतंत्रपणे चाचणी करा**: स्कीमा डिफिनिशन्स टूल लॉजिकपासून स्वतंत्रपणे सत्यापित करा  
-2. **पॅरामीटराइज्ड चाचण्या वापरा**: विविध इनपुट्ससह टूल्सची चाचणी करा, ज्यामध्ये एज केससुद्धा समाविष्ट आहेत  
-3. **एरर रिस्पॉन्सेस तपासा**: सर्व संभाव्य एरर परिस्थितींसाठी योग्य एरर हाताळणी सत्यापित करा  
-4. **ऑथरायझेशन लॉजिक चाचणी करा**: विविध युजर रोल्ससाठी योग्य ऍक्सेस कंट्रोल सुनिश्चित करा  
-5. **चाचणी कव्हरेज मॉनिटर करा**: महत्त्वाच्या कोड पथासाठी उच्च कव्हरेज साध्य करा  
-6. **स्ट्रीमिंग रिस्पॉन्सेस चाचणी करा**: स्ट्रीमिंग कंटेंट योग्य प्रकारे हाताळण्याची सत्यापित करा  
-7. **नेटवर्क समस्यांचे अनुकरण करा**: खराब नेटवर्क परिस्थितीत वर्तनाची चाचणी करा  
-8. **रिसोर्स लिमिट्स चाचणी करा**: कोटा किंवा रेट लिमिट्स गाठल्यावर वर्तन सत्यापित करा  
-9. **रिग्रेशन चाचण्या स्वयंचलित करा**: प्रत्येक कोड बदलावर चालणारा संच तयार करा  
-10. **चाचणी प्रकरणे दस्तऐवजीकरण करा**: चाचणी परिस्थितींचे स्पष्ट दस्तऐवजीकरण राखा  
+1. **टूल व्याख्याने स्वतंत्रपणे तपासा**: स्कीमा व्याख्यांना टूल लॉजिकपासून वेगळे पडताळा
+2. **पॅरामेटरायझड टेस्ट वापरा**: टूल्सना विविध इनपुट्ससह, विशेषतः एज केसांसह तपासा
+3. **त्रुटी प्रतिसाद तपासा**: सर्व संभाव्य त्रुटी परिस्थितीसाठी योग्य त्रुटी हाताळणीची पडताळणी करा
+4. **प्राधिकरण लॉजिक तपासा**: वेगवेगळ्या वापरकर्त्यांच्या भूमिकांसाठी योग्य प्रवेश नियंत्रण सुनिश्चित करा
+5. **चाचणी कव्हरेज मॉनिटर करा**: महत्त्वाच्या मार्गांवरील उच्च कव्हरेज साध्य करा
+6. **स्ट्रीमिंग प्रतिसाद तपासा**: स्ट्रीमिंग सामग्रीची योग्य हाताळणी पडताळा
+7. **नेटवर्क समस्या सिम्युलेट करा**: खराब नेटवर्क परिस्थितीत वर्तनाची चाचणी करा
+8. **संसाधन मर्यादा तपासा**: कोटा किंवा दर मर्यादा पूर्ण केल्यावर वर्तन तपासा
+9. **पुनरावृत्ती चाचण्या स्वयंचलित करा**: प्रत्येक कोड बदलावर चालणारा संच तयार करा
+10. **चाचणी प्रकरणे डॉ큐मेंट करा**: चाचणी परिस्थितींची स्पष्ट माहिती ठेवा
 
-## सामान्य चाचणी त्रुटी  
+## सामान्य चाचणीतील अडचणी
 
-- **हॅपी पाथ चाचणीवर जास्त अवलंबित्व**: एरर परिस्थितींची सखोल चाचणी सुनिश्चित करा  
-- **कामगिरी चाचणी दुर्लक्षित करणे**: उत्पादनावर परिणाम होण्यापूर्वी अडथळे ओळखा  
-- **फक्त वेगळ्या चाचण्या करणे**: युनिट, इंटिग्रेशन, आणि E2E चाचण्या एकत्र करा  
-- **अपूर्ण API कव्हरेज**: सर्व एंडपॉइंट्स आणि वैशिष्ट्ये चाचणी सुनिश्चित करा  
-- **असंगत चाचणी वातावरणे**: कंटेनर्स वापरून सुसंगत चाचणी वातावरणे सुनिश्चित करा  
+- **खुशहाल मार्गावर अति अवलंबित्व**: त्रुटी प्रकरणांची पूर्ण तपासणी करा
+- **परफॉर्मन्स चाचणी दुर्लक्षित करणे**: उत्पादनावर परिणाम होण्यापूर्वी अडथळे ओळखा
+- **फक्त स्वतंत्रपणे चाचणी करणे**: युनिट, इंटिग्रेशन आणि E2E चाचण्यांचे संयोजन करा
+- **अपूर्ण API कव्हरेज**: सर्व एंडपॉइंट्स आणि वैशिष्ट्यांची चाचणी सुनिश्चित करा
+- **असमान चाचणी वातावरणे**: एकसारखे वातावरण सुनिश्चित करण्यासाठी कंटेनर वापरा
 
-## निष्कर्ष  
+## निष्कर्ष
 
-विश्वसनीय, उच्च-गुणवत्तेचे MCP सर्व्हर विकसित करण्यासाठी व्यापक चाचणी धोरण आवश्यक आहे. या मार्गदर्शकात दिलेल्या सर्वोत्तम पद्धती आणि टिप्स अंमलात आणून, तुम्ही तुमच्या MCP अंमलबजावणीस गुणवत्ता, विश्वसनीयता, आणि कामगिरीच्या उच्चतम मानकांपर्यंत पोहोचवू शकता.  
+विश्वसनीय, उच्च-गुणवत्तेचे MCP सर्व्हर विकसित करण्यासाठी व्यापक चाचणी धोरण आवश्यक आहे. या मार्गदर्शनात दिलेल्या सर्वोत्तम पद्धती आणि टिप्स लागू करून, आपली MCP अंमलबजावण्या गुणवत्ता, विश्वसनीयता आणि कार्यक्षमता या उच्चतम मानकांसाठी पात्र ठरतील.
 
-## मुख्य मुद्दे  
+## मुख्य मुद्दे
 
-1. **टूल डिझाइन**: सिंगल रिस्पॉन्सिबिलिटी प्रिन्सिपलचे पालन करा, डिपेंडन्सी इंजेक्शन वापरा, आणि कंपोजेबिलिटीसाठी डिझाइन करा  
-2. **स्कीमा डिझाइन**: स्पष्ट, चांगल्या प्रकारे दस्तऐवजीकृत स्कीमा तयार करा ज्यामध्ये योग्य व्हॅलिडेशन मर्यादा आहेत  
-3. **एरर हाताळणी**: ग्रेसफुल एरर हाताळणी, संरचित एरर रिस्पॉन्सेस, आणि रिट्राय लॉजिक अंमलात आणा  
-4. **कामगिरी**: कॅशिंग, असिंक्रोनस प्रोसेसिंग, आणि रिसोर्स थ्रॉटलिंग वापरा  
-5. **सुरक्षा**: सखोल इनपुट व्हॅलिडेशन, ऑथरायझेशन तपासणी, आणि संवेदनशील डेटा हाताळणी लागू करा  
-6. **चाचणी**: व्यापक युनिट, इंटिग्रेशन, आणि एंड-टू-एंड चाचण्या तयार करा  
-7. **वर्कफ्लो पॅटर्न्स**: चेन, डिस्पॅचर्स, आणि पॅरलल प्रोसेसिंगसारख्या स्थापित पॅटर्न्स लागू करा  
+1. **टूल डिझाइन**: एकच जबाबदारी तत्त्व पाळा, डिपेंडन्सी इंजेक्शन वापरा, आणि संयोज्यता यासाठी डिझाइन करा
+2. **स्कीमा डिझाइन**: स्पष्ट, नीटदर्शविलेले स्कीमा तयार करा ज्यामध्ये योग्य प्रमाणीकरण निर्बंध असतील
+3. **त्रुटी हाताळणी**: सुसंवादी त्रुटी हाताळणी, संरचित त्रुटी प्रतिसाद, आणि पुन्हा प्रयत्न लॉजिक लागू करा
+4. **परफॉर्मन्स**: कॅशिंग, असिंक्रोनस प्रक्रिया, आणि संसाधन मर्यादा वापरा
+5. **सुरक्षा**: पूर्ण इनपुट प्रमाणीकरण, प्राधिकरण तपासणी, आणि संवेदनशील डेटा हाताळणी करा
+6. **चाचणी**: संपूर्ण युनिट, इंटिग्रेशन, आणि एंड-टू-एंड चाचण्या तयार करा
+7. **वर्कफ्लो नमुने**: साखळी, डिस्पॅचर्स, आणि समांतर प्रक्रिया यांसारखे प्रस्थापित नमुने वापरा
 
-## व्यायाम  
+## व्यायाम
 
-डॉक्युमेंट प्रोसेसिंग सिस्टीमसाठी MCP टूल आणि वर्कफ्लो डिझाइन करा जे:  
+एक दस्तऐवज प्रक्रिया प्रणालीसाठी MCP टूल आणि वर्कफ्लो डिझाइन करा जे:
 
-1. अनेक फॉरमॅट्समध्ये (PDF, DOCX, TXT) डॉक्युमेंट्स स्वीकारते  
-2. डॉक्युमेंट्समधून टेक्स्ट आणि महत्त्वाची माहिती काढते  
-3. डॉक्युमेंट्स प्रकार आणि सामग्रीनुसार वर्गीकृत करते  
-4. प्रत्येक डॉक्युमेंटचा सारांश तयार करते  
+1. अनेक स्वरूपातील दस्तऐवज स्वीकारते (PDF, DOCX, TXT)
+2. दस्तऐवजातून मजकूर आणि मुख्य माहिती काढते
+3. दस्तऐवजांचे प्रकार आणि सामग्रीनुसार वर्गीकरण करते
+4. प्रत्येक दस्तऐवजाचा सारांश तयार करते
 
-या परिस्थितीसाठी टूल स्कीमा, एरर हाताळणी, आणि वर्कफ्लो पॅटर्न अंमलात आणा. तुम्ही या अंमलबजावणीची चाचणी कशी कराल याचा विचार करा.  
+टूल स्कीमा, त्रुटी हाताळणी, आणि या परिस्थितीसाठी सर्वोत्तम उपयुक्त वर्कफ्लो नमुना अंमलात आणा. आपण ही अंमलबजावणी कशी चाचणी कराल याचा विचार करा.
 
-## संसाधने  
+## संसाधने
 
-1. [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) वर MCP समुदायामध्ये सामील व्हा आणि नवीनतम घडामोडींबद्दल अद्ययावत रहा  
-2. ओपन-सोर्स [MCP प्रोजेक्ट्स](https://github.com/modelcontextprotocol) मध्ये योगदान द्या  
-3. तुमच्या स्वतःच्या संस्थेच्या AI उपक्रमांमध्ये MCP तत्त्वे लागू करा  
-4. तुमच्या उद्योगासाठी विशेष MCP अंमलबजावणी एक्सप्लोर करा  
-5. मल्टी-मोडल इंटिग्रेशन किंवा एंटरप्राइज ऍप्लिकेशन इंटिग्रेशनसारख्या विशिष्ट MCP विषयांवर प्रगत अभ्यासक्रम घेण्याचा विचार करा  
-6. [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) मधून शिकलेल्या तत्त्वांचा वापर करून स्वतःचे MCP टूल्स आणि वर्कफ्लो तयार करण्याचा प्रयोग करा  
+1. MCP समुदायात सामील व्हा [Azure AI Foundry Discord Community](https://aka.ms/foundrydevs) येथे टिकून राहण्यासाठी 
+2. मुक्त-स्रोत [MCP प्रकल्पांमध्ये योगदान द्या](https://github.com/modelcontextprotocol)
+3. आपल्या संस्थेच्या AI पुढाकारांमध्ये MCP तत्त्वे लागू करा
+4. आपल्या उद्योगासाठी विशेष MCP अंमलबजावण्या शोधा.
+5. मल्टी-मॉडाल इंटिग्रेशन किंवा एंटरप्राईज अ‍ॅप्लिकेशन इंटिग्रेशनसारख्या विशिष्ट MCP विषयांवर प्रगत कोर्सेस घ्या.
+6. [Hands on Lab](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md) मधील तत्त्वे वापरून स्वतःचे MCP टूल्स आणि वर्कफ्लो तयार करण्याचा प्रयोग करा
 
-Next: Best Practices [case studies](../09-CaseStudy/README.md)  
+## पुढे काय
 
-**अस्वीकरण**:  
-हा दस्तऐवज AI भाषांतर सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून भाषांतरित करण्यात आला आहे. आम्ही अचूकतेसाठी प्रयत्नशील असलो तरी कृपया लक्षात ठेवा की स्वयंचलित भाषांतरे त्रुटी किंवा अचूकतेच्या अभावाने युक्त असू शकतात. मूळ भाषेतील दस्तऐवज हा अधिकृत स्रोत मानला जावा. महत्त्वाच्या माहितीसाठी, व्यावसायिक मानवी भाषांतराची शिफारस केली जाते. या भाषांतराचा वापर करून उद्भवलेल्या कोणत्याही गैरसमज किंवा चुकीच्या अर्थासाठी आम्ही जबाबदार नाही.
+पुढे: [केस स्टडीज](../09-CaseStudy/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**अस्वीकरण**:
+हा दस्तऐवज AI भाषांतर सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून भाषांतरित केला गेला आहे. आम्ही अचूकतेसाठी प्रयत्न करतो, तरी कृपया लक्षात ठेवा की स्वयंचलित भाषांतरांमध्ये चुका किंवा अचूकतेची कमतरता असू शकते. मूळ दस्तऐवज त्याच्या स्थानिक भाषेत अधिकृत स्रोत मानला जावा. महत्त्वाची माहिती असल्यास व्यावसायिक मानवी भाषांतर करण्याची शिफारस केली जाते. या भाषांतराच्या वापरामुळे उद्भवणाऱ्या कोणत्याही गोंधळ किंवा गैरसमजासाठी आम्ही जबाबदार नाही.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

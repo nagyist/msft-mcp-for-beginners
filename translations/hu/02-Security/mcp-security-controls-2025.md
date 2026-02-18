@@ -1,75 +1,76 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0c243c6189393ed7468e470ef2090049",
-  "translation_date": "2025-08-19T15:07:49+00:00",
-  "source_file": "02-Security/mcp-security-controls-2025.md",
-  "language_code": "hu"
-}
--->
-# MCP Biztonsági Ellenőrzések - 2025. augusztusi frissítés
+# MCP Biztonsági Intézkedések - 2026 Februári Frissítés
 
-> **Jelenlegi szabvány**: Ez a dokumentum a [MCP Specification 2025-06-18](https://spec.modelcontextprotocol.io/specification/2025-06-18/) biztonsági követelményeit és a hivatalos [MCP Biztonsági Legjobb Gyakorlatokat](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices) tükrözi.
+> **Jelenlegi szabvány**: Ez a dokumentum tükrözi az [MCP Specifikáció 2025-11-25](https://spec.modelcontextprotocol.io/specification/2025-11-25/) biztonsági követelményeit és a hivatalos [MCP Biztonsági Legjobb Gyakorlatokat](https://modelcontextprotocol.io/specification/2025-11-25/basic/security_best_practices).
 
-A Model Context Protocol (MCP) jelentős fejlődésen ment keresztül, és továbbfejlesztett biztonsági ellenőrzéseket vezetett be, amelyek mind a hagyományos szoftverbiztonságot, mind az AI-specifikus fenyegetéseket kezelik. Ez a dokumentum átfogó biztonsági ellenőrzéseket nyújt a biztonságos MCP implementációkhoz 2025 augusztusától.
+A Model Context Protocol (MCP) jelentősen fejlődött, kibővített biztonsági intézkedésekkel, amely mind a hagyományos szoftverbiztonsági, mind az AI-specifikus fenyegetéseket lefedi. Ez a dokumentum átfogó biztonsági irányelveket nyújt a biztonságos MCP megvalósításokhoz, amelyek összhangban vannak az OWASP MCP Top 10 keretrendszerével.
 
-## **KÖTELEZŐ biztonsági követelmények**
+## 🏔️ Gyakorlati Biztonsági Képzés
 
-### **Kritikus tiltások az MCP specifikációból:**
+Gyakorlati, kézbe vehető biztonsági megvalósítási tapasztalatért javasoljuk a **[MCP Biztonsági Csúcstalálkozó Workshopot (Sherpa)](https://azure-samples.github.io/sherpa/)** – egy átfogó, vezetett expedíciót az MCP szerverek Azure-ban történő biztonságossá tételéhez a "sebezhető → kihasználás → javítás → ellenőrzés" módszertan segítségével.
 
-> **TILOS**: Az MCP szerverek **NEM FOGADHATNAK EL** olyan tokeneket, amelyeket nem kifejezetten az MCP szerver számára bocsátottak ki  
+A dokumentumban szereplő összes biztonsági intézkedés összhangban áll az **[OWASP MCP Azure Biztonsági Útmutatóval](https://microsoft.github.io/mcp-azure-security-guide/)**, amely referenciaarchitektúrákat és Azure-specifikus megvalósítási útmutatást nyújt az OWASP MCP Top 10 kockázatokhoz.
+
+## **KÖTELEZŐ Biztonsági Követelmények**
+
+### **Kritikus Tiltások az MCP Specifikációból:**
+
+> **TILOS**: Az MCP szerverek **NEM FOGADHATNAK EL** olyan tokeneket, amelyeket nem kifejezetten az MCP szerver számára adtak ki  
 >
-> **TILTOTT**: Az MCP szerverek **NEM HASZNÁLHATNAK** munkameneteket hitelesítéshez  
+> **TILOS**: Az MCP szerverek **NEM HASZNÁLHATNAK** sessionöket hitelesítésre  
 >
-> **KÖTELEZŐ**: Az engedélyezést megvalósító MCP szervereknek **MINDEN** bejövő kérést ellenőrizniük kell  
+> **KÖTELEZŐ**: Az MCP szerverek, amelyek engedélyezést valósítanak meg, **MINDEN** bejövő kérés ellenőrzését el kell végezniük  
 >
-> **KÖTELEZŐ**: A statikus kliensazonosítókat használó MCP proxy szervereknek **MINDEN** dinamikusan regisztrált klienshez felhasználói hozzájárulást kell szerezniük  
+> **KÖTELEZŐ**: Az MCP proxy szerverek, amelyek statikus kliensazonosítókat használnak, **MINDEN** dinamikusan regisztrált kliens esetén kötelesek megszerezni a felhasználó beleegyezését
 
 ---
 
-## 1. **Hitelesítési és engedélyezési ellenőrzések**
+## 1. **Hitelesítés és Jogosultságkezelés Intézkedések**
 
-### **Külső identitásszolgáltató integrációja**
+### **Külső Identitásszolgáltató Integráció**
 
-A **jelenlegi MCP szabvány (2025-06-18)** lehetővé teszi az MCP szerverek számára, hogy a hitelesítést külső identitásszolgáltatókra bízzák, ami jelentős biztonsági javulást jelent:
+**Jelenlegi MCP standard (2025-11-25)** lehetővé teszi az MCP szerverek számára a hitelesítés delegálását külső identitásszolgáltatóknak, ami jelentős biztonsági előrelépés:
+
+**Célzott OWASP MCP kockázat**: [MCP07 - Hiányos hitelesítés és jogosultságkezelés](https://microsoft.github.io/mcp-azure-security-guide/mcp/mcp07-authz/)
 
 **Biztonsági előnyök:**
 1. **Egyedi hitelesítési kockázatok megszüntetése**: Csökkenti a sebezhetőségi felületet az egyedi hitelesítési megoldások elkerülésével  
-2. **Vállalati szintű biztonság**: Olyan bevált identitásszolgáltatók használata, mint a Microsoft Entra ID, fejlett biztonsági funkciókkal  
-3. **Központosított identitáskezelés**: Egyszerűsíti a felhasználói életciklus-kezelést, a hozzáférés-ellenőrzést és a megfelelőségi auditokat  
-4. **Többtényezős hitelesítés**: Örökli a vállalati identitásszolgáltatók MFA képességeit  
-5. **Feltételes hozzáférési szabályok**: Kihasználja a kockázatalapú hozzáférés-ellenőrzést és az adaptív hitelesítést  
+2. **Vállalati szintű biztonság**: Bevált identitásszolgáltatók, például a Microsoft Entra ID fejlett biztonsági funkcióival  
+3. **Központosított identitáskezelés**: Egyszerűbb felhasználói életciklus-kezelés, hozzáférés-vezérlés és megfelelőségi auditok  
+4. **Többfaktoros hitelesítés**: Vállalati identitásszolgáltatóktól örökölt MFA képességek  
+5. **Feltételes hozzáférési szabályok**: Kockázatalapú hozzáférés-vezérlés és adaptív hitelesítés előnyei  
 
-**Implementációs követelmények:**
-- **Token célközönség ellenőrzése**: Ellenőrizze, hogy minden token kifejezetten az MCP szerver számára lett-e kiadva  
-- **Kibocsátó ellenőrzése**: Ellenőrizze, hogy a token kibocsátója megfelel-e a várt identitásszolgáltatónak  
-- **Aláírás ellenőrzése**: A token integritásának kriptográfiai ellenőrzése  
-- **Lejárati idő betartása**: A token élettartamának szigorú betartása  
-- **Jogosultságok ellenőrzése**: Győződjön meg arról, hogy a tokenek tartalmazzák a kért műveletekhez szükséges engedélyeket  
+**Megvalósítási követelmények:**  
+- **Token célközönség ellenőrzése**: Ellenőrizni kell, hogy minden token kifejezetten az MCP szerver számára lett kiadva  
+- **Kibocsátó ellenőrzése**: Érvényesíteni kell, hogy a token kibocsátója megfelel a vártnak, azaz az identitásszolgáltatónak  
+- **Aláírás ellenőrzése**: Kriptográfiai érvényesítés a token integritásának biztosítására  
+- **Lejárati idő betartása**: A token élettartam korlátjainak szigorú betartása  
+- **Jogosultsági kör ellenőrzése**: Ellenőrizni kell, hogy a token megfelelő jogosultságokat tartalmaz-e a kért műveletekhez
 
-### **Engedélyezési logika biztonsága**
+### **Jogosultságlogika Biztonsága**
 
-**Kritikus ellenőrzések:**
-- **Átfogó engedélyezési auditok**: Az összes engedélyezési döntési pont rendszeres biztonsági felülvizsgálata  
-- **Biztonságos alapértelmezések**: Hozzáférés megtagadása, ha az engedélyezési logika nem tud egyértelmű döntést hozni  
-- **Jogosultsági határok**: Egyértelmű elválasztás a különböző jogosultsági szintek és erőforrás-hozzáférések között  
-- **Auditnaplózás**: Az összes engedélyezési döntés teljes körű naplózása a biztonsági monitorozás érdekében  
-- **Rendszeres hozzáférési felülvizsgálatok**: A felhasználói jogosultságok és jogosultság-hozzárendelések időszakos ellenőrzése  
+**Kritikus intézkedések:**  
+- **Átfogó jogosultság auditok**: Rendszeres biztonsági áttekintések az összes jogosultságot eldöntő ponton  
+- **Biztonsági alapértelmezések**: Hozzáférés megtagadása, ha a jogosultságlogika nem tud érdemi döntést hozni  
+- **Jogosultsági határok**: Egyértelmű elkülönítés a különböző jogosultsági szintek és erőforrás-hozzáférés között  
+- **Audit naplózás**: Minden jogosultsági döntés teljes körű naplózása biztonsági megfigyelés céljából  
+- **Rendszeres hozzáférés-ellenőrzések**: Periodikus felülvizsgálat a felhasználói jogosultságok és privilégiumok érvényességére
 
-## 2. **Tokenbiztonság és átengedési védelem**
+## 2. **Tokenbiztonsági és Anti-Passthrough Intézkedések**
 
-### **Token átengedésének megakadályozása**
+**Célzott OWASP MCP kockázat**: [MCP01 - Tokenkezelési hibák és titok kiszivárgás](https://microsoft.github.io/mcp-azure-security-guide/mcp/mcp01-token-mismanagement/)
 
-**A token átengedése kifejezetten tiltott** az MCP engedélyezési specifikációban a kritikus biztonsági kockázatok miatt:
+### **Token Passthrough Megelőzése**
 
-**Kezelt biztonsági kockázatok:**
-- **Ellenőrzések megkerülése**: Megkerüli az alapvető biztonsági ellenőrzéseket, például a sebességkorlátozást, a kérésellenőrzést és a forgalomfigyelést  
-- **Elszámoltathatóság megszűnése**: Lehetetlenné teszi az ügyfélazonosítást, ami rontja az auditnaplókat és az incidensvizsgálatot  
-- **Proxy-alapú adatlopás**: Lehetővé teszi rosszindulatú szereplők számára, hogy a szervereket proxyként használják jogosulatlan adat-hozzáféréshez  
-- **Bizalmi határok megsértése**: Megszegi a downstream szolgáltatások token eredetére vonatkozó bizalmi feltételezéseit  
-- **Oldalsó mozgás**: A több szolgáltatáson keresztül kompromittált tokenek szélesebb támadási lehetőséget biztosítanak  
+**A token passthrough kifejezetten tiltott** az MCP Engedélyezési Specifikációban a kritikus biztonsági kockázatok miatt:
 
-**Implementációs ellenőrzések:**
+**Figyelt biztonsági kockázatok:**  
+- **Intézkedések kijátszása**: Megkerüli az alapvető biztonsági intézkedéseket, pl. az aránykorlátozást, kérés-ellenőrzést és forgalomfigyelést  
+- **Felelősség eltűnése**: Megakadályozza az ügyfél azonosítását, így tönkreteszi az audit nyomvonalakat és az incidensvizsgálatot  
+- **Proxy alapú adatlopás**: Lehetővé teszi, hogy rosszindulatú támadók a szervereket proxyként használják jogosulatlan adat-hozzáféréshez  
+- **Bizalmi határok megsértése**: Megsérti az alatti szolgáltatások bizalmi feltételezéseit a token eredetéről  
+- **Oldalirányú terjeszkedés**: Több szolgáltatás között kompromittált tokenek révén terjedő támadások
+
+**Megvalósítási ellenőrzések:**  
 ```yaml
 Token Validation Requirements:
   audience_validation: MANDATORY
@@ -85,25 +86,25 @@ Token Lifecycle Management:
   replay_protection: "Implemented via nonce/timestamp"
 ```
 
-### **Biztonságos tokenkezelési minták**
+### **Biztonságos Tokenkezelési Minták**
 
-**Legjobb gyakorlatok:**
-- **Rövid élettartamú tokenek**: Csökkentse a kitettségi ablakot a tokenek gyakori forgatásával  
-- **Igény szerinti kiadás**: Tokenek kiadása csak a szükséges műveletekhez  
-- **Biztonságos tárolás**: Hardverbiztonsági modulok (HSM-ek) vagy biztonságos kulcstárolók használata  
-- **Token kötése**: Tokenek kötése meghatározott kliensekhez, munkamenetekhez vagy műveletekhez, ahol lehetséges  
-- **Monitorozás és riasztás**: Tokenek visszaélésének vagy jogosulatlan hozzáférési mintáinak valós idejű észlelése  
+**Legjobb gyakorlatok:**  
+- **Rövid élettartamú tokenek**: Minimalizálják az expozíciós időszakot gyakori tokenforgatással  
+- **Éppen időben történő kiadás**: Csak szükség esetén, konkrét műveletekhez adják ki a tokeneket  
+- **Biztonságos tárolás**: Hardveres biztonsági modulok (HSM) vagy biztonságos kulcstartók használata  
+- **Token kötés**: Tokenek kötése adott klienshez, munkamenethez vagy művelethez, ahol lehetséges  
+- **Figyelés és riasztás**: Valós idejű észlelés a token helytelen használatára vagy jogosulatlan hozzáférési mintákra
 
-## 3. **Munkamenet-biztonsági ellenőrzések**
+## 3. **Munkamenet Biztonsági Intézkedések**
 
-### **Munkamenet-eltérítés megelőzése**
+### **Munkamenet Felülírás Megelőzése**
 
-**Kezelt támadási vektorok:**
-- **Munkamenet-eltérítés prompt injekcióval**: Rosszindulatú események befecskendezése a megosztott munkamenet-állapotba  
-- **Munkamenet megszemélyesítése**: Ellopott munkamenet-azonosítók jogosulatlan használata a hitelesítés megkerülésére  
-- **Újraindítható adatfolyam-támadások**: A szerver által küldött események újraindításának kihasználása rosszindulatú tartalom befecskendezésére  
+**Kezelt támadási vektorok:**  
+- **Munkamenet elfogásával történő prompt injektálás**: Rosszindulatú események beszúrása a megosztott munkamenet-állapotba  
+- **Munkamenet álcázás**: Jogosulatlan ellopott munkamenet-azonosító használata a hitelesítés megkerülésére  
+- **Folyam újraindításos támadások**: Kiszolgáló által küldött esemény folytatása révén történő rosszindulatú tartalom injektálás
 
-**Kötelező munkamenet-ellenőrzések:**
+**Kötelező munkamenet intézkedések:**  
 ```yaml
 Session ID Generation:
   randomness_source: "Cryptographically secure RNG"
@@ -123,28 +124,33 @@ Session Lifecycle:
   cleanup: "Automated expired session removal"
 ```
 
-**Szállítási biztonság:**
-- **HTTPS kényszerítése**: Az összes munkamenet-kommunikáció TLS 1.3-on keresztül  
+**Adatátviteli biztonság:**  
+- **HTTPS érvényesítés**: Minden munkamenet kommunikáció TLS 1.3-on keresztül  
 - **Biztonságos süti attribútumok**: HttpOnly, Secure, SameSite=Strict  
-- **Tanúsítvány rögzítése**: Kritikus kapcsolatok esetén a közbeékelődéses támadások megelőzésére  
+- **Tanúsítvány kötés**: Kritikus kapcsolatoknál a MITM támadások megakadályozására
 
-### **Állapotfüggő vs állapotfüggetlen megfontolások**
+### **Állapotfüggő és Állapotfüggetlen Megfontolások**
 
-**Állapotfüggő implementációk esetén:**
-- A megosztott munkamenet-állapot további védelmet igényel az injekciós támadások ellen  
-- A soralapú munkamenet-kezelés integritásának ellenőrzése szükséges  
-- Több szerverpéldány esetén biztonságos munkamenet-állapot szinkronizáció szükséges  
+**Állapotfüggő megvalósítások esetén:**  
+- Megosztott munkamenet állapot extra védelmet igényel az injektálási támadások ellen  
+- Sor-alapú munkamenet-kezelés integritás ellenőrzése szükséges  
+- Több szerver példány esetén biztonságos munkamenet állapot szinkronizáció  
 
-**Állapotfüggetlen implementációk esetén:**
-- JWT vagy hasonló tokenalapú munkamenet-kezelés  
-- A munkamenet-állapot integritásának kriptográfiai ellenőrzése  
-- Csökkentett támadási felület, de robusztus tokenellenőrzést igényel  
+**Állapotfüggetlen megvalósítások esetén:**  
+- JWT vagy hasonló token alapú munkamenet-kezelés  
+- Kriptográfiai ellenőrzése a munkamenet állapot integritásának  
+- Csökkentett támadási felület, de erős token-ellenőrzést igényel
 
-## 4. **AI-specifikus biztonsági ellenőrzések**
+## 4. **AI-Specifikus Biztonsági Intézkedések**
 
-### **Prompt injekció elleni védelem**
+**Célzott OWASP MCP kockázatok**:  
+- [MCP06 - Prompt injektálás kontextusfüggő terhelések révén](https://microsoft.github.io/mcp-azure-security-guide/mcp/mcp06-prompt-injection/)  
+- [MCP03 - Eszközmérgezés](https://microsoft.github.io/mcp-azure-security-guide/mcp/mcp03-tool-poisoning/)  
+- [MCP05 - Parancs befecskendezés és végrehajtás](https://microsoft.github.io/mcp-azure-security-guide/mcp/mcp05-command-injection/)
 
-**Microsoft Prompt Shields integráció:**
+### **Prompt Injektálás Védelem**
+
+**Microsoft Prompt Shields integráció:**  
 ```yaml
 Detection Mechanisms:
   - "Advanced ML-based instruction detection"
@@ -162,15 +168,15 @@ Integration Points:
   - "Threat intelligence updates"
 ```
 
-**Implementációs ellenőrzések:**
-- **Bemeneti tisztítás**: Az összes felhasználói bemenet átfogó ellenőrzése és szűrése  
-- **Tartalmi határok meghatározása**: Egyértelmű elválasztás a rendszerutasítások és a felhasználói tartalom között  
-- **Utasítási hierarchia**: Megfelelő prioritási szabályok az ellentmondó utasításokhoz  
-- **Kimeneti monitorozás**: Potenciálisan káros vagy manipulált kimenetek észlelése  
+**Megvalósítási intézkedések:**  
+- **Bemenet tisztítása**: Átfogó validálás és szűrés minden felhasználói bemeneten  
+- **Tartalomhatárok meghatározása**: Egyértelmű elkülönítés a rendszerutasítások és a felhasználói tartalom között  
+- **Utasítási hierarchia**: Ütköző utasítások megfelelő elsőbbségi szabályai  
+- **Kimenet figyelése**: Potenciálisan káros vagy manipulált kimenetek észlelése
 
-### **Eszközmérgezés megelőzése**
+### **Eszközmérgezés Megelőzése**
 
-**Eszközbiztonsági keretrendszer:**
+**Eszközbiztonsági keretrendszer:**  
 ```yaml
 Tool Definition Protection:
   validation:
@@ -192,17 +198,17 @@ Tool Definition Protection:
     - "Automated alerting for suspicious modifications"
 ```
 
-**Dinamikus eszközkezelés:**
-- **Jóváhagyási munkafolyamatok**: Felhasználói hozzájárulás az eszközmódosításokhoz  
-- **Visszaállítási képességek**: Lehetőség az eszköz korábbi verzióira való visszatérésre  
-- **Változási auditálás**: Az eszközdefiníció-módosítások teljes története  
-- **Kockázatértékelés**: Az eszköz biztonsági helyzetének automatizált értékelése  
+**Dinamikus eszközkezelés:**  
+- **Jóváhagyási folyamatok**: Kifejezett felhasználói beleegyezés az eszköz módosításokhoz  
+- **Visszaállítási képességek**: Lehetőség a korábbi eszközverziókra való visszatérésre  
+- **Változásnaplózás**: Az eszközdefiníció módosításainak teljes története  
+- **Kockázatértékelés**: Automatizált eszközbiztonsági állapotértékelés
 
-## 5. **Zavart helyettesítő támadások megelőzése**
+## 5. **Zavaros Ügynök (Confused Deputy) Támadás Megelőzése**
 
-### **OAuth proxy biztonság**
+### **OAuth Proxy Biztonság**
 
-**Támadásmegelőzési ellenőrzések:**
+**Támadás megelőzési ellenőrzések:**  
 ```yaml
 Client Registration:
   static_client_protection:
@@ -218,17 +224,17 @@ Client Registration:
     - "Nonce verification for ID tokens"
 ```
 
-**Implementációs követelmények:**
-- **Felhasználói hozzájárulás ellenőrzése**: Soha ne hagyja ki a hozzájárulási képernyőket dinamikus kliensregisztráció esetén  
-- **Átirányítási URI ellenőrzése**: Szigorú fehérlistás ellenőrzés az átirányítási célokhoz  
-- **Engedélyezési kód védelem**: Rövid élettartamú kódok egyszeri használatának kényszerítése  
-- **Kliensazonosság ellenőrzése**: A kliens hitelesítő adatok és metaadatok robusztus ellenőrzése  
+**Megvalósítási követelmények:**  
+- **Felhasználói beleegyezés ellenőrzése**: Dinamikus kliensregisztráció során soha ne hagyjuk ki a beleegyezési képernyőket  
+- **Átirányítás URI érvényesítése**: Szigorú, fehérlistás átirányítási célok ellenőrzése  
+- **Engedély kód védelme**: Rövid élettartamú, egyszer használatos kódok  
+- **Kliensazonosság ellenőrzése**: Klienskulcsok és metaadatok alapos validálása
 
-## 6. **Eszközvégrehajtási biztonság**
+## 6. **Eszközvégrehajtási Biztonság**
 
-### **Homokozás és izoláció**
+### **Sandboxing és Izoláció**
 
-**Konténeralapú izoláció:**
+**Konténer alapú izoláció:**  
 ```yaml
 Execution Environment:
   containerization: "Docker/Podman with security profiles"
@@ -245,15 +251,15 @@ Execution Environment:
     filesystem: "Read-only root with minimal writable areas"
 ```
 
-**Folyamatizoláció:**
-- **Különálló folyamatkörnyezetek**: Minden eszközvégrehajtás izolált folyamatkörnyezetben  
-- **Folyamatok közötti kommunikáció**: Biztonságos IPC mechanizmusok ellenőrzéssel  
-- **Folyamatfigyelés**: Futásidejű viselkedéselemzés és anomáliaészlelés  
-- **Erőforrás-korlátozás**: Szigorú CPU-, memória- és I/O-műveleti korlátok  
+**Folyamat izoláció:**  
+- **Külön folyamat kontextusok**: Minden eszköz végrehajtása izolált folyamat térben  
+- **Folyamatok közötti kommunikáció**: Biztonságos, validált kommunikációs mechanizmusok  
+- **Folyamatfigyelés**: Futásidejű viselkedéselemzés és anomália észlelés  
+- **Erőforrás-korlátozások**: CPU, memória és I/O műveletekre szigorú korlátok
 
-### **Minimális jogosultság elve**
+### **Legkisebb Jogosultság Elve**
 
-**Jogosultságkezelés:**
+**Jogosultságkezelés:**  
 ```yaml
 Access Control:
   file_system:
@@ -274,11 +280,13 @@ Access Control:
     - "Restricted environment variable access"
 ```
 
-## 7. **Ellátási lánc biztonsági ellenőrzések**
+## 7. **Ellátási Lánc Biztonsági Intézkedések**
+
+**OWASP MCP kockázat kezelve**: [MCP04 - Ellátási lánc támadások](https://microsoft.github.io/mcp-azure-security-guide/mcp/mcp04-supply-chain/)
 
 ### **Függőségellenőrzés**
 
-**Átfogó komponensbiztonság:**
+**Átfogó komponensbiztonság:**  
 ```yaml
 Software Dependencies:
   scanning: 
@@ -307,19 +315,21 @@ AI Components:
     - "Incident response capability evaluation"
 ```
 
-### **Folyamatos monitorozás**
+### **Folyamatos Megfigyelés**
 
-**Ellátási lánc fenyegetésészlelés:**
-- **Függőségek egészségügyi monitorozása**: Az összes függőség folyamatos értékelése biztonsági problémák szempontjából  
-- **Fenyegetési intelligencia integráció**: Valós idejű frissítések a felmerülő ellátási lánc fenyegetésekről  
-- **Viselkedéselemzés**: Külső komponensek szokatlan viselkedésének észlelése  
-- **Automatizált válasz**: Kompromittált komponensek azonnali elszigetelése  
+**Ellátási lánc fenyegetés észlelése:**  
+- **Függőségek állapotának folyamatos figyelése**: Minden függőség biztonsági problémáinak értékelése  
+- **Fenyegetésintelligencia integráció**: Valós idejű frissítések az újonnan felmerülő ellátási lánc fenyegetésekről  
+- **Viselkedéselemzés**: Szokatlan viselkedés észlelése külső komponensekben  
+- **Automatizált reagálás**: Károsodott komponensek azonnali izolálása
 
-## 8. **Monitorozási és észlelési ellenőrzések**
+## 8. **Megfigyelési és Észlelési Intézkedések**
 
-### **Biztonsági információ- és eseménykezelés (SIEM)**
+**OWASP MCP kockázat kezelve**: [MCP08 - Auditálás és telemetria hiánya](https://microsoft.github.io/mcp-azure-security-guide/mcp/mcp08-telemetry/)
 
-**Átfogó naplózási stratégia:**
+### **Biztonsági Információ- és Eseménykezelés (SIEM)**
+
+**Átfogó naplózási stratégia:**  
 ```yaml
 Authentication Events:
   - "All authentication attempts (success/failure)"
@@ -340,19 +350,19 @@ Security Events:
   - "Unusual access patterns and anomalies"
 ```
 
-### **Valós idejű fenyegetésészlelés**
+### **Valós idejű Fenyegetés Észlelés**
 
-**Viselkedéselemzés:**
-- **Felhasználói viselkedéselemzés (UBA)**: Szokatlan felhasználói hozzáférési minták észlelése  
+**Viselkedéselemzés:**  
+- **Felhasználói viselkedéselemzés (UBA)**: Szokatlan felhasználói hozzáférési minták felismerése  
 - **Entitás viselkedéselemzés (EBA)**: MCP szerver és eszköz viselkedésének monitorozása  
-- **Gépi tanulás alapú anomáliaészlelés**: AI-alapú biztonsági fenyegetések azonosítása  
-- **Fenyegetési intelligencia korreláció**: Megfigyelt tevékenységek összevetése ismert támadási mintákkal  
+- **Gépi tanulás alapú anomália észlelés**: Mesterséges intelligencia alapú biztonsági fenyegetések felismerése  
+- **Fenyegetés-intelligencia korreláció**: Megfigyelt tevékenységek összevetése ismert támadási mintákkal
 
-## 9. **Incidensválasz és helyreállítás**
+## 9. **Incidens Válasz és Helyreállítás**
 
-### **Automatizált válaszképességek**
+### **Automatizált Válaszlehetőségek**
 
-**Azonnali válaszlépések:**
+**Azonnali válaszlépések:**  
 ```yaml
 Threat Containment:
   session_management:
@@ -377,43 +387,68 @@ Recovery Procedures:
     - "Service restart procedures"
 ```
 
-### **Igazságügyi képességek**
+### **Nyomozati képességek**
 
-**Vizsgálati támogatás:**
-- **Auditnaplók megőrzése**: Változtathatatlan naplózás kriptográfiai integritással  
-- **Bizonyítékgyűjtés**: Releváns biztonsági artefaktumok automatizált gyűjtése  
-- **Idővonal rekonstrukció**: Biztonsági incidensekhez vezető események részletes sorrendje  
-- **Hatásértékelés**: A kompromittálás mértékének és az adatkitettségnek az értékelése  
+**Vizsgálati támogatás:**  
+- **Audit nyomvonal megőrzése**: Megmásíthatatlan, kriptográfiailag védett naplózás  
+- **Bizonyítékgyűjtés**: Automatikus releváns biztonsági artefaktumok gyűjtése  
+- **Idővonal rekonstrukció**: Részletes eseménysorozat a biztonsági incidensekhez  
+- **Hatásfelmérés**: A kompromittáltság mértékének és az adatkiszivárgás értékelése
 
-## **Kulcsfontosságú biztonsági architektúra elvek**
+## **Kulcsfontosságú Biztonsági Architektúra Elvek**
 
-### **Többrétegű védelem**
-- **Többszintű biztonsági rétegek**: Nincs egyetlen hibapont a biztonsági architektúrában  
-- **Redundáns ellenőrzések**: Átfedő biztonsági intézkedések kritikus funkciókhoz  
-- **Biztonságos alapértelmezések**: Biztonságos alapbeállítások hibák vagy támadások esetén  
+### **Mélységi Védelem**  
+- **Többszörös biztonsági rétegek**: Nincs egyetlen hibapont a biztonsági architektúrában  
+- **Tartalék intézkedések**: Átfedő biztonsági megoldások kritikus funkciók számára  
+- **Biztonságos alapértelmezések**: Biztonságos alaphelyzet hibák vagy támadások esetén
 
-### **Zero Trust megközelítés**
-- **Soha ne bízz, mindig ellenőrizz**: Az összes entitás és kérés folyamatos ellenőrzése  
-- **Minimális jogosultság elve**: Minden komponens számára minimális hozzáférési jogok  
-- **Mikroszegmentáció**: Finomhangolt hálózati és hozzáférés-ellenőrzések  
+### **Zero Trust Megvalósítás**  
+- **Soha ne bízz meg, mindig ellenőrizz**: Folyamatos érvényesítés minden entitás és kérés esetén  
+- **Legkisebb jogosultság elve**: Minimális hozzáférési jogosultság minden komponensnek  
+- **Mikro-szegmentáció**: Finomhangolt hálózati és hozzáférési szabályozások
 
-### **Folyamatos biztonsági fejlődés**
-- **Fenyegetési környezethez való alkalmazkodás**: Rendszeres frissítések az új fenyegetések kezelésére  
-- **Biztonsági ellenőrzések hatékonysága**: Az ellenőrzések folyamatos értékelése és javítása  
-- **Specifikációs megfelelés**: Az MCP biztonsági szabványok fejlődéséhez való igazodás  
+### **Folyamatos Biztonsági Fejlődés**  
+- **Fenyegetésképhez való alkalmazkodás**: Rendszeres frissítések az új fenyegetések kezelésére  
+- **Biztonsági intézkedések hatékonysága**: Az intézkedések folyamatos értékelése és fejlesztése  
+- **Specifikációhoz való igazodás**: Az MCP biztonsági szabványok fejlődésének követése
 
 ---
 
-## **Implementációs források**
+## **Megvalósítási Források**
 
-### **Hivatalos MCP dokumentáció**
-- [MCP Specification (2025-06-18)](https://spec.modelcontextprotocol.io/specification/2025-06-18/)  
-- [MCP Biztonsági Legjobb Gyakorlatok](https://modelcontextprotocol.io/specification/2025-06-18/basic/security_best_practices)  
-- [MCP Engedélyezési Specifikáció](https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization)  
+### **Hivatalos MCP Dokumentáció**  
+- [MCP Specifikáció (2025-11-25)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)  
+- [MCP Biztonsági Legjobb Gyakorlatok](https://modelcontextprotocol.io/specification/2025-11-25/basic/security_best_practices)  
+- [MCP Engedélyezési Specifikáció](https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization)
 
-### **Microsoft biztonsági megoldások**
+### **OWASP MCP Biztonsági Források**  
+- [OWASP MCP Azure Biztonsági Útmutató](https://microsoft.github.io/mcp-azure-security-guide/) – Átfogó OWASP MCP Top 10 Azure megvalósítással  
+- [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/) – Hivatalos OWASP MCP biztonsági kockázatok  
+- [MCP Biztonsági Csúcstalálkozó Workshop (Sherpa)](https://azure-samples.github.io/sherpa/) – Gyakorlati biztonsági képzés MCP-hez Azure-on
+
+### **Microsoft Biztonsági Megoldások**  
 - [Microsoft Prompt Shields](https://learn.microsoft.com/azure/ai-services/content-safety/concepts/jailbreak-detection)  
-- [Azure Content Safety](https://learn.microsoft.com/
+- [Azure Tartalombiztonság](https://learn.microsoft.com/azure/ai-services/content-safety/)  
+- [GitHub Advanced Security](https://github.com/security/advanced-security)  
+- [Azure Key Vault](https://learn.microsoft.com/azure/key-vault/)
 
-**Felelősségkizárás**:  
-Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével készült. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt a professzionális, emberi fordítás igénybevétele. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+### **Biztonsági Szabványok**  
+- [OAuth 2.0 Biztonsági Legjobb Gyakorlatok (RFC 9700)](https://datatracker.ietf.org/doc/html/rfc9700)  
+- [OWASP Top 10 Nagy Nyelvi Modellekhez](https://genai.owasp.org/)  
+- [NIST Kiberbiztonsági Keretrendszer](https://www.nist.gov/cyberframework)
+
+---
+
+> **Fontos**: Ezek a biztonsági intézkedések az aktuális MCP specifikációt (2025-11-25) tükrözik. Mindig ellenőrizze a legfrissebb [hivatalos dokumentációt](https://spec.modelcontextprotocol.io/), mivel a szabványok gyorsan fejlődnek.
+
+## Mi következik
+
+- Vissza a: [Biztonsági Modul Áttekintés](./README.md) oldalra
+- Folytatás: [Module 3: Getting Started](../03-GettingStarted/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Jogi Nyilatkozat**:
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár igyekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások tartalmazhatnak hibákat vagy pontatlanságokat. Az eredeti dokumentum anyanyelvű változatát kell tekinteni a hiteles forrásnak. Kritikus információk esetén ajánlott szakmai emberi fordítást igénybe venni. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

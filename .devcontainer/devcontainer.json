@@ -1,5 +1,5 @@
 {
-    "name": ".NET",
+    "name": "MCP for beginners",
     // Configure tool-specific properties.
         "build": {
             "dockerfile": "Dockerfile",
@@ -15,7 +15,8 @@
                 "GitHub.github-vscode-theme", // Optional. Codespace IDE theming.
                 "ms-dotnettools.csharp", // Optional. Helpful for C# development
                 "ms-dotnettools.dotnet-interactive-vscode", // Polyglot Notebooks. Required,
-                "ms-dotnettools.csdevkit" // devkit
+                "ms-dotnettools.csdevkit", // devkit
+                "mermaidchart.vscode-mermaid-chart" // Documentation diagrams
             ]
         }
     },

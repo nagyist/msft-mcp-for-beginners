@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5ef8f5821c1a04f7b1fc4f15098ecab8",
-  "translation_date": "2025-08-26T20:39:17+00:00",
-  "source_file": "03-GettingStarted/04-vscode/solution/README.md",
-  "language_code": "lt"
-}
--->
 # Paleisti pavyzdį
 
 Čia darome prielaidą, kad jau turite veikiančią serverio kodo versiją. Suraskite serverį iš vieno ankstesnių skyrių.
@@ -35,7 +26,7 @@ Pavyzdiniame faile, nurodytame aukščiau, serverio įrašas atrodo taip:
 
     Turėtumėte matyti įrankį, pateiktą virš pokalbio teksto laukelio, kuris leidžia jums pasirinkti paleisti įrankį, kaip parodyta šiame paveikslėlyje:
 
-    ![VS Code rodo, kad nori paleisti įrankį](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.lt.png)
+    ![VS Code rodo, kad nori paleisti įrankį](../../../../../translated_images/lt/vscode-agent.d5a0e0b897331060.webp)
 
     Pasirinkus įrankį, turėtų būti pateiktas skaitinis rezultatas, sakantis "23", jei jūsų užklausa buvo tokia, kaip minėjome anksčiau.
 

@@ -189,3 +189,8 @@ Here's how you can learn more:
 - [Register and discover remote MCP servers in Azure API Center](https://learn.microsoft.com/en-us/azure/api-center/register-discover-mcp-server)
 - [AI Gateway](https://github.com/Azure-Samples/AI-Gateway) Great repo that shows many AI capabilities with Azure API Management
 - [AI Gateway workshops](https://azure-samples.github.io/AI-Gateway/)  Contains workshops using Azure Portal, which is a great way to start evaluating AI capabilities.
+
+## What's Next
+
+- Back to: [Case Studies Overview](./README.md)
+- Next: [Azure AI Travel Agents](./travelagentsample.md)

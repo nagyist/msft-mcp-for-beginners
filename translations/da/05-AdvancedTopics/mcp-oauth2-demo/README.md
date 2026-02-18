@@ -1,34 +1,49 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0a7083e660ca0d85fd6a947514c61993",
-  "translation_date": "2025-07-14T00:42:16+00:00",
-  "source_file": "05-AdvancedTopics/mcp-oauth2-demo/README.md",
-  "language_code": "da"
-}
--->
 # MCP OAuth2 Demo
 
-Dette projekt er en **minimal Spring Boot-applikation**, der fungerer som både:
+## Introduktion
 
-* en **Spring Authorization Server** (udsteder JWT-adgangstokens via `client_credentials` flowet), og  
-* en **Resource Server** (beskytter sin egen `/hello` endpoint).
+OAuth2 er industristandardprotokollen for autorisation, der muliggør sikker adgang til ressourcer uden at dele legitimationsoplysninger. I MCP (Model Context Protocol) implementeringer giver OAuth2 en robust måde at autentificere og autorisere klienter (såsom AI-agenter) til at få adgang til MCP-servere og deres værktøjer.
 
-Det afspejler opsætningen vist i [Spring blogindlægget (2. apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
+Denne lektion demonstrerer, hvordan man implementerer OAuth2-autentificering for MCP-servere ved hjælp af Spring Boot, et almindeligt mønster til enterprise- og produktionsudrulninger.
+
+## Læringsmål
+
+I slutningen af denne lektion vil du:
+- Forstå, hvordan OAuth2 integreres med MCP-servere
+- Implementere en Spring Authorization Server til udstedelse af tokens
+- Beskytte MCP-endpoints med JWT-baseret autentificering
+- Konfigurere client credentials flow til maskine-til-maskine kommunikation
+
+## Forudsætninger
+
+- Grundlæggende forståelse af Java og Spring Boot
+- Fortrolighed med MCP-koncepter fra tidligere moduler
+- Maven eller Gradle installeret
+
+---
+
+## Projektoversigt
+
+Dette projekt er en **minimal Spring Boot-applikation**, der fungerer både som:
+
+* en **Spring Authorization Server** (udsteder JWT adgangstokens via `client_credentials` flow), og  
+* en **Resource Server** (beskytter sit eget `/hello` endpoint).
+
+Den spejler opsætningen vist i [Spring blogindlægget (2. apr 2025)](https://spring.io/blog/2025/04/02/mcp-server-oauth2).
 
 ---
 
 ## Hurtig start (lokalt)
 
 ```bash
-# build & run
+# byg og kør
 ./mvnw spring-boot:run
 
-# obtain a token
+# få en token
 curl -u mcp-client:secret -d grant_type=client_credentials \
      http://localhost:8081/oauth2/token | jq -r .access_token > token.txt
 
-# call the protected endpoint
+# kald det beskyttede endpoint
 curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 ```
 
@@ -41,35 +56,35 @@ Du kan teste OAuth2-sikkerhedskonfigurationen med følgende trin:
 ### 1. Bekræft at serveren kører og er sikret
 
 ```bash
-# This should return 401 Unauthorized, confirming OAuth2 security is active
+# Dette skulle returnere 401 Unauthorized, hvilket bekræfter, at OAuth2-sikkerhed er aktiv
 curl -v http://localhost:8081/
 ```
 
 ### 2. Hent et adgangstoken ved hjælp af client credentials
 
 ```bash
-# Get and extract the full token response
+# Hent og udpak det komplette token-svar
 curl -v -X POST http://localhost:8081/oauth2/token \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -H "Authorization: Basic bWNwLWNsaWVudDpzZWNyZXQ=" \
   -d "grant_type=client_credentials&scope=mcp.access"
 
-# Or to extract just the token (requires jq)
+# Eller for kun at udpakke token (kræver jq)
 curl -s -X POST http://localhost:8081/oauth2/token \
   -H "Content-Type: application/x-www-form-urlencoded" \
   -H "Authorization: Basic bWNwLWNsaWVudDpzZWNyZXQ=" \
   -d "grant_type=client_credentials&scope=mcp.access" | jq -r .access_token > token.txt
 ```
 
-Bemærk: Basic Authentication-headeren (`bWNwLWNsaWVudDpzZWNyZXQ=`) er Base64-kodningen af `mcp-client:secret`.
+Bemærk: Basic Authentication headeren (`bWNwLWNsaWVudDpzZWNyZXQ=`) er Base64-kodningen af `mcp-client:secret`.
 
-### 3. Få adgang til den beskyttede endpoint med tokenet
+### 3. Få adgang til det beskyttede endpoint ved brug af tokenet
 
 ```bash
-# Using the saved token
+# Brug af den gemte token
 curl -H "Authorization: Bearer $(cat token.txt)" http://localhost:8081/hello
 
-# Or directly with the token value
+# Eller direkte med tokenværdien
 curl -H "Authorization: Bearer eyJra...token_value...xyz" http://localhost:8081/hello
 ```
 
@@ -86,7 +101,7 @@ docker run -p 8081:8081 mcp-oauth2-demo
 
 ---
 
-## Deploy til **Azure Container Apps**
+## Udrul til **Azure Container Apps**
 
 ```bash
 az containerapp up -n mcp-oauth2 \
@@ -96,7 +111,7 @@ az containerapp up -n mcp-oauth2 \
 ```
 
 Ingress FQDN bliver din **issuer** (`https://<fqdn>`).  
-Azure leverer automatisk et betroet TLS-certifikat til `*.azurecontainerapps.io`.
+Azure leverer automatisk et betroet TLS-certifikat for `*.azurecontainerapps.io`.
 
 ---
 
@@ -120,9 +135,13 @@ APIM henter JWKS og validerer hver anmodning.
 
 ---
 
-## Hvad er det næste
+## Hvad er næste skridt
 
 - [5.4 Root contexts](../mcp-root-contexts/README.md)
 
-**Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Ansvarsfraskrivelse**:
+Dette dokument er oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiske oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets modersmål skal betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for eventuelle misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13231e9951b68efd9df8c56bd5cdb27e",
-  "translation_date": "2025-07-13T22:28:14+00:00",
-  "source_file": "03-GettingStarted/samples/java/calculator/README.md",
-  "language_code": "fi"
-}
--->
 # Basic Calculator MCP Service
 
 Tämä palvelu tarjoaa peruslaskutoimituksia Model Context Protocolin (MCP) kautta käyttäen Spring Bootia ja WebFlux-siirtoa. Se on suunniteltu yksinkertaiseksi esimerkiksi aloittelijoille, jotka opettelevat MCP:n toteutuksia.
@@ -201,7 +192,7 @@ MCP Inspector on hyödyllinen työkalu MCP-palveluiden kanssa työskentelyyn. K�
    - Klikkaa "List Tools" nähdäksesi käytettävissä olevat laskinoperaatiot
    - Valitse työkalu ja klikkaa "Run Tool" suorittaaksesi operaation
 
-![MCP Inspector Screenshot](../../../../../../translated_images/tool.c75a0b2380efcf1a47a8478f54380a36ddcca7943b98f56dabbac8b07e15c3bb.fi.png)
+![MCP Inspector Screenshot](../../../../../../translated_images/fi/tool.c75a0b2380efcf1a.webp)
 
 ### Dockerin käyttö
 

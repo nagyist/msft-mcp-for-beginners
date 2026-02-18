@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-13T22:01:28+00:00",
-  "source_file": "03-GettingStarted/08-testing/README.md",
-  "language_code": "no"
-}
--->
 ## Testing og feilsøking
 
 Før du begynner å teste MCP-serveren din, er det viktig å forstå hvilke verktøy som finnes og beste praksis for feilsøking. Effektiv testing sikrer at serveren oppfører seg som forventet og hjelper deg med å raskt identifisere og løse problemer. Følgende seksjon beskriver anbefalte metoder for å validere din MCP-implementasjon.
@@ -48,7 +39,7 @@ npx @modelcontextprotocol/inspector node build/index.js
 
 Kommandoen over starter en MCP og dens visuelle grensesnitt, og åpner en lokal webside i nettleseren din. Du vil se et dashbord som viser dine registrerte MCP-servere, tilgjengelige verktøy, ressurser og prompts. Grensesnittet lar deg teste verktøyutførelse interaktivt, inspisere servermetadata og se svar i sanntid, noe som gjør det enklere å validere og feilsøke MCP-serverimplementasjonene dine.
 
-Slik kan det se ut: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.no.png)
+Slik kan det se ut: ![Inspector](../../../../translated_images/no/connect.141db0b2bd05f096.webp)
 
 Du kan også kjøre dette verktøyet i CLI-modus ved å legge til `--cli`-attributtet. Her er et eksempel på å kjøre verktøyet i "CLI"-modus som viser alle verktøyene på serveren:
 

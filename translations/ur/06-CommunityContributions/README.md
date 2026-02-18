@@ -1,148 +1,139 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fcf1e12b62102bf7d16b78deb2b163b7",
-  "translation_date": "2025-08-18T14:25:14+00:00",
-  "source_file": "06-CommunityContributions/README.md",
-  "language_code": "ur"
-}
--->
 # کمیونٹی اور تعاون
 
-[![MCP میں تعاون کرنے کا طریقہ: ٹولز، دستاویزات، کوڈ اور مزید](../../../translated_images/07.1179f6de46ff196eb3cc13c3510e01c37807a13f3bb9be3c779105ce26737c67.ur.png)](https://youtu.be/v1pvCYAWpRE)
+[![MCP میں تعاون کیسے کریں: ٹولز، ڈاکس، کوڈ اور مزید](../../../translated_images/ur/07.1179f6de46ff196e.webp)](https://youtu.be/v1pvCYAWpRE)
 
-_(اوپر دی گئی تصویر پر کلک کریں تاکہ اس سبق کی ویڈیو دیکھ سکیں)_
+_(اس سبق کی ویڈیو دیکھنے کے لیے اوپر تصویر پر کلک کریں)_
 
 ## جائزہ
 
-یہ سبق MCP کمیونٹی کے ساتھ جڑنے، MCP ایکو سسٹم میں تعاون کرنے، اور مشترکہ ترقی کے بہترین طریقوں پر عمل کرنے پر مرکوز ہے۔ اوپن سورس MCP پروجیکٹس میں حصہ لینا ان لوگوں کے لیے ضروری ہے جو اس ٹیکنالوجی کے مستقبل کو تشکیل دینا چاہتے ہیں۔
+یہ سبق MCP کمیونٹی کے ساتھ کیسے جُڑیں، MCP ماحولیاتی نظام میں کیسے تعاون کریں، اور مشترکہ ترقی کے لیے بہترین طریقوں کی پیروی کیسے کریں اس پر مرکوز ہے۔ اوپن سورس MCP پروجیکٹس میں حصہ لینا ان لوگوں کے لیے ضروری ہے جو اس ٹیکنالوجی کے مستقبل کو شکل دینا چاہتے ہیں۔
 
 ## سیکھنے کے مقاصد
 
-اس سبق کے اختتام تک، آپ:
+اس سبق کے آخر تک، آپ قابل ہوں گے:
 
-- MCP کمیونٹی اور ایکو سسٹم کی ساخت کو سمجھ سکیں گے
-- MCP کمیونٹی فورمز اور مباحثوں میں مؤثر طریقے سے حصہ لے سکیں گے
-- MCP اوپن سورس ریپوزیٹریز میں تعاون کر سکیں گے
-- اپنی مرضی کے MCP ٹولز اور سرورز بنا کر شیئر کر سکیں گے
-- MCP ترقی اور تعاون کے بہترین طریقوں پر عمل کر سکیں گے
-- MCP ترقی کے لیے کمیونٹی وسائل اور فریم ورک دریافت کر سکیں گے
+- MCP کمیونٹی اور ماحولیاتی نظام کے ڈھانچے کو سمجھنا
+- MCP کمیونٹی فورمز اور مباحثوں میں موثر طریقے سے حصہ لینا
+- MCP اوپن سورس ذخائر میں تعاون کرنا
+- کسٹم MCP ٹولز اور سرورز تیار کرنا اور شیئر کرنا
+- MCP ڈیولپمنٹ اور تعاون کے لیے بہترین طریقہ کار کی پیروی کرنا
+- MCP ڈیولپمنٹ کے لیے کمیونٹی وسائل اور فریم ورکس دریافت کرنا
 
-## MCP کمیونٹی ایکو سسٹم
+## MCP کمیونٹی ماحولیاتی نظام
 
-MCP ایکو سسٹم مختلف اجزاء اور شرکاء پر مشتمل ہے جو پروٹوکول کو آگے بڑھانے کے لیے مل کر کام کرتے ہیں۔
+MCP ماحولیاتی نظام مختلف اجزاء اور شرکاء پر مشتمل ہے جو پروٹوکول کو آگے بڑھانے کے لیے مل کر کام کرتے ہیں۔
 
-### کمیونٹی کے اہم اجزاء
+### کلیدی کمیونٹی اجزاء
 
-1. **کور پروٹوکول مینٹینرز**: [Model Context Protocol GitHub تنظیم](https://github.com/modelcontextprotocol) MCP کی بنیادی وضاحتیں اور حوالہ جات کو برقرار رکھتی ہے۔
-2. **ٹول ڈیولپرز**: وہ افراد اور ٹیمیں جو MCP ٹولز اور سرورز بناتے ہیں۔
-3. **انٹیگریشن فراہم کنندگان**: وہ کمپنیاں جو MCP کو اپنی مصنوعات اور خدمات میں شامل کرتی ہیں۔
-4. **اختتامی صارفین**: وہ ڈویلپرز اور تنظیمیں جو MCP کو اپنی ایپلیکیشنز میں استعمال کرتی ہیں۔
-5. **تعاون کرنے والے**: وہ کمیونٹی ممبران جو کوڈ، دستاویزات، یا دیگر وسائل میں تعاون کرتے ہیں۔
+1. **کور پروٹوکول مینٹینرز**: سرکاری [Model Context Protocol GitHub آرگنائزیشن](https://github.com/modelcontextprotocol) MCP کی بنیادی وضاحتیں اور ریفرنس امپلیمنٹیشنز کا انتظام کرتی ہے
+2. **ٹول ڈویلپرز**: افراد اور ٹیمیں جو MCP ٹولز اور سرورز بناتی ہیں
+3. **انٹیگریشن پرووائیڈرز**: کمپنیاں جو MCP کو اپنے مصنوعات اور خدمات میں ضم کرتی ہیں
+4. **اینڈ یوزرز**: ڈویلپرز اور تنظیمیں جو اپنے ایپلیکیشنز میں MCP استعمال کرتی ہیں
+5. **کنٹریبیوٹرز**: کمیونٹی کے ارکان جو کوڈ، دستاویزات یا دیگر وسائل فراہم کرتے ہیں
 
 ### کمیونٹی وسائل
 
 #### سرکاری چینلز
 
-- [MCP GitHub تنظیم](https://github.com/modelcontextprotocol)
+- [MCP GitHub آرگنائزیشن](https://github.com/modelcontextprotocol)
 - [MCP دستاویزات](https://modelcontextprotocol.io/)
-- [MCP وضاحت](https://modelcontextprotocol.io/docs/specification)
+- [MCP وضاحت](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
 - [GitHub مباحثے](https://github.com/orgs/modelcontextprotocol/discussions)
 - [MCP مثالیں اور سرورز ریپوزیٹری](https://github.com/modelcontextprotocol/servers)
 
-#### کمیونٹی سے چلنے والے وسائل
+#### کمیونٹی پر مبنی وسائل
 
-- [MCP کلائنٹس](https://modelcontextprotocol.io/clients) - وہ کلائنٹس جو MCP انٹیگریشنز کو سپورٹ کرتے ہیں۔
-- [کمیونٹی MCP سرورز](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - کمیونٹی کے ذریعے تیار کردہ MCP سرورز کی بڑھتی ہوئی فہرست۔
-- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) - MCP سرورز کی منتخب کردہ فہرست۔
-- [PulseMCP](https://www.pulsemcp.com/) - MCP وسائل دریافت کرنے کے لیے کمیونٹی حب اور نیوز لیٹر۔
-- [Discord سرور](https://discord.gg/jHEGxQu2a5) - MCP ڈویلپرز کے ساتھ جڑیں۔
-- زبان کے لحاظ سے SDK کی تنفیذ
+- [MCP کلائنٹس](https://modelcontextprotocol.io/clients) - کلائنٹس کی فہرست جو MCP انٹیگریشنز کی حمایت کرتے ہیں
+- [کمیونٹی MCP سرورز](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - کمیونٹی کی طرف سے تیار کردہ بڑھتی ہوئی MCP سرورز کی فہرست
+- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) - منتخب شدہ MCP سرورز کی فہرست
+- [PulseMCP](https://www.pulsemcp.com/) - MCP وسائل کی دریافت کے لیے کمیونٹی ہب اور نیوز لیٹر
+- [ڈسکارڈ سرور](https://discord.gg/jHEGxQu2a5) - MCP ڈویلپرز کے ساتھ جڑیں
+- زبان مخصوص SDK امپلیمنٹیشنز
 - بلاگ پوسٹس اور ٹیوٹوریلز
 
-## MCP میں تعاون کرنا
+## MCP میں تعاون
 
 ### تعاون کی اقسام
 
-MCP ایکو سسٹم مختلف اقسام کے تعاون کا خیر مقدم کرتا ہے:
+MCP ماحولیاتی نظام مختلف اقسام کی تعاون کا خیرمقدم کرتا ہے:
 
 1. **کوڈ تعاون**:
-   - کور پروٹوکول میں بہتری
+   - کور پروٹوکول میں اصلاحات
    - بگ فکسز
-   - ٹول اور سرور کی تنفیذ
-   - مختلف زبانوں میں کلائنٹ/سرور لائبریریاں
+   - ٹول اور سرور امپلیمنٹیشنز
+   - مختلف زبانوں میں کلائنٹ/سرور لائبریریز
 
 2. **دستاویزات**:
-   - موجودہ دستاویزات کو بہتر بنانا
+   - موجودہ دستاویزات کی بہتری
    - ٹیوٹوریلز اور گائیڈز بنانا
    - دستاویزات کا ترجمہ کرنا
-   - مثالیں اور نمونہ ایپلیکیشنز بنانا
+   - مثالیں اور سیمپل ایپلیکیشنز بنانا
 
 3. **کمیونٹی سپورٹ**:
-   - فورمز اور مباحثوں میں سوالات کے جوابات دینا
+   - فورمز اور مباحثوں میں سوالات کے جواب دینا
    - مسائل کی جانچ اور رپورٹنگ
    - کمیونٹی ایونٹس کا انعقاد
-   - نئے تعاون کرنے والوں کی رہنمائی
+   - نئے کنٹریبیوٹرز کی رہنمائی
 
-### کور پروٹوکول میں تعاون کا عمل
+### تعاون کا عمل: کور پروٹوکول
 
-کور MCP پروٹوکول یا سرکاری تنفیذ میں تعاون کرنے کے لیے، [سرکاری تعاون کے رہنما اصول](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md) کے اصولوں پر عمل کریں:
+کور MCP پروٹوکول یا سرکاری امپلیمنٹیشنز میں تعاون کرنے کے لیے، [سرکاری تعاون کے رہنما خطوط](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md) سے یہ اصول اپنائیں:
 
-1. **سادگی اور کم سے کمیت**: MCP وضاحت نئے تصورات شامل کرنے کے لیے اعلیٰ معیار برقرار رکھتی ہے۔ وضاحت میں چیزیں شامل کرنا ہٹانے سے آسان ہے۔
+1. **سادگی اور کم سے کم پن**: MCP وضاحت نئے تصورات شامل کرنے کے لیے اعلیٰ معیار رکھتی ہے۔ چیزیں شامل کرنا آسان ہے بجائے ہٹانے کے۔
 
-2. **ٹھوس نقطہ نظر**: وضاحت میں تبدیلیاں مخصوص تنفیذی چیلنجز پر مبنی ہونی چاہئیں، نہ کہ قیاسی خیالات پر۔
+2. **ٹھوس نقطہ نظر**: وضاحتی تبدیلیاں مخصوص امپلیمنٹیشن چیلنجز پر مبنی ہونی چاہئیں، قیاسی خیالات پر نہیں۔
 
 3. **تجویز کے مراحل**:
-   - تعریف کریں: مسئلے کی جگہ کو دریافت کریں، تصدیق کریں کہ دیگر MCP صارفین کو بھی اسی طرح کا مسئلہ درپیش ہے۔
-   - پروٹوٹائپ بنائیں: ایک مثال حل بنائیں اور اس کے عملی اطلاق کو ظاہر کریں۔
-   - لکھیں: پروٹوٹائپ کی بنیاد پر وضاحت کی تجویز لکھیں۔
+   - وضاحت کرنا: مسئلے کی حد کا جائزہ لیں، تصدیق کریں کہ دوسرے MCP صارفین بھی اسی مسئلے سے دوچار ہیں
+   - پروٹوٹائپ بنانا: ایک مثال کے حل تیار کریں اور اس کی عملی تطبیق دکھائیں
+   - تحریر کرنا: پروٹوٹائپ کی بنیاد پر، وضاحتی تجویز لکھیں
 
 ### ترقیاتی ماحول کی ترتیب
 
 ```bash
-# Fork the repository
+# مخزن کو فورک کریں
 git clone https://github.com/YOUR-USERNAME/modelcontextprotocol.git
 cd modelcontextprotocol
 
-# Install dependencies
+# انحصاریوں کو انسٹال کریں
 npm install
 
-# For schema changes, validate and generate schema.json:
+# سکیما کی تبدیلیوں کے لیے، schema.json کی توثیق اور تخلیق کریں:
 npm run check:schema:ts
 npm run generate:schema
 
-# For documentation changes
+# دستاویزات میں تبدیلیوں کے لیے
 npm run check:docs
 npm run format
 
-# Preview documentation locally (optional):
+# دستاویزات کو مقامی طور پر پیش نظارہ کریں (اختیاری):
 npm run serve:docs
 ```
 
-### مثال: بگ فکس میں تعاون کرنا
+### مثال: بگ فکس میں تعاون
 
 ```javascript
-// Original code with bug in the typescript-sdk
+// typescript-sdk میں مسئلہ کے ساتھ اصل کوڈ
 export function validateResource(resource: unknown): resource is MCPResource {
   if (!resource || typeof resource !== 'object') {
     return false;
   }
   
-  // Bug: Missing property validation
-  // Current implementation:
+  // مسئلہ: پراپرٹی کی تصدیق کا فقدان
+  // موجودہ عمل درآمد:
   const hasName = 'name' in resource;
   const hasSchema = 'schema' in resource;
   
   return hasName && hasSchema;
 }
 
-// Fixed implementation in a contribution
+// تعاون میں درست شدہ عمل درآمد
 export function validateResource(resource: unknown): resource is MCPResource {
   if (!resource || typeof resource !== 'object') {
     return false;
   }
   
-  // Improved validation
+  // بہتر کردہ تصدیق
   const hasName = 'name' in resource && typeof (resource as MCPResource).name === 'string';
   const hasSchema = 'schema' in resource && typeof (resource as MCPResource).schema === 'object';
   const hasDescription = !('description' in resource) || typeof (resource as MCPResource).description === 'string';
@@ -151,10 +142,10 @@ export function validateResource(resource: unknown): resource is MCPResource {
 }
 ```
 
-### مثال: معیاری لائبریری میں نیا ٹول شامل کرنا
+### مثال: اسٹینڈرڈ لائبریری میں نیا ٹول شامل کرنا
 
 ```python
-# Example contribution: A CSV data processing tool for the MCP standard library
+# مثال مدد: MCP اسٹینڈرڈ لائبریری کے لیے ایک CSV ڈیٹا پروسیسنگ ٹول
 
 from mcp_tools import Tool, ToolRequest, ToolResponse, ToolExecutionException
 import pandas as pd
@@ -216,14 +207,14 @@ class CsvProcessingTool(Tool):
     
     async def execute_async(self, request: ToolRequest) -> ToolResponse:
         try:
-            # Extract parameters
+            # پیرامیٹرز نکالیں
             operation = request.parameters.get("operation")
             output_format = request.parameters.get("outputFormat", "json")
             
-            # Get CSV data from either direct data or URL
+            # CSV ڈیٹا براہ راست ڈیٹا یا یو آر ایل سے حاصل کریں
             df = await self._get_dataframe(request)
             
-            # Process based on requested operation
+            # درخواست کردہ آپریشن کی بنیاد پر عمل کریں
             result = {}
             
             if operation == "summary":
@@ -284,7 +275,7 @@ class CsvProcessingTool(Tool):
     
     def _transform_data(self, df: pd.DataFrame, params: Dict[str, Any]) -> Dict[str, Any]:
         """Transforms the data based on parameters"""
-        # Implementation would include various transformations
+        # عمل درآمد میں مختلف تبدیلیاں شامل ہوں گی
         return {
             "status": "success",
             "message": "Transformation applied"
@@ -311,68 +302,70 @@ class CsvProcessingTool(Tool):
             raise ToolExecutionException(f"Unsupported output format: {format}")
 ```
 
-### تعاون کے رہنما اصول
+### تعاون کے اصول
 
 MCP پروجیکٹس میں کامیاب تعاون کرنے کے لیے:
 
-1. **چھوٹے سے شروع کریں**: دستاویزات، بگ فکسز، یا چھوٹے اضافے سے آغاز کریں۔
-2. **اسٹائل گائیڈ پر عمل کریں**: پروجیکٹ کے کوڈنگ اسٹائل اور کنونشنز پر عمل کریں۔
-3. **ٹیسٹ لکھیں**: اپنے کوڈ تعاون کے لیے یونٹ ٹیسٹ شامل کریں۔
-4. **اپنے کام کو دستاویز کریں**: نئی خصوصیات یا تبدیلیوں کے لیے واضح دستاویزات شامل کریں۔
-5. **ہدف شدہ PRs جمع کریں**: پل ریکویسٹ کو ایک مسئلے یا خصوصیت پر مرکوز رکھیں۔
-6. **فیڈبیک کے ساتھ مشغول ہوں**: اپنے تعاون پر فیڈبیک کے لیے جوابدہ رہیں۔
+1. **چھوٹے سے شروع کریں**: دستاویزات، بگ فکسز، یا چھوٹے بہتری سے آغاز کریں
+2. **سٹائل گائیڈ کی پیروی کریں**: پروجیکٹ کے کوڈنگ انداز اور کنونشنز پر عمل کریں
+3. **ٹیسٹ لکھیں**: اپنے کوڈ تعاون کے لیے یونٹ ٹیسٹ شامل کریں
+4. **اپنے کام کی دستاویزات بنائیں**: نئی خصوصیات یا تبدیلیوں کے لیے واضح دستاویزات شامل کریں
+5. **مخصوص PRs جمع کروائیں**: پل ریکویسٹ کو ایک مسئلہ یا فیچر تک محدود رکھیں
+6. **فیڈبیک سے مشغول ہوں**: اپنی تعاون پر ملنے والے فیڈبیک کا فوری جواب دیں
 
-### تعاون کے ورک فلو کی مثال
+### مثال مساوی کارروائی کا ورک فلو
 
 ```bash
-# Clone the repository
+# مخزن کی کلون کریں
 git clone https://github.com/modelcontextprotocol/typescript-sdk.git
 cd typescript-sdk
 
-# Create a new branch for your contribution
+# اپنی شراکت کے لیے ایک نئی شاخ بنائیں
 git checkout -b feature/my-contribution
 
-# Make your changes
+# اپنی تبدیلیاں کریں
 # ...
 
-# Run tests to ensure your changes don't break existing functionality
+# ٹیسٹ چلائیں تاکہ یقین ہو کہ آپ کی تبدیلیاں موجودہ فعالیت کو نقصان نہ پہنچائیں
 npm test
 
-# Commit your changes with a descriptive message
+# اپنی تبدیلیوں کو ایک وضاحتی پیغام کے ساتھ کمیٹ کریں
 git commit -am "Fix validation in resource handler"
 
-# Push your branch to your fork
+# اپنی شاخ کو اپنے فورک پر پش کریں
 git push origin feature/my-contribution
 
-# Create a pull request from your branch to the main repository
-# Then engage with feedback and iterate on your PR as needed
+# اپنی شاخ سے مرکزی مخزن کے لیے پل ریکویسٹ بنائیں
+# پھر فیڈبیک پر عمل کریں اور ضرورت کے مطابق اپنے PR پر کام کریں
 ```
 
-## MCP سرورز بنانا اور شیئر کرنا
+## MCP سرورز تیار کرنا اور شیئر کرنا
 
-MCP ایکو سسٹم میں تعاون کرنے کے سب سے قیمتی طریقوں میں سے ایک اپنی مرضی کے MCP سرورز بنانا اور شیئر کرنا ہے۔ کمیونٹی نے پہلے ہی مختلف خدمات اور استعمال کے معاملات کے لیے سینکڑوں سرورز تیار کیے ہیں۔
+MCP ماحولیاتی نظام میں سب سے قیمتی تعاون میں سے ایک ہے کسٹم MCP سرورز تیار کرنا اور شیئر کرنا۔ کمیونٹی مختلف خدمات اور استعمال کے معاملات کے لیے سینکڑوں سرورز پہلے ہی تیار کر چکی ہے۔
 
-### MCP سرور ترقیاتی فریم ورک
+### MCP سرور ڈیولپمنٹ فریم ورکس
 
-MCP سرور کی ترقی کو آسان بنانے کے لیے کئی فریم ورک دستیاب ہیں:
+MCP سرور کی ترقی کو آسان بنانے کے لیے کئی فریم ورکس دستیاب ہیں:
 
-1. **سرکاری SDKs**:
+1. **سرکاری SDKs** ([MCP Specification 2025-11-25](https://spec.modelcontextprotocol.io/specification/2025-11-25/) کے مطابق):
    - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
    - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
    - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
    - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
    - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
    - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
+   - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk)
+   - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk)
 
-2. **کمیونٹی فریم ورک**:
-   - [MCP-Framework](https://mcp-framework.com/) - TypeScript میں MCP سرورز کو خوبصورتی اور رفتار کے ساتھ بنائیں۔
-   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - جاوا کے ساتھ تشریحی MCP سرورز۔
-   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - جاوا فریم ورک MCP سرورز کے لیے۔
-   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - MCP سرورز کے لیے اسٹارٹر Next.js پروجیکٹ۔
+2. **کمیونٹی فریم ورکس**:
+   - [MCP-Framework](https://mcp-framework.com/) - TypeScript میں MCP سرورز کو نفاست اور تیزی سے بنائیں
+   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - Java کے ساتھ اینوٹیشن ڈرائیون MCP سرورز
+   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - MCP سرورز کے لیے Java فریم ورک
+   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - MCP سرورز کے لیے اسٹارٹر Next.js پروجیکٹ
 
-### شیئر کرنے کے قابل ٹولز تیار کرنا
+### قابلِ اشتراک ٹولز تیار کرنا
 
-#### .NET مثال: شیئر کرنے کے قابل ٹول پیکیج بنانا
+#### .NET مثال: قابلِ اشتراک ٹول پیکیج تیار کرنا
 
 ```csharp
 // Create a new .NET library project
@@ -478,10 +471,10 @@ namespace McpFinanceTools
 // dotnet nuget push bin/Release/McpFinanceTools.1.0.0.nupkg -s https://api.nuget.org/v3/index.json -k YOUR_API_KEY
 ```
 
-#### جاوا مثال: ٹولز کے لیے Maven پیکیج بنانا
+#### Java مثال: ٹولز کے لیے Maven پیکیج بنانا
 
 ```java
-// pom.xml configuration for a shareable MCP tool package
+// شیئر کرنے کے قابل MCP ٹول پیکیج کے لیے pom.xml کی ترتیب
 <!-- 
 <project>
     <groupId>com.example</groupId>
@@ -542,7 +535,7 @@ public class WeatherForecastTool implements Tool {
     @Override
     public Object getSchema() {
         Map<String, Object> schema = new HashMap<>();
-        // Schema definition...
+        // اسکیما کی تعریف...
         return schema;
     }
     
@@ -553,10 +546,10 @@ public class WeatherForecastTool implements Tool {
             int days = request.getParameters().has("days") ? 
                 request.getParameters().get("days").asInt() : 3;
             
-            // Call weather API
+            // موسم کا API کال کریں
             Map<String, Object> forecast = getForecast(location, days);
             
-            // Build response
+            // جواب تیار کریں
             return new ToolResponse.Builder()
                 .setResult(forecast)
                 .build();
@@ -566,15 +559,15 @@ public class WeatherForecastTool implements Tool {
     }
     
     private Map<String, Object> getForecast(String location, int days) {
-        // Implementation would call weather API
-        // Simplified example
+        // نفاذ موسم کا API کال کرے گا
+        // سادہ مثال
         Map<String, Object> result = new HashMap<>();
-        // Add forecast data...
+        // پیشن گوئی کا ڈیٹا شامل کریں...
         return result;
     }
 }
 
-// Build and publish using Maven
+// Maven استعمال کرتے ہوئے بلڈ اور پبلش کریں
 // mvn clean package
 // mvn deploy
 ```
@@ -582,7 +575,7 @@ public class WeatherForecastTool implements Tool {
 #### Python مثال: PyPI پیکیج شائع کرنا
 
 ```python
-# Directory structure for a PyPI package:
+# PyPI پیکیج کے لیے ڈائریکٹری ساخت:
 # mcp_nlp_tools/
 # ├── LICENSE
 # ├── README.md
@@ -592,7 +585,7 @@ public class WeatherForecastTool implements Tool {
 # │   ├── sentiment_tool.py
 # │   └── translation_tool.py
 
-# Example setup.py
+# setup.py کی مثال
 """
 from setuptools import setup, find_packages
 
@@ -620,7 +613,7 @@ setup(
 )
 """
 
-# Example NLP tool implementation (sentiment_tool.py)
+# NLP ٹول کی مثال عملدرآمد (sentiment_tool.py)
 from mcp_tools import Tool, ToolRequest, ToolResponse, ToolExecutionException
 from transformers import pipeline
 import torch
@@ -629,7 +622,7 @@ class SentimentAnalysisTool(Tool):
     """MCP tool for sentiment analysis of text"""
     
     def __init__(self, model_name="distilbert-base-uncased-finetuned-sst-2-english"):
-        # Load the sentiment analysis model
+        # جذباتی تجزیہ ماڈل لوڈ کریں
         self.sentiment_analyzer = pipeline("sentiment-analysis", model=model_name)
     
     def get_name(self):
@@ -657,14 +650,14 @@ class SentimentAnalysisTool(Tool):
     
     async def execute_async(self, request: ToolRequest) -> ToolResponse:
         try:
-            # Extract parameters
+            # پیرامیٹرز نکالیں
             text = request.parameters.get("text")
             include_score = request.parameters.get("includeScore", True)
             
-            # Analyze sentiment
+            # جذبات کا تجزیہ کریں
             sentiment_result = self.sentiment_analyzer(text)[0]
             
-            # Format result
+            # نتیجہ فارمیٹ کریں
             result = {
                 "sentiment": sentiment_result["label"],
                 "text": text
@@ -673,82 +666,82 @@ class SentimentAnalysisTool(Tool):
             if include_score:
                 result["score"] = sentiment_result["score"]
             
-            # Return result
+            # نتیجہ واپس کریں
             return ToolResponse(result=result)
             
         except Exception as e:
             raise ToolExecutionException(f"Sentiment analysis failed: {str(e)}")
 
-# To publish:
+# اشاعت کے لیے:
 # python setup.py sdist bdist_wheel
 # python -m twine upload dist/*
 ```
 
-### بہترین طریقے شیئر کرنا
+### بہترین طریقوں کا اشتراک
 
-کمیونٹی کے ساتھ MCP ٹولز شیئر کرتے وقت:
+جب MCP ٹولز کمیونٹی کے ساتھ شیئر کریں:
 
 1. **مکمل دستاویزات**:
-   - مقصد، استعمال، اور مثالیں دستاویز کریں۔
-   - پیرامیٹرز اور ریٹرن ویلیوز کی وضاحت کریں۔
-   - کسی بھی بیرونی انحصار کو دستاویز کریں۔
+   - مقصد، استعمال، اور مثالیں دستاویز کریں
+   - پیرامیٹرز اور واپسی کی قیمتوں کی وضاحت کریں
+   - کسی بھی بیرونی انحصارات کو دستاویز کریں
 
-2. **غلطی کا انتظام**:
-   - مضبوط غلطی کا انتظام نافذ کریں۔
-   - مفید غلطی کے پیغامات فراہم کریں۔
-   - کنارے کے معاملات کو خوبصورتی سے سنبھالیں۔
+2. **خرابیوں کا ہینڈلنگ**:
+   - مضبوط خرابی کے انتظام کا نفاذ کریں
+   - مفید خرابی پیغامات فراہم کریں
+   - کنارے کے معاملات کو مہارت سے قابو پائیں
 
-3. **کارکردگی کے تحفظات**:
-   - رفتار اور وسائل کے استعمال دونوں کے لیے بہتر بنائیں۔
-   - مناسب ہونے پر کیشنگ نافذ کریں۔
-   - توسیع پذیری پر غور کریں۔
+3. **کارکردگی کے عوامل**:
+   - رفتار اور وسائل کے استعمال کے دونوں کے لیے بہتر بنائیں
+   - جہاں مناسب ہو کیشنگ کو نافذ کریں
+   - توسیع پذیری کو مدنظر رکھیں
 
-4. **سیکیورٹی**:
-   - محفوظ API کیز اور تصدیق کا استعمال کریں۔
-   - ان پٹ کی توثیق اور صفائی کریں۔
-   - بیرونی API کالز کے لیے شرح کی حد نافذ کریں۔
+4. **السلامتی**:
+   - محفوظ API کیز اور توثیق استعمال کریں
+   - ان پٹ کی تصدیق اور صفائی کریں
+   - بیرونی API کالز کے لیے ریٹ لمٹنگ نافذ کریں
 
 5. **ٹیسٹنگ**:
-   - جامع ٹیسٹ کوریج شامل کریں۔
-   - مختلف ان پٹ اقسام اور کنارے کے معاملات کے ساتھ ٹیسٹ کریں۔
-   - ٹیسٹ کے طریقہ کار کو دستاویز کریں۔
+   - جامع ٹیسٹ کوریج شامل کریں
+   - مختلف ان پٹ اقسام اور کنارے کے معاملات کا ٹیسٹ کریں
+   - ٹیسٹ کے طریقہ کار دستاویزی بنائیں
 
 ## کمیونٹی تعاون اور بہترین طریقے
 
-MCP ایکو سسٹم کی ترقی کے لیے مؤثر تعاون کلیدی ہے۔
+موثر تعاون ایک خوشحال MCP ماحولیاتی نظام کی کنجی ہے۔
 
 ### مواصلاتی چینلز
 
-- GitHub مسائل اور مباحثے
-- Microsoft Tech کمیونٹی
+- GitHub ایشوز اور مباحثے
+- Microsoft Tech Community
 - Discord اور Slack چینلز
 - Stack Overflow (ٹیگ: `model-context-protocol` یا `mcp`)
 
-### کوڈ کے جائزے
+### کوڈ کا جائزہ
 
-MCP تعاون کا جائزہ لیتے وقت:
+جب MCP تعاون کا جائزہ لیں:
 
-1. **وضاحت**: کیا کوڈ واضح اور اچھی طرح سے دستاویزی ہے؟
+1. **صاف گوئی**: کیا کوڈ واضح اور اچھی دستاویزی ہے؟
 2. **درستگی**: کیا یہ توقع کے مطابق کام کرتا ہے؟
-3. **مطابقت**: کیا یہ پروجیکٹ کے کنونشنز پر عمل کرتا ہے؟
-4. **مکملیت**: کیا ٹیسٹ اور دستاویزات شامل ہیں؟
-5. **سیکیورٹی**: کیا کوئی سیکیورٹی خدشات ہیں؟
+3. **تسلسل**: کیا یہ پروجیکٹ کے کنونشنز کی پیروی کرتا ہے؟
+4. **مکملت**: کیا ٹیسٹ اور دستاویزات شامل ہیں؟
+5. **سلامتی**: کیا کوئی سلامتی کے مسائل ہیں؟
 
 ### ورژن مطابقت
 
-MCP کے لیے ترقی کرتے وقت:
+جب MCP کے لیے ترقی کریں:
 
-1. **پروٹوکول ورژننگ**: اس MCP پروٹوکول ورژن پر عمل کریں جسے آپ کا ٹول سپورٹ کرتا ہے۔
-2. **کلائنٹ مطابقت**: پچھلی مطابقت پر غور کریں۔
-3. **سرور مطابقت**: سرور کی تنفیذ کے رہنما اصولوں پر عمل کریں۔
-4. **توڑنے والی تبدیلیاں**: کسی بھی توڑنے والی تبدیلیوں کو واضح طور پر دستاویز کریں۔
+1. **پروٹوکول ورژننگ**: اپنے ٹول کے مطابق MCP پروٹوکول ورژن کی پیروی کریں
+2. **کلائنٹ مطابقت**: پیچھے کی طرف مطابقت کو مد نظر رکھیں
+3. **سرور مطابقت**: سرور امپلیمنٹیشن گائیڈلائنز کی پیروی کریں
+4. **ٹوٹی ہوئی تبدیلیاں**: کسی بھی توڑنے والی تبدیلیوں کو واضح دستاویز کریں
 
 ## کمیونٹی پروجیکٹ کی مثال: MCP ٹول رجسٹری
 
-کمیونٹی کے لیے ایک اہم تعاون MCP ٹولز کے لیے عوامی رجسٹری تیار کرنا ہو سکتا ہے۔
+ایک اہم کمیونٹی تعاون MCP ٹولز کے لیے ایک عوامی رجسٹری تیار کرنا ہو سکتا ہے۔
 
 ```python
-# Example schema for a community tool registry API
+# ایک کمیونٹی ٹول رجسٹری API کے لیے مثال اسکیمہ
 
 from fastapi import FastAPI, HTTPException, Depends
 from pydantic import BaseModel, Field, HttpUrl
@@ -756,7 +749,7 @@ from typing import List, Optional
 import datetime
 import uuid
 
-# Models for the tool registry
+# ٹول رجسٹری کے لیے ماڈلز
 class ToolSchema(BaseModel):
     """JSON Schema for a tool"""
     type: str
@@ -785,10 +778,10 @@ class Tool(ToolRegistration):
     rating: float = Field(default=0.0)
     ratings_count: int = Field(default=0)
 
-# FastAPI application for the registry
+# رجسٹری کے لیے FastAPI ایپلیکیشن
 app = FastAPI(title="MCP Tool Registry")
 
-# In-memory database for this example
+# اس مثال کے لیے میموری میں ڈیٹا بیس
 tools_db = {}
 
 @app.post("/tools", response_model=Tool)
@@ -824,21 +817,21 @@ async def delete_tool(tool_name: str):
     return {"message": f"Tool '{tool_name}' deleted"}
 ```
 
-## اہم نکات
+## کل نکات
 
-- MCP کمیونٹی متنوع ہے اور مختلف اقسام کے تعاون کا خیر مقدم کرتی ہے۔
-- MCP میں تعاون کور پروٹوکول میں بہتری سے لے کر اپنی مرضی کے ٹولز تک ہو سکتا ہے۔
-- تعاون کے رہنما اصولوں پر عمل کرنے سے آپ کے PR کے قبول ہونے کے امکانات بہتر ہوتے ہیں۔
-- MCP ٹولز بنانا اور شیئر کرنا ایکو سسٹم کو بہتر بنانے کا ایک قیمتی طریقہ ہے۔
-- کمیونٹی تعاون MCP کی ترقی اور بہتری کے لیے ضروری ہے۔
+- MCP کمیونٹی متنوع ہے اور مختلف اقسام کے تعاون کا خیرمقدم کرتی ہے
+- MCP میں تعاون کور پروٹوکول کی بہتری سے لے کر کسٹم ٹولز تک ہو سکتا ہے
+- تعاون کے رہنما خطوط کی پیروی آپ کی PR قبولیت کے امکانات کو بہتر بناتی ہے
+- MCP ٹولز تیار کرنا اور شیئر کرنا ماحولیاتی نظام کو بہتر بنانے کا ایک قیمتی طریقہ ہے
+- کمیونٹی تعاون MCP کی ترقی اور بہتری کے لیے ضروری ہے
 
 ## مشق
 
-1. MCP ایکو سسٹم میں وہ علاقہ شناخت کریں جہاں آپ اپنی مہارت اور دلچسپیوں کی بنیاد پر تعاون کر سکتے ہیں۔
-2. MCP ریپوزیٹری کو فورک کریں اور مقامی ترقیاتی ماحول ترتیب دیں۔
-3. ایک چھوٹا اضافہ، بگ فکس، یا ٹول بنائیں جو کمیونٹی کے لیے فائدہ مند ہو۔
-4. اپنے تعاون کو مناسب ٹیسٹ اور دستاویزات کے ساتھ دستاویز کریں۔
-5. مناسب ریپوزیٹری میں پل ریکویسٹ جمع کریں۔
+1. MCP ماحولیاتی نظام میں اپنی مہارت اور دلچسپی کی بنیاد پر تعاون کے لیے ایک جگہ شناخت کریں
+2. MCP ریپوزیٹری کو فورک کریں اور لوکل ترقیاتی ماحول سیٹ اپ کریں
+3. کمیونٹی کے فائدے کے لیے کوئی چھوٹا اضافہ، بگ فکس، یا ٹول بنائیں
+4. اپنی تعاون کو مناسب ٹیسٹس اور دستاویزات کے ساتھ دستاویز کریں
+5. متعلقہ ریپوزیٹری میں پل ریکویسٹ جمع کریں
 
 ## اضافی وسائل
 
@@ -846,7 +839,13 @@ async def delete_tool(tool_name: str):
 
 ---
 
-اگلا: [ابتدائی اپنانے سے سبق](../07-LessonsfromEarlyAdoption/README.md)
+## آگے کیا ہے
 
-**ڈس کلیمر**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کا استعمال کرتے ہوئے ترجمہ کی گئی ہے۔ ہم درستگی کے لیے کوشش کرتے ہیں، لیکن براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا عدم درستگی ہو سکتی ہیں۔ اصل دستاویز کو اس کی اصل زبان میں مستند ذریعہ سمجھا جانا چاہیے۔ اہم معلومات کے لیے، پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے لیے ہم ذمہ دار نہیں ہیں۔
+اگلا: [ابتدائی قبولیت سے اسباق](../07-LessonsfromEarlyAdoption/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**ڈس کلیمر**:
+اس دستاویز کا ترجمہ AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے کیا گیا ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم اس بات سے آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا بے قاعدگیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں معتبر ذریعہ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسان کے ذریعہ ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر نہیں ہے۔
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

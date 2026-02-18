@@ -1,17 +1,8 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "e5ea5e7582f70008ea9bec3b3820f20a",
-  "translation_date": "2025-07-13T23:15:40+00:00",
-  "source_file": "04-PracticalImplementation/samples/java/containerapp/README.md",
-  "language_code": "it"
-}
--->
 ## Architettura del Sistema
 
 Questo progetto dimostra un'applicazione web che utilizza il controllo della sicurezza dei contenuti prima di inviare i prompt degli utenti a un servizio calcolatore tramite Model Context Protocol (MCP).
 
-![Diagramma dell'Architettura del Sistema](../../../../../../translated_images/plant.b079fed84e945b7c2978993a16163bb53f0517cfe3548d2e442ff40d619ba4b4.it.png)
+![Diagramma dell'Architettura del Sistema](../../../../../../translated_images/it/plant.b079fed84e945b7c.webp)
 
 ### Come Funziona
 

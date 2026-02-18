@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5ef8f5821c1a04f7b1fc4f15098ecab8",
-  "translation_date": "2025-07-13T19:40:18+00:00",
-  "source_file": "03-GettingStarted/04-vscode/solution/README.md",
-  "language_code": "ja"
-}
--->
 これは、`node build/index.js` のようなコマンドを実行することに対応しています。
 
 - サーバーのエントリは、サーバーファイルの場所や選択したランタイムおよびサーバーの場所に応じて、サーバーを起動するために必要なコマンドに合わせて変更してください。
@@ -23,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     チャットテキストボックスの上にツールが表示され、実行するために選択できることが示されます。以下のような画面イメージです：
 
-    ![ツールを実行しようとしていることを示す VS Code](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.ja.png)
+    ![ツールを実行しようとしていることを示す VS Code](../../../../../translated_images/ja/vscode-agent.d5a0e0b897331060.webp)
 
     ツールを選択すると、先ほどの例のようなプロンプトの場合は「23」という数値結果が表示されるはずです。
 

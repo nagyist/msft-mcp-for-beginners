@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-13T22:03:08+00:00",
-  "source_file": "03-GettingStarted/08-testing/README.md",
-  "language_code": "hu"
-}
--->
 ## Tesztelés és Hibakeresés
 
 Mielőtt elkezdenéd tesztelni az MCP szerveredet, fontos megérteni a rendelkezésre álló eszközöket és a hibakeresés legjobb gyakorlatait. A hatékony tesztelés biztosítja, hogy a szerver a várakozásoknak megfelelően működjön, és segít gyorsan azonosítani és megoldani a problémákat. A következő részben ajánlott módszereket ismertetünk az MCP megvalósításának ellenőrzésére.
@@ -48,7 +39,7 @@ npx @modelcontextprotocol/inspector node build/index.js
 
 A fenti parancs elindít egy MCP-t és annak vizuális felületét, majd megnyit egy helyi webes felületet a böngésződben. Egy irányítópultot láthatsz, amely megjeleníti a regisztrált MCP szervereidet, azok elérhető eszközeit, erőforrásait és promptjait. Az interfész lehetővé teszi az eszközök interaktív tesztelését, a szerver metaadatainak vizsgálatát és a valós idejű válaszok megtekintését, megkönnyítve ezzel az MCP szerver implementációk ellenőrzését és hibakeresését.
 
-Így nézhet ki: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.hu.png)
+Így nézhet ki: ![Inspector](../../../../translated_images/hu/connect.141db0b2bd05f096.webp)
 
 Az eszközt CLI módban is futtathatod, ehhez add hozzá a `--cli` kapcsolót. Íme egy példa a CLI módban történő futtatásra, amely listázza a szerveren található összes eszközt:
 

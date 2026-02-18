@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "13231e9951b68efd9df8c56bd5cdb27e",
-  "translation_date": "2025-07-13T22:26:53+00:00",
-  "source_file": "03-GettingStarted/samples/java/calculator/README.md",
-  "language_code": "el"
-}
--->
 # Basic Calculator MCP Service
 
 Αυτή η υπηρεσία παρέχει βασικές λειτουργίες αριθμομηχανής μέσω του Model Context Protocol (MCP) χρησιμοποιώντας Spring Boot με μεταφορά WebFlux. Έχει σχεδιαστεί ως ένα απλό παράδειγμα για αρχάριους που μαθαίνουν για υλοποιήσεις MCP.
@@ -201,7 +192,7 @@ java -jar target/calculator-server-0.0.1-SNAPSHOT.jar
    - Κάντε κλικ στο "List Tools" για να δείτε τις διαθέσιμες λειτουργίες αριθμομηχανής
    - Επιλέξτε ένα εργαλείο και πατήστε "Run Tool" για να εκτελέσετε μια λειτουργία
 
-![MCP Inspector Screenshot](../../../../../../translated_images/tool.c75a0b2380efcf1a47a8478f54380a36ddcca7943b98f56dabbac8b07e15c3bb.el.png)
+![MCP Inspector Screenshot](../../../../../../translated_images/el/tool.c75a0b2380efcf1a.webp)
 
 ### Χρήση Docker
 

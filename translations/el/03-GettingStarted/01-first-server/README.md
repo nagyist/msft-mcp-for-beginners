@@ -1,54 +1,45 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ee93d6093964ea579dbdc20b4d643e9b",
-  "translation_date": "2025-08-18T13:54:49+00:00",
-  "source_file": "03-GettingStarted/01-first-server/README.md",
-  "language_code": "el"
-}
--->
-# Ξεκινώντας με MCP
+# Ξεκινώντας με το MCP
 
-Καλώς ήρθατε στα πρώτα σας βήματα με το Model Context Protocol (MCP)! Είτε είστε νέοι στο MCP είτε θέλετε να εμβαθύνετε την κατανόησή σας, αυτός ο οδηγός θα σας καθοδηγήσει στη βασική διαδικασία εγκατάστασης και ανάπτυξης. Θα ανακαλύψετε πώς το MCP επιτρέπει την απρόσκοπτη ενσωμάτωση μεταξύ μοντέλων AI και εφαρμογών, και θα μάθετε πώς να προετοιμάσετε γρήγορα το περιβάλλον σας για τη δημιουργία και δοκιμή λύσεων που βασίζονται στο MCP.
+Καλώς ήρθατε στα πρώτα σας βήματα με το Model Context Protocol (MCP)! Είτε είστε νέοι στο MCP είτε θέλετε να εμβαθύνετε την κατανόησή σας, αυτός ο οδηγός θα σας καθοδηγήσει στη βασική διαδικασία εγκατάστασης και ανάπτυξης. Θα ανακαλύψετε πώς το MCP επιτρέπει την απρόσκοπτη ενσωμάτωση μεταξύ μοντέλων AI και εφαρμογών, και θα μάθετε πώς να προετοιμάσετε γρήγορα το περιβάλλον σας για την κατασκευή και δοκιμή λύσεων με υποστήριξη MCP.
 
-> TLDR; Αν δημιουργείτε εφαρμογές AI, γνωρίζετε ότι μπορείτε να προσθέσετε εργαλεία και άλλους πόρους στο LLM (large language model) σας, ώστε να γίνει πιο ενημερωμένο. Ωστόσο, αν τοποθετήσετε αυτά τα εργαλεία και τους πόρους σε έναν server, οι δυνατότητες της εφαρμογής και του server μπορούν να χρησιμοποιηθούν από οποιονδήποτε πελάτη με/χωρίς LLM.
+> TLDR; Αν δημιουργείτε εφαρμογές AI, γνωρίζετε ότι μπορείτε να προσθέσετε εργαλεία και άλλους πόρους στο LLM (μεγάλο γλωσσικό μοντέλο), για να κάνετε το LLM πιο ενημερωμένο. Ωστόσο, αν τοποθετήσετε αυτά τα εργαλεία και πόρους σε έναν διακομιστή, οι δυνατότητες της εφαρμογής και του διακομιστή μπορούν να χρησιμοποιηθούν από οποιονδήποτε πελάτη με/χωρίς LLM.
 
 ## Επισκόπηση
 
-Αυτό το μάθημα παρέχει πρακτική καθοδήγηση για τη ρύθμιση περιβαλλόντων MCP και τη δημιουργία των πρώτων σας εφαρμογών MCP. Θα μάθετε πώς να ρυθμίσετε τα απαραίτητα εργαλεία και πλαίσια, να δημιουργήσετε βασικούς MCP servers, να δημιουργήσετε host εφαρμογές και να δοκιμάσετε τις υλοποιήσεις σας.
+Αυτό το μάθημα παρέχει πρακτικές οδηγίες για τη ρύθμιση περιβαλλόντων MCP και την κατασκευή των πρώτων εφαρμογών MCP. Θα μάθετε πώς να ρυθμίζετε τα απαραίτητα εργαλεία και πλαίσια, να δημιουργείτε βασικούς MCP διακομιστές, να φτιάχνετε εφαρμογές υποδοχής και να δοκιμάζετε τις υλοποιήσεις σας.
 
-Το Model Context Protocol (MCP) είναι ένα ανοιχτό πρωτόκολλο που τυποποιεί τον τρόπο με τον οποίο οι εφαρμογές παρέχουν context στα LLMs. Σκεφτείτε το MCP σαν μια θύρα USB-C για εφαρμογές AI - παρέχει έναν τυποποιημένο τρόπο σύνδεσης μοντέλων AI με διάφορες πηγές δεδομένων και εργαλεία.
+Το Model Context Protocol (MCP) είναι ένα ανοιχτό πρωτόκολλο που τυποποιεί τον τρόπο με τον οποίο οι εφαρμογές παρέχουν πλαίσιο στα LLM. Σκεφτείτε το MCP σαν μια θύρα USB-C για εφαρμογές AI - παρέχει έναν τυποποιημένο τρόπο σύνδεσης μοντέλων AI με διαφορετικές πηγές δεδομένων και εργαλεία.
 
 ## Στόχοι Μάθησης
 
-Μέχρι το τέλος αυτού του μαθήματος, θα μπορείτε να:
+Στο τέλος αυτού του μαθήματος, θα μπορείτε να:
 
-- Ρυθμίσετε περιβάλλοντα ανάπτυξης για MCP σε C#, Java, Python, TypeScript και Rust
-- Δημιουργήσετε και να αναπτύξετε βασικούς MCP servers με προσαρμοσμένες δυνατότητες (πόρους, prompts και εργαλεία)
-- Δημιουργήσετε host εφαρμογές που συνδέονται με MCP servers
-- Δοκιμάσετε και να εντοπίσετε σφάλματα στις υλοποιήσεις MCP
+- Ρυθμίζετε περιβάλλοντα ανάπτυξης για MCP σε C#, Java, Python, TypeScript και Rust
+- Δημιουργείτε και αναπτύσσετε βασικούς MCP διακομιστές με προσαρμοσμένες λειτουργίες (πόροι, προτροπές και εργαλεία)
+- Δημιουργείτε εφαρμογές υποδοχής που συνδέονται με MCP διακομιστές
+- Δοκιμάζετε και αποσφαλματώνετε υλοποιήσεις MCP
 
 ## Ρύθμιση του Περιβάλλοντος MCP
 
-Πριν ξεκινήσετε να εργάζεστε με MCP, είναι σημαντικό να προετοιμάσετε το περιβάλλον ανάπτυξης σας και να κατανοήσετε τη βασική ροή εργασίας. Αυτή η ενότητα θα σας καθοδηγήσει στα αρχικά βήματα ρύθμισης για να εξασφαλίσετε μια ομαλή αρχή με MCP.
+Πριν ξεκινήσετε να εργάζεστε με το MCP, είναι σημαντικό να προετοιμάσετε το περιβάλλον ανάπτυξής σας και να κατανοήσετε τη βασική ροή εργασίας. Αυτή η ενότητα θα σας καθοδηγήσει στα αρχικά βήματα ρύθμισης για να εξασφαλίσετε μια ομαλή εκκίνηση με το MCP.
 
 ### Προαπαιτούμενα
 
-Πριν εμβαθύνετε στην ανάπτυξη MCP, βεβαιωθείτε ότι έχετε:
+Πριν βουτήξετε στην ανάπτυξη MCP, βεβαιωθείτε ότι έχετε:
 
-- **Περιβάλλον Ανάπτυξης**: Για τη γλώσσα που επιλέξατε (C#, Java, Python, TypeScript ή Rust)
-- **IDE/Επεξεργαστή Κώδικα**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm ή οποιονδήποτε σύγχρονο επεξεργαστή κώδικα
+- **Περιβάλλον Ανάπτυξης**: Για τη γλώσσα που έχετε επιλέξει (C#, Java, Python, TypeScript ή Rust)
+- **IDE/Επεξεργαστή**: Visual Studio, Visual Studio Code, IntelliJ, Eclipse, PyCharm ή οποιονδήποτε σύγχρονο επεξεργαστή κώδικα
 - **Διαχειριστές Πακέτων**: NuGet, Maven/Gradle, pip, npm/yarn ή Cargo
-- **API Keys**: Για οποιεσδήποτε υπηρεσίες AI σκοπεύετε να χρησιμοποιήσετε στις host εφαρμογές σας
+- **Κλειδιά API**: Για οποιεσδήποτε υπηρεσίες AI σκοπεύετε να χρησιμοποιήσετε στις εφαρμογές υποδοχής σας
 
-## Βασική Δομή MCP Server
+## Βασική Δομή MCP Διακομιστή
 
-Ένας MCP server περιλαμβάνει συνήθως:
+Ένας MCP διακομιστής συνήθως περιλαμβάνει:
 
-- **Ρύθμιση Server**: Ρύθμιση θύρας, αυθεντικοποίησης και άλλων παραμέτρων
-- **Πόρους**: Δεδομένα και context που είναι διαθέσιμα στα LLMs
-- **Εργαλεία**: Λειτουργικότητα που μπορούν να καλέσουν τα μοντέλα
-- **Prompts**: Πρότυπα για τη δημιουργία ή τη δομή κειμένου
+- **Διαμόρφωση Διακομιστή**: Ρύθμιση θύρας, αυθεντικοποίησης και άλλων ρυθμίσεων
+- **Πόροι**: Δεδομένα και πλαίσιο διαθέσιμα στα LLM
+- **Εργαλεία**: Λειτουργικότητα που μπορούν να καλούν τα μοντέλα
+- **Προτροπές**: Πρότυπα για τη δημιουργία ή τη δομή κειμένου
 
 Ακολουθεί ένα απλοποιημένο παράδειγμα σε TypeScript:
 
@@ -57,13 +48,13 @@ import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mc
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
 
-// Create an MCP server
+// Δημιουργήστε έναν διακομιστή MCP
 const server = new McpServer({
   name: "Demo",
   version: "1.0.0"
 });
 
-// Add an addition tool
+// Προσθέστε ένα εργαλείο πρόσθεσης
 server.tool("add",
   { a: z.number(), b: z.number() },
   async ({ a, b }) => ({
@@ -71,17 +62,20 @@ server.tool("add",
   })
 );
 
-// Add a dynamic greeting resource
+// Προσθέστε μια δυναμική πηγή χαιρετισμού
 server.resource(
   "file",
-  // The 'list' parameter controls how the resource lists available files. Setting it to undefined disables listing for this resource.
+  // Η παράμετρος 'list' ελέγχει πώς η πηγή απαριθμεί τα διαθέσιμα αρχεία. Η ρύθμιση σε undefined απενεργοποιεί την απαρίθμηση για αυτήν την πηγή.
   new ResourceTemplate("file://{path}", { list: undefined }),
   async (uri, { path }) => ({
     contents: [{
       uri: uri.href,
       text: `File, ${path}!`
     }]
-// Add a file resource that reads the file contents
+  })
+);
+
+// Προσθέστε μια πηγή αρχείου που διαβάζει τα περιεχόμενα του αρχείου
 server.resource(
   "file",
   new ResourceTemplate("file://{path}", { list: undefined }),
@@ -115,7 +109,7 @@ server.prompt(
   })
 );
 
-// Start receiving messages on stdin and sending messages on stdout
+// Ξεκινήστε τη λήψη μηνυμάτων από το stdin και την αποστολή μηνυμάτων στο stdout
 const transport = new StdioServerTransport();
 await server.connect(transport);
 ```
@@ -123,73 +117,73 @@ await server.connect(transport);
 Στον παραπάνω κώδικα:
 
 - Εισάγουμε τις απαραίτητες κλάσεις από το MCP TypeScript SDK.
-- Δημιουργούμε και ρυθμίζουμε μια νέα instance MCP server.
+- Δημιουργούμε και διαμορφώνουμε μια νέα παρουσία MCP διακομιστή.
 - Καταχωρούμε ένα προσαρμοσμένο εργαλείο (`calculator`) με μια συνάρτηση χειρισμού.
-- Ξεκινάμε τον server για να ακούει εισερχόμενα αιτήματα MCP.
+- Ξεκινάμε τον διακομιστή για να ακούει εισερχόμενα αιτήματα MCP.
 
-## Δοκιμή και Εντοπισμός Σφαλμάτων
+## Δοκιμές και Αποσφαλμάτωση
 
-Πριν ξεκινήσετε τη δοκιμή του MCP server σας, είναι σημαντικό να κατανοήσετε τα διαθέσιμα εργαλεία και τις βέλτιστες πρακτικές για τον εντοπισμό σφαλμάτων. Η αποτελεσματική δοκιμή εξασφαλίζει ότι ο server σας λειτουργεί όπως αναμένεται και σας βοηθά να εντοπίσετε και να επιλύσετε γρήγορα προβλήματα. Η παρακάτω ενότητα περιγράφει προτεινόμενες προσεγγίσεις για την επικύρωση της υλοποίησης MCP.
+Πριν ξεκινήσετε να δοκιμάζετε τον MCP διακομιστή σας, είναι σημαντικό να κατανοήσετε τα διαθέσιμα εργαλεία και τις βέλτιστες πρακτικές για αποσφαλμάτωση. Η αποτελεσματική δοκιμή εξασφαλίζει ότι ο διακομιστής σας συμπεριφέρεται όπως αναμένεται και σας βοηθά να εντοπίσετε και να επιλύσετε γρήγορα προβλήματα. Η επόμενη ενότητα περιγράφει προτεινόμενες προσεγγίσεις για την επικύρωση της υλοποίησης MCP.
 
-Το MCP παρέχει εργαλεία για να σας βοηθήσει να δοκιμάσετε και να εντοπίσετε σφάλματα στους servers σας:
+Το MCP παρέχει εργαλεία για να σας βοηθήσει να δοκιμάσετε και να αποσφαλματώσετε τους διακομιστές σας:
 
-- **Εργαλείο Inspector**, μια γραφική διεπαφή που σας επιτρέπει να συνδεθείτε στον server σας και να δοκιμάσετε τα εργαλεία, τα prompts και τους πόρους σας.
-- **curl**, μπορείτε επίσης να συνδεθείτε στον server σας χρησιμοποιώντας ένα εργαλείο γραμμής εντολών όπως το curl ή άλλους πελάτες που μπορούν να δημιουργήσουν και να εκτελέσουν HTTP εντολές.
+- **Εργαλείο Inspector**, αυτή η γραφική διεπαφή σας επιτρέπει να συνδεθείτε στον διακομιστή σας και να δοκιμάσετε τα εργαλεία, τις προτροπές και τους πόρους σας.
+- **curl**, μπορείτε επίσης να συνδεθείτε στον διακομιστή σας χρησιμοποιώντας ένα εργαλείο γραμμής εντολών όπως το curl ή άλλους πελάτες που μπορούν να δημιουργήσουν και να εκτελέσουν εντολές HTTP.
 
-### Χρήση MCP Inspector
+### Χρήση του MCP Inspector
 
-Το [MCP Inspector](https://github.com/modelcontextprotocol/inspector) είναι ένα οπτικό εργαλείο δοκιμής που σας βοηθά:
+Το [MCP Inspector](https://github.com/modelcontextprotocol/inspector) είναι ένα οπτικό εργαλείο δοκιμών που σας βοηθά να:
 
-1. **Ανακάλυψη Δυνατοτήτων Server**: Αυτόματη ανίχνευση διαθέσιμων πόρων, εργαλείων και prompts
-2. **Δοκιμή Εκτέλεσης Εργαλείων**: Δοκιμή διαφορετικών παραμέτρων και προβολή απαντήσεων σε πραγματικό χρόνο
-3. **Προβολή Μεταδεδομένων Server**: Εξέταση πληροφοριών server, σχημάτων και ρυθμίσεων
+1. **Ανακαλύψετε τις Δυνατότητες του Διακομιστή**: Αυτόματη ανίχνευση διαθέσιμων πόρων, εργαλείων και προτροπών
+2. **Δοκιμάσετε την Εκτέλεση Εργαλείων**: Δοκιμάστε διαφορετικές παραμέτρους και δείτε τις απαντήσεις σε πραγματικό χρόνο
+3. **Προβάλετε Μεταδεδομένα Διακομιστή**: Εξετάστε πληροφορίες διακομιστή, σχήματα και ρυθμίσεις
 
 ```bash
-# ex TypeScript, installing and running MCP Inspector
+# από TypeScript, εγκατάσταση και εκτέλεση MCP Inspector
 npx @modelcontextprotocol/inspector node build/index.js
 ```
 
-Όταν εκτελέσετε τις παραπάνω εντολές, το MCP Inspector θα εκκινήσει μια τοπική διεπαφή ιστού στον browser σας. Μπορείτε να περιμένετε να δείτε έναν πίνακα ελέγχου που εμφανίζει τους καταχωρημένους MCP servers σας, τα διαθέσιμα εργαλεία, τους πόρους και τα prompts. Η διεπαφή σας επιτρέπει να δοκιμάσετε διαδραστικά την εκτέλεση εργαλείων, να εξετάσετε μεταδεδομένα server και να δείτε απαντήσεις σε πραγματικό χρόνο, καθιστώντας ευκολότερη την επικύρωση και τον εντοπισμό σφαλμάτων στις υλοποιήσεις MCP server.
+Όταν εκτελέσετε τις παραπάνω εντολές, ο MCP Inspector θα ξεκινήσει μια τοπική διεπαφή ιστού στον περιηγητή σας. Μπορείτε να περιμένετε να δείτε έναν πίνακα ελέγχου που εμφανίζει τους καταχωρημένους MCP διακομιστές σας, τα διαθέσιμα εργαλεία, πόρους και προτροπές τους. Η διεπαφή σας επιτρέπει να δοκιμάζετε διαδραστικά την εκτέλεση εργαλείων, να επιθεωρείτε τα μεταδεδομένα του διακομιστή και να βλέπετε απαντήσεις σε πραγματικό χρόνο, καθιστώντας ευκολότερη την επικύρωση και αποσφαλμάτωση των υλοποιήσεων MCP διακομιστή σας.
 
-Ακολουθεί ένα στιγμιότυπο οθόνης του πώς μπορεί να φαίνεται:
+Ακολουθεί ένα στιγμιότυπο οθόνης του πώς μπορεί να μοιάζει:
 
-![Σύνδεση MCP Inspector server](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.el.png)
+![MCP Inspector server connection](../../../../translated_images/el/connected.73d1e042c24075d3.webp)
 
 ## Συνηθισμένα Προβλήματα Ρύθμισης και Λύσεις
 
 | Πρόβλημα | Πιθανή Λύση |
-|---------|-------------|
-| Αρνήθηκε η σύνδεση | Ελέγξτε αν ο server λειτουργεί και αν η θύρα είναι σωστή |
-| Σφάλματα εκτέλεσης εργαλείων | Ελέγξτε την επικύρωση παραμέτρων και τη διαχείριση σφαλμάτων |
-| Αποτυχίες αυθεντικοποίησης | Επαληθεύστε τα API keys και τα δικαιώματα |
-| Σφάλματα επικύρωσης σχημάτων | Βεβαιωθείτε ότι οι παράμετροι ταιριάζουν με το καθορισμένο schema |
-| Ο server δεν ξεκινά | Ελέγξτε για συγκρούσεις θύρας ή ελλείποντα dependencies |
-| Σφάλματα CORS | Ρυθμίστε σωστά τα CORS headers για αιτήματα cross-origin |
-| Προβλήματα αυθεντικοποίησης | Επαληθεύστε την εγκυρότητα και τα δικαιώματα των tokens |
+|----------|-------------|
+| Απόρριψη σύνδεσης | Ελέγξτε αν ο διακομιστής τρέχει και αν η θύρα είναι σωστή |
+| Σφάλματα εκτέλεσης εργαλείου | Επανεξετάστε την επικύρωση παραμέτρων και τη διαχείριση σφαλμάτων |
+| Αποτυχίες αυθεντικοποίησης | Επαληθεύστε τα κλειδιά API και τα δικαιώματα |
+| Σφάλματα επικύρωσης σχήματος | Βεβαιωθείτε ότι οι παράμετροι ταιριάζουν με το ορισμένο σχήμα |
+| Ο διακομιστής δεν ξεκινά | Ελέγξτε για συγκρούσεις θυρών ή ελλείποντες εξαρτήσεις |
+| Σφάλματα CORS | Διαμορφώστε σωστά τις κεφαλίδες CORS για αιτήματα από άλλες προελεύσεις |
+| Προβλήματα αυθεντικοποίησης | Επαληθεύστε την εγκυρότητα του token και τα δικαιώματα |
 
 ## Τοπική Ανάπτυξη
 
-Για τοπική ανάπτυξη και δοκιμή, μπορείτε να εκτελέσετε MCP servers απευθείας στον υπολογιστή σας:
+Για τοπική ανάπτυξη και δοκιμές, μπορείτε να τρέξετε MCP διακομιστές απευθείας στον υπολογιστή σας:
 
-1. **Εκκινήστε τη διαδικασία server**: Εκτελέστε την εφαρμογή MCP server σας
-2. **Ρυθμίστε τη δικτύωση**: Βεβαιωθείτε ότι ο server είναι προσβάσιμος στη αναμενόμενη θύρα
+1. **Ξεκινήστε τη διαδικασία διακομιστή**: Εκτελέστε την εφαρμογή MCP διακομιστή σας
+2. **Διαμορφώστε το δίκτυο**: Βεβαιωθείτε ότι ο διακομιστής είναι προσβάσιμος στη αναμενόμενη θύρα
 3. **Συνδέστε πελάτες**: Χρησιμοποιήστε τοπικά URLs σύνδεσης όπως `http://localhost:3000`
 
 ```bash
-# Example: Running a TypeScript MCP server locally
+# Παράδειγμα: Εκτέλεση ενός TypeScript MCP διακομιστή τοπικά
 npm run start
-# Server running at http://localhost:3000
+# Ο διακομιστής τρέχει στο http://localhost:3000
 ```
 
-## Δημιουργία του πρώτου σας MCP Server
+## Δημιουργία του πρώτου σας MCP Διακομιστή
 
-Έχουμε καλύψει [Βασικές έννοιες](/01-CoreConcepts/README.md) σε προηγούμενο μάθημα, τώρα είναι ώρα να εφαρμόσουμε αυτή τη γνώση.
+Έχουμε καλύψει τα [Βασικά Στοιχεία](/01-CoreConcepts/README.md) σε προηγούμενο μάθημα, τώρα είναι ώρα να εφαρμόσουμε αυτή τη γνώση.
 
-### Τι μπορεί να κάνει ένας server
+### Τι μπορεί να κάνει ένας διακομιστής
 
-Πριν ξεκινήσουμε να γράφουμε κώδικα, ας υπενθυμίσουμε τι μπορεί να κάνει ένας server:
+Πριν ξεκινήσουμε να γράφουμε κώδικα, ας θυμηθούμε τι μπορεί να κάνει ένας διακομιστής:
 
-Ένας MCP server μπορεί, για παράδειγμα:
+Ένας MCP διακομιστής μπορεί, για παράδειγμα:
 
 - Να έχει πρόσβαση σε τοπικά αρχεία και βάσεις δεδομένων
 - Να συνδέεται με απομακρυσμένα APIs
@@ -197,23 +191,23 @@ npm run start
 - Να ενσωματώνεται με άλλα εργαλεία και υπηρεσίες
 - Να παρέχει διεπαφή χρήστη για αλληλεπίδραση
 
-Ωραία, τώρα που ξέρουμε τι μπορούμε να κάνουμε, ας ξεκινήσουμε τον κώδικα.
+Τέλεια, τώρα που ξέρουμε τι μπορεί να κάνει, ας ξεκινήσουμε τον κώδικα.
 
-## Άσκηση: Δημιουργία server
+## Άσκηση: Δημιουργία διακομιστή
 
-Για να δημιουργήσετε έναν server, πρέπει να ακολουθήσετε αυτά τα βήματα:
+Για να δημιουργήσετε έναν διακομιστή, πρέπει να ακολουθήσετε τα εξής βήματα:
 
 - Εγκαταστήστε το MCP SDK.
-- Δημιουργήστε ένα project και ρυθμίστε τη δομή του project.
-- Γράψτε τον κώδικα του server.
-- Δοκιμάστε τον server.
+- Δημιουργήστε ένα έργο και ρυθμίστε τη δομή του έργου.
+- Γράψτε τον κώδικα του διακομιστή.
+- Δοκιμάστε τον διακομιστή.
 
-### -1- Δημιουργία project
+### -1- Δημιουργία έργου
 
 #### TypeScript
 
 ```sh
-# Create project directory and initialize npm project
+# Δημιουργήστε τον κατάλογο έργου και αρχικοποιήστε το έργο npm
 mkdir calculator-server
 cd calculator-server
 npm init -y
@@ -222,10 +216,10 @@ npm init -y
 #### Python
 
 ```sh
-# Create project dir
+# Δημιουργήστε τον φάκελο έργου
 mkdir calculator-server
 cd calculator-server
-# Open the folder in Visual Studio Code - Skip this if you are using a different IDE
+# Ανοίξτε το φάκελο στο Visual Studio Code - Παραλείψτε αυτό αν χρησιμοποιείτε διαφορετικό IDE
 code .
 ```
 
@@ -238,7 +232,7 @@ cd McpCalculatorServer
 
 #### Java
 
-Για Java, δημιουργήστε ένα Spring Boot project:
+Για Java, δημιουργήστε ένα έργο Spring Boot:
 
 ```bash
 curl https://start.spring.io/starter.zip \
@@ -252,16 +246,16 @@ curl https://start.spring.io/starter.zip \
   -o calculator-server.zip
 ```
 
-Αποσυμπιέστε το zip αρχείο:
+Αποσυμπιέστε το αρχείο zip:
 
 ```bash
 unzip calculator-server.zip -d calculator-server
 cd calculator-server
-# optional remove the unused test
+# προαιρετικά αφαιρέστε τη μη χρησιμοποιημένη δοκιμή
 rm -rf src/test/java
 ```
 
-Προσθέστε την παρακάτω πλήρη ρύθμιση στο αρχείο *pom.xml*:
+Προσθέστε την παρακάτω πλήρη διαμόρφωση στο αρχείο *pom.xml*:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -369,17 +363,17 @@ cd calculator-server
 cargo init
 ```
 
-### -2- Προσθήκη dependencies
+### -2- Προσθήκη εξαρτήσεων
 
-Τώρα που έχετε δημιουργήσει το project σας, ας προσθέσουμε τα dependencies:
+Τώρα που έχετε δημιουργήσει το έργο σας, ας προσθέσουμε τις εξαρτήσεις:
 
 #### TypeScript
 
 ```sh
-# If not already installed, install TypeScript globally
+# Εάν δεν είναι ήδη εγκατεστημένο, εγκαταστήστε το TypeScript παγκοσμίως
 npm install typescript -g
 
-# Install the MCP SDK and Zod for schema validation
+# Εγκαταστήστε το MCP SDK και το Zod για επικύρωση σχήματος
 npm install @modelcontextprotocol/sdk zod
 npm install -D @types/node typescript
 ```
@@ -387,7 +381,7 @@ npm install -D @types/node typescript
 #### Python
 
 ```sh
-# Create a virtual env and install dependencies
+# Δημιουργήστε ένα εικονικό περιβάλλον και εγκαταστήστε τις εξαρτήσεις
 python -m venv venv
 venv\Scripts\activate
 pip install "mcp[cli]"
@@ -408,11 +402,11 @@ cargo add serde
 cargo add tokio --features rt-multi-thread
 ```
 
-### -3- Δημιουργία αρχείων project
+### -3- Δημιουργία αρχείων έργου
 
 #### TypeScript
 
-Ανοίξτε το αρχείο *package.json* και αντικαταστήστε το περιεχόμενο με το παρακάτω για να εξασφαλίσετε ότι μπορείτε να δημιουργήσετε και να εκτελέσετε τον server:
+Ανοίξτε το αρχείο *package.json* και αντικαταστήστε το περιεχόμενο με το παρακάτω για να εξασφαλίσετε ότι μπορείτε να χτίσετε και να τρέξετε τον διακομιστή:
 
 ```json
 {
@@ -421,8 +415,8 @@ cargo add tokio --features rt-multi-thread
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "tsc && node ./build/index.js",
-    "build": "tsc && node ./build/index.js"
+    "build": "tsc",
+    "start": "npm run build && node ./build/index.js",
   },
   "keywords": [],
   "author": "",
@@ -459,7 +453,7 @@ cargo add tokio --features rt-multi-thread
 }
 ```
 
-Δημιουργήστε έναν φάκελο για τον πηγαίο κώδικα σας:
+Δημιουργήστε έναν φάκελο για τον πηγαίο κώδικα:
 
 ```sh
 mkdir src
@@ -476,7 +470,7 @@ touch server.py
 
 #### .NET
 
-Εγκαταστήστε τα απαραίτητα NuGet πακέτα:
+Εγκαταστήστε τα απαιτούμενα πακέτα NuGet:
 
 ```sh
 dotnet add package ModelContextProtocol --prerelease
@@ -485,13 +479,13 @@ dotnet add package Microsoft.Extensions.Hosting
 
 #### Java
 
-Για Java Spring Boot projects, η δομή του project δημιουργείται αυτόματα.
+Για έργα Java Spring Boot, η δομή του έργου δημιουργείται αυτόματα.
 
 #### Rust
 
-Για Rust, ένα αρχείο *src/main.rs* δημιουργείται από προεπιλογή όταν εκτελείτε `cargo init`. Ανοίξτε το αρχείο και διαγράψτε τον προεπιλεγμένο κώδικα.
+Για Rust, ένα αρχείο *src/main.rs* δημιουργείται από προεπιλογή όταν τρέχετε `cargo init`. Ανοίξτε το αρχείο και διαγράψτε τον προεπιλεγμένο κώδικα.
 
-### -4- Δημιουργία κώδικα server
+### -4- Δημιουργία κώδικα διακομιστή
 
 #### TypeScript
 
@@ -502,14 +496,14 @@ import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mc
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
  
-// Create an MCP server
+// Δημιουργήστε έναν διακομιστή MCP
 const server = new McpServer({
   name: "Calculator MCP Server",
   version: "1.0.0"
 });
 ```
 
-Τώρα έχετε έναν server, αλλά δεν κάνει πολλά, ας το διορθώσουμε.
+Τώρα έχετε έναν διακομιστή, αλλά δεν κάνει πολλά, ας το διορθώσουμε.
 
 #### Python
 
@@ -517,7 +511,7 @@ const server = new McpServer({
 # server.py
 from mcp.server.fastmcp import FastMCP
 
-# Create an MCP server
+# Δημιουργήστε έναν διακομιστή MCP
 mcp = FastMCP("Demo")
 ```
 
@@ -548,7 +542,7 @@ await builder.Build().RunAsync();
 
 #### Java
 
-Για Java, δημιουργήστε τα βασικά components του server. Πρώτα, τροποποιήστε την κύρια κλάση εφαρμογής:
+Για Java, δημιουργήστε τα βασικά στοιχεία του διακομιστή. Πρώτα, τροποποιήστε την κύρια κλάση εφαρμογής:
 
 *src/main/java/com/microsoft/mcp/sample/server/McpServerApplication.java*:
 
@@ -722,7 +716,7 @@ public class CalculatorService {
 }
 ```
 
-**Προαιρετικά components για μια υπηρεσία έτοιμη για παραγωγή:**
+**Προαιρετικά στοιχεία για μια υπηρεσία έτοιμη για παραγωγή:**
 
 Δημιουργήστε μια ρύθμιση εκκίνησης *src/main/java/com/microsoft/mcp/sample/server/config/StartupConfig.java*:
 
@@ -749,7 +743,7 @@ public class StartupConfig {
 }
 ```
 
-Δημιουργήστε έναν controller υγείας *src/main/java/com/microsoft/mcp/sample/server/controller/HealthController.java*:
+Δημιουργήστε έναν ελεγκτή υγείας *src/main/java/com/microsoft/mcp/sample/server/controller/HealthController.java*:
 
 ```java
 package com.microsoft.mcp.sample.server.controller;
@@ -805,7 +799,7 @@ public class GlobalExceptionHandler {
             this.message = message;
         }
 
-        // Getters
+        // Μέθοδοι ανάκτησης δεδομένων
         public String getCode() { return code; }
         public String getMessage() { return message; }
     }
@@ -826,9 +820,11 @@ Calculator MCP Server v1.0
 Spring Boot MCP Application
 ```
 
+</details>
+
 #### Rust
 
-Προσθέστε τον παρακάτω κώδικα στην κορυφή του αρχείου *src/main.rs*. Αυτό εισάγει τις απαραίτητες βιβλιοθήκες και modules για τον MCP server σας.
+Προσθέστε τον παρακάτω κώδικα στην κορυφή του αρχείου *src/main.rs*. Αυτό εισάγει τις απαραίτητες βιβλιοθήκες και μονάδες για τον MCP διακομιστή σας.
 
 ```rust
 use rmcp::{
@@ -841,7 +837,7 @@ use rmcp::{
 use std::error::Error;
 ```
 
-Ο server calculator θα είναι απλός και θα μπορεί να προσθέτει δύο αριθμούς. Ας δημιουργήσουμε μια δομή για να εκπροσωπήσουμε το αίτημα calculator.
+Ο διακομιστής calculator θα είναι απλός και θα μπορεί να προσθέτει δύο αριθμούς. Ας δημιουργήσουμε μια δομή για να αναπαριστά το αίτημα calculator.
 
 ```rust
 #[derive(Debug, serde::Deserialize, schemars::JsonSchema)]
@@ -851,7 +847,7 @@ pub struct CalculatorRequest {
 }
 ```
 
-Στη συνέχεια, δημιουργήστε μια δομή για να εκπροσωπήσετε τον server calculator. Αυτή η δομή θα περιέχει το εργαλείο router, το οποίο χρησιμοποιείται για την καταχώρηση εργαλείων.
+Στη συνέχεια, δημιουργήστε μια δομή για να αναπαριστά τον διακομιστή calculator. Αυτή η δομή θα κρατά τον δρομολογητή εργαλείων, που χρησιμοποιείται για την καταχώρηση εργαλείων.
 
 ```rust
 #[derive(Debug, Clone)]
@@ -860,7 +856,7 @@ pub struct Calculator {
 }
 ```
 
-Τώρα, μπορούμε να υλοποιήσουμε τη δομή `Calculator` για να δημιουργήσουμε μια νέα instance του server και να υλοποιήσουμε τον server handler για να παρέχουμε πληροφορίες server.
+Τώρα, μπορούμε να υλοποιήσουμε τη δομή `Calculator` για να δημιουργήσουμε μια νέα παρουσία του διακομιστή και να υλοποιήσουμε τον χειριστή διακομιστή για να παρέχουμε πληροφορίες διακομιστή.
 
 ```rust
 #[tool_router]
@@ -884,7 +880,7 @@ impl ServerHandler for Calculator {
 }
 ```
 
-Τέλος, πρέπει να υλοποιήσουμε τη κύρια συνάρτηση για να ξεκινήσουμε τον server. Αυτή η συνάρτηση θα δημιουργήσει μια instance της δομής `Calculator` και θα την εξυπηρετήσει μέσω standard input/output.
+Τέλος, πρέπει να υλοποιήσουμε τη βασική συνάρτηση για να ξεκινήσει ο διακομιστής. Αυτή η συνάρτηση θα δημιουργήσει μια παρουσία της δομής `Calculator` και θα την εξυπηρετήσει μέσω τυπικής εισόδου/εξόδου.
 
 ```rust
 #[tokio::main]
@@ -895,7 +891,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
 }
 ```
 
-Ο server είναι τώρα έτοιμος να παρέχει βασικές πληροφορίες για τον εαυτό του. Στη συνέχεια, θα προσθέσουμε ένα εργαλείο για την εκτέλεση πρόσθεσης.
+Ο διακομιστής είναι τώρα ρυθμισμένος να παρέχει βασικές πληροφορίες για τον εαυτό του. Στη συνέχεια, θα προσθέσουμε ένα εργαλείο για να εκτελεί πρόσθεση.
 
 ### -5- Προσθήκη εργαλείου και πόρου
 
@@ -924,7 +920,7 @@ server.resource(
 );
 ```
 
-Το εργαλείο σας λαμβάνει παραμέτρους `a` και `b` και εκτελεί μια συνάρτηση που παράγει μια απάντηση της μορφής:
+Το εργαλείο σας παίρνει παραμέτρους `a` και `b` και εκτελεί μια συνάρτηση που παράγει μια απάντηση στη μορφή:
 
 ```typescript
 {
@@ -934,7 +930,7 @@ server.resource(
 }
 ```
 
-Ο πόρος σας είναι προσβάσιμος μέσω μιας συμβολοσειράς "greeting" και λαμβάνει μια παράμετρο `name` και παράγει μια παρόμοια απάντηση με το εργαλείο:
+Ο πόρος σας προσπελαύνεται μέσω της συμβολοσειράς "greeting" και παίρνει μια παράμετρο `name` και παράγει μια παρόμοια απάντηση με το εργαλείο:
 
 ```typescript
 {
@@ -946,24 +942,24 @@ server.resource(
 #### Python
 
 ```python
-# Add an addition tool
+# Προσθέστε ένα εργαλείο πρόσθεσης
 @mcp.tool()
 def add(a: int, b: int) -> int:
     """Add two numbers"""
     return a + b
 
 
-# Add a dynamic greeting resource
+# Προσθέστε μια δυναμική πηγή χαιρετισμού
 @mcp.resource("greeting://{name}")
 def get_greeting(name: str) -> str:
     """Get a personalized greeting"""
     return f"Hello, {name}!"
 ```
 
-Στον παραπάνω κώδικα:
+Στον παραπάνω κώδικα έχουμε:
 
-- Ορίσαμε ένα εργαλείο `add` που λαμβάνει παραμέτρους `a` και `p`, και οι δύο ακέραιοι.
-- Δημιουργήσαμε έναν πόρο που ονομάζεται `greeting` που λαμβάνει την παράμετρο `name`.
+- Ορίσει ένα εργαλείο `add` που παίρνει παραμέτρους `a` και `b`, και οι δύο ακέραιοι.
+- Δημιουργήσει έναν πόρο με όνομα `greeting` που παίρνει παράμετρο `name`.
 
 #### .NET
 
@@ -984,264 +980,60 @@ public static class CalculatorTool
 
 #### Rust
 
-Προσθέστε ένα νέο εργαλείο μέσα στο block `impl Calculator`:
-
-```rust
-#[tool(description = "Adds a and b")]
-async fn add(
-    &self,
-    Parameters(CalculatorRequest { a, b }): Parameters<CalculatorRequest>,
-) -> String {
-    (a + b).to_string()
-}
-```
-
-### -6- Τελικός κώδικας
-
-Ας προσθέσουμε τον τελευταίο κώδικα που χρειαζόμαστε ώστε ο server να μπορεί να ξεκινήσει:
-
-#### TypeScript
-
-```typescript
-// Start receiving messages on stdin and sending messages on stdout
-const transport = new StdioServerTransport();
-await server.connect(transport);
-```
-
-Ακολουθεί ο πλήρης κώδικας:
-
-```typescript
-// index.ts
-import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import { z } from "zod";
-
-// Create an MCP server
-const server = new McpServer({
-  name: "Calculator MCP Server",
-  version: "1.0.0"
-});
-
-// Add an addition tool
-server.tool(
-  "add",
-  { a: z.number(), b: z.number() },
-  async ({ a, b }) => ({
-    content: [{ type: "text", text: String(a + b) }]
-  })
-);
-
-// Add a dynamic greeting resource
-server.resource(
-  "greeting",
-  new ResourceTemplate("greeting://{name}", { list: undefined }),
-  async (uri, { name }) => ({
-    contents: [{
-      uri: uri.href,
-      text: `Hello, ${name}!`
-    }]
-  })
-);
-
-// Start receiving messages on stdin and sending messages on stdout
-const transport = new StdioServerTransport();
-server.connect(transport);
-```
-
-#### Python
-
-```python
-# server.py
-from mcp.server.fastmcp import FastMCP
-
-# Create an MCP server
-mcp = FastMCP("Demo")
-
-
-# Add an addition tool
-@mcp.tool()
-def add(a: int, b: int) -> int:
-    """Add two numbers"""
-    return a + b
-
-
-# Add a dynamic greeting resource
-@mcp.resource("greeting://{name}")
-def get_greeting(name: str) -> str:
-    """Get a personalized greeting"""
-    return f"Hello, {name}!"
-
-# Main execution block - this is required to run the server
-if __name__ == "__main__":
-    mcp.run()
-```
+Προσθέστε
+βεβαιωθείτε ότι έχετε ορίσει `python` στο πεδίο `Command` και `server.py` ως `Arguments`. Αυτό διασφαλίζει ότι το σενάριο εκτελείται σωστά.
 
 #### .NET
 
-Δημιουργήστε ένα αρχείο Program.cs με το παρακάτω περιεχόμενο:
+Βεβαιωθείτε ότι βρίσκεστε στον κατάλογο του έργου σας:
 
-```csharp
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using ModelContextProtocol.Server;
-using System.ComponentModel;
-
-var builder = Host.CreateApplicationBuilder(args);
-builder.Logging.AddConsole(consoleLogOptions =>
-{
-    // Configure all logs to go to stderr
-    consoleLogOptions.LogToStandardErrorThreshold = LogLevel.Trace;
-});
-
-builder.Services
-    .AddMcpServer()
-    .WithStdioServerTransport()
-    .WithToolsFromAssembly();
-await builder.Build().RunAsync();
-
-[McpServerToolType]
-public static class CalculatorTool
-{
-    [McpServerTool, Description("Adds two numbers")]
-    public static string Add(int a, int b) => $"Sum {a + b}";
-}
+```sh
+cd McpCalculatorServer
+npx @modelcontextprotocol/inspector dotnet run
 ```
 
 #### Java
 
-Η πλήρης κύρια κλάση εφαρμογής σας θα πρέπει να μοιάζει με αυτή:
+Βεβαιωθείτε ότι ο διακομιστής calculator σας λειτουργεί
+Στη συνέχεια, εκτελέστε τον επιθεωρητή:
 
-```java
-// McpServerApplication.java
-package com.microsoft.mcp.sample.server;
-
-import org.springframework.ai.tool.ToolCallbackProvider;
-import org.springframework.ai.tool.method.MethodToolCallbackProvider;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import com.microsoft.mcp.sample.server.service.CalculatorService;
-
-@SpringBootApplication
-public class McpServerApplication {
-
-    public static void main(String[] args) {
-        SpringApplication.run(McpServerApplication.class, args);
-    }
-    
-    @Bean
-    public ToolCallbackProvider calculatorTools(CalculatorService calculator) {
-        return MethodToolCallbackProvider.builder().toolObjects(calculator).build();
-    }
-}
+```cmd
+npx @modelcontextprotocol/inspector
 ```
+
+Στην ιστοσελίδα του επιθεωρητή:
+
+1. Επιλέξτε "SSE" ως τύπο μεταφοράς
+2. Ορίστε το URL σε: `http://localhost:8080/sse`
+3. Κάντε κλικ στο "Connect"
+
+![Connect](../../../../translated_images/el/tool.163d33e3ee307e20.webp)
+
+**Τώρα είστε συνδεδεμένοι με τον διακομιστή**
+**Η ενότητα δοκιμής του Java διακομιστή ολοκληρώθηκε**
+
+Η επόμενη ενότητα αφορά την αλληλεπίδραση με τον διακομιστή.
+
+Θα πρέπει να δείτε την ακόλουθη διεπαφή χρήστη:
+
+![Connect](../../../../translated_images/el/connect.141db0b2bd05f096.webp)
+
+1. Συνδεθείτε με τον διακομιστή επιλέγοντας το κουμπί Connect
+  Μόλις συνδεθείτε με τον διακομιστή, θα πρέπει να δείτε το εξής:
+
+  ![Connected](../../../../translated_images/el/connected.73d1e042c24075d3.webp)
+
+1. Επιλέξτε "Tools" και "listTools", θα πρέπει να εμφανιστεί το "Add", επιλέξτε "Add" και συμπληρώστε τις τιμές των παραμέτρων.
+
+  Θα δείτε την ακόλουθη απάντηση, δηλαδή ένα αποτέλεσμα από το εργαλείο "add":
+
+  ![Result of running add](../../../../translated_images/el/ran-tool.a5a6ee878c1369ec.webp)
+
+Συγχαρητήρια, καταφέρατε να δημιουργήσετε και να εκτελέσετε τον πρώτο σας διακομιστή!
 
 #### Rust
 
-Ο τελικός κώδικας για τον Rust server θα πρέπει να μοιάζει με αυτόν:
-
-```rust
-use rmcp::{
-    ServerHandler, ServiceExt,
-    handler::server::{router::tool::ToolRouter, tool::Parameters},
-    model::{ServerCapabilities, ServerInfo},
-    schemars, tool, tool_handler, tool_router,
-    transport::stdio,
-};
-use std::error::Error;
-
-#[derive(Debug, serde::Deserialize, schemars::JsonSchema)]
-pub struct CalculatorRequest {
-    pub a: f64,
-    pub b: f64,
-}
-
-#[derive(Debug, Clone)]
-pub struct Calculator {
-    tool_router: ToolRouter<Self>,
-}
-
-#[tool_router]
-impl Calculator {
-    pub fn new() -> Self {
-        Self {
-            tool_router: Self::tool_router(),
-        }
-    }
-    
-    #[tool(description = "Adds a and b")]
-    async fn add(
-        &self,
-        Parameters(CalculatorRequest { a, b }): Parameters<CalculatorRequest>,
-    ) -> String {
-        (a + b).to_string()
-    }
-}
-
-#[tool_handler]
-impl ServerHandler for Calculator {
-    fn get_info(&self) -> ServerInfo {
-        ServerInfo {
-            instructions: Some("A simple calculator tool".into()),
-            capabilities: ServerCapabilities::builder().enable_tools().build(),
-            ..Default::default()
-        }
-    }
-}
-
-#[tokio::main]
-async fn main() -> Result<(), Box<dyn Error>> {
-    let service = Calculator::new().serve(stdio()).await?;
-    service.waiting().await?;
-    Ok(())
-}
-```
-
-### -7- Δοκιμή του server
-
-Ξεκινήστε τον server με την παρακάτω εντολή:
-
-#### TypeScript
-
-```sh
-npm run build
-```
-
-#### Python
-
-```sh
-mcp run server.py
-```
-
-> Για να χρησιμοποιήσετε το MCP Inspector, χρησιμοποιήστε `mcp dev server.py` που εκκινεί αυτόματα το Inspector
-![Σύνδεση](../../../../translated_images/tool.163d33e3ee307e209ef146d8f85060d2f7e83e9f59b3b1699a77204ae0454ad2.el.png)
-
-**Έχετε συνδεθεί στον server**
-**Η ενότητα δοκιμής του Java server ολοκληρώθηκε**
-
-Η επόμενη ενότητα αφορά την αλληλεπίδραση με τον server.
-
-Θα πρέπει να δείτε την παρακάτω διεπαφή χρήστη:
-
-![Σύνδεση](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.el.png)
-
-1. Συνδεθείτε στον server επιλέγοντας το κουμπί Σύνδεση (Connect).  
-   Μόλις συνδεθείτε στον server, θα πρέπει να δείτε το εξής:
-
-   ![Συνδεδεμένος](../../../../translated_images/connected.73d1e042c24075d386cacdd4ee7cd748c16364c277d814e646ff2f7b5eefde85.el.png)
-
-1. Επιλέξτε "Εργαλεία" (Tools) και "listTools". Θα πρέπει να δείτε την επιλογή "Προσθήκη" (Add). Επιλέξτε "Προσθήκη" και συμπληρώστε τις τιμές των παραμέτρων.
-
-   Θα πρέπει να δείτε την παρακάτω απάντηση, δηλαδή ένα αποτέλεσμα από το εργαλείο "add":
-
-   ![Αποτέλεσμα εκτέλεσης του add](../../../../translated_images/ran-tool.a5a6ee878c1369ec1e379b81053395252a441799dbf23416c36ddf288faf8249.el.png)
-
-Συγχαρητήρια, καταφέρατε να δημιουργήσετε και να εκτελέσετε τον πρώτο σας server!
-
-#### Rust
-
-Για να εκτελέσετε τον Rust server με το MCP Inspector CLI, χρησιμοποιήστε την παρακάτω εντολή:
+Για να εκτελέσετε τον Rust διακομιστή με το MCP Inspector CLI, χρησιμοποιήστε την ακόλουθη εντολή:
 
 ```sh
 npx @modelcontextprotocol/inspector cargo run --cli --method tools/call --tool-name add --tool-arg a=1 b=2
@@ -1252,18 +1044,18 @@ npx @modelcontextprotocol/inspector cargo run --cli --method tools/call --tool-n
 Το MCP παρέχει επίσημα SDKs για πολλές γλώσσες:
 
 - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) - Συντηρείται σε συνεργασία με τη Microsoft
-- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Συντηρείται σε συνεργασία με το Spring AI
-- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Η επίσημη υλοποίηση για TypeScript
-- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Η επίσημη υλοποίηση για Python
-- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Η επίσημη υλοποίηση για Kotlin
-- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Συντηρείται σε συνεργασία με το Loopwork AI
-- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Η επίσημη υλοποίηση για Rust
+- [Java SDK](https://github.com/modelcontextprotocol/java-sdk) - Συντηρείται σε συνεργασία με την Spring AI
+- [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk) - Η επίσημη υλοποίηση TypeScript
+- [Python SDK](https://github.com/modelcontextprotocol/python-sdk) - Η επίσημη υλοποίηση Python
+- [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk) - Η επίσημη υλοποίηση Kotlin
+- [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk) - Συντηρείται σε συνεργασία με την Loopwork AI
+- [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) - Η επίσημη υλοποίηση Rust
 
-## Σημαντικά Σημεία
+## Βασικά Σημεία
 
-- Η ρύθμιση ενός περιβάλλοντος ανάπτυξης MCP είναι απλή με SDKs για συγκεκριμένες γλώσσες.
-- Η δημιουργία MCP servers περιλαμβάνει τη δημιουργία και την καταχώρηση εργαλείων με σαφή σχήματα.
-- Η δοκιμή και η αποσφαλμάτωση είναι απαραίτητες για αξιόπιστες υλοποιήσεις MCP.
+- Η ρύθμιση ενός περιβάλλοντος ανάπτυξης MCP είναι απλή με τα γλωσσικά SDKs
+- Η δημιουργία MCP διακομιστών περιλαμβάνει τη δημιουργία και καταχώρηση εργαλείων με σαφή σχήματα
+- Οι δοκιμές και ο εντοπισμός σφαλμάτων είναι απαραίτητα για αξιόπιστες υλοποιήσεις MCP
 
 ## Παραδείγματα
 
@@ -1274,28 +1066,32 @@ npx @modelcontextprotocol/inspector cargo run --cli --method tools/call --tool-n
 - [Python Calculator](../../../../03-GettingStarted/samples/python)
 - [Rust Calculator](../../../../03-GettingStarted/samples/rust)
 
-## Εργασία
+## Ανάθεση
 
-Δημιουργήστε έναν απλό MCP server με ένα εργαλείο της επιλογής σας:
+Δημιουργήστε έναν απλό MCP διακομιστή με ένα εργαλείο της επιλογής σας:
 
 1. Υλοποιήστε το εργαλείο στη γλώσσα που προτιμάτε (.NET, Java, Python, TypeScript ή Rust).
 2. Ορίστε τις παραμέτρους εισόδου και τις τιμές επιστροφής.
-3. Εκτελέστε το εργαλείο επιθεώρησης για να βεβαιωθείτε ότι ο server λειτουργεί όπως αναμένεται.
+3. Εκτελέστε το εργαλείο επιθεώρησης για να βεβαιωθείτε ότι ο διακομιστής λειτουργεί όπως αναμένεται.
 4. Δοκιμάστε την υλοποίηση με διάφορες εισόδους.
 
 ## Λύση
 
-[Λύση](./solution/README.md)
+[Solution](./solution/README.md)
 
 ## Πρόσθετοι Πόροι
 
-- [Δημιουργία Agents χρησιμοποιώντας το Model Context Protocol στο Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
+- [Δημιουργία Agents με το Model Context Protocol στο Azure](https://learn.microsoft.com/azure/developer/ai/intro-agents-mcp)
 - [Απομακρυσμένο MCP με Azure Container Apps (Node.js/TypeScript/JavaScript)](https://learn.microsoft.com/samples/azure-samples/mcp-container-ts/mcp-container-ts/)
 - [.NET OpenAI MCP Agent](https://learn.microsoft.com/samples/azure-samples/openai-mcp-agent-dotnet/openai-mcp-agent-dotnet/)
 
 ## Τι ακολουθεί
 
-Επόμενο: [Ξεκινώντας με MCP Clients](../02-client/README.md)
+Επόμενο: [Ξεκινώντας με τους MCP Clients](../02-client/README.md)
 
-**Αποποίηση Ευθύνης**:  
-Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που καταβάλλουμε κάθε προσπάθεια για ακρίβεια, παρακαλούμε να έχετε υπόψη ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν σφάλματα ή ανακρίβειες. Το πρωτότυπο έγγραφο στη μητρική του γλώσσα θα πρέπει να θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή εσφαλμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Αποποίηση ευθυνών**:  
+Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε την ακρίβεια, παρακαλούμε να λάβετε υπόψη ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη μητρική του γλώσσα πρέπει να θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

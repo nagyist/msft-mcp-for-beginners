@@ -1,76 +1,67 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "2228721599c0c8673de83496b4d7d7a9",
-  "translation_date": "2025-08-18T14:09:55+00:00",
-  "source_file": "09-CaseStudy/apimsample.md",
-  "language_code": "th"
-}
--->
-# กรณีศึกษา: เปิดเผย REST API ใน API Management เป็นเซิร์ฟเวอร์ MCP
+# กรณีศึกษา: เปิดเผย REST API ใน API Management เป็น MCP server
 
-Azure API Management เป็นบริการที่ให้ Gateway อยู่บน API Endpoints ของคุณ วิธีการทำงานคือ Azure API Management ทำหน้าที่เป็นพร็อกซีที่อยู่ด้านหน้าของ API ของคุณ และสามารถตัดสินใจว่าจะทำอะไรกับคำขอที่เข้ามา
+Azure API Management เป็นบริการที่ให้เกตเวย์บน API Endpoints ของคุณ วิธีการทำงานคือ Azure API Management ทำหน้าที่เหมือนพร็อกซีที่อยู่หน้าของ API ของคุณและสามารถตัดสินใจว่าจะทำอย่างไรกับคำขอที่เข้ามา
 
-โดยการใช้งาน คุณจะได้รับฟีเจอร์มากมาย เช่น:
+โดยการใช้มัน คุณจะได้เพิ่มฟีเจอร์มากมาย เช่น
 
-- **ความปลอดภัย** คุณสามารถใช้ทุกอย่างตั้งแต่ API keys, JWT ไปจนถึง managed identity
-- **การจำกัดอัตรา** ฟีเจอร์ที่ยอดเยี่ยมคือการสามารถกำหนดจำนวนการเรียกที่ผ่านได้ในช่วงเวลาหนึ่ง ซึ่งช่วยให้ผู้ใช้ทุกคนมีประสบการณ์ที่ดีและป้องกันไม่ให้บริการของคุณถูกคำขอถล่ม
-- **การปรับขนาดและการกระจายโหลด** คุณสามารถตั้งค่า endpoints หลายตัวเพื่อกระจายโหลด และยังสามารถกำหนดวิธีการ "load balance" ได้
-- **ฟีเจอร์ AI เช่น semantic caching**, token limit และ token monitoring และอื่น ๆ ฟีเจอร์เหล่านี้ช่วยปรับปรุงการตอบสนองและช่วยให้คุณควบคุมการใช้ token ได้ [อ่านเพิ่มเติมที่นี่](https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities)
+- **ความปลอดภัย** คุณสามารถใช้ตั้งแต่ API keys, JWT ไปจนถึง managed identity
+- **การจำกัดอัตรา (Rate limiting)** ฟีเจอร์ที่ยอดเยี่ยมคือสามารถกำหนดจำนวนการเรียกที่ผ่านได้ในหนึ่งหน่วยเวลาที่กำหนด ซึ่งช่วยให้ผู้ใช้ทุกคนได้รับประสบการณ์ที่ดีและยังทำให้บริการของคุณไม่ถูกคำขอท่วมท้นเกินไป
+- **การปรับขนาดและการบาลานซ์โหลด (Scaling & Load balancing)** คุณสามารถตั้งค่าจุดสิ้นสุดจำนวนหนึ่งเพื่อบาลานซ์โหลด และยังสามารถเลือกวิธี "บาลานซ์โหลด" ได้
+- **ฟีเจอร์ AI เช่น semantic caching** จำกัดจำนวนโทเค็นและการตรวจสอบโทเค็นและอื่น ๆ ซึ่งเป็นฟีเจอร์ที่ยอดเยี่ยมที่ช่วยเพิ่มประสิทธิภาพการตอบสนองและช่วยให้คุณควบคุมการใช้โทเค็นได้ดีขึ้น [อ่านเพิ่มเติมที่นี่](https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities)
 
 ## ทำไมต้อง MCP + Azure API Management?
 
-Model Context Protocol กำลังกลายเป็นมาตรฐานสำหรับแอป AI แบบตัวแทน และวิธีการเปิดเผยเครื่องมือและข้อมูลในรูปแบบที่สอดคล้องกัน Azure API Management เป็นตัวเลือกที่เหมาะสมเมื่อคุณต้องการ "จัดการ" APIs เซิร์ฟเวอร์ MCP มักจะรวมเข้ากับ APIs อื่น ๆ เพื่อแก้ไขคำขอไปยังเครื่องมือ ตัวอย่างเช่น ดังนั้นการรวม Azure API Management และ MCP จึงมีเหตุผลที่ดี
+Model Context Protocol กำลังกลายเป็นมาตรฐานสำหรับแอป AI เชิงตัวแทนและวิธีเปิดเผยเครื่องมือและข้อมูลอย่างสม่ำเสมอ Azure API Management เป็นตัวเลือกธรรมชาติเมื่อคุณจำเป็นต้อง "จัดการ" API โดย MCP Servers มักจะผสานรวมกับ API อื่น ๆ เพื่อตอบคำขอไปยังเครื่องมือบางอย่าง ดังนั้นการรวม Azure API Management และ MCP จึงมีเหตุผลมาก
 
 ## ภาพรวม
 
-ในกรณีการใช้งานนี้ เราจะเรียนรู้วิธีเปิดเผย API endpoints เป็นเซิร์ฟเวอร์ MCP โดยการทำเช่นนี้ เราสามารถทำให้ endpoints เหล่านี้เป็นส่วนหนึ่งของแอปตัวแทนได้อย่างง่ายดาย พร้อมทั้งใช้ประโยชน์จากฟีเจอร์ของ Azure API Management
+ในกรณีการใช้งานนี้ เราจะเรียนรู้การเปิดเผย API endpoints เป็น MCP Server ด้วยการทำเช่นนี้ เราสามารถทำให้ endpoints เหล่านี้เป็นส่วนหนึ่งของแอปเชิงตัวแทนอย่างง่ายดายและยังสามารถใช้ฟีเจอร์จาก Azure API Management ได้
 
-## ฟีเจอร์สำคัญ
+## คุณสมบัติหลัก
 
-- คุณสามารถเลือกวิธี endpoint ที่ต้องการเปิดเผยเป็นเครื่องมือ
-- ฟีเจอร์เพิ่มเติมที่คุณได้รับขึ้นอยู่กับสิ่งที่คุณกำหนดค่าในส่วน policy สำหรับ API ของคุณ แต่ที่นี่เราจะแสดงวิธีการเพิ่มการจำกัดอัตรา
+- คุณเลือกวิธี endpoint ที่ต้องการเปิดเผยในฐานะเครื่องมือ
+- ฟีเจอร์เพิ่มเติมที่คุณจะได้รับขึ้นอยู่กับสิ่งที่คุณกำหนดในส่วน policy สำหรับ API ของคุณ แต่ที่นี่เราจะแสดงวิธีเพิ่มการจำกัดอัตรา
 
-## ขั้นตอนเบื้องต้น: นำเข้า API
+## ขั้นตอนก่อนหน้า: นำเข้า API
 
-หากคุณมี API ใน Azure API Management อยู่แล้ว คุณสามารถข้ามขั้นตอนนี้ได้ หากไม่เป็นเช่นนั้น ดูลิงก์นี้ [การนำเข้า API ไปยัง Azure API Management](https://learn.microsoft.com/en-us/azure/api-management/import-and-publish#import-and-publish-a-backend-api)
+ถ้าคุณมี API ใน Azure API Management อยู่แล้ว ยอดมาก คุณสามารถข้ามขั้นตอนนี้ ถ้าไม่เช่นนั้น ตรวจสอบลิงก์นี้ [นำเข้า API เข้า Azure API Management](https://learn.microsoft.com/en-us/azure/api-management/import-and-publish#import-and-publish-a-backend-api)
 
-## เปิดเผย API เป็นเซิร์ฟเวอร์ MCP
+## เปิดเผย API เป็น MCP Server
 
-เพื่อเปิดเผย API endpoints ให้ทำตามขั้นตอนเหล่านี้:
+เพื่อเปิดเผย API endpoints ให้ทำตามขั้นตอนนี้:
 
 1. ไปที่ Azure Portal และที่อยู่ต่อไปนี้ <https://portal.azure.com/?Microsoft_Azure_ApiManagement=mcp>  
-ไปที่ instance ของ API Management ของคุณ
+ไปยังอินสแตนซ์ API Management ของคุณ
 
-1. ในเมนูด้านซ้าย เลือก APIs > MCP Servers > + Create new MCP Server
+1. ในเมนูซ้าย เลือก APIs > MCP Servers > + Create new MCP Server
 
-1. ใน API เลือก REST API ที่ต้องการเปิดเผยเป็นเซิร์ฟเวอร์ MCP
+1. ใน API เลือก REST API ที่ต้องการเปิดเป็น MCP server
 
-1. เลือกหนึ่งหรือหลาย API Operations ที่ต้องการเปิดเผยเป็นเครื่องมือ คุณสามารถเลือกทุก operations หรือเฉพาะ operations ที่ต้องการ
+1. เลือกหนึ่งหรือมากกว่าหนึ่ง API Operations ที่จะเปิดเผยเป็นเครื่องมือ คุณสามารถเลือกทั้งหมดหรือเฉพาะบาง operations
 
-    ![เลือกวิธีการที่จะเปิดเผย](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/create-mcp-server-small.png)
+    ![Select methods to expose](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/create-mcp-server-small.png)
 
 1. เลือก **Create**
 
-1. ไปที่ตัวเลือกเมนู **APIs** และ **MCP Servers** คุณควรเห็นดังนี้:
+1. ไปที่เมนู **APIs** และ **MCP Servers** คุณควรเห็นดังต่อไปนี้:
 
-    ![ดูเซิร์ฟเวอร์ MCP ในหน้าหลัก](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-list.png)
+    ![See the MCP Server in the main pane](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-list.png)
 
-    เซิร์ฟเวอร์ MCP ถูกสร้างขึ้นและ API operations ถูกเปิดเผยเป็นเครื่องมือ เซิร์ฟเวอร์ MCP จะปรากฏในหน้าต่าง MCP Servers คอลัมน์ URL แสดง endpoint ของเซิร์ฟเวอร์ MCP ที่คุณสามารถเรียกใช้เพื่อทดสอบหรือในแอปพลิเคชันของลูกค้า
+    MCP server ถูกสร้างและ API operations ถูกเปิดเผยในรูปแบบเครื่องมือ MCP server จะแสดงในแผง MCP Servers คอลัมน์ URL แสดง endpoint ของ MCP server ที่คุณสามารถเรียกเพื่อทดสอบหรือใช้ในแอปพลิเคชันลูกค้าได้
 
-## ตัวเลือก: กำหนดค่ากฎ (Policies)
+## ตัวเลือก: กำหนดค่า policies
 
-Azure API Management มีแนวคิดหลักของกฎ (Policies) ที่คุณสามารถตั้งค่ากฎต่าง ๆ สำหรับ endpoints เช่น การจำกัดอัตรา หรือ semantic caching กฎเหล่านี้ถูกเขียนในรูปแบบ XML
+Azure API Management มีแนวคิดหลักคือ policies ซึ่งคุณตั้งกฎต่าง ๆ สำหรับ endpoints เช่น การจำกัดอัตราหรือ semantic caching นโยบายเหล่านี้ถูกเขียนในรูปแบบ XML
 
-นี่คือวิธีการตั้งค่ากฎเพื่อจำกัดอัตราสำหรับเซิร์ฟเวอร์ MCP ของคุณ:
+นี่คือวิธีตั้งค่านโยบายเพื่อจำกัดอัตราสำหรับ MCP Server ของคุณ:
 
-1. ในพอร์ทัล ภายใต้ APIs เลือก **MCP Servers**
+1. ในพอร์ทัล ภายใต้ APIs ให้เลือก **MCP Servers**
 
-1. เลือกเซิร์ฟเวอร์ MCP ที่คุณสร้างขึ้น
+1. เลือก MCP server ที่คุณสร้าง
 
-1. ในเมนูด้านซ้าย ภายใต้ MCP เลือก **Policies**
+1. ในเมนูซ้าย ภายใต้ MCP เลือก **Policies**
 
-1. ในตัวแก้ไขกฎ เพิ่มหรือแก้ไขกฎที่คุณต้องการใช้กับเครื่องมือของเซิร์ฟเวอร์ MCP กฎถูกกำหนดในรูปแบบ XML ตัวอย่างเช่น คุณสามารถเพิ่มกฎเพื่อจำกัดการเรียกใช้เครื่องมือของเซิร์ฟเวอร์ MCP (ในตัวอย่างนี้ 5 ครั้งต่อ 30 วินาทีต่อ client IP address) นี่คือ XML ที่จะทำให้เกิดการจำกัดอัตรา:
+1. ในตัวแก้ไขนโยบาย เพิ่มหรือแก้ไขนโยบายที่คุณต้องการใช้กับเครื่องมือของ MCP server นโยบายถูกกำหนดในรูปแบบ XML ตัวอย่างเช่น คุณสามารถเพิ่มนโยบายจำกัดการเรียกใช้เครื่องมือ MCP server (เช่น 5 การเรียกต่อ 30 วินาทีต่อไอพีไคลเอนต์) นี่คือตัวอย่าง XML ที่จะทำให้เกิดการจำกัด:
 
     ```xml
      <rate-limit-by-key calls="5" 
@@ -80,29 +71,29 @@ Azure API Management มีแนวคิดหลักของกฎ (Polici
     />
     ```
 
-    นี่คือภาพของตัวแก้ไขกฎ:
+    นี่คือรูปภาพตัวแก้ไขนโยบาย:
 
-    ![ตัวแก้ไขกฎ](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-policies-small.png)
+    ![Policy editor](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-policies-small.png)
 
 ## ทดลองใช้งาน
 
-มาทดสอบว่าเซิร์ฟเวอร์ MCP ของเราทำงานตามที่ตั้งใจไว้
+มาตรวจสอบให้แน่ใจว่า MCP Server ของเราทำงานตามที่ตั้งใจไว้
 
-สำหรับสิ่งนี้ เราจะใช้ Visual Studio Code และ GitHub Copilot ในโหมด Agent เราจะเพิ่มเซิร์ฟเวอร์ MCP ลงในไฟล์ *mcp.json* โดยการทำเช่นนี้ Visual Studio Code จะทำหน้าที่เป็นลูกค้าด้วยความสามารถแบบตัวแทน และผู้ใช้ปลายทางจะสามารถพิมพ์คำสั่งและโต้ตอบกับเซิร์ฟเวอร์ดังกล่าวได้
+สำหรับการนี้ เราจะใช้ Visual Studio Code และ GitHub Copilot พร้อมโหมด Agent เราจะเพิ่ม MCP server ลงใน *mcp.json* ด้วยการทำเช่นนี้ Visual Studio Code จะทำงานเป็นไคลเอนต์ที่มีความสามารถเชิงตัวแทนและผู้ใช้สุดท้ายจะสามารถพิมพ์พรอมต์และโต้ตอบกับเซิร์ฟเวอร์นั้นได้
 
-มาดูกันว่าจะเพิ่มเซิร์ฟเวอร์ MCP ใน Visual Studio Code ได้อย่างไร:
+มาดูวิธีเพิ่ม MCP server ใน Visual Studio Code:
 
-1. ใช้คำสั่ง MCP: **Add Server command จาก Command Palette**
+1. ใช้คำสั่ง MCP: **Add Server จาก Command Palette**
 
-1. เมื่อถูกถาม เลือกประเภทเซิร์ฟเวอร์: **HTTP (HTTP หรือ Server Sent Events)**
+1. เมื่อได้รับการแจ้งให้เลือกประเภทเซิร์ฟเวอร์: **HTTP (HTTP หรือ Server Sent Events)**
 
-1. ป้อน URL ของเซิร์ฟเวอร์ MCP ใน API Management ตัวอย่าง: **https://<apim-service-name>.azure-api.net/<api-name>-mcp/sse** (สำหรับ SSE endpoint) หรือ **https://<apim-service-name>.azure-api.net/<api-name>-mcp/mcp** (สำหรับ MCP endpoint) สังเกตความแตกต่างระหว่าง transports คือ `/sse` หรือ `/mcp`
+1. ป้อน URL ของ MCP server ใน API Management ตัวอย่าง: **https://<apim-service-name>.azure-api.net/<api-name>-mcp/sse** (สำหรับจุดสิ้นสุด SSE) หรือ **https://<apim-service-name>.azure-api.net/<api-name>-mcp/mcp** (สำหรับจุดสิ้นสุด MCP) สังเกตความแตกต่างของ transport จะเป็น `/sse` หรือ `/mcp`
 
-1. ป้อน server ID ที่คุณเลือก ค่านี้ไม่สำคัญมาก แต่จะช่วยให้คุณจำได้ว่า instance ของเซิร์ฟเวอร์นี้คืออะไร
+1. ป้อน ID ของเซิร์ฟเวอร์ที่คุณเลือก นี่ไม่ใช่ค่าที่สำคัญแต่จะช่วยคุณจำได้ว่าอินสแตนซ์เซิร์ฟเวอร์นี้คืออะไร
 
-1. เลือกว่าจะบันทึกการตั้งค่าไปยัง workspace settings หรือ user settings
+1. เลือกว่าจะบันทึกการตั้งค่าไปยังการตั้งค่า workspace หรือ user
 
-  - **Workspace settings** - การตั้งค่าเซิร์ฟเวอร์จะถูกบันทึกในไฟล์ .vscode/mcp.json ที่มีเฉพาะใน workspace ปัจจุบัน
+  - **Workspace settings** - การตั้งค่าเซิร์ฟเวอร์จะถูกบันทึกไปยังไฟล์ .vscode/mcp.json ใช้ได้เฉพาะใน workspace ปัจจุบัน
 
     *mcp.json*
 
@@ -115,7 +106,7 @@ Azure API Management มีแนวคิดหลักของกฎ (Polici
     }
     ```
 
-    หรือหากคุณเลือก streaming HTTP เป็น transport จะมีความแตกต่างเล็กน้อย:
+    หรือถ้าคุณเลือก streaming HTTP เป็น transport มันจะต่างกันเล็กน้อย:
 
     ```json
     "servers": {
@@ -126,15 +117,15 @@ Azure API Management มีแนวคิดหลักของกฎ (Polici
     }
     ```
 
-  - **User settings** - การตั้งค่าเซิร์ฟเวอร์จะถูกเพิ่มในไฟล์ *settings.json* ทั่วโลก และสามารถใช้งานได้ในทุก workspace การตั้งค่าจะมีลักษณะคล้ายกับดังนี้:
+  - **User settings** - การตั้งค่าเซิร์ฟเวอร์จะถูกเพิ่มในไฟล์ *settings.json* ทั่วโลกของคุณและใช้ได้ในทุก workspace การตั้งค่าจะมีลักษณะคล้ายดังนี้:
 
-    ![การตั้งค่าผู้ใช้](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-servers-visual-studio-code.png)
+    ![User setting](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-servers-visual-studio-code.png)
 
-1. คุณยังต้องเพิ่มการตั้งค่า header เพื่อให้แน่ใจว่ามีการตรวจสอบสิทธิ์อย่างถูกต้องกับ Azure API Management โดยใช้ header ที่เรียกว่า **Ocp-Apim-Subscription-Key**
+1. คุณยังต้องเพิ่มการตั้งค่า header เพื่อให้แน่ใจว่าการตรวจสอบสิทธิ์กับ Azure API Management ทำได้ถูกต้อง มันใช้ header ชื่อ **Ocp-Apim-Subscription-Key**
 
-    - นี่คือวิธีการเพิ่ม header ใน settings:
+    - นี่คือวิธีการเพิ่มลงใน settings:
 
-    ![การเพิ่ม header สำหรับการตรวจสอบสิทธิ์](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-with-header-visual-studio-code.png) ซึ่งจะทำให้มีการแสดง prompt เพื่อขอค่าคีย์ API ซึ่งคุณสามารถหาได้ใน Azure Portal สำหรับ instance ของ Azure API Management ของคุณ
+    ![Adding header for authentication](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/mcp-server-with-header-visual-studio-code.png) ซึ่งจะทำให้มี prompt ขอให้ป้อนค่า API key ซึ่งคุณสามารถหาได้ใน Azure Portal สำหรับอินสแตนซ์ Azure API Management ของคุณ
 
    - หากต้องการเพิ่มใน *mcp.json* แทน คุณสามารถเพิ่มได้ดังนี้:
 
@@ -160,42 +151,51 @@ Azure API Management มีแนวคิดหลักของกฎ (Polici
 
 ### ใช้โหมด Agent
 
-ตอนนี้เราตั้งค่าเสร็จแล้วใน settings หรือใน *.vscode/mcp.json* มาลองใช้งานกัน
+ตอนนี้เราตั้งค่าทั้งใน settings หรือใน *.vscode/mcp.json* เรียบร้อยแล้ว มาลองใช้งานกัน
 
-ควรมีไอคอน Tools ดังนี้ ซึ่งเครื่องมือที่เปิดเผยจากเซิร์ฟเวอร์ของคุณจะปรากฏอยู่:
+จะมีไอคอน Tools ดังนี้ ที่จะแสดงเครื่องมือที่เปิดเผยจากเซิร์ฟเวอร์ของคุณ:
 
-![เครื่องมือจากเซิร์ฟเวอร์](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/tools-button-visual-studio-code.png)
+![Tools from the server](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/tools-button-visual-studio-code.png)
 
-1. คลิกไอคอน Tools และคุณควรเห็นรายการเครื่องมือดังนี้:
+1. คลิกไอคอนเครื่องมือและคุณจะเห็นรายชื่อเครื่องมือดังนี้:
 
-    ![เครื่องมือ](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/select-tools-visual-studio-code.png)
+    ![Tools](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/select-tools-visual-studio-code.png)
 
-1. ป้อนคำสั่งในแชทเพื่อเรียกใช้เครื่องมือ ตัวอย่างเช่น หากคุณเลือกเครื่องมือเพื่อรับข้อมูลเกี่ยวกับคำสั่งซื้อ คุณสามารถถามตัวแทนเกี่ยวกับคำสั่งซื้อ นี่คือตัวอย่างคำสั่ง:
+1. ป้อนพรอมต์ในแชทเพื่อเรียกใช้เครื่องมือ ตัวอย่างเช่นถ้าคุณเลือกเครื่องมือเพื่อรับข้อมูลเกี่ยวกับคำสั่ง คุณสามารถถามตัวแทนเกี่ยวกับคำสั่งนั้น นี่คือตัวอย่างพรอมต์:
 
     ```text
     get information from order 2
     ```
 
-    คุณจะเห็นไอคอนเครื่องมือที่ขอให้คุณดำเนินการเรียกใช้เครื่องมือ เลือกเพื่อดำเนินการเรียกใช้เครื่องมือ คุณควรเห็นผลลัพธ์ดังนี้:
+    ตอนนี้คุณจะเห็นไอคอนเครื่องมือถามว่าต้องการเรียกใช้เครื่องมือหรือไม่ เลือกเพื่อดำเนินการเครื่องมือต่อไป คุณจะเห็นผลลัพธ์เป็นข้อความดังนี้:
 
-    ![ผลลัพธ์จากคำสั่ง](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/chat-results-visual-studio-code.png)
+    ![Result from prompt](https://learn.microsoft.com/en-us/azure/api-management/media/export-rest-mcp-server/chat-results-visual-studio-code.png)
 
-    **สิ่งที่คุณเห็นด้านบนขึ้นอยู่กับเครื่องมือที่คุณตั้งค่า แต่แนวคิดคือคุณจะได้รับการตอบกลับเป็นข้อความดังที่แสดงด้านบน**
+    **สิ่งที่คุณเห็นด้านบนขึ้นอยู่กับเครื่องมือที่ตั้งค่าไว้ แต่แนวคิดคือคุณจะได้รับการตอบกลับเป็นข้อความเหมือนตัวอย่างข้างต้น**
 
-## อ้างอิง
+## เอกสารอ้างอิง
 
-นี่คือวิธีที่คุณสามารถเรียนรู้เพิ่มเติม:
+นี่คือแหล่งข้อมูลเพิ่มเติม:
 
-- [บทเรียนเกี่ยวกับ Azure API Management และ MCP](https://learn.microsoft.com/en-us/azure/api-management/export-rest-mcp-server)
-- [ตัวอย่าง Python: การรักษาความปลอดภัยเซิร์ฟเวอร์ MCP ระยะไกลโดยใช้ Azure API Management (ทดลอง)](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)
+- [บทแนะนำเกี่ยวกับ Azure API Management และ MCP](https://learn.microsoft.com/en-us/azure/api-management/export-rest-mcp-server)
+- [ตัวอย่าง Python: การรักษาความปลอดภัย MCP servers ระยะไกลโดยใช้ Azure API Management (ทดลอง)](https://github.com/Azure-Samples/remote-mcp-apim-functions-python)
 
 - [ห้องปฏิบัติการการอนุญาตลูกค้า MCP](https://github.com/Azure-Samples/AI-Gateway/tree/main/labs/mcp-client-authorization)
 
-- [ใช้ส่วนขยาย Azure API Management สำหรับ VS Code เพื่อนำเข้าและจัดการ APIs](https://learn.microsoft.com/en-us/azure/api-management/visual-studio-code-tutorial)
+- [ใช้ส่วนขยาย Azure API Management สำหรับ VS Code ในการนำเข้าและจัดการ APIs](https://learn.microsoft.com/en-us/azure/api-management/visual-studio-code-tutorial)
 
-- [ลงทะเบียนและค้นพบเซิร์ฟเวอร์ MCP ระยะไกลใน Azure API Center](https://learn.microsoft.com/en-us/azure/api-center/register-discover-mcp-server)
-- [AI Gateway](https://github.com/Azure-Samples/AI-Gateway) โครงการที่ยอดเยี่ยมที่แสดงความสามารถ AI หลายอย่างด้วย Azure API Management
-- [เวิร์กช็อป AI Gateway](https://azure-samples.github.io/AI-Gateway/) มีเวิร์กช็อปที่ใช้ Azure Portal ซึ่งเป็นวิธีที่ดีในการเริ่มต้นประเมินความสามารถ AI
+- [ลงทะเบียนและค้นหา MCP servers ระยะไกลใน Azure API Center](https://learn.microsoft.com/en-us/azure/api-center/register-discover-mcp-server)
+- [AI Gateway](https://github.com/Azure-Samples/AI-Gateway) รีโพที่ยอดเยี่ยมที่แสดงความสามารถ AI หลายอย่างกับ Azure API Management
+- [เวิร์กช็อป AI Gateway](https://azure-samples.github.io/AI-Gateway/) ประกอบด้วยเวิร์กช็อปที่ใช้ Azure Portal ซึ่งเป็นวิธีที่ดีในการเริ่มประเมินความสามารถ AI
 
+## ขั้นตอนถัดไป
+
+- กลับไปที่: [ภาพรวมกรณีศึกษา](./README.md)
+- ต่อไป: [ตัวแทนท่องเที่ยว Azure AI](./travelagentsample.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษา AI [Co-op Translator](https://github.com/Azure/co-op-translator) แม้ว่าเราจะพยายามให้การแปลมีความถูกต้อง แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่แม่นยำ เอกสารต้นฉบับในภาษาต้นทางควรถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ แนะนำให้ใช้บริการแปลภาษาจากผู้เชี่ยวชาญที่เป็นมนุษย์ เราจะไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความที่ผิดพลาดซึ่งเกิดจากการใช้การแปลนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาด้วยปัญญาประดิษฐ์ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้ว่าพวกเราจะพยายามให้มีความถูกต้อง แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่แม่นยำ เอกสารต้นฉบับในภาษาดั้งเดิมควรถือเป็นแหล่งข้อมูลที่น่าเชื่อถือ สำหรับข้อมูลที่สำคัญ แนะนำให้ใช้บริการแปลโดยมนุษย์มืออาชีพ พวกเราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใด ๆ ที่เกิดจากการใช้การแปลนี้
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

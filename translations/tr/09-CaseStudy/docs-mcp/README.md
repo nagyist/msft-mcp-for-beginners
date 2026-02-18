@@ -1,61 +1,52 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4319d291c9d124ecafea52b3d04bfa0e",
-  "translation_date": "2025-07-14T06:23:59+00:00",
-  "source_file": "09-CaseStudy/docs-mcp/README.md",
-  "language_code": "tr"
-}
--->
-# Vaka Çalışması: Bir İstemciden Microsoft Learn Docs MCP Sunucusuna Bağlanma
+# Vaka İncelemesi: Bir İstemciden Microsoft Learn Docs MCP Sunucusuna Bağlanmak
 
-Hiç kodunuzdaki bir problemi çözerken dokümantasyon siteleri, Stack Overflow ve sonsuz arama motoru sekmeleri arasında gidip gelirken kendinizi buldunuz mu? Belki dokümanlar için ayrı bir monitörünüz var ya da IDE ile tarayıcı arasında sürekli alt-tab yapıyorsunuz. Dokümantasyonu doğrudan iş akışınıza—uygulamalarınıza, IDE’nize veya kendi özel araçlarınıza entegre edebilseydiniz, daha iyi olmaz mıydı? Bu vaka çalışmasında, kendi istemci uygulamanızdan Microsoft Learn Docs MCP sunucusuna doğrudan nasıl bağlanacağınızı keşfedeceğiz.
+Kodunuzdaki bir sorunu çözmeye çalışırken dokümantasyon siteleri, Stack Overflow ve sonsuz arama motoru sekmeleri arasında mı gidip geliyorsunuz? Belki sadece dokümanlar için ikinci bir monitörünüz var ya da sürekli IDE ile tarayıcı arasında alt-tab yapıyorsunuz. Dokümantasyonu doğrudan iş akışınıza—uygulamalarınıza, IDE’nize ya da kendi özel araçlarınıza entegre edebilseydiniz daha iyi olmaz mıydı? Bu vaka incelemesinde, kendi istemci uygulamanızdan Microsoft Learn Docs MCP sunucusuna doğrudan bağlanarak tam olarak bunu nasıl yapacağımızı keşfedeceğiz.
 
 ## Genel Bakış
 
-Modern geliştirme sadece kod yazmaktan ibaret değil—doğru bilgiyi doğru zamanda bulmakla ilgili. Dokümantasyon her yerde, ancak genellikle en çok ihtiyaç duyduğunuz yerde değil: araçlarınızın ve iş akışlarınızın içinde. Dokümantasyon alımını doğrudan uygulamalarınıza entegre ederek zaman kazanabilir, bağlam değiştirmeyi azaltabilir ve verimliliği artırabilirsiniz. Bu bölümde, bir istemciyi Microsoft Learn Docs MCP sunucusuna nasıl bağlayacağınızı göstereceğiz, böylece uygulamanızdan hiç çıkmadan gerçek zamanlı, bağlam odaklı dokümantasyona erişebileceksiniz.
+Modern geliştirme yalnızca kod yazmaktan ibaret değildir—doğru bilgiyi doğru zamanda bulmaktır. Dokümantasyon her yerde fakat genellikle en çok ihtiyaç duyduğunuz yerde değildir: araçlarınızda ve iş akışlarınızın içinde. Dokümantasyon alanını uygulamalarınıza doğrudan entegre ederek zaman kazanabilir, bağlam değiştirmeyi azaltabilir ve üretkenliğinizi artırabilirsiniz. Bu bölümde, bir istemcinin Microsoft Learn Docs MCP sunucusuna nasıl bağlanacağını göstereceğiz, böylece uygulamanızdan hiç çıkmadan gerçek zamanlı, bağlam bilincine sahip dokümantasyona erişebileceksiniz.
 
-Bağlantı kurma, istek gönderme ve akış yanıtlarını verimli şekilde işleme süreçlerini adım adım inceleyeceğiz. Bu yöntem sadece iş akışınızı kolaylaştırmakla kalmaz, aynı zamanda daha akıllı ve yardımcı geliştirici araçları oluşturmanın kapısını açar.
+Bağlantı kurma, istek gönderme ve akış yanıtlarını verimli şekilde işleme sürecini adım adım inceleyeceğiz. Bu yaklaşım iş akışınızı sadeleştirmekle kalmayıp daha akıllı, daha yardımcı geliştirici araçları oluşturmanın kapısını da açar.
 
 ## Öğrenme Hedefleri
 
-Neden bunu yapıyoruz? Çünkü en iyi geliştirici deneyimleri sürtüşmeyi ortadan kaldıranlardır. Kod editörünüzün, sohbet botunuzun veya web uygulamanızın Microsoft Learn’in en güncel içeriğini kullanarak dokümantasyon sorularınızı anında yanıtlayabildiği bir dünya hayal edin. Bu bölümün sonunda şunları bileceksiniz:
+Neden bunu yapıyoruz? Çünkü en iyi geliştirici deneyimleri sürtünmeyi ortadan kaldıranlardır. Kod editörünüzün, sohbet botunuzun veya web uygulamanızın, Microsoft Learn’den en güncel içerikle dokümantasyon sorularınızı anında yanıtladığını hayal edin. Bu bölümün sonunda şunları öğrenmiş olacaksınız:
 
 - Dokümantasyon için MCP sunucu-istemci iletişiminin temellerini anlamak
-- Microsoft Learn Docs MCP sunucusuna bağlanan bir konsol veya web uygulaması geliştirmek
-- Gerçek zamanlı dokümantasyon alımı için akışlı HTTP istemcileri kullanmak
+- Microsoft Learn Docs MCP sunucusuna bağlanmak üzere konsol veya web uygulaması geliştirmek
+- Gerçek zamanlı dokümantasyon almak için akış destekli HTTP istemcileri kullanmak
 - Uygulamanızda dokümantasyon yanıtlarını kaydetmek ve yorumlamak
 
-Bu becerilerin, sadece tepki veren değil, gerçekten etkileşimli ve bağlam farkında araçlar oluşturmanıza nasıl yardımcı olacağını göreceksiniz.
+Bu yeteneklerin, sadece tepkisel değil, gerçekten etkileşimli ve bağlam bilincine sahip araçlar oluşturmanıza nasıl yardımcı olacağını göreceksiniz.
 
-## Senaryo 1 - MCP ile Gerçek Zamanlı Dokümantasyon Alımı
+## Senaryo 1 - MCP ile Gerçek Zamanlı Dokümantasyon Alma
 
-Bu senaryoda, bir istemciyi Microsoft Learn Docs MCP sunucusuna bağlayarak uygulamanızdan hiç çıkmadan gerçek zamanlı, bağlam odaklı dokümantasyona nasıl erişeceğinizi göstereceğiz.
+Bu senaryoda, bir istemciyi Microsoft Learn Docs MCP sunucusuna bağlayarak uygulamanızdan hiç çıkmadan gerçek zamanlı, bağlam bilincine sahip dokümantasyona nasıl erişeceğinizi gösteriyoruz.
 
-Hadi bunu pratiğe dökelim. Göreviniz, Microsoft Learn Docs MCP sunucusuna bağlanan, `microsoft_docs_search` aracını çağıran ve akış yanıtını konsola kaydeden bir uygulama yazmak.
+Hadi bunu uygulamaya geçirelim. Göreviniz Microsoft Learn Docs MCP sunucusuna bağlanan, `microsoft_docs_search` aracını çağıran ve akış halinde gelen yanıtı konsola kaydeden bir uygulama yazmaktır.
 
-### Neden bu yöntem?
-Çünkü bu, daha gelişmiş entegrasyonlar oluşturmanın temelidir—ister bir sohbet botu, ister bir IDE eklentisi, ister bir web kontrol paneli geliştirmek isteyin.
+### Neden bu yaklaşım?
+Çünkü bu, ister bir sohbet botu, ister bir IDE eklentisi, ister web panosu olsun, daha gelişmiş entegrasyonlar inşa etmek için temeldir.
 
-Bu senaryoya ait kod ve talimatları bu vaka çalışmasının [`solution`](./solution/README.md) klasöründe bulabilirsiniz. Adımlar size bağlantıyı kurmada rehberlik edecek:
-- Bağlantı için resmi MCP SDK ve akış destekli HTTP istemcisini kullanmak
-- Dokümantasyon almak için `microsoft_docs_search` aracını sorgu parametresiyle çağırmak
-- Doğru kayıt ve hata yönetimi uygulamak
-- Kullanıcıların birden fazla arama sorgusu girmesine izin veren etkileşimli bir konsol arayüzü oluşturmak
+Bu senaryoya ait kod ve talimatları bu vaka incelemesinin [`solution`](./solution/README.md) klasöründe bulabilirsiniz. Adımlar size bağlantıyı nasıl kuracağınızı gösterecek:
+- Resmi MCP SDK ve akış destekli HTTP istemcisini kullanarak bağlantı kurmak
+- Dokümantasyonu almak için `microsoft_docs_search` aracını sorgu parametresiyle çağırmak
+- Doğru kayıt tutma ve hata yönetimi uygulamak
+- Kullanıcıların çoklu arama sorguları girmesine izin veren interaktif bir konsol arayüzü oluşturmak
 
 Bu senaryo şunları gösterir:
 - Docs MCP sunucusuna bağlanmak
-- Sorgu göndermek
+- Bir sorgu göndermek
 - Sonuçları ayrıştırmak ve yazdırmak
 
-Çözümün çalışması şöyle görünebilir:
+Çalışan çözüm şöyle görünebilir:
 
 ```
 Prompt> What is Azure Key Vault?
 Answer> Azure Key Vault is a cloud service for securely storing and accessing secrets. ...
 ```
 
-Aşağıda minimal bir örnek çözüm var. Tam kod ve detaylar solution klasöründe mevcut.
+Aşağıda minimal bir örnek çözüm bulunmaktadır. Tam kod ve detaylar solution klasöründe mevcuttur.
 
 <details>
 <summary>Python</summary>
@@ -76,20 +67,21 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
-- Tam uygulama ve kayıt için [`scenario1.py`](../../../../09-CaseStudy/docs-mcp/solution/python/scenario1.py) dosyasına bakın.
-- Kurulum ve kullanım talimatları için aynı klasördeki [`README.md`](./solution/python/README.md) dosyasını inceleyin.
+- Tam uygulama ve kayıt için [`scenario1.py`](../../../../09-CaseStudy/docs-mcp/solution/python/scenario1.py) dosyasına bakınız.
+- Kurulum ve kullanım talimatları için aynı klasördeki [`README.md`](./solution/python/README.md) dosyasını inceleyiniz.
 </details>
+
 
 ## Senaryo 2 - MCP ile Etkileşimli Çalışma Planı Oluşturucu Web Uygulaması
 
-Bu senaryoda, Docs MCP’yi bir web geliştirme projesine nasıl entegre edeceğinizi öğreneceksiniz. Amaç, kullanıcıların Microsoft Learn dokümantasyonunu doğrudan web arayüzünden arayabilmesini sağlamak ve dokümantasyonu uygulamanızda veya sitenizde anında erişilebilir kılmaktır.
+Bu senaryoda, Docs MCP’yi bir web geliştirme projesine nasıl entegre edeceğinizi öğreneceksiniz. Amaç, kullanıcıların Microsoft Learn dokümantasyonunu doğrudan bir web arayüzünden arayabilmelerini sağlamak ve dokümantasyona anında erişim sunmaktır.
 
 Şunları göreceksiniz:
 - Bir web uygulaması kurmak
 - Docs MCP sunucusuna bağlanmak
-- Kullanıcı girdisini işlemek ve sonuçları göstermek
+- Kullanıcı girdisini işleyip sonuçları göstermek
 
-Çözümün çalışması şöyle görünebilir:
+Çalışan çözüm şöyle görünebilir:
 
 ```
 User> I want to learn about AI102 - so suggest the roadmap to get it started from learn for 6 weeks
@@ -108,14 +100,14 @@ Assistant> Here’s a detailed 6-week roadmap to start your preparation for the 
 Let me know if you want module-specific recommendations or need more customized weekly tasks!
 ```
 
-Aşağıda minimal bir örnek çözüm var. Tam kod ve detaylar solution klasöründe mevcut.
+Aşağıda minimal bir örnek çözüm bulunmaktadır. Tam kod ve detaylar solution klasöründe mevcuttur.
 
-![Senaryo 2 Genel Bakış](../../../../translated_images/scenario2.0c92726d5cd81f68238e5ba65f839a0b300d5b74b8ca7db28bc8f900c3e7d037.tr.png)
+![Senaryo 2 Genel Bakış](../../../../translated_images/tr/scenario2.0c92726d5cd81f68.webp)
 
 <details>
 <summary>Python (Chainlit)</summary>
 
-Chainlit, konuşma tabanlı yapay zeka web uygulamaları oluşturmak için bir çerçevedir. MCP araçlarını çağırabilen ve sonuçları gerçek zamanlı gösterebilen etkileşimli sohbet botları ve asistanlar oluşturmayı kolaylaştırır. Hızlı prototipleme ve kullanıcı dostu arayüzler için idealdir.
+Chainlit, konuşma tabanlı yapay zeka web uygulamaları oluşturmak için bir çerçevedir. MCP araçlarını çağırıp sonuçları gerçek zamanlı gösterebilen etkileşimli sohbet botları ve asistanlar yapmayı kolaylaştırır. Hızlı prototipleme ve kullanıcı dostu arayüzler için idealdir.
 
 ```python
 import chainlit as cl
@@ -134,24 +126,25 @@ def handle_message(message):
         cl.Message(content="Error: " + response.text).send()
 ```
 
-- Tam uygulama için [`scenario2.py`](../../../../09-CaseStudy/docs-mcp/solution/python/scenario2.py) dosyasına bakın.
-- Kurulum ve çalıştırma talimatları için [`README.md`](./solution/python/README.md) dosyasını inceleyin.
+- Tam uygulama için [`scenario2.py`](../../../../09-CaseStudy/docs-mcp/solution/python/scenario2.py) dosyasına bakınız.
+- Kurulum ve çalışma talimatları için [`README.md`](./solution/python/README.md) dosyasına göz atınız.
 </details>
 
-## Senaryo 3: VS Code İçinde MCP Sunucusu ile Editör İçi Dokümantasyon
 
-Microsoft Learn Docs’u doğrudan VS Code içinde almak istiyorsanız (tarayıcı sekmeleri arasında geçiş yapmak yerine), MCP sunucusunu editörünüzde kullanabilirsiniz. Bu sayede:
-- Kodlama ortamınızdan çıkmadan VS Code içinde doküman arayabilir ve okuyabilirsiniz.
-- Dokümantasyona referans verebilir ve bağlantıları doğrudan README veya kurs dosyalarınıza ekleyebilirsiniz.
-- GitHub Copilot ve MCP’yi bir arada kullanarak kesintisiz, yapay zekâ destekli bir dokümantasyon iş akışı oluşturabilirsiniz.
+## Senaryo 3: VS Code’da MCP Sunucusu ile Editör İçinde Dokümanlar
+
+Microsoft Learn Docs’u doğrudan VS Code içinde (tarayıcı sekmeleri arasında geçiş yapmak yerine) almak isterseniz, MCP sunucusunu editörünüzde kullanabilirsiniz. Bu size şunları sağlar:
+- Kodlama ortamınızdan çıkmadan VS Code’da doküman arama ve okuma olanağı.
+- README ya da kurs dosyalarınıza doğrudan doküman referansı verip bağlantılar eklemek.
+- GitHub Copilot ile MCP’yi birleştirerek kesintisiz, yapay zekâ destekli dokümantasyon iş akışı.
 
 **Şunları göreceksiniz:**
-- Çalışma alanı köküne geçerli bir `.vscode/mcp.json` dosyası eklemek (aşağıdaki örneğe bakın).
-- VS Code’da MCP panelini açmak veya komut paletini kullanarak doküman aramak ve eklemek.
-- Markdown dosyalarınızda çalışırken doğrudan dokümantasyona referans vermek.
-- Bu iş akışını GitHub Copilot ile birleştirerek verimliliği artırmak.
+- Çalışma alanı köküne geçerli bir `.vscode/mcp.json` dosyası eklemek (aşağıdaki örneğe bakınız).
+- MCP panelini açmak veya VS Code komut paletini kullanarak dokümanları aramak ve eklemek.
+- Markdown dosyalarınız içinde çalışma sırasında doğrudan doküman referansı vermek.
+- Bu iş akışını GitHub Copilot ile birleştirerek üretkenliği artırmak.
 
-VS Code’da MCP sunucusunu kurmaya dair bir örnek:
+VS Code’da MCP sunucusunu kurmanın örneği şöyle:
 
 ```json
 {
@@ -165,31 +158,40 @@ VS Code’da MCP sunucusunu kurmaya dair bir örnek:
 
 </details>
 
-> Ekran görüntüleri ve adım adım rehber için [`README.md`](./solution/scenario3/README.md) dosyasına bakın.
+> Ekran görüntüleri ve adım adım rehber için [`README.md`](./solution/scenario3/README.md) dosyasına bakınız.
 
-![Senaryo 3 Genel Bakış](../../../../translated_images/step4-prompt-chat.12187bb001605efc5077992b621f0fcd1df12023c5dce0464f8eb8f3d595218f.tr.png)
+![Senaryo 3 Genel Bakış](../../../../translated_images/tr/step4-prompt-chat.12187bb001605efc.webp)
 
-Bu yöntem, teknik kurslar hazırlayan, dokümantasyon yazan veya sık sık referans gerektiren kod geliştiren herkes için idealdir.
+Bu yaklaşım, teknik kurslar hazırlayanlar, dokümantasyon yazanlar veya sıkça referans gerektiren kod projeleri geliştiren herkes için idealdir.
 
-## Önemli Noktalar
+## Anahtar Çıkarımlar
 
-Dokümantasyonu doğrudan araçlarınıza entegre etmek sadece bir kolaylık değil—verimlilik için bir devrimdir. Microsoft Learn Docs MCP sunucusuna istemcinizden bağlanarak:
+Dokümantasyonu doğrudan araçlarınıza entegre etmek sadece bir kolaylık değil, üretkenlik için bir devrimdir. İstemcinizden Microsoft Learn Docs MCP sunucusuna bağlanarak:
 
 - Kodunuz ve dokümantasyon arasında bağlam değiştirmeyi ortadan kaldırabilirsiniz
-- Güncel, bağlam odaklı dokümanları gerçek zamanlı alabilirsiniz
-- Daha akıllı, daha etkileşimli geliştirici araçları oluşturabilirsiniz
+- Güncel, bağlam farkındalıklı dokümanları gerçek zamanlı alabilirsiniz
+- Daha akıllı, etkileşimli geliştirici araçları oluşturabilirsiniz
 
-Bu beceriler, sadece verimli değil, aynı zamanda kullanımı keyifli çözümler yaratmanıza yardımcı olacak.
+Bu beceriler, yalnızca verimli değil, aynı zamanda kullanması zevkli çözümler yaratmanızı sağlar.
 
 ## Ek Kaynaklar
 
-Bilginizi derinleştirmek için şu resmi kaynakları inceleyin:
+Anlayışınızı derinleştirmek için şu resmi kaynakları keşfedin:
 
 - [Microsoft Learn Docs MCP Server (GitHub)](https://github.com/MicrosoftDocs/mcp)
-- [Azure MCP Server ile Başlarken (mcp-python)](https://learn.microsoft.com/en-us/azure/developer/azure-mcp-server/get-started#create-the-python-app)
+- [Azure MCP Server ile Başlama (mcp-python)](https://learn.microsoft.com/en-us/azure/developer/azure-mcp-server/get-started#create-the-python-app)
 - [Azure MCP Server Nedir?](https://learn.microsoft.com/en-us/azure/developer/azure-mcp-server/)
 - [Model Context Protocol (MCP) Tanıtımı](https://modelcontextprotocol.io/introduction)
-- [MCP Sunucusundan Eklenti Ekleme (Python)](https://learn.microsoft.com/en-us/semantic-kernel/concepts/plugins/adding-mcp-plugins)
+- [MCP Sunucudan Eklenti Ekleme (Python)](https://learn.microsoft.com/en-us/semantic-kernel/concepts/plugins/adding-mcp-plugins)
 
-**Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+## Sonraki Adımlar
+
+- Geri dön: [Vaka İncelemeleri Genel Bakış](../README.md)
+- Devam et: [Modül 10: AI Araç Takımı ile AI İş Akışlarını Kolaylaştırma](../../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Feragatname**:
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi ana dilinde yetkili kaynak olarak kabul edilmelidir. Önemli bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucunda oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

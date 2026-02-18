@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "5ef8f5821c1a04f7b1fc4f15098ecab8",
-  "translation_date": "2025-07-13T19:45:31+00:00",
-  "source_file": "03-GettingStarted/04-vscode/solution/README.md",
-  "language_code": "cs"
-}
--->
 To odpovídá spuštění příkazu jako `node build/index.js`.
 
 - Změňte tento záznam serveru tak, aby odpovídal umístění vašeho serverového souboru nebo tomu, co je potřeba pro spuštění serveru podle zvoleného runtime a umístění serveru.
@@ -23,7 +14,7 @@ To odpovídá spuštění příkazu jako `node build/index.js`.
 
     Měli byste vidět, že se nad textovým polem chatu zobrazí nástroj, který můžete vybrat pro spuštění, jako na tomto obrázku:
 
-    ![VS Code indikující, že chce spustit nástroj](../../../../../translated_images/vscode-agent.d5a0e0b897331060518fe3f13907677ef52b879db98c64d68a38338608f3751e.cs.png)
+    ![VS Code indikující, že chce spustit nástroj](../../../../../translated_images/cs/vscode-agent.d5a0e0b897331060.webp)
 
     Výběr nástroje by měl vrátit číselný výsledek "23", pokud byl váš příkaz jako v předchozím příkladu.
 

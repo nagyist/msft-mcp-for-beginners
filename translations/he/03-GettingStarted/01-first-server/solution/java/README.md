@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "ed9cab32cc67c12d8969b407aa47100a",
-  "translation_date": "2025-07-13T17:55:22+00:00",
-  "source_file": "03-GettingStarted/01-first-server/solution/java/README.md",
-  "language_code": "he"
-}
--->
 # שירות מחשבון בסיסי MCP
 
 שירות זה מספק פעולות מחשבון בסיסיות דרך פרוטוקול Model Context (MCP) באמצעות Spring Boot עם WebFlux כערוץ תקשורת. הוא מיועד כדוגמה פשוטה למתחילים הלומדים על יישומי MCP.
@@ -73,7 +64,7 @@ MCP Inspector הוא כלי עזר לאינטראקציה עם שירותי MCP.
    - לחץ על "List Tools" כדי לראות את פעולות המחשבון הזמינות
    - בחר כלי ולחץ על "Run Tool" כדי לבצע פעולה
 
-![MCP Inspector Screenshot](../../../../../../translated_images/tool.40e180a7b0d0fe2067cf96435532b01f63f7f8619d6b0132355a04b426b669ac.he.png)
+![MCP Inspector Screenshot](../../../../../../translated_images/he/tool.40e180a7b0d0fe20.webp)
 
 **כתב ויתור**:  
 מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

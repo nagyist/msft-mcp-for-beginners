@@ -1,96 +1,89 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "b62150e27d4b7b5797ee41146d176e6b",
-  "translation_date": "2025-08-11T12:52:58+00:00",
-  "source_file": "08-BestPractices/README.md",
-  "language_code": "fa"
-}
--->
-# بهترین شیوه‌های توسعه MCP
+# بهترین روش‌های توسعه MCP
 
-[![بهترین شیوه‌های توسعه MCP](../../../translated_images/09.d0f6d86c9d72134ccf5a8d8c8650a0557e519936661fc894cad72d73522227cb.fa.png)](https://youtu.be/W56H9W7x-ao)
+[![بهترین روش‌های توسعه MCP](../../../translated_images/fa/09.d0f6d86c9d72134c.webp)](https://youtu.be/W56H9W7x-ao)
 
 _(برای مشاهده ویدئوی این درس روی تصویر بالا کلیک کنید)_
 
-## مقدمه
+## مرور کلی
 
-این درس بر روی بهترین شیوه‌های پیشرفته برای توسعه، تست و استقرار سرورهای MCP و ویژگی‌ها در محیط‌های تولید تمرکز دارد. با افزایش پیچیدگی و اهمیت اکوسیستم‌های MCP، پیروی از الگوهای استاندارد، قابلیت اطمینان، نگهداری و تعامل‌پذیری را تضمین می‌کند. این درس دانش عملی به‌دست‌آمده از پیاده‌سازی‌های واقعی MCP را جمع‌آوری کرده تا شما را در ایجاد سرورهای قوی و کارآمد با منابع، درخواست‌ها و ابزارهای مؤثر راهنمایی کند.
+این درس بر بهترین روش‌های پیشرفته برای توسعه، تست و استقرار سرورها و ویژگی‌های MCP در محیط‌های تولید تمرکز دارد. با افزایش پیچیدگی و اهمیت اکوسیستم‌های MCP، پیروی از الگوهای تثبیت شده اطمینان از قابلیت اطمینان، قابلیت نگهداری و هم‌کاری را فراهم می‌کند. این درس خرد عملی به‌دست آمده از پیاده‌سازی‌های واقعی MCP را برای راهنمایی شما در ساخت سرورهای مقاوم، کارآمد با منابع، پرسش‌ها و ابزارهای مؤثر ترکیب می‌کند.
 
 ## اهداف یادگیری
 
-در پایان این درس، شما قادر خواهید بود:
+در پایان این درس، قادر خواهید بود:
 
-- بهترین شیوه‌های طراحی سرور و ویژگی‌های MCP را به کار ببرید
-- استراتژی‌های تست جامع برای سرورهای MCP ایجاد کنید
-- الگوهای کاری کارآمد و قابل استفاده مجدد برای برنامه‌های پیچیده MCP طراحی کنید
-- مدیریت صحیح خطا، ثبت وقایع و مشاهده‌پذیری را در سرورهای MCP پیاده‌سازی کنید
-- پیاده‌سازی‌های MCP را برای عملکرد، امنیت و نگهداری بهینه کنید
+- به‌کارگیری بهترین روش‌های صنعت در طراحی سرورها و ویژگی‌های MCP
+- ایجاد استراتژی‌های جامع تست برای سرورهای MCP
+- طراحی الگوهای گردش کار کارآمد و قابل استفاده مجدد برای برنامه‌های پیچیده MCP
+- پیاده‌سازی مدیریت خطا، لاگ‌گیری و قابلیت مشاهده صحیح در سرورهای MCP
+- بهینه‌سازی پیاده‌سازی‌های MCP برای عملکرد، امنیت و قابلیت نگهداری
 
 ## اصول اصلی MCP
 
-قبل از ورود به شیوه‌های خاص پیاده‌سازی، درک اصول اصلی که توسعه مؤثر MCP را هدایت می‌کنند، مهم است:
+پیش از پرداختن به روش‌های پیاده‌سازی خاص، مهم است اصول اصلی که توسعه مؤثر MCP را هدایت می‌کنند درک شود:
 
-1. **ارتباط استانداردسازی‌شده**: MCP از JSON-RPC 2.0 به‌عنوان پایه خود استفاده می‌کند و یک قالب یکسان برای درخواست‌ها، پاسخ‌ها و مدیریت خطا در تمام پیاده‌سازی‌ها ارائه می‌دهد.
+1. **ارتباط استاندارد شده**: MCP از JSON-RPC 2.0 به عنوان پایه استفاده می‌کند و فرمت ثابتی برای درخواست‌ها، پاسخ‌ها و مدیریت خطا در تمام پیاده‌سازی‌ها فراهم می‌آورد.
 
-2. **طراحی کاربرمحور**: همیشه رضایت، کنترل و شفافیت کاربر را در پیاده‌سازی‌های MCP خود در اولویت قرار دهید.
+2. **طراحی کاربرمحور**: همیشه رضایت، کنترل و شفافیت کاربر را در پیاده‌سازی‌های MCP خود اولویت دهید.
 
-3. **امنیت در اولویت**: اقدامات امنیتی قوی از جمله احراز هویت، مجوزدهی، اعتبارسنجی و محدودیت نرخ را پیاده‌سازی کنید.
+3. **امنیت در اولویت**: اقدامات امنیتی قوی شامل احراز هویت، مجوزدهی، اعتبارسنجی و محدودیت نرخ را پیاده‌سازی کنید.
 
-4. **معماری ماژولار**: سرورهای MCP خود را با رویکرد ماژولار طراحی کنید، به‌طوری که هر ابزار و منبع هدف مشخص و متمرکزی داشته باشد.
+4. **معماری مدولار**: سرورهای MCP خود را با رویکرد مدولار طراحی کنید، جایی که هر ابزار و منبع هدف واضح و متمرکزی داشته باشد.
 
-5. **اتصالات حالت‌دار**: از توانایی MCP برای حفظ حالت در چندین درخواست استفاده کنید تا تعاملات منسجم‌تر و آگاهانه‌تر از زمینه ایجاد شود.
+5. **اتصالات حالت‌دار**: از توانایی MCP برای حفظ حالت در طول چندین درخواست برای تعاملات منسجم‌تر و آگاه به زمینه بهره ببرید.
 
-## بهترین شیوه‌های رسمی MCP
+## بهترین روش‌های رسمی MCP
 
-بهترین شیوه‌های زیر از مستندات رسمی پروتکل مدل زمینه (MCP) استخراج شده‌اند:
+بهترین روش‌های زیر برگرفته از مستندات رسمی پروتکل مدل کانتکست (MCP) است:
 
-### بهترین شیوه‌های امنیتی
+### بهترین روش‌های امنیتی
 
-1. **رضایت و کنترل کاربر**: همیشه رضایت صریح کاربر را قبل از دسترسی به داده‌ها یا انجام عملیات‌ها بخواهید. کنترل واضحی بر روی داده‌های به اشتراک گذاشته‌شده و اقدامات مجاز ارائه دهید.
+1. **رضایت و کنترل کاربر**: همیشه پیش از دسترسی به داده‌ها یا انجام عملیات، رضایت صریح کاربر را بخواهید. کنترل واضحی بر اینکه چه داده‌ای به اشتراک گذاشته می‌شود و چه اقداماتی مجاز است فراهم کنید.
 
-2. **حریم خصوصی داده‌ها**: فقط با رضایت صریح کاربر داده‌ها را افشا کنید و با کنترل‌های دسترسی مناسب از آن‌ها محافظت کنید. از انتقال غیرمجاز داده‌ها جلوگیری کنید.
+2. **حریم خصوصی داده‌ها**: فقط با رضایت صریح کاربر داده‌ها را افشا کنید و آن‌ها را با کنترل‌های دسترسی مناسب محافظت کنید. از انتقال داده‌های غیرمجاز جلوگیری کنید.
 
-3. **ایمنی ابزارها**: قبل از فراخوانی هر ابزاری، رضایت صریح کاربر را بخواهید. اطمینان حاصل کنید که کاربران عملکرد هر ابزار را درک می‌کنند و مرزهای امنیتی قوی را اعمال کنید.
+3. **ایمنی ابزار**: پیش از فراخوانی هر ابزاری رضایت صریح کاربر را بخواهید. اطمینان حاصل کنید کاربران عملکرد هر ابزار را درک می‌کنند و مرزهای امنیتی قوی را اعمال کنید.
 
-4. **کنترل مجوز ابزارها**: مشخص کنید که کدام ابزارها در طول یک جلسه برای مدل مجاز هستند و اطمینان حاصل کنید که فقط ابزارهای صریحاً مجاز در دسترس باشند.
+4. **کنترل مجوز ابزار**: تعیین کنید مدل در طول جلسه از کدام ابزارها مجاز به استفاده است، به طوری که فقط ابزارهای صریحاً مجاز در دسترس باشند.
 
-5. **احراز هویت**: قبل از اعطای دسترسی به ابزارها، منابع یا عملیات حساس، احراز هویت مناسب را با استفاده از کلیدهای API، توکن‌های OAuth یا روش‌های امن دیگر الزامی کنید.
+5. **احراز هویت**: پیش از اعطای دسترسی به ابزارها، منابع یا عملیات حساس، احراز هویت مناسب را با استفاده از کلیدهای API، توکن‌های OAuth یا روش‌های امن دیگر پیاده‌سازی کنید.
 
-6. **اعتبارسنجی پارامترها**: اعتبارسنجی را برای تمام فراخوانی‌های ابزار اعمال کنید تا از رسیدن ورودی‌های نادرست یا مخرب به پیاده‌سازی ابزار جلوگیری شود.
+6. **اعتبارسنجی پارامترها**: بررسی اعتبار تمام فراخوانی‌های ابزار را برای جلوگیری از ورودی ناقص یا مخرب که ممکن است به پیاده‌سازی ابزار آسیب برساند، اعمال کنید.
 
-7. **محدودیت نرخ**: محدودیت نرخ را برای جلوگیری از سوءاستفاده و اطمینان از استفاده منصفانه از منابع سرور پیاده‌سازی کنید.
+7. **محدودیت نرخ**: نرخ درخواست‌ها را محدود کنید تا از سوءاستفاده جلوگیری شود و استفاده منصفانه از منابع سرور تضمین گردد.
 
-### بهترین شیوه‌های پیاده‌سازی
+### بهترین روش‌های پیاده‌سازی
 
-1. **مذاکره قابلیت‌ها**: در طول راه‌اندازی اتصال، اطلاعاتی درباره ویژگی‌های پشتیبانی‌شده، نسخه‌های پروتکل، ابزارها و منابع موجود تبادل کنید.
+1. **مذاکره قابلیت‌ها**: طی راه‌اندازی اتصال، اطلاعات درباره ویژگی‌های پشتیبانی شده، نسخه‌های پروتکل، ابزارها و منابع موجود تبادل شود.
 
-2. **طراحی ابزارها**: ابزارهایی ایجاد کنید که بر یک کار خاص تمرکز داشته باشند، به‌جای ابزارهای بزرگ که چندین موضوع را مدیریت می‌کنند.
+2. **طراحی ابزار**: ابزارهای متمرکز بسازید که یک کار را به‌خوبی انجام دهند، نه ابزارهای یکپارچه بزرگ که چندین دغدغه را همزمان مدیریت می‌کنند.
 
-3. **مدیریت خطا**: پیام‌ها و کدهای خطای استانداردی پیاده‌سازی کنید تا به تشخیص مشکلات کمک کرده، شکست‌ها را به‌خوبی مدیریت کنید و بازخورد عملی ارائه دهید.
+3. **مدیریت خطا**: پیام‌ها و کدهای خطای استاندارد شده را پیاده‌سازی کنید تا در تشخیص مشکلات، مدیریت شکست‌ها به‌صورت مؤدبانه و ارائه بازخورد قابل اقدام کمک نماید.
 
-4. **ثبت وقایع**: ثبت وقایع ساختاریافته را برای حسابرسی، اشکال‌زدایی و نظارت بر تعاملات پروتکل پیکربندی کنید.
+4. **لاگ‌گیری**: لاگ‌های ساختاریافته برای حسابرسی، اشکال‌زدایی و نظارت بر تعاملات پروتکل تنظیم کنید.
 
-5. **ردیابی پیشرفت**: برای عملیات طولانی‌مدت، به‌روزرسانی‌های پیشرفت را گزارش دهید تا رابط‌های کاربری پاسخگو ایجاد کنید.
+5. **پیگیری پیشرفت**: برای عملیات طولانی مدت به‌روزرسانی‌های پیشرفت را گزارش دهید تا رابط‌های کاربری پاسخگو فراهم شود.
 
-6. **لغو درخواست‌ها**: به مشتریان اجازه دهید درخواست‌های در حال اجرا را که دیگر موردنیاز نیستند یا زمان زیادی می‌برند، لغو کنند.
+6. **لغو درخواست**: به مشتریان اجازه دهید درخواست‌های در حال اجرا که دیگر نیاز نیست یا بیش از حد زمان‌بر می‌شوند را لغو کنند.
 
 ## منابع اضافی
 
-برای اطلاعات به‌روزتر درباره بهترین شیوه‌های MCP، به منابع زیر مراجعه کنید:
+برای به‌روزترین اطلاعات در مورد بهترین روش‌های MCP مراجعه کنید به:
 
 - [مستندات MCP](https://modelcontextprotocol.io/)
-- [مشخصات MCP](https://spec.modelcontextprotocol.io/)
+- [مشخصات MCP (2025-11-25)](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
 - [مخزن GitHub](https://github.com/modelcontextprotocol)
-- [بهترین شیوه‌های امنیتی](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
+- [بهترین روش‌های امنیتی](https://modelcontextprotocol.io/specification/draft/basic/security_best_practices)
+- [ده اصل برتر امنیتی MCP در OWASP](https://microsoft.github.io/mcp-azure-security-guide/mcp/) - ریسک‌ها و راهکارهای امنیتی
+- [کارگاه امنیتی MCP (شرپا)](https://azure-samples.github.io/sherpa/) - آموزش عملی امنیت
 
-## مثال‌های عملی پیاده‌سازی
+## نمونه‌های عملی پیاده‌سازی
 
-### بهترین شیوه‌های طراحی ابزار
+### بهترین روش‌های طراحی ابزار
 
 #### 1. اصل مسئولیت واحد
 
-هر ابزار MCP باید هدف مشخص و متمرکزی داشته باشد. به‌جای ایجاد ابزارهای بزرگ که چندین موضوع را مدیریت می‌کنند، ابزارهای تخصصی ایجاد کنید که در وظایف خاص خود برتری داشته باشند.
+هر ابزار MCP باید هدف واضح و متمرکزی داشته باشد. به جای ایجاد ابزارهای یکپارچه بزرگ که چندین دغدغه را مدیریت می‌کنند، ابزارهای تخصصی توسعه دهید که در وظایف خاص عالی باشند.
 
 ```csharp
 // A focused tool that does one thing well
@@ -150,12 +143,12 @@ public class WeatherForecastTool : ITool
 }
 ```
 
-#### 2. مدیریت خطای یکپارچه
+#### 2. مدیریت خطای یکنواخت
 
-مدیریت خطای قوی با پیام‌های خطای اطلاعاتی و مکانیزم‌های بازیابی مناسب پیاده‌سازی کنید.
+مدیریت خطای قوی با پیام‌های خطای آموزنده و مکانیزم‌های بازیابی مناسب پیاده‌سازی کنید.
 
 ```python
-# Python example with comprehensive error handling
+# نمونه پایتون با مدیریت جامع خطا
 class DataQueryTool:
     def get_name(self):
         return "dataQuery"
@@ -165,19 +158,19 @@ class DataQueryTool:
     
     async def execute(self, parameters):
         try:
-            # Parameter validation
+            # اعتبارسنجی پارامتر
             if "query" not in parameters:
                 raise ToolParameterError("Missing required parameter: query")
                 
             query = parameters["query"]
             
-            # Security validation
+            # اعتبارسنجی امنیتی
             if self._contains_unsafe_sql(query):
                 raise ToolSecurityError("Query contains potentially unsafe SQL")
             
             try:
-                # Database operation with timeout
-                async with timeout(10):  # 10 second timeout
+                # عملیات پایگاه داده با تایم‌اوت
+                async with timeout(10):  # تایم‌اوت ۱۰ ثانیه
                     result = await self._database.execute_query(query)
                     
                 return ToolResponse(
@@ -186,37 +179,37 @@ class DataQueryTool:
             except asyncio.TimeoutError:
                 raise ToolExecutionError("Database query timed out after 10 seconds")
             except DatabaseConnectionError as e:
-                # Connection errors might be transient
+                # خطاهای اتصال ممکن است موقتی باشند
                 self._log_error("Database connection error", e)
                 raise ToolExecutionError(f"Database connection error: {str(e)}")
             except DatabaseQueryError as e:
-                # Query errors are likely client errors
+                # خطاهای پرس و جو احتمالاً خطاهای سمت مشتری هستند
                 self._log_error("Database query error", e)
                 raise ToolExecutionError(f"Invalid query: {str(e)}")
                 
         except ToolError:
-            # Let tool-specific errors pass through
+            # اجازه دهید خطاهای خاص ابزار عبور کنند
             raise
         except Exception as e:
-            # Catch-all for unexpected errors
+            # گرفتن همه خطاهای غیرمنتظره
             self._log_error("Unexpected error in DataQueryTool", e)
             raise ToolExecutionError(f"An unexpected error occurred: {str(e)}")
     
     def _contains_unsafe_sql(self, query):
-        # Implementation of SQL injection detection
+        # پیاده‌سازی تشخیص تزریق SQL
         pass
         
     def _log_error(self, message, error):
-        # Implementation of error logging
+        # پیاده‌سازی ثبت خطا
         pass
 ```
 
 #### 3. اعتبارسنجی پارامترها
 
-همیشه پارامترها را به‌دقت اعتبارسنجی کنید تا از ورودی‌های نادرست یا مخرب جلوگیری شود.
+همیشه پارامترها را به‌طور کامل اعتبارسنجی کنید تا از ورودی ناقص یا مخرب جلوگیری شود.
 
 ```javascript
-// JavaScript/TypeScript example with detailed parameter validation
+// مثال جاوااسکریپت/تایپ‌اسکریپت با اعتبارسنجی دقیق پارامترها
 class FileOperationTool {
   getName() {
     return "fileOperation";
@@ -251,7 +244,7 @@ class FileOperationTool {
   }
   
   async execute(parameters) {
-    // 1. Validate parameter presence
+    // ۱. اعتبارسنجی وجود پارامتر
     if (!parameters.operation) {
       throw new ToolError("Missing required parameter: operation");
     }
@@ -260,7 +253,7 @@ class FileOperationTool {
       throw new ToolError("Missing required parameter: path");
     }
     
-    // 2. Validate parameter types
+    // ۲. اعتبارسنجی نوع پارامترها
     if (typeof parameters.operation !== "string") {
       throw new ToolError("Parameter 'operation' must be a string");
     }
@@ -269,45 +262,45 @@ class FileOperationTool {
       throw new ToolError("Parameter 'path' must be a string");
     }
     
-    // 3. Validate parameter values
+    // ۳. اعتبارسنجی مقادیر پارامتر
     const validOperations = ["read", "write", "delete"];
     if (!validOperations.includes(parameters.operation)) {
       throw new ToolError(`Invalid operation. Must be one of: ${validOperations.join(", ")}`);
     }
     
-    // 4. Validate content presence for write operation
+    // ۴. اعتبارسنجی وجود محتوا برای عملیات نوشتن
     if (parameters.operation === "write" && !parameters.content) {
       throw new ToolError("Content parameter is required for write operation");
     }
     
-    // 5. Path safety validation
+    // ۵. اعتبارسنجی ایمنی مسیر
     if (!this.isPathWithinAllowedDirectories(parameters.path)) {
       throw new ToolError("Access denied: path is outside of allowed directories");
     }
     
-    // Implementation based on validated parameters
+    // پیاده‌سازی بر اساس پارامترهای معتبر
     // ...
   }
   
   isPathWithinAllowedDirectories(path) {
-    // Implementation of path safety check
+    // پیاده‌سازی بررسی ایمنی مسیر
     // ...
   }
 }
 ```
 
-### مثال‌های پیاده‌سازی امنیتی
+### نمونه‌های پیاده‌سازی امنیتی
 
 #### 1. احراز هویت و مجوزدهی
 
 ```java
-// Java example with authentication and authorization
+// مثال جاوا با احراز هویت و مجوزدهی
 public class SecureDataAccessTool implements Tool {
     private final AuthenticationService authService;
     private final AuthorizationService authzService;
     private final DataService dataService;
     
-    // Dependency injection
+    // تزریق وابستگی
     public SecureDataAccessTool(
             AuthenticationService authService,
             AuthorizationService authzService,
@@ -324,10 +317,10 @@ public class SecureDataAccessTool implements Tool {
     
     @Override
     public ToolResponse execute(ToolRequest request) {
-        // 1. Extract authentication context
+        // ۱. استخراج زمینه احراز هویت
         String authToken = request.getContext().getAuthToken();
         
-        // 2. Authenticate user
+        // ۲. احراز هویت کاربر
         UserIdentity user;
         try {
             user = authService.validateToken(authToken);
@@ -335,7 +328,7 @@ public class SecureDataAccessTool implements Tool {
             return ToolResponse.error("Authentication failed: " + e.getMessage());
         }
         
-        // 3. Check authorization for the specific operation
+        // ۳. بررسی مجوز برای عملیات خاص
         String dataId = request.getParameters().get("dataId").getAsString();
         String operation = request.getParameters().get("operation").getAsString();
         
@@ -344,7 +337,7 @@ public class SecureDataAccessTool implements Tool {
             return ToolResponse.error("Access denied: Insufficient permissions for this operation");
         }
         
-        // 4. Proceed with authorized operation
+        // ۴. ادامه با عملیات مجاز شده
         try {
             switch (operation) {
                 case "read":
@@ -440,30 +433,30 @@ public class RateLimitingMiddleware
 }
 ```
 
-## بهترین شیوه‌های تست
+## بهترین روش‌های تست
 
 ### 1. تست واحد ابزارهای MCP
 
-همیشه ابزارهای خود را به‌صورت جداگانه تست کنید و وابستگی‌های خارجی را شبیه‌سازی کنید:
+ابزارهای خود را همیشه به تنهایی و بدون وابستگی‌های خارجی تست کنید:
 
 ```typescript
-// TypeScript example of a tool unit test
+// نمونه‌ای از تست واحد یک ابزار در تایپ‌اسکریپت
 describe('WeatherForecastTool', () => {
   let tool: WeatherForecastTool;
   let mockWeatherService: jest.Mocked<IWeatherService>;
   
   beforeEach(() => {
-    // Create a mock weather service
+    // ایجاد یک سرویس آب‌وهوای جعلی
     mockWeatherService = {
       getForecasts: jest.fn()
     } as any;
     
-    // Create the tool with the mock dependency
+    // ایجاد ابزار با وابستگی جعلی
     tool = new WeatherForecastTool(mockWeatherService);
   });
   
   it('should return weather forecast for a location', async () => {
-    // Arrange
+    // آماده‌سازی
     const mockForecast = {
       location: 'Seattle',
       forecasts: [
@@ -475,23 +468,23 @@ describe('WeatherForecastTool', () => {
     
     mockWeatherService.getForecasts.mockResolvedValue(mockForecast);
     
-    // Act
+    // اجرا
     const response = await tool.execute({
       location: 'Seattle',
       days: 3
     });
     
-    // Assert
+    // تأیید
     expect(mockWeatherService.getForecasts).toHaveBeenCalledWith('Seattle', 3);
     expect(response.content[0].text).toContain('Seattle');
     expect(response.content[0].text).toContain('Sunny');
   });
   
   it('should handle errors from the weather service', async () => {
-    // Arrange
+    // آماده‌سازی
     mockWeatherService.getForecasts.mockRejectedValue(new Error('Service unavailable'));
     
-    // Act & Assert
+    // اجرا و تأیید
     await expect(tool.execute({
       location: 'Seattle',
       days: 3
@@ -500,48 +493,48 @@ describe('WeatherForecastTool', () => {
 });
 ```
 
-### 2. تست یکپارچگی
+### 2. تست یکپارچه‌سازی
 
 جریان کامل از درخواست‌های مشتری تا پاسخ‌های سرور را تست کنید:
 
 ```python
-# Python integration test example
+# نمونه تست یکپارچه‌سازی پایتون
 @pytest.mark.asyncio
 async def test_mcp_server_integration():
-    # Start a test server
+    # راه‌اندازی یک سرور تست
     server = McpServer()
     server.register_tool(WeatherForecastTool(MockWeatherService()))
     await server.start(port=5000)
     
     try:
-        # Create a client
+        # ایجاد یک کلاینت
         client = McpClient("http://localhost:5000")
         
-        # Test tool discovery
+        # آزمایش کشف ابزار
         tools = await client.discover_tools()
         assert "weatherForecast" in [t.name for t in tools]
         
-        # Test tool execution
+        # آزمایش اجرای ابزار
         response = await client.execute_tool("weatherForecast", {
             "location": "Seattle",
             "days": 3
         })
         
-        # Verify response
+        # بررسی پاسخ
         assert response.status_code == 200
         assert "Seattle" in response.content[0].text
         assert len(json.loads(response.content[0].text)["forecasts"]) == 3
         
     finally:
-        # Clean up
+        # پاک‌سازی
         await server.stop()
 ```
 
 ## بهینه‌سازی عملکرد
 
-### 1. استراتژی‌های کش
+### 1. استراتژی‌های کشینگ
 
-کش مناسب را برای کاهش تأخیر و استفاده از منابع پیاده‌سازی کنید:
+کش مناسب پیاده‌سازی کنید تا تأخیر و استفاده از منابع کاهش یابد:
 
 ```csharp
 // C# example with caching
@@ -612,16 +605,16 @@ public class CachedWeatherTool : ITool
 
 #### 2. تزریق وابستگی و قابلیت تست
 
-ابزارها را طوری طراحی کنید که وابستگی‌های خود را از طریق تزریق سازنده دریافت کنند، تا قابل تست و پیکربندی باشند:
+ابزارها را طوری طراحی کنید که وابستگی‌هایشان از طریق سازنده تزریق شود تا قابل تست و پیکربندی باشند:
 
 ```java
-// Java example with dependency injection
+// مثال جاوا با تزریق وابستگی
 public class CurrencyConversionTool implements Tool {
     private final ExchangeRateService exchangeService;
     private final CacheService cacheService;
     private final Logger logger;
     
-    // Dependencies injected through constructor
+    // وابستگی‌ها از طریق سازنده تزریق شده‌اند
     public CurrencyConversionTool(
             ExchangeRateService exchangeService,
             CacheService cacheService,
@@ -631,51 +624,51 @@ public class CurrencyConversionTool implements Tool {
         this.logger = logger;
     }
     
-    // Tool implementation
+    // پیاده‌سازی ابزار
     // ...
 }
 ```
 
 #### 3. ابزارهای ترکیبی
 
-ابزارهایی طراحی کنید که بتوانند با هم ترکیب شوند تا جریان‌های کاری پیچیده‌تری ایجاد کنند:
+ابزارهایی طراحی کنید که بتوانند با هم ترکیب شوند تا گردش کارهای پیچیده‌تر ساخته شود:
 
 ```python
-# Python example showing composable tools
+# مثال پایتون که ابزارهای ترکیب‌پذیر را نشان می‌دهد
 class DataFetchTool(Tool):
     def get_name(self):
         return "dataFetch"
     
-    # Implementation...
+    # پیاده‌سازی...
 
 class DataAnalysisTool(Tool):
     def get_name(self):
         return "dataAnalysis"
     
-    # This tool can use results from the dataFetch tool
+    # این ابزار می‌تواند از نتایج ابزار dataFetch استفاده کند
     async def execute_async(self, request):
-        # Implementation...
+        # پیاده‌سازی...
         pass
 
 class DataVisualizationTool(Tool):
     def get_name(self):
         return "dataVisualize"
     
-    # This tool can use results from the dataAnalysis tool
+    # این ابزار می‌تواند از نتایج ابزار dataAnalysis استفاده کند
     async def execute_async(self, request):
-        # Implementation...
+        # پیاده‌سازی...
         pass
 
-# These tools can be used independently or as part of a workflow
+# این ابزارها می‌توانند به صورت مستقل یا به عنوان بخشی از یک جریان کاری استفاده شوند
 ```
 
-### بهترین شیوه‌های طراحی طرح‌واره
+### بهترین روش‌های طراحی اسکیما
 
-طرح‌واره قرارداد بین مدل و ابزار شماست. طرح‌واره‌های خوب طراحی‌شده منجر به استفاده بهتر از ابزار می‌شوند.
+اسکیما قرارداد بین مدل و ابزار شماست. اسکیماهای خوب طراحی شده منجر به قابلیت استفاده بهتر ابزار می‌شوند.
 
 #### 1. توضیحات واضح پارامترها
 
-همیشه اطلاعات توصیفی برای هر پارامتر ارائه دهید:
+همیشه اطلاعات شرحی برای هر پارامتر درج کنید:
 
 ```csharp
 public object GetSchema()
@@ -714,7 +707,7 @@ public object GetSchema()
 
 #### 2. محدودیت‌های اعتبارسنجی
 
-محدودیت‌های اعتبارسنجی را برای جلوگیری از ورودی‌های نامعتبر اضافه کنید:
+محدودیت‌های اعتبارسنجی برای جلوگیری از ورودی‌های نامعتبر درج کنید:
 
 ```java
 Map<String, Object> getSchema() {
@@ -723,20 +716,20 @@ Map<String, Object> getSchema() {
     
     Map<String, Object> properties = new HashMap<>();
     
-    // Email property with format validation
+    // ویژگی ایمیل با اعتبارسنجی قالب
     Map<String, Object> email = new HashMap<>();
     email.put("type", "string");
     email.put("format", "email");
     email.put("description", "User email address");
     
-    // Age property with numeric constraints
+    // ویژگی سن با محدودیت‌های عددی
     Map<String, Object> age = new HashMap<>();
     age.put("type", "integer");
     age.put("minimum", 13);
     age.put("maximum", 120);
     age.put("description", "User age in years");
     
-    // Enumerated property
+    // ویژگی شمارشی
     Map<String, Object> subscription = new HashMap<>();
     subscription.put("type", "string");
     subscription.put("enum", Arrays.asList("free", "basic", "premium"));
@@ -754,17 +747,17 @@ Map<String, Object> getSchema() {
 }
 ```
 
-#### 3. ساختارهای بازگشتی یکسان
+#### 3. ساختار بازگشتی یکسان
 
-ثبات در ساختارهای پاسخ را حفظ کنید تا تفسیر نتایج برای مدل‌ها آسان‌تر شود:
+سازگاری در ساختارهای پاسخ حفظ شود تا مدل‌ها راحت‌تر نتایج را تفسیر کنند:
 
 ```python
 async def execute_async(self, request):
     try:
-        # Process request
+        # پردازش درخواست
         results = await self._search_database(request.parameters["query"])
         
-        # Always return a consistent structure
+        # همیشه یک ساختار یکنواخت برگردانید
         return ToolResponse(
             result={
                 "matches": [self._format_item(item) for item in results],
@@ -797,11 +790,11 @@ def _format_item(self, item):
 
 ### مدیریت خطا
 
-مدیریت خطای قوی برای ابزارهای MCP جهت حفظ قابلیت اطمینان ضروری است.
+مدیریت خطای مستحکم برای ابزارهای MCP به منظور حفظ قابلیت اطمینان ضروری است.
 
-#### 1. مدیریت خطای مناسب
+#### 1. مدیریت خطای مؤدبانه
 
-خطاها را در سطوح مناسب مدیریت کنید و پیام‌های اطلاعاتی ارائه دهید:
+خطاها را در سطح مناسب مدیریت کنید و پیام‌های آموزنده ارائه دهید:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -843,15 +836,15 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 }
 ```
 
-#### 2. پاسخ‌های خطای ساختاریافته
+#### 2. پاسخ‌های ساختاریافته خطا
 
-در صورت امکان اطلاعات خطای ساختاریافته بازگردانید:
+در صورت امکان اطلاعات خطای ساختاریافته برگردانید:
 
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
     try {
-        // Implementation
+        // پیاده‌سازی
     } catch (Exception ex) {
         Map<String, Object> errorResult = new HashMap<>();
         
@@ -869,45 +862,45 @@ public ToolResponse execute(ToolRequest request) {
                 .build();
         }
         
-        // Re-throw other exceptions as ToolExecutionException
+        // دوباره پرتاب کردن سایر استثناها به عنوان ToolExecutionException
         throw new ToolExecutionException("Tool execution failed: " + ex.getMessage(), ex);
     }
 }
 ```
 
-#### 3. منطق تلاش مجدد
+#### 3. منطق تکرار مجدد
 
-منطق تلاش مجدد مناسب برای شکست‌های موقتی پیاده‌سازی کنید:
+منطق تکرار مجدد مناسب برای خطاهای گذرا پیاده‌سازی کنید:
 
 ```python
 async def execute_async(self, request):
     max_retries = 3
     retry_count = 0
-    base_delay = 1  # seconds
+    base_delay = 1  # ثانیه‌ها
     
     while retry_count < max_retries:
         try:
-            # Call external API
+            # فراخوانی API خارجی
             return await self._call_api(request.parameters)
         except TransientError as e:
             retry_count += 1
             if retry_count >= max_retries:
                 raise ToolExecutionException(f"Operation failed after {max_retries} attempts: {str(e)}")
                 
-            # Exponential backoff
+            # بازگشت نمایی
             delay = base_delay * (2 ** (retry_count - 1))
             logging.warning(f"Transient error, retrying in {delay}s: {str(e)}")
             await asyncio.sleep(delay)
         except Exception as e:
-            # Non-transient error, don't retry
+            # خطای غیر گذرا، دوباره تلاش نکنید
             raise ToolExecutionException(f"Operation failed: {str(e)}")
 ```
 
 ### بهینه‌سازی عملکرد
 
-#### 1. کش
+#### 1. کشینگ
 
-برای عملیات‌های پرهزینه کش پیاده‌سازی کنید:
+کشینگ برای عملیات پرهزینه پیاده‌سازی کنید:
 
 ```csharp
 public class CachedDataTool : IMcpTool
@@ -953,9 +946,9 @@ public class CachedDataTool : IMcpTool
 }
 ```
 
-#### 2. پردازش غیرهمزمان
+#### 2. پردازش ناهمزمان
 
-الگوهای برنامه‌نویسی غیرهمزمان را برای عملیات‌های وابسته به I/O استفاده کنید:
+الگوهای برنامه‌نویسی ناهمزمان برای عملیات وابسته به ورودی/خروجی استفاده کنید:
 
 ```java
 public class AsyncDocumentProcessingTool implements Tool {
@@ -966,23 +959,23 @@ public class AsyncDocumentProcessingTool implements Tool {
     public ToolResponse execute(ToolRequest request) {
         String documentId = request.getParameters().get("documentId").asText();
         
-        // For long-running operations, return a processing ID immediately
+        // برای عملیات طولانی، فوراً یک شناسه پردازش بازگردانید
         String processId = UUID.randomUUID().toString();
         
-        // Start async processing
+        // پردازش غیرهمزمان را شروع کنید
         CompletableFuture.runAsync(() -> {
             try {
-                // Perform long-running operation
+                // عملیات طولانی را انجام دهید
                 documentService.processDocument(documentId);
                 
-                // Update status (would typically be stored in a database)
+                // وضعیت را به‌روزرسانی کنید (معمولاً در یک پایگاه داده ذخیره می‌شود)
                 processStatusRepository.updateStatus(processId, "completed");
             } catch (Exception ex) {
                 processStatusRepository.updateStatus(processId, "failed", ex.getMessage());
             }
         }, executorService);
         
-        // Return immediate response with process ID
+        // پاسخ فوری با شناسه فرآیند را بازگردانید
         Map<String, Object> result = new HashMap<>();
         result.put("processId", processId);
         result.put("status", "processing");
@@ -991,7 +984,7 @@ public class AsyncDocumentProcessingTool implements Tool {
         return new ToolResponse.Builder().setResult(result).build();
     }
     
-    // Companion status check tool
+    // ابزار بررسی وضعیت همراه
     public class ProcessStatusTool implements Tool {
         @Override
         public ToolResponse execute(ToolRequest request) {
@@ -1004,35 +997,35 @@ public class AsyncDocumentProcessingTool implements Tool {
 }
 ```
 
-#### 3. محدودسازی منابع
+#### 3. تنظیم منابع
 
-محدودسازی منابع را برای جلوگیری از بارگذاری بیش از حد پیاده‌سازی کنید:
+محدودسازی منابع برای جلوگیری از بارگذاری بیش از حد اعمال کنید:
 
 ```python
 class ThrottledApiTool(Tool):
     def __init__(self):
         self.rate_limiter = TokenBucketRateLimiter(
-            tokens_per_second=5,  # Allow 5 requests per second
-            bucket_size=10        # Allow bursts up to 10 requests
+            tokens_per_second=5,  # اجازه ۵ درخواست در هر ثانیه
+            bucket_size=10        # اجازه افزایش ناگهانی تا ۱۰ درخواست
         )
     
     async def execute_async(self, request):
-        # Check if we can proceed or need to wait
+        # بررسی اینکه آیا می‌توان ادامه داد یا باید منتظر ماند
         delay = self.rate_limiter.get_delay_time()
         
         if delay > 0:
-            if delay > 2.0:  # If wait is too long
+            if delay > 2.0:  # اگر مدت انتظار خیلی طولانی باشد
                 raise ToolExecutionException(
                     f"Rate limit exceeded. Please try again in {delay:.1f} seconds."
                 )
             else:
-                # Wait for the appropriate delay time
+                # انتظار برای مدت زمان تأخیر مناسب
                 await asyncio.sleep(delay)
         
-        # Consume a token and proceed with the request
+        # مصرف یک توکن و ادامه با درخواست
         self.rate_limiter.consume()
         
-        # Call API
+        # فراخوانی API
         result = await self._call_api(request.parameters)
         return ToolResponse(result=result)
 
@@ -1050,7 +1043,7 @@ class TokenBucketRateLimiter:
             if self.tokens >= 1:
                 return 0
             
-            # Calculate time until next token available
+            # محاسبه زمان تا در دسترس قرار گرفتن توکن بعدی
             return (1 - self.tokens) / self.tokens_per_second
     
     async def consume(self):
@@ -1062,17 +1055,17 @@ class TokenBucketRateLimiter:
         now = time.time()
         elapsed = now - self.last_refill
         
-        # Add new tokens based on elapsed time
+        # افزودن توکن‌های جدید بر اساس زمان گذشته
         new_tokens = elapsed * self.tokens_per_second
         self.tokens = min(self.bucket_size, self.tokens + new_tokens)
         self.last_refill = now
 ```
 
-### بهترین شیوه‌های امنیتی
+### بهترین روش‌های امنیتی
 
 #### 1. اعتبارسنجی ورودی
 
-همیشه پارامترهای ورودی را به‌دقت اعتبارسنجی کنید:
+همیشه پارامترهای ورودی را به طور کامل اعتبارسنجی کنید:
 
 ```csharp
 public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
@@ -1113,28 +1106,28 @@ public async Task<ToolResponse> ExecuteAsync(ToolRequest request)
 }
 ```
 
-#### 2. بررسی‌های مجوز
+#### 2. بررسی‌های مجوزدهی
 
-بررسی‌های مجوز مناسب را پیاده‌سازی کنید:
+بررسی‌های مجوزدهی را به درستی اعمال کنید:
 
 ```java
 @Override
 public ToolResponse execute(ToolRequest request) {
-    // Get user context from request
+    // گرفتن زمینه کاربر از درخواست
     UserContext user = request.getContext().getUserContext();
     
-    // Check if user has required permissions
+    // بررسی اینکه آیا کاربر مجوزهای لازم را دارد
     if (!authorizationService.hasPermission(user, "documents:read")) {
         throw new ToolExecutionException("User does not have permission to access documents");
     }
     
-    // For specific resources, check access to that resource
+    // برای منابع خاص، دسترسی به آن منبع را بررسی کنید
     String documentId = request.getParameters().get("documentId").asText();
     if (!documentService.canUserAccess(user.getId(), documentId)) {
         throw new ToolExecutionException("Access denied to the requested document");
     }
     
-    // Proceed with tool execution
+    // ادامه با اجرای ابزار
     // ...
 }
 ```
@@ -1159,44 +1152,44 @@ class SecureDataTool(Tool):
         user_id = request.parameters["userId"]
         include_sensitive = request.parameters.get("includeSensitiveData", False)
         
-        # Get user data
+        # دریافت داده‌های کاربر
         user_data = await self.user_service.get_user_data(user_id)
         
-        # Filter sensitive fields unless explicitly requested AND authorized
+        # فیلتر کردن فیلدهای حساس مگر اینکه به‌طور صریح درخواست شده و مجاز باشد
         if not include_sensitive or not self._is_authorized_for_sensitive_data(request):
             user_data = self._redact_sensitive_fields(user_data)
         
         return ToolResponse(result=user_data)
     
     def _is_authorized_for_sensitive_data(self, request):
-        # Check authorization level in request context
+        # بررسی سطح مجوز در زمینه درخواست
         auth_level = request.context.get("authorizationLevel")
         return auth_level == "admin"
     
     def _redact_sensitive_fields(self, user_data):
-        # Create a copy to avoid modifying the original
+        # ایجاد نسخه‌ای کپی برای جلوگیری از تغییر نسخه اصلی
         redacted = user_data.copy()
         
-        # Redact specific sensitive fields
+        # پاک‌سازی فیلدهای حساس خاص
         sensitive_fields = ["ssn", "creditCardNumber", "password"]
         for field in sensitive_fields:
             if field in redacted:
                 redacted[field] = "REDACTED"
         
-        # Redact nested sensitive data
+        # پاک‌سازی داده‌های حساس تو در تو
         if "financialInfo" in redacted:
             redacted["financialInfo"] = {"available": True, "accessRestricted": True}
         
         return redacted
 ```
 
-## بهترین شیوه‌های تست ابزارهای MCP
+## بهترین روش‌های تست برای ابزارهای MCP
 
-تست جامع تضمین می‌کند که ابزارهای MCP به‌درستی کار می‌کنند، موارد خاص را مدیریت می‌کنند و به‌درستی با سایر بخش‌های سیستم ادغام می‌شوند.
+تست جامع اطمینان می‌دهد که ابزارهای MCP به درستی کار می‌کنند، حالت‌های حاشیه‌ای را مدیریت می‌کنند و به درستی با بقیه سیستم ادغام می‌شوند.
 
 ### تست واحد
 
-#### 1. تست هر ابزار به‌صورت جداگانه
+#### 1. تست هر ابزار به تنهایی
 
 تست‌های متمرکزی برای عملکرد هر ابزار ایجاد کنید:
 
@@ -1258,27 +1251,27 @@ public async Task WeatherTool_InvalidLocation_ThrowsToolExecutionException()
 }
 ```
 
-#### 2. تست اعتبارسنجی طرح‌واره
+#### 2. تست اعتبارسنجی اسکیما
 
-تست کنید که طرح‌واره‌ها معتبر هستند و محدودیت‌ها را به‌درستی اعمال می‌کنند:
+بررسی کنید اسکیماها معتبر هستند و محدودیت‌ها را درست اجرا می‌کنند:
 
 ```java
 @Test
 public void testSchemaValidation() {
-    // Create tool instance
+    // ایجاد نمونه ابزار
     SearchTool searchTool = new SearchTool();
     
-    // Get schema
+    // دریافت طرح‌واره
     Object schema = searchTool.getSchema();
     
-    // Convert schema to JSON for validation
+    // تبدیل طرح‌واره به JSON برای اعتبارسنجی
     String schemaJson = objectMapper.writeValueAsString(schema);
     
-    // Validate schema is valid JSONSchema
+    // اعتبارسنجی اینکه طرح‌واره JSONSchema معتبر است
     JsonSchemaFactory factory = JsonSchemaFactory.byDefault();
     JsonSchema jsonSchema = factory.getJsonSchema(schemaJson);
     
-    // Test valid parameters
+    // آزمایش پارامترهای معتبر
     JsonNode validParams = objectMapper.createObjectNode()
         .put("query", "test query")
         .put("limit", 5);
@@ -1286,14 +1279,14 @@ public void testSchemaValidation() {
     ProcessingReport validReport = jsonSchema.validate(validParams);
     assertTrue(validReport.isSuccess());
     
-    // Test missing required parameter
+    // آزمایش پارامتر اجباری گمشده
     JsonNode missingRequired = objectMapper.createObjectNode()
         .put("limit", 5);
         
     ProcessingReport missingReport = jsonSchema.validate(missingRequired);
     assertFalse(missingReport.isSuccess());
     
-    // Test invalid parameter type
+    // آزمایش نوع پارامتر نامعتبر
     JsonNode invalidType = objectMapper.createObjectNode()
         .put("query", "test")
         .put("limit", "not-a-number");
@@ -1305,19 +1298,19 @@ public void testSchemaValidation() {
 
 #### 3. تست‌های مدیریت خطا
 
-تست‌های خاصی برای شرایط خطا ایجاد کنید:
+تست‌های خاص برای شرایط خطا ایجاد کنید:
 
 ```python
 @pytest.mark.asyncio
 async def test_api_tool_handles_timeout():
-    # Arrange
-    tool = ApiTool(timeout=0.1)  # Very short timeout
+    # مرتب سازی
+    tool = ApiTool(timeout=0.1)  # زمان بسیار کوتاه تایم اوت
     
-    # Mock a request that will time out
+    # شبیه‌سازی یک درخواست که منجر به تایم اوت می‌شود
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
-            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # Longer than timeout
+            callback=lambda *args, **kwargs: asyncio.sleep(0.5)  # طولانی‌تر از زمان تایم اوت
         )
         
         request = ToolRequest(
@@ -1325,19 +1318,19 @@ async def test_api_tool_handles_timeout():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Act & Assert
+        # اجرا و بررسی
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Verify exception message
+        # تایید پیام استثنا
         assert "timed out" in str(exc_info.value).lower()
 
 @pytest.mark.asyncio
 async def test_api_tool_handles_rate_limiting():
-    # Arrange
+    # مرتب سازی
     tool = ApiTool()
     
-    # Mock a rate-limited response
+    # شبیه‌سازی یک پاسخ با محدودیت نرخ
     with aioresponses() as mocked:
         mocked.get(
             "https://api.example.com/data",
@@ -1351,21 +1344,21 @@ async def test_api_tool_handles_rate_limiting():
             parameters={"url": "https://api.example.com/data"}
         )
         
-        # Act & Assert
+        # اجرا و بررسی
         with pytest.raises(ToolExecutionException) as exc_info:
             await tool.execute_async(request)
         
-        # Verify exception contains rate limit information
+        # تأیید اینکه استثنا شامل اطلاعات محدودیت نرخ است
         error_msg = str(exc_info.value).lower()
         assert "rate limit" in error_msg
         assert "try again" in error_msg
 ```
 
-### تست یکپارچگی
+### تست یکپارچه‌سازی
 
-#### 1. تست زنجیره ابزارها
+#### 1. تست زنجیره ابزار
 
-ابزارهایی که در ترکیب‌های مورد انتظار با هم کار می‌کنند را تست کنید:
+ابزارها را در ترکیب‌های پیش‌بینی شده تست کنید:
 
 ```csharp
 [Fact]
@@ -1406,7 +1399,7 @@ public async Task DataProcessingWorkflow_CompletesSuccessfully()
 
 #### 2. تست سرور MCP
 
-سرور MCP را با ثبت و اجرای کامل ابزارها تست کنید:
+سرور MCP را با ثبت کامل ابزار و اجرای آن تست کنید:
 
 ```java
 @SpringBootTest
@@ -1421,7 +1414,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolDiscovery() throws Exception {
-        // Test the discovery endpoint
+        // آزمایش نقطه پایان کشف
         mockMvc.perform(get("/mcp/tools"))
             .andExpect(status().isOk())
             .andExpect(jsonPath("$.tools").isArray())
@@ -1432,7 +1425,7 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolExecution() throws Exception {
-        // Create tool request
+        // ایجاد درخواست ابزار
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
@@ -1442,7 +1435,7 @@ public class McpServerIntegrationTest {
         parameters.put("b", 7);
         request.put("parameters", parameters);
         
-        // Send request and verify response
+        // ارسال درخواست و بررسی پاسخ
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -1452,17 +1445,17 @@ public class McpServerIntegrationTest {
     
     @Test
     public void testToolValidation() throws Exception {
-        // Create invalid tool request
+        // ایجاد درخواست ابزار نامعتبر
         Map<String, Object> request = new HashMap<>();
         request.put("toolName", "calculator");
         
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("operation", "divide");
         parameters.put("a", 10);
-        // Missing parameter "b"
+        // پارامتر "b" گم شده است
         request.put("parameters", parameters);
         
-        // Send request and verify error response
+        // ارسال درخواست و بررسی پاسخ خطا
         mockMvc.perform(post("/mcp/execute")
             .contentType(MediaType.APPLICATION_JSON)
             .content(objectMapper.writeValueAsString(request)))
@@ -1474,15 +1467,15 @@ public class McpServerIntegrationTest {
 
 #### 3. تست انتها به انتها
 
-جریان‌های کاری کامل از درخواست مدل تا اجرای ابزار را تست کنید:
+گردش‌های کاری کامل از پرسش مدل تا اجرای ابزار را تست کنید:
 
 ```python
 @pytest.mark.asyncio
 async def test_model_interaction_with_tool():
-    # Arrange - Set up MCP client and mock model
+    # تنظیم - راه‌اندازی کلاینت MCP و مدل ساختگی
     mcp_client = McpClient(server_url="http://localhost:5000")
     
-    # Mock model responses
+    # پاسخ‌های مدل ساختگی
     mock_model = MockLanguageModel([
         MockResponse(
             "What's the weather in Seattle?",
@@ -1497,7 +1490,7 @@ async def test_model_interaction_with_tool():
         )
     ])
     
-    # Mock weather tool response
+    # پاسخ ابزار هواشناسی ساختگی
     with aioresponses() as mocked:
         mocked.post(
             "http://localhost:5000/mcp/execute",
@@ -1513,14 +1506,14 @@ async def test_model_interaction_with_tool():
             }
         )
         
-        # Act
+        # اجرا
         response = await mcp_client.send_prompt(
             "What's the weather in Seattle?",
             model=mock_model,
             allowed_tools=["weatherForecast"]
         )
         
-        # Assert
+        # بررسی صحت
         assert "Seattle" in response.generated_text
         assert "65" in response.generated_text
         assert "Sunny" in response.generated_text
@@ -1533,7 +1526,7 @@ async def test_model_interaction_with_tool():
 
 #### 1. تست بار
 
-تعداد درخواست‌های همزمانی که سرور MCP شما می‌تواند مدیریت کند را تست کنید:
+تعیین کنید سرور MCP شما چند درخواست همزمان را مدیریت می‌کند:
 
 ```csharp
 [Fact]
@@ -1566,9 +1559,9 @@ public async Task McpServer_HandlesHighConcurrency()
 }
 ```
 
-#### 2. تست استرس
+#### 2. تست فشار
 
-سیستم را تحت بار شدید تست کنید:
+سیستم را تحت بار شدید امتحان کنید:
 
 ```java
 @Test
@@ -1577,13 +1570,13 @@ public void testServerUnderStress() {
     int rampUpTimeSeconds = 60;
     int testDurationSeconds = 300;
     
-    // Set up JMeter for stress testing
+    // تنظیم JMeter برای تست فشار
     StandardJMeterEngine jmeter = new StandardJMeterEngine();
     
-    // Configure JMeter test plan
+    // پیکربندی برنامه تست JMeter
     HashTree testPlanTree = new HashTree();
     
-    // Create test plan, thread group, samplers, etc.
+    // ایجاد برنامه تست، گروه نخ، نمونه‌گیرها و غیره
     TestPlan testPlan = new TestPlan("MCP Server Stress Test");
     testPlanTree.add(testPlan);
     
@@ -1595,7 +1588,7 @@ public void testServerUnderStress() {
     
     testPlanTree.add(threadGroup);
     
-    // Add HTTP sampler for tool execution
+    // افزودن نمونه‌گیر HTTP برای اجرای ابزار
     HTTPSampler toolExecutionSampler = new HTTPSampler();
     toolExecutionSampler.setDomain("localhost");
     toolExecutionSampler.setPort(5000);
@@ -1606,29 +1599,29 @@ public void testServerUnderStress() {
     
     threadGroup.add(toolExecutionSampler);
     
-    // Add listeners
+    // افزودن شنونده‌ها
     SummaryReport summaryReport = new SummaryReport();
     threadGroup.add(summaryReport);
     
-    // Run test
+    // اجرای تست
     jmeter.configure(testPlanTree);
     jmeter.run();
     
-    // Validate results
+    // اعتبارسنجی نتایج
     assertEquals(0, summaryReport.getErrorCount());
-    assertTrue(summaryReport.getAverage() < 200); // Average response time < 200ms
-    assertTrue(summaryReport.getPercentile(90.0) < 500); // 90th percentile < 500ms
+    assertTrue(summaryReport.getAverage() < 200); // زمان پاسخ متوسط کمتر از ۲۰۰ میلی‌ثانیه
+    assertTrue(summaryReport.getPercentile(90.0) < 500); // صدک ۹۰ کمتر از ۵۰۰ میلی‌ثانیه
 }
 ```
 
-#### 3. نظارت و پروفایل‌سازی
+#### 3. نظارت و تحلیل
 
-نظارت بلندمدت برای تحلیل عملکرد تنظیم کنید:
+نظارت برای تحلیل عملکرد بلندمدت تنظیم کنید:
 
 ```python
-# Configure monitoring for an MCP server
+# پیکربندی نظارت برای سرور MCP
 def configure_monitoring(server):
-    # Set up Prometheus metrics
+    # راه‌اندازی معیارهای Prometheus
     prometheus_metrics = {
         "request_count": Counter("mcp_requests_total", "Total MCP requests"),
         "request_latency": Histogram(
@@ -1654,10 +1647,10 @@ def configure_monitoring(server):
         )
     }
     
-    # Add middleware for timing and recording metrics
+    # افزودن میان‌افزار برای زمان‌بندی و ضبط معیارها
     server.add_middleware(PrometheusMiddleware(prometheus_metrics))
     
-    # Expose metrics endpoint
+    # نمایش نقطه پایانی معیارها
     @server.router.get("/metrics")
     async def metrics():
         return generate_latest()
@@ -1665,29 +1658,29 @@ def configure_monitoring(server):
     return server
 ```
 
-## الگوهای طراحی جریان کاری MCP
+## الگوهای طراحی گردش کار MCP
 
-جریان‌های کاری خوب طراحی‌شده MCP کارایی، قابلیت اطمینان و نگهداری را بهبود می‌بخشند. در اینجا الگوهای کلیدی آورده شده است:
+گردش‌های کاری خوب طراحی شده MCP بهره‌وری، قابلیت اطمینان و نگهداری را بهبود می‌بخشند. در اینجا الگوهای کلیدی آورده شده است:
 
-### 1. الگوی زنجیره ابزارها
+### 1. الگوی زنجیره ابزار
 
-چندین ابزار را به‌صورت متوالی متصل کنید، به‌طوری که خروجی هر ابزار ورودی ابزار بعدی شود:
+چندین ابزار را با ترتیبی متصل کنید که خروجی هر ابزار ورودی بعدی باشد:
 
 ```python
-# Python Chain of Tools implementation
+# پیاده‌سازی زنجیره ابزارهای پایتون
 class ChainWorkflow:
     def __init__(self, tools_chain):
-        self.tools_chain = tools_chain  # List of tool names to execute in sequence
+        self.tools_chain = tools_chain  # لیست نام ابزارها برای اجرا به ترتیب
     
     async def execute(self, mcp_client, initial_input):
         current_result = initial_input
         all_results = {"input": initial_input}
         
         for tool_name in self.tools_chain:
-            # Execute each tool in the chain, passing previous result
+            # اجرای هر ابزار در زنجیره، ارسال نتیجه قبلی
             response = await mcp_client.execute_tool(tool_name, current_result)
             
-            # Store result and use as input for next tool
+            # ذخیره نتیجه و استفاده به عنوان ورودی برای ابزار بعدی
             all_results[tool_name] = response.result
             current_result = response.result
         
@@ -1696,7 +1689,7 @@ class ChainWorkflow:
             "all_results": all_results
         }
 
-# Example usage
+# نمونه استفاده
 data_processing_chain = ChainWorkflow([
     "dataFetch",
     "dataCleaner",
@@ -1710,9 +1703,9 @@ result = await data_processing_chain.execute(
 )
 ```
 
-### 2. الگوی توزیع‌کننده
+### 2. الگوی واسط (دیپچری)
 
-از یک ابزار مرکزی استفاده کنید که بر اساس ورودی به ابزارهای تخصصی هدایت می‌کند:
+ابزار مرکزی که بر اساس ورودی، به ابزارهای تخصصی دستور می‌دهد، استفاده کنید:
 
 ```csharp
 public class ContentDispatcherTool : IMcpTool
@@ -1794,7 +1787,7 @@ public class ContentDispatcherTool : IMcpTool
 
 ### 3. الگوی پردازش موازی
 
-چندین ابزار را به‌طور همزمان برای کارایی اجرا کنید:
+ابزارهای متعدد را به طور همزمان برای افزایش کارایی اجرا کنید:
 
 ```java
 public class ParallelDataProcessingWorkflow {
@@ -1805,11 +1798,11 @@ public class ParallelDataProcessingWorkflow {
     }
     
     public WorkflowResult execute(String datasetId) {
-        // Step 1: Fetch dataset metadata (synchronous)
+        // مرحله ۱: دریافت فراداده‌های مجموعه داده (همگام)
         ToolResponse metadataResponse = mcpClient.executeTool("datasetMetadata", 
             Map.of("datasetId", datasetId));
         
-        // Step 2: Launch multiple analyses in parallel
+        // مرحله ۲: اجرای چندین تحلیل به‌صورت موازی
         CompletableFuture<ToolResponse> statisticalAnalysis = CompletableFuture.supplyAsync(() ->
             mcpClient.executeTool("statisticalAnalysis", Map.of(
                 "datasetId", datasetId,
@@ -1831,25 +1824,25 @@ public class ParallelDataProcessingWorkflow {
             ))
         );
         
-        // Wait for all parallel tasks to complete
+        // انتظار برای اتمام تمام وظایف موازی
         CompletableFuture<Void> allAnalyses = CompletableFuture.allOf(
             statisticalAnalysis, correlationAnalysis, outlierDetection
         );
         
-        allAnalyses.join();  // Wait for completion
+        allAnalyses.join();  // انتظار برای تکمیل
         
-        // Step 3: Combine results
+        // مرحله ۳: ترکیب نتایج
         Map<String, Object> combinedResults = new HashMap<>();
         combinedResults.put("metadata", metadataResponse.getResult());
         combinedResults.put("statistics", statisticalAnalysis.join().getResult());
         combinedResults.put("correlations", correlationAnalysis.join().getResult());
         combinedResults.put("outliers", outlierDetection.join().getResult());
         
-        // Step 4: Generate summary report
+        // مرحله ۴: تولید گزارش خلاصه
         ToolResponse summaryResponse = mcpClient.executeTool("reportGenerator", 
             Map.of("analysisResults", combinedResults));
         
-        // Return complete workflow result
+        // بازگردانی نتیجه کامل فرآیند کاری
         WorkflowResult result = new WorkflowResult();
         result.setDatasetId(datasetId);
         result.setAnalysisResults(combinedResults);
@@ -1862,7 +1855,7 @@ public class ParallelDataProcessingWorkflow {
 
 ### 4. الگوی بازیابی خطا
 
-برای شکست ابزارها، بازگشت‌های مناسب پیاده‌سازی کنید:
+بدون شکست به شیوه‌ای مؤدبانه در برابر خطاهای ابزارها بازگشتی داشته باشید:
 
 ```python
 class ResilientWorkflow:
@@ -1871,7 +1864,7 @@ class ResilientWorkflow:
     
     async def execute_with_fallback(self, primary_tool, fallback_tool, parameters):
         try:
-            # Try primary tool first
+            # ابتدا ابزار اصلی را امتحان کنید
             response = await self.client.execute_tool(primary_tool, parameters)
             return {
                 "result": response.result,
@@ -1879,12 +1872,12 @@ class ResilientWorkflow:
                 "tool": primary_tool
             }
         except ToolExecutionException as e:
-            # Log the failure
+            # خطا را ثبت کنید
             logging.warning(f"Primary tool '{primary_tool}' failed: {str(e)}")
             
-            # Fall back to secondary tool
+            # به ابزار ثانویه روی بیاورید
             try:
-                # Might need to transform parameters for fallback tool
+                # ممکن است نیاز باشد پارامترها را برای ابزار جایگزین تغییر دهید
                 fallback_params = self._adapt_parameters(parameters, primary_tool, fallback_tool)
                 
                 response = await self.client.execute_tool(fallback_tool, fallback_params)
@@ -1895,7 +1888,7 @@ class ResilientWorkflow:
                     "primaryError": str(e)
                 }
             except ToolExecutionException as fallback_error:
-                # Both tools failed
+                # هر دو ابزار شکست خوردند
                 logging.error(f"Both primary and fallback tools failed. Fallback error: {str(fallback_error)}")
                 raise WorkflowExecutionException(
                     f"Workflow failed: primary error: {str(e)}; fallback error: {str(fallback_error)}"
@@ -1903,22 +1896,22 @@ class ResilientWorkflow:
     
     def _adapt_parameters(self, params, from_tool, to_tool):
         """Adapt parameters between different tools if needed"""
-        # This implementation would depend on the specific tools
-        # For this example, we'll just return the original parameters
+        # این پیاده‌سازی به ابزارهای خاص بستگی دارد
+        # برای این مثال، فقط پارامترهای اصلی را برمی‌گردانیم
         return params
 
-# Example usage
+# نمونه استفاده
 async def get_weather(workflow, location):
     return await workflow.execute_with_fallback(
-        "premiumWeatherService",  # Primary (paid) weather API
-        "basicWeatherService",    # Fallback (free) weather API
+        "premiumWeatherService",  # API آب و هوای اصلی (پرداخت شده)
+        "basicWeatherService",    # API آب و هوای جایگزین (رایگان)
         {"location": location}
     )
 ```
 
-### 5. الگوی ترکیب جریان کاری
+### 5. الگوی ترکیب گردش کار
 
-جریان‌های کاری پیچیده را با ترکیب جریان‌های ساده‌تر بسازید:
+گردش‌های کاری پیچیده را با ترکیب کردن گردش‌های ساده‌تر بسازید:
 
 ```csharp
 public class CompositeWorkflow : IWorkflow
@@ -1965,37 +1958,37 @@ var result = await documentWorkflow.ExecuteAsync(new WorkflowContext {
 });
 ```
 
-# تست سرورهای MCP: بهترین شیوه‌ها و نکات برتر
+# تست سرورهای MCP: بهترین روش‌ها و نکات برتر
 
-## مقدمه
+## مرور کلی
 
-تست یکی از جنبه‌های حیاتی توسعه سرورهای MCP قابل‌اعتماد و باکیفیت است. این راهنما بهترین شیوه‌ها و نکات جامع برای تست سرورهای MCP شما در طول چرخه توسعه، از تست‌های واحد تا تست‌های یکپارچگی و اعتبارسنجی انتها به انتها را ارائه می‌دهد.
+تست بخش مهمی از توسعه سرورهای MCP قابل اطمینان و با کیفیت بالا است. این راهنما بهترین روش‌ها و نکات جامع برای تست سرورهای MCP شما در طول چرخه عمر توسعه از تست‌های واحد تا تست‌های یکپارچه و اعتبارسنجی انتها به انتها را ارائه می‌دهد.
 
-## چرا تست برای سرورهای MCP مهم است؟
+## چرا تست برای سرورهای MCP اهمیت دارد
 
-سرورهای MCP به‌عنوان میان‌افزار حیاتی بین مدل‌های هوش مصنوعی و برنامه‌های مشتری عمل می‌کنند. تست کامل تضمین می‌کند:
+سرورهای MCP به عنوان میان‌افزار مهم بین مدل‌های هوش مصنوعی و برنامه‌های مشتری عمل می‌کنند. تست کامل تضمین می‌کند:
 
 - قابلیت اطمینان در محیط‌های تولید
-- مدیریت دقیق درخواست‌ها و پاسخ‌ها
-- پیاده‌سازی صحیح مشخصات MCP
-- مقاومت در برابر شکست‌ها و موارد خاص
+- مدیریت صحیح درخواست‌ها و پاسخ‌ها
+- پیاده‌سازی دقیق مشخصات MCP
+- مقاومت در برابر شکست‌ها و شرایط حاشیه‌ای
 - عملکرد ثابت تحت بارهای مختلف
 
 ## تست واحد برای سرورهای MCP
 
-### تست واحد (پایه)
+### تست واحد (اساسی)
 
-تست‌های واحد اجزای جداگانه سرور MCP شما را به‌صورت مستقل تأیید می‌کنند.
+تست‌های واحد اجزای فردی سرور MCP شما را به تنهایی بررسی می‌کنند.
 
-#### چه چیزی را تست کنیم؟
+#### چه چیزهایی باید تست شود
 
-1. **مدیریت‌کننده‌های منابع**: منطق هر مدیریت‌کننده منبع را به‌صورت مستقل تست کنید
-2. **پیاده‌سازی ابزارها**: رفتار ابزار را با ورودی‌های مختلف تأیید کنید
-3. **قالب‌های درخواست**: اطمینان حاصل کنید که قالب‌های درخواست به‌درستی رندر می‌شوند
-4. **اعتبارسنجی طرح‌واره**: منطق اعتبارسنجی پارامترها را تست کنید
-5. **مدیریت خطا**: پاسخ‌های خطا را برای ورودی‌های نامعتبر تأیید کنید
+1. **مدیران منابع**: منطق هر مدیر منبع را به صورت مستقل تست کنید
+2. **پیاده‌سازی ابزارها**: رفتار ابزارها را با ورودی‌های مختلف بررسی کنید
+3. **قالب‌های پرسش**: اطمینان حاصل کنید قالب‌های درخواست درست نمایش داده می‌شوند
+4. **اعتبارسنجی اسکیما**: منطق اعتبارسنجی پارامترها را تست کنید
+5. **مدیریت خطا**: پاسخ‌های خطا برای ورودی‌های نامعتبر را ارزیابی کنید
 
-#### بهترین شیوه‌ها برای تست واحد
+#### بهترین روش‌های تست واحد
 
 ```csharp
 // Example unit test for a calculator tool in C#
@@ -2021,9 +2014,9 @@ public async Task CalculatorTool_Add_ReturnsCorrectSum()
 ```
 
 ```python
-# Example unit test for a calculator tool in Python
+# نمونه تست واحد برای یک ابزار ماشین حساب در پایتون
 def test_calculator_tool_add():
-    # Arrange
+    # ترتیب دادن
     calculator = CalculatorTool()
     parameters = {
         "operation": "add",
@@ -2031,27 +2024,27 @@ def test_calculator_tool_add():
         "b": 7
     }
     
-    # Act
+    # اجرا کردن
     response = calculator.execute(parameters)
     result = json.loads(response.content[0].text)
     
-    # Assert
+    # تایید کردن
     assert result["value"] == 12
 ```
 
-### تست یکپارچگی (لایه میانی)
+### تست یکپارچه‌سازی (لایه میانی)
 
-تست‌های یکپارچگی تعاملات بین اجزای سرور MCP شما را تأیید می‌کنند.
+تست‌های یکپارچه‌سازی تعاملات بین اجزای سرور MCP را بررسی می‌کنند.
 
-#### چه چیزی را تست کنیم؟
+#### چه چیزهایی باید تست شود
 
-1. **راه‌اندازی سرور**: راه‌اندازی سرور را با پیکربندی‌های مختلف تست کنید
-2. **ثبت مسیرها**: اطمینان حاصل کنید که تمام نقاط انتهایی به‌درستی ثبت شده‌اند
-3. **پردازش درخواست‌ها**: چرخه کامل درخواست-پاسخ را تست کنید
-4. **انتقال خطا**: اطمینان حاصل کنید که خطاها به‌درستی در اجزا مدیریت می‌شوند
-5. **احراز هویت و مجوزدهی**: مکانیزم‌های امنیتی را تست کنید
+1. **راه‌اندازی سرور**: استارت سرور با تنظیمات مختلف تست شود
+2. **ثبت مسیرها**: اطمینان از ثبت صحیح تمام نقاط انتهایی
+3. **پردازش درخواست‌ها**: چرخه کامل درخواست-پاسخ تست شود
+4. **گسترش خطا**: خطاها به درستی بین اجزا مدیریت شوند
+5. **احراز هویت و مجوزدهی**: مکانیزم‌های امنیتی آزموده شوند
 
-#### بهترین شیوه‌ها برای تست یکپارچگی
+#### بهترین روش‌های تست یکپارچه‌سازی
 
 ```csharp
 // Example integration test for MCP server in C#
@@ -2089,25 +2082,25 @@ public async Task Server_ProcessToolRequest_ReturnsValidResponse()
 
 ### تست انتها به انتها (لایه بالا)
 
-تست‌های انتها به انتها رفتار کامل سیستم از مشتری تا سرور را تأیید می‌کنند.
+تست‌های انتها به انتها رفتار کامل سیستم از مشتری تا سرور را بررسی می‌کنند.
 
-#### چه چیزی را تست کنیم؟
+#### چه چیزهایی باید تست شود
 
-1. **ارتباط مشتری-سرور**: چرخه‌های کامل درخواست-پاسخ را تست کنید
-2. **SDKهای واقعی مشتری**: با پیاده‌سازی‌های واقعی مشتری تست کنید
-3. **عملکرد تحت بار**: رفتار را با چندین درخواست همزمان تأیید کنید
-4. **بازیابی خطا**: بازیابی سیستم از شکست‌ها را تست کنید
-5. **عملیات طولانی‌مدت**: مدیریت جریان و عملیات طولانی را تأیید کنید
+1. **ارتباط مشتری-سرور**: چرخه‌های کامل درخواست-پاسخ تست شوند
+2. **SDKهای واقعی مشتری**: با پیاده‌سازی‌های واقعی آزمایش شوند
+3. **عملکرد تحت بار**: رفتار با درخواست‌های همزمان متعدد امتحان شود
+4. **بازیابی از خطا**: بهبودی سیستم از خطاها تست شود
+5. **عملیات طولانی مدت**: مدیریت عملیات پخش و طولانی رفتار شود
 
-#### بهترین شیوه‌ها برای تست انتها به انتها
+#### بهترین روش‌های تست انتها به انتها
 
 ```typescript
-// Example E2E test with a client in TypeScript
+// نمونه تست E2E با یک کلاینت در تایپ‌اسکریپت
 describe('MCP Server E2E Tests', () => {
   let client: McpClient;
   
   beforeAll(async () => {
-    // Start server in test environment
+    // راه‌اندازی سرور در محیط تست
     await startTestServer();
     client = new McpClient('http://localhost:5000');
   });
@@ -2117,14 +2110,14 @@ describe('MCP Server E2E Tests', () => {
   });
   
   test('Client can invoke calculator tool and get correct result', async () => {
-    // Act
+    // اقدام
     const response = await client.invokeToolAsync('calculator', {
       operation: 'divide',
       a: 20,
       b: 4
     });
     
-    // Assert
+    // تأیید صحت
     expect(response.statusCode).toBe(200);
     expect(response.content[0].text).toContain('5');
   });
@@ -2133,14 +2126,14 @@ describe('MCP Server E2E Tests', () => {
 
 ## استراتژی‌های شبیه‌سازی برای تست MCP
 
-شبیه‌سازی برای جداسازی اجزا در طول تست ضروری است.
+شبیه‌سازی برای جداسازی اجزا در هنگام تست ضروری است.
 
 ### اجزایی که باید شبیه‌سازی شوند
 
-1. **مدل‌های هوش مصنوعی خارجی**: پاسخ‌های مدل را برای تست قابل پیش‌بینی شبیه‌سازی کنید
-2. **سرویس‌های خارجی**: وابستگی‌های API (پایگاه داده‌ها، سرویس‌های شخص ثالث) را شبیه‌سازی کنید
-3. **سرویس‌های احراز هویت**: ارائه‌دهندگان هویت را شبیه‌سازی کنید
-4. **ارائه‌دهندگان منابع**: مدیریت‌کننده‌های منابع پرهزینه را شبیه‌سازی کنید
+1. **مدل‌های هوش مصنوعی خارجی**: پاسخ مدل‌ها به صورت پیش‌بینی شده شبیه‌سازی شود
+2. **خدمات خارجی**: وابستگی‌های API (دیتابیس‌ها، خدمات ثالث) شبیه‌سازی شود
+3. **خدمات احراز هویت**: ارائه‌دهندگان هویت شبیه‌سازی شوند
+4. **تأمین‌کنندگان منابع**: مدیران منابع پرهزینه شبیه‌سازی شود
 
 ### مثال: شبیه‌سازی پاسخ مدل هوش مصنوعی
 
@@ -2160,48 +2153,48 @@ var server = new McpServer(modelClient: mockModel.Object);
 ```
 
 ```python
-# Python example with unittest.mock
+# نمونه پایتون با unittest.mock
 @patch('mcp_server.models.OpenAIModel')
 def test_with_mock_model(mock_model):
-    # Configure mock
+    # پیکربندی موک
     mock_model.return_value.generate_response.return_value = {
         "text": "Mocked model response",
         "finish_reason": "completed"
     }
     
-    # Use mock in test
+    # استفاده از موک در تست
     server = McpServer(model_client=mock_model)
-    # Continue with test
+    # ادامه تست
 ```
 
 ## تست عملکرد
 
 تست عملکرد برای سرورهای MCP تولیدی حیاتی است.
 
-### چه چیزی را اندازه‌گیری کنیم؟
+### چه چیزهایی باید اندازه‌گیری شود
 
-1. **تأخیر**: زمان پاسخ برای درخواست‌ها
-2. **توان عملیاتی**: تعداد درخواست‌های پردازش‌شده در هر ثانیه
-3. **استفاده از منابع**: استفاده از CPU، حافظه، شبکه
+1. **تاخیر**: زمان پاسخ به درخواست‌ها
+2. **توان عملیاتی**: تعداد درخواست‌های پاسخ داده شده در ثانیه
+3. **استفاده از منابع**: مصرف CPU، حافظه، شبکه
 4. **مدیریت همزمانی**: رفتار تحت درخواست‌های موازی
 5. **ویژگی‌های مقیاس‌پذیری**: عملکرد با افزایش بار
 
 ### ابزارهای تست عملکرد
 
-- **k6**: ابزار تست بار متن‌باز
-- **JMeter**: ابزار جامع تست عملکرد
-- **Locust**: ابزار تست بار مبتنی بر پایتون
-- **Azure Load Testing**: تست عملکرد مبتنی بر ابر
+- **k6**: ابزار متن‌باز تست بار
+- **JMeter**: تست عملکرد جامع
+- **Locust**: تست بار بر پایه پایتون
+- **Azure Load Testing**: تست عملکرد ابری
 
 ### مثال: تست بار پایه با k6
 
 ```javascript
-// k6 script for load testing MCP server
+// اسکریپت k6 برای تست بار سرور MCP
 import http from 'k6/http';
 import { check, sleep } from 'k6';
 
 export const options = {
-  vus: 10,  // 10 virtual users
+  vus: 10,  // ۱۰ کاربر مجازی
   duration: '30s',
 };
 
@@ -2235,16 +2228,15 @@ export default function () {
 
 ## اتوماسیون تست برای سرورهای MCP
 
-اتوماسیون تست تضمین می‌کند که کیفیت به‌طور مداوم حفظ شده و بازخورد سریع‌تر ارائه می‌شود.
+خودکارسازی تست‌ها تضمین کیفیت مداوم و چرخه بازخورد سریع‌تر است.
 
 ### ادغام CI/CD
-
-1. **اجرای تست‌های واحد در درخواست‌های Pull**: اطمینان حاصل کنید که تغییرات کد عملکرد موجود را مختل نمی‌کنند
-2. **ت
-3. **مبنای عملکرد**: حفظ معیارهای عملکرد برای شناسایی مشکلات احتمالی  
+1. **اجرای تست‌های واحد در درخواست‌های پول ریکوئست**: اطمینان حاصل کنید که تغییرات کد باعث خراب شدن عملکردهای موجود نشوند  
+2. **تست‌های یکپارچه‌سازی در محیط سنجش**: انجام تست‌های یکپارچه‌سازی در محیط‌های پیش‌تولید  
+3. **استانداردهای عملکردی**: حفظ معیارهای عملکردی برای شناسایی بازگشت خرابی‌ها  
 4. **اسکن‌های امنیتی**: خودکارسازی تست‌های امنیتی به عنوان بخشی از خط لوله  
 
-### مثال خط لوله CI (GitHub Actions)
+### نمونه‌ای از خط لوله CI (کارهای گیت‌هاب)
 
 ```yaml
 name: MCP Server Tests
@@ -2281,21 +2273,21 @@ jobs:
       
     - name: Performance Tests
       run: dotnet run --project tests/PerformanceTests/PerformanceTests.csproj
-```  
+```
+  
+## تست برای تطابق با مشخصات MCP
 
-## تست انطباق با مشخصات MCP  
+بررسی کنید که سرور شما مشخصات MCP را به درستی پیاده‌سازی کرده است.
 
-اطمینان حاصل کنید که سرور شما مشخصات MCP را به درستی پیاده‌سازی کرده است.  
+### حوزه‌های کلیدی تطابق
 
-### حوزه‌های کلیدی انطباق  
+1. **نقاط پایانی API**: تست نقاط پایانی مورد نیاز (/resources، /tools و غیره)  
+2. **فرمت درخواست/پاسخ**: اعتبارسنجی تطابق با اسکیمای تعریف‌شده  
+3. **کدهای خطا**: تأیید کدهای وضعیت صحیح برای سناریوهای مختلف  
+4. **نوع محتوا**: تست نحوه‌ی مدیریت انواع مختلف محتوا  
+5. **جریان احراز هویت**: تأیید سازوکارهای احراز هویتی که مطابق با مشخصات هستند  
 
-1. **نقاط پای API**: تست نقاط پای مورد نیاز (/resources, /tools و غیره)  
-2. **فرمت درخواست/پاسخ**: اعتبارسنجی انطباق با طرح  
-3. **کدهای خطا**: بررسی کدهای وضعیت صحیح برای سناریوهای مختلف  
-4. **نوع محتوا**: تست مدیریت انواع مختلف محتوا  
-5. **جریان احراز هویت**: بررسی مکانیزم‌های احراز هویت مطابق با مشخصات  
-
-### مجموعه تست انطباق  
+### مجموعه تست‌های تطابق
 
 ```csharp
 [Fact]
@@ -2320,64 +2312,70 @@ public async Task Server_ResourceEndpoint_ReturnsCorrectSchema()
         // Additional schema validation
     });
 }
-```  
+```
+  
+## ۱۰ نکته برتر برای تست موثر سرور MCP
 
-## ۱۰ نکته برتر برای تست موثر سرور MCP  
+1. **تعاریف ابزار را جداگانه تست کنید**: اعتبارسنجی تعاریف اسکیمایی جدا از منطق ابزار  
+2. **از تست‌های پارامتری استفاده کنید**: تست ابزارها با ورودی‌های مختلف، از جمله موارد حاشیه‌ای  
+3. **پاسخ‌های خطا را بررسی کنید**: تأیید مدیریت صحیح خطاها برای همه شرایط احتمالی  
+4. **منطق مجوزدهی را تست کنید**: اطمینان از کنترل دسترسی مناسب برای نقش‌های مختلف کاربران  
+5. **پوشش تست را پایش کنید**: هدف گذاری برای پوشش بالای کد مسیرهای حیاتی  
+6. **تست پاسخ‌های جریانی**: تأیید مدیریت صحیح محتوای جریانی  
+7. **شبیه‌سازی مشکلات شبکه**: تست رفتار در شرایط شبکه ضعیف  
+8. **تست محدودیت‌های منابع**: تأیید رفتار در رسیدن به سهمیه‌ها یا محدودیت نرخ  
+9. **خودکارسازی تست‌های بازگشتی**: ساخت مجموعه‌ای که با هر تغییر کد اجرا شود  
+10. **مستندسازی موارد تست**: حفظ مستندات واضح از سناریوهای تست  
 
-1. **تعاریف ابزار را جداگانه تست کنید**: طرح‌های ابزار را مستقل از منطق ابزار بررسی کنید  
-2. **از تست‌های پارامتری استفاده کنید**: ابزارها را با ورودی‌های متنوع، از جمله موارد مرزی، آزمایش کنید  
-3. **پاسخ‌های خطا را بررسی کنید**: مدیریت صحیح خطاها را برای همه شرایط ممکن بررسی کنید  
-4. **منطق احراز هویت را تست کنید**: کنترل دسترسی مناسب برای نقش‌های مختلف کاربران را تضمین کنید  
-5. **پوشش تست را نظارت کنید**: به دنبال پوشش بالا برای کدهای مسیر بحرانی باشید  
-6. **پاسخ‌های جریان‌دار را تست کنید**: مدیریت صحیح محتوای جریان‌دار را بررسی کنید  
-7. **مشکلات شبکه را شبیه‌سازی کنید**: رفتار تحت شرایط شبکه ضعیف را آزمایش کنید  
-8. **محدودیت‌های منابع را تست کنید**: رفتار هنگام رسیدن به سهمیه‌ها یا محدودیت‌های نرخ را بررسی کنید  
-9. **تست‌های بازگشتی را خودکار کنید**: مجموعه‌ای بسازید که با هر تغییر کد اجرا شود  
-10. **موارد تست را مستند کنید**: مستندات واضحی از سناریوهای تست نگه دارید  
+## مشکلات رایج در تست
 
-## مشکلات رایج در تست  
+- **اعتماد بیش از حد به تست مسیر خوش‌یمن**: مطمئن شوید موارد خطا را به طور کامل تست می‌کنید  
+- **نادیده گرفتن تست‌های عملکرد**: شناسایی نقاط گلوگاه قبل از تأثیر بر تولید  
+- **تست در انزوا فقط**: ترکیب تست‌های واحد، یکپارچه‌سازی و انتها به انتها  
+- **پوشش ناقص API**: اطمینان از تست همه نقاط پایانی و ویژگی‌ها  
+- **ناسازگاری محیط‌های تست**: استفاده از کانتینرها برای تضمین محیط‌های تست یکسان  
 
-- **اتکای بیش از حد به تست مسیر خوش‌بینانه**: مطمئن شوید که موارد خطا را به طور کامل آزمایش می‌کنید  
-- **نادیده گرفتن تست عملکرد**: گلوگاه‌ها را قبل از تأثیرگذاری بر تولید شناسایی کنید  
-- **تست فقط در انزوا**: تست‌های واحد، یکپارچه و انتها به انتها را ترکیب کنید  
-- **پوشش ناقص API**: اطمینان حاصل کنید که همه نقاط پای و ویژگی‌ها تست شده‌اند  
-- **محیط‌های تست ناسازگار**: از کانتینرها برای تضمین محیط‌های تست سازگار استفاده کنید  
+## نتیجه‌گیری
 
-## نتیجه‌گیری  
+یک استراتژی جامع تست برای توسعه سرورهای MCP قابل اعتماد و با کیفیت بالا ضروری است. با اجرای بهترین روش‌ها و نکات ارائه‌شده در این راهنما، می‌توانید اطمینان حاصل کنید که پیاده‌سازی‌های MCP شما بالاترین استانداردهای کیفیت، قابلیت اطمینان و عملکرد را دارند.
 
-یک استراتژی جامع تست برای توسعه سرورهای MCP قابل اعتماد و با کیفیت بالا ضروری است. با اجرای بهترین شیوه‌ها و نکات مطرح شده در این راهنما، می‌توانید اطمینان حاصل کنید که پیاده‌سازی‌های MCP شما بالاترین استانداردهای کیفیت، قابلیت اطمینان و عملکرد را برآورده می‌کنند.  
+## نکات کلیدی
 
-## نکات کلیدی  
+1. **طراحی ابزار**: پیروی از اصل مسئولیت واحد، استفاده از تزریق وابستگی و طراحی برای ترکیب‌پذیری  
+2. **طراحی اسکما**: ایجاد اسکیمای واضح و مستندسازی شده با محدودیت‌های اعتبارسنجی مناسب  
+3. **مدیریت خطا**: پیاده‌سازی مدیریت خطای ایمن، پاسخ‌های ساختاریافته خطا و منطق تکرار  
+4. **عملکرد**: استفاده از کشینگ، پردازش ناهمزمان و محدودیت منابع  
+5. **امنیت**: اعمال اعتبارسنجی دقیق ورودی‌ها، بررسی مجوزها و مدیریت داده‌های حساس  
+6. **تست**: ایجاد تست‌های جامع واحد، یکپارچه‌سازی و انتها به انتها  
+7. **الگوهای جریان کاری**: به‌کارگیری الگوهای تثبیت‌شده مانند زنجیره‌ها، ارسال‌کننده‌ها و پردازش موازی  
 
-1. **طراحی ابزار**: اصل مسئولیت واحد را دنبال کنید، از تزریق وابستگی استفاده کنید و برای ترکیب‌پذیری طراحی کنید  
-2. **طراحی طرح**: طرح‌های واضح و مستند با محدودیت‌های اعتبارسنجی مناسب ایجاد کنید  
-3. **مدیریت خطا**: مدیریت خطای مناسب، پاسخ‌های خطای ساختاریافته و منطق تلاش مجدد را پیاده‌سازی کنید  
-4. **عملکرد**: از کش کردن، پردازش غیرهمزمان و محدود کردن منابع استفاده کنید  
-5. **امنیت**: اعتبارسنجی ورودی دقیق، بررسی‌های احراز هویت و مدیریت داده‌های حساس را اعمال کنید  
-6. **تست**: تست‌های واحد، یکپارچه و انتها به انتها جامع ایجاد کنید  
-7. **الگوهای گردش کار**: از الگوهای تثبیت‌شده مانند زنجیره‌ها، توزیع‌کننده‌ها و پردازش موازی استفاده کنید  
+## تمرین
 
-## تمرین  
+یک ابزار MCP و جریان کاری برای یک سیستم پردازش اسناد طراحی کنید که:
 
-یک ابزار MCP و گردش کار برای یک سیستم پردازش اسناد طراحی کنید که:  
-
-1. اسناد را در فرمت‌های مختلف (PDF، DOCX، TXT) بپذیرد  
+1. اسناد را در فرمت‌های مختلف (PDF، DOCX، TXT) قبول کند  
 2. متن و اطلاعات کلیدی را از اسناد استخراج کند  
-3. اسناد را بر اساس نوع و محتوا طبقه‌بندی کند  
+3. اسناد را بر اساس نوع و محتوا دسته‌بندی کند  
 4. خلاصه‌ای از هر سند تولید کند  
 
-طرح‌های ابزار، مدیریت خطا و یک الگوی گردش کار که بهترین تناسب را با این سناریو دارد پیاده‌سازی کنید. در نظر بگیرید که چگونه این پیاده‌سازی را تست خواهید کرد.  
+اسکیمای ابزار، مدیریت خطا و الگوی جریان کاری را که بهترین تناسب را با این سناریو دارد پیاده کنید. در نظر بگیرید چگونه این پیاده‌سازی را تست خواهید کرد.
 
-## منابع  
+## منابع
 
-1. به جامعه MCP در [جامعه دیسکورد Azure AI Foundry](https://aka.ms/foundrydevs) بپیوندید تا از آخرین پیشرفت‌ها مطلع شوید  
-2. در پروژه‌های متن‌باز [MCP](https://github.com/modelcontextprotocol) مشارکت کنید  
-3. اصول MCP را در ابتکارات هوش مصنوعی سازمان خود اعمال کنید  
+1. به جامعه MCP در <a href="https://aka.ms/foundrydevs">Azure AI Foundry Discord Community</a> بپیوندید تا در جریان جدیدترین تحولات باشید  
+2. در پروژه‌های متن باز <a href="https://github.com/modelcontextprotocol">MCP</a> مشارکت کنید  
+3. اصول MCP را در پروژه‌های هوش مصنوعی سازمان خود به کار ببرید  
 4. پیاده‌سازی‌های تخصصی MCP را برای صنعت خود بررسی کنید  
-5. دوره‌های پیشرفته در موضوعات خاص MCP، مانند یکپارچه‌سازی چندوجهی یا یکپارچه‌سازی برنامه‌های سازمانی را در نظر بگیرید  
-6. با استفاده از اصول آموخته شده از [آزمایشگاه عملی](../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md)، ابزارها و گردش کارهای MCP خود را آزمایش کنید  
+5. انجام دوره‌های پیشرفته درباره موضوعات خاص MCP، مانند یکپارچه‌سازی چندرسانه‌ای یا یکپارچه‌سازی برنامه‌های سازمانی  
+6. آزمایش ساخت ابزارها و جریان‌های کاری MCP خود با استفاده از اصول یادگرفته شده در <a href="../10-StreamliningAIWorkflowsBuildingAnMCPServerWithAIToolkit/README.md">Hands on Lab</a>  
 
-بعدی: بهترین شیوه‌ها [مطالعات موردی](../09-CaseStudy/README.md)  
+## مرحله بعد
 
-**سلب مسئولیت**:  
-این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما تلاش می‌کنیم دقت را حفظ کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است شامل خطاها یا نادرستی‌ها باشند. سند اصلی به زبان اصلی آن باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حساس، توصیه می‌شود از ترجمه حرفه‌ای انسانی استفاده کنید. ما مسئولیتی در قبال سوء تفاهم‌ها یا تفسیرهای نادرست ناشی از استفاده از این ترجمه نداریم.
+مرحله بعد: <a href="../09-CaseStudy/README.md">مطالعات موردی</a>
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**سلب‌مسئولیت**:
+این سند با استفاده از سرویس ترجمه ماشینی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما در تلاش برای دقت هستیم، لطفاً آگاه باشید که ترجمه‌های خودکار ممکن است حاوی خطاها یا نادقتی‌هایی باشند. سند اصلی به زبان بومی آن باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ گونه سوءتفاهم یا تفسیر نادرستی که ناشی از استفاده از این ترجمه باشد، نیستیم.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

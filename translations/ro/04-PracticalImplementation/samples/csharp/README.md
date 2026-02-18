@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "0bc7bd48f55f1565f1d95ccb2c16f728",
-  "translation_date": "2025-07-13T23:09:44+00:00",
-  "source_file": "04-PracticalImplementation/samples/csharp/README.md",
-  "language_code": "ro"
-}
--->
 # Exemplu
 
 Exemplul anterior arată cum să folosești un proiect local .NET cu tipul `stdio`. Și cum să rulezi serverul local într-un container. Aceasta este o soluție bună în multe situații. Totuși, poate fi util să ai serverul rulând de la distanță, cum ar fi într-un mediu cloud. Aici intervine tipul `http`.
@@ -26,7 +17,7 @@ Celelalte proiecte provin de la [.NET Aspire](https://learn.microsoft.com/dotnet
 
 1. Când un browser web deschide dashboard-ul .NET Aspire, notează URL-ul `http`. Ar trebui să fie ceva de genul `http://localhost:5058/`.
 
-   ![.NET Aspire Dashboard](../../../../../translated_images/dotnet-aspire-dashboard.0a7095710e9301e90df2efd867e1b675b3b9bc2ccd7feb1ebddc0751522bc37c.ro.png)
+   ![.NET Aspire Dashboard](../../../../../translated_images/ro/dotnet-aspire-dashboard.0a7095710e9301e9.webp)
 
 ## Testează Streamable HTTP cu MCP Inspector
 
@@ -38,7 +29,7 @@ Pornește serverul și rulează următoarea comandă într-un terminal:
 npx @modelcontextprotocol/inspector http://localhost:5058
 ```
 
-![MCP Inspector](../../../../../translated_images/mcp-inspector.c223422b9b494fb4a518a3b3911b3e708e6a5715069470f9163ee2ee8d5f1ba9.ro.png)
+![MCP Inspector](../../../../../translated_images/ro/mcp-inspector.c223422b9b494fb4.webp)
 
 - Selectează `Streamable HTTP` ca tip de Transport.
 - În câmpul Url, introdu URL-ul serverului notat anterior și adaugă `/mcp`. Ar trebui să fie `http` (nu `https`), ceva de genul `http://localhost:5058/mcp`.
@@ -83,7 +74,7 @@ azd up
 
 După ce publicarea se termină, ar trebui să vezi un mesaj de genul acesta:
 
-![Azd deployment success](../../../../../translated_images/azd-deployment-success.bd42940493f1b834a5ce6251a6f88966546009b350df59d0cc4a8caabe94a4f1.ro.png)
+![Azd deployment success](../../../../../translated_images/ro/azd-deployment-success.bd42940493f1b834.webp)
 
 Ia URL-ul și folosește-l în MCP Inspector și în GitHub Copilot Chat.
 

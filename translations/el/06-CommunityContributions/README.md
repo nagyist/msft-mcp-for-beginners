@@ -1,148 +1,139 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "fcf1e12b62102bf7d16b78deb2b163b7",
-  "translation_date": "2025-08-18T14:06:12+00:00",
-  "source_file": "06-CommunityContributions/README.md",
-  "language_code": "el"
-}
--->
-# Κοινότητα και Συνεισφορές
+# Κοινότητα και Συμβολές
 
-[![Πώς να συνεισφέρετε στο MCP: Εργαλεία, Τεκμηρίωση, Κώδικας και Περισσότερα](../../../translated_images/07.1179f6de46ff196eb3cc13c3510e01c37807a13f3bb9be3c779105ce26737c67.el.png)](https://youtu.be/v1pvCYAWpRE)
+[![Πώς να Συμβάλετε στο MCP: Εργαλεία, Έγγραφα, Κώδικας και Άλλα](../../../translated_images/el/07.1179f6de46ff196e.webp)](https://youtu.be/v1pvCYAWpRE)
 
-_(Κάντε κλικ στην εικόνα παραπάνω για να δείτε το βίντεο αυτού του μαθήματος)_
+_(Κάντε κλικ στην εικόνα παραπάνω για να δείτε βίντεο αυτής της ενότητας)_
 
 ## Επισκόπηση
 
-Αυτό το μάθημα επικεντρώνεται στο πώς να συμμετέχετε στην κοινότητα MCP, να συνεισφέρετε στο οικοσύστημα MCP και να ακολουθείτε τις βέλτιστες πρακτικές για συνεργατική ανάπτυξη. Η κατανόηση του τρόπου συμμετοχής σε έργα ανοιχτού κώδικα MCP είναι απαραίτητη για όσους θέλουν να διαμορφώσουν το μέλλον αυτής της τεχνολογίας.
+Αυτή η ενότητα επικεντρώνεται στο πώς να συμμετέχετε στην κοινότητα MCP, να συνεισφέρετε στο οικοσύστημα MCP και να ακολουθείτε τις βέλτιστες πρακτικές για συνεργατική ανάπτυξη. Η κατανόηση του πώς να συμμετέχετε σε έργα ανοικτού κώδικα MCP είναι απαραίτητη για όσους θέλουν να διαμορφώσουν το μέλλον αυτής της τεχνολογίας.
 
 ## Στόχοι Μάθησης
 
-Μέχρι το τέλος αυτού του μαθήματος, θα μπορείτε να:
+Στο τέλος αυτής της ενότητας, θα μπορείτε να:
 
 - Κατανοείτε τη δομή της κοινότητας και του οικοσυστήματος MCP
 - Συμμετέχετε αποτελεσματικά σε φόρουμ και συζητήσεις της κοινότητας MCP
-- Συνεισφέρετε σε αποθετήρια ανοιχτού κώδικα MCP
+- Συμβάλλετε σε αποθετήρια ανοικτού κώδικα MCP
 - Δημιουργείτε και μοιράζεστε προσαρμοσμένα εργαλεία και διακομιστές MCP
-- Ακολουθείτε βέλτιστες πρακτικές για ανάπτυξη και συνεργασία MCP
-- Ανακαλύπτετε πόρους και πλαίσια της κοινότητας για ανάπτυξη MCP
+- Ακολουθείτε βέλτιστες πρακτικές για την ανάπτυξη και συνεργασία MCP
+- Ανακαλύπτετε πόρους και πλαίσια κοινότητας για την ανάπτυξη MCP
 
 ## Το Οικοσύστημα της Κοινότητας MCP
 
-Το οικοσύστημα MCP αποτελείται από διάφορα στοιχεία και συμμετέχοντες που συνεργάζονται για την εξέλιξη του πρωτοκόλλου.
+Το οικοσύστημα MCP αποτελείται από διάφορα στοιχεία και συμμετέχοντες που συνεργάζονται για την προώθηση του πρωτοκόλλου.
 
-### Βασικά Στοιχεία της Κοινότητας
+### Κύρια Στοιχεία της Κοινότητας
 
-1. **Διαχειριστές Πυρήνα Πρωτοκόλλου**: Η επίσημη [οργάνωση Model Context Protocol στο GitHub](https://github.com/modelcontextprotocol) διαχειρίζεται τις βασικές προδιαγραφές MCP και τις υλοποιήσεις αναφοράς.
-2. **Προγραμματιστές Εργαλείων**: Άτομα και ομάδες που δημιουργούν εργαλεία και διακομιστές MCP.
-3. **Πάροχοι Ενσωμάτωσης**: Εταιρείες που ενσωματώνουν το MCP στα προϊόντα και τις υπηρεσίες τους.
-4. **Τελικοί Χρήστες**: Προγραμματιστές και οργανισμοί που χρησιμοποιούν το MCP στις εφαρμογές τους.
-5. **Συνεισφέροντες**: Μέλη της κοινότητας που συνεισφέρουν κώδικα, τεκμηρίωση ή άλλους πόρους.
+1. **Κύριοι Διαχειριστές του Πρωτοκόλλου**: Η επίσημη [οργάνωση Model Context Protocol στο GitHub](https://github.com/modelcontextprotocol) διατηρεί τις βασικές προδιαγραφές και τις αναφορές υλοποίησης MCP
+2. **Προγραμματιστές Εργαλείων**: Άτομα και ομάδες που δημιουργούν εργαλεία και διακομιστές MCP
+3. **Πάροχοι Ενσωμάτωσης**: Εταιρείες που ενσωματώνουν το MCP στα προϊόντα και τις υπηρεσίες τους
+4. **Τελικοί Χρήστες**: Προγραμματιστές και οργανισμοί που χρησιμοποιούν MCP στις εφαρμογές τους
+5. **Συντελεστές**: Μέλη της κοινότητας που προσφέρουν κώδικα, τεκμηρίωση ή άλλους πόρους
 
-### Πόροι της Κοινότητας
+### Πόροι Κοινότητας
 
 #### Επίσημα Κανάλια
 
 - [Οργάνωση MCP στο GitHub](https://github.com/modelcontextprotocol)
 - [Τεκμηρίωση MCP](https://modelcontextprotocol.io/)
-- [Προδιαγραφή MCP](https://modelcontextprotocol.io/docs/specification)
-- [Συζητήσεις στο GitHub](https://github.com/orgs/modelcontextprotocol/discussions)
+- [Προδιαγραφή MCP](https://spec.modelcontextprotocol.io/specification/2025-11-25/)
+- [Συζητήσεις GitHub](https://github.com/orgs/modelcontextprotocol/discussions)
 - [Αποθετήριο Παραδειγμάτων & Διακομιστών MCP](https://github.com/modelcontextprotocol/servers)
 
-#### Πόροι που Δημιουργούνται από την Κοινότητα
+#### Πόροι που Οδηγούνται από την Κοινότητα
 
-- [Πελάτες MCP](https://modelcontextprotocol.io/clients) - Λίστα πελατών που υποστηρίζουν ενσωματώσεις MCP.
-- [Διακομιστές MCP της Κοινότητας](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - Αυξανόμενη λίστα διακομιστών MCP που έχουν αναπτυχθεί από την κοινότητα.
-- [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers) - Επιλεγμένη λίστα διακομιστών MCP.
-- [PulseMCP](https://www.pulsemcp.com/) - Κέντρο κοινότητας & ενημερωτικό δελτίο για την ανακάλυψη πόρων MCP.
-- [Discord Server](https://discord.gg/jHEGxQu2a5) - Συνδεθείτε με προγραμματιστές MCP.
-- Υλοποιήσεις SDK για συγκεκριμένες γλώσσες.
-- Αναρτήσεις σε ιστολόγια και οδηγίες.
+- [Πελάτες MCP](https://modelcontextprotocol.io/clients) - Λίστα πελατών που υποστηρίζουν ενσωματώσεις MCP
+- [Διακομιστές Κοινότητας MCP](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) - Αυξανόμενη λίστα διακομιστών MCP που αναπτύχθηκαν από την κοινότητα
+- [Εξαιρετικοί Διακομιστές MCP](https://github.com/wong2/awesome-mcp-servers) - Επιλεγμένη λίστα διακομιστών MCP
+- [PulseMCP](https://www.pulsemcp.com/) - Κέντρο και ενημερωτικό δελτίο για την ανακάλυψη πόρων MCP
+- [Διακομιστής Discord](https://discord.gg/jHEGxQu2a5) - Συνδεθείτε με προγραμματιστές MCP
+- Υλοποιήσεις SDK ανά γλώσσα
+- Αναρτήσεις σε ιστολόγια και μαθήματα
 
 ## Συνεισφορά στο MCP
 
-### Τύποι Συνεισφορών
+### Τύποι Συμβολών
 
-Το οικοσύστημα MCP καλωσορίζει διάφορους τύπους συνεισφορών:
+Το οικοσύστημα MCP υποδέχεται διάφορους τύπους συνεισφορών:
 
 1. **Συνεισφορές Κώδικα**:
-   - Βελτιώσεις του πυρήνα του πρωτοκόλλου.
-   - Διορθώσεις σφαλμάτων.
-   - Υλοποιήσεις εργαλείων και διακομιστών.
-   - Βιβλιοθήκες πελάτη/διακομιστή σε διαφορετικές γλώσσες.
+   - Βελτιώσεις στον πυρήνα του πρωτοκόλλου
+   - Διορθώσεις σφαλμάτων
+   - Υλοποιήσεις εργαλείων και διακομιστών
+   - Βιβλιοθήκες πελατών/διακομιστών σε διάφορες γλώσσες
 
 2. **Τεκμηρίωση**:
-   - Βελτίωση της υπάρχουσας τεκμηρίωσης.
-   - Δημιουργία οδηγών και εκπαιδευτικών υλικών.
-   - Μετάφραση τεκμηρίωσης.
-   - Δημιουργία παραδειγμάτων και εφαρμογών δείγματος.
+   - Βελτίωση υπάρχουσας τεκμηρίωσης
+   - Δημιουργία μαθημάτων και οδηγών
+   - Μετάφραση τεκμηρίωσης
+   - Δημιουργία παραδειγμάτων και δειγματικών εφαρμογών
 
 3. **Υποστήριξη Κοινότητας**:
-   - Απαντήσεις σε ερωτήσεις σε φόρουμ και συζητήσεις.
-   - Δοκιμή και αναφορά προβλημάτων.
-   - Οργάνωση εκδηλώσεων της κοινότητας.
-   - Καθοδήγηση νέων συνεισφερόντων.
+   - Απαντήσεις σε ερωτήσεις σε φόρουμ και συζητήσεις
+   - Δοκιμές και αναφορές προβλημάτων
+   - Οργάνωση κοινοτικών εκδηλώσεων
+   - Καθοδήγηση νέων συντελεστών
 
 ### Διαδικασία Συνεισφοράς: Πυρήνας Πρωτοκόλλου
 
-Για να συνεισφέρετε στον πυρήνα του πρωτοκόλλου MCP ή στις επίσημες υλοποιήσεις, ακολουθήστε αυτές τις αρχές από τις [επίσημες οδηγίες συνεισφοράς](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
+Για να συμβάλετε στον πυρήνα του πρωτοκόλλου MCP ή επίσημες υλοποιήσεις, ακολουθήστε αυτές τις αρχές από τις [επίσημες οδηγίες συνεισφοράς](https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/CONTRIBUTING.md):
 
-1. **Απλότητα και Ελαχιστοποίηση**: Η προδιαγραφή MCP διατηρεί υψηλό επίπεδο για την προσθήκη νέων εννοιών. Είναι πιο εύκολο να προσθέσετε κάτι σε μια προδιαγραφή παρά να το αφαιρέσετε.
+1. **Απλότητα και Μινιμαλισμός**: Η προδιαγραφή MCP θέτει υψηλό όριο για την προσθήκη νέων εννοιών. Είναι πιο εύκολο να προσθέτεις πράγματα σε μια προδιαγραφή παρά να τα αφαιρείς.
 
 2. **Συγκεκριμένη Προσέγγιση**: Οι αλλαγές στην προδιαγραφή πρέπει να βασίζονται σε συγκεκριμένες προκλήσεις υλοποίησης, όχι σε υποθετικές ιδέες.
 
-3. **Στάδια μιας Πρότασης**:
-   - Ορισμός: Εξερευνήστε τον χώρο του προβλήματος, επιβεβαιώστε ότι άλλοι χρήστες MCP αντιμετωπίζουν παρόμοιο ζήτημα.
-   - Πρωτότυπο: Δημιουργήστε μια λύση παραδείγματος και δείξτε την πρακτική εφαρμογή της.
-   - Συγγραφή: Με βάση το πρωτότυπο, γράψτε μια πρόταση προδιαγραφής.
+3. **Στάδια Πρότασης**:
+   - Ορισμός: Εξερευνήστε το πεδίο του προβλήματος, επιβεβαιώστε ότι και άλλοι χρήστες MCP αντιμετωπίζουν παρόμοιο ζήτημα
+   - Πρωτότυπο: Δημιουργήστε ένα παράδειγμα λύσης και δείξτε την πρακτική του εφαρμογή
+   - Γράψιμο: Βασιστείτε στο πρωτότυπο για να συντάξετε μια πρόταση προδιαγραφής
 
 ### Ρύθμιση Περιβάλλοντος Ανάπτυξης
 
 ```bash
-# Fork the repository
+# Δημιουργήστε ένα fork του αποθετηρίου
 git clone https://github.com/YOUR-USERNAME/modelcontextprotocol.git
 cd modelcontextprotocol
 
-# Install dependencies
+# Εγκαταστήστε τις εξαρτήσεις
 npm install
 
-# For schema changes, validate and generate schema.json:
+# Για αλλαγές στο σχήμα, επικυρώστε και δημιουργήστε το schema.json:
 npm run check:schema:ts
 npm run generate:schema
 
-# For documentation changes
+# Για αλλαγές στην τεκμηρίωση
 npm run check:docs
 npm run format
 
-# Preview documentation locally (optional):
+# Προεπισκόπηση της τεκμηρίωσης τοπικά (προαιρετικό):
 npm run serve:docs
 ```
 
 ### Παράδειγμα: Συνεισφορά Διόρθωσης Σφάλματος
 
 ```javascript
-// Original code with bug in the typescript-sdk
+// Αρχικός κώδικας με σφάλμα στο typescript-sdk
 export function validateResource(resource: unknown): resource is MCPResource {
   if (!resource || typeof resource !== 'object') {
     return false;
   }
   
-  // Bug: Missing property validation
-  // Current implementation:
+  // Σφάλμα: Ελλιπής επαλήθευση ιδιότητας
+  // Τρέχουσα υλοποίηση:
   const hasName = 'name' in resource;
   const hasSchema = 'schema' in resource;
   
   return hasName && hasSchema;
 }
 
-// Fixed implementation in a contribution
+// Διορθωμένη υλοποίηση σε μια συνεισφορά
 export function validateResource(resource: unknown): resource is MCPResource {
   if (!resource || typeof resource !== 'object') {
     return false;
   }
   
-  // Improved validation
+  // Βελτιωμένη επαλήθευση
   const hasName = 'name' in resource && typeof (resource as MCPResource).name === 'string';
   const hasSchema = 'schema' in resource && typeof (resource as MCPResource).schema === 'object';
   const hasDescription = !('description' in resource) || typeof (resource as MCPResource).description === 'string';
@@ -151,10 +142,10 @@ export function validateResource(resource: unknown): resource is MCPResource {
 }
 ```
 
-### Παράδειγμα: Συνεισφορά Νέου Εργαλείου στη Βιβλιοθήκη Προτύπων
+### Παράδειγμα: Συνεισφορά Νέου Εργαλείου στη Βιβλιοθήκη Standard
 
 ```python
-# Example contribution: A CSV data processing tool for the MCP standard library
+# Παράδειγμα συνεισφοράς: Ένα εργαλείο επεξεργασίας δεδομένων CSV για τη βιβλιοθήκη προτύπου MCP
 
 from mcp_tools import Tool, ToolRequest, ToolResponse, ToolExecutionException
 import pandas as pd
@@ -216,14 +207,14 @@ class CsvProcessingTool(Tool):
     
     async def execute_async(self, request: ToolRequest) -> ToolResponse:
         try:
-            # Extract parameters
+            # Εξαγωγή παραμέτρων
             operation = request.parameters.get("operation")
             output_format = request.parameters.get("outputFormat", "json")
             
-            # Get CSV data from either direct data or URL
+            # Λήψη δεδομένων CSV είτε από άμεσα δεδομένα είτε από URL
             df = await self._get_dataframe(request)
             
-            # Process based on requested operation
+            # Επεξεργασία με βάση την ζητούμενη λειτουργία
             result = {}
             
             if operation == "summary":
@@ -284,7 +275,7 @@ class CsvProcessingTool(Tool):
     
     def _transform_data(self, df: pd.DataFrame, params: Dict[str, Any]) -> Dict[str, Any]:
         """Transforms the data based on parameters"""
-        # Implementation would include various transformations
+        # Η υλοποίηση θα περιλαμβάνει διάφορους μετασχηματισμούς
         return {
             "status": "success",
             "message": "Transformation applied"
@@ -313,66 +304,68 @@ class CsvProcessingTool(Tool):
 
 ### Οδηγίες Συνεισφοράς
 
-Για να κάνετε μια επιτυχημένη συνεισφορά σε έργα MCP:
+Για να κάνετε επιτυχημένη συνεισφορά σε έργα MCP:
 
-1. **Ξεκινήστε Μικρά**: Ξεκινήστε με τεκμηρίωση, διορθώσεις σφαλμάτων ή μικρές βελτιώσεις.
-2. **Ακολουθήστε τον Οδηγό Στυλ**: Τηρήστε το στυλ κώδικα και τις συμβάσεις του έργου.
-3. **Γράψτε Δοκιμές**: Συμπεριλάβετε δοκιμές μονάδας για τις συνεισφορές σας.
-4. **Τεκμηριώστε τη Δουλειά σας**: Προσθέστε σαφή τεκμηρίωση για νέες δυνατότητες ή αλλαγές.
-5. **Υποβάλετε Στοχευμένα PRs**: Κρατήστε τα pull requests εστιασμένα σε ένα μόνο ζήτημα ή δυνατότητα.
-6. **Ανταποκριθείτε στην Ανατροφοδότηση**: Να είστε δεκτικοί στην ανατροφοδότηση για τις συνεισφορές σας.
+1. **Ξεκινήστε Μικρά**: Ξεκινήστε με τεκμηρίωση, διορθώσεις σφαλμάτων ή μικρές βελτιώσεις
+2. **Ακολουθήστε τον Οδηγό Στυλ**: Τηρήστε το στυλ κωδικοποίησης και τις συμβάσεις του έργου
+3. **Γράψτε Δοκιμές**: Συμπεριλάβετε μονάδες δοκιμών για τις συνεισφορές σας
+4. **Τεκμηριώστε τη Δουλειά σας**: Προσθέστε σαφή τεκμηρίωση για νέες λειτουργίες ή αλλαγές
+5. **Υποβάλετε Εστιασμένα PR**: Κρατήστε τις αιτήσεις μεταβολής εστιασμένες σε ένα μόνο θέμα ή χαρακτηριστικό
+6. **Ανταποκριθείτε στα Σχόλια**: Να είστε προσηλωμένοι στα σχόλια για τις συνεισφορές σας
 
 ### Παράδειγμα Ροής Εργασίας Συνεισφοράς
 
 ```bash
-# Clone the repository
+# Αντιγράψτε το αποθετήριο
 git clone https://github.com/modelcontextprotocol/typescript-sdk.git
 cd typescript-sdk
 
-# Create a new branch for your contribution
+# Δημιουργήστε ένα νέο κλαδί για τη συνεισφορά σας
 git checkout -b feature/my-contribution
 
-# Make your changes
+# Κάντε τις αλλαγές σας
 # ...
 
-# Run tests to ensure your changes don't break existing functionality
+# Εκτελέστε δοκιμές για να διασφαλίσετε ότι οι αλλαγές σας δεν σπάνε την υπάρχουσα λειτουργικότητα
 npm test
 
-# Commit your changes with a descriptive message
+# Καταχωρίστε τις αλλαγές σας με ένα περιγραφικό μήνυμα
 git commit -am "Fix validation in resource handler"
 
-# Push your branch to your fork
+# Σπρώξτε το κλαδί σας στο fork σας
 git push origin feature/my-contribution
 
-# Create a pull request from your branch to the main repository
-# Then engage with feedback and iterate on your PR as needed
+# Δημιουργήστε ένα pull request από το κλαδί σας στο κύριο αποθετήριο
+# Στη συνέχεια, αλληλεπιδράστε με τα σχόλια και επαναλάβετε το PR σας όπως απαιτείται
 ```
 
-## Δημιουργία και Μοιρασιά Διακομιστών MCP
+## Δημιουργία και Κοινοποίηση Διακομιστών MCP
 
-Ένας από τους πιο πολύτιμους τρόπους συνεισφοράς στο οικοσύστημα MCP είναι η δημιουργία και μοιρασιά προσαρμοσμένων διακομιστών MCP. Η κοινότητα έχει ήδη αναπτύξει εκατοντάδες διακομιστές για διάφορες υπηρεσίες και περιπτώσεις χρήσης.
+Ένας από τους πιο πολύτιμους τρόπους να συμβάλετε στο οικοσύστημα MCP είναι δημιουργώντας και μοιράζοντας προσαρμοσμένους διακομιστές MCP. Η κοινότητα έχει ήδη αναπτύξει εκατοντάδες διακομιστές για διάφορες υπηρεσίες και περιπτώσεις χρήσης.
 
 ### Πλαίσια Ανάπτυξης Διακομιστών MCP
 
-Διατίθενται διάφορα πλαίσια για την απλοποίηση της ανάπτυξης διακομιστών MCP:
+Διατίθενται αρκετά πλαίσια για να απλοποιήσουν την ανάπτυξη διακομιστών MCP:
 
-1. **Επίσημα SDKs**:
+1. **Επίσημα SDK** (σε συμφωνία με την [Προδιαγραφή MCP 2025-11-25](https://spec.modelcontextprotocol.io/specification/2025-11-25/)):
    - [TypeScript SDK](https://github.com/modelcontextprotocol/typescript-sdk)
    - [Python SDK](https://github.com/modelcontextprotocol/python-sdk)
    - [C# SDK](https://github.com/modelcontextprotocol/csharp-sdk)
    - [Go SDK](https://github.com/modelcontextprotocol/go-sdk)
    - [Java SDK](https://github.com/modelcontextprotocol/java-sdk)
    - [Kotlin SDK](https://github.com/modelcontextprotocol/kotlin-sdk)
+   - [Swift SDK](https://github.com/modelcontextprotocol/swift-sdk)
+   - [Rust SDK](https://github.com/modelcontextprotocol/rust-sdk)
 
 2. **Πλαίσια της Κοινότητας**:
-   - [MCP-Framework](https://mcp-framework.com/) - Δημιουργία διακομιστών MCP με κομψότητα και ταχύτητα σε TypeScript.
-   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - Διακομιστές MCP με Java βασισμένοι σε annotations.
-   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - Πλαίσιο Java για διακομιστές MCP.
-   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - Έργο εκκίνησης Next.js για διακομιστές MCP.
+   - [MCP-Framework](https://mcp-framework.com/) - Δημιουργία διακομιστών MCP με κομψότητα και ταχύτητα σε TypeScript
+   - [MCP Declarative Java SDK](https://github.com/codeboyzhou/mcp-declarative-java-sdk) - Διακομιστές MCP βασισμένοι σε σχολιασμό με Java
+   - [Quarkus MCP Server SDK](https://github.com/quarkiverse/quarkus-mcp-server) - Πλαίσιο Java για διακομιστές MCP
+   - [Next.js MCP Server Template](https://github.com/vercel-labs/mcp-for-next.js) - Αρχικό έργο Next.js για διακομιστές MCP
 
-### Ανάπτυξη Εργαλείων για Μοιρασιά
+### Ανάπτυξη Κοινοποιήσιμων Εργαλείων
 
-#### Παράδειγμα .NET: Δημιουργία Πακέτου Εργαλείων για Μοιρασιά
+#### Παράδειγμα .NET: Δημιουργία Πακέτου Κοινοποιήσιμου Εργαλείου
 
 ```csharp
 // Create a new .NET library project
@@ -481,7 +474,7 @@ namespace McpFinanceTools
 #### Παράδειγμα Java: Δημιουργία Πακέτου Maven για Εργαλεία
 
 ```java
-// pom.xml configuration for a shareable MCP tool package
+// Διαμόρφωση pom.xml για ένα κοινόχρηστο πακέτο εργαλείων MCP
 <!-- 
 <project>
     <groupId>com.example</groupId>
@@ -542,7 +535,7 @@ public class WeatherForecastTool implements Tool {
     @Override
     public Object getSchema() {
         Map<String, Object> schema = new HashMap<>();
-        // Schema definition...
+        // Ορισμός σχήματος...
         return schema;
     }
     
@@ -553,10 +546,10 @@ public class WeatherForecastTool implements Tool {
             int days = request.getParameters().has("days") ? 
                 request.getParameters().get("days").asInt() : 3;
             
-            // Call weather API
+            // Κλήση API καιρού
             Map<String, Object> forecast = getForecast(location, days);
             
-            // Build response
+            // Δημιουργία απόκρισης
             return new ToolResponse.Builder()
                 .setResult(forecast)
                 .build();
@@ -566,15 +559,15 @@ public class WeatherForecastTool implements Tool {
     }
     
     private Map<String, Object> getForecast(String location, int days) {
-        // Implementation would call weather API
-        // Simplified example
+        // Η υλοποίηση θα καλεί το API καιρού
+        // Απλοποιημένο παράδειγμα
         Map<String, Object> result = new HashMap<>();
-        // Add forecast data...
+        // Προσθήκη δεδομένων πρόγνωσης...
         return result;
     }
 }
 
-// Build and publish using Maven
+// Δημιουργία και δημοσίευση με Maven
 // mvn clean package
 // mvn deploy
 ```
@@ -582,7 +575,7 @@ public class WeatherForecastTool implements Tool {
 #### Παράδειγμα Python: Δημοσίευση Πακέτου PyPI
 
 ```python
-# Directory structure for a PyPI package:
+# Δομή καταλόγου για ένα πακέτο PyPI:
 # mcp_nlp_tools/
 # ├── LICENSE
 # ├── README.md
@@ -592,7 +585,7 @@ public class WeatherForecastTool implements Tool {
 # │   ├── sentiment_tool.py
 # │   └── translation_tool.py
 
-# Example setup.py
+# Παράδειγμα setup.py
 """
 from setuptools import setup, find_packages
 
@@ -620,7 +613,7 @@ setup(
 )
 """
 
-# Example NLP tool implementation (sentiment_tool.py)
+# Παράδειγμα υλοποίησης εργαλείου NLP (sentiment_tool.py)
 from mcp_tools import Tool, ToolRequest, ToolResponse, ToolExecutionException
 from transformers import pipeline
 import torch
@@ -629,7 +622,7 @@ class SentimentAnalysisTool(Tool):
     """MCP tool for sentiment analysis of text"""
     
     def __init__(self, model_name="distilbert-base-uncased-finetuned-sst-2-english"):
-        # Load the sentiment analysis model
+        # Φόρτωση του μοντέλου ανάλυσης συναισθήματος
         self.sentiment_analyzer = pipeline("sentiment-analysis", model=model_name)
     
     def get_name(self):
@@ -657,14 +650,14 @@ class SentimentAnalysisTool(Tool):
     
     async def execute_async(self, request: ToolRequest) -> ToolResponse:
         try:
-            # Extract parameters
+            # Εξαγωγή παραμέτρων
             text = request.parameters.get("text")
             include_score = request.parameters.get("includeScore", True)
             
-            # Analyze sentiment
+            # Ανάλυση συναισθήματος
             sentiment_result = self.sentiment_analyzer(text)[0]
             
-            # Format result
+            # Μορφοποίηση αποτελέσματος
             result = {
                 "sentiment": sentiment_result["label"],
                 "text": text
@@ -673,82 +666,82 @@ class SentimentAnalysisTool(Tool):
             if include_score:
                 result["score"] = sentiment_result["score"]
             
-            # Return result
+            # Επιστροφή αποτελέσματος
             return ToolResponse(result=result)
             
         except Exception as e:
             raise ToolExecutionException(f"Sentiment analysis failed: {str(e)}")
 
-# To publish:
+# Για δημοσίευση:
 # python setup.py sdist bdist_wheel
 # python -m twine upload dist/*
 ```
 
-### Μοιρασιά Βέλτιστων Πρακτικών
+### Κοινοποίηση Βέλτιστων Πρακτικών
 
 Όταν μοιράζεστε εργαλεία MCP με την κοινότητα:
 
 1. **Πλήρης Τεκμηρίωση**:
-   - Τεκμηριώστε τον σκοπό, τη χρήση και τα παραδείγματα.
-   - Εξηγήστε παραμέτρους και τιμές επιστροφής.
-   - Τεκμηριώστε τυχόν εξωτερικές εξαρτήσεις.
+   - Τεκμηριώστε το σκοπό, τη χρήση και τα παραδείγματα
+   - Εξηγήστε τις παραμέτρους και τις τιμές επιστροφής
+   - Τεκμηριώστε τυχόν εξωτερικές εξαρτήσεις
 
 2. **Διαχείριση Σφαλμάτων**:
-   - Εφαρμόστε ισχυρή διαχείριση σφαλμάτων.
-   - Παρέχετε χρήσιμα μηνύματα σφαλμάτων.
-   - Αντιμετωπίστε περιπτώσεις άκρων με χάρη.
+   - Εφαρμόστε ανθεκτική διαχείριση σφαλμάτων
+   - Παρέχετε χρήσιμα μηνύματα σφαλμάτων
+   - Χειριστείτε με ευγένεια ειδικές περιπτώσεις
 
-3. **Επιδόσεις**:
-   - Βελτιστοποιήστε για ταχύτητα και χρήση πόρων.
-   - Εφαρμόστε caching όπου είναι κατάλληλο.
-   - Σκεφτείτε την κλιμάκωση.
+3. **Επιλογές Απόδοσης**:
+   - Βελτιστοποιήστε για ταχύτητα και χρήση πόρων
+   - Εφαρμόστε προσωρινή αποθήκευση όπου είναι κατάλληλο
+   - Λάβετε υπόψη την κλιμάκωση
 
 4. **Ασφάλεια**:
-   - Χρησιμοποιήστε ασφαλή κλειδιά API και αυθεντικοποίηση.
-   - Επικυρώστε και καθαρίστε τις εισόδους.
-   - Εφαρμόστε περιορισμό ρυθμού για εξωτερικές κλήσεις API.
+   - Χρησιμοποιήστε ασφαλή κλειδιά API και αυθεντικοποίηση
+   - Επαληθεύστε και καθαρίστε τις εισόδους
+   - Εφαρμόστε περιορισμό ρυθμού για εξωτερικές κλήσεις API
 
 5. **Δοκιμές**:
-   - Συμπεριλάβετε εκτεταμένη κάλυψη δοκιμών.
-   - Δοκιμάστε με διαφορετικούς τύπους εισόδου και περιπτώσεις άκρων.
-   - Τεκμηριώστε τις διαδικασίες δοκιμών.
+   - Συμπεριλάβετε εκτενή κάλυψη δοκιμών
+   - Δοκιμάστε με διαφορετικούς τύπους εισόδων και ειδικές περιπτώσεις
+   - Τεκμηριώστε τις διαδικασίες δοκιμών
 
 ## Συνεργασία Κοινότητας και Βέλτιστες Πρακτικές
 
-Η αποτελεσματική συνεργασία είναι το κλειδί για ένα ακμάζον οικοσύστημα MCP.
+Η αποτελεσματική συνεργασία είναι κλειδί για ένα ακμάζον οικοσύστημα MCP.
 
 ### Κανάλια Επικοινωνίας
 
-- Θέματα και Συζητήσεις στο GitHub.
-- Microsoft Tech Community.
-- Κανάλια Discord και Slack.
-- Stack Overflow (ετικέτα: `model-context-protocol` ή `mcp`).
+- Θέματα και Συζητήσεις στο GitHub
+- Microsoft Tech Community
+- Κανάλια Discord και Slack
+- Stack Overflow (ετικέτα: `model-context-protocol` ή `mcp`)
 
 ### Ανασκοπήσεις Κώδικα
 
 Κατά την ανασκόπηση συνεισφορών MCP:
 
-1. **Σαφήνεια**: Είναι ο κώδικας σαφής και καλά τεκμηριωμένος;
+1. **Σαφήνεια**: Είναι ο κώδικας καθαρός και καλά τεκμηριωμένος;
 2. **Ορθότητα**: Λειτουργεί όπως αναμένεται;
 3. **Συνέπεια**: Ακολουθεί τις συμβάσεις του έργου;
 4. **Πληρότητα**: Περιλαμβάνονται δοκιμές και τεκμηρίωση;
-5. **Ασφάλεια**: Υπάρχουν ανησυχίες για την ασφάλεια;
+5. **Ασφάλεια**: Υπάρχουν ανησυχίες για ασφάλεια;
 
-### Συμβατότητα Έκδοσης
+### Συμβατότητα Εκδόσεων
 
 Κατά την ανάπτυξη για MCP:
 
-1. **Έκδοση Πρωτοκόλλου**: Τηρήστε την έκδοση πρωτοκόλλου MCP που υποστηρίζει το εργαλείο σας.
-2. **Συμβατότητα Πελάτη**: Σκεφτείτε την συμβατότητα προς τα πίσω.
-3. **Συμβατότητα Διακομιστή**: Ακολουθήστε τις οδηγίες υλοποίησης διακομιστή.
-4. **Σημαντικές Αλλαγές**: Τεκμηριώστε σαφώς τυχόν σημαντικές αλλαγές.
+1. **Έκδοση Πρωτοκόλλου**: Τηρήστε την έκδοση πρωτοκόλλου MCP που υποστηρίζει το εργαλείο σας
+2. **Συμβατότητα Πελατών**: Λάβετε υπόψη την οπισθοδρομική συμβατότητα
+3. **Συμβατότητα Διακομιστών**: Ακολουθήστε τις οδηγίες υλοποίησης διακομιστή
+4. **Κρίσιμες Αλλαγές**: Τεκμηριώστε σαφώς τυχόν κρίσιμες αλλαγές
 
-## Παράδειγμα Κοινοτικού Έργου: Καταχώρηση Εργαλείων MCP
+## Παράδειγμα Κοινοτικού Έργου: Μητρώο Εργαλείων MCP
 
-Μια σημαντική συνεισφορά της κοινότητας θα μπορούσε να είναι η ανάπτυξη ενός δημόσιου μητρώου για εργαλεία MCP.
+Μια σημαντική συνεισφορά της κοινότητας θα μπορούσε να είναι η ανάπτυξη ενός δημόσιου μητρώου για τα εργαλεία MCP.
 
 ```python
-# Example schema for a community tool registry API
+# Παράδειγμα σχήματος για ένα API μητρώου εργαλείων κοινότητας
 
 from fastapi import FastAPI, HTTPException, Depends
 from pydantic import BaseModel, Field, HttpUrl
@@ -756,7 +749,7 @@ from typing import List, Optional
 import datetime
 import uuid
 
-# Models for the tool registry
+# Μοντέλα για το μητρώο εργαλείων
 class ToolSchema(BaseModel):
     """JSON Schema for a tool"""
     type: str
@@ -785,10 +778,10 @@ class Tool(ToolRegistration):
     rating: float = Field(default=0.0)
     ratings_count: int = Field(default=0)
 
-# FastAPI application for the registry
+# Εφαρμογή FastAPI για το μητρώο
 app = FastAPI(title="MCP Tool Registry")
 
-# In-memory database for this example
+# Βάση δεδομένων στη μνήμη για αυτό το παράδειγμα
 tools_db = {}
 
 @app.post("/tools", response_model=Tool)
@@ -824,21 +817,21 @@ async def delete_tool(tool_name: str):
     return {"message": f"Tool '{tool_name}' deleted"}
 ```
 
-## Βασικά Σημεία
+## Κύρια Συμπεράσματα
 
-- Η κοινότητα MCP είναι ποικιλόμορφη και καλωσορίζει διάφορους τύπους συνεισφορών.
-- Η συνεισφορά στο MCP μπορεί να κυμαίνεται από βελτιώσεις του πυρήνα του πρωτοκόλλου έως προσαρμοσμένα εργαλεία.
-- Η τήρηση των οδηγιών συνεισφοράς αυξάνει τις πιθανότητες αποδοχής του PR σας.
-- Η δημιουργία και μοιρασιά εργαλείων MCP είναι ένας πολύτιμος τρόπος για την ενίσχυση του οικοσυστήματος.
-- Η συνεργασία της κοινότητας είναι απαραίτητη για την ανάπτυξη και βελτίωση του MCP.
+- Η κοινότητα MCP είναι ποικιλόμορφη και υποδέχεται διάφορους τύπους συνεισφορών
+- Η συνεισφορά στο MCP μπορεί να περιλαμβάνει από βελτιώσεις του πρωτοκόλλου έως προσαρμοσμένα εργαλεία
+- Η τήρηση των οδηγιών συνεισφοράς βελτιώνει τις πιθανότητες αποδοχής του PR σας
+- Η δημιουργία και κοινοποίηση εργαλείων MCP είναι ένας πολύτιμος τρόπος για την ενίσχυση του οικοσυστήματος
+- Η συνεργασία της κοινότητας είναι ουσιώδης για την ανάπτυξη και βελτίωση του MCP
 
 ## Άσκηση
 
-1. Εντοπίστε έναν τομέα στο οικοσύστημα MCP όπου μπορείτε να κάνετε μια συνεισφορά βάσει των δεξιοτήτων και των ενδιαφερόντων σας.
-2. Κάντε fork το αποθετήριο MCP και ρυθμίστε ένα τοπικό περιβάλλον ανάπτυξης.
-3. Δημιουργήστε μια μικρή βελτίωση, διόρθωση σφάλματος ή εργαλείο που θα ωφελήσει την κοινότητα.
-4. Τεκμηριώστε τη συνεισφορά σας με κατάλληλες δοκιμές και τεκμηρίωση.
-5. Υποβάλετε ένα pull request στο κατάλληλο αποθετήριο.
+1. Εντοπίστε έναν τομέα στο οικοσύστημα MCP όπου μπορείτε να κάνετε μια συνεισφορά με βάση τις δεξιότητες και τα ενδιαφέροντά σας
+2. Κάντε fork το αποθετήριο MCP και ρυθμίστε τοπικό περιβάλλον ανάπτυξης
+3. Δημιουργήστε μια μικρή βελτίωση, διόρθωση σφάλματος ή εργαλείο που θα ωφελήσει την κοινότητα
+4. Τεκμηριώστε τη συνεισφορά σας με κατάλληλες δοκιμές και τεκμηρίωση
+5. Υποβάλετε μια αίτηση pull request στο κατάλληλο αποθετήριο
 
 ## Πρόσθετοι Πόροι
 
@@ -846,7 +839,13 @@ async def delete_tool(tool_name: str):
 
 ---
 
+## Τι Ακολουθεί
+
 Επόμενο: [Μαθήματα από την Πρώιμη Υιοθέτηση](../07-LessonsfromEarlyAdoption/README.md)
 
-**Αποποίηση ευθύνης**:  
-Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που καταβάλλουμε προσπάθειες για ακρίβεια, παρακαλούμε να έχετε υπόψη ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν σφάλματα ή ανακρίβειες. Το πρωτότυπο έγγραφο στη μητρική του γλώσσα θα πρέπει να θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή εσφαλμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+**Αποποίηση Ευθυνών**:  
+Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε ακρίβεια, παρακαλούμε λάβετε υπόψη ότι οι αυτοματοποιημένες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στην γλώσσα του θεωρείται η έγκυρη πηγή. Για κρίσιμες πληροφορίες συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για οποιεσδήποτε παρεξηγήσεις ή λανθασμένες ερμηνείες προκύψουν από τη χρήση αυτής της μετάφρασης.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->

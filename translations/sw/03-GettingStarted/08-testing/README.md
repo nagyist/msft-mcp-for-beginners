@@ -1,12 +1,3 @@
-<!--
-CO_OP_TRANSLATOR_METADATA:
-{
-  "original_hash": "4e34e34e84f013e73c7eaa6d09884756",
-  "translation_date": "2025-07-13T22:02:56+00:00",
-  "source_file": "03-GettingStarted/08-testing/README.md",
-  "language_code": "sw"
-}
--->
 ## Kupima na Kurekebisha Hitilafu
 
 Kabla hujaanza kupima seva yako ya MCP, ni muhimu kuelewa zana zinazopatikana na mbinu bora za kurekebisha hitilafu. Kupima kwa ufanisi kunahakikisha seva yako inafanya kazi kama inavyotarajiwa na kukusaidia kugundua na kutatua matatizo haraka. Sehemu ifuatayo inaelezea mbinu zinazopendekezwa za kuthibitisha utekelezaji wako wa MCP.
@@ -48,7 +39,7 @@ npx @modelcontextprotocol/inspector node build/index.js
 
 Amri hapo juu inaanzisha MCP na kiolesura chake cha kuona na kuanzisha kiolesura cha wavuti cha ndani kwenye kivinjari chako. Unaweza kutarajia kuona dashibodi inayoonyesha seva zako za MCP zilizosajiliwa, zana zao zinazopatikana, rasilimali, na maelekezo. Kiolesura hiki kinakuwezesha kupima uendeshaji wa zana kwa njia ya mwingiliano, kuchunguza metadata ya seva, na kuona majibu kwa wakati halisi, jambo linalorahisisha kuthibitisha na kurekebisha utekelezaji wa seva zako za MCP.
 
-Hivi ndivyo kinaweza kuonekana: ![Inspector](../../../../translated_images/connect.141db0b2bd05f096fb1dd91273771fd8b2469d6507656c3b0c9df4b3c5473929.sw.png)
+Hivi ndivyo kinaweza kuonekana: ![Inspector](../../../../translated_images/sw/connect.141db0b2bd05f096.webp)
 
 Pia unaweza kuendesha zana hii kwa njia ya CLI ambapo unatumia sifa `--cli`. Hapa kuna mfano wa kuendesha zana kwa njia ya "CLI" inayoorodhesha zana zote kwenye seva:
 
