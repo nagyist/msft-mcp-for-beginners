@@ -371,6 +371,30 @@
     "source_file": "03-GettingStarted/13-mcp-inspector/README.md",
     "language_code": "hu"
   },
+  "03-GettingStarted/14-sampling/README.md": {
+    "original_hash": "7fcaf3469589a8b02c633a0fad971ae3",
+    "translation_date": "2026-02-18T14:13:34+00:00",
+    "source_file": "03-GettingStarted/14-sampling/README.md",
+    "language_code": "hu"
+  },
+  "03-GettingStarted/14-sampling/code/python/README.md": {
+    "original_hash": "c79c50505f77088459a1e5d5e2f4d9f3",
+    "translation_date": "2026-02-18T14:14:43+00:00",
+    "source_file": "03-GettingStarted/14-sampling/code/python/README.md",
+    "language_code": "hu"
+  },
+  "03-GettingStarted/14-sampling/solution/README.md": {
+    "original_hash": "dbf52003446143c9f3411720b01098f8",
+    "translation_date": "2026-02-18T14:14:19+00:00",
+    "source_file": "03-GettingStarted/14-sampling/solution/README.md",
+    "language_code": "hu"
+  },
+  "03-GettingStarted/14-sampling/solution/python/README.md": {
+    "original_hash": "bfebb3fd43f8d14daf60db20c66a537b",
+    "translation_date": "2026-02-18T14:15:04+00:00",
+    "source_file": "03-GettingStarted/14-sampling/solution/python/README.md",
+    "language_code": "hu"
+  },
   "03-GettingStarted/README.md": {
     "original_hash": "9011c971791f0929aea7b53f3c2e7b92",
     "translation_date": "2026-02-08T16:12:45+00:00",
@@ -780,8 +804,8 @@
     "language_code": "hu"
   },
   "README.md": {
-    "original_hash": "20374109b227ab3f7dbfad8e784a9412",
-    "translation_date": "2026-02-16T11:07:26+00:00",
+    "original_hash": "44661958bc769aee2b629bdc64d0a958",
+    "translation_date": "2026-02-18T14:09:49+00:00",
     "source_file": "README.md",
     "language_code": "hu"
   },
