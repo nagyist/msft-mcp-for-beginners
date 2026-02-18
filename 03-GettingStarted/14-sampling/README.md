@@ -346,7 +346,7 @@ Sampling is a powerful feature that allows the server to delegate tasks to the c
 
 ## What's Next
 
-TODO
+- [Chapter 4 - Practical implementation](../../04-PracticalImplementation/README.md)
 
 
 
